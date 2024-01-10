@@ -20,7 +20,7 @@ for (const file of servapps) {
   const screenshots = fs.readdirSync(`./servapps/${file}/screenshots`);
   for (const screenshot of screenshots) {
     servapp.screenshots.push(
-      `https://bigbeartechworld.github.io/big-bear-cosmos/servapps/${file}/screenshots/${screenshot}`
+      `https://cosmos.bigbeartechworld.com/servapps/${file}/screenshots/${screenshot}`
     );
   }
 
@@ -29,12 +29,12 @@ for (const file of servapps) {
     for (const artefact of artefacts) {
       servapp.artefacts[
         artefact
-      ] = `https://bigbeartechworld.github.io/big-bear-cosmos/servapps/${file}/artefacts/${artefact}`;
+      ] = `https://cosmos.bigbeartechworld.com/servapps/${file}/artefacts/${artefact}`;
     }
   }
 
-  servapp.icon = `https://bigbeartechworld.github.io/big-bear-cosmos/servapps/${file}/icon.png`;
-  servapp.compose = `https://bigbeartechworld.github.io/big-bear-cosmos/servapps/${file}/cosmos-compose.json`;
+  servapp.icon = `https://cosmos.bigbeartechworld.com/servapps/${file}/icon.png`;
+  servapp.compose = `https://cosmos.bigbeartechworld.com/servapps/${file}/cosmos-compose.json`;
 
   servappsJSON.push(servapp);
 }
@@ -57,13 +57,13 @@ for (const servapp of servappsJSON) {
   servapp.icon = `http://localhost:3000/servapps/${servapp.id}/icon.png`;
   for (let i = 0; i < servapp.screenshots.length; i++) {
     servapp.screenshots[i] = servapp.screenshots[i].replace(
-      "https://bigbeartechworld.github.io/big-bear-cosmos",
+      "https://cosmos.bigbeartechworld.com",
       "http://localhost:3000"
     );
   }
   for (const artefact in servapp.artefacts) {
     servapp.artefacts[artefact] = servapp.artefacts[artefact].replace(
-      "https://bigbeartechworld.github.io/big-bear-cosmos",
+      "https://cosmos.bigbeartechworld.com",
       "http://localhost:3000"
     );
   }
