@@ -14,6 +14,10 @@ If you have a feature request please post in the [BigBearCommunity](https://comm
 https://cosmos.bigbeartechworld.com
 ```
 
+| Name            | URL                                 |
+| --------------- | ----------------------------------- |
+| big-bear-cosmos | https://cosmos.bigbeartechworld.com |
+
 ## App Store Suggestions
 
 If you have a suggestion for an app, please post in the [BigBearCommunity](https://community.bigbeartechworld.com) server.
