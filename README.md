@@ -32,9 +32,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 ## Apps
 
-| Application | YouTube Video | Docs |
-| ----------- | ------------- | ---- |
-| 2fauth      |               |      |
+| Application               | YouTube Video | Docs |
+| ------------------------- | ------------- | ---- |
+| 2fauth                    |               |      |
+| UniFi Network Application |               |      |
 
 ## UI How to
 
