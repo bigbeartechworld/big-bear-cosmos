@@ -6,7 +6,9 @@
       "image": "2fauth/2fauth:5.0.2",
       "container_name": "{ServiceName}",
       "restart": "unless-stopped",
-      "environment": [],
+      "environment": [
+        "APP_URL=http://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}"
+      ],
       "labels": {
         "cosmos-force-network-secured": "true",
         "cosmos-auto-update": "true",
