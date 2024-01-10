@@ -1,0 +1,9 @@
+{
+  "name": "2FAuth",
+  "longDescription": "<p>A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes</p>",
+  "description": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes",
+  "tags": ["BigBearCosmos", "Authentication"],
+  "repository": "https://github.com/Bubka/2FAuth",
+  "image": "https://hub.docker.com/r/2fauth/2fauth",
+  "supported_architectures": ["amd64", "arm64"]
+}
