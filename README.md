@@ -14,6 +14,10 @@ If you have a feature request please post in the [BigBearCommunity](https://comm
 https://cosmos.bigbeartechworld.com
 ```
 
+## Install
+
+Market > Sources > Add Source
+
 | Name            | URL                                 |
 | --------------- | ----------------------------------- |
 | big-bear-cosmos | https://cosmos.bigbeartechworld.com |
