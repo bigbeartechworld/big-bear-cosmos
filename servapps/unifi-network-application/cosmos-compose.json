@@ -40,7 +40,8 @@
           "name": "{ServiceName}",
           "description": "Expose {ServiceName} to the web",
           "useHost": true,
-          "target": "http://{ServiceName}:8443",
+          "target": "https://{ServiceName}:8443",
+          "AcceptInsecureHTTPSTarget": true,
           "mode": "SERVAPP",
           "Timeout": 14400000,
           "ThrottlePerMinute": 12000,
@@ -58,20 +59,7 @@
       "networks": {
         "{ServiceName}-db": {}
       },
-      "environment": [
-        "PUID=1000",
-        "PGID=1000",
-        "TZ=ETC/UTC",
-        "MONGO_HOST=big-bear-unifi-db",
-        "MONGO_USER=unifi",
-        "MONGO_PASS=unifi_password",
-        "MONGO_PORT=27017",
-        "MONGO_DBNAME=unifi",
-        "MEM_LIMIT=1024",
-        "MEM_STARTUP=1024",
-        "MONGO_TLS=",
-        "MONGO_AUTHSOURCE="
-      ],
+      "environment": [],
       "labels": {
         "cosmos-force-network-secured": "true",
         "cosmos-auto-update": "true",
