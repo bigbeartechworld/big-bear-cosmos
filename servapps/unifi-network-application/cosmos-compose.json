@@ -73,7 +73,7 @@
         },
         {
           "source": "/DATA/AppData/big-bear-unifi-network-application/db/init-mongo.js",
-          "target": "/docker-entrypoint-initdb.d/init-mongo.js:ro",
+          "target": "/docker-entrypoint-initdb.d/init-mongo.js",
           "type": "bind"
         }
       ]
