@@ -34,5 +34,10 @@
       ],
       "datasourceTemplate": "docker"
     }
-  ]
+  ],
+  "fileMatch": ["^cosmos-compose\\.json$"],
+  "docker": {
+    "fileMatch": ["^cosmos-compose\\.json$"],
+    "enabled": true
+  }
 }
