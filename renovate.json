@@ -28,7 +28,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^cosmos-compose\\.json$"],
+      "fileMatch": ["^servapps/[^/]+/cosmos-compose\\.json$"],
       "matchStrings": [
         "\"image\":\\s*\"(?<depName>[^:\\s]+/[^:\\s]+):(?<currentValue>[^\\s\"]+)\""
       ],
