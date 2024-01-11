@@ -3,7 +3,7 @@
   "minVersion": "0.9.0",
   "services": {
     "{ServiceName}": {
-      "image": "2fauth/2fauth:5.0.1",
+      "image": "2fauth/2fauth:5.0.2",
       "container_name": "{ServiceName}",
       "restart": "unless-stopped",
       "environment": [
