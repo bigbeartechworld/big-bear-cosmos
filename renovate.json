@@ -28,18 +28,11 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^README\\.md$"],
+      "fileMatch": ["^cosmos-compose\\.json$"],
       "matchStrings": [
-        "\\n\\|[^|]+\\|\\s+(?<depName>[a-zA-Z0-9][a-zA-Z0-9/._-]*)\\s+\\|\\s+(?<currentValue>[^\\s|]+)\\s+\\|"
+        "\"image\":\\s*\"(?<depName>[^:\\s]+/[^:\\s]+):(?<currentValue>[^\\s\"]+)\""
       ],
       "datasourceTemplate": "docker"
-    },
-    {
-      "fileMatch": ["^cosmos-compose\\.json$"],
-      "docker": {
-        "fileMatch": ["^cosmos-compose\\.json$"],
-        "enabled": true
-      }
     }
   ]
 }
