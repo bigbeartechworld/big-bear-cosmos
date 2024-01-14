@@ -50,4 +50,4 @@ jobs:
 
       - name: Deploy to GitHub Pages # Step to deploy to GitHub Pages
         id: deployment # Set an ID for this step to reference it later
-        uses: actions/deploy-pages@v2 # Use the deploy-pages action
+        uses: actions/deploy-pages@v4 # Use the deploy-pages action
