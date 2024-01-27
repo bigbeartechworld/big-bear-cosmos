@@ -44,7 +44,7 @@ jobs:
         uses: actions/configure-pages@v3 # Use the configure-pages action
 
       - name: Upload artifact # Step to upload the build artifact
-        uses: actions/upload-pages-artifact@v1 # Use the upload-pages-artifact action
+        uses: actions/upload-pages-artifact@v3 # Use the upload-pages-artifact action
         with:
           path: "." # Upload the entire repository content
 
