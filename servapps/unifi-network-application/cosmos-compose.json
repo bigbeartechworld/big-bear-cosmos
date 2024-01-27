@@ -3,7 +3,7 @@
   "minVersion": "0.9.0",
   "services": {
     "{ServiceName}": {
-      "image": "linuxserver/unifi-network-application:8.0.26",
+      "image": "linuxserver/unifi-network-application:8.0.28",
       "container_name": "{ServiceName}",
       "restart": "unless-stopped",
       "networks": {
