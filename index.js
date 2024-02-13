@@ -18,12 +18,17 @@ for (const file of servapps) {
   servapp.artefacts = {}; // Initialize an object for storing artefacts
 
   // Process screenshots: list all screenshots in the directory 'servapps/${file}/screenshots'
-  const screenshots = fs.readdirSync(`./servapps/${file}/screenshots`);
-  for (const screenshot of screenshots) {
-    // Store the URL of each screenshot
-    servapp.screenshots.push(
-      `https://cosmos.bigbeartechworld.com/servapps/${file}/screenshots/${screenshot}`
-    );
+  if (fs.existsSync(`./servapps/${file}/screenshots`)) {
+    // Check if the screenshots directory exists
+    const screenshots = fs.readdirSync(`./servapps/${file}/screenshots`);
+    for (const screenshot of screenshots) {
+      // Store the URL of each screenshot
+      servapp.screenshots.push(
+        `https://cosmos.bigbeartechworld.com/servapps/${file}/screenshots/${screenshot}`
+      );
+    }
+  } else {
+    console.log(`No screenshots directory found for servapp ${file}.`);
   }
 
   // Process artefacts: if artefacts directory exists, list all artefacts
