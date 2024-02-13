@@ -9,8 +9,8 @@ services:
       TZ: UTC
       WEBPASSWORD: your_password
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/etc:/etc/pihole/"
-      - "{DefaultDataPath}/AppData/{ServiceName}/dnsmasq.d:/etc/dnsmasq.d/"
+      - "{ServiceName}-data:/etc/pihole/"
+      - "{ServiceName}-data-2:/etc/dnsmasq.d/"
     ports:
       - 53:53/tcp
       - 53:53/udp
@@ -23,4 +23,4 @@ services:
 networks:
   pihole-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

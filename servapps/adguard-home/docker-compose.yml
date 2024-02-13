@@ -9,8 +9,8 @@ services:
         reservations:
           memory: 64M
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data/work:/opt/adguardhome/work"
-      - "{DefaultDataPath}/AppData/{ServiceName}/data/conf:/opt/adguardhome/conf"
+      - "{ServiceName}-data:/opt/adguardhome/work"
+      - "{ServiceName}-data-2:/opt/adguardhome/conf"
     restart: unless-stopped
     network_mode: bridge
     ports:
@@ -23,4 +23,4 @@ services:
 networks:
   adguard-home-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

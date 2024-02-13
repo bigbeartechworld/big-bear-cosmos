@@ -14,4 +14,4 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

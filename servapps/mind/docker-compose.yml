@@ -7,8 +7,8 @@ services:
     environment:
       - TZ=UTC
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/db:/app/db"
+      - "{ServiceName}-data:/app/db"
     ports:
       - 8080:8080
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

@@ -10,7 +10,7 @@ services:
       - 9000:9000
       - 9443:9443
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/data"
+      - "{ServiceName}-data:/data"
       - /var/run/docker.sock:/var/run/docker.sock
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

@@ -9,9 +9,9 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/project:/home/coder/project"
+      - "{ServiceName}-data:/home/coder/project"
     ports:
       - 8080:8443
     restart: always
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

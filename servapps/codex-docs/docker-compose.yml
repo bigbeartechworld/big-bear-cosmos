@@ -6,10 +6,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/uploads:/usr/src/app/uploads"
-      - "{DefaultDataPath}/AppData/{ServiceName}/db:/usr/src/app/db"
-      - "{DefaultDataPath}/AppData/{ServiceName}/codex-docs-config.local.yaml:/\
-        usr/src/app/docs-config.yaml"
+      - "{ServiceName}-data:/usr/src/app/uploads"
+      - "{ServiceName}-data-2:/usr/src/app/db"
+      - "{ServiceName}-data-3:/usr/src/app/docs-config.yaml"
     container_name: "{ServiceName}"
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

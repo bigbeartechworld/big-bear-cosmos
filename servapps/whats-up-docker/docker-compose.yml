@@ -9,4 +9,4 @@ services:
     ports:
       - 3000:3000
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

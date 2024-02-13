@@ -15,7 +15,7 @@ services:
       database__connection__database: ghost
       url: http://localhost:2368
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/content:/var/lib/ghost/content"
+      - "{ServiceName}-app-data:/var/lib/ghost/content"
     ports:
       - 2368:2368
     depends_on:
@@ -26,7 +26,7 @@ services:
     image: mysql:8.0
     restart: on-failure
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/mysql:/var/lib/mysql"
+      - "{ServiceName}-db-data:/var/lib/mysql"
     environment:
       MYSQL_USER: ghost
       MYSQL_DATABASE: ghost
@@ -38,4 +38,4 @@ services:
 networks:
   ghost-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

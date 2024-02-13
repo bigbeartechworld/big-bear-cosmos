@@ -30,11 +30,11 @@ services:
       - ENABLE_SCHEDULED_UPDATE_MAME_XML=true
       - SCHEDULED_UPDATE_MAME_XML_CRON=0 5 * * *
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/library:/romm/library"
-      - "{DefaultDataPath}/AppData/{ServiceName}/resources:/romm/resources"
-      - "{DefaultDataPath}/AppData/{ServiceName}/config.yml:/romm/config.yml"
-      - "{DefaultDataPath}/AppData/{ServiceName}/database:/romm/database"
-      - "{DefaultDataPath}/AppData/{ServiceName}/logs:/romm/logs"
+      - "{ServiceName}-app-data:/romm/library"
+      - "{ServiceName}-app-data-2:/romm/resources"
+      - "{ServiceName}-app-data-3:/romm/config.yml"
+      - "{ServiceName}-app-data-4:/romm/database"
+      - "{ServiceName}-app-data-5:/romm/logs"
     ports:
       - 1080:8080
     depends_on:
@@ -50,7 +50,7 @@ services:
       - MYSQL_USER=romm-user
       - MYSQL_PASSWORD=casaos
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/mysql:/var/lib/mysql"
+      - "{ServiceName}-rommdb-data:/var/lib/mysql"
     ports:
       - 3306:3306
     restart: unless-stopped
@@ -62,4 +62,4 @@ services:
     ports:
       - 6379:6379
     hostname: "{ServiceName}-redis"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

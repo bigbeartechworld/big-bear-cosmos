@@ -18,8 +18,8 @@ services:
       - 8080:80
       - 10443:443
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/cache:/data/cache"
-      - "{DefaultDataPath}/AppData/{ServiceName}/logs:/data/logs"
+      - "{ServiceName}-app-data:/data/cache"
+      - "{ServiceName}-app-data-2:/data/logs"
     container_name: "{ServiceName}-app"
     hostname: "{ServiceName}-app"
   "{ServiceName}-dns":
@@ -40,4 +40,4 @@ services:
       - 53:53/tcp
     container_name: "{ServiceName}-dns"
     hostname: "{ServiceName}-dns"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

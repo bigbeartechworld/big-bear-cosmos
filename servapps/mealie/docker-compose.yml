@@ -6,8 +6,8 @@ services:
     image: hkotel/mealie:v1.1.1
     restart: unless-stopped
     volumes:
-      - "{ServiceName}-mealie-data:/app/data"
+      - "{ServiceName}-data:/app/data"
     ports:
       - 9925:9000
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

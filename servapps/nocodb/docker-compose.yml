@@ -12,7 +12,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/usr/src/app/data"
+      - "{ServiceName}-app-data:/usr/src/app/data"
     hostname: "{ServiceName}-app"
   "{ServiceName}-db":
     image: postgres:13
@@ -22,7 +22,7 @@ services:
       POSTGRES_PASSWORD: nocodb
       POSTGRES_DB: nocodb
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+      - "{ServiceName}-db-data:/var/lib/postgresql/data"
     container_name: "{ServiceName}-db"
     hostname: "{ServiceName}-db"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

@@ -6,11 +6,11 @@ services:
     container_name: "{ServiceName}"
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/data"
+      - "{ServiceName}-data:/data"
     environment:
       - TZ=UTC
     ports:
       - 8025:8025
       - 1025:1025
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

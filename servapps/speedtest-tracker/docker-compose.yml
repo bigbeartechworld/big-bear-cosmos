@@ -18,8 +18,8 @@ services:
       - TZ=America/Chicago
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - "{DefaultDataPath}/AppData/{ServiceName}/config:/config"
-      - "{DefaultDataPath}/AppData/{ServiceName}/web:/etc/ssl/web"
+      - "{ServiceName}-speedtest-tracker-data:/config"
+      - "{ServiceName}-speedtest-tracker-data-2:/etc/ssl/web"
     image: ghcr.io/alexjustesen/speedtest-tracker:v0.15.2
     restart: unless-stopped
     depends_on:
@@ -34,7 +34,7 @@ services:
       - MARIADB_PASSWORD=casaos
       - MARIADB_RANDOM_ROOT_PASSWORD=true
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/mysql:/var/lib/mysql"
+      - "{ServiceName}-db-data:/var/lib/mysql"
     container_name: "{ServiceName}-db"
     hostname: "{ServiceName}-db"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

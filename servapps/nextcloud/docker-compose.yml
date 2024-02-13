@@ -8,7 +8,7 @@ services:
     ports:
       - 7580:80
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/html:/var/www/html"
+      - "{ServiceName}-nextcloud-data:/var/www/html"
     environment:
       - POSTGRES_HOST=db-nextcloud
       - REDIS_HOST=redis-nextcloud
@@ -31,7 +31,7 @@ services:
     image: postgres:14.2
     restart: on-failure
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+      - "{ServiceName}-db-nextcloud-data:/var/lib/postgresql/data"
     environment:
       - POSTGRES_PASSWORD=casaos
       - POSTGRES_USER=casaos
@@ -45,7 +45,7 @@ services:
     image: redis:6.2.6
     restart: on-failure
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/redis:/data"
+      - "{ServiceName}-redis-nextcloud-data:/data"
     networks:
       - nextcloud_network
     hostname: "{ServiceName}-redis-nextcloud"
@@ -53,7 +53,7 @@ services:
     image: nextcloud:28.0.2-apache
     restart: on-failure
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/html:/var/www/html"
+      - "{ServiceName}-cron-data:/var/www/html"
     entrypoint: /cron.sh
     depends_on:
       - db-nextcloud
@@ -65,4 +65,4 @@ services:
 networks:
   nextcloud_network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

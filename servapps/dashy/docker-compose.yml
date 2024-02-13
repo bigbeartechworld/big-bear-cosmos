@@ -6,7 +6,7 @@ services:
     container_name: "{ServiceName}"
     network_mode: bridge
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/public:/app/public"
+      - "{ServiceName}-data:/app/public"
     ports:
       - 4000:80
     environment:
@@ -22,4 +22,4 @@ services:
       retries: 3
       start_period: 40s
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

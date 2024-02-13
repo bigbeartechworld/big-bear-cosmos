@@ -15,8 +15,8 @@ services:
       SERVER_PORT: "1080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/var/lib/gladysassistant"
+      - "{ServiceName}-data:/var/lib/gladysassistant"
       - /dev:/dev
       - /run/udev:/run/udev
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

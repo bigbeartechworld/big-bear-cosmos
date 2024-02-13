@@ -39,8 +39,7 @@ services:
     image: postgres:15-alpine
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/pg_data:/var/lib/postgresql/da\
-        ta"
+      - "{ServiceName}-postgres-data:/var/lib/postgresql/data"
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
@@ -65,7 +64,7 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/minio_data:/data"
+      - "{ServiceName}-minio-data:/data"
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
@@ -97,4 +96,4 @@ services:
 networks:
   reactive-resume-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

@@ -10,6 +10,6 @@ services:
       - 7350:80
       - 7351:443
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/baserow/data"
+      - "{ServiceName}-data:/baserow/data"
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

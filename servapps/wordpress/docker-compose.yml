@@ -11,7 +11,7 @@ services:
       WORDPRESS_DB_PASSWORD: casaos
       WORDPRESS_DB_NAME: wordpress
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/html:/var/www/html"
+      - "{ServiceName}-app-data:/var/www/html"
     depends_on:
       - db
     container_name: "{ServiceName}-app"
@@ -24,7 +24,7 @@ services:
       MYSQL_PASSWORD: casaos
       MYSQL_ROOT_PASSWORD: casaos
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/mysql:/var/lib/mysql"
+      - "{ServiceName}-db-data:/var/lib/mysql"
     container_name: "{ServiceName}-db"
     hostname: "{ServiceName}-db"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

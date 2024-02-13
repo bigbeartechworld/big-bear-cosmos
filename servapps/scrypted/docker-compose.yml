@@ -9,7 +9,7 @@ services:
       - SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer SET_THIS_TO_SOME_RANDOM_TEXT
       - SCRYPTED_WEBHOOK_UPDATE=http://localhost:10444/v1/update
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/server/volume"
+      - "{ServiceName}-scrypted-data:/server/volume"
     restart: unless-stopped
     logging:
       driver: json-file
@@ -36,4 +36,4 @@ services:
       - 10444:8080
     command: --interval 3600 --cleanup --scope scrypted
     hostname: "{ServiceName}-watchtower"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

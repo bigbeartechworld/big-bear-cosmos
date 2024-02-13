@@ -11,7 +11,6 @@ services:
       - 5000-5150:5000-5150
       - 5000-5150:5000-5150/udp
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/logs:/opt/traccar/logs:rw"
-      - "{DefaultDataPath}/AppData/{ServiceName}/traccar.xml:/opt/traccar/conf/\
-        traccar.xml:ro"
-minVersion: 0.14.0-0
+      - "{ServiceName}-data:/opt/traccar/logs"
+      - "{ServiceName}-data-2:/opt/traccar/conf/traccar.xml"
+minVersion: 0.14.0

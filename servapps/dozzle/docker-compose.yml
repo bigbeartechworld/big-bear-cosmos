@@ -10,4 +10,4 @@ services:
     ports:
       - 8888:8080
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

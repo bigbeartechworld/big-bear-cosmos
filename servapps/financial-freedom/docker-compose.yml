@@ -8,9 +8,8 @@ services:
     networks:
       - financial-freedom-network
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/logs:/var/www/html/storage/logs"
-      - "{DefaultDataPath}/AppData/{ServiceName}/sessions:/var/www/html/storage\
-        /framework/sessions"
+      - "{ServiceName}-app-data:/var/www/html/storage/logs"
+      - "{ServiceName}-app-data-2:/var/www/html/storage/framework/sessions"
     ports:
       - 8080:80
       - 8443:443
@@ -54,7 +53,7 @@ services:
   "{ServiceName}-mariadb":
     image: mariadb:10.11
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/mariadb:/var/lib/mysql"
+      - "{ServiceName}-mariadb-data:/var/lib/mysql"
     networks:
       - financial-freedom-network
     environment:
@@ -71,4 +70,4 @@ services:
 networks:
   financial-freedom-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

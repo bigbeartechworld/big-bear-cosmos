@@ -6,8 +6,8 @@ services:
     image: octoprint/octoprint:1.9.3
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/octoprint:/octoprint"
+      - "{ServiceName}-data:/octoprint"
     ports:
       - 1080:80
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

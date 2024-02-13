@@ -32,8 +32,8 @@ services:
       PHOTOPRISM_SITE_CAPTION: AI-Powered Photos App
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/originals:/photoprism/originals"
-      - "{DefaultDataPath}/AppData/{ServiceName}/storage:/photoprism/storage"
+      - "{ServiceName}-app-data:/photoprism/originals"
+      - "{ServiceName}-app-data-2:/photoprism/storage"
     ports:
       - 2342:2342
     networks:
@@ -50,7 +50,7 @@ services:
       --collation-server=utf8mb4_unicode_ci --max-connections=512
       --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=120
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/mysql:/var/lib/mysql"
+      - "{ServiceName}-photoprism-db-data:/var/lib/mysql"
     environment:
       MARIADB_DATABASE: photoprism
       MARIADB_USER: photoprism
@@ -62,4 +62,4 @@ services:
 networks:
   photoprism-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

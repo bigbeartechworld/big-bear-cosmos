@@ -11,12 +11,12 @@ services:
       - 7200:80/tcp
     restart: unless-stopped
     volumes:
-      - type: bind
-        source: "{DefaultDataPath}/AppData/{ServiceName}/cache"
+      - type: volume
+        source: "{ServiceName}-data"
         target: /var/cache/ntfy
-      - type: bind
-        source: "{DefaultDataPath}/AppData/{ServiceName}/config"
+      - type: volume
+        source: "{ServiceName}-data-2"
         target: /etc/ntfy
     container_name: "{ServiceName}"
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

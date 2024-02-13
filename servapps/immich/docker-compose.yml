@@ -10,7 +10,7 @@ services:
     ports:
       - 2283:3001
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/upload:/usr/src/app/upload"
+      - "{ServiceName}-immich-server-data:/usr/src/app/upload"
     environment:
       DB_HOSTNAME: immich-postgres
       DB_USERNAME: casaos
@@ -31,7 +31,7 @@ services:
       - start.sh
       - microservices
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/upload:/usr/src/app/upload"
+      - "{ServiceName}-immich-microservices-data:/usr/src/app/upload"
     environment:
       DB_HOSTNAME: immich-postgres
       DB_USERNAME: casaos
@@ -48,7 +48,7 @@ services:
     container_name: "{ServiceName}-immich-machine-learning"
     image: ghcr.io/immich-app/immich-machine-learning:v1.94.1
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/model-cache:/cache"
+      - "{ServiceName}-immich-machine-learning-data:/cache"
     environment:
       DB_HOSTNAME: immich-postgres
       DB_USERNAME: casaos
@@ -72,7 +72,7 @@ services:
       POSTGRES_DB: immich
       PG_DATA: /var/lib/postgresql/data
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+      - "{ServiceName}-database-data:/var/lib/postgresql/data"
     restart: always
     hostname: "{ServiceName}-database"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

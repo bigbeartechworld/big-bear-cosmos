@@ -8,8 +8,8 @@ services:
     environment:
       - TRILIUM_DATA_DIR=/home/node/trilium-data
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/home/node/trilium-data"
+      - "{ServiceName}-data:/home/node/trilium-data"
     ports:
       - 8080:8080
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

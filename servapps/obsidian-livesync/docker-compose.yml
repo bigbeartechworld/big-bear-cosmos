@@ -6,13 +6,12 @@ services:
     image: couchdb:3.3.3
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data/couchdb:/opt/couchdb/data"
-      - "{DefaultDataPath}/AppData/{ServiceName}/data/local.ini:/opt/couchdb/et\
-        c/local.ini"
+      - "{ServiceName}-data:/opt/couchdb/data"
+      - "{ServiceName}-data-2:/opt/couchdb/etc/local.ini"
     environment:
       - COUCHDB_USER=casaos
       - COUCHDB_PASSWORD=casaos
     ports:
       - 5984:5984
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

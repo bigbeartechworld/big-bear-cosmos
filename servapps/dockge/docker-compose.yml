@@ -9,10 +9,9 @@ services:
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/app/data"
-      - "{DefaultDataPath}/AppData/{ServiceName}/stacks:/DATA/AppData/big-bear-\
-        dockge/stacks"
+      - "{ServiceName}-data:/app/data"
+      - "{ServiceName}-data-2:/DATA/AppData/big-bear-dockge/stacks"
     ports:
       - 5001:5001
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

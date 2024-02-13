@@ -10,7 +10,7 @@ services:
     links:
       - db-n8n
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/.n8n:/home/node/.n8n"
+      - "{ServiceName}-app-data:/home/node/.n8n"
     environment:
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_DATABASE=n8n
@@ -27,9 +27,8 @@ services:
     image: postgres:14.2
     restart: on-failure
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
-      - "{DefaultDataPath}/AppData/{ServiceName}/db/init-data.sh:/docker-entryp\
-        oint-initdb.d/init-data.sh"
+      - "{ServiceName}-db-n8n-data:/var/lib/postgresql/data"
+      - "{ServiceName}-db-n8n-data-2:/docker-entrypoint-initdb.d/init-data.sh"
     environment:
       - POSTGRES_PASSWORD=bigbearcasaos
       - POSTGRES_USER=bigbearcasaos
@@ -42,4 +41,4 @@ services:
       timeout: 5s
       retries: 10
     hostname: "{ServiceName}-db-n8n"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

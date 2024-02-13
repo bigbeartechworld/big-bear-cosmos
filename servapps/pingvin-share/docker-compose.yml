@@ -7,9 +7,8 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - "{DefaultDataPath}/AppData/pingvin-share/data:/opt/app/backend/data"
-      - "{DefaultDataPath}/AppData/pingvin-share/images:/opt/app/frontend/publi\
-        c/img"
+      - "{ServiceName}-data:/opt/app/backend/data"
+      - "{ServiceName}-data-2:/opt/app/frontend/public/img"
     container_name: "{ServiceName}"
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

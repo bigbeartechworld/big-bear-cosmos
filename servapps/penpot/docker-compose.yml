@@ -6,7 +6,7 @@ services:
     image: penpotapp/frontend:1.19.3
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/assets:/opt/data/assets"
+      - "{ServiceName}-penpot-frontend-data:/opt/data/assets"
     ports:
       - 9001:80
     depends_on:
@@ -20,7 +20,7 @@ services:
     container_name: "{ServiceName}-penpot-backend"
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/assets:/opt/data/assets"
+      - "{ServiceName}-penpot-backend-data:/opt/data/assets"
     depends_on:
       - penpot-postgres
       - penpot-redis
@@ -55,7 +55,7 @@ services:
     container_name: "{ServiceName}-penpot-postgres"
     stop_signal: SIGINT
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+      - "{ServiceName}-penpot-postgres-data:/var/lib/postgresql/data"
     networks:
       - big-bear-penpot-network
     environment:
@@ -85,4 +85,4 @@ services:
 networks:
   big-bear-penpot-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

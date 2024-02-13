@@ -7,7 +7,7 @@ services:
     ports:
       - 8081:3456
     volumes:
-      - "{ServiceName}-vikunja-files:/app/vikunja/files"
+      - "{ServiceName}-vikunja-data:/app/vikunja/files"
     environment:
       VIKUNJA_SERVICE_PUBLICURL: http://<your public frontend url with slash>/
       VIKUNJA_DATABASE_HOST: vikunja-db
@@ -34,7 +34,7 @@ services:
       MYSQL_PASSWORD: secret
       MYSQL_DATABASE: vikunja
     volumes:
-      - "{ServiceName}-vikunja-db:/var/lib/mysql"
+      - "{ServiceName}-vikunja-db-data:/var/lib/mysql"
     restart: unless-stopped
     networks:
       - vikunja-network
@@ -42,4 +42,4 @@ services:
 networks:
   vikunja-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

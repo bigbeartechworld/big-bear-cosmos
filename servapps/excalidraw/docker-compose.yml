@@ -1,13 +1,11 @@
 cosmos-installer: null
-name: big-bear-actual-server
+name: big-bear-excalidraw
 services:
   "{ServiceName}":
-    image: actualbudget/actual-server:24.2.0
     container_name: "{ServiceName}"
-    volumes:
-      - "{ServiceName}-data:/data"
-    ports:
-      - 5006:5006
+    image: excalidraw/excalidraw
     restart: unless-stopped
+    ports:
+      - 8000:80
     hostname: "{ServiceName}"
 minVersion: 0.14.0

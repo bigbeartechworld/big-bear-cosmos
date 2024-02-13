@@ -13,7 +13,7 @@ services:
       - 8388:8388/tcp
       - 8388:8388/udp
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/gluetun"
+      - "{ServiceName}-data:/gluetun"
     environment:
       - VPN_SERVICE_PROVIDER=custom
       - VPN_TYPE=openvpn
@@ -22,4 +22,4 @@ services:
       - TZ=
       - UPDATER_PERIOD=
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

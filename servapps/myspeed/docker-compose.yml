@@ -6,8 +6,8 @@ services:
     ports:
       - 5216:5216
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/myspeed/data"
+      - "{ServiceName}-data:/myspeed/data"
     restart: unless-stopped
     container_name: "{ServiceName}"
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

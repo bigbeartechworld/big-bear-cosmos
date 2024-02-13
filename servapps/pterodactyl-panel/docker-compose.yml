@@ -12,10 +12,10 @@ services:
       - database
       - cache
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/var/:/app/var/"
-      - "{DefaultDataPath}/AppData/{ServiceName}/nginx/:/etc/nginx/http.d/"
-      - "{DefaultDataPath}/AppData/{ServiceName}/certs/:/etc/letsencrypt/"
-      - "{DefaultDataPath}/AppData/{ServiceName}/logs/:/app/storage/logs"
+      - "{ServiceName}-app-data:/app/var/"
+      - "{ServiceName}-app-data-2:/etc/nginx/http.d/"
+      - "{ServiceName}-app-data-3:/etc/letsencrypt/"
+      - "{ServiceName}-app-data-4:/app/storage/logs"
     environment:
       APP_URL: http://example.com
       APP_TIMEZONE: UTC
@@ -42,7 +42,7 @@ services:
     restart: always
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/database:/var/lib/mysql"
+      - "{ServiceName}-database-data:/var/lib/mysql"
     environment:
       MYSQL_DATABASE: panel
       MYSQL_USER: pterodactyl
@@ -55,4 +55,4 @@ services:
     restart: always
     container_name: "{ServiceName}-cache"
     hostname: "{ServiceName}-cache"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

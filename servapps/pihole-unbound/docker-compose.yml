@@ -11,8 +11,8 @@ services:
       DNS1: 127.0.0.1#5353
       DNS2: no
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/etc:/etc/pihole/"
-      - "{DefaultDataPath}/AppData/{ServiceName}/dnsmasq.d:/etc/dnsmasq.d/"
+      - "{ServiceName}-data:/etc/pihole/"
+      - "{ServiceName}-data-2:/etc/dnsmasq.d/"
     ports:
       - 53:53/tcp
       - 53:53/udp
@@ -25,4 +25,4 @@ services:
 networks:
   pihole-unbound-network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

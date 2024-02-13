@@ -7,16 +7,11 @@ services:
     ports:
       - 7400:80
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/logs:/var/log/onlyo\
-        ffice"
-      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/data:/var/www/onlyo\
-        ffice/Data"
-      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/lib:/var/lib/onlyof\
-        fice"
-      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/rabbitmq:/var/lib/r\
-        abbitmq"
-      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/redis:/var/lib/redis"
-      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/db:/var/lib/postgre\
-        sql"
+      - "{ServiceName}-data:/var/log/onlyoffice"
+      - "{ServiceName}-data-2:/var/www/onlyoffice/Data"
+      - "{ServiceName}-data-3:/var/lib/onlyoffice"
+      - "{ServiceName}-data-4:/var/lib/rabbitmq"
+      - "{ServiceName}-data-5:/var/lib/redis"
+      - "{ServiceName}-data-6:/var/lib/postgresql"
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

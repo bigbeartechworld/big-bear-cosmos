@@ -6,11 +6,11 @@ services:
     image: ghcr.io/ajnart/homarr:0.14.6
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/configs:/app/data/configs"
-      - "{DefaultDataPath}/AppData/{ServiceName}/icons:/app/public/icons"
-      - "{DefaultDataPath}/AppData/{ServiceName}/data:/data"
+      - "{ServiceName}-data:/app/data/configs"
+      - "{ServiceName}-data-2:/app/public/icons"
+      - "{ServiceName}-data-3:/data"
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 7575:7575
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

@@ -22,7 +22,7 @@ services:
       POSTGRES_USER: umami
       POSTGRES_PASSWORD: umami
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+      - "{ServiceName}-db-data:/var/lib/postgresql/data"
     restart: always
     healthcheck:
       test:
@@ -33,4 +33,4 @@ services:
       retries: 5
     container_name: "{ServiceName}-db"
     hostname: "{ServiceName}-db"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

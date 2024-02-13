@@ -6,9 +6,9 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}:/mnt/host# Mounting the local
-        dashdot directory to /mnt/host inside the container"
+      - "{ServiceName}-data:/mnt/host# Mounting the local dashdot directory to
+        /mnt/host inside the container"
     privileged: true
     container_name: "{ServiceName}"
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

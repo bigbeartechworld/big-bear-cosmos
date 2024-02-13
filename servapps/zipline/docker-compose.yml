@@ -6,8 +6,8 @@ services:
     image: ghcr.io/diced/zipline:3.7.8
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/uploads:/zipline/uploads"
-      - "{DefaultDataPath}/AppData/{ServiceName}/public:/zipline/public"
+      - "{ServiceName}-zipline-data:/zipline/uploads"
+      - "{ServiceName}-zipline-data-2:/zipline/public"
     environment:
       - CORE_RETURN_HTTPS=false
       - CORE_SECRET=changeme
@@ -29,12 +29,11 @@ services:
       - POSTGRES_PASSWORD=postgrespassword
       - POSTGRES_DATABASE=zipline
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/postgres:/var/lib/postgresql/d\
-        ata"
+      - "{ServiceName}-zipline-db-data:/var/lib/postgresql/data"
     networks:
       - zipline_network
     hostname: "{ServiceName}-zipline-db"
 networks:
   zipline_network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

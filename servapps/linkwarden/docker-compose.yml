@@ -6,7 +6,7 @@ services:
     image: ghcr.io/linkwarden/linkwarden:v2.4.9
     restart: unless-stopped
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data/linkwarden:/data/data"
+      - "{ServiceName}-linkwarden-data:/data/data"
     environment:
       - DATABASE_URL=postgresql://casaos:casaospassword@big-bear-linkwarden-db:5432/big-bear-linkwarden
       - NEXTAUTH_SECRET=7e2d8797-dc20-422a-9a68-44b958bd33c0
@@ -26,12 +26,11 @@ services:
       - POSTGRES_PASSWORD=casaospassword
       - POSTGRES_DB=big-bear-linkwarden
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/data/postgres:/var/lib/postgre\
-        sql/data"
+      - "{ServiceName}-linkwarden-db-data:/var/lib/postgresql/data"
     networks:
       - linkwarden_network
     hostname: "{ServiceName}-linkwarden-db"
 networks:
   linkwarden_network:
     driver: bridge
-minVersion: 0.14.0-0
+minVersion: 0.14.0

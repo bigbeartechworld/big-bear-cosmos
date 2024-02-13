@@ -9,12 +9,12 @@ services:
     ports:
       - 5005:5005/tcp
     volumes:
-      - type: bind
-        source: "{DefaultDataPath}/AppData/{ServiceName}/data"
+      - type: volume
+        source: "{ServiceName}-data"
         target: /app/data
       - type: bind
         source: /var/run/docker.sock
         target: /var/run/docker.sock
     container_name: "{ServiceName}"
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0

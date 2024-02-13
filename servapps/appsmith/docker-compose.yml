@@ -8,7 +8,7 @@ services:
       - 1080:80
       - 10443:443
     volumes:
-      - "{DefaultDataPath}/AppData/{ServiceName}/stacks:/appsmith-stacks"
+      - "{ServiceName}-data:/appsmith-stacks"
     restart: unless-stopped
     hostname: "{ServiceName}"
-minVersion: 0.14.0-0
+minVersion: 0.14.0
