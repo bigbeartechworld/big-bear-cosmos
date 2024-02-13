@@ -1,0 +1,15 @@
+{
+  "name": "it-tools",
+  "description": "IT Tools",
+  "longDescription": "Collection of handy online tools for developers, with great UX as a web app.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/it-tools.png?raw=true"
+}

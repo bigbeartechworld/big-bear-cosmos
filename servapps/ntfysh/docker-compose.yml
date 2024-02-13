@@ -1,0 +1,22 @@
+cosmos-installer: null
+name: big-bear-ntfy
+services:
+  "{ServiceName}":
+    image: binwiederhier/ntfy:v2.8.0
+    command:
+      - serve
+    environment:
+      - TZ=UTC
+    ports:
+      - 7200:80/tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: "{DefaultDataPath}/AppData/{ServiceName}/cache"
+        target: /var/cache/ntfy
+      - type: bind
+        source: "{DefaultDataPath}/AppData/{ServiceName}/config"
+        target: /etc/ntfy
+    container_name: "{ServiceName}"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

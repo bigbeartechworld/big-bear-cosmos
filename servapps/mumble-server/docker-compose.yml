@@ -1,0 +1,12 @@
+cosmos-installer: null
+name: big-bear-mumble-server
+services:
+  "{ServiceName}":
+    image: mumblevoip/mumble-server:v1.4.230-6
+    container_name: "{ServiceName}"
+    hostname: "{ServiceName}"
+    restart: on-failure
+    ports:
+      - 64738:64738
+      - 64738:64738/udp
+minVersion: 0.14.0-0

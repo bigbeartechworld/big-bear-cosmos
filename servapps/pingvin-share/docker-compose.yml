@@ -1,0 +1,15 @@
+cosmos-installer: null
+name: big-bear-pingvin-share
+services:
+  "{ServiceName}":
+    image: stonith404/pingvin-share:v0.22.0
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    volumes:
+      - "{DefaultDataPath}/AppData/pingvin-share/data:/opt/app/backend/data"
+      - "{DefaultDataPath}/AppData/pingvin-share/images:/opt/app/frontend/publi\
+        c/img"
+    container_name: "{ServiceName}"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

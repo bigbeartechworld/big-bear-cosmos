@@ -1,0 +1,15 @@
+{
+  "name": "mailpit",
+  "description": "Mailpit",
+  "longDescription": "Mailpit is a multi-platform email testing tool & API for developers.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://raw.githubusercontent.com/axllent/mailpit/831157a52e77415cf074331bb1a54f1cf7e3bfc6/server/ui/favicon.svg"
+}

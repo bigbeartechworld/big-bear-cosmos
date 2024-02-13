@@ -1,0 +1,68 @@
+cosmos-installer: null
+name: big-bear-nextcloud
+services:
+  "{ServiceName}-nextcloud":
+    container_name: "{ServiceName}-nextcloud"
+    image: nextcloud:28.0.2-apache
+    restart: unless-stopped
+    ports:
+      - 7580:80
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/html:/var/www/html"
+    environment:
+      - POSTGRES_HOST=db-nextcloud
+      - REDIS_HOST=redis-nextcloud
+      - POSTGRES_PASSWORD=casaos
+      - POSTGRES_USER=casaos
+      - POSTGRES_DB=nextcloud
+      - NEXTCLOUD_ADMIN_USER=casaos
+      - NEXTCLOUD_ADMIN_PASSWORD=casaos
+      - TRUSTED_PROXIES=
+      - OVERWRITEPROTOCOL=http
+      - PHP_UPLOAD_LIMIT=1024G
+    depends_on:
+      - db-nextcloud
+      - redis-nextcloud
+    networks:
+      - nextcloud_network
+    hostname: "{ServiceName}-nextcloud"
+  "{ServiceName}-db-nextcloud":
+    container_name: "{ServiceName}-db-nextcloud"
+    image: postgres:14.2
+    restart: on-failure
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_PASSWORD=casaos
+      - POSTGRES_USER=casaos
+      - POSTGRES_DB=nextcloud
+    networks:
+      - nextcloud_network
+    hostname: "{ServiceName}-db-nextcloud"
+  "{ServiceName}-redis-nextcloud":
+    container_name: "{ServiceName}-redis-nextcloud"
+    user: 1000:1000
+    image: redis:6.2.6
+    restart: on-failure
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/redis:/data"
+    networks:
+      - nextcloud_network
+    hostname: "{ServiceName}-redis-nextcloud"
+  "{ServiceName}-cron":
+    image: nextcloud:28.0.2-apache
+    restart: on-failure
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/html:/var/www/html"
+    entrypoint: /cron.sh
+    depends_on:
+      - db-nextcloud
+      - redis-nextcloud
+    networks:
+      - nextcloud_network
+    container_name: "{ServiceName}-cron"
+    hostname: "{ServiceName}-cron"
+networks:
+  nextcloud_network:
+    driver: bridge
+minVersion: 0.14.0-0

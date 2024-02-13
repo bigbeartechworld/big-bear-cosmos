@@ -1,0 +1,26 @@
+cosmos-installer: null
+name: big-bear-pihole
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: pihole/pihole:2024.01.0
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+      WEBPASSWORD: your_password
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/etc:/etc/pihole/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/dnsmasq.d:/etc/dnsmasq.d/"
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 67:67/udp
+      - 8080:80/tcp
+      - 10443:443/tcp
+    networks:
+      - pihole-network
+    hostname: "{ServiceName}"
+networks:
+  pihole-network:
+    driver: bridge
+minVersion: 0.14.0-0

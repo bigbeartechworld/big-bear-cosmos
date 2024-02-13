@@ -1,0 +1,15 @@
+{
+  "name": "immich",
+  "description": "Immich",
+  "longDescription": "Self-hosted photo and video storage.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png"
+}

@@ -1,0 +1,22 @@
+cosmos-installer: null
+name: big-bear-onlyoffice
+services:
+  "{ServiceName}":
+    image: onlyoffice/documentserver:8.0.0
+    container_name: "{ServiceName}"
+    ports:
+      - 7400:80
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/logs:/var/log/onlyo\
+        ffice"
+      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/data:/var/www/onlyo\
+        ffice/Data"
+      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/lib:/var/lib/onlyof\
+        fice"
+      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/rabbitmq:/var/lib/r\
+        abbitmq"
+      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/redis:/var/lib/redis"
+      - "{DefaultDataPath}/AppData/{ServiceName}/onlyoffice/db:/var/lib/postgre\
+        sql"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

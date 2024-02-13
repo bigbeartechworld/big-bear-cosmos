@@ -1,0 +1,14 @@
+cosmos-installer: null
+name: big-bear-focalboard
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: mattermost/focalboard:7.11.4
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    network_mode: bridge
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/opt/focalboard/data"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

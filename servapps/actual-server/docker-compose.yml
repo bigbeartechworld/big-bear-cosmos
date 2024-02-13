@@ -1,0 +1,13 @@
+cosmos-installer: null
+name: big-bear-actual-server
+services:
+  "{ServiceName}":
+    image: actualbudget/actual-server:24.2.0
+    container_name: "{ServiceName}"
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}:/data"
+    ports:
+      - 5006:5006
+    restart: unless-stopped
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

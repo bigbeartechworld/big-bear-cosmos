@@ -1,0 +1,14 @@
+{
+  "name": "lancache",
+  "description": "LAN Party game caching made easy",
+  "longDescription": "Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/lancache.png?raw=true"
+}

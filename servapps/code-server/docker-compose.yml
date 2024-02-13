@@ -1,0 +1,17 @@
+cosmos-installer: null
+name: big-bear-code-server
+services:
+  "{ServiceName}":
+    image: linuxserver/code-server:4.21.1
+    container_name: "{ServiceName}"
+    environment:
+      - PASSWORD=my_password
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/project:/home/coder/project"
+    ports:
+      - 8080:8443
+    restart: always
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

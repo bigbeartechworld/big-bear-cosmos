@@ -1,0 +1,26 @@
+cosmos-installer: null
+name: big-bear-pterodactyl-wings
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: ghcr.io/pterodactyl/wings:v1.11.8
+    restart: always
+    ports:
+      - 8080:8080
+      - 2022:2022
+    tty: true
+    environment:
+      TZ: UTC
+      WINGS_UID: 988
+      WINGS_GID: 988
+      WINGS_USERNAME: pterodactyl
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/containers/:/var/lib/docker/containers/
+      - /etc/ssl/certs:/etc/ssl/certs:ro
+      - "{DefaultDataPath}/AppData/{ServiceName}/tmp:/tmp/pterodactyl/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/etc:/etc/pterodactyl/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/logs:/var/log/pterodactyl/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/lib:/var/lib/pterodactyl/"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

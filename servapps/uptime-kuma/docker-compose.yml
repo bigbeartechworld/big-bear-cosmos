@@ -1,0 +1,13 @@
+cosmos-installer: null
+name: big-bear-uptime-kuma
+services:
+  "{ServiceName}":
+    image: louislam/uptime-kuma:1
+    container_name: "{ServiceName}"
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/app/data"
+    ports:
+      - 3001:3001
+    restart: always
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

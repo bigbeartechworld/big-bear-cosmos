@@ -1,0 +1,15 @@
+{
+  "name": "Romm",
+  "description": "RomM",
+  "longDescription": "RomM (Rom Manager) is a web-based retro roms manager integrated with IGDB.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/romm.png?raw=true"
+}

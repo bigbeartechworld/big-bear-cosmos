@@ -1,0 +1,26 @@
+cosmos-installer: null
+name: big-bear-adguard-home
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: adguard/adguardhome:v0.107.44
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data/work:/opt/adguardhome/work"
+      - "{DefaultDataPath}/AppData/{ServiceName}/data/conf:/opt/adguardhome/conf"
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 8080:80
+    networks:
+      - adguard-home-network
+    hostname: "{ServiceName}"
+networks:
+  adguard-home-network:
+    driver: bridge
+minVersion: 0.14.0-0

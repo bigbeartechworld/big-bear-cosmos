@@ -1,0 +1,16 @@
+{
+  "name": "dashy",
+  "description": "Dashy",
+  "longDescription": "Dashy helps you organize your self-hosted services by making them accessible from a single place",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashy.png"
+}

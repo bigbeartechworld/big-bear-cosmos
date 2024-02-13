@@ -1,0 +1,18 @@
+cosmos-installer: null
+name: big-bear-obsidian-livesync
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: couchdb:3.3.3
+    restart: unless-stopped
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data/couchdb:/opt/couchdb/data"
+      - "{DefaultDataPath}/AppData/{ServiceName}/data/local.ini:/opt/couchdb/et\
+        c/local.ini"
+    environment:
+      - COUCHDB_USER=casaos
+      - COUCHDB_PASSWORD=casaos
+    ports:
+      - 5984:5984
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

@@ -1,0 +1,15 @@
+cosmos-installer: null
+name: big-bear-phpmyadmin
+services:
+  "{ServiceName}":
+    image: phpmyadmin/phpmyadmin:5.2.1-fpm-alpine
+    container_name: "{ServiceName}"
+    environment:
+      PMA_HOST: "[YOUR-CASAOS-IP]"
+      PMA_PORT: "3306"
+      PMA_USER: bigbear
+      PMA_PASSWORD: password
+    ports:
+      - 8080:80
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

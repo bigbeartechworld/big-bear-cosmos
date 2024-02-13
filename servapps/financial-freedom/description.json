@@ -1,0 +1,15 @@
+{
+  "name": "financial-freedom",
+  "description": "Financial Freedom",
+  "longDescription": "Keep investors and their buyers out of your financial data. Own 100% of your data and start building financial wealth.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/financial-freedom/logo.png?raw=true"
+}

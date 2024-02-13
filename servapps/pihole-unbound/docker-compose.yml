@@ -1,0 +1,28 @@
+cosmos-installer: null
+name: big-bear-pihole-unbound
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: bigbeartechworld/big-bear-pihole-unbound:2024.01.0
+    restart: unless-stopped
+    environment:
+      TZ: America/Chicago
+      WEBPASSWORD: your_password
+      DNS1: 127.0.0.1#5353
+      DNS2: no
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/etc:/etc/pihole/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/dnsmasq.d:/etc/dnsmasq.d/"
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 67:67/udp
+      - 8080:80/tcp
+      - 10443:443/tcp
+    networks:
+      - pihole-unbound-network
+    hostname: "{ServiceName}"
+networks:
+  pihole-unbound-network:
+    driver: bridge
+minVersion: 0.14.0-0

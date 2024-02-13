@@ -1,0 +1,16 @@
+cosmos-installer: null
+name: big-bear-homarr
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: ghcr.io/ajnart/homarr:0.14.6
+    restart: unless-stopped
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/configs:/app/data/configs"
+      - "{DefaultDataPath}/AppData/{ServiceName}/icons:/app/public/icons"
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/data"
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 7575:7575
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

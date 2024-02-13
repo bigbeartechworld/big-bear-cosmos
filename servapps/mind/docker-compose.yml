@@ -1,0 +1,14 @@
+cosmos-installer: null
+name: big-bear-mind
+services:
+  "{ServiceName}":
+    image: mrcas/mind:v1.3.3
+    container_name: "{ServiceName}"
+    environment:
+      - TZ=UTC
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/db:/app/db"
+    ports:
+      - 8080:8080
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

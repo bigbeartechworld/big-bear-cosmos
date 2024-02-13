@@ -1,0 +1,15 @@
+{
+  "name": "onlyoffice",
+  "description": "OnlyOffice",
+  "longDescription": "Feature-rich web-based office suite with a vast range of collaborative capabilities",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/onlyoffice.png"
+}

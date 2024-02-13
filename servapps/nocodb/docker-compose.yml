@@ -1,0 +1,28 @@
+cosmos-installer: null
+name: big-bear-nocodb
+services:
+  "{ServiceName}-app":
+    image: nocodb/nocodb:0.204.0
+    container_name: "{ServiceName}-app"
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nocodb
+      POSTGRES_PASSWORD: nocodb
+      POSTGRES_DB: nocodb
+    ports:
+      - 8080:8080
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/usr/src/app/data"
+    hostname: "{ServiceName}-app"
+  "{ServiceName}-db":
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: nocodb
+      POSTGRES_PASSWORD: nocodb
+      POSTGRES_DB: nocodb
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+    container_name: "{ServiceName}-db"
+    hostname: "{ServiceName}-db"
+minVersion: 0.14.0-0

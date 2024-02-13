@@ -1,0 +1,37 @@
+cosmos-installer: null
+name: big-bear-linkwarden
+services:
+  "{ServiceName}-linkwarden":
+    container_name: "{ServiceName}-linkwarden"
+    image: ghcr.io/linkwarden/linkwarden:v2.4.9
+    restart: unless-stopped
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data/linkwarden:/data/data"
+    environment:
+      - DATABASE_URL=postgresql://casaos:casaospassword@big-bear-linkwarden-db:5432/big-bear-linkwarden
+      - NEXTAUTH_SECRET=7e2d8797-dc20-422a-9a68-44b958bd33c0
+      - NEXTAUTH_URL=http://localhost/api/v1/auth
+      - NEXT_PUBLIC_DISABLE_REGISTRATION=
+    ports:
+      - 3000:3000
+    networks:
+      - linkwarden_network
+    hostname: "{ServiceName}-linkwarden"
+  "{ServiceName}-linkwarden-db":
+    container_name: "{ServiceName}-linkwarden-db"
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=casaos
+      - POSTGRES_PASSWORD=casaospassword
+      - POSTGRES_DB=big-bear-linkwarden
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data/postgres:/var/lib/postgre\
+        sql/data"
+    networks:
+      - linkwarden_network
+    hostname: "{ServiceName}-linkwarden-db"
+networks:
+  linkwarden_network:
+    driver: bridge
+minVersion: 0.14.0-0

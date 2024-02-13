@@ -1,0 +1,16 @@
+cosmos-installer: null
+name: big-bear-gotify
+services:
+  "{ServiceName}":
+    image: gotify/server:2.4.0
+    ports:
+      - 8091:80
+    environment:
+      - GOTIFY_DEFAULTUSER_NAME=admin
+      - GOTIFY_DEFAULTUSER_PASS=custom
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/app/data"
+    network_mode: bridge
+    container_name: "{ServiceName}"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

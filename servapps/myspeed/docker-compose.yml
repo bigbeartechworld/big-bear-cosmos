@@ -1,0 +1,13 @@
+cosmos-installer: null
+name: big-bear-myspeed
+services:
+  "{ServiceName}":
+    image: germannewsmaker/myspeed:1.0.8
+    ports:
+      - 5216:5216
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/myspeed/data"
+    restart: unless-stopped
+    container_name: "{ServiceName}"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

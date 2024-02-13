@@ -1,0 +1,15 @@
+cosmos-installer: null
+name: big-bear-python-matter-server
+services:
+  "{ServiceName}":
+    image: ghcr.io/home-assistant-libs/python-matter-server:5.5.3
+    container_name: "{ServiceName}"
+    restart: unless-stopped
+    network_mode: host
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/data/"
+      - /run/dbus:/run/dbus:ro
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

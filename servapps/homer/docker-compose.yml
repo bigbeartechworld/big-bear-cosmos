@@ -1,0 +1,15 @@
+cosmos-installer: null
+name: big-bear-homer
+services:
+  "{ServiceName}":
+    image: b4bz/homer:v23.10.1
+    container_name: "{ServiceName}"
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/assets:/www/assets"
+    ports:
+      - 8080:8080
+    user: 1000:1000
+    environment:
+      - INIT_ASSETS=1
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

@@ -1,0 +1,36 @@
+cosmos-installer: null
+name: big-bear-guacamole
+services:
+  "{ServiceName}-guacd":
+    image: guacamole/guacd:1.5.4
+    restart: always
+    container_name: "{ServiceName}-guacd"
+    hostname: "{ServiceName}-guacd"
+  "{ServiceName}-app":
+    image: guacamole/guacamole:1.5.4
+    restart: always
+    links:
+      - guacd
+    environment:
+      - GUACD_HOSTNAME=guacd
+      - MYSQL_HOSTNAME=mysql
+      - MYSQL_DATABASE=guacamole_db
+      - MYSQL_USER=guacamole_user
+      - MYSQL_PASSWORD=some_password
+    ports:
+      - 8090:8080
+    container_name: "{ServiceName}-app"
+    hostname: "{ServiceName}-app"
+  "{ServiceName}-mysql":
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_DATABASE=guacamole_db
+      - MYSQL_USER=guacamole_user
+      - MYSQL_PASSWORD=some_password
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/mysql:/var/lib/mysql"
+    container_name: "{ServiceName}-mysql"
+    hostname: "{ServiceName}-mysql"
+minVersion: 0.14.0-0

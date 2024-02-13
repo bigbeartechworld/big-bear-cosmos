@@ -1,0 +1,73 @@
+cosmos-installer: null
+name: big-bear-pd3f
+services:
+  "{ServiceName}-web":
+    container_name: "{ServiceName}-web"
+    image: pd3f/pd3f:latest
+    restart: unless-stopped
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/uploads:/uploads/"
+    ports:
+      - 1616:5000
+    command:
+      - gunicorn
+      - app:app
+      - --bind=0.0.0.0:5000
+    depends_on:
+      - redis
+      - parsr
+      - worker
+      - ocr_worker
+    networks:
+      - big-bear-pd3f-network
+    hostname: "{ServiceName}-web"
+  "{ServiceName}-parsr":
+    image: axarev/parsr:v1.2.2
+    networks:
+      - big-bear-pd3f-network
+    expose:
+      - 3001
+    container_name: "{ServiceName}-parsr"
+    hostname: "{ServiceName}-parsr"
+  "{ServiceName}-redis":
+    image: redis:6-alpine
+    networks:
+      - big-bear-pd3f-network
+    expose:
+      - 6379
+    container_name: "{ServiceName}-redis"
+    hostname: "{ServiceName}-redis"
+  "{ServiceName}-worker":
+    image: pd3f/pd3f:latest
+    depends_on:
+      - parsr
+      - redis
+    networks:
+      - big-bear-pd3f-network
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/cache:/root/.cache/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/to-ocr:/to-ocr/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/uploads:/uploads/"
+    environment:
+      - KEEP_RESULTS_HOURS=24
+    command:
+      - rq
+      - worker
+      - -u
+      - redis://redis:6379
+      - --results-ttl
+      - "86400"
+    container_name: "{ServiceName}-worker"
+    hostname: "{ServiceName}-worker"
+  "{ServiceName}-ocr_worker":
+    image: pd3f/pd3f-ocr:latest
+    networks:
+      - big-bear-pd3f-network
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/to-ocr:/to-ocr/"
+    container_name: "{ServiceName}-ocr_worker"
+    hostname: "{ServiceName}-ocr_worker"
+networks:
+  big-bear-pd3f-network:
+    name: big-bear-pd3f-network
+minVersion: 0.14.0-0

@@ -1,0 +1,18 @@
+cosmos-installer: null
+name: big-bear-dockge
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: louislam/dockge:1.4.2
+    environment:
+      DOCKGE_STACKS_DIR: /DATA/AppData/big-bear-dockge/stacks
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/app/data"
+      - "{DefaultDataPath}/AppData/{ServiceName}/stacks:/DATA/AppData/big-bear-\
+        dockge/stacks"
+    ports:
+      - 5001:5001
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

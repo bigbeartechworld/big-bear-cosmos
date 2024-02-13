@@ -1,0 +1,25 @@
+cosmos-installer: null
+name: big-bear-gluetun
+services:
+  "{ServiceName}":
+    image: qmcgaw/gluetun:v3.37.0
+    container_name: "{ServiceName}"
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - 8888:8888/tcp
+      - 8388:8388/tcp
+      - 8388:8388/udp
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/gluetun"
+    environment:
+      - VPN_SERVICE_PROVIDER=custom
+      - VPN_TYPE=openvpn
+      - OPENVPN_USER=
+      - OPENVPN_PASSWORD=
+      - TZ=
+      - UPDATER_PERIOD=
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

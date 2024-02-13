@@ -1,0 +1,14 @@
+cosmos-installer: null
+name: big-bear-home-assistant
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: ghcr.io/home-assistant/home-assistant:2024.2.1
+    restart: unless-stopped
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/config:/config"
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    network_mode: host
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

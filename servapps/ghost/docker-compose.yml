@@ -1,0 +1,41 @@
+cosmos-installer: null
+name: big-bear-ghost
+services:
+  "{ServiceName}-app":
+    container_name: "{ServiceName}-app"
+    image: ghost:5.79.0-alpine
+    restart: on-failure
+    networks:
+      - ghost-network
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: ghost
+      database__connection__password: casaos
+      database__connection__database: ghost
+      url: http://localhost:2368
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/content:/var/lib/ghost/content"
+    ports:
+      - 2368:2368
+    depends_on:
+      - db
+    hostname: "{ServiceName}-app"
+  "{ServiceName}-db":
+    container_name: "{ServiceName}-db"
+    image: mysql:8.0
+    restart: on-failure
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/mysql:/var/lib/mysql"
+    environment:
+      MYSQL_USER: ghost
+      MYSQL_DATABASE: ghost
+      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: casaos
+    networks:
+      - ghost-network
+    hostname: "{ServiceName}-db"
+networks:
+  ghost-network:
+    driver: bridge
+minVersion: 0.14.0-0

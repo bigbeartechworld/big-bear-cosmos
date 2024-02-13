@@ -1,0 +1,14 @@
+cosmos-installer: null
+name: big-bear-appsmith
+services:
+  "{ServiceName}":
+    image: appsmith/appsmith-ee:v1.8.15
+    container_name: "{ServiceName}"
+    ports:
+      - 1080:80
+      - 10443:443
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/stacks:/appsmith-stacks"
+    restart: unless-stopped
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

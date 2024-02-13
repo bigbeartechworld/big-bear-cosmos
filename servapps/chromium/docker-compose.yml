@@ -1,0 +1,14 @@
+cosmos-installer: null
+name: big-bear-chromium
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: kasmweb/chromium:1.14.0-rolling
+    ports:
+      - 6902:6901
+    environment:
+      - VNC_PW=casaos
+      - LAUNCH_URL=https://community.bigbeartechworld.com/
+    shm_size: 512m
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

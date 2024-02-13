@@ -1,0 +1,30 @@
+cosmos-installer: null
+name: big-bear-wordpress
+services:
+  "{ServiceName}-app":
+    image: wordpress:6.4.3
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: casaos
+      WORDPRESS_DB_PASSWORD: casaos
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/html:/var/www/html"
+    depends_on:
+      - db
+    container_name: "{ServiceName}-app"
+    hostname: "{ServiceName}-app"
+  "{ServiceName}-db":
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: casaos
+      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: casaos
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/mysql:/var/lib/mysql"
+    container_name: "{ServiceName}-db"
+    hostname: "{ServiceName}-db"
+minVersion: 0.14.0-0

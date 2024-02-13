@@ -1,0 +1,15 @@
+cosmos-installer: null
+name: big-bear-codex-docs
+services:
+  "{ServiceName}":
+    image: ghcr.io/codex-team/codex.docs:v2.1
+    ports:
+      - 3000:3000
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/uploads:/usr/src/app/uploads"
+      - "{DefaultDataPath}/AppData/{ServiceName}/db:/usr/src/app/db"
+      - "{DefaultDataPath}/AppData/{ServiceName}/codex-docs-config.local.yaml:/\
+        usr/src/app/docs-config.yaml"
+    container_name: "{ServiceName}"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

@@ -1,0 +1,17 @@
+cosmos-installer: null
+name: big-bear-traccar
+services:
+  "{ServiceName}":
+    image: traccar/traccar:5.12-ubuntu
+    container_name: "{ServiceName}"
+    hostname: "{ServiceName}"
+    restart: unless-stopped
+    ports:
+      - 8080:8082
+      - 5000-5150:5000-5150
+      - 5000-5150:5000-5150/udp
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/logs:/opt/traccar/logs:rw"
+      - "{DefaultDataPath}/AppData/{ServiceName}/traccar.xml:/opt/traccar/conf/\
+        traccar.xml:ro"
+minVersion: 0.14.0-0

@@ -1,0 +1,13 @@
+cosmos-installer: null
+name: big-bear-mealie
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: hkotel/mealie:v1.1.1
+    restart: unless-stopped
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/app/data"
+    ports:
+      - 9925:9000
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

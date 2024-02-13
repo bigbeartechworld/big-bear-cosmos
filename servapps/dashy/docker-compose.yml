@@ -1,0 +1,25 @@
+cosmos-installer: null
+name: big-bear-dashy
+services:
+  "{ServiceName}":
+    image: lissy93/dashy:2.1.1
+    container_name: "{ServiceName}"
+    network_mode: bridge
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/public:/app/public"
+    ports:
+      - 4000:80
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - /app/services/healthcheck
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

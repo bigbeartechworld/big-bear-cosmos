@@ -1,0 +1,14 @@
+cosmos-installer: null
+name: big-bear-flcontainers-guacamole
+services:
+  "{ServiceName}":
+    image: flcontainers/guacamole:1.5.4
+    container_name: "{ServiceName}"
+    restart: always
+    environment:
+      tz: UTC
+      EXTENSIONS: auth-totp,auth-ldap
+    ports:
+      - 8080:8080
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

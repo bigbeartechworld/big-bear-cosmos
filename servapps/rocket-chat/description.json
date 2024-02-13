@@ -1,0 +1,14 @@
+{
+  "name": "rocket-chat",
+  "description": "The communications platform that puts data protection first.",
+  "longDescription": "Rocket.Chat is an open-source fully customizable communications platform [...]",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/rocketchat.png?raw=true"
+}

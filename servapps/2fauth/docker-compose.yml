@@ -1,0 +1,14 @@
+cosmos-installer: null
+name: big-bear-2fauth
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: 2fauth/2fauth:5.0.3
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    network_mode: bridge
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/data:/2fauth"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0-0

@@ -1,0 +1,15 @@
+{
+  "name": "code-server",
+  "description": "Code Server",
+  "longDescription": "Run VS Code on any machine anywhere and access it in the browser.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code-server.png"
+}

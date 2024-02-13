@@ -1,0 +1,15 @@
+{
+  "name": "unifi-network-application-mongo-4",
+  "description": "The Unifi-network-application MongoDB 4",
+  "longDescription": "Supports Zimaboards and PI's. The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/unifi.png?raw=true"
+}

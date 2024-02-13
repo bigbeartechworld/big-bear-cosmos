@@ -1,0 +1,88 @@
+cosmos-installer: null
+name: big-bear-penpot
+services:
+  "{ServiceName}-penpot-frontend":
+    container_name: "{ServiceName}-penpot-frontend"
+    image: penpotapp/frontend:1.19.3
+    restart: unless-stopped
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/assets:/opt/data/assets"
+    ports:
+      - 9001:80
+    depends_on:
+      - penpot-backend
+      - penpot-exporter
+    networks:
+      - big-bear-penpot-network
+    hostname: "{ServiceName}-penpot-frontend"
+  "{ServiceName}-penpot-backend":
+    image: penpotapp/backend:1.19.3
+    container_name: "{ServiceName}-penpot-backend"
+    restart: unless-stopped
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/assets:/opt/data/assets"
+    depends_on:
+      - penpot-postgres
+      - penpot-redis
+    networks:
+      - big-bear-penpot-network
+    environment:
+      - PENPOT_FLAGS=enable-registration enable-login-with-password
+        disable-email-verification disable-secure-session-cookies
+      - PENPOT_SECRET_KEY=big-bear-penpot-secret-key
+      - PENPOT_PUBLIC_URI=http://big-bear-penpot-frontend:8080
+      - PENPOT_DATABASE_URI=postgresql://big-bear-penpot-postgres/penpot
+      - PENPOT_DATABASE_USERNAME=bigbear
+      - PENPOT_DATABASE_PASSWORD=casaos
+      - PENPOT_REDIS_URI=redis://big-bear-penpot-redis/0
+      - PENPOT_ASSETS_STORAGE_BACKEND=assets-fs
+      - PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
+      - PENPOT_TELEMETRY_ENABLED=false
+    hostname: "{ServiceName}-penpot-backend"
+  "{ServiceName}-penpot-exporter":
+    image: penpotapp/exporter:1.19.3
+    container_name: "{ServiceName}-penpot-exporter"
+    restart: unless-stopped
+    networks:
+      - big-bear-penpot-network
+    environment:
+      - PENPOT_PUBLIC_URI=http://big-bear-penpot-frontend:8080
+      - PENPOT_REDIS_URI=redis://big-bear-penpot-redis/0
+    hostname: "{ServiceName}-penpot-exporter"
+  "{ServiceName}-penpot-postgres":
+    image: postgres:14
+    restart: unless-stopped
+    container_name: "{ServiceName}-penpot-postgres"
+    stop_signal: SIGINT
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+    networks:
+      - big-bear-penpot-network
+    environment:
+      - POSTGRES_INITDB_ARGS=--data-checksums
+      - POSTGRES_DB=penpot
+      - POSTGRES_USER=bigbear
+      - POSTGRES_PASSWORD=casaos
+    hostname: "{ServiceName}-penpot-postgres"
+  "{ServiceName}-penpot-redis":
+    image: redis:7
+    container_name: "{ServiceName}-penpot-redis"
+    restart: unless-stopped
+    networks:
+      - big-bear-penpot-network
+    hostname: "{ServiceName}-penpot-redis"
+  "{ServiceName}-penpot-mailcatch":
+    image: sj26/mailcatcher:latest
+    restart: always
+    expose:
+      - "1025"
+    ports:
+      - 1080:1080
+    networks:
+      - big-bear-penpot-network
+    container_name: "{ServiceName}-penpot-mailcatch"
+    hostname: "{ServiceName}-penpot-mailcatch"
+networks:
+  big-bear-penpot-network:
+    driver: bridge
+minVersion: 0.14.0-0

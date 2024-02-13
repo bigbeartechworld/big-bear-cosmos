@@ -1,0 +1,16 @@
+{
+  "name": "mind",
+  "description": "A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!",
+  "longDescription": "A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm",
+    "arm64"
+  ],
+  "icon": "https://i.imgur.com/UgjalkK.png"
+}

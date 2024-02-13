@@ -1,0 +1,15 @@
+{
+  "name": "chrome",
+  "description": "chrome",
+  "longDescription": "This Image contains a browser-accessible version of chrome.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/chrome.png"
+}

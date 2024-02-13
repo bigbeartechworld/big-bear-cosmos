@@ -1,0 +1,78 @@
+cosmos-installer: null
+name: big-bear-immich
+services:
+  "{ServiceName}-immich-server":
+    container_name: "{ServiceName}-immich-server"
+    image: ghcr.io/immich-app/immich-server:v1.94.1
+    command:
+      - start.sh
+      - immich
+    ports:
+      - 2283:3001
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/upload:/usr/src/app/upload"
+    environment:
+      DB_HOSTNAME: immich-postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: immich
+      DB_PORT: 5432
+      REDIS_HOSTNAME: immich-redis
+      IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
+    depends_on:
+      - redis
+      - database
+    restart: always
+    hostname: "{ServiceName}-immich-server"
+  "{ServiceName}-immich-microservices":
+    container_name: "{ServiceName}-immich-microservices"
+    image: ghcr.io/immich-app/immich-server:v1.94.1
+    command:
+      - start.sh
+      - microservices
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/upload:/usr/src/app/upload"
+    environment:
+      DB_HOSTNAME: immich-postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: immich
+      DB_PORT: 5432
+      REDIS_HOSTNAME: immich-redis
+    depends_on:
+      - redis
+      - database
+    restart: always
+    hostname: "{ServiceName}-immich-microservices"
+  "{ServiceName}-immich-machine-learning":
+    container_name: "{ServiceName}-immich-machine-learning"
+    image: ghcr.io/immich-app/immich-machine-learning:v1.94.1
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/model-cache:/cache"
+    environment:
+      DB_HOSTNAME: immich-postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: casaos
+      DB_PORT: 5432
+      REDIS_HOSTNAME: immich-redis
+    restart: always
+    hostname: "{ServiceName}-immich-machine-learning"
+  "{ServiceName}-redis":
+    container_name: "{ServiceName}-redis"
+    image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3
+    restart: always
+    hostname: "{ServiceName}-redis"
+  "{ServiceName}-database":
+    container_name: "{ServiceName}-database"
+    image: tensorchord/pgvecto-rs:pg14-v0.1.11
+    environment:
+      POSTGRES_PASSWORD: casaos
+      POSTGRES_USER: casaos
+      POSTGRES_DB: immich
+      PG_DATA: /var/lib/postgresql/data
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/pgdata:/var/lib/postgresql/data"
+    restart: always
+    hostname: "{ServiceName}-database"
+minVersion: 0.14.0-0

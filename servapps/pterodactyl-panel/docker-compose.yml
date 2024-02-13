@@ -1,0 +1,58 @@
+cosmos-installer: null
+name: big-bear-pterodactyl-panel
+services:
+  "{ServiceName}-app":
+    container_name: "{ServiceName}-app"
+    image: ghcr.io/pterodactyl/panel:v1.11.5
+    restart: always
+    ports:
+      - 1180:80
+      - 11443:443
+    links:
+      - database
+      - cache
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/var/:/app/var/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/nginx/:/etc/nginx/http.d/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/certs/:/etc/letsencrypt/"
+      - "{DefaultDataPath}/AppData/{ServiceName}/logs/:/app/storage/logs"
+    environment:
+      APP_URL: http://example.com
+      APP_TIMEZONE: UTC
+      APP_SERVICE_AUTHOR: noreply@example.com
+      MAIL_FROM: noreply@example.com
+      MAIL_DRIVER: smtp
+      MAIL_HOST: mail
+      MAIL_PORT: "1025"
+      MAIL_USERNAME: ""
+      MAIL_PASSWORD: ""
+      MAIL_ENCRYPTION: "true"
+      APP_ENV: production
+      APP_ENVIRONMENT_ONLY: "false"
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: cache
+      DB_HOST: database
+      DB_PASSWORD: casaos
+      DB_PORT: "3306"
+    hostname: "{ServiceName}-app"
+  "{ServiceName}-database":
+    image: mariadb:10.5
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - "{DefaultDataPath}/AppData/{ServiceName}/database:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: panel
+      MYSQL_USER: pterodactyl
+      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: casaos
+    container_name: "{ServiceName}-database"
+    hostname: "{ServiceName}-database"
+  "{ServiceName}-cache":
+    image: redis:alpine
+    restart: always
+    container_name: "{ServiceName}-cache"
+    hostname: "{ServiceName}-cache"
+minVersion: 0.14.0-0
