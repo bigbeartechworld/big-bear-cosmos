@@ -3,7 +3,7 @@ name: big-bear-chromium
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: kasmweb/chromium:1.14.0-rolling
+    image: kasmweb/chromium:1.15.0-rolling
     ports:
       - 6902:6901
     environment:
