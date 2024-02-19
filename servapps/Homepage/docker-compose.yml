@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-homepage
 services:
   "{ServiceName}":
-    image: ghcr.io/gethomepage/homepage:v0.8.7
+    image: ghcr.io/gethomepage/homepage:v0.8.8
     container_name: "{ServiceName}"
     ports:
       - 3000:3000
