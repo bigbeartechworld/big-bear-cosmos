@@ -38,9 +38,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 ## UI How to
 
-> Coming Soon
-
-<!-- [![Video](https://img.youtube.com/vi/rqFUeDDb5uA/0.jpg)](https://youtu.be/rqFUeDDb5uA) -->
+[![Video](https://img.youtube.com/vi/SzMItbNhUw4/0.jpg)](https://youtu.be/SzMItbNhUw4)
 
 ## Contributions
 
