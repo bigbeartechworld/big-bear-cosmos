@@ -12,7 +12,6 @@ services:
       - "{ServiceName}-data:/opt/adguardhome/work"
       - "{ServiceName}-data-2:/opt/adguardhome/conf"
     restart: unless-stopped
-    network_mode: bridge
     ports:
       - 53:53/tcp
       - 53:53/udp

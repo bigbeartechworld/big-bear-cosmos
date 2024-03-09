@@ -3,7 +3,7 @@ name: big-bear-rocket-chat
 services:
   "{ServiceName}-app":
     container_name: "{ServiceName}-app"
-    image: rocket.chat:6.6.0
+    image: rocket.chat:6.5.3
     restart: unless-stopped
     environment:
       MONGO_OPLOG_URL: mongodb://db:27017/local
@@ -17,7 +17,7 @@ services:
       - rocketchat-net
     hostname: "{ServiceName}-app"
   "{ServiceName}-db":
-    image: mongo:5.0.22
+    image: mongo:4.4.28
     container_name: "{ServiceName}-db"
     volumes:
       - "{ServiceName}-db-data:/data/db"

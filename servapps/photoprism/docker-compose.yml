@@ -3,7 +3,7 @@ name: big-bear-photoprism
 services:
   "{ServiceName}-app":
     container_name: "{ServiceName}-app"
-    image: photoprism/photoprism:20220121
+    image: photoprism/photoprism:231128
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: casaos
       PHOTOPRISM_SITE_URL: http://locahost/

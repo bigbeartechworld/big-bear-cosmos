@@ -1,0 +1,41 @@
+cosmos-installer: null
+name: big-bear-joplin
+services:
+  "{ServiceName}-big-bear-joplin":
+    container_name: "{ServiceName}-big-bear-joplin"
+    image: florider89/joplin-server:2.14.2
+    restart: unless-stopped
+    environment:
+      - APP_PORT=22300
+      - APP_BASE_URL=http://localhost:22300
+      - DB_CLIENT=pg
+      - POSTGRES_PASSWORD=27a1d42a-a15d-43dd-903c-2a73538647fe
+      - POSTGRES_USER=bigbear
+      - POSTGRES_DATABASE=joplin
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST=big-bear-joplin-db
+      - MAX_TIME_DRIFT=0
+    ports:
+      - 22300:22300
+    networks:
+      - big_bear_joplin_network
+    depends_on:
+      - big-bear-joplin-db
+    hostname: "{ServiceName}-big-bear-joplin"
+  "{ServiceName}-big-bear-joplin-db":
+    container_name: "{ServiceName}-big-bear-joplin-db"
+    image: postgres:14.2
+    volumes:
+      - "{ServiceName}-big-bear-joplin-db-data:/var/lib/postgresql/data"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=27a1d42a-a15d-43dd-903c-2a73538647fe
+      - POSTGRES_USER=bigbear
+      - POSTGRES_DB=joplin
+    networks:
+      - big_bear_joplin_network
+    hostname: "{ServiceName}-big-bear-joplin-db"
+networks:
+  big_bear_joplin_network:
+    driver: bridge
+minVersion: 0.14.0

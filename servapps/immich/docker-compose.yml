@@ -16,13 +16,13 @@ services:
       DB_USERNAME: casaos
       DB_PASSWORD: casaos
       DB_DATABASE_NAME: immich
-      DB_PORT: 5432
+      DB_PORT: "5432"
       REDIS_HOSTNAME: immich-redis
       IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
     depends_on:
       - redis
       - database
-    restart: always
+    restart: unless-stopped
     hostname: "{ServiceName}-immich-server"
   "{ServiceName}-immich-microservices":
     container_name: "{ServiceName}-immich-microservices"
@@ -42,7 +42,7 @@ services:
     depends_on:
       - redis
       - database
-    restart: always
+    restart: unless-stopped
     hostname: "{ServiceName}-immich-microservices"
   "{ServiceName}-immich-machine-learning":
     container_name: "{ServiceName}-immich-machine-learning"
@@ -56,7 +56,7 @@ services:
       DB_DATABASE_NAME: casaos
       DB_PORT: 5432
       REDIS_HOSTNAME: immich-redis
-    restart: always
+    restart: unless-stopped
     hostname: "{ServiceName}-immich-machine-learning"
   "{ServiceName}-redis":
     container_name: "{ServiceName}-redis"
@@ -65,7 +65,7 @@ services:
     hostname: "{ServiceName}-redis"
   "{ServiceName}-database":
     container_name: "{ServiceName}-database"
-    image: tensorchord/pgvecto-rs:pg14-v0.1.11
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0
     environment:
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos
@@ -73,6 +73,6 @@ services:
       PG_DATA: /var/lib/postgresql/data
     volumes:
       - "{ServiceName}-database-data:/var/lib/postgresql/data"
-    restart: always
+    restart: unless-stopped
     hostname: "{ServiceName}-database"
 minVersion: 0.14.0

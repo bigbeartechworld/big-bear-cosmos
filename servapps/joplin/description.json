@@ -1,0 +1,15 @@
+{
+  "name": "joplin",
+  "description": "joplin",
+  "longDescription": "Note taking and to-do application with synchronisation",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/joplin.png?raw=true"
+}

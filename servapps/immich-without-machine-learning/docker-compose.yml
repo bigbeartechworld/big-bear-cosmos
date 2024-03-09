@@ -21,7 +21,7 @@ services:
     depends_on:
       - redis
       - database
-    restart: always
+    restart: unless-stopped
     hostname: "{ServiceName}-immich-server"
   "{ServiceName}-immich-microservices":
     container_name: "{ServiceName}-immich-microservices"
@@ -41,7 +41,7 @@ services:
     depends_on:
       - redis
       - database
-    restart: always
+    restart: unless-stopped
     hostname: "{ServiceName}-immich-microservices"
   "{ServiceName}-redis":
     container_name: "{ServiceName}-redis"
@@ -50,7 +50,7 @@ services:
     hostname: "{ServiceName}-redis"
   "{ServiceName}-database":
     container_name: "{ServiceName}-database"
-    image: tensorchord/pgvecto-rs:pg14-v0.1.11
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0
     environment:
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos

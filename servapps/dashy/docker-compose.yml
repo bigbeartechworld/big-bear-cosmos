@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-dashy
 services:
   "{ServiceName}":
-    image: lissy93/dashy:2.1.1
+    image: lissy93/dashy:2.1.2
     container_name: "{ServiceName}"
     network_mode: bridge
     volumes:

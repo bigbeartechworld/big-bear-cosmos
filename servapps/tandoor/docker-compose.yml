@@ -1,0 +1,54 @@
+cosmos-installer: null
+name: big-bear-tandoor
+services:
+  "{ServiceName}-big-bear-tandoor":
+    container_name: "{ServiceName}-big-bear-tandoor"
+    image: ghcr.io/tandoorrecipes/recipes:1.5.14
+    restart: unless-stopped
+    volumes:
+      - "{ServiceName}-big-bear-tandoor-data:/opt/recipes/staticfiles"
+      - "{ServiceName}-big-bear-tandoor-data-2:/opt/recipes/mediafiles"
+    ports:
+      - 8080:8080
+    environment:
+      - SECRET_KEY=6496f725-e4a4-4fa5-9f7b-db0114bc1568
+      - DB_ENGINE=django.db.backends.postgresql
+      - POSTGRES_HOST=big-bear-tandoor-db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=tandoor
+      - POSTGRES_PASSWORD=100c7d31-9ec5-44ec-9101-e226c8e2420d
+      - POSTGRES_DB=tandoordb
+    networks:
+      - big_bear_tandoor_network
+    depends_on:
+      big-bear-tandoor-db:
+        condition: service_healthy
+    hostname: "{ServiceName}-big-bear-tandoor"
+  "{ServiceName}-big-bear-tandoor-db":
+    image: postgres:15-alpine
+    container_name: "{ServiceName}-big-bear-tandoor-db"
+    volumes:
+      - "{ServiceName}-big-bear-tandoor-db-data:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=tandoor
+      - POSTGRES_PASSWORD=100c7d31-9ec5-44ec-9101-e226c8e2420d
+      - POSTGRES_DB=tandoordb
+    restart: unless-stopped
+    networks:
+      - big_bear_tandoor_network
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready
+        - -d
+        - tandoor
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    hostname: "{ServiceName}-big-bear-tandoor-db"
+networks:
+  big_bear_tandoor_network:
+    driver: bridge
+minVersion: 0.14.0

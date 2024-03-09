@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-cadvisor
 services:
   "{ServiceName}":
-    image: gcr.io/cadvisor/cadvisor:v0.47.2
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
     container_name: "{ServiceName}"
     restart: unless-stopped
     devices:
