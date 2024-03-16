@@ -82,7 +82,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | MIND                                | mrcas/mind                                       | v1.3.3                       |                                               |
 | Minio                               | minio/minio                                      | RELEASE.2024-02-24T17-11-14Z |                                               |
 | Mumble Server                       | mumblevoip/mumble-server                         | v1.4.230-6                   |                                               |
-| MySpeed                             | germannewsmaker/myspeed                          | 1.0.8                        |                                               |
+| MySpeed                             | germannewsmaker/myspeed                          | 1.0.8                        | [YouTube Video](https://youtu.be/LTawr95nb4w) |
 | n8n                                 | n8nio/n8n                                        | 1.32.1                       |                                               |
 | Nextcloud                           | nextcloud                                        | 28.0.3-apache                |                                               |
 | NocoDB                              | nocodb/nocodb                                    | 0.204.4                      |                                               |      |
