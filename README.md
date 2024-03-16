@@ -1,6 +1,6 @@
 ## Big Bear Cosmos App Store
 
-This repository contains the BigBearCosmos App Store. This app store is a community app store that is not maintained by the Cosmos team. It is maintained by BigBearTechWorld and the BigBearCommunity.
+This repository contains the BigBearCosmos App Store. This app store is a community app store that is not maintained by the Cosmos team. It is maintained by BigBearTechWorld and the BigBearCommunity. This repository is being synced with the [BigBearCasaOS App Store](https://github.com/bigbeartechworld/big-bear-casaos).
 
 ## Need Help or have an issue?
 
