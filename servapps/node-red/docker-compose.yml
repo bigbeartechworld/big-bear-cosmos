@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-node-red
 services:
   "{ServiceName}":
-    image: nodered/node-red:3.1.6
+    image: nodered/node-red:3.1.7
     network_mode: host
     ports:
       - 1880:1880/tcp

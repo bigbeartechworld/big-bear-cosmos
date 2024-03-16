@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-mind
 services:
   "{ServiceName}":
-    image: mrcas/mind:v1.3.3
+    image: mrcas/mind:v1.4.0
     container_name: "{ServiceName}"
     environment:
       - TZ=UTC

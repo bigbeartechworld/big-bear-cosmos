@@ -1,26 +1,20 @@
 cosmos-installer: null
 name: big-bear-romm
 services:
-  "{ServiceName}-app":
-    image: zurdi15/romm:2.3.1
-    container_name: "{ServiceName}-app"
+  "{ServiceName}-big-bear-romm":
+    image: zurdi15/romm:3.0.1
+    container_name: "{ServiceName}-big-bear-romm"
     environment:
-      - ROMM_DB_DRIVER=mariadb
-      - DB_HOST=rommdb
+      - DB_HOST=big-bear-rommdb
       - DB_PORT=3306
       - DB_USER=romm-user
       - DB_NAME=romm
       - DB_PASSWD=casaos
       - IGDB_CLIENT_ID=<IGDB client id>
       - IGDB_CLIENT_SECRET=<IGDB client secret>
-      - ROMM_AUTH_ENABLED=true
       - ROMM_AUTH_SECRET_KEY=<secret key>
       - ROMM_AUTH_USERNAME=admin
-      - ROMM_AUTH_PASSWORD=<admin password>
-      - ENABLE_EXPERIMENTAL_REDIS=true
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - REDIS_PASSWORD=
+      - ROMM_AUTH_PASSWORD=casaos
       - ENABLE_RESCAN_ON_FILESYSTEM_CHANGE=true
       - RESCAN_ON_FILESYSTEM_CHANGE_DELAY=5
       - ENABLE_SCHEDULED_RESCAN=true
@@ -30,36 +24,37 @@ services:
       - ENABLE_SCHEDULED_UPDATE_MAME_XML=true
       - SCHEDULED_UPDATE_MAME_XML_CRON=0 5 * * *
     volumes:
-      - "{ServiceName}-app-data:/romm/library"
-      - "{ServiceName}-app-data-2:/romm/resources"
-      - "{ServiceName}-app-data-3:/romm/config.yml"
-      - "{ServiceName}-app-data-4:/romm/database"
-      - "{ServiceName}-app-data-5:/romm/logs"
+      - "{ServiceName}-big-bear-romm-data:/romm/resources"
+      - "{ServiceName}-big-bear-romm-data-2:/redis-data"
+      - "{ServiceName}-big-bear-romm-data-3:/romm/library"
+      - "{ServiceName}-big-bear-romm-data-4:/romm/assets"
+      - "{ServiceName}-big-bear-romm-data-5:/romm/config"
+      - "{ServiceName}-big-bear-romm-data-6:/romm/logs"
     ports:
       - 1080:8080
     depends_on:
-      - rommdb
+      - big-bear-rommdb
     restart: unless-stopped
-    hostname: "{ServiceName}-app"
-  "{ServiceName}-rommdb":
+    networks:
+      - big-bear-romm-network
+    hostname: "{ServiceName}-big-bear-romm"
+  "{ServiceName}-big-bear-rommdb":
     image: mariadb:latest
-    container_name: "{ServiceName}-rommdb"
+    container_name: "{ServiceName}-big-bear-rommdb"
     environment:
       - MYSQL_ROOT_PASSWORD=casaos
       - MYSQL_DATABASE=romm
       - MYSQL_USER=romm-user
       - MYSQL_PASSWORD=casaos
     volumes:
-      - "{ServiceName}-rommdb-data:/var/lib/mysql"
+      - "{ServiceName}-big-bear-rommdb-data:/var/lib/mysql"
     ports:
       - 3306:3306
     restart: unless-stopped
-    hostname: "{ServiceName}-rommdb"
-  "{ServiceName}-redis":
-    image: redis:alpine
-    container_name: "{ServiceName}-redis"
-    restart: unless-stopped
-    ports:
-      - 6379:6379
-    hostname: "{ServiceName}-redis"
+    networks:
+      - big-bear-romm-network
+    hostname: "{ServiceName}-big-bear-rommdb"
+networks:
+  big-bear-romm-network:
+    driver: bridge
 minVersion: 0.14.0

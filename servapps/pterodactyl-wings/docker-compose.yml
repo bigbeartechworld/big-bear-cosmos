@@ -3,7 +3,7 @@ name: big-bear-pterodactyl-wings
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/pterodactyl/wings:v1.11.8
+    image: ghcr.io/pterodactyl/wings:v1.11.11
     restart: always
     ports:
       - 8080:8080

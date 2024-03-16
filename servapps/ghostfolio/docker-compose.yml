@@ -3,7 +3,7 @@ name: big-bear-ghostfolio
 services:
   "{ServiceName}-big-bear-ghostfolio":
     container_name: "{ServiceName}-big-bear-ghostfolio"
-    image: ghostfolio/ghostfolio:2.61.1
+    image: ghostfolio/ghostfolio:2.63.1
     restart: unless-stopped
     environment:
       NODE_ENV: production
@@ -15,7 +15,7 @@ services:
       POSTGRES_DB: ghostfolio
       POSTGRES_USER: ghostfolio
       POSTGRES_PASSWORD: casaospassword
-      REDIS_HOST: ghostfolio-redis
+      REDIS_HOST: big-bear-ghostfolio-redis
       REDIS_PASSWORD: casaosredispassword
       REDIS_PORT: "6379"
     ports:
