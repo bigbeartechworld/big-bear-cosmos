@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-nocodb
 services:
   "{ServiceName}-big-bear-nocodb":
-    image: nocodb/nocodb:0.204.4
+    image: nocodb/nocodb:0.204.5
     container_name: "{ServiceName}-big-bear-nocodb"
     restart: unless-stopped
     environment:
