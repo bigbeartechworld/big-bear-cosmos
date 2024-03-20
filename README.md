@@ -52,7 +52,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Docker Cron Restart Notifier        | deduard/tools                                    | restart-notifier-latest      |                                               |      |
 | Dockge                              | louislam/dockge                                  | 1.4.2                        |                                               |      |
 | Dozzle                              | amir20/dozzle                                    | v6.2.7                       | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |      |
-| Excalidraw                          | excalidraw/excalidraw                            | latest                       |                                               |      |
+| Excalidraw                          | excalidraw/excalidraw                            | latest                       | [YouTube Video](https://youtu.be/CfPykJeOy4E) |      |
 | Financial Freedom                   | serversideup/financial-freedom                   | v0.2.0-alpha1                |                                               |      |
 | Firefox                             | kasmweb/firefox                                  | 1.15.0-rolling               |                                               |      |
 | Flame                               | pawelmalak/flame                                 | multiarch2.3.1               |                                               |      |
@@ -70,7 +70,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage                            | ghcr.io/gethomepage/homepage                     | v0.8.8                       |                                               |
 | Immich                              | ghcr.io/immich-app/immich-server                 | v1.98.1                      |                                               |      |
 | Immich (Without Machine Learning)   | ghcr.io/immich-app/immich-server                 | v1.98.1                      |                                               |      |
-| IT Tools                            | corentinth/it-tools                              | 2023.11.2-7d94e11            |                                               |      |
+| IT Tools                            | corentinth/it-tools                              | 2023.11.2-7d94e11            | [YouTube](https://youtu.be/TvlIkuHp_Yo)       |      |
 | Jellyseerr                          | fallenbagel/jellyseerr                           | 1.7.0                        |                                               |
 | Joplin                              | florider89/joplin-server                         | 2.14.2                       |                                               |
 | kasm                                | linuxserver/kasm                                 | 1.120.20221218               |                                               |
