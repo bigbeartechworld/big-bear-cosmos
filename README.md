@@ -100,7 +100,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Pihole                              | pihole/pihole                                    | 2024.02.2                    |                                               |      |
 | Pihole and Unbound                  | bigbeartechworld/big-bear-pihole-unbound         | 2024.02.0                    |                                               |      |
 | Pingvin Share                       | stonith404/pingvin-share                         | v0.22.2                      |                                               |
+| Planka                              | ghcr.io/plankanban/planka                        | 1.16.0                       |                                               |
 | Playitgg                            | dysta/playitgg                                   | 1.1.0                        |                                               |
+| Plex                                | linuxserver/plex                                 | 1.40.1                       |                                               |
 | Portainer                           | portainer/portainer-ce                           | 2.19.4-alpine                |                                               |
 | Portainer Agent                     | portainer/agent                                  | 2.19.4                       |                                               |
 | Pterodactyl Panel                   | ghcr.io/pterodactyl/panel                        | v1.11.5                      |                                               |
