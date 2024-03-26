@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-ntfy
 services:
   "{ServiceName}":
-    image: binwiederhier/ntfy:v2.9.0
+    image: binwiederhier/ntfy:v2.10.0
     command:
       - serve
     environment:
