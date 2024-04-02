@@ -9,6 +9,7 @@
   "image": "",
   "supported_architectures": [
     "amd64",
+    "arm64",
     "arm"
   ],
   "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/adguard-home.png?raw=true"

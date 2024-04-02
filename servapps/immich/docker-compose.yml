@@ -3,7 +3,7 @@ name: big-bear-immich
 services:
   "{ServiceName}-immich-server":
     container_name: "{ServiceName}-immich-server"
-    image: ghcr.io/immich-app/immich-server:v1.99.0
+    image: ghcr.io/immich-app/immich-server:v1.100.0
     command:
       - start.sh
       - immich
@@ -26,7 +26,7 @@ services:
     hostname: "{ServiceName}-immich-server"
   "{ServiceName}-immich-microservices":
     container_name: "{ServiceName}-immich-microservices"
-    image: ghcr.io/immich-app/immich-server:v1.99.0
+    image: ghcr.io/immich-app/immich-server:v1.100.0
     command:
       - start.sh
       - microservices
@@ -46,7 +46,7 @@ services:
     hostname: "{ServiceName}-immich-microservices"
   "{ServiceName}-immich-machine-learning":
     container_name: "{ServiceName}-immich-machine-learning"
-    image: ghcr.io/immich-app/immich-machine-learning:v1.99.0
+    image: ghcr.io/immich-app/immich-machine-learning:v1.100.0
     volumes:
       - "{ServiceName}-immich-machine-learning-data:/cache"
     environment:

@@ -1,13 +1,13 @@
 cosmos-installer: null
-name: big-bear-dozzle
+name: big-bear-budibase
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: amir20/dozzle:v6.4.2
+    image: budibase/budibase:2.22.13
     restart: unless-stopped
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - "{ServiceName}-data:/data"
     ports:
-      - 8888:8080
+      - 8080:80
     hostname: "{ServiceName}"
 minVersion: 0.14.0

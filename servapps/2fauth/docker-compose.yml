@@ -10,5 +10,7 @@ services:
     network_mode: bridge
     volumes:
       - "{ServiceName}-data:/2fauth"
+    environment:
+      - APP_URL=http://[CHANGE_TO_LAN_IP]:8000
     hostname: "{ServiceName}"
 minVersion: 0.14.0
