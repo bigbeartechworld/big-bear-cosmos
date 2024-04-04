@@ -64,7 +64,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Glances                             | nicolargo/glances                                |                                               |
 | Gluetun                             | qmcgaw/gluetun                                   |                                               |      |
 | Gotify                              | gotify/server                                    |                                               |
-| Homarr                              | ghcr.io/ajnart/homarr                            |                                               |
+| Homarr                              | ghcr.io/ajnart/homarr                            | [YouTube](https://youtu.be/YK3QXYVOAvg)       |
 | Home Assistant                      | ghcr.io/home-assistant/home-assistant            |                                               |
 | Homer                               | b4bz/homer                                       |                                               |
 | Homepage                            | ghcr.io/gethomepage/homepage                     |                                               |
