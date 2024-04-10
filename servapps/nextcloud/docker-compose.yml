@@ -21,8 +21,10 @@ services:
       - OVERWRITEPROTOCOL=http
       - PHP_UPLOAD_LIMIT=1024G
     depends_on:
-      - db-nextcloud
-      - redis-nextcloud
+      db-nextcloud:
+        condition: service_healthy
+      redis-nextcloud:
+        condition: service_healthy
     networks:
       - nextcloud_network
     hostname: "{ServiceName}-nextcloud"
@@ -38,6 +40,13 @@ services:
       - POSTGRES_DB=nextcloud
     networks:
       - nextcloud_network
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U casaos
+      interval: 10s
+      timeout: 5s
+      retries: 5
     hostname: "{ServiceName}-db-nextcloud"
   "{ServiceName}-redis-nextcloud":
     container_name: "{ServiceName}-redis-nextcloud"
@@ -48,6 +57,13 @@ services:
       - "{ServiceName}-redis-nextcloud-data:/data"
     networks:
       - nextcloud_network
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - redis-cli ping || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
     hostname: "{ServiceName}-redis-nextcloud"
   "{ServiceName}-cron":
     image: nextcloud:28.0.4-apache
@@ -56,8 +72,10 @@ services:
       - "{ServiceName}-cron-data:/var/www/html"
     entrypoint: /cron.sh
     depends_on:
-      - db-nextcloud
-      - redis-nextcloud
+      db-nextcloud:
+        condition: service_healthy
+      redis-nextcloud:
+        condition: service_healthy
     networks:
       - nextcloud_network
     container_name: "{ServiceName}-cron"
