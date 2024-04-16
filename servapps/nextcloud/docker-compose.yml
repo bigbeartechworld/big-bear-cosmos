@@ -31,7 +31,7 @@ services:
   "{ServiceName}-db-nextcloud":
     container_name: "{ServiceName}-db-nextcloud"
     image: postgres:14.2
-    restart: on-failure
+    restart: unless-stopped
     volumes:
       - "{ServiceName}-db-nextcloud-data:/var/lib/postgresql/data"
     environment:

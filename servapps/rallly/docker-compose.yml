@@ -29,7 +29,7 @@ services:
   "{ServiceName}-big-bear-rallly-db":
     container_name: "{ServiceName}-big-bear-rallly-db"
     image: postgres:14
-    restart: always
+    restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-rallly-db-data:/var/lib/postgresql/data"
     environment:
@@ -41,7 +41,7 @@ services:
     healthcheck:
       test:
         - CMD-SHELL
-        - pg_isready -U tipi
+        - pg_isready -U rallly
       interval: 5s
       timeout: 5s
       retries: 5

@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-code-server
 services:
   "{ServiceName}":
-    image: linuxserver/code-server:4.22.1
+    image: linuxserver/code-server:4.23.0
     container_name: "{ServiceName}"
     environment:
       - PASSWORD=my_password
