@@ -13,7 +13,7 @@ services:
     environment:
       - SECRET_KEY=6496f725-e4a4-4fa5-9f7b-db0114bc1568
       - DB_ENGINE=django.db.backends.postgresql
-      - POSTGRES_HOST=big-bear-tandoor-db
+      - POSTGRES_HOST={ServiceName}-big-bear-tandoor-db
       - POSTGRES_PORT=5432
       - POSTGRES_USER=tandoor
       - POSTGRES_PASSWORD=100c7d31-9ec5-44ec-9101-e226c8e2420d
