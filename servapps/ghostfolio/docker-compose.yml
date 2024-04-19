@@ -15,7 +15,7 @@ services:
       POSTGRES_DB: ghostfolio
       POSTGRES_USER: ghostfolio
       POSTGRES_PASSWORD: casaospassword
-      REDIS_HOST: big-bear-ghostfolio-redis
+      REDIS_HOST: "{ServiceName}-big-bear-ghostfolio-redis"
       REDIS_PASSWORD: casaosredispassword
       REDIS_PORT: "6379"
     ports:

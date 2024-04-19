@@ -20,7 +20,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - MONGO_HOST=big-bear-unifi-db
+      - MONGO_HOST={ServiceName}-{ServiceName}-big-bear-unifi-db
       - MONGO_USER=unifi
       - MONGO_PASS=unifi_password
       - MONGO_PORT=27017

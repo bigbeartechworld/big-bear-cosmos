@@ -20,7 +20,7 @@ services:
       - APP_URL=http://[CASAOS_IP]:8080
       - APP_KEY=base64:1234567890abcdefghijklmnopqrstuvwxyz
       - DB_ROOT_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
-      - DB_HOST=mariadb
+      - DB_HOST={ServiceName}-mariadb
       - DB_DATABASE=financialfreedom
       - DB_USERNAME=bigbear
       - DB_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a

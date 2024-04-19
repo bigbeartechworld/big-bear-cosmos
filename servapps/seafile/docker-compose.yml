@@ -10,7 +10,7 @@ services:
     ports:
       - 8080:80
     environment:
-      - DB_HOST=big-bear-seafile-db
+      - DB_HOST={ServiceName}-big-bear-seafile-db
       - DB_ROOT_PASSWD=seafilepassword
       - TIME_ZONE=Etc/UTC
       - SEAFILE_ADMIN_EMAIL=admin@example.com

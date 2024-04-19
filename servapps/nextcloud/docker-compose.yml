@@ -11,7 +11,7 @@ services:
       - "{ServiceName}-nextcloud-data:/var/www/html"
     environment:
       - POSTGRES_HOST={ServiceName}-db-nextcloud
-      - REDIS_HOST=redis-nextcloud
+      - REDIS_HOST={ServiceName}-redis-nextcloud
       - POSTGRES_PASSWORD=casaos
       - POSTGRES_USER=casaos
       - POSTGRES_DB=nextcloud

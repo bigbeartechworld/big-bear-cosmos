@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       - APP_KEY=80356f7073c4f7834187b25a9d32cd2a
-      - DB_HOST=big-bear-monica-db
+      - DB_HOST={ServiceName}-big-bear-monica-db
       - DB_USERNAME=usermonica
       - DB_PASSWORD=passwordmonica
     volumes:

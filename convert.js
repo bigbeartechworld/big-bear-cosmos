@@ -120,19 +120,46 @@ function composeConvert(input) {
         }
       });
 
+    const varsToPrefix = [
+      "POSTGRES_HOST",
+      "MONGO_HOST",
+      "REDIS_HOST",
+      "DB_HOST",
+    ];
+
     // Handle environment variable modifications
     if (service.environment) {
       if (Array.isArray(service.environment)) {
         service.environment = service.environment.map((env) => {
-          if (env.startsWith("POSTGRES_HOST=")) {
-            const parts = env.split("=");
-            return `POSTGRES_HOST={ServiceName}-` + parts[1];
+          const [key, value] = env.split("=");
+          if (varsToPrefix.includes(key)) {
+            return `${key}={ServiceName}-` + value;
           }
           return env;
         });
       } else if (typeof service.environment === "object") {
         Object.keys(service.environment).forEach((key) => {
-          if (key === "POSTGRES_HOST") {
+          if (varsToPrefix.includes(key)) {
+            service.environment[key] =
+              `{ServiceName}-` + service.environment[key];
+          }
+        });
+      }
+    }
+
+    // Handle environment variable modifications
+    if (service.environment) {
+      if (Array.isArray(service.environment)) {
+        service.environment = service.environment.map((env) => {
+          if (env.startsWith("MONGO_HOST=")) {
+            const parts = env.split("=");
+            return `MONGO_HOST={ServiceName}-` + parts[1];
+          }
+          return env;
+        });
+      } else if (typeof service.environment === "object") {
+        Object.keys(service.environment).forEach((key) => {
+          if (key === "MONGO_HOST") {
             service.environment[key] =
               `{ServiceName}-` + service.environment[key];
           }

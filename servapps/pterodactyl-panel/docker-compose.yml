@@ -32,8 +32,8 @@ services:
       CACHE_DRIVER: redis
       SESSION_DRIVER: redis
       QUEUE_DRIVER: redis
-      REDIS_HOST: cache
-      DB_HOST: database
+      REDIS_HOST: "{ServiceName}-cache"
+      DB_HOST: "{ServiceName}-database"
       DB_PASSWORD: casaos
       DB_PORT: "3306"
     hostname: "{ServiceName}-app"
