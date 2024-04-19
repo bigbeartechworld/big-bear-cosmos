@@ -120,6 +120,22 @@ function composeConvert(input) {
         }
       });
 
+    // Correctly handle depends_on with {ServiceName}- prefix
+    if (service.depends_on) {
+      if (
+        typeof service.depends_on === "object" &&
+        !Array.isArray(service.depends_on)
+      ) {
+        service.depends_on = Object.keys(service.depends_on).map(
+          (key) => `{ServiceName}-` + key
+        );
+      } else if (Array.isArray(service.depends_on)) {
+        service.depends_on = service.depends_on.map(
+          (dep) => `{ServiceName}-` + dep
+        );
+      }
+    }
+
     delete service["x-casaos"];
 
     doc.services[newName] = service;
