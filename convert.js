@@ -120,6 +120,26 @@ function composeConvert(input) {
         }
       });
 
+    // Handle environment variable modifications
+    if (service.environment) {
+      if (Array.isArray(service.environment)) {
+        service.environment = service.environment.map((env) => {
+          if (env.startsWith("POSTGRES_HOST=")) {
+            const parts = env.split("=");
+            return `POSTGRES_HOST={ServiceName}-` + parts[1];
+          }
+          return env;
+        });
+      } else if (typeof service.environment === "object") {
+        Object.keys(service.environment).forEach((key) => {
+          if (key === "POSTGRES_HOST") {
+            service.environment[key] =
+              `{ServiceName}-` + service.environment[key];
+          }
+        });
+      }
+    }
+
     // Correctly handle depends_on with {ServiceName}- prefix
     if (service.depends_on) {
       if (

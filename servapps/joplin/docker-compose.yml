@@ -13,7 +13,7 @@ services:
       - POSTGRES_USER=bigbear
       - POSTGRES_DATABASE=joplin
       - POSTGRES_PORT=5432
-      - POSTGRES_HOST=big-bear-joplin-db
+      - POSTGRES_HOST={ServiceName}-big-bear-joplin-db
       - MAX_TIME_DRIFT=0
     ports:
       - 22300:22300

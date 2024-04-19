@@ -10,7 +10,7 @@ services:
     volumes:
       - "{ServiceName}-nextcloud-data:/var/www/html"
     environment:
-      - POSTGRES_HOST=db-nextcloud
+      - POSTGRES_HOST={ServiceName}-db-nextcloud
       - REDIS_HOST=redis-nextcloud
       - POSTGRES_PASSWORD=casaos
       - POSTGRES_USER=casaos
