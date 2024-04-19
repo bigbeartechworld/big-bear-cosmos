@@ -19,8 +19,8 @@ services:
       DB_PORT: "5432"
       REDIS_HOSTNAME: immich-redis
     depends_on:
-      - redis
-      - database
+      - "{ServiceName}-redis"
+      - "{ServiceName}-database"
     restart: unless-stopped
     hostname: "{ServiceName}-immich-server"
   "{ServiceName}-immich-microservices":
@@ -39,8 +39,8 @@ services:
       DB_PORT: "5432"
       REDIS_HOSTNAME: immich-redis
     depends_on:
-      - redis
-      - database
+      - "{ServiceName}-redis"
+      - "{ServiceName}-database"
     restart: unless-stopped
     hostname: "{ServiceName}-immich-microservices"
   "{ServiceName}-redis":

@@ -20,8 +20,8 @@ services:
       REDIS_HOSTNAME: immich-redis
       IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
     depends_on:
-      - redis
-      - database
+      - "{ServiceName}-redis"
+      - "{ServiceName}-database"
     restart: unless-stopped
     hostname: "{ServiceName}-immich-server"
   "{ServiceName}-immich-microservices":
@@ -40,8 +40,8 @@ services:
       DB_PORT: 5432
       REDIS_HOSTNAME: immich-redis
     depends_on:
-      - redis
-      - database
+      - "{ServiceName}-redis"
+      - "{ServiceName}-database"
     restart: unless-stopped
     hostname: "{ServiceName}-immich-microservices"
   "{ServiceName}-immich-machine-learning":

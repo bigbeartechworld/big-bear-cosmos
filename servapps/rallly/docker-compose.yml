@@ -23,8 +23,7 @@ services:
     networks:
       - big_bear_rally_network
     depends_on:
-      big-bear-rallly-db:
-        condition: service_healthy
+      - "{ServiceName}-big-bear-rallly-db"
     hostname: "{ServiceName}-big-bear-rallly"
   "{ServiceName}-big-bear-rallly-db":
     container_name: "{ServiceName}-big-bear-rallly-db"

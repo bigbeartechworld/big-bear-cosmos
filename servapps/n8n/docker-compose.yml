@@ -19,8 +19,7 @@ services:
       - DB_POSTGRESDB_USER=bigbearcasaos
       - DB_POSTGRESDB_PASSWORD=bigbearcasaos
     depends_on:
-      db-n8n:
-        condition: service_healthy
+      - "{ServiceName}-db-n8n"
     hostname: "{ServiceName}-app"
   "{ServiceName}-db-n8n":
     container_name: "{ServiceName}-db-n8n"

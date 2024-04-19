@@ -19,7 +19,7 @@ services:
     ports:
       - 2368:2368
     depends_on:
-      - db
+      - "{ServiceName}-db"
     hostname: "{ServiceName}-app"
   "{ServiceName}-db":
     container_name: "{ServiceName}-db"

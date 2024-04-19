@@ -23,8 +23,7 @@ services:
     networks:
       - big-bear-planka-network
     depends_on:
-      big-bear-planka-postgres:
-        condition: service_healthy
+      - "{ServiceName}-big-bear-planka-postgres"
     hostname: "{ServiceName}-big-bear-planka"
   "{ServiceName}-big-bear-planka-postgres":
     image: postgres:14-alpine

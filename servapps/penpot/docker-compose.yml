@@ -10,8 +10,8 @@ services:
     ports:
       - 9001:80
     depends_on:
-      - penpot-backend
-      - penpot-exporter
+      - "{ServiceName}-penpot-backend"
+      - "{ServiceName}-penpot-exporter"
     networks:
       - big-bear-penpot-network
     hostname: "{ServiceName}-penpot-frontend"
@@ -22,8 +22,8 @@ services:
     volumes:
       - "{ServiceName}-penpot-backend-data:/opt/data/assets"
     depends_on:
-      - penpot-postgres
-      - penpot-redis
+      - "{ServiceName}-penpot-postgres"
+      - "{ServiceName}-penpot-redis"
     networks:
       - big-bear-penpot-network
     environment:

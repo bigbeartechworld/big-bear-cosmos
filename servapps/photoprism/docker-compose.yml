@@ -39,7 +39,7 @@ services:
     networks:
       - photoprism-network
     depends_on:
-      - photoprism-db
+      - "{ServiceName}-photoprism-db"
     hostname: "{ServiceName}-app"
   "{ServiceName}-photoprism-db":
     image: mariadb:10.8

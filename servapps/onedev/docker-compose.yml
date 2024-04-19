@@ -22,7 +22,7 @@ services:
       - 6610:6610
       - 6611:6611
     depends_on:
-      - big-bear-onedev-db
+      - "{ServiceName}-big-bear-onedev-db"
     networks:
       - big_bear_ondedev_network
     hostname: "{ServiceName}-big-bear-onedev"

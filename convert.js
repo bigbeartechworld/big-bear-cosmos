@@ -158,7 +158,7 @@ function descriptionConvert(name, input) {
     longDescription: (doc.description || doc.overview || doc.tagline).en_us,
     tags: [doc.category],
     repository: "https://github.com/bigbeartechworld/big-bear-casaos",
-    image: "",
+    image: doc.icon,
     supported_architectures: doc.architectures,
     icon: doc.icon,
   };

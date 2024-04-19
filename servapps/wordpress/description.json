@@ -6,7 +6,7 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "",
+  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wordpress.png",
   "supported_architectures": [
     "amd64",
     "arm"

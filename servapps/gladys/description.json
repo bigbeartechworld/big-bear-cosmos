@@ -6,7 +6,7 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "",
+  "image": "https://gladysassistant.com/img/external/github-gladys-logo.png",
   "supported_architectures": [
     "amd64",
     "arm64"

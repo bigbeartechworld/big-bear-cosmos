@@ -45,7 +45,7 @@ services:
     networks:
       - unifi-nework-application-network
     depends_on:
-      - unifi-db
+      - "{ServiceName}-unifi-db"
     hostname: "{ServiceName}-app"
 networks:
   unifi-nework-application-network:

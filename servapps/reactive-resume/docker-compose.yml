@@ -8,10 +8,10 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - postgres
-      - minio
-      - redis
-      - chrome
+      - "{ServiceName}-postgres"
+      - "{ServiceName}-minio"
+      - "{ServiceName}-redis"
+      - "{ServiceName}-chrome"
     networks:
       - reactive-resume-network
     environment:

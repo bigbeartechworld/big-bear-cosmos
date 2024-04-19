@@ -13,7 +13,7 @@ services:
     volumes:
       - "{ServiceName}-app-data:/var/www/html"
     depends_on:
-      - db
+      - "{ServiceName}-db"
     container_name: "{ServiceName}-app"
     hostname: "{ServiceName}-app"
   "{ServiceName}-db":

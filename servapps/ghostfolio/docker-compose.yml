@@ -21,10 +21,8 @@ services:
     ports:
       - 3333:3333
     depends_on:
-      big-bear-ghostfolio-db:
-        condition: service_healthy
-      big-bear-ghostfolio-redis:
-        condition: service_healthy
+      - "{ServiceName}-big-bear-ghostfolio-db"
+      - "{ServiceName}-big-bear-ghostfolio-redis"
     networks:
       - big_bear_ghostfolio_network
     hostname: "{ServiceName}-big-bear-ghostfolio"

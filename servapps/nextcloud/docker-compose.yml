@@ -21,10 +21,8 @@ services:
       - OVERWRITEPROTOCOL=http
       - PHP_UPLOAD_LIMIT=1024G
     depends_on:
-      db-nextcloud:
-        condition: service_healthy
-      redis-nextcloud:
-        condition: service_healthy
+      - "{ServiceName}-db-nextcloud"
+      - "{ServiceName}-redis-nextcloud"
     networks:
       - nextcloud_network
     hostname: "{ServiceName}-nextcloud"
@@ -72,10 +70,8 @@ services:
       - "{ServiceName}-cron-data:/var/www/html"
     entrypoint: /cron.sh
     depends_on:
-      db-nextcloud:
-        condition: service_healthy
-      redis-nextcloud:
-        condition: service_healthy
+      - "{ServiceName}-db-nextcloud"
+      - "{ServiceName}-redis-nextcloud"
     networks:
       - nextcloud_network
     container_name: "{ServiceName}-cron"

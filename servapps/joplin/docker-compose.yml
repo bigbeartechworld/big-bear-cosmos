@@ -20,7 +20,7 @@ services:
     networks:
       - big_bear_joplin_network
     depends_on:
-      - big-bear-joplin-db
+      - "{ServiceName}-big-bear-joplin-db"
     hostname: "{ServiceName}-big-bear-joplin"
   "{ServiceName}-big-bear-joplin-db":
     container_name: "{ServiceName}-big-bear-joplin-db"

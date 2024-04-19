@@ -10,8 +10,7 @@ services:
       DATABASE_TYPE: postgresql
       APP_SECRET: replace-me-with-a-random-string
     depends_on:
-      db:
-        condition: service_healthy
+      - "{ServiceName}-db"
     restart: always
     container_name: "{ServiceName}-app"
     hostname: "{ServiceName}-app"

@@ -14,10 +14,10 @@ services:
       - app:app
       - --bind=0.0.0.0:5000
     depends_on:
-      - redis
-      - parsr
-      - worker
-      - ocr_worker
+      - "{ServiceName}-redis"
+      - "{ServiceName}-parsr"
+      - "{ServiceName}-worker"
+      - "{ServiceName}-ocr_worker"
     networks:
       - big-bear-pd3f-network
     hostname: "{ServiceName}-web"
@@ -40,8 +40,8 @@ services:
   "{ServiceName}-worker":
     image: pd3f/pd3f:latest
     depends_on:
-      - parsr
-      - redis
+      - "{ServiceName}-parsr"
+      - "{ServiceName}-redis"
     networks:
       - big-bear-pd3f-network
     volumes:

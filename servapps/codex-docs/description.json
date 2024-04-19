@@ -6,7 +6,7 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "",
+  "image": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/codex-docs/logo.jpg?raw=true",
   "supported_architectures": [
     "amd64",
     "arm64"

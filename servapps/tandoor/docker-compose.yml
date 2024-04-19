@@ -21,7 +21,7 @@ services:
     networks:
       - big_bear_tandoor_network
     depends_on:
-      "{ServiceName}-big-bear-tandoor-db":
+      - "{ServiceName}-big-bear-tandoor-db"
     hostname: "{ServiceName}-big-bear-tandoor"
   "{ServiceName}-big-bear-tandoor-db":
     image: postgres:15-alpine

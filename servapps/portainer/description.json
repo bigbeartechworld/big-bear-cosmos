@@ -6,7 +6,7 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "",
+  "image": "https://github.com/walkxcode/dashboard-icons/blob/main/png/portainer-alt.png?raw=true",
   "supported_architectures": [
     "amd64",
     "arm64"

@@ -33,7 +33,7 @@ services:
     ports:
       - 1080:8080
     depends_on:
-      - big-bear-rommdb
+      - "{ServiceName}-big-bear-rommdb"
     restart: unless-stopped
     networks:
       - big-bear-romm-network

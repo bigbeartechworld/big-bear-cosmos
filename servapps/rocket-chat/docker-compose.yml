@@ -11,8 +11,7 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      db:
-        condition: service_healthy
+      - "{ServiceName}-db"
     networks:
       - rocketchat-net
     hostname: "{ServiceName}-app"
