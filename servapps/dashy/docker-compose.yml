@@ -2,13 +2,12 @@ cosmos-installer: null
 name: big-bear-dashy
 services:
   "{ServiceName}":
-    image: lissy93/dashy:2.1.2
+    image: lissy93/dashy:3.0.0
     container_name: "{ServiceName}"
-    network_mode: bridge
     volumes:
       - "{ServiceName}-data:/app/public"
     ports:
-      - 4000:80
+      - 4000:8080
     environment:
       - NODE_ENV=production
     restart: unless-stopped
