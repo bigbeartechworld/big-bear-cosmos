@@ -167,6 +167,68 @@ function composeConvert(input) {
       }
     }
 
+    if (service.environment) {
+      // If environment variables are in array format
+      if (Array.isArray(service.environment)) {
+        service.environment = service.environment.map((env) => {
+          const [key, value] = env.split("=", 2); // Ensure only the first "=" is used to split
+          if (key === "DATABASE_URL") {
+            // The regex now supports both 'postgres' and 'postgresql'
+            const urlRegex =
+              /(postgresql?:\/\/)([^:]+):([^@]+)@([^:]+):(\d+)\/([^?]+)(\?.+)?/;
+            const match = value.match(urlRegex);
+            if (match) {
+              const [
+                fullMatch,
+                protocol,
+                username,
+                password,
+                host,
+                port,
+                database,
+                queryParams,
+              ] = match;
+              const newHost = `{ServiceName}-` + host; // Prefix the host with {ServiceName}-
+              return `${key}=${protocol}${username}:${password}@${newHost}:${port}/${database}${
+                queryParams || ""
+              }`;
+            }
+          }
+          return env;
+        });
+      }
+      // If environment variables are in object format
+      else if (typeof service.environment === "object") {
+        Object.keys(service.environment).forEach((key) => {
+          if (key === "DATABASE_URL") {
+            const value = service.environment[key];
+            // The regex now supports both 'postgres' and 'postgresql'
+            const urlRegex =
+              /(postgresql?:\/\/)([^:]+):([^@]+)@([^:]+):(\d+)\/([^?]+)(\?.+)?/;
+            const match = value.match(urlRegex);
+            if (match) {
+              const [
+                fullMatch,
+                protocol,
+                username,
+                password,
+                host,
+                port,
+                database,
+                queryParams,
+              ] = match;
+              const newHost = `{ServiceName}-` + host; // Prefix the host with {ServiceName}-
+              service.environment[
+                key
+              ] = `${protocol}${username}:${password}@${newHost}:${port}/${database}${
+                queryParams || ""
+              }`;
+            }
+          }
+        });
+      }
+    }
+
     // Correctly handle depends_on with {ServiceName}- prefix
     if (service.depends_on) {
       if (

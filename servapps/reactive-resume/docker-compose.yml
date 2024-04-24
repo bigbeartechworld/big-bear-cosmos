@@ -21,7 +21,7 @@ services:
       STORAGE_URL: http://[CASAOS_IP]:9000/default
       CHROME_TOKEN: chrome_token
       CHROME_URL: ws://chrome:3000
-      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
+      DATABASE_URL: postgresql://postgres:postgres@{ServiceName}-postgres:5432/postgres
       ACCESS_TOKEN_SECRET: access_token_secret
       REFRESH_TOKEN_SECRET: refresh_token_secret
       MAIL_FROM: noreply@localhost

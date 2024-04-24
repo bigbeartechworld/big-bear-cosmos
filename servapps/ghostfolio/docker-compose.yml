@@ -10,7 +10,7 @@ services:
       HOST: 0.0.0.0
       PORT: "3333"
       ACCESS_TOKEN_SALT: 5a7f9e0d-0e64-4c19-8279-bbe8b4c590f4
-      DATABASE_URL: postgresql://ghostfolio:casaospassword@big-bear-ghostfolio-db:5432/ghostfolio?sslmode=prefer
+      DATABASE_URL: postgresql://ghostfolio:casaospassword@{ServiceName}-big-bear-ghostfolio-db:5432/ghostfolio?sslmode=prefer
       JWT_SECRET_KEY: 534e820d-da30-4dd3-baf9-0511847c478a
       POSTGRES_DB: ghostfolio
       POSTGRES_USER: ghostfolio
