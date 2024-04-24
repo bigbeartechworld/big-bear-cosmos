@@ -1,0 +1,13 @@
+cosmos-installer: null
+name: big-bear-anse
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: ddiu8081/anse:v1.1.11
+    restart: unless-stopped
+    environment:
+      - PORT=8014
+    ports:
+      - 8014:8014
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
