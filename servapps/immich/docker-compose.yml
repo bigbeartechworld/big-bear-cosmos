@@ -23,6 +23,8 @@ services:
       - "{ServiceName}-redis"
       - "{ServiceName}-database"
     restart: unless-stopped
+    networks:
+      - big_bear_immich_network
     hostname: "{ServiceName}-immich-server"
   "{ServiceName}-immich-microservices":
     container_name: "{ServiceName}-immich-microservices"
@@ -43,6 +45,8 @@ services:
       - "{ServiceName}-redis"
       - "{ServiceName}-database"
     restart: unless-stopped
+    networks:
+      - big_bear_immich_network
     hostname: "{ServiceName}-immich-microservices"
   "{ServiceName}-immich-machine-learning":
     container_name: "{ServiceName}-immich-machine-learning"
@@ -57,11 +61,15 @@ services:
       DB_PORT: 5432
       REDIS_HOSTNAME: immich-redis
     restart: unless-stopped
+    networks:
+      - big_bear_immich_network
     hostname: "{ServiceName}-immich-machine-learning"
   "{ServiceName}-redis":
     container_name: "{ServiceName}-redis"
     image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3
     restart: always
+    networks:
+      - big_bear_immich_network
     hostname: "{ServiceName}-redis"
   "{ServiceName}-database":
     container_name: "{ServiceName}-database"
@@ -74,5 +82,10 @@ services:
     volumes:
       - "{ServiceName}-database-data:/var/lib/postgresql/data"
     restart: unless-stopped
+    networks:
+      - big_bear_immich_network
     hostname: "{ServiceName}-database"
+networks:
+  big_bear_immich_network:
+    driver: bridge
 minVersion: 0.14.0
