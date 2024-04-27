@@ -1,0 +1,49 @@
+name: Sync with big-bear-casaos
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * *"
+
+jobs:
+  update-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run script
+        run: sh build.sh
+
+      # Assuming there are steps here to commit changes
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Sync with big-bear-casaos"
+          title: "Automated Pull Request (Sync with big-bear-casaos)"
+          body: "This is an auto-generated pull request."
+          branch: "sync-with-big-bear-casaos" # This should be the branch with new changes
+          delete-branch: true
+          labels: "automerge"
+
+      - name: Automerge
+        uses: pascalgn/automerge-action@v0.14.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          mergeMethod: squash
+          label: "automerge"
+          commitMessageTemplate: "pull-request-title"
