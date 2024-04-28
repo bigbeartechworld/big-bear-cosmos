@@ -25,7 +25,7 @@ jobs:
           run_install: false
 
       - name: Cache pnpm modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
