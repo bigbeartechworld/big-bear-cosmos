@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-codex-docs
 services:
   "{ServiceName}":
-    image: ghcr.io/codex-team/codex.docs:v2.2
+    image: ghcr.io/codex-team/codex.docs:v2.1
     ports:
       - 3000:3000
     volumes:
