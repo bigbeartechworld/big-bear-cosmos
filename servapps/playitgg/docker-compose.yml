@@ -1,11 +1,11 @@
 cosmos-installer: null
-name: big-bear-excalidraw
+name: big-bear-playitgg
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: excalidraw/excalidraw:latest
+    image: dysta/playitgg:1.1.0
     restart: unless-stopped
-    ports:
-      - 8000:80
+    volumes:
+      - "{ServiceName}-data:/secrets"
     hostname: "{ServiceName}"
 minVersion: 0.14.0

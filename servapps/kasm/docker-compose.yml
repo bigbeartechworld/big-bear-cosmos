@@ -1,0 +1,21 @@
+cosmos-installer: null
+name: big-bear-kasm
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: linuxserver/kasm:1.15.0
+    restart: unless-stopped
+    privileged: true
+    network_mode: bridge
+    volumes:
+      - "{ServiceName}-data:/opt"
+      - "{ServiceName}-data-2:/profiles"
+      - /dev/input:/dev/input
+      - /run/udev/data:/run/udev/data
+    ports:
+      - 3000:3000
+      - 443:443
+    environment:
+      - KASM_PORT=443
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
