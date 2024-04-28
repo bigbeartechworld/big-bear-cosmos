@@ -50,10 +50,10 @@ jobs:
           delete-branch: true
           labels: "automerge"
 
-      - name: Automerge
-        uses: pascalgn/automerge-action@v0.14.2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          mergeMethod: squash
-          label: "automerge"
-          commitMessageTemplate: "pull-request-title"
+      # - name: Automerge
+      #   uses: pascalgn/automerge-action@v0.14.2
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     mergeMethod: squash
+      #     label: "automerge"
+      #     commitMessageTemplate: "pull-request-title"
