@@ -7,6 +7,9 @@ on:
 
 jobs:
   update-check:
+    env:
+      MERGE_METHOD: "squash"
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,10 +53,10 @@ jobs:
           delete-branch: true
           labels: "automerge"
 
-      # - name: Automerge
-      #   uses: pascalgn/automerge-action@v0.14.2
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     mergeMethod: squash
-      #     label: "automerge"
-      #     commitMessageTemplate: "pull-request-title"
+      - name: Automerge
+        uses: pascalgn/automerge-action@v0.16.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          mergeMethod: squash
+          label: "automerge"
+          deleteAfterMerge: true
