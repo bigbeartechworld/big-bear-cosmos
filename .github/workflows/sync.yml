@@ -46,18 +46,9 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_TOKEN }}
           commit-message: "Sync with big-bear-casaos"
           title: "Automated Pull Request (Sync with big-bear-casaos)"
           body: "This is an auto-generated pull request."
           branch: "sync-with-big-bear-casaos" # This should be the branch with new changes
-          delete-branch: true
           labels: "automerge"
-
-      - name: Automerge
-        uses: pascalgn/automerge-action@v0.16.3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          mergeMethod: squash
-          label: "automerge"
-          deleteAfterMerge: true
