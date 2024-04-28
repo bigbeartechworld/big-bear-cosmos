@@ -48,7 +48,7 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           commit-message: "Sync with big-bear-casaos"
-          title: "Automated Pull Request (Sync with big-bear-casaos)"
-          body: "This is an auto-generated pull request."
+          title: "Sync with big-bear-casaos"
+          body: "Ran the sync script to update the repository with the latest changes from big-bear-casaos."
           branch: "sync-with-big-bear-casaos" # This should be the branch with new changes
           labels: "automerge"
