@@ -9,6 +9,7 @@ jobs:
   update-check:
     env:
       MERGE_METHOD: "squash"
+      MERGE_DELETE_BRANCH: "true"
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     runs-on: ubuntu-latest
     steps:
