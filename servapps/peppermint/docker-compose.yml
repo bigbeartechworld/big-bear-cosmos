@@ -1,0 +1,45 @@
+cosmos-installer: null
+name: big-bear-peppermint
+services:
+  "{ServiceName}-app":
+    container_name: "{ServiceName}-app"
+    image: pepperlabs/peppermint:latest
+    restart: always
+    privileged: false
+    networks:
+      - default
+    ports:
+      - 3000:3000/tcp
+      - 5003:5003/tcp
+    environment:
+      - API_URL=http://local.host:5003
+      - DB_HOST={ServiceName}-db
+      - DB_PASSWORD=casaos
+      - DB_USERNAME=casaos
+      - SECRET=peppermint4life
+    depends_on:
+      - "{ServiceName}-db"
+    hostname: "{ServiceName}-app"
+  "{ServiceName}-db":
+    container_name: "{ServiceName}-db"
+    image: postgres:15.5
+    restart: always
+    environment:
+      - PGID=1000
+      - POSTGRES_DB=casaos
+      - POSTGRES_PASSWORD=casaos
+      - POSTGRES_USER=casaos
+      - PUID=1000
+      - TZ=Etc/UTC
+    ports:
+      - 5432:5432/tcp
+    volumes:
+      - "{ServiceName}-db-data:/var/lib/postgresql/data"
+    networks:
+      - default
+    privileged: false
+    hostname: "{ServiceName}-db"
+networks:
+  default:
+    name: peppermint_default
+minVersion: 0.14.0
