@@ -1,0 +1,18 @@
+cosmos-installer: null
+name: big-bear-nextcloud-ls
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: linuxserver/nextcloud:29.0.0
+    restart: unless-stopped
+    ports:
+      - 10443:443
+    volumes:
+      - "{ServiceName}-data:/config"
+      - "{ServiceName}-data-2:/data"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
