@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-dashy
 services:
   "{ServiceName}":
-    image: lissy93/dashy:3.0.0
+    image: lissy93/dashy:3.0.1
     container_name: "{ServiceName}"
     volumes:
       - "{ServiceName}-data:/app/public"
