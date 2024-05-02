@@ -418,6 +418,22 @@ async function run() {
         path.join(__dirname, "servapps", name, "description.json"),
         JSON.stringify(description, null, 2)
       );
+
+      // Copy config.json file
+      const configSrcPath = path.join(appPath, "config.json");
+      const configDestPath = path.join(
+        __dirname,
+        "servapps",
+        name,
+        "config.json"
+      );
+      if (fs.existsSync(configSrcPath)) {
+        fs.copyFileSync(configSrcPath, configDestPath);
+        console.log(`Copied config.json for ${name}`);
+      } else {
+        console.error(`config.json does not exist for ${name}`);
+      }
+
       const iconUrl = description.icon; // Assuming this is the extracted icon URL from the YAML
       const iconPath = path.join(__dirname, "servapps", name, "icon.png"); // Define the path where you want to save the icon
 
