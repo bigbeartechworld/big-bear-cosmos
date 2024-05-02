@@ -32,99 +32,111 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 ## Apps
 
-| Application                         | Docker Image                                     | YouTube Video                                 | Docs |
-| ----------------------------------- | ------------------------------------------------ | --------------------------------------------- | ---- |
-| 2fauth                              | 2fauth/2fauth                                    | [YouTube Video](https://youtu.be/B5Cb5DXT9-o) |      |
-| Actual Budget                       | actualbudget/actual-server                       | [YouTube Video](https://youtu.be/-un-frxNATQ) |      |
-| AdGuard Home                        | adguard/adguardhome                              |                                               |      |
-| Apache Guacamole                    | guacamole/guacamole                              |                                               |      |
-| Appsmith                            | appsmith/appsmith-ee                             |                                               |      |
-| Audiobookshelf                      | ghcr.io/advplyr/audiobookshelf                   |                                               |      |
-| Baserow                             | baserow/baserow                                  |                                               |      |
-| Brave                               | kasmweb/brave                                    |                                               |      |
-| cAdvisor                            | gcr.io/cadvisor/cadvisor                         |                                               |      |
-| Chrome                              | kasmweb/chrome                                   |                                               |      |
-| Chromium                            | kasmweb/chromium                                 |                                               |      |
-| Code Server                         | linuxserver/code-server                          |                                               |      |
-| CodeX Docs                          | ghcr.io/codex-team/codex.docs                    |                                               |      |
-| Dashdot                             | mauricenino/dashdot                              |                                               |      |
-| Dashy                               | lissy93/dashy                                    |                                               |      |
-| Docker Cron Restart Notifier        | deduard/tools                                    |                                               |      |
-| Dockge                              | louislam/dockge                                  |                                               |      |
-| Dozzle                              | amir20/dozzle                                    | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |      |
-| Excalidraw                          | excalidraw/excalidraw                            | [YouTube Video](https://youtu.be/CfPykJeOy4E) |      |
-| Financial Freedom                   | serversideup/financial-freedom                   |                                               |      |
-| Firefox                             | kasmweb/firefox                                  |                                               |      |
-| Flame                               | pawelmalak/flame                                 |                                               |      |
-| FlContainers Guacmole               | flcontainers/guacamole                           |                                               |      |
-| Focalboard                          | mattermost/focalboard                            |                                               |      |
-| Ghost                               | ghost                                            |                                               |      |
-| Ghostfolio                          | ghostfolio/ghostfolio                            |                                               |      |
-| Gladys Assistant                    | gladysassistant/gladys                           |                                               |
-| Glances                             | nicolargo/glances                                |                                               |
-| Gluetun                             | qmcgaw/gluetun                                   |                                               |      |
-| Gotify                              | gotify/server                                    |                                               |
-| Homarr                              | ghcr.io/ajnart/homarr                            | [YouTube](https://youtu.be/YK3QXYVOAvg)       |
-| Home Assistant                      | ghcr.io/home-assistant/home-assistant            |                                               |
-| Homer                               | b4bz/homer                                       |                                               |
-| Homepage                            | ghcr.io/gethomepage/homepage                     |                                               |
-| Immich                              | ghcr.io/immich-app/immich-server                 |                                               |      |
-| Immich (Without Machine Learning)   | ghcr.io/immich-app/immich-server                 |                                               |      |
-| IT Tools                            | corentinth/it-tools                              | [YouTube](https://youtu.be/TvlIkuHp_Yo)       |      |
-| Jellyseerr                          | fallenbagel/jellyseerr                           |                                               |
-| Joplin                              | florider89/joplin-server                         |                                               |
-| kasm                                | linuxserver/kasm                                 |                                               |
-| Lan Cache                           | lancachenet/monolithic                           |                                               |
-| LibreTranslate                      | libretranslate/libretranslate                    |                                               |
-| Linkwarden                          | ghcr.io/linkwarden/linkwarden                    |                                               |
-| Mailpit                             | axllent/mailpit                                  |                                               |
-| Mealie                              | hkotel/mealie                                    |                                               |      |
-| MIND                                | mrcas/mind                                       |                                               |
-| Minio                               | minio/minio                                      |                                               |
-| Mumble Server                       | mumblevoip/mumble-server                         |                                               |
-| MySpeed                             | germannewsmaker/myspeed                          | [YouTube Video](https://youtu.be/LTawr95nb4w) |
-| n8n                                 | n8nio/n8n                                        |                                               |
-| Nextcloud                           | nextcloud                                        |                                               |
-| NocoDB                              | nocodb/nocodb                                    |                                               |      |
-| Node-RED                            | nodered/node-red                                 |                                               |
-| Ntfy.sh                             | binwiederhier/ntfy                               |                                               |
-| Obisidian Livesync                  | couchdb                                          |                                               |
-| OctoPrint                           | octoprint/octoprint                              |                                               |
-| OneDev                              | 1dev/server                                      |                                               |
-| OnlyOffice                          | onlyoffice/documentserver                        |                                               |
-| PD3F                                | pd3f/pd3f                                        |                                               |
-| Penpot                              | penpotapp/frontend                               |                                               |
-| Peppermint                          | peppermint/postgres                              |                                               |
-| Photoprism                          | photoprism/photoprism                            |                                               |
-| PHPMyAdmin                          | phpmyadmin/phpmyadmin                            |                                               |
-| Pihole                              | pihole/pihole                                    |                                               |      |
-| Pihole and Unbound                  | bigbeartechworld/big-bear-pihole-unbound         |                                               |      |
-| Pingvin Share                       | stonith404/pingvin-share                         |                                               |
-| Planka                              | ghcr.io/plankanban/planka                        |                                               |
-| Playitgg                            | dysta/playitgg                                   |                                               |
-| Plex                                | linuxserver/plex                                 |                                               |
-| Portainer                           | portainer/portainer-ce                           |                                               |
-| Portainer Agent                     | portainer/agent                                  |                                               |
-| Pterodactyl Panel                   | ghcr.io/pterodactyl/panel                        |                                               |
-| Pterodactyl Wings                   | ghcr.io/pterodactyl/wings                        |                                               |
-| Python Matter Server                | ghcr.io/home-assistant-libs/python-matter-server |                                               |
-| Reactive Resume                     | amruthpillai/reactive-resume                     |                                               |
-| Rocket.Chat                         | rocket.chat                                      |                                               |
-| RomM                                | zurdi15/romm                                     |                                               |
-| Scrypted                            | koush/scrypted                                   |                                               |
-| Speedtest Tracker                   | ghcr.io/alexjustesen/speedtest-tracker           |                                               |      |
-| Tandoor                             | ghcr.io/tandoorrecipes/recipes                   |                                               |      |
-| TP-Link Omada Controller            | mbentley/omada-controller                        |                                               |
-| Traccar                             | traccar/traccar                                  |                                               |
-| Trillium                            | zadam/trilium                                    |                                               |      |
-| Umami                               | ghcr.io/umami-software/umami                     |                                               |
-| Unifi Network Application           | linuxserver/unifi-network-application            |                                               |
-| Unifi Network Application MongoDB 4 | linuxserver/unifi-network-application            |                                               |
-| Uptime Kuma                         | louislam/uptime-kuma                             |                                               |      |
-| Vikunja                             | vikunja/vikunja                                  |                                               |
-| What's Up Docker                    | fmartinou/whats-up-docker                        |                                               |
-| WordPress                           | wordpress                                        |                                               |      |
-| Zipline                             | ghcr.io/diced/zipline                            |                                               |      |
+| Application | Docker Image | Version | YouTube Video | Docs |
+| --- | --- | --- | --- | --- |
+| 2fauth | 2fauth/2fauth | 5.1.1 | [YouTube Video](https://youtu.be/B5Cb5DXT9-o) |  |
+| Homepage | ghcr.io/gethomepage/homepage | v0.8.12 |  |  |
+| Romm | zurdi15/romm | 3.1.0 |  |  |
+| actual-server | actualbudget/actual-server | 24.4.0 | [YouTube Video](https://youtu.be/-un-frxNATQ) |  |
+| adguard-home | adguard/adguardhome | v0.107.48 |  |  |
+| anse | ddiu8081/anse | v1.1.11 |  |  |
+| appsmith | appsmith/appsmith-ee | v1.22.1 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.9.0 |  |  |
+| baserow | baserow/baserow | 1.24.2 |  |  |
+| brave | kasmweb/brave | 1.15.0-rolling |  |  |
+| budibase | budibase/budibase | 2.24.0 |  |  |
+| cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
+| chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
+| chrome | kasmweb/chrome | 1.15.0-rolling |  |  |
+| chromium | kasmweb/chromium | 1.15.0-rolling |  |  |
+| code-server | linuxserver/code-server | 4.23.1 |  |  |
+| codex-docs | ghcr.io/codex-team/codex.docs | 2.2 |  |  |
+| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.3.2 |  |  |
+| dashdot | mauricenino/dashdot | 5.8.3 |  |  |
+| dashy | lissy93/dashy | 3.0.1 |  |  |
+| docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
+| dockge | louislam/dockge | 1.4.2 |  |  |
+| dozzle | amir20/dozzle | 6.5.2 | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |  |
+| excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/CfPykJeOy4E) |  |
+| financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
+| firefox | kasmweb/firefox | 1.15.0-rolling |  |  |
+| flame | pawelmalak/flame | multiarch2.3.1 |  |  |
+| flcontainers-guacamole | flcontainers/guacamole | 1.5.4 |  |  |
+| focalboard | mattermost/focalboard | 7.11.4 |  |  |
+| ghost | ghost | 5.82.2-alpine |  |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.77.1 |  |  |
+| gladys | gladysassistant/gladys | v4.39.0 |  |  |
+| glances | nicolargo/glances | 3.4.0.5-full |  |  |
+| gluetun | qmcgaw/gluetun | v3.38.0 |  |  |
+| gotify | gotify/server | 2.4.0 |  |  |
+| guacamole | guacamole/guacamole | 1.5.5 |  |  |
+| homarr | ghcr.io/ajnart/homarr | 0.15.2 | [YouTube Video](https://youtu.be/YK3QXYVOAvg) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.0 |  |  |
+| homer | b4bz/homer | v24.04.1 |  |  |
+| ihatemoney | ihatemoney/ihatemoney | 6.1.5 |  |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | v1.103.1 |  |  |
+| immich | ghcr.io/immich-app/immich-server | v1.103.1 |  |  |
+| it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/TvlIkuHp_Yo) |  |
+| jellyseerr | fallenbagel/jellyseerr | 1.8.1 |  |  |
+| joplin | florider89/joplin-server | 2.14.2 |  |  |
+| kasm | linuxserver/kasm | 1.120.20221218 |  |  |
+| lancache | lancachenet/monolithic | latest |  |  |
+| libretranslate | libretranslate/libretranslate | v1.5.7 |  |  |
+| linkwarden | ghcr.io/linkwarden/linkwarden | v2.5.3 |  |  |
+| mailpit | axllent/mailpit | v1.17 |  |  |
+| mealie | hkotel/mealie | v1.5.1 |  |  |
+| mind | mrcas/mind | v1.4.0 |  |  |
+| minio | minio/minio | RELEASE.2024-02-24T17-11-14Z |  |  |
+| monica | monica | 4.0.0 |  |  |
+| mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
+| myspeed | germannewsmaker/myspeed | 1.0.8 | [YouTube Video](https://youtu.be/LTawr95nb4w) |  |
+| n8n | n8nio/n8n | 1.39.1 |  |  |
+| nextcloud-ls | linuxserver/nextcloud | 29.0.0 |  |  |
+| nextcloud | nextcloud | 29.0.0-apache |  |  |
+| nocodb | nocodb/nocodb | 0.205.1 |  |  |
+| node-red | nodered/node-red | 3.1.9 |  |  |
+| ntfysh | binwiederhier/ntfy | v2.10.0 |  |  |
+| obsidian-livesync | couchdb | 3.3.3 |  |  |
+| octoprint | octoprint/octoprint | 1.10.0 |  |  |
+| odoo | odoo | 17 |  |  |
+| onedev | 1dev/server | 10.5.3 |  |  |
+| onlyoffice | onlyoffice/documentserver | 8.0.1 |  |  |
+| pd3f | pd3f/pd3f | latest |  |  |
+| penpot | penpotapp/frontend | 2.0.1 |  |  |
+| peppermint | pepperlabs/peppermint | latest |  |  |
+| photoprism | photoprism/photoprism | 231128 |  |  |
+| phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
+| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.03.2 |  |  |
+| pihole | pihole/pihole | 2024.03.2 |  |  |
+| pingvin-share | stonith404/pingvin-share | v0.23.1 |  |  |
+| piwigo | linuxserver/piwigo | 14.4.0 |  |  |
+| planka | ghcr.io/plankanban/planka | 1.17.1 |  |  |
+| playitgg | dysta/playitgg | 1.1.0 |  |  |
+| plex | linuxserver/plex | 1.40.2 |  |  |
+| portainer-agent | portainer/agent | 2.20.1 |  |  |
+| portainer | portainer/portainer-ce | 2.20.1-alpine |  |  |
+| pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.11.5 |  |  |
+| pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.11.11 |  |  |
+| python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 5.10.0 |  |  |
+| rallly | lukevella/rallly | 3.7.0 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | v4.0.10 |  |  |
+| rocket-chat | rocket.chat | 6.7.0 |  |  |
+| scrypted | koush/scrypted | 18-jammy-full.s6-v0.72.0 |  |  |
+| seafile | seafileltd/seafile-mc | 11.0.8 |  |  |
+| speedtest-tracker | ghcr.io/alexjustesen/speedtest-tracker | v0.19.0 |  |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.17 |  |  |
+| tp-link-omada-controller | mbentley/omada-controller | 5.13 |  |  |
+| traccar | traccar/traccar | 6.1-ubuntu |  |  |
+| trilium | zadam/trilium | 0.63.5 |  |  |
+| umami | ghcr.io/umami-software/umami | postgresql-latest |  |  |
+| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 |  |  |
+| unifi-network-application | linuxserver/unifi-network-application | 6.0.11 |  |  |
+| uptime-kuma | louislam/uptime-kuma | 1 |  |  |
+| vikunja | vikunja/vikunja | 0.23.0 |  |  |
+| whats-up-docker | fmartinou/whats-up-docker | 6.3.0 |  |  |
+| wordpress | wordpress | 6.5.2 |  |  |
+| zipline | ghcr.io/diced/zipline | 3.7.9 |  |  |
+
 
 ## UI How to
 
