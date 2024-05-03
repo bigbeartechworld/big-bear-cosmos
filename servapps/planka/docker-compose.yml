@@ -14,7 +14,7 @@ services:
       - 3000:1337
     environment:
       - BASE_URL=http://[YOUR_CASAOS_LAN_IP]:3000
-      - DATABASE_URL=postgresql://postgres@big-bear-planka-postgres/planka
+      - DATABASE_URL=postgresql://postgres@{ServiceName}-big-bear-planka-postgres/planka
       - SECRET_KEY=notsecretkey
       - DEFAULT_ADMIN_EMAIL=demo@demo.demo
       - DEFAULT_ADMIN_PASSWORD=demo
