@@ -167,62 +167,63 @@ function composeConvert(input) {
       }
     }
 
+    // Handle environment variable modifications for DATABASE_URL
     if (service.environment) {
-      // If environment variables are in array format
       if (Array.isArray(service.environment)) {
         service.environment = service.environment.map((env) => {
-          const [key, value] = env.split("=", 2); // Ensure only the first "=" is used to split
+          const [key, value] = env.split("=", 2); // Split the string only at the first "="
           if (key === "DATABASE_URL") {
-            // The regex now supports both 'postgres' and 'postgresql'
+            // Regex to parse the URL
             const urlRegex =
-              /(postgresql?:\/\/)([^:]+):([^@]+)@([^:]+):(\d+)\/([^?]+)(\?.+)?/;
+              /(postgresql?:\/\/)([^@]+@)?([^:\/]+)(:\d+\/)?([^?]*)(\?.+)?/;
             const match = value.match(urlRegex);
             if (match) {
               const [
                 fullMatch,
                 protocol,
-                username,
-                password,
+                userInfo,
                 host,
                 port,
                 database,
                 queryParams,
               ] = match;
-              const newHost = `{ServiceName}-` + host; // Prefix the host with {ServiceName}-
-              return `${key}=${protocol}${username}:${password}@${newHost}:${port}/${database}${
-                queryParams || ""
-              }`;
+              // Ensure prefixed host does not double-prefix
+              const prefixedHost = host.startsWith("{ServiceName}-")
+                ? host
+                : `{ServiceName}-` + host;
+              // Reconstruct the URL ensuring that undefined groups are handled as empty strings
+              return `${key}=${protocol}${userInfo || ""}${prefixedHost}${
+                port || ""
+              }${database}${queryParams || ""}`;
             }
           }
           return env;
         });
-      }
-      // If environment variables are in object format
-      else if (typeof service.environment === "object") {
+      } else if (typeof service.environment === "object") {
         Object.keys(service.environment).forEach((key) => {
           if (key === "DATABASE_URL") {
             const value = service.environment[key];
-            // The regex now supports both 'postgres' and 'postgresql'
             const urlRegex =
-              /(postgresql?:\/\/)([^:]+):([^@]+)@([^:]+):(\d+)\/([^?]+)(\?.+)?/;
+              /(postgresql?:\/\/)([^@]+@)?([^:\/]+)(:\d+\/)?([^?]*)(\?.+)?/;
             const match = value.match(urlRegex);
             if (match) {
               const [
                 fullMatch,
                 protocol,
-                username,
-                password,
+                userInfo,
                 host,
                 port,
                 database,
                 queryParams,
               ] = match;
-              const newHost = `{ServiceName}-` + host; // Prefix the host with {ServiceName}-
-              service.environment[
-                key
-              ] = `${protocol}${username}:${password}@${newHost}:${port}/${database}${
-                queryParams || ""
-              }`;
+              // Ensure prefixed host does not double-prefix
+              const prefixedHost = host.startsWith("{ServiceName}-")
+                ? host
+                : `{ServiceName}-` + host;
+              // Reconstruct the URL ensuring that undefined groups are handled as empty strings
+              service.environment[key] = `${protocol}${
+                userInfo || ""
+              }${prefixedHost}${port || ""}${database}${queryParams || ""}`;
             }
           }
         });
