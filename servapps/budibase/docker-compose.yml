@@ -3,7 +3,7 @@ name: big-bear-budibase
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: budibase/budibase:2.24.0
+    image: budibase/budibase:2.24.1
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/data"
