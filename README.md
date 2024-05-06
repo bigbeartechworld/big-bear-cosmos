@@ -58,28 +58,30 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dockge | louislam/dockge | 1.4.2 |  |  |
 | dozzle | amir20/dozzle | 6.5.2 | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/CfPykJeOy4E) |  |
+| faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | kasmweb/firefox | 1.15.0-rolling |  |  |
 | flame | pawelmalak/flame | multiarch2.3.1 |  |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.4 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 |  |  |
 | ghost | ghost | 5.82.2-alpine |  |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.77.1 |  |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.77.1 | [YouTube Video](https://youtu.be/BWPRbiWr4is) |  |
 | gladys | gladysassistant/gladys | v4.39.0 |  |  |
 | glances | nicolargo/glances | 3.4.0.5-full |  |  |
 | gluetun | qmcgaw/gluetun | v3.38.0 |  |  |
 | gotify | gotify/server | 2.4.0 |  |  |
 | guacamole | guacamole/guacamole | 1.5.5 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.2 | [YouTube Video](https://youtu.be/YK3QXYVOAvg) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.0 |  |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.1 |  |  |
 | homer | b4bz/homer | v24.04.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 |  |  |
+| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.103.1-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v1.103.1 |  |  |
 | immich | ghcr.io/immich-app/immich-server | v1.103.1 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/TvlIkuHp_Yo) |  |
 | jellyseerr | fallenbagel/jellyseerr | 1.8.1 |  |  |
 | joplin | florider89/joplin-server | 2.14.2 |  |  |
-| kasm | linuxserver/kasm | 1.120.20221218 |  |  |
+| kasm | linuxserver/kasm | 1.15.0 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
 | libretranslate | libretranslate/libretranslate | v1.5.7 |  |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | v2.5.3 |  |  |
@@ -110,19 +112,20 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole | pihole/pihole | 2024.03.2 |  |  |
 | pingvin-share | stonith404/pingvin-share | v0.23.1 |  |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
-| planka | ghcr.io/plankanban/planka | 1.17.1 |  |  |
+| planka | ghcr.io/plankanban/planka | 1.17.2 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
-| portainer-agent | portainer/agent | 2.20.1 |  |  |
-| portainer | portainer/portainer-ce | 2.20.1-alpine |  |  |
-| pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.11.5 |  |  |
-| pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.11.11 |  |  |
+| portainer-agent | portainer/agent | 2.20.2 |  |  |
+| portainer | portainer/portainer-ce | 2.20.2-alpine |  |  |
+| pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.6 |  |  |
+| pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.12 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 5.10.0 |  |  |
 | rallly | lukevella/rallly | 3.7.0 |  |  |
 | reactive-resume | amruthpillai/reactive-resume | v4.0.10 |  |  |
 | rocket-chat | rocket.chat | 6.7.0 |  |  |
 | scrypted | koush/scrypted | 18-jammy-full.s6-v0.72.0 |  |  |
 | seafile | seafileltd/seafile-mc | 11.0.8 |  |  |
+| semaphore | semaphoreui/semaphore | v2.9.75 |  |  |
 | speedtest-tracker | ghcr.io/alexjustesen/speedtest-tracker | v0.19.0 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.17 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.13 |  |  |
