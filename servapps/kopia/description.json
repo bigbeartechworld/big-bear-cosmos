@@ -1,0 +1,15 @@
+{
+  "name": "kopia",
+  "description": "Kopia",
+  "longDescription": "Kopia is a fast and secure open-source backup/restore tool that allows you to create encrypted snapshots of your data and save the snapshots to remote or cloud storage of your choice, to network-attached storage or server, or locally on your machine.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://github.com/walkxcode/dashboard-icons/blob/main/png/kopia.png?raw=true",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/kopia.png?raw=true"
+}
