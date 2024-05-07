@@ -1,8 +1,8 @@
 cosmos-installer: null
 name: big-bear-speedtest-tracker
 services:
-  "{ServiceName}-speedtest-tracker":
-    container_name: "{ServiceName}-speedtest-tracker"
+  "{ServiceName}-big-bear-speedtest-tracker":
+    container_name: "{ServiceName}-big-bear-speedtest-tracker"
     ports:
       - 8080:80
       - 8443:443
@@ -10,7 +10,7 @@ services:
       - PUID=1000
       - PGID=1000
       - DB_CONNECTION=mysql
-      - DB_HOST={ServiceName}-db
+      - DB_HOST={ServiceName}-big-bear-speedtest-tracker-db
       - DB_PORT=3306
       - DB_DATABASE=speedtest_tracker
       - DB_USERNAME=casaos
@@ -18,15 +18,18 @@ services:
       - TZ=America/Chicago
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - "{ServiceName}-speedtest-tracker-data:/config"
-      - "{ServiceName}-speedtest-tracker-data-2:/etc/ssl/web"
-    image: ghcr.io/alexjustesen/speedtest-tracker:v0.19.0
+      - "{ServiceName}-big-bear-speedtest-tracker-data:/config"
+      - "{ServiceName}-big-bear-speedtest-tracker-data-2:/etc/ssl/web"
+    image: linuxserver/speedtest-tracker:0.19.0
     restart: unless-stopped
     depends_on:
-      - "{ServiceName}-db"
-    hostname: "{ServiceName}-speedtest-tracker"
-  "{ServiceName}-db":
+      - "{ServiceName}-big-bear-speedtest-tracker-db"
+    networks:
+      - big_bear_speedtest_tracker_network
+    hostname: "{ServiceName}-big-bear-speedtest-tracker"
+  "{ServiceName}-big-bear-speedtest-tracker-db":
     image: mariadb:10
+    container_name: "{ServiceName}-big-bear-speedtest-tracker-db"
     restart: always
     environment:
       - MARIADB_DATABASE=speedtest_tracker
@@ -34,7 +37,11 @@ services:
       - MARIADB_PASSWORD=casaos
       - MARIADB_RANDOM_ROOT_PASSWORD=true
     volumes:
-      - "{ServiceName}-db-data:/var/lib/mysql"
-    container_name: "{ServiceName}-db"
-    hostname: "{ServiceName}-db"
+      - "{ServiceName}-big-bear-speedtest-tracker-db-data:/var/lib/mysql"
+    networks:
+      - big_bear_speedtest_tracker_network
+    hostname: "{ServiceName}-big-bear-speedtest-tracker-db"
+networks:
+  big_bear_speedtest_tracker_network:
+    driver: bridge
 minVersion: 0.14.0
