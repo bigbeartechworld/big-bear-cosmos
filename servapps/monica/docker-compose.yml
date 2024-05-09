@@ -3,7 +3,7 @@ name: big-bear-monica
 services:
   "{ServiceName}-big-bear-monica":
     container_name: "{ServiceName}-big-bear-monica"
-    image: monica:4.0.0
+    image: monica:4.1.2
     restart: unless-stopped
     environment:
       - APP_KEY=80356f7073c4f7834187b25a9d32cd2a

@@ -1,0 +1,97 @@
+cosmos-installer: null
+name: big-bear-authentik
+services:
+  "{ServiceName}-big-bear-authentik":
+    container_name: "{ServiceName}-big-bear-authentik"
+    image: ghcr.io/goauthentik/server:2024.4.2
+    command: server
+    environment:
+      AUTHENTIK_REDIS__HOST: big-bear-authentik-redis
+      AUTHENTIK_POSTGRESQL__HOST: big-bear-authentik-db
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: authentik-password
+      AUTHENTIK_SECRET_KEY: changeme
+    volumes:
+      - "{ServiceName}-big-bear-authentik-data:/media"
+      - "{ServiceName}-big-bear-authentik-data-2:/templates"
+    ports:
+      - 9443:9443
+    depends_on:
+      - "{ServiceName}-big-bear-authentik-db"
+      - "{ServiceName}-big-bear-authentik-redis"
+    networks:
+      - big_bear_authentik_network
+    hostname: "{ServiceName}-big-bear-authentik"
+  "{ServiceName}-big-bear-authentik-worker":
+    image: ghcr.io/goauthentik/server:2024.4.2
+    restart: unless-stopped
+    command: worker
+    container_name: "{ServiceName}-big-bear-authentik-worker"
+    environment:
+      AUTHENTIK_REDIS__HOST: big-bear-authentik-redis
+      AUTHENTIK_POSTGRESQL__HOST: big-bear-authentik-db
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: authentik-password
+      AUTHENTIK_SECRET_KEY: changeme
+    user: root
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - "{ServiceName}-big-bear-authentik-worker-data:/media"
+      - "{ServiceName}-big-bear-authentik-worker-data-2:/certs"
+      - "{ServiceName}-big-bear-authentik-worker-data-3:/templates"
+    depends_on:
+      - "{ServiceName}-big-bear-authentik-db"
+      - "{ServiceName}-big-bear-authentik-redis"
+    networks:
+      - big_bear_authentik_network
+    hostname: "{ServiceName}-big-bear-authentik-worker"
+  "{ServiceName}-big-bear-authentik-db":
+    container_name: "{ServiceName}-big-bear-authentik-db"
+    image: postgres:12-alpine
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 5s
+    volumes:
+      - "{ServiceName}-big-bear-authentik-db-data:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_PASSWORD: authentik-password
+      POSTGRES_USER: authentik
+      POSTGRES_DB: authentik
+    networks:
+      - big_bear_authentik_network
+    hostname: "{ServiceName}-big-bear-authentik-db"
+  "{ServiceName}-big-bear-authentik-redis":
+    image: redis:alpine
+    command:
+      - --save
+      - "60"
+      - "1"
+      - --loglevel
+      - warning
+    container_name: "{ServiceName}-big-bear-authentik-redis"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - redis-cli ping | grep PONG
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 3s
+    volumes:
+      - "{ServiceName}-big-bear-authentik-redis-data:/data"
+    networks:
+      - big_bear_authentik_network
+    hostname: "{ServiceName}-big-bear-authentik-redis"
+networks:
+  big_bear_authentik_network:
+    driver: bridge
+minVersion: 0.14.0
