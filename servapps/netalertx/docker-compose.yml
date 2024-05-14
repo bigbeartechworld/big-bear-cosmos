@@ -1,0 +1,18 @@
+cosmos-installer: null
+name: big-bear-netalertx
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: jokobsk/netalertx:24.5.9
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - "{ServiceName}-data:/app/config"
+      - "{ServiceName}-data-2:/app/db"
+    environment:
+      - TZ=UTC
+      - PORT=8080
+      - ALWAYS_FRESH_INSTALL=false
+    network_mode: host
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
