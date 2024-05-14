@@ -1,0 +1,33 @@
+cosmos-installer: null
+name: big-bear-openvpn-as
+version: "1.0"
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22
+    restart: unless-stopped
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    cpu_shares: 90
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 15775M
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/Rome
+    hostname: "{ServiceName}"
+    labels:
+      icon: https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png
+    ports:
+      - 943:943/tcp
+      - 443:443/tcp
+      - 1194:1194/udp
+    volumes:
+      - "{ServiceName}-data:/openvpn"
+    devices: []
+    network_mode: bridge
+minVersion: 0.14.0
