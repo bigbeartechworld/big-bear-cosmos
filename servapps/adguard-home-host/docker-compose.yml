@@ -1,0 +1,13 @@
+cosmos-installer: null
+name: big-bear-adguard-home-host
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: adguard/adguardhome:v0.107.48
+    volumes:
+      - "{ServiceName}-data:/opt/adguardhome/work"
+      - "{ServiceName}-data-2:/opt/adguardhome/conf"
+    restart: unless-stopped
+    network_mode: host
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
