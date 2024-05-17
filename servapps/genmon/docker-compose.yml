@@ -1,0 +1,19 @@
+cosmos-installer: null
+name: big-bear-genmon
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: bigbeartechworld/big-bear-genmon:0.0.6
+    environment:
+      - TZ=America/Chicago
+    ports:
+      - 20022:22
+      - 38443:443
+      - 8000:8000
+    restart: unless-stopped
+    volumes:
+      - "{ServiceName}-data:/git/genmon"
+      - "{ServiceName}-data-2:/etc/genmon"
+      - "{ServiceName}-data-3:/var/log"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0

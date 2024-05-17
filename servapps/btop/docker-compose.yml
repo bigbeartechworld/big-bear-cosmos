@@ -1,0 +1,17 @@
+cosmos-installer: null
+name: big-bear-btop
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: bigbeartechworld/big-bear-btop:0.0.1
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - /proc:/proc
+      - /sys:/sys
+      - /dev:/dev
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 7681:7681
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
