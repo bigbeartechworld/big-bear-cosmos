@@ -38,6 +38,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage | ghcr.io/gethomepage/homepage | 0.8.13 |  |  |
 | Romm | zurdi15/romm | 3.1.0 |  |  |
 | actual-server | actualbudget/actual-server | 24.5.0 | [YouTube Video](https://youtu.be/-un-frxNATQ) |  |
+| adguard-home-host | adguard/adguardhome | v0.107.48 |  |  |
 | adguard-home | adguard/adguardhome | v0.107.48 |  |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.24.1 |  |  |
@@ -45,19 +46,20 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | authentik | ghcr.io/goauthentik/server | 2024.4.2 |  |  |
 | baserow | baserow/baserow | 1.24.2 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling |  |  |
-| budibase | budibase/budibase | 2.25.0 |  |  |
+| btop | bigbeartechworld/big-bear-btop | 0.0.1 |  |  |
+| budibase | budibase/budibase | 2.26.4 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling |  |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling |  |  |
-| code-server | linuxserver/code-server | 4.23.1 |  |  |
+| code-server | linuxserver/code-server | 4.89.1 |  |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 |  |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.0 |  |  |
 | dashdot | mauricenino/dashdot | 5.8.3 |  |  |
-| dashy | lissy93/dashy | 3.0.1 |  |  |
+| dashy | lissy93/dashy | 3.1.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 |  |  |
-| dozzle | amir20/dozzle | 6.5.2 | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |  |
+| dozzle | amir20/dozzle | 6.6.2 | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/CfPykJeOy4E) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
@@ -65,20 +67,21 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flame | pawelmalak/flame | multiarch2.3.1 |  |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.4 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 |  |  |
+| genmon | bigbeartechworld/big-bear-genmon | 0.0.6 |  |  |
 | ghost | ghost | 5.82.2-alpine |  |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.80.0 | [YouTube Video](https://youtu.be/BWPRbiWr4is) |  |
-| gladys | gladysassistant/gladys | 4.40.0 |  |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.81.0 | [YouTube Video](https://youtu.be/BWPRbiWr4is) |  |
+| gladys | gladysassistant/gladys | 4.41.0 |  |  |
 | glances | nicolargo/glances | 3.4.0.5-full |  |  |
 | gluetun | qmcgaw/gluetun | v3.38.0 |  |  |
 | gotify | gotify/server | 2.4.0 |  |  |
 | guacamole | guacamole/guacamole | 1.5.5 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.3 | [YouTube Video](https://youtu.be/YK3QXYVOAvg) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.3 |  |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.4 |  |  |
 | homer | b4bz/homer | v24.04.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 |  |  |
-| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.103.1-alpine |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | v1.103.1 |  |  |
-| immich | ghcr.io/immich-app/immich-server | v1.103.1 |  |  |
+| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.105.1-alpine |  |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.104.0 |  |  |
+| immich | ghcr.io/immich-app/immich-server | 1.104.0 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/TvlIkuHp_Yo) |  |
 | jellyseerr | fallenbagel/jellyseerr | 1.8.1 |  |  |
 | joplin | florider89/joplin-server | 2.14.2 |  |  |
@@ -94,33 +97,35 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.8 | [YouTube Video](https://youtu.be/LTawr95nb4w) |  |
-| n8n | n8nio/n8n | 1.41.0 |  |  |
+| n8n | n8nio/n8n | 1.42.0 |  |  |
+| netalertx | jokobsk/netalertx | 24.5.9 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 29.0.0 |  |  |
 | nextcloud | nextcloud | 29.0.0-apache |  |  |
-| nocodb | nocodb/nocodb | 0.207.0 |  |  |
+| nocodb | nocodb/nocodb | 0.207.2 |  |  |
 | node-red | nodered/node-red | 3.1.9 |  |  |
-| ntfysh | binwiederhier/ntfy | v2.10.0 |  |  |
+| ntfysh | binwiederhier/ntfy | 2.11.0 |  |  |
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
-| octoprint | octoprint/octoprint | 1.10.0 |  |  |
+| octoprint | octoprint/octoprint | 1.10.1 |  |  |
 | odoo | odoo | 17 |  |  |
-| onedev | 1dev/server | 10.6.0 |  |  |
+| onedev | 1dev/server | 10.7.1 |  |  |
 | onlyoffice | onlyoffice/documentserver | 8.0.1 |  |  |
+| openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.0.1 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 231128 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
-| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.03.2 |  |  |
+| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.05.0 |  |  |
 | pihole | pihole/pihole | 2024.05.0 |  |  |
 | pingvin-share | stonith404/pingvin-share | 0.24.1 |  |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
-| planka | ghcr.io/plankanban/planka | 1.17.2 |  |  |
+| planka | ghcr.io/plankanban/planka | 1.17.3 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.2 |  |  |
 | portainer | portainer/portainer-ce | 2.20.2-alpine |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.7 |  |  |
-| pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.12 |  |  |
+| pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 5.10.0 |  |  |
 | rallly | lukevella/rallly | 3.7.0 |  |  |
 | reactive-resume | amruthpillai/reactive-resume | 4.1.3 |  |  |
