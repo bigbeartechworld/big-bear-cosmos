@@ -1,0 +1,15 @@
+{
+  "name": "open-webui",
+  "description": "User-friendly WebUI for LLMs",
+  "longDescription": "Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://github.com/walkxcode/dashboard-icons/blob/main/png/open-webui.png?raw=true",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/open-webui.png?raw=true"
+}
