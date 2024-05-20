@@ -1,0 +1,18 @@
+cosmos-installer: null
+name: big-bear-ollama-amd
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: ollama/ollama:0.1.38-rocm
+    restart: unless-stopped
+    environment:
+      - PORT=11434
+    volumes:
+      - "{ServiceName}-data:/root/.ollama"
+    ports:
+      - 11434:11434
+    devices:
+      - /dev/kfd
+      - /dev/dri
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
