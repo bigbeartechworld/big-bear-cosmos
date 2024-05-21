@@ -3,7 +3,7 @@ name: big-bear-trilium
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: zadam/trilium:0.63.5
+    image: zadam/trilium:0.63.6
     restart: unless-stopped
     environment:
       - TRILIUM_DATA_DIR=/home/node/trilium-data
