@@ -10,5 +10,7 @@ services:
       - VNC_PW=casaos
       - LAUNCH_URL=https://community.bigbeartechworld.com/
     shm_size: 512m
+    volumes:
+      - "{ServiceName}-data:/home/kasm-user/Downloads"
     hostname: "{ServiceName}"
 minVersion: 0.14.0
