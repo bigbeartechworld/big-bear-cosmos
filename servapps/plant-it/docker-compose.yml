@@ -1,0 +1,61 @@
+cosmos-installer: null
+name: big-bear-plant-it
+services:
+  "{ServiceName}-big-bear-plant-it":
+    container_name: "{ServiceName}-big-bear-plant-it"
+    image: msdeluise/plant-it-server:0.6.0
+    restart: unless-stopped
+    environment:
+      - MYSQL_HOST=big-bear-plant-it-db
+      - MYSQL_PORT=3306
+      - MYSQL_USERNAME=root
+      - MYSQL_PSW=9c75c563-b549-40e6-a0d2-360cf9a962ea
+      - MYSQL_DATABASE=plantit
+      - MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea
+      - JWT_SECRET=putTheSecretHere
+      - JWT_EXP=1
+      - USERS_LIMIT=-1
+      - UPLOAD_DIR=/upload-dir
+      - API_PORT=8080
+      - TREFLE_KEY=
+      - LOG_LEVEL=DEBUG
+      - ALLOWED_ORIGINS=*
+      - CACHE_TTL=86400
+      - CACHE_HOST=big-bear-plant-it-cache
+      - CACHE_PORT=6379
+      - SSL_ENABLED=false
+      - CERTIFICATE_PATH=/certificates/
+    volumes:
+      - "{ServiceName}-big-bear-plant-it-data:/upload-dir"
+      - "{ServiceName}-big-bear-plant-it-data-2:/certificates"
+    ports:
+      - 8080:8080
+      - 3000:3000
+    networks:
+      - big_bear_plant_it_network
+    hostname: "{ServiceName}-big-bear-plant-it"
+  "{ServiceName}-big-bear-plant-it-db":
+    container_name: "{ServiceName}-big-bear-plant-it-db"
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=plantit
+      - MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea
+    ports:
+      - 3306:3306
+    volumes:
+      - "{ServiceName}-big-bear-plant-it-db-data:/var/lib/mysql"
+    networks:
+      - big_bear_plant_it_network
+    hostname: "{ServiceName}-big-bear-plant-it-db"
+  "{ServiceName}-big-bear-plant-it-cache":
+    container_name: "{ServiceName}-big-bear-plant-it-cache"
+    image: redis:7.2.1
+    restart: always
+    networks:
+      - big_bear_plant_it_network
+    hostname: "{ServiceName}-big-bear-plant-it-cache"
+networks:
+  big_bear_plant_it_network:
+    driver: bridge
+minVersion: 0.14.0
