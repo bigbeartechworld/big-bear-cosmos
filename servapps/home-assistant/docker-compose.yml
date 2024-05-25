@@ -3,7 +3,7 @@ name: big-bear-home-assistant
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/home-assistant/home-assistant:2024.5.4
+    image: ghcr.io/home-assistant/home-assistant:2024.5.5
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/config"
