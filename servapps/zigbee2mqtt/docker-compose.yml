@@ -1,0 +1,18 @@
+cosmos-installer: null
+name: big-bear-zigbee2mqtt
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: koenkk/zigbee2mqtt:1.38.0
+    restart: unless-stopped
+    volumes:
+      - "{ServiceName}-data:/app/data"
+      - /run/udev:/run/udev:ro
+    ports:
+      - 8080:8080
+    environment:
+      - TZ=UTC
+    devices:
+      - /dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00:/dev/ttyACM0
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
