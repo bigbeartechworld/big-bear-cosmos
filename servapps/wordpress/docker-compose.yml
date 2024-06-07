@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-wordpress
 services:
   "{ServiceName}-app":
-    image: wordpress:6.5.3
+    image: wordpress:6.5.4
     ports:
       - 8080:80
     environment:
