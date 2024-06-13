@@ -4,9 +4,6 @@ services:
   "{ServiceName}-immich-server":
     container_name: "{ServiceName}-immich-server"
     image: ghcr.io/immich-app/immich-server:v1.106.2
-    command:
-      - start.sh
-      - immich
     ports:
       - 2283:3001
     volumes:
@@ -26,28 +23,6 @@ services:
     networks:
       - big_bear_immich_network
     hostname: "{ServiceName}-immich-server"
-  "{ServiceName}-immich-microservices":
-    container_name: "{ServiceName}-immich-microservices"
-    image: ghcr.io/immich-app/immich-server:v1.106.2
-    command:
-      - start.sh
-      - microservices
-    volumes:
-      - "{ServiceName}-immich-microservices-data:/usr/src/app/upload"
-    environment:
-      DB_HOSTNAME: immich-postgres
-      DB_USERNAME: casaos
-      DB_PASSWORD: casaos
-      DB_DATABASE_NAME: immich
-      DB_PORT: 5432
-      REDIS_HOSTNAME: immich-redis
-    depends_on:
-      - "{ServiceName}-redis"
-      - "{ServiceName}-database"
-    restart: unless-stopped
-    networks:
-      - big_bear_immich_network
-    hostname: "{ServiceName}-immich-microservices"
   "{ServiceName}-immich-machine-learning":
     container_name: "{ServiceName}-immich-machine-learning"
     image: ghcr.io/immich-app/immich-machine-learning:v1.106.2
