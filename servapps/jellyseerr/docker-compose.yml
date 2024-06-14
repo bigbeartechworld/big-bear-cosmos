@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-jellyseerr
 services:
   "{ServiceName}":
-    image: fallenbagel/jellyseerr:1.9.1
+    image: fallenbagel/jellyseerr:1.9.2
     ports:
       - 5055:5055
     volumes:
