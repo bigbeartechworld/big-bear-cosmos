@@ -17,11 +17,6 @@ services:
       AUTH_DEFAULT_ROLES: denied
     depends_on:
       - "{ServiceName}-big-bear-nightscout-mongo"
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.nightscout.rule=Host(`localhost`)
-      - traefik.http.routers.nightscout.entrypoints=websecure
-      - traefik.http.routers.nightscout.tls.certresolver=le
     networks:
       - big-bear-nightscout-network
     hostname: "{ServiceName}-big-bear-nightscout"
