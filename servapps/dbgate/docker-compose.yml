@@ -1,13 +1,13 @@
 cosmos-installer: null
-name: big-bear-budibase
+name: big-bear-dbgate
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: budibase/budibase:2.29.0
+    image: dbgate/dbgate:5.3.0-alpine
     restart: unless-stopped
     volumes:
-      - "{ServiceName}-data:/data"
+      - "{ServiceName}-data:/root/.dbgate"
     ports:
-      - 8080:80
+      - 3000:3000
     hostname: "{ServiceName}"
 minVersion: 0.14.0
