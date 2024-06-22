@@ -3,7 +3,7 @@ name: big-bear-rallly
 services:
   "{ServiceName}-big-bear-rallly":
     container_name: "{ServiceName}-big-bear-rallly"
-    image: lukevella/rallly:3.7.0
+    image: lukevella/rallly:3.8.0
     restart: unless-stopped
     environment:
       - DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly
