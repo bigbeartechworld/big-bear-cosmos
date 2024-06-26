@@ -1,0 +1,58 @@
+cosmos-installer: null
+name: big-bear-project-management
+services:
+  "{ServiceName}-big-bear-project-management":
+    container_name: "{ServiceName}-big-bear-project-management"
+    image: eloufirhatim/helper:1.2.3
+    restart: unless-stopped
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST={ServiceName}-big-bear-project-management-db
+      - DB_PORT=3306
+      - DB_DATABASE=project_management
+      - DB_USERNAME=project_management
+      - DB_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a
+      - MAIL_MAILER=smtp
+      - MAIL_HOST=mailpit
+      - MAIL_PORT=1025
+      - MAIL_USERNAME=
+      - MAIL_PASSWORD=
+      - MAIL_ENCRYPTION=null
+    volumes:
+      - /etc/localtime:/etc/localtime
+    ports:
+      - 8000:8000
+    networks:
+      - big_bear_project_management_network
+    depends_on:
+      - "{ServiceName}-big-bear-project-management-db"
+    hostname: "{ServiceName}-big-bear-project-management"
+  "{ServiceName}-big-bear-project-management-db":
+    image: mysql:5.7
+    container_name: "{ServiceName}-big-bear-project-management-db"
+    environment:
+      - MYSQL_DATABASE=project_management
+      - MYSQL_USER=project_management
+      - MYSQL_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a
+      - MYSQL_ROOT_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a
+    volumes:
+      - "{ServiceName}-big-bear-project-management-db-data:/var/lib/mysql"
+    restart: unless-stopped
+    networks:
+      - big_bear_project_management_network
+    healthcheck:
+      test:
+        - CMD
+        - mysqladmin
+        - ping
+        - -h
+        - localhost
+        - -p${MYSQL_ROOT_PASSWORD}
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+    hostname: "{ServiceName}-big-bear-project-management-db"
+networks:
+  big_bear_project_management_network:
+    driver: bridge
+minVersion: 0.14.0
