@@ -3,7 +3,7 @@ name: big-bear-ghost
 services:
   "{ServiceName}-app":
     container_name: "{ServiceName}-app"
-    image: ghost:5.86.2-alpine
+    image: ghost:2.38.3-alpine
     restart: on-failure
     networks:
       - ghost-network
