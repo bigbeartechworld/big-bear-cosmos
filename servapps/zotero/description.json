@@ -1,0 +1,15 @@
+{
+  "name": "zotero",
+  "description": "Zotero",
+  "longDescription": "Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/zotero/logo.png?raw=true",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/zotero/logo.png?raw=true"
+}

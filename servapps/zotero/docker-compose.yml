@@ -1,0 +1,19 @@
+cosmos-installer: null
+name: big-bear-zotero
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: linuxserver/zotero:6.0.35
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    ports:
+      - 3000:3000
+      - 3001:3001
+    security_opt:
+      - seccomp:unconfined
+    shm_size: 1gb
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
