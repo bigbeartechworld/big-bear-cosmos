@@ -1,0 +1,15 @@
+{
+  "name": "passwordpusher",
+  "description": "Give your users the tools to be secure by default.",
+  "longDescription": "Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://github.com/walkxcode/dashboard-icons/blob/main/png/passwordpusher.png?raw=true",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/passwordpusher.png?raw=true"
+}
