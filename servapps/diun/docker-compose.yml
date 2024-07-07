@@ -4,14 +4,15 @@ services:
   "{ServiceName}":
     container_name: "{ServiceName}"
     image: crazymax/diun:4.28.0
-    command: serve
+    command:
+      - serve
     restart: always
     environment:
-      - TZ=UTC
-      - DIUN_WATCH_WORKERS=20
-      - DIUN_WATCH_SCHEDULE=0 */6 * * *
-      - DIUN_WATCH_JITTER=30s
-      - DIUN_PROVIDERS_DOCKER=true
+      TZ: UTC
+      DIUN_WATCH_WORKERS: "20"
+      DIUN_WATCH_SCHEDULE: 0 */6 * * *
+      DIUN_WATCH_JITTER: 30s
+      DIUN_PROVIDERS_DOCKER: "true"
     volumes:
       - "{ServiceName}-data:/data"
       - /var/run/docker.sock:/var/run/docker.sock
