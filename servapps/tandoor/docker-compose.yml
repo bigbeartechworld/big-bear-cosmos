@@ -3,7 +3,7 @@ name: big-bear-tandoor
 services:
   "{ServiceName}-big-bear-tandoor":
     container_name: "{ServiceName}-big-bear-tandoor"
-    image: ghcr.io/tandoorrecipes/recipes:1.5.17
+    image: ghcr.io/tandoorrecipes/recipes:1.5.18
     restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-tandoor-data:/opt/recipes/staticfiles"
