@@ -3,7 +3,7 @@ name: big-bear-dozzle
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: amir20/dozzle:v7.0.7
+    image: amir20/dozzle:v8.0.1
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
