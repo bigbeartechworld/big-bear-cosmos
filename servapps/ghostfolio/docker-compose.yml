@@ -3,7 +3,7 @@ name: big-bear-ghostfolio
 services:
   "{ServiceName}-big-bear-ghostfolio":
     container_name: "{ServiceName}-big-bear-ghostfolio"
-    image: ghostfolio/ghostfolio:2.93.0
+    image: ghostfolio/ghostfolio:2.94.0
     restart: unless-stopped
     environment:
       NODE_ENV: production
