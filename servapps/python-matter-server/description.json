@@ -6,10 +6,10 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://i.imgur.com/eeUGveF.png",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/python-matter-server/logo.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://i.imgur.com/eeUGveF.png"
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/python-matter-server/logo.png"
 }

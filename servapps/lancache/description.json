@@ -6,9 +6,9 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://github.com/walkxcode/dashboard-icons/blob/main/png/lancache.png?raw=true",
+  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/lancache.png",
   "supported_architectures": [
     "amd64"
   ],
-  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/lancache.png?raw=true"
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/lancache.png"
 }

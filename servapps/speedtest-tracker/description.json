@@ -6,11 +6,11 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://github.com/alexjustesen/speedtest-tracker/blob/main/public/img/speedtest-tracker-icon.png?raw=true",
+  "image": "https://cdn.jsdelivr.net/gh/alexjustesen/speedtest-tracker/public/img/speedtest-tracker-icon.png",
   "supported_architectures": [
     "amd64",
     "arm",
     "arm64"
   ],
-  "icon": "https://github.com/alexjustesen/speedtest-tracker/blob/main/public/img/speedtest-tracker-icon.png?raw=true"
+  "icon": "https://cdn.jsdelivr.net/gh/alexjustesen/speedtest-tracker/public/img/speedtest-tracker-icon.png"
 }
