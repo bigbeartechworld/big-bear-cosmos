@@ -6,10 +6,10 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/reactive-resume/logo.png?raw=true",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/reactive-resume/logo.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/reactive-resume/logo.png?raw=true"
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/reactive-resume/logo.png"
 }

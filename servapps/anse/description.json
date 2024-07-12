@@ -6,10 +6,10 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/anse/logo.jpg?raw=true",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/anse/logo.jpg",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/anse/logo.jpg?raw=true"
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/anse/logo.jpg"
 }

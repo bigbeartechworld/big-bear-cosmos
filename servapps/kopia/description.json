@@ -6,10 +6,10 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://github.com/walkxcode/dashboard-icons/blob/main/png/kopia.png?raw=true",
+  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kopia.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://github.com/walkxcode/dashboard-icons/blob/main/png/kopia.png?raw=true"
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kopia.png"
 }

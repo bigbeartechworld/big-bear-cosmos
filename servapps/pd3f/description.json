@@ -6,10 +6,10 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://github.com/pd3f/pd3f/blob/master/imgs/logo.jpg?raw=true",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/pd3f/logo.jpg",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://github.com/pd3f/pd3f/blob/master/imgs/logo.jpg?raw=true"
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/pd3f/logo.jpg"
 }

@@ -6,10 +6,10 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://github.com/aristocratos/btop/raw/main/Img/logo.png",
+  "image": "https://cdn.jsdelivr.net/gh/aristocratos/btop/Img/icon.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://github.com/aristocratos/btop/raw/main/Img/logo.png"
+  "icon": "https://cdn.jsdelivr.net/gh/aristocratos/btop/Img/icon.png"
 }

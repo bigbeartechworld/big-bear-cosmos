@@ -6,9 +6,9 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/faster-whisper/logo.png?raw=true",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/faster-whisper/logo.png",
   "supported_architectures": [
     "amd64"
   ],
-  "icon": "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/faster-whisper/logo.png?raw=true"
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/faster-whisper/logo.png"
 }
