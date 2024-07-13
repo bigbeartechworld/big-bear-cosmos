@@ -1,13 +1,14 @@
 cosmos-installer: null
-name: big-bear-dozzle
+name: big-bear-kiwix-serve
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: amir20/dozzle:v8.0.5
+    image: ghcr.io/kiwix/kiwix-serve:3.7.0-2
+    command: "*.zim"
     restart: unless-stopped
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - "{ServiceName}-data:/data"
     ports:
-      - 8888:8080
+      - 8080:8080
     hostname: "{ServiceName}"
 minVersion: 0.14.0
