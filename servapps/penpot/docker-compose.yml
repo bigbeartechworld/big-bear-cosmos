@@ -16,7 +16,7 @@ services:
       - big-bear-penpot-network
     hostname: "{ServiceName}-penpot-frontend"
   "{ServiceName}-penpot-backend":
-    image: penpotapp/backend:2.0.3
+    image: penpotapp/backend:2.1.0
     container_name: "{ServiceName}-penpot-backend"
     restart: unless-stopped
     volumes:
@@ -40,7 +40,7 @@ services:
       - PENPOT_TELEMETRY_ENABLED=false
     hostname: "{ServiceName}-penpot-backend"
   "{ServiceName}-penpot-exporter":
-    image: penpotapp/exporter:2.0.3
+    image: penpotapp/exporter:2.1.0
     container_name: "{ServiceName}-penpot-exporter"
     restart: unless-stopped
     networks:
