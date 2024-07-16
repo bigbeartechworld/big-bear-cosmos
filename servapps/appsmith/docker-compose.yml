@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-appsmith
 services:
   "{ServiceName}":
-    image: appsmith/appsmith-ce:v1.24.1
+    image: appsmith/appsmith-ce:v1.31.1
     container_name: "{ServiceName}"
     ports:
       - 1080:80
