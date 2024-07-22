@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: Checkout # Step to checkout the repository code
-        uses: actions/checkout@v3 # Use the checkout action
+        uses: actions/checkout@v4 # Use the checkout action
 
       - name: Setup Node.js environment # Step to set up Node.js
         uses: actions/setup-node@v4.0.3 # Use the setup-node action
