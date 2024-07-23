@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-romm
 services:
   "{ServiceName}-big-bear-romm":
-    image: rommapp/romm:3.2.0
+    image: rommapp/romm:3.3.0
     container_name: "{ServiceName}-big-bear-romm"
     environment:
       - DB_HOST={ServiceName}-big-bear-rommdb
