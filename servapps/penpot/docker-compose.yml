@@ -16,7 +16,7 @@ services:
       - big-bear-penpot-network
     hostname: "{ServiceName}-penpot-frontend"
   "{ServiceName}-penpot-backend":
-    image: penpotapp/backend:2.1.0
+    image: penpotapp/backend:2.1.1
     container_name: "{ServiceName}-penpot-backend"
     restart: unless-stopped
     volumes:
