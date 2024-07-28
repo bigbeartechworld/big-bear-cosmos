@@ -3,7 +3,7 @@ name: big-bear-penpot
 services:
   "{ServiceName}-penpot-frontend":
     container_name: "{ServiceName}-penpot-frontend"
-    image: penpotapp/frontend:2.1.0
+    image: penpotapp/frontend:2.1.1
     restart: unless-stopped
     volumes:
       - "{ServiceName}-penpot-frontend-data:/opt/data/assets"
