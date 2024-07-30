@@ -1,6 +1,5 @@
 cosmos-installer: null
 name: big-bear-openvpn-as
-version: "1.0"
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
