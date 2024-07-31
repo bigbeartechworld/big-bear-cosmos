@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-flcontainers-guacamole
 services:
   "{ServiceName}":
-    image: flcontainers/guacamole:1.5.4
+    image: flcontainers/guacamole:1.5.5
     container_name: "{ServiceName}"
     restart: always
     environment:
