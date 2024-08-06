@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-traccar
 services:
   "{ServiceName}":
-    image: traccar/traccar:6.2-ubuntu
+    image: traccar/traccar:6.3-ubuntu
     container_name: "{ServiceName}"
     hostname: "{ServiceName}"
     restart: unless-stopped
