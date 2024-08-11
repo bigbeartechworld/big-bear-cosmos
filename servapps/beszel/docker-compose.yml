@@ -1,0 +1,13 @@
+cosmos-installer: null
+name: big-bear-beszel
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: henrygd/beszel:0.1.2
+    restart: unless-stopped
+    volumes:
+      - "{ServiceName}-data:/beszel_data"
+    ports:
+      - 8090:8090
+    hostname: "{ServiceName}"
+minVersion: 0.14.0

@@ -1,7 +1,7 @@
 {
-  "id": "ollama-cpu",
-  "version": "0.3.4",
-  "image": "ollama/ollama",
+  "id": "sftpgo",
+  "version": "v2.6",
+  "image": "drakkan/sftpgo",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""
