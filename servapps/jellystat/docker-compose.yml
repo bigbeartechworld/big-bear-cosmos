@@ -1,0 +1,37 @@
+cosmos-installer: null
+name: big-bear-jellystat
+services:
+  "{ServiceName}-big-bear-jellystat":
+    container_name: "{ServiceName}-big-bear-jellystat"
+    image: cyfershepard/jellystat:1.1.0
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=8a23ad09-61cf-4178-a783-6d4586496e3a
+      - POSTGRES_IP=big-bear-jellystat-db
+      - POSTGRES_PORT=5432
+      - JWT_SECRET="my-secret-jwt-key"
+    volumes:
+      - "{ServiceName}-big-bear-jellystat-data:/app/backend/backup-data"
+    ports:
+      - 3000:3000
+    networks:
+      - big-bear-jellystat-network
+    hostname: "{ServiceName}-big-bear-jellystat"
+  "{ServiceName}-big-bear-jellystat-db":
+    container_name: "{ServiceName}-big-bear-jellystat-db"
+    image: postgres:15.2
+    environment:
+      POSTGRES_DB: jfstat
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 8a23ad09-61cf-4178-a783-6d4586496e3a
+    volumes:
+      - "{ServiceName}-big-bear-jellystat-db-data:/var/lib/postgresql/data"
+    networks:
+      - big-bear-jellystat-network
+    hostname: "{ServiceName}-big-bear-jellystat-db"
+networks:
+  big-bear-jellystat-network:
+    name: big-bear-jellystat-network
+    driver: bridge
+minVersion: 0.14.0

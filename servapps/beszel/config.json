@@ -1,7 +1,7 @@
 {
-  "id": "ollama-cpu",
-  "version": "0.3.4",
-  "image": "ollama/ollama",
+  "id": "beszel",
+  "version": "0.1.2",
+  "image": "henrygd/beszel",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""

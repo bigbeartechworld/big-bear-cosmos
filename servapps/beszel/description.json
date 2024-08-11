@@ -1,0 +1,15 @@
+{
+  "name": "beszel",
+  "description": "Server Monitoring Hub",
+  "longDescription": "A lightweight server resource monitoring hub with historical data, docker stats, and alerts.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beszel/logo.jpg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beszel/logo.jpg"
+}
