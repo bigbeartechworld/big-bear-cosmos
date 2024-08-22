@@ -11,6 +11,7 @@ services:
       - /sys:/sys
       - /dev:/dev
       - /etc/localtime:/etc/localtime:ro
+      - /:/casaos
     ports:
       - 7681:7681
     environment:
