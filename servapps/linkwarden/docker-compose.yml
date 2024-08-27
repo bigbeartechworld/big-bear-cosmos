@@ -19,7 +19,7 @@ services:
     hostname: "{ServiceName}-linkwarden"
   "{ServiceName}-linkwarden-db":
     container_name: "{ServiceName}-linkwarden-db"
-    image: postgres
+    image: postgres:latest
     restart: unless-stopped
     environment:
       - POSTGRES_USER=casaos
