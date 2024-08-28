@@ -1,0 +1,14 @@
+cosmos-installer: null
+name: big-bear-npmplus
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: zoeyvid/npmplus:417
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=America/Chicago
+    volumes:
+      - "{ServiceName}-data:/data"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
