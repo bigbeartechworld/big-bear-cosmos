@@ -3,7 +3,7 @@ name: big-bear-btop
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: bigbeartechworld/big-bear-btop:0.0.4
+    image: bigbeartechworld/big-bear-btop:0.0.5
     restart: unless-stopped
     privileged: true
     volumes:
@@ -11,6 +11,7 @@ services:
       - /sys:/sys
       - /dev:/dev
       - /etc/localtime:/etc/localtime:ro
+      - "{ServiceName}-data:/root/.config/btop"
     ports:
       - 7681:7681
     hostname: "{ServiceName}"

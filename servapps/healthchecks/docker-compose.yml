@@ -1,0 +1,37 @@
+cosmos-installer: null
+name: big-bear-healthchecks
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: linuxserver/healthchecks:3.5.20240820
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SITE_ROOT=http://[YOUR_CASAOS_IP]
+      - SITE_NAME="Big Bear HealthChecks"
+      - SUPERUSER_EMAIL=user@example.com
+      - SUPERUSER_PASSWORD=8a4c087a-2652-4d12-a6cc-feeb60e59dd4
+      - ALLOWED_HOSTS=
+      - APPRISE_ENABLED=False
+      - CSRF_TRUSTED_ORIGINS=
+      - DEBUG=True
+      - DEFAULT_FROM_EMAIL=
+      - EMAIL_HOST=
+      - EMAIL_PORT=
+      - EMAIL_HOST_USER=
+      - EMAIL_HOST_PASSWORD=
+      - EMAIL_USE_TLS=
+      - INTEGRATIONS_ALLOW_PRIVATE_IPS=
+      - PING_EMAIL_DOMAIN=
+      - RP_ID=
+      - SECRET_KEY="b2ea4094-c950-4890-b85f-301d8a777af2"
+      - SITE_LOGO_URL=
+    volumes:
+      - "{ServiceName}-data:/config"
+    ports:
+      - 8000:8000
+      - 2525:2525
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
