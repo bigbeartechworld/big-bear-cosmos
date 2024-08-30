@@ -3,7 +3,7 @@ name: big-bear-portainer
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: portainer/portainer-ce:2.20.3-alpine
+    image: portainer/portainer-ce:2.21.0-alpine
     network_mode: bridge
     ports:
       - 8000:8000
