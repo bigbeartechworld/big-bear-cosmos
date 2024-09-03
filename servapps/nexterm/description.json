@@ -1,0 +1,15 @@
+{
+  "name": "nexterm",
+  "description": "Nexterm",
+  "longDescription": "The open source server management software for SSH, VNC & RDP. This is in Preview Release.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/nexterm/logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/nexterm/logo.png"
+}
