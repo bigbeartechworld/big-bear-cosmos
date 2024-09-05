@@ -1,0 +1,16 @@
+cosmos-installer: null
+name: big-bear-kavita
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: jvmilazz0/kavita:0.8.2
+    restart: unless-stopped
+    volumes:
+      - "{ServiceName}-data:/kavita/config"
+      - "{ServiceName}-data-2:/books"
+      - "{ServiceName}-data-3:/comics"
+      - "{ServiceName}-data-4:/manga"
+    ports:
+      - 5000:5000
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
