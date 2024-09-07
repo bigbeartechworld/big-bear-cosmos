@@ -3,7 +3,7 @@ name: big-bear-nextcloud-ls
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: linuxserver/nextcloud:29.0.5
+    image: linuxserver/nextcloud:29.0.6
     restart: unless-stopped
     ports:
       - 10443:443
