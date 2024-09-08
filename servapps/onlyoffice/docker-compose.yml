@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-onlyoffice
 services:
   "{ServiceName}":
-    image: onlyoffice/documentserver:8.1.1
+    image: onlyoffice/documentserver:8.1.3
     container_name: "{ServiceName}"
     ports:
       - 7400:80
