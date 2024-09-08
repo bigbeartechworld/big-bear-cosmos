@@ -1,7 +1,7 @@
 {
-  "id": "Romm",
-  "version": "3.5.1",
-  "image": "zurdi15/romm",
+  "id": "calcom",
+  "version": "v4.4.6",
+  "image": "calcom/cal.com",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""

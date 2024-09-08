@@ -1,13 +1,18 @@
 cosmos-installer: null
-name: big-bear-dbgate
+name: big-bear-obsidian
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: dbgate/dbgate:5.4.1-alpine
+    image: linuxserver/obsidian:1.6.7
     restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
     volumes:
-      - "{ServiceName}-data:/root/.dbgate"
+      - "{ServiceName}-data:/config"
     ports:
       - 3000:3000
+      - 3001:3001
     hostname: "{ServiceName}"
 minVersion: 0.14.0
