@@ -3,7 +3,7 @@ name: big-bear-joplin
 services:
   "{ServiceName}-big-bear-joplin":
     container_name: "{ServiceName}-big-bear-joplin"
-    image: florider89/joplin-server:2.14.2
+    image: florider89/joplin-server:3.0.1
     restart: unless-stopped
     environment:
       - APP_PORT=22300
