@@ -3,7 +3,7 @@ name: big-bear-zigbee2mqtt
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: koenkk/zigbee2mqtt:1.40.0
+    image: koenkk/zigbee2mqtt:1.40.1
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/app/data"
