@@ -1,13 +1,16 @@
 cosmos-installer: null
-name: big-bear-budibase
+name: big-bear-komga
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: budibase/budibase:2.32.3
+    image: ghcr.io/gotson/komga:1.13.0
     restart: unless-stopped
+    environment:
+      - TZ=UTC
     volumes:
-      - "{ServiceName}-data:/data"
+      - "{ServiceName}-data:/config"
+      - "{ServiceName}-data-2:/data"
     ports:
-      - 8080:80
+      - 25600:25600
     hostname: "{ServiceName}"
 minVersion: 0.14.0
