@@ -19,7 +19,8 @@ services:
       - NEXTCLOUD_ADMIN_PASSWORD=casaos
       - TRUSTED_PROXIES=
       - OVERWRITEPROTOCOL=http
-      - PHP_UPLOAD_LIMIT=1024G
+      - PHP_MEMORY_LIMIT=1024M
+      - PHP_UPLOAD_LIMIT=1024M
     depends_on:
       - "{ServiceName}-db-nextcloud"
       - "{ServiceName}-redis-nextcloud"
