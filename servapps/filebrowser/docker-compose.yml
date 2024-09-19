@@ -1,0 +1,21 @@
+cosmos-installer: null
+name: big-bear-filebrowser
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: filebrowser/filebrowser:v2-s6
+    restart: unless-stopped
+    environment:
+      - PUID=0
+      - PGID=0
+    volumes:
+      - "{DefaultDataPath}/AppData:/srv/app-data"
+      - "{DefaultDataPath}/Documents:/srv/documents"
+      - "{DefaultDataPath}/Downloads:/srv/downloads"
+      - "{DefaultDataPath}/Gallery:/srv/gallery"
+      - "{DefaultDataPath}/media:/srv/media"
+      - "{ServiceName}-data:/database"
+    ports:
+      - 8080:80
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
