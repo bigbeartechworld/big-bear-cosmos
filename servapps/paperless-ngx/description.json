@@ -1,0 +1,15 @@
+{
+  "name": "paperless-ngx",
+  "description": "Paperless-ngx",
+  "longDescription": "Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/paperless.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/paperless.png"
+}
