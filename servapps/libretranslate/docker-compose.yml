@@ -3,7 +3,7 @@ name: big-bear-libretranslate
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: libretranslate/libretranslate:v1.6.0
+    image: libretranslate/libretranslate:v1.6.1
     restart: unless-stopped
     environment:
       - LT_API_KEYS=true
