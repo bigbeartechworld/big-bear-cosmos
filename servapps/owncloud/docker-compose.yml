@@ -56,7 +56,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - ${APP_DATA_DIR}/data/mysql:/var/lib/mysql
+      - "{ServiceName}-big-bear-owncloud-db-data:/var/lib/mysql"
     networks:
       - big_bear_owncloud_network
     hostname: "{ServiceName}-big-bear-owncloud-db"
@@ -76,7 +76,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - ${APP_DATA_DIR}/data/redis:/data
+      - "{ServiceName}-big-bear-owncloud-redis-data:/data"
     networks:
       - big_bear_owncloud_network
     hostname: "{ServiceName}-big-bear-owncloud-redis"

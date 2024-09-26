@@ -31,7 +31,7 @@ services:
       - MAIL_PASSWORD=null
       - MAIL_ENCRYPTION=null
       - MAIL_FROM_ADDRESS=noreply@financialfreedom.dev.test
-      - MAIL_FROM_NAME="${APP_NAME}"
+      - MAIL_FROM_NAME="Financial Freedom"
       - SSL_MODE=mixed
       - AUTORUN_ENABLED=true
       - AUTORUN_LARAVEL_EVENT_CACHE=false
