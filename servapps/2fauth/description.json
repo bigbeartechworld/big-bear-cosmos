@@ -9,7 +9,7 @@
   "image": "https://user-images.githubusercontent.com/1289128/276442834-bdb528d0-78fa-4155-ba15-7165d88b9836.png",
   "supported_architectures": [
     "amd64",
-    "arm"
+    "arm64"
   ],
   "icon": "https://user-images.githubusercontent.com/1289128/276442834-bdb528d0-78fa-4155-ba15-7165d88b9836.png"
 }

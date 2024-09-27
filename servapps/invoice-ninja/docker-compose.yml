@@ -67,7 +67,7 @@ services:
       - --log-warnings=0
     hostname: "{ServiceName}-big-bear-invoice-ninja-db"
   "{ServiceName}-big-bear-invoice-ninja-init":
-    image: bash:5.2.32
+    image: bash:5.2.37
     container_name: "{ServiceName}-big-bear-invoice-ninja-init"
     volumes:
       - "{ServiceName}-big-bear-invoice-ninja-init-data:/tmp/data"
