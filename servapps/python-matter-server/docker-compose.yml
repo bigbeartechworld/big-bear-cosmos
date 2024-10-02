@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-python-matter-server
 services:
   "{ServiceName}":
-    image: ghcr.io/home-assistant-libs/python-matter-server:6.5.2
+    image: ghcr.io/home-assistant-libs/python-matter-server:6.6.0
     container_name: "{ServiceName}"
     restart: unless-stopped
     network_mode: host

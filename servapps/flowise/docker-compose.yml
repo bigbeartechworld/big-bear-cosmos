@@ -1,0 +1,28 @@
+cosmos-installer: null
+name: big-bear-flowise
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: flowiseai/flowise:2.1.1
+    restart: unless-stopped
+    entrypoint: /bin/sh -c "sleep 3; flowise start"
+    environment:
+      - PORT=8009
+      - FLOWISE_USERNAME=bigbear
+      - FLOWISE_PASSWORD=b0f91e4c-9d4b-4375-bc9b-9b57667ce7ab
+      - FLOWISE_SECRETKEY_OVERWRITE="true"
+      - LANGCHAIN_ENDPOINT=""
+      - LANGCHAIN_API_KEY=""
+      - LANGCHAIN_PROJECT=""
+      - LANGCHAIN_TRACING_V2=""
+      - DISABLE_FLOWISE_TELEMETRY="true"
+      - DATABASE_PATH=/root/.flowise
+      - APIKEY_PATH=/root/.flowise
+      - SECRETKEY_PATH=/root/.flowise/logs
+      - LOG_PATH=/root/.flowise
+    ports:
+      - 8009:8009
+    volumes:
+      - "{ServiceName}-data:/root/.flowise"
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
