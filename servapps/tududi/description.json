@@ -8,8 +8,7 @@
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
   "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/logo.png",
   "supported_architectures": [
-    "amd64",
-    "arm64"
+    "amd64"
   ],
   "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/logo.png"
 }
