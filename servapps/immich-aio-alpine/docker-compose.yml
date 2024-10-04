@@ -3,7 +3,7 @@ name: big-bear-immich-aio-alpine
 services:
   "{ServiceName}-big-bear-immich-aio-alpine":
     container_name: "{ServiceName}-big-bear-immich-aio-alpine"
-    image: ghcr.io/imagegenius/immich:1.116.2-alpine
+    image: ghcr.io/imagegenius/immich:1.117.0-alpine
     ports:
       - 2283:8080
     volumes:
