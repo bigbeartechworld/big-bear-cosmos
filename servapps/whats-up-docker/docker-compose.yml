@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-wud
 services:
   "{ServiceName}":
-    image: fmartinou/whats-up-docker:6.5.0
+    image: fmartinou/whats-up-docker:6.6.0
     container_name: "{ServiceName}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
