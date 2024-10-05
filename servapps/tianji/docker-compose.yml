@@ -3,7 +3,7 @@ name: big-bear-tianji
 services:
   "{ServiceName}-big-bear-tianji":
     container_name: "{ServiceName}-big-bear-tianji"
-    image: moonrailgun/tianji:1.15.6
+    image: moonrailgun/tianji:1.15.7
     restart: unless-stopped
     environment:
       DATABASE_URL: postgresql://tianji-user:227453b7-1286-48cc-b471-1c269495c5fc@{ServiceName}-big-bear-tianji-db:5432/tianji
