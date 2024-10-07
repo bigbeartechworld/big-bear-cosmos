@@ -1,12 +1,12 @@
 cosmos-installer: null
-name: big-bear-budibase
+name: big-bear-retroarch-web
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: budibase/budibase:2.32.11
+    image: inglebard/retroarch-web:latest
     restart: unless-stopped
-    volumes:
-      - "{ServiceName}-data:/data"
+    environment:
+      - ROOT_WWW_PATH="/var/www/html"
     ports:
       - 8080:80
     hostname: "{ServiceName}"
