@@ -33,7 +33,7 @@ services:
     hostname: "{ServiceName}-big-bear-invoice-ninja"
   "{ServiceName}-big-bear-invoice-ninja-web":
     container_name: "{ServiceName}-big-bear-invoice-ninja-web"
-    image: nginx:1.26
+    image: nginx:1.27
     restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-invoice-ninja-web-data:/etc/nginx/conf.d/defaul\
