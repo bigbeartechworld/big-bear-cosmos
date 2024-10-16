@@ -3,7 +3,7 @@ name: big-bear-komf
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: sndxr/komf:1.0.6
+    image: sndxr/komf:1.0.8
     restart: unless-stopped
     environment:
       - KOMF_KOMGA_BASE_URI=http://komga:25600
