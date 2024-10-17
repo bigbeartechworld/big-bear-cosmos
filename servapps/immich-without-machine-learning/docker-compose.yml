@@ -3,7 +3,7 @@ name: big-bear-immich-without-machine-learning
 services:
   "{ServiceName}-immich-server":
     container_name: "{ServiceName}-immich-server"
-    image: ghcr.io/immich-app/immich-server:v1.118.1
+    image: ghcr.io/immich-app/immich-server:v1.118.2
     ports:
       - 2283:3001
     volumes:
