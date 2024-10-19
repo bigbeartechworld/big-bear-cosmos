@@ -3,7 +3,7 @@ name: big-bear-calcom
 services:
   "{ServiceName}-big-bear-calcom":
     container_name: "{ServiceName}-big-bear-calcom"
-    image: calcom/cal.com:v4.5.11
+    image: calcom/cal.com:v4.6.1
     restart: unless-stopped
     environment:
       - DATABASE_HOST=big-bear-calcom-db
