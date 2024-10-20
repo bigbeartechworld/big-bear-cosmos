@@ -5,7 +5,7 @@ services:
     container_name: "{ServiceName}-immich-server"
     image: ghcr.io/immich-app/immich-server:v1.118.2
     ports:
-      - 2283:3001
+      - 2283:2283
     volumes:
       - "{ServiceName}-immich-server-data:/usr/src/app/upload"
     environment:

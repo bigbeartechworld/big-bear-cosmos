@@ -3,7 +3,7 @@ name: big-bear-syncthing
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: syncthing/syncthing:1.27
+    image: syncthing/syncthing:1.28
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/var/syncthing"
