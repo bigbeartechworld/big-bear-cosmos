@@ -3,7 +3,7 @@ name: big-bear-cyberchef
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/gchq/cyberchef:10.19.2
+    image: ghcr.io/gchq/cyberchef:10.19.4
     restart: unless-stopped
     ports:
       - 8080:80
