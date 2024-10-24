@@ -3,7 +3,7 @@ name: big-bear-odoo
 services:
   "{ServiceName}-big-bear-odoo":
     container_name: "{ServiceName}-big-bear-odoo"
-    image: odoo:17
+    image: odoo:18
     restart: unless-stopped
     user: root
     volumes:
