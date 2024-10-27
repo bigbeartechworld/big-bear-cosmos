@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v3 # Use the checkout action
 
       - name: Setup Node.js environment # Step to set up Node.js
-        uses: actions/setup-node@v4.0.4 # Use the setup-node action
+        uses: actions/setup-node@v4.1.0 # Use the setup-node action
         with:
           node-version: 18.x # Specify the Node.js version to use
 
