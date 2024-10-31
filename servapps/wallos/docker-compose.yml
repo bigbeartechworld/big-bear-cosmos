@@ -1,0 +1,16 @@
+cosmos-installer: null
+name: big-bear-wallos
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: bellamy/wallos:2.32.0
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+    volumes:
+      - "{ServiceName}-data:/var/www/html/db"
+      - "{ServiceName}-data-2:/var/www/html/images/uploads/logos"
+    ports:
+      - 8282:80
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
