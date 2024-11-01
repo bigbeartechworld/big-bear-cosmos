@@ -3,7 +3,7 @@ name: big-bear-planka
 services:
   "{ServiceName}-big-bear-planka":
     container_name: "{ServiceName}-big-bear-planka"
-    image: ghcr.io/plankanban/planka:1.23.4
+    image: ghcr.io/plankanban/planka:1.23.5
     restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-planka-data:/app/public/user-avatars"
