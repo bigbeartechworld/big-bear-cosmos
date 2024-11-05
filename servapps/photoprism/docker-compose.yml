@@ -3,11 +3,11 @@ name: big-bear-photoprism
 services:
   "{ServiceName}-app":
     container_name: "{ServiceName}-app"
-    image: photoprism/photoprism:231128
+    image: photoprism/photoprism:240420
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: casaos
       PHOTOPRISM_SITE_URL: http://locahost/
-      PHOTOPRISM_ORIGINALS_LIMIT: 5000
+      PHOTOPRISM_ORIGINALS_LIMIT: "5000"
       PHOTOPRISM_HTTP_COMPRESSION: gzip
       PHOTOPRISM_LOG_LEVEL: info
       PHOTOPRISM_PUBLIC: "false"
@@ -21,7 +21,7 @@ services:
       PHOTOPRISM_DISABLE_CLASSIFICATION: "false"
       PHOTOPRISM_DISABLE_RAW: "false"
       PHOTOPRISM_RAW_PRESETS: "false"
-      PHOTOPRISM_JPEG_QUALITY: 85
+      PHOTOPRISM_JPEG_QUALITY: "85"
       PHOTOPRISM_DETECT_NSFW: "false"
       PHOTOPRISM_UPLOAD_NSFW: "true"
       PHOTOPRISM_DATABASE_DRIVER: mysql
@@ -45,10 +45,15 @@ services:
     image: mariadb:10.8
     restart: unless-stopped
     container_name: "{ServiceName}-photoprism-db"
-    command: mysqld --innodb-buffer-pool-size=128M
-      --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4
-      --collation-server=utf8mb4_unicode_ci --max-connections=512
-      --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=120
+    command:
+      - mysqld
+      - --innodb-buffer-pool-size=128M
+      - --transaction-isolation=READ-COMMITTED
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --max-connections=512
+      - --innodb-rollback-on-timeout=OFF
+      - --innodb-lock-wait-timeout=120
     volumes:
       - "{ServiceName}-photoprism-db-data:/var/lib/mysql"
     environment:
