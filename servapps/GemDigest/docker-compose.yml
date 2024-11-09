@@ -1,0 +1,17 @@
+cosmos-installer: null
+name: big-bear-gem-digest-bot
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: piero24/gemdigest:1.0
+    volumes:
+      - "{ServiceName}-data:/gem_digest_bot/extra_configs"
+    environment:
+      TELEGRAM_API_KEY: TELEGRAM_API_KEY
+      GEMINI_API_KEY: GEMINI_API_KEY
+      ADMIN_USER_ID: 123;456
+    restart: unless-stopped
+    ports:
+      - 3333:8080
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
