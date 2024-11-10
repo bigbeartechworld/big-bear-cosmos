@@ -8,6 +8,7 @@ services:
     volumes:
       - "{ServiceName}-big-bear-bookstack-data:/config"
     environment:
+      - APP_KEY=base64:3w/hRS2HYVFH5tJqD9AFlyurTh8mBByMKeMRyH9kEEQ=
       - APP_URL=http://[change to your IP]:8080
       - DB_HOST={ServiceName}-big-bear-bookstack-db
       - DB_USERNAME=bigbear
@@ -29,7 +30,7 @@ services:
       - MYSQL_USER=bigbear
       - MYSQL_PASSWORD=a3e8949f-484c-4877-afdb-391f892f9bb6
     volumes:
-      - "{ServiceName}-big-bear-bookstack-db-data:/var/lib/mysql"
+      - "{ServiceName}-big-bear-bookstack-db-data:/config"
     restart: unless-stopped
     networks:
       - big_bear_bookstack_network
