@@ -79,7 +79,7 @@ services:
     healthcheck:
       test: curl --fail http://127.0.0.1:80/api/health || exit 1
       interval: 5s
-      retries: "10"
+      retries: 10
       timeout: 2s
     depends_on:
       - "{ServiceName}-big-bear-coolify-postgres"
@@ -105,7 +105,7 @@ services:
         - -d
         - coolify
       interval: 5s
-      retries: "10"
+      retries: 10
       timeout: 2s
     networks:
       - big_bear_coolify_network
@@ -131,7 +131,7 @@ services:
     healthcheck:
       test: redis-cli ping
       interval: 5s
-      retries: "10"
+      retries: 10
       timeout: 2s
     networks:
       - big_bear_coolify_network
@@ -150,7 +150,7 @@ services:
     healthcheck:
       test: wget -qO- http://127.0.0.1:6001/ready || exit 1
       interval: 5s
-      retries: "10"
+      retries: 10
       timeout: 2s
     networks:
       - big_bear_coolify_network
