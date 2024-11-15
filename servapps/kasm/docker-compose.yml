@@ -3,7 +3,7 @@ name: big-bear-kasm
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: linuxserver/kasm:1.15.0
+    image: linuxserver/kasm:1.120.20221218
     restart: unless-stopped
     privileged: true
     network_mode: bridge
