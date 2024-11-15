@@ -3,7 +3,7 @@ name: big-bear-nextcloud-smb
 services:
   "{ServiceName}-big-bear-nextcloud-smb":
     container_name: "{ServiceName}-big-bear-nextcloud-smb"
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.1
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.2
     restart: unless-stopped
     ports:
       - 7580:80
@@ -66,7 +66,7 @@ services:
     hostname: "{ServiceName}-big-bear-nextcloud-smb-redis"
   "{ServiceName}-big-bear-nextcloud-smb-cron":
     container_name: "{ServiceName}-big-bear-nextcloud-smb-cron"
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.1
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.2
     restart: on-failure
     volumes:
       - "{ServiceName}-big-bear-nextcloud-smb-cron-data:/var/www/html"
