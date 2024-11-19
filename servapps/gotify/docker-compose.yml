@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-gotify
 services:
   "{ServiceName}":
-    image: gotify/server:2.6.0
+    image: gotify/server:2.6.1
     ports:
       - 8091:80
     environment:
