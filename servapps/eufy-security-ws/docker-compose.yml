@@ -1,0 +1,17 @@
+cosmos-installer: null
+name: big-bear-eufy-security-ws
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: bropat/eufy-security-ws:1.9.1
+    environment:
+      USERNAME: "[EUFY_USERNAME]"
+      PASSWORD: "[EUFY_PASSWORD]"
+      COUNTRY: US
+      LANGUAGE: en
+    restart: unless-stopped
+    volumes:
+      - "{ServiceName}-data:/data"
+    network_mode: host
+    hostname: "{ServiceName}"
+minVersion: 0.14.0

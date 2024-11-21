@@ -1,0 +1,15 @@
+{
+  "name": "big-bear-casaos-user-management",
+  "description": "Manage users in CasaOS",
+  "longDescription": "Manage users in CasaOS",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": ""
+}
