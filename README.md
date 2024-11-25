@@ -34,7 +34,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
-| 2fauth | 2fauth/2fauth | 5.4.0 | [YouTube Video](https://youtu.be/B5Cb5DXT9-o) |  |
+| 2fauth | 2fauth/2fauth | 5.4.2 | [YouTube Video](https://youtu.be/B5Cb5DXT9-o) |  |
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
 | Homepage | ghcr.io/gethomepage/homepage | 0.9.12 |  |  |
 | Romm | zurdi15/romm | 3.5.1 |  |  |
@@ -43,22 +43,23 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.54 |  |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.46.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.16.2 |  |  |
-| authentik | ghcr.io/goauthentik/server | 2024.10.2 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.17.2 |  |  |
+| authentik | ghcr.io/goauthentik/server | 2024.10.4 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
-| baserow | baserow/baserow | 1.29.1 |  |  |
+| baserow | baserow/baserow | 1.29.2 |  |  |
 | beszel | henrygd/beszel | 0.8.0 |  |  |
+| big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.0.1 |  |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.10.20241104 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling |  |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/U2kdiK1aH_o) |  |
-| budibase | budibase/budibase | 2.33.14 |  |  |
+| budibase | budibase/budibase | 3.2.11 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
-| calcom | calcom/cal.com | 4.6.14 |  |  |
+| calcom | calcom/cal.com | 4.7.6 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.47.06 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling |  |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling |  |  |
-| code-server | linuxserver/code-server | 4.95.2 |  |  |
+| code-server | linuxserver/code-server | 4.95.3 |  |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 |  |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.367 |  |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.4 |  |  |
@@ -71,7 +72,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 |  |  |
 | docmost | docmost/docmost | 0.5.0 |  |  |
-| dozzle | amir20/dozzle | 8.7.3 | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |  |
+| dozzle | amir20/dozzle | 8.8.1 | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |  |
+| eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/CfPykJeOy4E) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.2 |  |  |
@@ -80,26 +82,26 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | firefox | kasmweb/firefox | 1.15.0-rolling |  |  |
 | flame | pawelmalak/flame | multiarch2.3.1 |  |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.5 |  |  |
-| flowise | flowiseai/flowise | 2.1.4 |  |  |
+| flowise | flowiseai/flowise | 2.1.5 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 |  |  |
-| ghost | ghost | 5.100.1-alpine |  |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.122.0 | [YouTube Video](https://youtu.be/BWPRbiWr4is) |  |
+| ghost | ghost | 5.101.2-alpine |  |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.123.0 | [YouTube Video](https://youtu.be/BWPRbiWr4is) |  |
 | gladys | gladysassistant/gladys | 4.49.0 |  |  |
 | glances | nicolargo/glances | 4.1.2.1-full |  |  |
 | gluetun | qmcgaw/gluetun | 3.39.1 |  |  |
-| gotify | gotify/server | 2.5.0 |  |  |
+| gotify | gotify/server | 2.6.1 |  |  |
 | guacamole | guacamole/guacamole | 1.5.5 |  |  |
-| healthchecks | linuxserver/healthchecks | 3.7.20241111 |  |  |
+| healthchecks | linuxserver/healthchecks | 3.7.20241118 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.7 | [YouTube Video](https://youtu.be/YK3QXYVOAvg) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.11.2 |  |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.11.3 |  |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
-| homer | b4bz/homer | 24.11.3 |  |  |
+| homer | b4bz/homer | 24.11.4 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 |  |  |
-| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.120.2-alpine |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.120.2 |  |  |
-| immich | ghcr.io/immich-app/immich-server | 1.120.2 |  |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.10.50 |  |  |
+| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.121.0-alpine |  |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.121.0 |  |  |
+| immich | ghcr.io/immich-app/immich-server | 1.121.0 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.10.53 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/TvlIkuHp_Yo) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.1.0 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.0 |  |  |
@@ -121,7 +123,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/LTawr95nb4w) |  |
-| n8n | n8nio/n8n | 1.68.0 |  |  |
+| n8n | n8nio/n8n | 1.69.0 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.10.31 |  |  |
@@ -130,40 +132,40 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.2 |  |  |
 | nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW |  |  |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
-| nocodb | nocodb/nocodb | 0.258.0 |  |  |
+| nocodb | nocodb/nocodb | 0.258.2 |  |  |
 | node-red | nodered/node-red | 4.0.5 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.14.1 |  |  |
 | npmplus | zoeyvid/npmplus | 424 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.11.0 |  |  |
 | obsidian-livesync | couchdb | 3.4.2 |  |  |
-| obsidian | linuxserver/obsidian | 1.7.6 |  |  |
+| obsidian | linuxserver/obsidian | 1.7.7 |  |  |
 | octoprint | octoprint/octoprint | 1.10.3 |  |  |
 | odoo | odoo | 18 |  |  |
-| ollama-amd | ollama/ollama | 0.4.1-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.4.1 |  |  |
-| ollama-nvidia | ollama/ollama | 0.4.1 |  |  |
-| onedev | 1dev/server | 11.5.2 |  |  |
+| ollama-amd | ollama/ollama | 0.4.2-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.4.2 |  |  |
+| ollama-nvidia | ollama/ollama | 0.4.2 |  |  |
+| onedev | 1dev/server | 11.5.3 |  |  |
 | onlyoffice | onlyoffice/documentserver | 8.2.1 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.13.5 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.48.2 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.49.0 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
-| penpot | penpotapp/frontend | 2.3.1 |  |  |
+| penpot | penpotapp/frontend | 2.3.3 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
-| photoprism | photoprism/photoprism | 240420 |  |  |
-| phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
+| photoprism | photoprism/photoprism | 240915 |  |  |
+| phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1 |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.07.0 |  |  |
 | pihole | pihole/pihole | 2024.07.0 |  |  |
-| pingvin-share | stonith404/pingvin-share | 1.2.4 |  |  |
+| pingvin-share | stonith404/pingvin-share | 1.4.0 |  |  |
 | piwigo | linuxserver/piwigo | 15.1.0 |  |  |
-| planka | ghcr.io/plankanban/planka | 1.24.0 | [YouTube Video](https://youtu.be/KSARfLXAc1M) |  |
+| planka | ghcr.io/plankanban/planka | 1.24.2 | [YouTube Video](https://youtu.be/KSARfLXAc1M) |  |
 | plant-it | msdeluise/plant-it-server | 0.9.0 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
-| plex | linuxserver/plex | 1.41.1 |  |  |
-| portainer-agent | portainer/agent | 2.23.0 |  |  |
-| portainer | portainer/portainer-ce | 2.23.0-alpine |  |  |
+| plex | linuxserver/plex | 1.41.2 |  |  |
+| portainer-agent | portainer/agent | 2.24.0 |  |  |
+| portainer | portainer/portainer-ce | 2.24.0-alpine |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.10 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
@@ -171,31 +173,31 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | rallly | lukevella/rallly | 3.11.2 |  |  |
 | reactive-resume | amruthpillai/reactive-resume | 4.1.8 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
-| rocket-chat | rocket.chat | 6.11.1 |  |  |
+| rocket-chat | rocket.chat | 6.13.0 |  |  |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
-| scrypted | koush/scrypted | 0.123.7-jammy-full |  |  |
+| scrypted | koush/scrypted | 0.123.33-jammy-full |  |  |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | semaphore | semaphoreui/semaphore | 2.10.35 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 0.21.5 |  |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 0.22.0 |  |  |
 | syncthing | syncthing/syncthing | 1.28 |  |  |
 | tailscale | tailscale/tailscale | v1.76.6 |  |  |
-| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.22 |  |  |
-| tianji | moonrailgun/tianji | 1.16.5 |  |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.23 |  |  |
+| tianji | moonrailgun/tianji | 1.17.1 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.14 |  |  |
 | traccar | traccar/traccar | 6.5-ubuntu |  |  |
 | trilium | zadam/trilium | 0.63.7 |  |  |
-| tududi | chrisvel/tududi | 0.34 |  |  |
+| tududi | chrisvel/tududi | 0.35 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest |  |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 |  |  |
 | unifi-network-application | linuxserver/unifi-network-application | 6.0.11 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 1 |  |  |
 | vikunja | vikunja/vikunja | 0.24.4 |  |  |
 | viseron | roflcoopter/viseron | 2.3.1 |  |  |
-| wallos | bellamy/wallos | 2.36.2 |  |  |
+| wallos | bellamy/wallos | 2.38.2 |  |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
-| wordpress | wordpress | 6.6.2 |  |  |
+| wordpress | wordpress | 6.7.0 |  |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 1.41.0 |  |  |
 | zipline | ghcr.io/diced/zipline | 3.7.10 |  |  |
 | zotero | linuxserver/zotero | 7.0.20240809 |  |  |
