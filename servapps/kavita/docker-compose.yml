@@ -3,7 +3,7 @@ name: big-bear-kavita
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: jvmilazz0/kavita:0.8.3
+    image: jvmilazz0/kavita:0.8.4
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/kavita/config"
