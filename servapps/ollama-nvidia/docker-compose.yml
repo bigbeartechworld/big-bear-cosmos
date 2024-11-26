@@ -3,7 +3,7 @@ name: big-bear-ollama-nvidia
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ollama/ollama:0.4.3
+    image: ollama/ollama:0.4.4
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/root/.ollama"
