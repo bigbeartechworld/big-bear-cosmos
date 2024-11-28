@@ -1,16 +1,16 @@
 cosmos-installer: null
-name: big-bear-open-webui
+name: big-bear-ejbca-ce
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/open-webui/open-webui:git-5d724d0
+    image: keyfactor/ejbca-ce:8.3.2
     restart: unless-stopped
     volumes:
-      - "{ServiceName}-data:/app/backend/data"
-    environment:
-      - OLLAMA_BASE_URL=
-      - OPENAI_API_KEY=
+      - "{ServiceName}-data:/mnt/persistent"
     ports:
       - 8080:8080
+      - 8443:8443
+    environment:
+      - TLS_SETUP_ENABLED=simple
     hostname: "{ServiceName}"
 minVersion: 0.14.0
