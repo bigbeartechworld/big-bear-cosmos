@@ -3,7 +3,7 @@ name: big-bear-n8n
 services:
   "{ServiceName}-app":
     container_name: "{ServiceName}-app"
-    image: n8nio/n8n:1.69.1
+    image: n8nio/n8n:1.69.2
     restart: unless-stopped
     ports:
       - 5678:5678

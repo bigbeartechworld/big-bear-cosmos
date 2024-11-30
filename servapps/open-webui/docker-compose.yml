@@ -3,7 +3,7 @@ name: big-bear-open-webui
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/open-webui/open-webui:git-5d724d0
+    image: ghcr.io/open-webui/open-webui:git-33e54a9
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/app/backend/data"

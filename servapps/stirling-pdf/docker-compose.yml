@@ -1,0 +1,17 @@
+cosmos-installer: null
+name: big-bear-stirling-pdf
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: stirlingtools/stirling-pdf:0.35.0
+    restart: unless-stopped
+    environment:
+      - DOCKER_ENABLE_SECURITY=false
+      - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
+      - LANGS=en_US
+    volumes:
+      - "{ServiceName}-data:/usr/share/tessdata"
+    ports:
+      - 8080:8080
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
