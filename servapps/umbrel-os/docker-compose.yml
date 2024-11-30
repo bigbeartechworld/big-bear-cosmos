@@ -3,7 +3,7 @@ name: big-bear-umbrel
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: dockurr/umbrel:1.2.2
+    image: dockurr/umbrel:1.3.0
     restart: unless-stopped
     ports:
       - 8080:80
