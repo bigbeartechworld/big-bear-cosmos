@@ -3,7 +3,7 @@ name: big-bear-linkwarden
 services:
   "{ServiceName}-linkwarden":
     container_name: "{ServiceName}-linkwarden"
-    image: ghcr.io/linkwarden/linkwarden:v2.8.3
+    image: ghcr.io/linkwarden/linkwarden:v2.8.4
     restart: unless-stopped
     volumes:
       - "{ServiceName}-linkwarden-data:/data/data"
