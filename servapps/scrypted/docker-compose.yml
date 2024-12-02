@@ -3,7 +3,7 @@ name: big-bear-scrypted
 services:
   "{ServiceName}-scrypted":
     container_name: "{ServiceName}-scrypted"
-    image: koush/scrypted:v0.123.38-jammy-full
+    image: koush/scrypted:v0.123.46-jammy-full
     network_mode: host
     environment:
       - SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer SET_THIS_TO_SOME_RANDOM_TEXT
