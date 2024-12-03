@@ -1,13 +1,12 @@
 cosmos-installer: null
-name: big-bear-budibase
+name: big-bear-upsnap
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: budibase/budibase:3.2.16
+    image: ghcr.io/seriousm4x/upsnap:4.3.4
     restart: unless-stopped
+    network_mode: host
     volumes:
-      - "{ServiceName}-data:/data"
-    ports:
-      - 8080:80
+      - "{ServiceName}-data:/app/pb_data"
     hostname: "{ServiceName}"
 minVersion: 0.14.0

@@ -1,0 +1,18 @@
+cosmos-installer: null
+name: big-bear-cloudflared-web
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: wisdomsky/cloudflared-web:2024.11.1
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - WEBUI_PORT=14333
+      - EDGE_IP_VERSION=auto
+      - PROTOCOL=auto
+      - METRICS_ENABLE=false
+      - METRICS_PORT=60123
+      - BASIC_AUTH_USER=admin
+      - BASIC_AUTH_PASS=""
+    hostname: "{ServiceName}"
+minVersion: 0.14.0

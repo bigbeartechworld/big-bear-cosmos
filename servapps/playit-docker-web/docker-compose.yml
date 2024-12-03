@@ -1,13 +1,14 @@
 cosmos-installer: null
-name: big-bear-budibase
+name: big-bear-playit-docker-web
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: budibase/budibase:3.2.16
+    image: wisdomsky/playit-docker-web:1.1
     restart: unless-stopped
+    network_mode: host
+    environment:
+      - WEBUI_PORT=8008
     volumes:
-      - "{ServiceName}-data:/data"
-    ports:
-      - 8080:80
+      - "{ServiceName}-data:/config"
     hostname: "{ServiceName}"
 minVersion: 0.14.0
