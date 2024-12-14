@@ -3,7 +3,7 @@ name: big-bear-adguard-home-host
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: adguard/adguardhome:v0.107.54
+    image: adguard/adguardhome:v0.107.55
     volumes:
       - "{ServiceName}-data:/opt/adguardhome/work"
       - "{ServiceName}-data-2:/opt/adguardhome/conf"
