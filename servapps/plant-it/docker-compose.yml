@@ -3,7 +3,7 @@ name: big-bear-plant-it
 services:
   "{ServiceName}-big-bear-plant-it":
     container_name: "{ServiceName}-big-bear-plant-it"
-    image: msdeluise/plant-it-server:0.9.0
+    image: msdeluise/plant-it-server:0.10.0
     restart: unless-stopped
     environment:
       - MYSQL_HOST=big-bear-plant-it-db
