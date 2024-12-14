@@ -3,7 +3,7 @@ name: big-bear-wallos
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: bellamy/wallos:2.39.1
+    image: bellamy/wallos:2.40.0
     restart: unless-stopped
     environment:
       TZ: UTC
