@@ -3,7 +3,7 @@ name: big-bear-mealie
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: hkotel/mealie:v2.3.0
+    image: hkotel/mealie:v2.4.0
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/app/data"
