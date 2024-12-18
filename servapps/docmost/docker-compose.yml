@@ -3,7 +3,7 @@ name: big-bear-docmost
 services:
   "{ServiceName}-big-bear-docmost":
     container_name: "{ServiceName}-big-bear-docmost"
-    image: docmost/docmost:0.6.1
+    image: docmost/docmost:0.6.2
     restart: unless-stopped
     environment:
       - APP_URL=http://localhost:3000
