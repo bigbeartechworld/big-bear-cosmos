@@ -3,7 +3,7 @@ name: big-bear-homarr
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/ajnart/homarr:0.15.9
+    image: ghcr.io/ajnart/homarr:0.15.10
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/app/data/configs"
