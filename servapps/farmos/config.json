@@ -1,7 +1,7 @@
 {
-  "id": "docmost",
-  "version": "0.6.2",
-  "image": "docmost/docmost",
+  "id": "farmos",
+  "version": "3.3.2",
+  "image": "farmos/farmos",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""

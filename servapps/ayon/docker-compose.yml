@@ -13,7 +13,7 @@ services:
         - http://localhost:5000/api/info
       interval: 10s
       timeout: 2s
-      retries: 3
+      retries: "3"
     volumes:
       - "{ServiceName}-big-bear-ayon-data:/addons"
       - "{ServiceName}-big-bear-ayon-data-2:/storage"
