@@ -3,7 +3,7 @@ name: big-bear-seafile
 services:
   "{ServiceName}-big-bear-seafile":
     container_name: "{ServiceName}-big-bear-seafile"
-    image: seafileltd/seafile-mc:12.0.4
+    image: seafileltd/seafile-mc:12.0.6
     restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-seafile-data:/shared"
