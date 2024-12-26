@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-vikunja
 services:
   "{ServiceName}-vikunja":
-    image: vikunja/vikunja:0.24.5
+    image: vikunja/vikunja:0.24.6
     container_name: "{ServiceName}-vikunja"
     ports:
       - 8081:3456
