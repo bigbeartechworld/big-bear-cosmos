@@ -3,7 +3,7 @@ name: big-bear-bookstack
 services:
   "{ServiceName}-big-bear-bookstack":
     container_name: "{ServiceName}-big-bear-bookstack"
-    image: linuxserver/bookstack:24.10.20241104
+    image: linuxserver/bookstack:24.12.20241223
     restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-bookstack-data:/config"
