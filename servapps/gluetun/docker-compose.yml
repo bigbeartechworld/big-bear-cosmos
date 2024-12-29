@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-gluetun
 services:
   "{ServiceName}":
-    image: qmcgaw/gluetun:v3.39.1
+    image: qmcgaw/gluetun:v3.40.0
     container_name: "{ServiceName}"
     cap_add:
       - NET_ADMIN
