@@ -3,7 +3,7 @@ name: big-bear-semaphore
 services:
   "{ServiceName}-big-bear-semaphore":
     container_name: "{ServiceName}-big-bear-semaphore"
-    image: semaphoreui/semaphore:v2.11.1
+    image: semaphoreui/semaphore:v2.11.2
     restart: unless-stopped
     environment:
       SEMAPHORE_DB_USER: semaphore
