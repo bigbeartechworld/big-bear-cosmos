@@ -1,0 +1,16 @@
+cosmos-installer: null
+name: big-bear-lobe-chat
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: lobehub/lobe-chat:v1.42.1
+    restart: unless-stopped
+    environment:
+      - OPENAI_API_KEY=""
+      - OPENAI_PROXY_URL=""
+      - CUSTOM_MODELS=""
+      - ACCESS_CODE=""
+    ports:
+      - 3210:3210
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
