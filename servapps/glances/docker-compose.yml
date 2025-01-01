@@ -3,7 +3,7 @@ name: big-bear-glances
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: nicolargo/glances:4.3.0.3-full
+    image: nicolargo/glances:4.3.0.5-full
     ports:
       - 61208:61208
     environment:
