@@ -3,7 +3,7 @@ name: big-bear-onedev
 services:
   "{ServiceName}-big-bear-onedev":
     container_name: "{ServiceName}-big-bear-onedev"
-    image: 1dev/server:11.6.8
+    image: 1dev/server:11.6.9
     restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-onedev-data:/opt/onedev"
