@@ -18,13 +18,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker/containers/:/var/lib/docker/containers/
       - /etc/ssl/certs:/etc/ssl/certs:ro
-      - "{ServiceName}-data:/tmp/pterodactyl/"
       - /tmp/pterodactyl:/tmp/pterodactyl/
-      - "{ServiceName}-data-2:/etc/pterodactyl/"
       - /etc/pterodactyl:/etc/pterodactyl/
-      - "{ServiceName}-data-3:/var/log/pterodactyl/"
       - /var/log/pterodactyl:/var/log/pterodactyl/
-      - "{ServiceName}-data-4:/var/lib/pterodactyl/"
       - /var/lib/pterodactyl:/var/lib/pterodactyl/
     hostname: "{ServiceName}"
 minVersion: 0.14.0
