@@ -1,7 +1,7 @@
 {
-  "name": "Romm",
+  "name": "romm",
   "description": "RomM",
-  "longDescription": "RomM (Rom Manager) is a web-based retro roms manager integrated with IGDB.",
+  "longDescription": "ROM manager for organizing, enriching, and playing retro games, with support for 400+ platforms.",
   "tags": [
     "BigBearCasaOS"
   ],
