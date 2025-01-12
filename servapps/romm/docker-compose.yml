@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-romm
 services:
   "{ServiceName}-big-bear-romm":
-    image: rommapp/romm:3.7.0-alpha.1
+    image: rommapp/romm:3.7.0
     container_name: "{ServiceName}-big-bear-romm"
     environment:
       - DB_HOST={ServiceName}-big-bear-rommdb
@@ -10,19 +10,14 @@ services:
       - DB_USER=romm-user
       - DB_NAME=romm
       - DB_PASSWD=casaos
-      - IGDB_CLIENT_ID=<IGDB client id>
-      - IGDB_CLIENT_SECRET=<IGDB client secret>
       - ROMM_AUTH_SECRET_KEY=<secret key>
-      - ROMM_AUTH_USERNAME=admin
-      - ROMM_AUTH_PASSWORD=casaos
+      - IGDB_CLIENT_ID=<igdb client id>
+      - IGDB_CLIENT_SECRET=<igdb client secret>
+      - MOBYGAMES_API_KEY=<moby api key>
+      - STEAMGRIDDB_API_KEY=<sgdb api key>
       - ENABLE_RESCAN_ON_FILESYSTEM_CHANGE=true
-      - RESCAN_ON_FILESYSTEM_CHANGE_DELAY=5
       - ENABLE_SCHEDULED_RESCAN=true
-      - SCHEDULED_RESCAN_CRON=0 3 * * *
       - ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB=true
-      - SCHEDULED_UPDATE_SWITCH_TITLEDB_CRON=0 4 * * *
-      - ENABLE_SCHEDULED_UPDATE_MAME_XML=true
-      - SCHEDULED_UPDATE_MAME_XML_CRON=0 5 * * *
     volumes:
       - "{ServiceName}-big-bear-romm-data:/romm/resources"
       - "{ServiceName}-big-bear-romm-data-2:/redis-data"
