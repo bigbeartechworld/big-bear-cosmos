@@ -6,10 +6,10 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/dozzle/logo.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png"
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/dozzle/logo.png"
 }
