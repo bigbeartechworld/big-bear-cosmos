@@ -3,7 +3,7 @@ name: big-bear-upsnap
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/seriousm4x/upsnap:4.5.0
+    image: ghcr.io/seriousm4x/upsnap:4.5.1
     restart: unless-stopped
     network_mode: host
     volumes:

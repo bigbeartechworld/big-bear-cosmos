@@ -1,0 +1,15 @@
+{
+  "name": "uisp",
+  "description": "UISP",
+  "longDescription": "All-in-one docker image for Ubiquiti UISP (formerly UNMS). Supports x86_64 and ARM (Raspberry Pi).",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-icons/Apps/uisp/logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-icons/Apps/uisp/logo.png"
+}
