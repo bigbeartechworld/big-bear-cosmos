@@ -1,16 +1,16 @@
 cosmos-installer: null
-name: big-bear-lobe-chat
+name: big-bear-uisp
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: lobehub/lobe-chat:v1.45.7
+    image: nico640/docker-unms:2.4.155.1
     restart: unless-stopped
     environment:
-      - OPENAI_API_KEY=""
-      - OPENAI_PROXY_URL=""
-      - CUSTOM_MODELS=""
-      - ACCESS_CODE=""
+      - TZ=UTC
+    volumes:
+      - "{ServiceName}-data:/config"
     ports:
-      - 3210:3210
+      - 8080:80
+      - 10443:443
     hostname: "{ServiceName}"
 minVersion: 0.14.0
