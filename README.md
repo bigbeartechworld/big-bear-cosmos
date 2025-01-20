@@ -51,7 +51,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.12.20241223 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling |  |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/U2kdiK1aH_o) |  |
-| budibase | budibase/budibase | 3.2.37 |  |  |
+| budibase | budibase/budibase | 3.2.46 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.7.8 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.48.06 |  |  |
@@ -67,12 +67,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashdot | mauricenino/dashdot | 5.9.0 |  |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.0.2 |  |  |
-| dbgate | dbgate/dbgate | 6.1.2-alpine |  |  |
+| dbgate | dbgate/dbgate | 6.1.3-alpine |  |  |
 | diun | crazymax/diun | 4.29.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 |  |  |
 | docmost | docmost/docmost | 0.6.2 |  |  |
-| dozzle | amir20/dozzle | 8.10.1 | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |  |
+| dozzle | amir20/dozzle | 8.10.4 | [YouTube Video](https://youtu.be/cTzSPrkB4rg) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.0.0 |  |  |
 | eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/CfPykJeOy4E) |  |
@@ -84,11 +84,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | firefox | kasmweb/firefox | 1.15.0-rolling |  |  |
 | flame | pawelmalak/flame | multiarch2.3.1 |  |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.5 |  |  |
-| flowise | flowiseai/flowise | 2.2.3 |  |  |
+| flowise | flowiseai/flowise | 2.2.4 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 |  |  |
-| ghost | ghost | 5.105.0-alpine |  |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.133.0 | [YouTube Video](https://youtu.be/BWPRbiWr4is) |  |
+| ghost | ghost | 5.106.1-alpine |  |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.133.1 | [YouTube Video](https://youtu.be/BWPRbiWr4is) |  |
 | gladys | gladysassistant/gladys | 4.50.2 |  |  |
 | glances | nicolargo/glances | 4.3.0.8-full |  |  |
 | gluetun | qmcgaw/gluetun | 3.40.0 |  |  |
@@ -103,7 +103,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.124.2-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.124.2 |  |  |
 | immich | ghcr.io/immich-app/immich-server | 1.124.2 |  |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.11.11 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.11.24 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/TvlIkuHp_Yo) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.2.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.2 |  |  |
@@ -112,14 +112,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | kasm | linuxserver/kasm | 1.120.20221218 |  |  |
 | kavita | jvmilazz0/kavita | 0.8.4 |  |  |
 | kiwix-serve | ghcr.io/kiwix/kiwix-serve | 3.7.0-2 |  |  |
-| komf | sndxr/komf | 1.2.3 |  |  |
-| komga | ghcr.io/gotson/komga | 1.17.0 |  |  |
+| komf | sndxr/komf | 1.3.0 |  |  |
+| komga | ghcr.io/gotson/komga | 1.18.0 |  |  |
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
 | libretranslate | libretranslate/libretranslate | 1.6.2 |  |  |
 | linkstack | linkstackorg/linkstack | V4 |  |  |
-| linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.2 |  |  |
-| lobe-chat | lobehub/lobe-chat | 1.45.0 |  |  |
+| linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.47.2 |  |  |
 | mailpit | axllent/mailpit | 1.21 |  |  |
 | mealie | hkotel/mealie | 2.4.2 |  |  |
 | mind | mrcas/mind | 1.4.1 |  |  |
@@ -127,16 +127,16 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/LTawr95nb4w) |  |
-| n8n | n8nio/n8n | 1.74.0 |  |  |
+| n8n | n8nio/n8n | 1.74.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
-| netalertx | jokobsk/netalertx | 24.12.23 |  |  |
+| netalertx | jokobsk/netalertx | 25.1.8 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 30.0.4 |  |  |
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.4 |  |  |
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.4 |  |  |
 | nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW |  |  |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
-| nocodb | nocodb/nocodb | 0.260.0 |  |  |
+| nocodb | nocodb/nocodb | 0.260.2 |  |  |
 | node-red | nodered/node-red | 4.0.8 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.15.0 |  |  |
 | npmplus | zoeyvid/npmplus | 427 |  |  |
@@ -145,18 +145,18 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.7.7 |  |  |
 | octoprint | octoprint/octoprint | 1.10.3 |  |  |
 | odoo | odoo | 18 |  |  |
-| ollama-amd | ollama/ollama | 0.5.4-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.5.4 |  |  |
-| ollama-nvidia | ollama/ollama | 0.5.4 |  |  |
+| ollama-amd | ollama/ollama | 0.5.6-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.5.6 |  |  |
+| ollama-nvidia | ollama/ollama | 0.5.6 |  |  |
 | onedev | 1dev/server | 11.6.9 |  |  |
 | onlyoffice | onlyoffice/documentserver | 8.2.2 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
-| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.13.5 |  |  |
+| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.14.3 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.50.3 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
-| penpot | penpotapp/frontend | 2.4.0 |  |  |
+| penpot | penpotapp/frontend | 2.4.1 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1 |  |  |
@@ -169,41 +169,42 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | playit-docker-web | wisdomsky/playit-docker-web | 1.1 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.41.3 |  |  |
-| portainer-agent | portainer/agent | 2.25.1 |  |  |
-| portainer | portainer/portainer-ce | 2.25.1-alpine |  |  |
+| portainer-agent | portainer/agent | 2.26.0 |  |  |
+| portainer | portainer/portainer-ce | 2.26.0-alpine |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.10 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 7.0.1 |  |  |
 | rallly | lukevella/rallly | 3.11.2 |  |  |
-| reactive-resume | amruthpillai/reactive-resume | 4.1.8 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | 4.3.9 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
-| romm | rommapp/romm | 3.7.0 |  |  |
+| romm | rommapp/romm | 3.7.2 |  |  |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full |  |  |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | semaphore | semaphoreui/semaphore | 2.11.2 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.0.3 |  |  |
-| stirling-pdf | stirlingpdf/stirlingpdf | 0.36.6 |  |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.1.0 |  |  |
+| stirling-pdf | stirlingpdf/stirlingpdf | 0.37.0 |  |  |
 | syncthing | syncthing/syncthing | 1.29 |  |  |
 | tailscale | tailscale/tailscale | 1.78.3 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.27 |  |  |
 | tianji | moonrailgun/tianji | 1.17.6 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 |  |  |
-| traccar | traccar/traccar | 6.5-ubuntu |  |  |
+| traccar | traccar/traccar | 6.6-ubuntu |  |  |
 | trilium | zadam/trilium | 0.63.7 |  |  |
 | tududi | chrisvel/tududi | 0.36 |  |  |
+| uisp | nico640/docker-unms | 2.4.155.1 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest |  |  |
 | umbrel-os | dockurr/umbrel | 1.3.0 |  |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 |  |  |
 | unifi-network-application | linuxserver/unifi-network-application | 6.0.11 |  |  |
-| upsnap | ghcr.io/seriousm4x/upsnap | 4.4.2 |  |  |
+| upsnap | ghcr.io/seriousm4x/upsnap | 4.5.1 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 1 |  |  |
 | vikunja | vikunja/vikunja | 0.24.6 |  |  |
 | viseron | roflcoopter/viseron | 2.3.1 |  |  |
-| wallos | bellamy/wallos | 2.42.2 |  |  |
+| wallos | bellamy/wallos | 2.44.0 |  |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
 | wordpress | wordpress | 6.7.1 |  |  |
