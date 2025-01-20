@@ -1,0 +1,22 @@
+cosmos-installer: null
+name: big-bear-lyrionmusicserver
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: lmscommunity/lyrionmusicserver:9.0.2
+    restart: unless-stopped
+    environment:
+      - HTTP_PORT=9000
+    volumes:
+      - "{ServiceName}-data:/config"
+      - "{ServiceName}-data-2:/music"
+      - "{ServiceName}-data-3:/playlist"
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - 9000:9000/tcp
+      - 9090:9090/tcp
+      - 3483:3483/tcp
+      - 3483:3483/udp
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
