@@ -3,7 +3,7 @@ name: big-bear-lyrionmusicserver
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: lmscommunity/lyrionmusicserver:9.0.2
+    image: lmscommunity/lyrionmusicserver:9.1.0
     restart: unless-stopped
     environment:
       - HTTP_PORT=9000
