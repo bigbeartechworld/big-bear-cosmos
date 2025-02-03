@@ -6,10 +6,10 @@
     "BigBearCasaOS"
   ],
   "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama-amd.png",
+  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama-amd.png"
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama.png"
 }
