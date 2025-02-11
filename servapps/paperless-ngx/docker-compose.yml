@@ -55,7 +55,7 @@ services:
     hostname: "{ServiceName}-big-bear-paperless-ngx-db"
   "{ServiceName}-big-bear-paperless-ngx-gotenberg":
     container_name: "{ServiceName}-big-bear-paperless-ngx-gotenberg"
-    image: gotenberg/gotenberg:8.16
+    image: gotenberg/gotenberg:8.17
     restart: unless-stopped
     command:
       - gotenberg
