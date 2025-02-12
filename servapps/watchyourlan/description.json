@@ -1,0 +1,15 @@
+{
+  "name": "watchyourlan",
+  "description": "WatchYourLAN",
+  "longDescription": "Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history",
+  "tags": [
+    "BigBearCasaOS"
+  ],
+  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchyourlan.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchyourlan.png"
+}
