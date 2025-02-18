@@ -3,7 +3,7 @@ name: big-bear-otel-lgtm
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: grafana/otel-lgtm:0.8.4
+    image: grafana/otel-lgtm:0.8.5
     restart: unless-stopped
     volumes:
       - type: volume
