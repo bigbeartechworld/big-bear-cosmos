@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-pingvin-share
 services:
   "{ServiceName}":
-    image: stonith404/pingvin-share:v1.8.2
+    image: stonith404/pingvin-share:v1.9.1
     restart: unless-stopped
     ports:
       - 3000:3000
