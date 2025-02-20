@@ -3,7 +3,7 @@ name: big-bear-jlesage-firefox
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: jlesage/firefox:v25.02.1
+    image: jlesage/firefox:v25.02.2
     ports:
       - 5800:5800
     environment:
