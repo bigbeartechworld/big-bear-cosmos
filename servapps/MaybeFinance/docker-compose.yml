@@ -1,0 +1,52 @@
+cosmos-installer: null
+name: big-bear-maybe-finance
+services:
+  "{ServiceName}-big-bear-maybe-finance":
+    container_name: "{ServiceName}-big-bear-maybe-finance"
+    image: ghcr.io/maybe-finance/maybe:sha-9522a191de1f258d76ed996ba1c84e3a0629dd80
+    restart: unless-stopped
+    privileged: false
+    networks:
+      - big_bear_maybe_finance_network
+    volumes:
+      - "{ServiceName}-big-bear-maybe-finance-data:/rails/storage"
+    ports:
+      - 3000:3000
+    environment:
+      SELF_HOSTED: "true"
+      RAILS_FORCE_SSL: "false"
+      RAILS_ASSUME_SSL: "false"
+      GOOD_JOB_EXECUTION_MODE: async
+      SECRET_KEY_BASE: SECRET_KEY_BASE
+      DB_HOST: "{ServiceName}-postgres"
+      POSTGRES_DB: maybe_production
+      POSTGRES_USER: maybe_user
+      POSTGRES_PASSWORD: casaos
+    depends_on:
+      - "{ServiceName}-big-bear-maybe-finance-postgres"
+    hostname: "{ServiceName}-big-bear-maybe-finance"
+  "{ServiceName}-big-bear-maybe-finance-postgres":
+    container_name: "{ServiceName}-big-bear-maybe-finance-postgres"
+    image: postgres:16
+    restart: unless-stopped
+    volumes:
+      - "{ServiceName}-big-bear-maybe-finance-postgres-data:/var/lib/postgresql\
+        /data"
+    environment:
+      POSTGRES_DB: maybe_production
+      POSTGRES_USER: maybe_user
+      POSTGRES_PASSWORD: casaos
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U maybe_user -d maybe_production
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - big_bear_maybe_finance_network
+    hostname: "{ServiceName}-big-bear-maybe-finance-postgres"
+networks:
+  big_bear_maybe_finance_network:
+    name: big_bear_maybe_finance_network
+minVersion: 0.14.0
