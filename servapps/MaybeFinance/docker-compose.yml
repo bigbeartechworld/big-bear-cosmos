@@ -11,14 +11,14 @@ services:
     volumes:
       - "{ServiceName}-big-bear-maybe-finance-data:/rails/storage"
     ports:
-      - 3000:3000
+      - 4000:3000
     environment:
       SELF_HOSTED: "true"
       RAILS_FORCE_SSL: "false"
       RAILS_ASSUME_SSL: "false"
       GOOD_JOB_EXECUTION_MODE: async
       SECRET_KEY_BASE: SECRET_KEY_BASE
-      DB_HOST: "{ServiceName}-postgres"
+      DB_HOST: "{ServiceName}-big-bear-maybe-finance-postgres"
       POSTGRES_DB: maybe_production
       POSTGRES_USER: maybe_user
       POSTGRES_PASSWORD: casaos
