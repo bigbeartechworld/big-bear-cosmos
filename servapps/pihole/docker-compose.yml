@@ -3,7 +3,7 @@ name: big-bear-pihole
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: pihole/pihole:2024.07.0
+    image: pihole/pihole:2025.02.1
     restart: unless-stopped
     environment:
       TZ: UTC
