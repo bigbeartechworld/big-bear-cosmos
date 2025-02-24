@@ -3,7 +3,7 @@ name: big-bear-adguard-home
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: adguard/adguardhome:v0.107.56
+    image: adguard/adguardhome:v0.107.57
     deploy:
       resources:
         reservations:
