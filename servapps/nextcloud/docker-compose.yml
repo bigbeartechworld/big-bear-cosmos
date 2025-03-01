@@ -3,7 +3,7 @@ name: big-bear-nextcloud
 services:
   "{ServiceName}-nextcloud":
     container_name: "{ServiceName}-nextcloud"
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.5
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.6
     restart: unless-stopped
     ports:
       - 7580:80
