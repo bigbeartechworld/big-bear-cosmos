@@ -65,7 +65,7 @@ services:
       retries: 5
     hostname: "{ServiceName}-redis-nextcloud"
   "{ServiceName}-cron":
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.5
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.6
     restart: unless-stopped
     volumes:
       - "{ServiceName}-cron-data:/var/www/html"
