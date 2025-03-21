@@ -3,7 +3,7 @@ name: big-bear-farmos
 services:
   "{ServiceName}-big-bear-farmos":
     container_name: "{ServiceName}-big-bear-farmos"
-    image: farmos/farmos:3.4.1
+    image: farmos/farmos:3.4.2
     restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-farmos-data:/opt/drupal/web/sites"
