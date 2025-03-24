@@ -35,7 +35,7 @@ services:
     hostname: "{ServiceName}-big-bear-seafile-db"
   "{ServiceName}-big-bear-seafile-memcached":
     container_name: "{ServiceName}-big-bear-seafile-memcached"
-    image: memcached:1.6.36
+    image: memcached:1.6.38
     entrypoint: memcached -m 256
     networks:
       - big_bear_seafile_network
