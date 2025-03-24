@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-dashdot
 services:
   "{ServiceName}":
-    image: mauricenino/dashdot:5.9.0
+    image: mauricenino/dashdot:5.9.2
     ports:
       - 3001:3001
     volumes:
