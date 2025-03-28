@@ -3,7 +3,7 @@ name: big-bear-pihole-unbound
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: bigbeartechworld/big-bear-pihole-unbound:2025.02.3
+    image: bigbeartechworld/big-bear-pihole-unbound:2025.03.0
     restart: unless-stopped
     environment:
       TZ: America/Chicago
