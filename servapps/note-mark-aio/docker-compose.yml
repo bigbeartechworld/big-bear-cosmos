@@ -3,7 +3,7 @@ name: big-bear-note-mark-aio
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/enchant97/note-mark-aio:0.15.2
+    image: ghcr.io/enchant97/note-mark-aio:0.15.3
     restart: unless-stopped
     environment:
       - JWT_SECRET="MGZiMzlkM2EtNmYxNC00NzNlLWI2YjItYTViY2M0Mzg0NjNl"
