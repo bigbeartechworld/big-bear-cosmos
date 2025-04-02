@@ -3,7 +3,7 @@ name: big-bear-watchyourlan
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: aceberg/watchyourlan:2.1.1
+    image: aceberg/watchyourlan:2.1.2
     environment:
       - IFACES="eth0"
       - TZ="UTC"
