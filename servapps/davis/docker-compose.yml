@@ -32,7 +32,7 @@ services:
     hostname: "{ServiceName}-big-bear-davis"
   "{ServiceName}-big-bear-davis-mailpit":
     container_name: "{ServiceName}-big-bear-davis-mailpit"
-    image: axllent/mailpit:v1.23
+    image: axllent/mailpit:v1.24
     restart: unless-stopped
     volumes:
       - "{ServiceName}-big-bear-davis-mailpit-data:/data"
