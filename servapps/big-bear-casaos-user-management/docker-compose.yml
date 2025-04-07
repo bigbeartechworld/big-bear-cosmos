@@ -3,7 +3,7 @@ name: big-bear-casaos-user-management
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: bigbeartechworld/big-bear-casaos-user-management:0.0.1
+    image: bigbeartechworld/big-bear-casaos-user-management:0.1.0
     restart: unless-stopped
     privileged: true
     environment:
