@@ -3,7 +3,7 @@ name: big-bear-netalertx
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: jokobsk/netalertx:25.2.8
+    image: jokobsk/netalertx:25.4.1
     restart: unless-stopped
     privileged: true
     volumes:
