@@ -3,7 +3,7 @@ name: big-bear-paperless-ngx
 services:
   "{ServiceName}-big-bear-paperless-ngx":
     container_name: "{ServiceName}-big-bear-paperless-ngx"
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.14.7
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.15.1
     restart: unless-stopped
     environment:
       PAPERLESS_REDIS: redis://big-bear-paperless-ngx-broker:6379
