@@ -3,7 +3,7 @@ name: big-bear-ejbca-ce
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: keyfactor/ejbca-ce:9.0.0
+    image: keyfactor/ejbca-ce:9.1.1
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/mnt/persistent"
