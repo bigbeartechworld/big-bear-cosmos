@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-code-server
 services:
   "{ServiceName}":
-    image: linuxserver/code-server:4.97.2
+    image: linuxserver/code-server:4.99.1
     container_name: "{ServiceName}"
     environment:
       - PUID=1000
