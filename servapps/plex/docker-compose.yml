@@ -3,7 +3,7 @@ name: big-bear-plex
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: linuxserver/plex:1.41.5
+    image: linuxserver/plex:1.41.6
     environment:
       - PUID=1000
       - PGID=1000
