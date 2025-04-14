@@ -3,7 +3,7 @@ name: big-bear-2fauth
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: 2fauth/2fauth:5.5.0
+    image: 2fauth/2fauth:5.5.2
     restart: unless-stopped
     ports:
       - 8000:8000
