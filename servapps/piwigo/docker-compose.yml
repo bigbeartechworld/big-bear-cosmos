@@ -3,7 +3,7 @@ name: big-bear-piwigo
 services:
   "{ServiceName}-big-bear-piwigo":
     container_name: "{ServiceName}-big-bear-piwigo"
-    image: linuxserver/piwigo:15.4.0
+    image: linuxserver/piwigo:15.5.0
     restart: unless-stopped
     environment:
       - PUID=1000
