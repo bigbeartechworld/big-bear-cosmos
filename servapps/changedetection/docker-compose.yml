@@ -3,7 +3,7 @@ name: big-bear-changedetection
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/dgtlmoon/changedetection.io:0.49.13
+    image: ghcr.io/dgtlmoon/changedetection.io:0.49.14
     restart: unless-stopped
     ports:
       - 5000:5000
