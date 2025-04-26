@@ -1,0 +1,19 @@
+cosmos-installer: null
+name: big-bear-morphos
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: ghcr.io/danvergara/morphos-server:0.6.0
+    restart: unless-stopped
+    volumes:
+      - "{ServiceName}-data:/tmp"
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: timeout 10s bash -c ':> /dev/tcp/127.0.0.1/8080' || exit 1
+      interval: 60s
+      retries: 3
+      start_period: 20s
+      timeout: 30s
+    hostname: "{ServiceName}"
+minVersion: 0.14.0

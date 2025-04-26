@@ -3,7 +3,7 @@ name: big-bear-npmplus
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: zoeyvid/npmplus:441
+    image: zoeyvid/npmplus:448
     restart: unless-stopped
     network_mode: host
     environment:

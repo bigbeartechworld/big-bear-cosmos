@@ -31,6 +31,9 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+    depends_on:
+      - "{ServiceName}-big-bear-owncloud-db"
+      - "{ServiceName}-big-bear-owncloud-redis"
     hostname: "{ServiceName}-big-bear-owncloud"
   "{ServiceName}-big-bear-owncloud-db":
     container_name: "{ServiceName}-big-bear-owncloud-db"
@@ -41,6 +44,7 @@ services:
       - MYSQL_USER=bigbear
       - MYSQL_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a
       - MYSQL_DATABASE=big_bear_owncloud
+      - MARIADB_AUTO_UPGRADE=1
     command:
       - --max-allowed-packet=128M
       - --innodb-log-file-size=64M
@@ -50,7 +54,7 @@ services:
         - mysqladmin
         - ping
         - -u
-        - root
+        - bigbear
         - --password=f01914eb-2be3-4164-a57c-08e6518f313a
       interval: 10s
       timeout: 5s
@@ -82,5 +86,6 @@ services:
     hostname: "{ServiceName}-big-bear-owncloud-redis"
 networks:
   big_bear_owncloud_network:
+    name: big_bear_owncloud_network
     driver: bridge
 minVersion: 0.14.0

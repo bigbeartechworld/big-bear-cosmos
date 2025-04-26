@@ -6,6 +6,10 @@ services:
     image: bigbeartechworld/big-bear-btop:0.0.9
     restart: unless-stopped
     privileged: true
+    environment:
+      - GOTTY_AUTH_USER=bigbear
+      - GOTTY_AUTH_PASS=password
+      - GOTTY_AUTH_ENABLED=true
     volumes:
       - /proc:/proc
       - /sys:/sys

@@ -1,0 +1,27 @@
+cosmos-installer: null
+name: big-bear-ls-adguard-home-sync
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: linuxserver/adguardhome-sync:0.7.3
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - LOG_LEVEL=info
+      - ORIGIN_URL=https://192.168.1.2:3000
+      - ORIGIN_USERNAME=bigbear
+      - ORIGIN_PASSWORD=casaos
+      - REPLICA_URL=https://192.168.1.3:3000
+      - REPLICA_USERNAME=bigbear
+      - REPLICA_PASSWORD=casaos
+      - CRON="0 */2 * * *"
+      - RUN_ON_START=true
+      - API_PORT=8080
+    volumes:
+      - "{ServiceName}-data:/config"
+    ports:
+      - 8080:8080
+    hostname: "{ServiceName}"
+minVersion: 0.14.0
