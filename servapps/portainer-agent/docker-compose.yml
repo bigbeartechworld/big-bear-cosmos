@@ -3,7 +3,7 @@ name: big-bear-portainer-agent
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: portainer/agent:2.27.0
+    image: portainer/agent:2.29.2
     network_mode: bridge
     ports:
       - 9001:9001

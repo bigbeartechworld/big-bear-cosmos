@@ -1,0 +1,18 @@
+cosmos-installer: null
+name: big-bear-write-freely
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: nephatrine/write-freely:0.15
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+      PUID: 1000
+      PGID: 1000
+    volumes:
+      - "{ServiceName}-data:/mnt/config"
+    ports:
+      - 70:70/tcp
+      - 8080:8080/tcp
+    hostname: "{ServiceName}"
+minVersion: 0.14.0

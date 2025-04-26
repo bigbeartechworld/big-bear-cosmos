@@ -3,7 +3,7 @@ name: big-bear-cloudflared-web
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: wisdomsky/cloudflared-web:2025.2.1
+    image: wisdomsky/cloudflared-web:2025.4.0
     restart: unless-stopped
     network_mode: host
     environment:

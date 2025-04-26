@@ -7,9 +7,8 @@ services:
     restart: unless-stopped
     environment:
       TZ: America/Chicago
-      WEBPASSWORD: your_password
-      DNS1: 127.0.0.1#5353
-      DNS2: no
+      FTLCONF_webserver_api_password: your_password
+      FTLCONF_dns_upstreams: 127.0.0.1#5353
     volumes:
       - "{ServiceName}-data:/etc/pihole/"
       - "{ServiceName}-data-2:/etc/dnsmasq.d/"

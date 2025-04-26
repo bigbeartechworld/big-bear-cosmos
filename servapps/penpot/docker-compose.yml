@@ -3,12 +3,12 @@ name: big-bear-penpot
 services:
   "{ServiceName}-penpot-frontend":
     container_name: "{ServiceName}-penpot-frontend"
-    image: penpotapp/frontend:2.4.3
+    image: penpotapp/frontend:2.6.1
     restart: unless-stopped
     volumes:
       - "{ServiceName}-penpot-frontend-data:/opt/data/assets"
     ports:
-      - 9001:80
+      - 9001:8080
     depends_on:
       - "{ServiceName}-penpot-backend"
       - "{ServiceName}-penpot-exporter"
@@ -16,7 +16,7 @@ services:
       - big-bear-penpot-network
     hostname: "{ServiceName}-penpot-frontend"
   "{ServiceName}-penpot-backend":
-    image: penpotapp/backend:2.4.3
+    image: penpotapp/backend:2.6.1
     container_name: "{ServiceName}-penpot-backend"
     restart: unless-stopped
     volumes:
@@ -40,7 +40,7 @@ services:
       - PENPOT_TELEMETRY_ENABLED=false
     hostname: "{ServiceName}-penpot-backend"
   "{ServiceName}-penpot-exporter":
-    image: penpotapp/exporter:2.4.3
+    image: penpotapp/exporter:2.6.1
     container_name: "{ServiceName}-penpot-exporter"
     restart: unless-stopped
     networks:

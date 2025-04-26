@@ -1,0 +1,19 @@
+cosmos-installer: null
+name: big-bear-music-assistant
+services:
+  "{ServiceName}":
+    container_name: "{ServiceName}"
+    image: ghcr.io/music-assistant/server:2.5.2
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: "{ServiceName}-data"
+        target: /data
+    network_mode: host
+    security_opt:
+      - apparmor:unconfined
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    hostname: "{ServiceName}"
+minVersion: 0.14.0

@@ -3,7 +3,7 @@ name: big-bear-stirling-pdf
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: stirlingtools/stirling-pdf:0.42.0
+    image: stirlingtools/stirling-pdf:0.45.6
     restart: unless-stopped
     environment:
       - DOCKER_ENABLE_SECURITY=false
