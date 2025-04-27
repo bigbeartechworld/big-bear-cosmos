@@ -3,7 +3,7 @@ name: big-bear-ls-adguard-home-sync
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: linuxserver/adguardhome-sync:0.7.3
+    image: linuxserver/adguardhome-sync:0.7.4
     restart: unless-stopped
     environment:
       - PUID=1000
