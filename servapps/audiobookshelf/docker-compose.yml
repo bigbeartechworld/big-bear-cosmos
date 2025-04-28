@@ -3,7 +3,7 @@ name: big-bear-audiobookshelf
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/advplyr/audiobookshelf:2.20.0
+    image: ghcr.io/advplyr/audiobookshelf:2.21.0
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/audiobooks"
