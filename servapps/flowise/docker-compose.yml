@@ -3,7 +3,7 @@ name: big-bear-flowise
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: flowiseai/flowise:2.2.7
+    image: flowiseai/flowise:2.2.8
     restart: unless-stopped
     entrypoint: /bin/sh -c "sleep 3; flowise start"
     environment:
