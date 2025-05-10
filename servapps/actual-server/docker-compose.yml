@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-actual-server
 services:
   "{ServiceName}":
-    image: actualbudget/actual-server:25.4.0
+    image: actualbudget/actual-server:25.5.0
     container_name: "{ServiceName}"
     volumes:
       - "{ServiceName}-data:/data"
