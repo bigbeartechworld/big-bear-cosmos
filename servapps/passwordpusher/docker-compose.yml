@@ -3,7 +3,7 @@ name: big-bear-pwpush
 services:
   "{ServiceName}-big-bear-pwpush":
     container_name: "{ServiceName}-big-bear-pwpush"
-    image: pglombardo/pwpush:1.53.9
+    image: pglombardo/pwpush:1.54.0
     restart: unless-stopped
     environment:
       DATABASE_URL: mysql2://pwpusher:6280144a-56af-486f-9088-ac7301399328@big-bear-pwpush-db:3306/passwordpusher_db
