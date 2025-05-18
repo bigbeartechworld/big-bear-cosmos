@@ -3,7 +3,7 @@ name: big-bear-viseron
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: roflcoopter/viseron:3.1.1
+    image: roflcoopter/viseron:3.1.2
     restart: unless-stopped
     shm_size: 1024mb
     volumes:
