@@ -3,7 +3,7 @@ name: big-bear-obsidian-livesync
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: couchdb:3.4.3
+    image: couchdb:3.5.0
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/opt/couchdb/data"
