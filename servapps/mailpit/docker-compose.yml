@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-mailpit
 services:
   "{ServiceName}":
-    image: axllent/mailpit:v1.24
+    image: axllent/mailpit:v1.25
     container_name: "{ServiceName}"
     restart: unless-stopped
     volumes:
