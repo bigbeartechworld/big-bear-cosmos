@@ -3,7 +3,7 @@ name: big-bear-zipline
 services:
   "{ServiceName}-zipline":
     container_name: "{ServiceName}-zipline"
-    image: ghcr.io/diced/zipline:4.0.2
+    image: ghcr.io/diced/zipline:4.1.0
     restart: unless-stopped
     volumes:
       - "{ServiceName}-zipline-data:/zipline/uploads"
