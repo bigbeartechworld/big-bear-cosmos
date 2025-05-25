@@ -3,7 +3,7 @@ name: big-bear-btop
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: bigbeartechworld/big-bear-btop:0.1.1
+    image: bigbeartechworld/big-bear-btop:0.1.2
     restart: unless-stopped
     privileged: true
     environment:
