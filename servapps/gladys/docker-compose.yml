@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-gladys
 services:
   "{ServiceName}":
-    image: gladysassistant/gladys:v4.58.1
+    image: gladysassistant/gladys:v4.59.0
     restart: always
     privileged: true
     network_mode: host
