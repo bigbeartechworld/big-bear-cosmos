@@ -3,7 +3,7 @@ name: big-bear-davis
 services:
   "{ServiceName}-big-bear-davis":
     container_name: "{ServiceName}-big-bear-davis"
-    image: ghcr.io/tchapi/davis-standalone:5.1.0
+    image: ghcr.io/tchapi/davis-standalone:5.1.1
     restart: unless-stopped
     environment:
       - APP_ENV=prod
