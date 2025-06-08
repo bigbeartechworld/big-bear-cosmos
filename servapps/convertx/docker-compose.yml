@@ -3,7 +3,7 @@ name: big-bear-convertx
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/c4illin/convertx:v0.13.0
+    image: ghcr.io/c4illin/convertx:v0.14.1
     restart: unless-stopped
     ports:
       - 3000:3000
