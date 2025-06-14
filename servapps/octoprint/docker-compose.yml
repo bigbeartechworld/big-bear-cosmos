@@ -3,7 +3,7 @@ name: big-bear-octoprint
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: octoprint/octoprint:1.11.1
+    image: octoprint/octoprint:1.11.2
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/octoprint"
