@@ -3,7 +3,7 @@ name: big-bear-pterodactyl-panel
 services:
   "{ServiceName}-app":
     container_name: "{ServiceName}-app"
-    image: ghcr.io/pterodactyl/panel:v1.11.10
+    image: ghcr.io/pterodactyl/panel:v1.11.11
     restart: always
     ports:
       - 1180:80
