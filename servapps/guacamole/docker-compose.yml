@@ -2,12 +2,12 @@ cosmos-installer: null
 name: big-bear-guacamole
 services:
   "{ServiceName}-guacd":
-    image: guacamole/guacd:1.5.5
+    image: guacamole/guacd:1.6.0
     restart: always
     container_name: "{ServiceName}-guacd"
     hostname: "{ServiceName}-guacd"
   "{ServiceName}-app":
-    image: guacamole/guacamole:1.5.5
+    image: guacamole/guacamole:1.6.0
     restart: always
     links:
       - guacd
