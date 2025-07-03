@@ -3,7 +3,7 @@ name: big-bear-jlesage-handbrake
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: jlesage/handbrake:v25.02.3
+    image: jlesage/handbrake:v25.06.3
     ports:
       - 5800:5800
     environment:
