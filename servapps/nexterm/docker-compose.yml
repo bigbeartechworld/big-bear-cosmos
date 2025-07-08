@@ -3,7 +3,7 @@ name: big-bear-nexterm
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: germannewsmaker/nexterm:1.0.3-OPEN-PREVIEW
+    image: germannewsmaker/nexterm:1.0.4-OPEN-PREVIEW
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/app/data"
