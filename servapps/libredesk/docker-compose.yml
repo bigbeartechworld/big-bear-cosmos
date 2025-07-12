@@ -3,7 +3,7 @@ name: big-bear-libredesk
 services:
   "{ServiceName}-big-bear-libredesk":
     container_name: "{ServiceName}-big-bear-libredesk"
-    image: libredesk/libredesk:v0.6.0-alpha
+    image: libredesk/libredesk:v0.7.0-alpha
     restart: unless-stopped
     environment:
       - LIBREDESK_SYSTEM_USER_PASSWORD="c6b51a4e-ab9d-4f4f-933e-e96ed3570c1A"
