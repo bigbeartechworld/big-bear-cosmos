@@ -3,7 +3,7 @@ name: big-bear-dbgate
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: dbgate/dbgate:6.5.5-alpine
+    image: dbgate/dbgate:6.5.6-alpine
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/root/.dbgate"
