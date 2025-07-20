@@ -3,7 +3,7 @@ name: big-bear-filebrowser
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: filebrowser/filebrowser:v2.40.1-s6
+    image: filebrowser/filebrowser:v2.40.2-s6
     restart: unless-stopped
     environment:
       - PUID=0
