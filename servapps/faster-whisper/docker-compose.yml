@@ -3,7 +3,7 @@ name: big-bear-faster-whisper
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: linuxserver/faster-whisper:2.4.0
+    image: linuxserver/faster-whisper:2.5.0
     restart: unless-stopped
     environment:
       - PUID=1000
