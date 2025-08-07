@@ -3,7 +3,7 @@ name: big-bear-eufy-security-ws
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: bropat/eufy-security-ws:1.9.1
+    image: bropat/eufy-security-ws:1.9.3
     environment:
       USERNAME: "[EUFY_USERNAME]"
       PASSWORD: "[EUFY_PASSWORD]"
