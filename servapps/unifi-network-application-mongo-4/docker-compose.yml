@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
     hostname: "{ServiceName}-unifi-db"
   "{ServiceName}-app":
-    image: linuxserver/unifi-network-application:9.0.114
+    image: linuxserver/unifi-network-application:9.3.45
     container_name: "{ServiceName}-app"
     environment:
       - PUID=1000
