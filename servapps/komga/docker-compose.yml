@@ -3,7 +3,7 @@ name: big-bear-komga
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: ghcr.io/gotson/komga:1.22.1
+    image: ghcr.io/gotson/komga:1.23.1
     restart: unless-stopped
     environment:
       - TZ=UTC
