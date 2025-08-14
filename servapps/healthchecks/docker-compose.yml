@@ -3,7 +3,7 @@ name: big-bear-healthchecks
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: linuxserver/healthchecks:3.10.20250804
+    image: linuxserver/healthchecks:3.10.20250811
     restart: unless-stopped
     environment:
       - PUID=1000
