@@ -3,7 +3,7 @@ name: big-bear-immich
 services:
   "{ServiceName}-immich-server":
     container_name: "{ServiceName}-immich-server"
-    image: ghcr.io/immich-app/immich-server:v1.139.2
+    image: ghcr.io/immich-app/immich-server:v1.139.3
     ports:
       - 2283:2283
     volumes:
@@ -25,7 +25,7 @@ services:
     hostname: "{ServiceName}-immich-server"
   "{ServiceName}-immich-machine-learning":
     container_name: "{ServiceName}-immich-machine-learning"
-    image: ghcr.io/immich-app/immich-machine-learning:v1.139.2
+    image: ghcr.io/immich-app/immich-machine-learning:v1.139.3
     volumes:
       - "{ServiceName}-immich-machine-learning-data:/cache"
     environment:
