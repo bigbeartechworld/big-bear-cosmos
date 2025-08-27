@@ -3,7 +3,7 @@ name: big-bear-obsidian
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: linuxserver/obsidian:1.8.10
+    image: linuxserver/obsidian:1.9.10
     restart: unless-stopped
     environment:
       - PUID=1000
