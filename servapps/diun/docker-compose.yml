@@ -3,7 +3,7 @@ name: big-bear-diun
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: crazymax/diun:4.29.0
+    image: crazymax/diun:4.30.0
     command:
       - serve
     restart: always
