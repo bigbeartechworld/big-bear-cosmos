@@ -3,7 +3,7 @@ name: big-bear-tududi
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: chrisvel/tududi:0.81
+    image: chrisvel/tududi:0.82
     restart: unless-stopped
     environment:
       - TUDUDI_USER_EMAIL=admin@example.com
