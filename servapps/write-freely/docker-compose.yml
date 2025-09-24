@@ -3,7 +3,7 @@ name: big-bear-write-freely
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: nephatrine/write-freely:0.15
+    image: nephatrine/write-freely:0.16
     restart: unless-stopped
     environment:
       TZ: UTC
