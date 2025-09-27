@@ -44,7 +44,7 @@ jobs:
 
       # Assuming there are steps here to commit changes
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           commit-message: "Sync with big-bear-casaos"
