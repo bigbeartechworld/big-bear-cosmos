@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-invoice-ninja
 services:
   "{ServiceName}-big-bear-invoice-ninja":
-    image: invoiceninja/invoiceninja:5.12.27
+    image: invoiceninja/invoiceninja:5.12.28
     container_name: "{ServiceName}-big-bear-invoice-ninja"
     restart: unless-stopped
     user: 1500:1500
