@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-homer
 services:
   "{ServiceName}":
-    image: b4bz/homer:v25.09.1
+    image: b4bz/homer:v25.10.1
     container_name: "{ServiceName}"
     volumes:
       - "{ServiceName}-data:/www/assets"
