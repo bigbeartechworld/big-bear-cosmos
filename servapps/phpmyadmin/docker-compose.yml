@@ -2,7 +2,7 @@ cosmos-installer: null
 name: big-bear-phpmyadmin
 services:
   "{ServiceName}":
-    image: phpmyadmin/phpmyadmin:5.2.2
+    image: phpmyadmin/phpmyadmin:5.2.3
     container_name: "{ServiceName}"
     environment:
       PMA_HOST: "[YOUR-CASAOS-IP]"
