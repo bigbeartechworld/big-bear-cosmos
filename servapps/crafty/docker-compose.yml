@@ -3,7 +3,7 @@ name: big-bear-crafty
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: registry.gitlab.com/crafty-controller/crafty-4:4.5.4
+    image: registry.gitlab.com/crafty-controller/crafty-4:4.5.5
     restart: unless-stopped
     environment:
       - TZ=UTC
