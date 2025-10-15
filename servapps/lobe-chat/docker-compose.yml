@@ -3,7 +3,7 @@ name: big-bear-lobe-chat
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: lobehub/lobe-chat:1.136.13
+    image: lobehub/lobe-chat:1.137.0
     restart: unless-stopped
     environment:
       - OPENAI_API_KEY=""
