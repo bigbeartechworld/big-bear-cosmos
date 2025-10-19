@@ -40,7 +40,7 @@ services:
       - PENPOT_TELEMETRY_ENABLED=false
     hostname: "{ServiceName}-penpot-backend"
   "{ServiceName}-penpot-exporter":
-    image: penpotapp/exporter:2.10.0
+    image: penpotapp/exporter:2.10.1
     container_name: "{ServiceName}-penpot-exporter"
     restart: unless-stopped
     networks:
