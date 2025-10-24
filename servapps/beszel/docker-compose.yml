@@ -3,7 +3,7 @@ name: big-bear-beszel
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: henrygd/beszel:0.14.0
+    image: henrygd/beszel:0.14.1
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/beszel_data"
