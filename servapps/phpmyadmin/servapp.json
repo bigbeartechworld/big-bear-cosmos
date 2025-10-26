@@ -1,0 +1,9 @@
+{
+  "name": "phpMyAdmin",
+  "description": "phpMyAdmin - A web interface for MySQL and MariaDB.",
+  "author": "phpMyAdmin",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/phpmyadmin.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

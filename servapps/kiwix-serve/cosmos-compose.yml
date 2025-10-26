@@ -1,0 +1,39 @@
+# Configuration for kiwix-serve setup
+
+# Name of the big-bear-kiwix-serve application
+name: big-bear-kiwix-serve
+# Service definitions for the big-bear-kiwix-serve application
+services:
+  # Service name: big-bear-kiwix-serve
+  # The `big-bear-kiwix-serve` service definition
+  big-bear-kiwix-serve:
+    # Name of the container
+    container_name: big-bear-kiwix-serve
+    # Image to be used for the container
+    image: ghcr.io/kiwix/kiwix-serve:3.7.0-2
+    # Command to run inside the container
+    command: "*.zim"
+    # Container restart policy
+    restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/zim directory to /data inside the container
+      - kiwix_serve_zim:/data
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+volumes:
+  kiwix_serve_zim: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: kiwix-serve
+    description: Kiwix Server
+    useHost: true
+    target: http://localhost:8080
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

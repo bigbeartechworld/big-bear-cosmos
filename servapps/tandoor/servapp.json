@@ -1,0 +1,9 @@
+{
+  "name": "Tandoor",
+  "description": "Drop your collection of links and notes. Get Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!",
+  "author": "tandoorrecipes",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/tandoor-recipes.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

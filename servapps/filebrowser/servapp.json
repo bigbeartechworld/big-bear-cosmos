@@ -1,0 +1,9 @@
+{
+  "name": "Filebrowser",
+  "description": "Reliable and Performant File Management Desktop Sync and File Sharing Tool.",
+  "author": "filebrowser",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/filebrowser-quantum.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

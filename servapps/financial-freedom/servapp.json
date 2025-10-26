@@ -1,0 +1,9 @@
+{
+  "name": "Financial Freedom",
+  "description": "Keep investors and their buyers out of your financial data. Own 100% of your data and start building financial wealth.",
+  "author": "serversideup",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/financial-freedom/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 8443,
+  "compose_file": "cosmos-compose.yml"
+}

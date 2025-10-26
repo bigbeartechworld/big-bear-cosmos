@@ -1,0 +1,9 @@
+{
+  "name": "Unifi Network Application",
+  "description": "Supports Zimaboards and PI's. The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
+  "author": "Ubiquiti",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ubiquiti-unifi.png",
+  "category": "BigBearCasaOS",
+  "port": 8443,
+  "compose_file": "cosmos-compose.yml"
+}

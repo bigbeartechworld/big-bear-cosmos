@@ -1,0 +1,9 @@
+{
+  "name": "Traccar",
+  "description": "Traccar GPS Tracking System in Docker image.",
+  "author": "traccar",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/traccar.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

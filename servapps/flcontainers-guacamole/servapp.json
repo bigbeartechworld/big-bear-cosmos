@@ -1,0 +1,9 @@
+{
+  "name": "FlContainers Guacamole",
+  "description": "A Docker Container for Apache Guacamole, a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.",
+  "author": "",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/apache-guacamole.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

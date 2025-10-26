@@ -1,0 +1,9 @@
+{
+  "name": "Gluetun",
+  "description": "Lightweight swiss-knife-like VPN client to multiple VPN service providers",
+  "author": "portainer",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/gluetun.png",
+  "category": "BigBearCasaOS",
+  "port": ,
+  "compose_file": "cosmos-compose.yml"
+}

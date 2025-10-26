@@ -1,0 +1,9 @@
+{
+  "name": "Obsidian",
+  "description": "Obsidian is a note-taking app that lets you create, link, and organize your notes on your device, with hundreds of plugins and themes to customize your workflow. You can also publish your notes online, access them offline, and sync them securely with end-to-end encryption.",
+  "author": "obsidianmd",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/obsidian.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

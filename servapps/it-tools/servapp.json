@@ -1,0 +1,9 @@
+{
+  "name": "IT Tools",
+  "description": "Collection of handy online tools for developers, with great UX as a web app.",
+  "author": "corentinth",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/it-tools.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

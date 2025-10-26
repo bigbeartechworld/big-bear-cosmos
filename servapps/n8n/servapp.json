@@ -1,0 +1,9 @@
+{
+  "name": "n8n",
+  "description": "Free and open fair-code licensed node based Workflow Automation Tool.",
+  "author": "n8n",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/n8n.png",
+  "category": "BigBearCasaOS",
+  "port": 5678,
+  "compose_file": "cosmos-compose.yml"
+}

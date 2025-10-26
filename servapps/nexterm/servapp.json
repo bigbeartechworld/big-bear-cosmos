@@ -1,0 +1,9 @@
+{
+  "name": "Nexterm",
+  "description": "The open source server management software for SSH, VNC & RDP. This is in Preview Release.",
+  "author": "germannewsmaker",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/nexterm/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 6989,
+  "compose_file": "cosmos-compose.yml"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Beaver Habit Tracker",
+  "description": "A self-hosted habit tracking app without "Goals"",
+  "author": "daya0576",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/beaver-habit-tracker.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

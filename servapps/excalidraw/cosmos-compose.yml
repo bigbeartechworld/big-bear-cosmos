@@ -1,0 +1,29 @@
+# Configuration for excalidraw setup
+
+# Application Name
+name: big-bear-excalidraw
+# Services used in the application
+services:
+  # The `app` service for the excalidraw application
+  app:
+    # Name of the container
+    container_name: big-bear-excalidraw
+    # Docker image to be used
+    image: excalidraw/excalidraw:latest
+    # Restart policy for the service
+    restart: unless-stopped
+    # Port mappings for the service
+    ports:
+      - "8000:80"
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: excalidraw
+    description: Excalidraw
+    useHost: true
+    target: http://localhost:8000
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

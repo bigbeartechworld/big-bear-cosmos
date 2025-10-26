@@ -1,0 +1,9 @@
+{
+  "name": "DBGate",
+  "description": "Web based UI for managing and exploring SQL database data",
+  "author": "dbgate",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/dbgate/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

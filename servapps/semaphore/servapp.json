@@ -1,0 +1,9 @@
+{
+  "name": "Ansible Semaphore",
+  "description": "Ansible Semaphore is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.",
+  "author": "semaphore",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/semaphore-ui.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

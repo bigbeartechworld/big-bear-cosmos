@@ -1,0 +1,9 @@
+{
+  "name": "Ollama - AMD",
+  "description": "Get up and running with Llama 3, Mistral, Gemma, and other large language models.",
+  "author": "ollama",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ollama.png",
+  "category": "BigBearCasaOS",
+  "port": 11434,
+  "compose_file": "cosmos-compose.yml"
+}

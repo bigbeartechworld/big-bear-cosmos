@@ -1,0 +1,9 @@
+{
+  "name": "Project Management",
+  "description": "An open source Project management tool based on Laravel and Filament",
+  "author": "eloufirhatim",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/project-management/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 8000,
+  "compose_file": "cosmos-compose.yml"
+}
