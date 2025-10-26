@@ -1,0 +1,26 @@
+name: big-bear-jlesage-firefox # Name of the CasaOS application
+services:
+  big-bear-jlesage-firefox:
+    container_name: big-bear-jlesage-firefox # Name of the Docker container
+    image: jlesage/firefox:v25.09.1 # Docker image for the Firefox browser
+    ports:
+      - "5800:5800" # Expose port 5800 for VNC access
+    environment:
+      - VNC_PASSWORD=casaos # Set the VNC password to 'casaos'
+      - FF_OPEN_URL=https://community.bigbeartechworld.com/ # Set the default URL to Big Bear Tech World
+    volumes:
+      - jlesage_firefox_config:/config # Mount the host directory to the container's Downloads directory
+volumes:
+  jlesage_firefox_config: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: jlesage-firefox
+    description: Jlesage Firefox
+    useHost: true
+    target: http://localhost:5800
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

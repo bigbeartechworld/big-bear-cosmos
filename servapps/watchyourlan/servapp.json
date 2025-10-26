@@ -1,0 +1,9 @@
+{
+  "name": "WatchYourLAN",
+  "description": "Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history",
+  "author": "ajnart",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/watchyourlan.png",
+  "category": "BigBearCasaOS",
+  "port": 8840,
+  "compose_file": "cosmos-compose.yml"
+}

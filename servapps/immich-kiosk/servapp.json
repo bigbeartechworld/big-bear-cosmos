@@ -1,0 +1,9 @@
+{
+  "name": "Immich Kiosk",
+  "description": "Immich Kiosk is a lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.",
+  "author": "damongolding",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/immich-kiosk.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

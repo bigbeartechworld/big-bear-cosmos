@@ -1,0 +1,30 @@
+# Configuration for big-bear-mailpit setup
+name: big-bear-mailpit
+# Service definitions for the big-bear-mailpit application
+services:
+  # Service name: app
+  app:
+    image: axllent/mailpit:v1.27 # Image for the app service
+    container_name: mailpit # Container name for the app service
+    restart: unless-stopped # Restart policy for the container
+    volumes: # Volumes to mount for the app service
+      - mailpit_data:/data
+    environment: # Environment variables for the app service
+      - TZ=UTC
+    ports: # Ports to expose for the app service
+      - "8025:8025"
+      - "1025:1025"
+volumes:
+  mailpit_data: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: mailpit
+    description: Mailpit
+    useHost: true
+    target: http://localhost:8025
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

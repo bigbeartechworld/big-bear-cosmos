@@ -1,0 +1,9 @@
+{
+  "name": "Microbin",
+  "description": "Self-hosted, encrypted pastebin alternative with configurable features.",
+  "author": "danielszabo99",
+  "icon": "https://cdn.jsdelivr.net/gh/szabodanika/microbin@v2.0.4/templates/assets/logo-square.png",
+  "category": "BigBearCasaOS",
+  "port": 8888,
+  "compose_file": "cosmos-compose.yml"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Appsmith",
+  "description": "Low code project to build admin panels, internal tools, and dashboards, integrating 15+ databases.",
+  "author": "appsmithorg",
+  "icon": "https://cdn.jsdelivr.net/gh/appsmithorg/appsmith/static/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 1080,
+  "compose_file": "cosmos-compose.yml"
+}

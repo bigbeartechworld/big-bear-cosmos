@@ -1,0 +1,9 @@
+{
+  "name": "Guacamole",
+  "description": "Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation.",
+  "author": "",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/guacamole.png",
+  "category": "BigBearCasaOS",
+  "port": 8090,
+  "compose_file": "cosmos-compose.yml"
+}

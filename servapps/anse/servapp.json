@@ -1,0 +1,9 @@
+{
+  "name": "Anse",
+  "description": "Anse is a fully optimized UI for AI Chats. Supercharged experience for multiple models such as ChatGPT, DALL-E and Stable Diffusion.",
+  "author": "ddiu8081",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/anse/logo.jpg",
+  "category": "BigBearCasaOS",
+  "port": 8014,
+  "compose_file": "cosmos-compose.yml"
+}

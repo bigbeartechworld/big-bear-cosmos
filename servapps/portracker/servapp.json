@@ -1,0 +1,9 @@
+{
+  "name": "Portracker",
+  "description": "A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.",
+  "author": "Mostafa-Wahied",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/portracker.png",
+  "category": "BigBearCasaOS",
+  "port": 4999,
+  "compose_file": "cosmos-compose.yml"
+}

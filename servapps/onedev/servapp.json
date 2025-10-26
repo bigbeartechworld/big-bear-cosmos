@@ -1,0 +1,9 @@
+{
+  "name": "OneDev",
+  "description": "Self-hosted Git Server with Kanban and CI/CD",
+  "author": "theonedev",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/onedev.png",
+  "category": "BigBearCasaOS",
+  "port": 6610,
+  "compose_file": "cosmos-compose.yml"
+}

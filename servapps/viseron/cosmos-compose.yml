@@ -1,0 +1,51 @@
+# Configuration for viseron setup
+
+# Name of the big-bear-viseron application
+name: big-bear-viseron
+# Service definitions for the big-bear-viseron application
+services:
+  # Service name: big-bear-viseron
+  # The `big-bear-viseron` service definition
+  big-bear-viseron:
+    # Name of the container
+    container_name: big-bear-viseron
+    # Image to be used for the container
+    image: roflcoopter/viseron:3.3.1
+    # Container restart policy
+    restart: unless-stopped
+    # Shared memory size
+    shm_size: "1024mb"
+    # Volumes to be mounted to the container
+    volumes:
+      - viseron_segments:/segments
+      - viseron_snapshots:/snapshots
+      - viseron_thumbnails:/thumbnails
+      - viseron_event_clips:/event_clips
+      - viseron_config:/config
+      - /etc/localtime:/etc/localtime:ro
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8888 of the host to port 8888 of the container
+      - "8888:8888"
+    # Environment variables
+    environment:
+      - PUID=1000
+      - PGID=1000
+volumes:
+  viseron_segments: {}
+  viseron_snapshots: {}
+  viseron_thumbnails: {}
+  viseron_event_clips: {}
+  viseron_config: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: viseron
+    description: Viseron
+    useHost: true
+    target: http://localhost:8888
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

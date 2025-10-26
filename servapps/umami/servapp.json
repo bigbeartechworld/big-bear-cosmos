@@ -1,0 +1,9 @@
+{
+  "name": "Umami",
+  "description": "Umami is a simple, fast, privacy-focused alternative to Google Analytics.",
+  "author": "umami-software",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/umami.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

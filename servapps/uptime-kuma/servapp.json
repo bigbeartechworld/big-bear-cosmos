@@ -1,0 +1,9 @@
+{
+  "name": "Uptime Kuma",
+  "description": "A fancy self-hosted monitoring tool",
+  "author": "louislam",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/uptime-kuma.png",
+  "category": "BigBearCasaOS",
+  "port": 3001,
+  "compose_file": "cosmos-compose.yml"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "RomM",
+  "description": "ROM manager for organizing, enriching, and playing retro games, with support for 400+ platforms.",
+  "author": "RomM Team",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/romm.png",
+  "category": "BigBearCasaOS",
+  "port": 1080,
+  "compose_file": "cosmos-compose.yml"
+}

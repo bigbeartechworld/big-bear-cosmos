@@ -1,0 +1,9 @@
+{
+  "name": "Dockge",
+  "description": "A fancy, easy-to-use and reactive docker `compose.yaml` stack-oriented manager",
+  "author": "louislam",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/dockge.png",
+  "category": "BigBearCasaOS",
+  "port": 5001,
+  "compose_file": "cosmos-compose.yml"
+}

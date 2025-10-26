@@ -1,0 +1,30 @@
+# Name of the service
+name: big-bear-mumble-server
+# Service configurations
+services:
+  # Main application service
+  app:
+    # Docker image to use
+    image: mumblevoip/mumble-server:v1.4.230-6
+    # Name of the container
+    container_name: mumble-server
+    # Hostname for the container
+    hostname: mumble-server
+    # Restart policy
+    restart: on-failure
+    # Ports configuration
+    ports:
+      - 64738:64738 # TCP port mapping
+      - 64738:64738/udp # UDP port mapping
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: mumble-server
+    description: Mumble Server
+    useHost: true
+    target: http://localhost:64738
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false
