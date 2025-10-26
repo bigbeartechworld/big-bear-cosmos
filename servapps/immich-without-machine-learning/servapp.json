@@ -1,0 +1,9 @@
+{
+  "name": "Immich without machine learning",
+  "description": "Self-hosted photo and video storage. This does not include the machine learning part.",
+  "author": "immich",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/immich.png",
+  "category": "BigBearCasaOS",
+  "port": 2283,
+  "compose_file": "cosmos-compose.yml"
+}

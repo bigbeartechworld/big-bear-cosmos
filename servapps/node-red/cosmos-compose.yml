@@ -1,0 +1,39 @@
+# Name of the service configuration
+name: big-bear-node-red
+# Define the services for this configuration
+services:
+  app:
+    # Docker image for the service
+    image: nodered/node-red:4.1.1
+    # Use the host's network stack
+    network_mode: host
+    # Port mapping configurations
+    ports:
+      - target: 1880 # Container's port
+        published: "1880" # Host's port
+        protocol: tcp # Communication protocol
+    # Restart policy for the service
+    restart: always
+    # Volume configurations for persistent storage
+    volumes:
+      - "node_red_type\nsource\ntarget: bind \n /DATA/AppData/$AppID/data \n /data "
+    # Name of the container
+    container_name: node-red-updated
+volumes:
+  ? |-
+    node_red_type
+    source
+    target
+  : {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: node-red
+    description: Node-RED
+    useHost: true
+    target: http://localhost:1880
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

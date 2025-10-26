@@ -1,0 +1,27 @@
+# Configuration for big-bear-actual-server setup
+name: big-bear-actual-server
+# Service definitions for the big-bear-actual-server application
+services:
+  # Service name: app
+  app:
+    image: actualbudget/actual-server:25.10.0 # The Docker image to use (latest version of actual-server)
+    container_name: actual-server # Name of the container instance
+    volumes:
+      - actual_server_data:/data # Mounting the project directory inside the container
+    ports:
+      - "5006:5006" # Expose actual-server's port 5006 on the host's port 5006
+    restart: unless-stopped # Policy to restart the container if it stops unexpectedly
+volumes:
+  actual_server_data: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: actual-server
+    description: Actual Budget
+    useHost: true
+    target: http://localhost:5006
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

@@ -1,0 +1,9 @@
+{
+  "name": "Baserow",
+  "description": "Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.",
+  "author": "",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/baserow.png",
+  "category": "BigBearCasaOS",
+  "port": 7350,
+  "compose_file": "cosmos-compose.yml"
+}

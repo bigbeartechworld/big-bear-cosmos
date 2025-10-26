@@ -1,0 +1,9 @@
+{
+  "name": "Ayon",
+  "description": "This is the official Docker-based deployment for the Ayon Server. Ayon is a robust tool designed to manage and automate workflows in the animation and visual effects industries.",
+  "author": "ynput",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/ayon/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 5000,
+  "compose_file": "cosmos-compose.yml"
+}

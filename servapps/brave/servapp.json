@@ -1,0 +1,9 @@
+{
+  "name": "Brave",
+  "description": "This Image contains a browser-accessible version of Brave.",
+  "author": "kasmweb",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/brave.png",
+  "category": "BigBearCasaOS",
+  "port": 6901,
+  "compose_file": "cosmos-compose.yml"
+}

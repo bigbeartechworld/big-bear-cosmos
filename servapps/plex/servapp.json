@@ -1,0 +1,9 @@
+{
+  "name": "Plex",
+  "description": "Stream Movies & TV Shows",
+  "author": "plexinc",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/plex.png",
+  "category": "BigBearCasaOS",
+  "port": 32400,
+  "compose_file": "cosmos-compose.yml"
+}

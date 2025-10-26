@@ -1,0 +1,9 @@
+{
+  "name": "Rallly",
+  "description": "Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.",
+  "author": "lukevella",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/rallly.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

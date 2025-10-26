@@ -1,0 +1,9 @@
+{
+  "name": "Syncthing",
+  "description": "Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers. We strive to fulfill the goals below. The goals are listed in order of importance, the most important one being the first.",
+  "author": "syncthing",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/syncthing.png",
+  "category": "BigBearCasaOS",
+  "port": 8384,
+  "compose_file": "cosmos-compose.yml"
+}

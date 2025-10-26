@@ -1,0 +1,9 @@
+{
+  "name": "Change Detection",
+  "description": "The best and simplest free open source website change detection, restock monitor and notification service.",
+  "author": "dgtlmoon",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/changedetection.png",
+  "category": "BigBearCasaOS",
+  "port": 5000,
+  "compose_file": "cosmos-compose.yml"
+}

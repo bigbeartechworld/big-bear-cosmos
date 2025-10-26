@@ -1,0 +1,27 @@
+# Configuration for big-bear-mind setup
+name: big-bear-mind
+# Service definitions for the big-bear-mind application
+services:
+  app:
+    image: "mrcas/mind:v1.4.1"
+    container_name: mind
+    environment:
+      - TZ=UTC
+    volumes:
+      - "mind_db:/app/db"
+    ports:
+      - "8080:8080"
+volumes:
+  mind_db: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: mind
+    description: MIND
+    useHost: true
+    target: http://localhost:8080
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false
