@@ -1,0 +1,51 @@
+# big-bear-ntfy application configuration
+name: big-bear-ntfy
+# Services associated with the big-bear-ntfy application
+services:
+  # Main application service configuration
+  app:
+    # Docker image to be used for the service
+    image: binwiederhier/ntfy:v2.14.0
+    # Command to run inside the container
+    command:
+      - serve
+    # Environment variables for the service
+    environment:
+      - TZ=UTC
+    # Port configurations for the service
+    ports:
+      - target: 80 # Container port
+        published: "7200" # Host port
+        protocol: tcp # Protocol type
+    # Restart policy for the service
+    restart: unless-stopped
+    # Volumes to be mounted inside the container
+    volumes:
+      - |-
+        ntfysh_type
+        source
+        target: bind
+         /DATA/AppData/$AppID/cache
+         /var/cache/ntfy
+      - |2-
+         bind: bind
+         /DATA/AppData/$AppID/config
+         /etc/ntfy
+volumes:
+  ? |-
+    ntfysh_type
+    source
+    target
+  : {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: ntfysh
+    description: Ntfy.sh
+    useHost: true
+    target: http://localhost:7200
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

@@ -1,0 +1,9 @@
+{
+  "name": "Open WebUI",
+  "description": "Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline.",
+  "author": "open-webui",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/open-webui.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

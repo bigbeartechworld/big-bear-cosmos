@@ -1,0 +1,9 @@
+{
+  "name": "Speedtest Tracker",
+  "description": "A Docker image to check your internet speed using Ookla's Speedtest service. Build using Laravel and the Speedtest CLI.",
+  "author": "alexjustesen",
+  "icon": "https://cdn.jsdelivr.net/gh/alexjustesen/speedtest-tracker/public/img/speedtest-tracker-icon.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

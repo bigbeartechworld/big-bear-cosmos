@@ -1,0 +1,9 @@
+{
+  "name": "PD3F",
+  "description": "pd3f is a PDF text extraction pipeline that is self-hosted, local-first and Docker-based. It reconstructs the original continuous text with the help of machine learning.",
+  "author": "pd3f",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/pd3f/logo.jpg",
+  "category": "BigBearCasaOS",
+  "port": 1616,
+  "compose_file": "cosmos-compose.yml"
+}

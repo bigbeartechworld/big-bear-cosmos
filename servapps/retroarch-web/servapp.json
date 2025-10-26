@@ -1,0 +1,9 @@
+{
+  "name": "RetroArch",
+  "description": "Online retro games emulator.The RetroArch Web Player is RetroArch compiled through Emscripten.",
+  "author": "inglebard",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/retroarch-web/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

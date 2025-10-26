@@ -1,0 +1,9 @@
+{
+  "name": "Homarr v1",
+  "description": "Homarr v1 - A sleek, modern dashboard for your server. This is the latest major version (v1.x) from homarr-labs with improved architecture and features. Note: This version uses a different data structure and requires SECRET_ENCRYPTION_KEY. Not compatible with legacy Homarr (v0.x) data without migration.",
+  "author": "homarr-labs",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homarr.png",
+  "category": "BigBearCasaOS",
+  "port": 7575,
+  "compose_file": "cosmos-compose.yml"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Password Pusher",
+  "description": "Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.",
+  "author": "pglombardo",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/password-pusher.png",
+  "category": "BigBearCasaOS",
+  "port": 5100,
+  "compose_file": "cosmos-compose.yml"
+}

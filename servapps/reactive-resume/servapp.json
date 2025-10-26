@@ -1,0 +1,9 @@
+{
+  "name": "Reactive Resume",
+  "description": "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.",
+  "author": "AmruthPillai",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/reactive-resume/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

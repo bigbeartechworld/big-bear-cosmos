@@ -1,0 +1,9 @@
+{
+  "name": "LobeChat",
+  "description": "LobeChat is a open-source, extensible (Function Calling), high-performance chatbot framework. It supports one-click free deployment of your private ChatGPT/LLM web application.",
+  "author": "lobehub",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/lobe-chat.png",
+  "category": "BigBearCasaOS",
+  "port": 3210,
+  "compose_file": "cosmos-compose.yml"
+}

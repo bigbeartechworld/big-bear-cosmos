@@ -1,0 +1,9 @@
+{
+  "name": "OpenVPN",
+  "description": "OpenVPN is an open-source commercial software that implements virtual private network (VPN) techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.",
+  "author": "openvpn",
+  "icon": "https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png",
+  "category": "BigBearCasaOS",
+  "port": 943,
+  "compose_file": "cosmos-compose.yml"
+}

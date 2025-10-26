@@ -1,0 +1,9 @@
+{
+  "name": "HomeBridge",
+  "description": "HomeKit support for the impatient.",
+  "author": "homebridge",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homebridge.png",
+  "category": "BigBearCasaOS",
+  "port": 8581,
+  "compose_file": "cosmos-compose.yml"
+}

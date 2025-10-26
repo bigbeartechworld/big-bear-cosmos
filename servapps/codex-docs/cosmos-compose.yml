@@ -1,0 +1,28 @@
+# Configuration for big-bear-codex-docs setup
+name: big-bear-codex-docs
+# Service definitions for the big-bear-codex-docs application
+services:
+  app:
+    image: ghcr.io/codex-team/codex.docs:v2.2
+    ports:
+      - "3000:3000"
+    volumes:
+      - codex_docs_uploads:/usr/src/app/uploads
+      - codex_docs_db:/usr/src/app/db
+      - codex_docs_codex_docs_config.local.yaml:/usr/src/app/docs-config.yaml
+volumes:
+  codex_docs_uploads: {}
+  codex_docs_db: {}
+  codex_docs_codex_docs_config.local.yaml: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: codex-docs
+    description: CodeX Docs
+    useHost: true
+    target: http://localhost:3000
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false
