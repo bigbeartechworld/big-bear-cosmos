@@ -1,0 +1,37 @@
+# Configuration for nexterm setup
+
+# Name of the big-bear-nexterm application
+name: big-bear-nexterm
+# Service definitions for the big-bear-nexterm application
+services:
+  # Service name: big-bear-nexterm
+  # The `big-bear-nexterm` service definition
+  big-bear-nexterm:
+    # Name of the container
+    container_name: big-bear-nexterm
+    # Image to be used for the container
+    image: germannewsmaker/nexterm:1.0.5-OPEN-PREVIEW
+    # Container restart policy
+    restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/data directory to /app/data inside the container
+      - nexterm_data:/app/data
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 6989 of the host to port 6989 of the container
+      - "6989:6989"
+volumes:
+  nexterm_data: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: nexterm
+    description: Nexterm
+    useHost: true
+    target: http://localhost:6989
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

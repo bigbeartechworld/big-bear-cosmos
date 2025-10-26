@@ -1,0 +1,9 @@
+{
+  "name": "Excalidraw",
+  "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+  "author": "excalidraw",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/excalidraw/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 8000,
+  "compose_file": "cosmos-compose.yml"
+}

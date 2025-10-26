@@ -1,0 +1,9 @@
+{
+  "name": "chromium",
+  "description": "This Image contains a browser-accessible version of chromium.",
+  "author": "kasmweb",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/chromium.png",
+  "category": "BigBearCasaOS",
+  "port": 6902,
+  "compose_file": "cosmos-compose.yml"
+}

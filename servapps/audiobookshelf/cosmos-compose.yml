@@ -1,0 +1,42 @@
+# Configuration for audiobookshelf setup
+
+# Name of the big-bear-audiobookshelf application
+name: big-bear-audiobookshelf
+# Service definitions for the big-bear-audiobookshelf application
+services:
+  # Service name: big-bear-audiobookshelf
+  # The `big-bear-audiobookshelf` service definition
+  big-bear-audiobookshelf:
+    # Name of the container
+    container_name: big-bear-audiobookshelf
+    # Image to be used for the container
+    image: ghcr.io/advplyr/audiobookshelf:2.30.0
+    # Container restart policy
+    restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      - audiobookshelf_media_data_books_spoken:/audiobooks
+      - audiobookshelf_media_data_podcasts:/podcasts
+      - audiobookshelf_data_config:/config
+      - audiobookshelf_data_metadata:/metadata
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+volumes:
+  audiobookshelf_media_data_books_spoken: {}
+  audiobookshelf_media_data_podcasts: {}
+  audiobookshelf_data_config: {}
+  audiobookshelf_data_metadata: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: audiobookshelf
+    description: Audiobookshelf
+    useHost: true
+    target: http://localhost:8080
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

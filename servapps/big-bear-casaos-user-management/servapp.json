@@ -1,0 +1,9 @@
+{
+  "name": "Big Bear CasaOS User Management",
+  "description": "Manage users in CasaOS",
+  "author": "bigbeartechworld",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg",
+  "category": "BigBearCasaOS",
+  "port": 5000,
+  "compose_file": "cosmos-compose.yml"
+}

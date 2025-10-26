@@ -1,0 +1,9 @@
+{
+  "name": "Homepage",
+  "description": "A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.",
+  "author": "gethomepage",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homepage.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

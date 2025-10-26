@@ -1,0 +1,9 @@
+{
+  "name": "What's Up Docker",
+  "description": "Gets you notified when new versions of your Docker containers are available and lets you react the way you want.",
+  "author": "fmartinou",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/whats-up-docker.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

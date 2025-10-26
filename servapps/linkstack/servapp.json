@@ -1,0 +1,9 @@
+{
+  "name": "LinkStack",
+  "description": "LinkStack is a link-in-bio tool that allows you to create a personalized and easily customizable page that houses all the important links you want to share with your audience.",
+  "author": "LinkStackOrg",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/linkstack.png",
+  "category": "BigBearCasaOS",
+  "port": 10443,
+  "compose_file": "cosmos-compose.yml"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Monica",
+  "description": "Monica is an open-source web application to organize and record your interactions with your loved ones. We call it a PRM, or Personal Relationship Management. Think of it as a CRM (a popular tool used by sales teams in the corporate world) for your friends or family.",
+  "author": "monica",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/monica.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

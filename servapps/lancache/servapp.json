@@ -1,0 +1,9 @@
+{
+  "name": "LAN Cache",
+  "description": "Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.",
+  "author": "lancachenet",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/lancache-net.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

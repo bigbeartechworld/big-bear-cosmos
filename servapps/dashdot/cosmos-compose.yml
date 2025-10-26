@@ -1,0 +1,28 @@
+# Configuration for big-bear-dashdot setup
+
+# Name of the big-bear-dashdot application
+name: big-bear-dashdot
+# Service definitions for the dashdot application
+services:
+  # Service definition for the main application
+  app:
+    image: mauricenino/dashdot:6.2.0 # Image to be used for this service
+    ports:
+      - "3001:3001" # Port 3001 on the host is mapped to port 3001 in the container
+    volumes:
+      - dashdot_mnt_host:/mnt/host
+    privileged: true # Runs the container in privileged mode, allowing it access to host devices
+volumes:
+  dashdot_mnt_host: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: dashdot
+    description: Dashdot
+    useHost: true
+    target: http://localhost:3001
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

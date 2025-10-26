@@ -1,0 +1,9 @@
+{
+  "name": "Viseron",
+  "description": "Viseron is a self-hosted, local only NVR and AI Computer Vision software",
+  "author": "roflcoopter",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/viseron/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 8888,
+  "compose_file": "cosmos-compose.yml"
+}
