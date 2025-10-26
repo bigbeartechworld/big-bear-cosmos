@@ -3,7 +3,7 @@ name: big-bear-sftpgo
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: drakkan/sftpgo:v2.6
+    image: drakkan/sftpgo:v2.7
     restart: unless-stopped
     volumes:
       - "{ServiceName}-data:/srv/sftpgo"
