@@ -1,0 +1,9 @@
+{
+  "name": "Piwigo",
+  "description": "Piwigo is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.",
+  "author": "piwigo",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/piwigo.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

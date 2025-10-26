@@ -1,0 +1,35 @@
+# Configuration for matterbridge setup
+
+# Application Name
+name: big-bear-matterbridge
+# Services used in the application
+services:
+  # The `big-bear-matterbridge` service for the Matterbridge application
+  big-bear-matterbridge:
+    # Name of the container
+    container_name: big-bear-matterbridge
+    # Docker image to be used
+    image: luligu/matterbridge:3.3.3
+    # Restart policy for the service
+    restart: unless-stopped
+    # Network mode set to host for Matter mdns support
+    network_mode: host
+    # Volume mappings for persistent storage
+    volumes:
+      - matterbridge_Matterbridge:/root/Matterbridge
+      - matterbridge_.matterbridge:/root/.matterbridge
+volumes:
+  matterbridge_Matterbridge: {}
+  matterbridge_.matterbridge: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: matterbridge
+    description: Matterbridge
+    useHost: true
+    target: http://localhost:8283
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

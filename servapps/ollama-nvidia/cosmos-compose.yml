@@ -1,0 +1,49 @@
+# Configuration for ollama-nvidia setup
+
+# Name of the big-bear-ollama-nvidia application
+name: big-bear-ollama-nvidia
+# Service definitions for the big-bear-ollama-nvidia application
+services:
+  # Service name: big-bear-ollama-nvidia
+  # The `big-bear-ollama-nvidia` service definition
+  big-bear-ollama-nvidia:
+    # Name of the container
+    container_name: big-bear-ollama-nvidia
+    # Image to be used for the container
+    image: ollama/ollama:0.12.6
+    # Container restart policy
+    restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      - ollama_nvidia_.ollama:/root/.ollama
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 11434 of the host to port 11434 of the container
+      - "11434:11434"
+    # Define the deployment settings
+    deploy:
+      # Specify resource reservations
+      resources:
+        reservations:
+          devices:
+            # Specify the device driver as NVIDIA
+            - driver: nvidia
+              # Allocate all available GPUs
+              count: all
+              capabilities:
+                # Define the required capabilities (gpu for GPU resources)
+                - gpu
+volumes:
+  ollama_nvidia_.ollama: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: ollama-nvidia
+    description: Ollama - NVIDIA
+    useHost: true
+    target: http://localhost:11434
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

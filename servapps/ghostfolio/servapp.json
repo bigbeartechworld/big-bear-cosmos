@@ -1,0 +1,9 @@
+{
+  "name": "Ghostfolio",
+  "description": "Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript 🤍",
+  "author": "ghostfolio",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ghostfolio.png",
+  "category": "BigBearCasaOS",
+  "port": 3333,
+  "compose_file": "cosmos-compose.yml"
+}

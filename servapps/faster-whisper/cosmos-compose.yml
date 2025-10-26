@@ -1,0 +1,45 @@
+# Configuration for faster-whisper setup
+
+# Name of the big-bear-faster-whisper application
+name: big-bear-faster-whisper
+# Service definitions for the big-bear-faster-whisper application
+services:
+  # Service name: big-bear-faster-whisper
+  # The `big-bear-faster-whisper` service definition
+  big-bear-faster-whisper:
+    # Name of the container
+    container_name: big-bear-faster-whisper
+    # Image to be used for the container
+    image: linuxserver/faster-whisper:2.5.0
+    # Container restart policy
+    restart: unless-stopped
+    # Environment variables
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - WHISPER_MODEL=tiny-int8
+      - WHISPER_BEAM=1 #optional
+      - WHISPER_LANG=en #optional
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/config directory to /config inside the container
+      - faster_whisper_config:/config
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 10300 of the host to port 10300 of the container
+      - "10300:10300"
+volumes:
+  faster_whisper_config: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: faster-whisper
+    description: Faster-whisper
+    useHost: true
+    target: http://localhost:7575
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

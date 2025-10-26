@@ -1,0 +1,9 @@
+{
+  "name": "Ghost",
+  "description": "Ghost is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.",
+  "author": "ghost",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ghost.png",
+  "category": "BigBearCasaOS",
+  "port": 2368,
+  "compose_file": "cosmos-compose.yml"
+}

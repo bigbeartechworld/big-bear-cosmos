@@ -1,0 +1,9 @@
+{
+  "name": "Homer",
+  "description": "A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.",
+  "author": "bastienwirtz",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homer.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

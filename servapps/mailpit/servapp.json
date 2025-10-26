@@ -1,0 +1,9 @@
+{
+  "name": "Mailpit",
+  "description": "Mailpit is a multi-platform email testing tool & API for developers.",
+  "author": "axllent",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/mailpit/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 8025,
+  "compose_file": "cosmos-compose.yml"
+}

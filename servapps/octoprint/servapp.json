@@ -1,0 +1,9 @@
+{
+  "name": "OctoPrint",
+  "description": "OctoPrint is the snappy web interface for your 3D printer!",
+  "author": "octoprint",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/octoprint.png",
+  "category": "BigBearCasaOS",
+  "port": 1080,
+  "compose_file": "cosmos-compose.yml"
+}

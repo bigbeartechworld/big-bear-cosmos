@@ -1,0 +1,9 @@
+{
+  "name": "ownCloud",
+  "description": "ownCloud offers file sharing and collaboration trusted by 200+ million users worldwide regardless of device or location.",
+  "author": "owncloud",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/owncloud.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

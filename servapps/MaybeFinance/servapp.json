@@ -1,0 +1,9 @@
+{
+  "name": "Maybe Finance",
+  "description": "Maybe is a fully* open-source OS for your personal finances built by a small team alongside an incredible community Discord",
+  "author": "Maybe Finance",
+  "icon": "https://raw.githubusercontent.com/maybe-finance/maybe/refs/heads/main/app/assets/images/logo-color.png",
+  "category": "BigBearCasaOS",
+  "port": 4000,
+  "compose_file": "cosmos-compose.yml"
+}

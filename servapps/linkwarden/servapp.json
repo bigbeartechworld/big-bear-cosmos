@@ -1,0 +1,9 @@
+{
+  "name": "Linkwarden",
+  "description": "⚡️⚡️⚡️Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.",
+  "author": "linkwarden",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/linkwarden.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

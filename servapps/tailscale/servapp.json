@@ -1,0 +1,9 @@
+{
+  "name": "Tailscale",
+  "description": "Zero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.",
+  "author": "tailscale",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/tailscale.png",
+  "category": "BigBearCasaOS",
+  "port": ,
+  "compose_file": "cosmos-compose.yml"
+}

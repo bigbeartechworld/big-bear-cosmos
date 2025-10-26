@@ -1,0 +1,42 @@
+# Configuration for nextcloud-ls setup
+
+# Name of the big-bear-nextcloud-ls application
+name: big-bear-nextcloud-ls
+# Service definitions for the big-bear-nextcloud-ls application
+services:
+  # Service name: big-bear-nextcloud-ls
+  # The `big-bear-nextcloud-ls` service definition
+  big-bear-nextcloud-ls:
+    # Define the container name
+    container_name: big-bear-nextcloud-ls
+    # Use the nextcloud:28.0.1-apache image
+    image: linuxserver/nextcloud:32.0.0
+    # Restart the container unless stopped
+    restart: unless-stopped
+    # Map port 7580 on the host to port 80 on the container
+    ports:
+      - 10443:443
+    # Mount the /DATA/AppData/$AppID/html directory on the host to /var/www/html in the container
+    volumes:
+      - nextcloud_ls_config:/config
+      - nextcloud_ls_data:/data
+    # Set environment variables
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+volumes:
+  nextcloud_ls_config: {}
+  nextcloud_ls_data: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: nextcloud-ls
+    description: Nextcloud LS
+    useHost: true
+    target: http://localhost:10443
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

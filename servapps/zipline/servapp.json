@@ -1,0 +1,9 @@
+{
+  "name": "zipline",
+  "description": "A ShareX/file upload server that is easy to use, packed with features, and with an easy setup!",
+  "author": "zipline",
+  "icon": "https://github.com/bigbeartechworld/big-bear-casaos/assets/1289128/3b655316-f72c-4b89-8138-0abee624e9b8",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

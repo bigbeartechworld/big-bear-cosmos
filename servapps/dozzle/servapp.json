@@ -1,0 +1,9 @@
+{
+  "name": "Dozzle",
+  "description": "Dozzle is a real-time log viewer for docker containers.",
+  "author": "amir20",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/dozzle/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 8888,
+  "compose_file": "cosmos-compose.yml"
+}

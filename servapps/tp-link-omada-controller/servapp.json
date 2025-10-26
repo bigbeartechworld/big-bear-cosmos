@@ -1,0 +1,9 @@
+{
+  "name": "TP-Link Omada Controller",
+  "description": "Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware",
+  "author": "",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/omada.png",
+  "category": "BigBearCasaOS",
+  "port": 8088,
+  "compose_file": "cosmos-compose.yml"
+}

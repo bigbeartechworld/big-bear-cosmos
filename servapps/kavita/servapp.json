@@ -1,0 +1,9 @@
+{
+  "name": "Kavita",
+  "description": "Kavita is a fast, feature rich, cross platform reading server",
+  "author": "jvmilazz0",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/kavita.png",
+  "category": "BigBearCasaOS",
+  "port": 5000,
+  "compose_file": "cosmos-compose.yml"
+}

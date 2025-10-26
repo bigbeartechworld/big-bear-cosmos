@@ -1,0 +1,9 @@
+{
+  "name": "Firefox",
+  "description": "This Image contains a browser-accessible version of Firefox.",
+  "author": "kasmweb",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/firefox.png",
+  "category": "BigBearCasaOS",
+  "port": 6902,
+  "compose_file": "cosmos-compose.yml"
+}
