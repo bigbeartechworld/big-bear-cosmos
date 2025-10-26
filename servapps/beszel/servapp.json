@@ -1,0 +1,9 @@
+{
+  "name": "Beszel",
+  "description": "A lightweight server resource monitoring hub with historical data, docker stats, and alerts.",
+  "author": "henrygd",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beszel/logo.jpg",
+  "category": "BigBearCasaOS",
+  "port": 8090,
+  "compose_file": "cosmos-compose.yml"
+}

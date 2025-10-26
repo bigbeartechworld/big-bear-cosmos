@@ -1,0 +1,9 @@
+{
+  "name": "seafile",
+  "description": "Seafile is an open source file sync and share platform, focusing on reliability and performance. Seafile's built-in collaborative document SeaDoc, make it easy for collaborative writing and publishing documents.",
+  "author": "seafile",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/seafile.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

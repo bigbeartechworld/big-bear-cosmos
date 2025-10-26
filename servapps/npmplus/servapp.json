@@ -1,0 +1,9 @@
+{
+  "name": "NPMPlus",
+  "description": "Docker container for managing Nginx proxy hosts with a simple, powerful interface",
+  "author": "zoeyvid",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/nginx-proxy-manager.png",
+  "category": "BigBearCasaOS",
+  "port": 81,
+  "compose_file": "cosmos-compose.yml"
+}

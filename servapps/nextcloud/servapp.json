@@ -1,0 +1,9 @@
+{
+  "name": "Nextcloud",
+  "description": "Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.",
+  "author": "nextcloud",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/nextcloud.png",
+  "category": "BigBearCasaOS",
+  "port": 7580,
+  "compose_file": "cosmos-compose.yml"
+}

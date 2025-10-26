@@ -1,0 +1,9 @@
+{
+  "name": "Zotero",
+  "description": "Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.",
+  "author": "linuxserver",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/zotero/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

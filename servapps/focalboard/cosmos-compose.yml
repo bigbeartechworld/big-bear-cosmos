@@ -1,0 +1,36 @@
+# Configuration for focalboard setup
+
+# Application Name
+name: big-bear-focalboard
+# Services used in the application
+services:
+  # The `app` service for the Focalboard application
+  app:
+    # Name of the container
+    container_name: big-bear-focalboard
+    # Docker image to be used
+    image: mattermost/focalboard:7.11.4
+    # Restart policy for the service
+    restart: unless-stopped
+    # Port mappings for the service
+    ports:
+      - "8000:8000"
+    # Network mode for the service
+    network_mode: bridge
+    # Volumes for the service HOST -> CONTAINER
+    volumes:
+      - focalboard_data:/opt/focalboard/data
+volumes:
+  focalboard_data: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: focalboard
+    description: Focalboard
+    useHost: true
+    target: http://localhost:8000
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

@@ -1,0 +1,34 @@
+# Configuration for retroarch-web setup
+
+# Name of the big-bear-retroarch-web application
+name: big-bear-retroarch-web
+# Service definitions for the big-bear-retroarch-web application
+services:
+  # Service name: big-bear-retroarch-web
+  # The `big-bear-retroarch-web` service definition
+  big-bear-retroarch-web:
+    # Name of the container
+    container_name: big-bear-retroarch-web
+    # Image to be used for the container
+    image: inglebard/retroarch-web:latest
+    # Container restart policy
+    restart: unless-stopped
+    # Environment variables
+    environment:
+      - ROOT_WWW_PATH="/var/www/html"
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: retroarch-web
+    description: RetroArch
+    useHost: true
+    target: http://localhost:8080
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

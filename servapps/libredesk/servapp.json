@@ -1,0 +1,9 @@
+{
+  "name": "Libredesk",
+  "description": "Open source, self-hosted customer support desk. Single binary app.",
+  "author": "libredesk",
+  "icon": "",
+  "category": "BigBearCasaOS",
+  "port": 9000,
+  "compose_file": "cosmos-compose.yml"
+}

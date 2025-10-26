@@ -1,0 +1,9 @@
+{
+  "name": "Pi-hole and Unbound",
+  "description": "This is a custom pihole and unbound setup.",
+  "author": "bigbeartechworld",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/pi-hole-unbound.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

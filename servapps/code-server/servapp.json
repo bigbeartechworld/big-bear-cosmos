@@ -1,0 +1,9 @@
+{
+  "name": "Code Server",
+  "description": "Run VS Code on any machine anywhere and access it in the browser.",
+  "author": "",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/coder.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

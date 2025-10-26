@@ -1,0 +1,26 @@
+# Configuration for big-bear-wud setup
+
+# Name of the big-bear-wud application
+name: big-bear-wud
+# Service definitions for the big-bear-wud application
+services:
+  # Service definition for the main application
+  app:
+    image: fmartinou/whats-up-docker:6.6.1
+    container_name: wud
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3000:3000
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: whats-up-docker
+    description: What's Up Docker
+    useHost: true
+    target: http://localhost:3000
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

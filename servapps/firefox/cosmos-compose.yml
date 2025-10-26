@@ -1,0 +1,27 @@
+name: big-bear-firefox # Name of the CasaOS application
+services:
+  firefox:
+    container_name: big-bear-firefox # Name of the Docker container
+    image: kasmweb/firefox:1.15.0-rolling # Docker image for the Firefox browser
+    ports:
+      - "6902:6901" # Expose port 6901 for VNC access
+    environment:
+      - VNC_PW=casaos # Set the VNC password to 'casaos'
+      - LAUNCH_URL=https://community.bigbeartechworld.com/ # Set the default URL to Big Bear Tech World
+    shm_size: 512m # Allocate 512 MB of shared memory
+    volumes:
+      - firefox_Downloads:/home/kasm-user/Downloads # Mount the host directory to the container's Downloads directory
+volumes:
+  firefox_Downloads: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: firefox
+    description: Firefox
+    useHost: true
+    target: http://localhost:6902
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

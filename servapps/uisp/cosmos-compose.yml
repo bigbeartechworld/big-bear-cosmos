@@ -1,0 +1,42 @@
+# Configuration for uisp setup
+
+# Name of the big-bear-uisp application
+name: big-bear-uisp
+# Service definitions for the big-bear-uisp application
+services:
+  # Service name: big-bear-uisp
+  # The `big-bear-uisp` service definition
+  big-bear-uisp:
+    # Name of the container
+    container_name: big-bear-uisp
+    # Image to be used for the container
+    image: nico640/docker-unms:2.4.155.1
+    # Container restart policy
+    restart: unless-stopped
+    # Environment variables for the container
+    environment:
+      - TZ=UTC
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/big-bear-uisp/config directory to /config inside the container
+      - uisp_config:/config
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+      # Mapping port 10443 of the host to port 443 of the container
+      - "10443:443"
+volumes:
+  uisp_config: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: uisp
+    description: UISP
+    useHost: true
+    target: http://localhost:10443
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

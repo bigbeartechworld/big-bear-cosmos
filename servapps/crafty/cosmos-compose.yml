@@ -1,0 +1,49 @@
+# Configuration for crafty setup
+
+# Name of the big-bear-crafty application
+name: big-bear-crafty
+# Service definitions for the big-bear-crafty application
+services:
+  # Service name: big-bear-crafty
+  # The `big-bear-crafty` service definition
+  big-bear-crafty:
+    # Name of the container
+    container_name: big-bear-crafty
+    # Image to be used for the container
+    image: registry.gitlab.com/crafty-controller/crafty-4:4.5.5
+    # Container restart policy
+    restart: unless-stopped
+    # Environment variables
+    environment:
+      - TZ=UTC
+    # Ports mapping between host and container HOST:CONTAINER
+    ports:
+      - 8443:8443 # Web UI
+      - 8123:8123
+      - 19132:19132/udp
+      - 25500-25600:25500-25600
+    # Volumes mapping between host and container
+    volumes:
+      - crafty_data_backups:/crafty/backups
+      - crafty_data_logs:/crafty/logs
+      - crafty_data_servers:/crafty/servers
+      - crafty_data_config:/crafty/app/config
+      - crafty_data_import:/crafty/import
+volumes:
+  crafty_data_backups: {}
+  crafty_data_logs: {}
+  crafty_data_servers: {}
+  crafty_data_config: {}
+  crafty_data_import: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: crafty
+    description: Crafty Controller
+    useHost: true
+    target: http://localhost:8443
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

@@ -1,0 +1,9 @@
+{
+  "name": "Gladys Assistant",
+  "description": "Gladys Assistant is a modern, privacy-first & open-source home automation software that runs anywhere.",
+  "author": "GladysAssistant",
+  "icon": "https://gladysassistant.com/img/external/github-gladys-logo.png",
+  "category": "BigBearCasaOS",
+  "port": 1080,
+  "compose_file": "cosmos-compose.yml"
+}

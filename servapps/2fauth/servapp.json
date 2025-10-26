@@ -1,0 +1,9 @@
+{
+  "name": "2FAuth",
+  "description": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes",
+  "author": "bubka",
+  "icon": "https://user-images.githubusercontent.com/1289128/276442834-bdb528d0-78fa-4155-ba15-7165d88b9836.png",
+  "category": "BigBearCasaOS",
+  "port": 8000,
+  "compose_file": "cosmos-compose.yml"
+}

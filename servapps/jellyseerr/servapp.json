@@ -1,0 +1,9 @@
+{
+  "name": "Jellyseerr",
+  "description": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!",
+  "author": "Fallenbagel",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyseerr.png",
+  "category": "BigBearCasaOS",
+  "port": 5055,
+  "compose_file": "cosmos-compose.yml"
+}
