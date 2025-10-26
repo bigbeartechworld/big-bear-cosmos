@@ -1,0 +1,9 @@
+{
+  "name": "Komga",
+  "description": "A media server for your comics, mangas, BDs, magazines and eBooks.",
+  "author": "gotson",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/komga.png",
+  "category": "BigBearCasaOS",
+  "port": 25600,
+  "compose_file": "cosmos-compose.yml"
+}

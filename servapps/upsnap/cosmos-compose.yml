@@ -1,0 +1,35 @@
+# Configuration for upsnap setup
+
+# Name of the big-bear-upsnap application
+name: big-bear-upsnap
+# Service definitions for the big-bear-upsnap application
+services:
+  # Service name: big-bear-upsnap
+  # The `big-bear-upsnap` service definition
+  big-bear-upsnap:
+    # Name of the container
+    container_name: big-bear-upsnap
+    # Image to be used for the container
+    image: ghcr.io/seriousm4x/upsnap:5.2.3
+    # Container restart policy
+    restart: unless-stopped
+    # Network mode
+    network_mode: host
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/pb_data directory to /app/pb_data inside the container
+      - upsnap_pb_data:/app/pb_data
+volumes:
+  upsnap_pb_data: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: upsnap
+    description: Upsnap
+    useHost: true
+    target: http://localhost:8090
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

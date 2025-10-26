@@ -1,0 +1,9 @@
+{
+  "name": "Warracker",
+  "description": "A self-hosted warranty tracker",
+  "author": "sassanix",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/warracker.png",
+  "category": "BigBearCasaOS",
+  "port": 8005,
+  "compose_file": "cosmos-compose.yml"
+}

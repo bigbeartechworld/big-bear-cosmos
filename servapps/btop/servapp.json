@@ -1,0 +1,9 @@
+{
+  "name": "btop",
+  "description": "A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop",
+  "author": "bigbeartechworld",
+  "icon": "https://cdn.jsdelivr.net/gh/aristocratos/btop/Img/icon.png",
+  "category": "BigBearCasaOS",
+  "port": 7681,
+  "compose_file": "cosmos-compose.yml"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Dashdot",
+  "description": "About A simple, modern server dashboard, primarily used by smaller private servers.",
+  "author": "mauricenino",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/dashdot.png",
+  "category": "BigBearCasaOS",
+  "port": 3001,
+  "compose_file": "cosmos-compose.yml"
+}

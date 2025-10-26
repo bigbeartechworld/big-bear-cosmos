@@ -1,0 +1,9 @@
+{
+  "name": "Tugtainer",
+  "description": "Tugtainer is a self-hosted app for automating updates of your docker containers with a web UI. It's like watchtower but with more control and a user-friendly interface.",
+  "author": "Quenary",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/docker.png",
+  "category": "BigBearCasaOS",
+  "port": 9412,
+  "compose_file": "cosmos-compose.yml"
+}

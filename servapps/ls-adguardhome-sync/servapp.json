@@ -1,0 +1,9 @@
+{
+  "name": "LS Adguard Home Sync",
+  "description": "🛡️ Synchronize AdGuard Home config to replicas. This is the LinuxServer version.",
+  "author": "bakito",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/adguard-home.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

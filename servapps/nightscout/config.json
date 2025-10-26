@@ -1,8 +1,0 @@
-{
-  "id": "nightscout",
-  "version": "15.0.2",
-  "image": "nightscout/cgm-remote-monitor",
-  "youtube": "https://youtu.be/ty0F0lo9kSo",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
-}

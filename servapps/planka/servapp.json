@@ -1,0 +1,9 @@
+{
+  "name": "Planka",
+  "description": "The realtime kanban board for workgroups built with React and Redux.",
+  "author": "plankanban",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/planka.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

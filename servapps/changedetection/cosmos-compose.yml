@@ -1,0 +1,36 @@
+# Configuration for changedetection setup
+
+# Name of the big-bear-changedetection application
+name: big-bear-changedetection
+# Service definitions for the big-bear-changedetection application
+services:
+  # Service name: big-bear-changedetection
+  # The `big-bear-changedetection` service definition
+  big-bear-changedetection:
+    # Name of the container
+    container_name: big-bear-changedetection
+    # Image to be used for the container
+    image: ghcr.io/dgtlmoon/changedetection.io:0.50.32
+    # Container restart policy
+    restart: unless-stopped
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 5000 of the host to port 5000 of the container
+      - "5000:5000"
+    # Volumes to be mounted to the container
+    volumes:
+      - changedetection_datastore:/datastore
+volumes:
+  changedetection_datastore: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: changedetection
+    description: Change Detection
+    useHost: true
+    target: http://localhost:5000
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

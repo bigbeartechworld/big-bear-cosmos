@@ -1,0 +1,9 @@
+{
+  "name": "Trilium",
+  "description": "Build your personal knowledge base with Trilium Notes",
+  "author": "TriliumNext",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/trilium-notes.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

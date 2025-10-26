@@ -1,0 +1,9 @@
+{
+  "name": "Gotify",
+  "description": "a simple server for sending and receiving messages",
+  "author": "gotify",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/gotify.png",
+  "category": "BigBearCasaOS",
+  "port": 8091,
+  "compose_file": "cosmos-compose.yml"
+}

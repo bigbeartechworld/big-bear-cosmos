@@ -1,0 +1,9 @@
+{
+  "name": "Upsnap",
+  "description": "A simple wake on lan web app written with SvelteKit, Go and PocketBase.",
+  "author": "seriousm4x",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/upsnap.png",
+  "category": "BigBearCasaOS",
+  "port": 8090,
+  "compose_file": "cosmos-compose.yml"
+}

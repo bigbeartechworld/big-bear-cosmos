@@ -1,0 +1,9 @@
+{
+  "name": "Pingvin Share",
+  "description": "Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer.",
+  "author": "stonith404",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pingvin-share.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Kasm",
+  "description": "The Container Streaming Platform - Streaming containerized apps and desktops to end-users. The Workspaces platform provides enterprise-class orchestration, data loss prevention, and web streaming technology to enable the delivery of containerized workloads to your browser.",
+  "author": "Kasm",
+  "icon": "https://avatars.githubusercontent.com/u/44181855?s=280&v=4",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

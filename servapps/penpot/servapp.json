@@ -1,0 +1,9 @@
+{
+  "name": "Penpot",
+  "description": "Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.",
+  "author": "penpotapp",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/penpot/logo.jpg",
+  "category": "BigBearCasaOS",
+  "port": 9001,
+  "compose_file": "cosmos-compose.yml"
+}
