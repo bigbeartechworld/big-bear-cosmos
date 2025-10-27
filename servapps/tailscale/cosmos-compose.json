@@ -1,0 +1,61 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "tailscale/tailscale:v1.88.4",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "TS_SERVE_CONFIG=\"\"",
+        "TS_ACCEPT_DNS=false",
+        "TS_AUTH_ONCE=false",
+        "TS_AUTHKEY=\"\"",
+        "TS_HOSTNAME=\"\"",
+        "TS_ROUTES=\"\"",
+        "TS_EXTRA_ARGS=\"\"",
+        "TS_USERSPACE=true",
+        "TS_STATE_DIR=/var/lib/tailscale"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/tailscale/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/tailscale/DATA/AppData/$AppID/state",
+          "target": "/var/lib/tailscale",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/tailscale/DATA/AppData/$AppID/config",
+          "target": "/config",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/tailscale/dev/net/tun",
+          "target": "/dev/net/tun",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

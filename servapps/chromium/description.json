@@ -1,15 +1,9 @@
 {
   "name": "chromium",
   "description": "chromium",
-  "longDescription": "This Image contains a browser-accessible version of chromium.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/chromium.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/chromium.png"
+  "longDescription": "<p>This Image contains a browser-accessible version of chromium.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/kasmweb/chromium",
+  "supported_architectures": ["amd64", "arm64"]
 }

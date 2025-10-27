@@ -1,15 +1,9 @@
 {
-  "name": "playit-docker-web",
+  "name": "Playit Docker Web",
   "description": "Playit.gg is a global proxy that allows anyone to host a server without port forwarding.",
-  "longDescription": "Playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/playit-docker-web/logo.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/playit-docker-web/logo.png"
+  "longDescription": "<p>Playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/wisdomsky/playit-docker-web",
+  "supported_architectures": ["amd64", "arm64"]
 }

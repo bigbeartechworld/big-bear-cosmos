@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "crazymax/diun:4.30.0",
+      "container_name": "{ServiceName}",
+      "restart": "always",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "TZ=UTC",
+        "DIUN_WATCH_WORKERS=20",
+        "DIUN_WATCH_SCHEDULE=0 */6 * * *",
+        "DIUN_WATCH_JITTER=30s",
+        "DIUN_PROVIDERS_DOCKER=true"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/diun/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/diun/DATA/AppData/$AppID/data",
+          "target": "/data",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/diun/var/run/docker.sock",
+          "target": "/var/run/docker.sock",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

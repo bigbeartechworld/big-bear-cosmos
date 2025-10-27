@@ -1,15 +1,9 @@
 {
-  "name": "netalertx",
+  "name": "NetAlertX",
   "description": "NetAlertX",
-  "longDescription": "WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-alert.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-alert.png"
+  "longDescription": "<p>WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/jokobsk/netalertx",
+  "supported_architectures": ["amd64", "arm64"]
 }

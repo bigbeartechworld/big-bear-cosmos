@@ -1,16 +1,9 @@
 {
-  "name": "tp-link-omada-controller",
+  "name": "TP-Link Omada Controller",
   "description": "TP-Link Omada Controller",
-  "longDescription": "Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/omada.png",
-  "supported_architectures": [
-    "amd64",
-    "arm",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/omada.png"
+  "longDescription": "<p>Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/mbentley/omada-controller",
+  "supported_architectures": ["amd64", "arm64"]
 }

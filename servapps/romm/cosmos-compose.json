@@ -1,0 +1,84 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "rommapp/romm:4.3.2",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "DB_HOST=big-bear-rommdb",
+        "DB_PORT=3306",
+        "DB_USER=romm-user",
+        "DB_NAME=romm",
+        "DB_PASSWD=casaos",
+        "ROMM_AUTH_SECRET_KEY=<secret key>",
+        "IGDB_CLIENT_ID=<igdb client id>",
+        "IGDB_CLIENT_SECRET=<igdb client secret>",
+        "MOBYGAMES_API_KEY=<moby api key>",
+        "STEAMGRIDDB_API_KEY=<sgdb api key>",
+        "SCREENSCRAPER_USER=<screenscraper user>",
+        "SCREENSCRAPER_PASSWORD=<screenscraper password>",
+        "RETROACHIEVEMENTS_API_KEY=<retroachievements api key>",
+        "HASHEOUS_API_ENABLED=true",
+        "ENABLE_RESCAN_ON_FILESYSTEM_CHANGE=true",
+        "ENABLE_SCHEDULED_RESCAN=true",
+        "ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB=true"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/romm/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/romm/DATA/AppData/$AppID/resources",
+          "target": "/romm/resources",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/romm/DATA/AppData/$AppID/redis-data",
+          "target": "/redis-data",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/romm/DATA/AppData/$AppID/library",
+          "target": "/romm/library",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/romm/DATA/AppData/$AppID/assets",
+          "target": "/romm/assets",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/romm/DATA/AppData/$AppID/config",
+          "target": "/romm/config",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/romm/DATA/AppData/$AppID/logs",
+          "target": "/romm/logs",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

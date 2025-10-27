@@ -1,0 +1,9 @@
+{
+  "name": "Beaver Habit Tracker",
+  "description": "A self-hosted habit tracking app without \"Goals\"",
+  "longDescription": "<p>A self-hosted habit tracking app without \"Goals\"</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/daya0576/beaverhabits",
+  "supported_architectures": ["amd64", "arm64"]
+}
