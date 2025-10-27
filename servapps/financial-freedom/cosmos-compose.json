@@ -1,0 +1,82 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "serversideup/financial-freedom:v0.2.0-alpha1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "APP_NAME=\"Financial Freedom\"",
+        "APP_ENV=production",
+        "APP_DEBUG=false",
+        "APP_URL=http://[CASAOS_IP]:8080",
+        "APP_KEY=base64:1234567890abcdefghijklmnopqrstuvwxyz",
+        "DB_ROOT_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a",
+        "DB_HOST=mariadb",
+        "DB_DATABASE=financialfreedom",
+        "DB_USERNAME=bigbear",
+        "DB_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a",
+        "MAIL_MAILER=smtp",
+        "MAIL_HOST=mailpit",
+        "MAIL_PORT=1025",
+        "MAIL_USERNAME=null",
+        "MAIL_PASSWORD=null",
+        "MAIL_ENCRYPTION=null",
+        "MAIL_FROM_ADDRESS=noreply@financialfreedom.dev.test",
+        "MAIL_FROM_NAME=\"Financial Freedom\"",
+        "SSL_MODE=mixed",
+        "AUTORUN_ENABLED=true",
+        "AUTORUN_LARAVEL_EVENT_CACHE=false",
+        "AUTORUN_LARAVEL_ROUTE_CACHE=false",
+        "AUTORUN_LARAVEL_STORAGE_LINK=false",
+        "AUTORUN_LARAVEL_VIEW_CACHE=false",
+        "FINANCIAL_FREEDOM_ALLOW_REGISTRATION=false",
+        "LOG_CHANNEL=stack",
+        "BROADCAST_DRIVER=log",
+        "CACHE_DRIVER=file",
+        "QUEUE_CONNECTION=sync",
+        "SESSION_LIFETIME=120",
+        "SESSION_DRIVER=cookie",
+        "MYSQL_ROOT_PASSWORD=\"cd876479-f30b-43f2-8714-e52e040c657a\"",
+        "MYSQL_DATABASE=\"financialfreedom\"",
+        "MYSQL_USER=\"bigbear\"",
+        "MYSQL_PASSWORD=\"cd876479-f30b-43f2-8714-e52e040c657a\""
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/financial-freedom/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/financial-freedom/DATA/AppData/$AppID/logs",
+          "target": "/var/www/html/storage/logs",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/financial-freedom/DATA/AppData/$AppID/sessions",
+          "target": "/var/www/html/storage/framework/sessions",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

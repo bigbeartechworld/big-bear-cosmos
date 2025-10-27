@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "nocodb/nocodb:0.265.1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "DATABASE_URL=postgres://nocodb:nocodb@big-bear-nocodb-db:5432/nocodb",
+        "NC_AUTH_JWT_SECRET=899499fc-36a0-4131-b077-7bb9f051ac9b",
+        "NC_REDIS_URL=redis://default:casaos@big-bear-nocodb-redis:6379"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/nocodb/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/nocodb/DATA/AppData/$AppID/data",
+          "target": "/usr/src/app/data",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

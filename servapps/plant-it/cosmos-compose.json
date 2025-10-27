@@ -1,0 +1,66 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "msdeluise/plant-it-server:0.10.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "MYSQL_HOST=big-bear-plant-it-db",
+        "MYSQL_PORT=3306",
+        "MYSQL_USERNAME=root",
+        "MYSQL_PSW=9c75c563-b549-40e6-a0d2-360cf9a962ea",
+        "MYSQL_DATABASE=plantit",
+        "MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea",
+        "JWT_SECRET=putTheSecretHere",
+        "JWT_EXP=1",
+        "USERS_LIMIT=-1",
+        "UPLOAD_DIR=/upload-dir",
+        "API_PORT=8080",
+        "TREFLE_KEY=",
+        "LOG_LEVEL=DEBUG",
+        "ALLOWED_ORIGINS=*",
+        "CACHE_TTL=86400",
+        "CACHE_HOST=big-bear-plant-it-cache",
+        "CACHE_PORT=6379",
+        "SSL_ENABLED=false",
+        "CERTIFICATE_PATH=/certificates/"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/plant-it/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/plant-it/DATA/AppData/$AppID/upload-dir",
+          "target": "/upload-dir",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/plant-it/DATA/AppData/$AppID/certificates",
+          "target": "/certificates",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

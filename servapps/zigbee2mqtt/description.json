@@ -1,15 +1,9 @@
 {
-  "name": "zigbee2mqtt",
+  "name": "Zigbee to MQTT bridge",
   "description": "Zigbee to MQTT bridge",
-  "longDescription": "Zigbee to MQTT bridge, get rid of your proprietary Zigbee bridges",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/zigbee2mqtt.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/zigbee2mqtt.png"
+  "longDescription": "<p>Zigbee to MQTT bridge, get rid of your proprietary Zigbee bridges</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/koenkk/zigbee2mqtt",
+  "supported_architectures": ["amd64", "arm64"]
 }
