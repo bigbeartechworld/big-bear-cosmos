@@ -1,0 +1,9 @@
+{
+  "name": "Zigbee to MQTT bridge",
+  "description": "Zigbee to MQTT bridge, get rid of your proprietary Zigbee bridges",
+  "author": "koenkk",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/zigbee2mqtt.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Focalboard",
+  "description": "Focalboard is an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.",
+  "author": "mattermost",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/focalboard.png",
+  "category": "BigBearCasaOS",
+  "port": 8000,
+  "compose_file": "cosmos-compose.yml"
+}

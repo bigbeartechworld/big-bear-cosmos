@@ -1,0 +1,9 @@
+{
+  "name": "Crafty Controller",
+  "description": "Crafty 4 is the next iteration of our Minecraft Server Wrapper / Controller / Launcher.",
+  "author": "crafty-controller",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/crafty-controller.png",
+  "category": "BigBearCasaOS",
+  "port": 8443,
+  "compose_file": "cosmos-compose.yml"
+}

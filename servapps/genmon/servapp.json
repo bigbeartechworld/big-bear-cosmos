@@ -1,0 +1,9 @@
+{
+  "name": "Genmon",
+  "description": "Generac (and other models) Generator Monitoring using a Raspberry Pi and WiFi",
+  "author": "bigbeartechworld",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/genmon/logo.jpeg",
+  "category": "BigBearCasaOS",
+  "port": 8000,
+  "compose_file": "cosmos-compose.yml"
+}

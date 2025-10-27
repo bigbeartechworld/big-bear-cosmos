@@ -1,0 +1,9 @@
+{
+  "name": "Obsidian Livesync",
+  "description": "Self-hosted database for synchronizing Obsidian vaults.",
+  "author": "",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/obsidian.png",
+  "category": "BigBearCasaOS",
+  "port": 5984,
+  "compose_file": "cosmos-compose.yml"
+}

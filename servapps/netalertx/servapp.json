@@ -1,0 +1,9 @@
+{
+  "name": "NetAlertX",
+  "description": "WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found.",
+  "author": "jokobsk",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pi-alert.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

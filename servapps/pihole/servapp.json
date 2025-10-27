@@ -1,0 +1,9 @@
+{
+  "name": "Pi-hole",
+  "description": "The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.",
+  "author": "pi-hole.net",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pi-hole.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

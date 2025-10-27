@@ -1,0 +1,9 @@
+{
+  "name": "Wallos",
+  "description": "Wallos: Open-Source Personal Subscription Tracker",
+  "author": "bellamy",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallos.png",
+  "category": "BigBearCasaOS",
+  "port": 8282,
+  "compose_file": "cosmos-compose.yml"
+}
