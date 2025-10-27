@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/analogj/scrutiny:master-omnibus",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/scrutiny/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/scrutiny/DATA/AppData/$AppID/config",
+          "target": "/opt/scrutiny/config",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/scrutiny/DATA/AppData/$AppID/influxdb",
+          "target": "/opt/scrutiny/influxdb",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/scrutiny/run/udev:/run/udev",
+          "target": "ro",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

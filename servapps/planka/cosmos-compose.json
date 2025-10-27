@@ -1,0 +1,59 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/plankanban/planka:1.26.3",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "BASE_URL=http://[YOUR_CASAOS_LAN_IP]:3000",
+        "DATABASE_URL=postgresql://postgres@big-bear-planka-postgres/planka",
+        "SECRET_KEY=notsecretkey",
+        "DEFAULT_ADMIN_EMAIL=demo@demo.demo",
+        "DEFAULT_ADMIN_PASSWORD=demo",
+        "DEFAULT_ADMIN_NAME=Demo Demo",
+        "DEFAULT_ADMIN_USERNAME=demo"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/planka/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/planka/DATA/AppData/$AppID/user-avatars",
+          "target": "/app/public/user-avatars",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/planka/DATA/AppData/$AppID/project-background-images",
+          "target": "/app/public/project-background-images",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/planka/DATA/AppData/$AppID/attachments",
+          "target": "/app/private/attachments",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:1337",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

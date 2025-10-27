@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "mongo:6.0.11",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/unifi-network-application/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/unifi-network-application/DATA/AppData/$AppID/db/data",
+          "target": "/data/db",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/unifi-network-application/DATA/AppData/$AppID/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js",
+          "target": "ro",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:27017",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

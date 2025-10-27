@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "adguard/adguardhome:v0.107.68",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/adguard-home-host/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/adguard-home-host/DATA/AppData/$AppID/data/work",
+          "target": "/opt/adguardhome/work",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/adguard-home-host/DATA/AppData/$AppID/data/conf",
+          "target": "/opt/adguardhome/conf",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

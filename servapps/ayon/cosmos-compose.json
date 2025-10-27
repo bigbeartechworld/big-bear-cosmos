@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ynput/ayon:1.3.6-20240823",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/ayon/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/ayon/DATA/AppData/$AppID/addons",
+          "target": "/addons",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/ayon/DATA/AppData/$AppID/storage",
+          "target": "/storage",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/ayon/etc/localtime:/etc/localtime",
+          "target": "ro",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:5000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

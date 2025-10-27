@@ -1,16 +1,9 @@
 {
-  "name": "dashdot",
+  "name": "Dashdot",
   "description": "dash. - a modern server dashboard",
-  "longDescription": "About A simple, modern server dashboard, primarily used by smaller private servers.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png",
-  "supported_architectures": [
-    "amd64",
-    "arm",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png"
+  "longDescription": "<p>About A simple, modern server dashboard, primarily used by smaller private servers.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/mauricenino/dashdot",
+  "supported_architectures": ["amd64", "arm64"]
 }

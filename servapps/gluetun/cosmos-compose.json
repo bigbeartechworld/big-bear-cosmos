@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "qmcgaw/gluetun:v3.40.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "VPN_SERVICE_PROVIDER=custom",
+        "VPN_TYPE=openvpn",
+        "OPENVPN_USER=",
+        "OPENVPN_PASSWORD=",
+        "TZ=",
+        "UPDATER_PERIOD="
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/gluetun/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/gluetun/DATA/AppData/$AppID/data",
+          "target": "/gluetun",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8888",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

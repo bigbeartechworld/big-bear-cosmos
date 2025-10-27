@@ -1,15 +1,9 @@
 {
-  "name": "big-bear-casaos-user-management",
+  "name": "Big Bear CasaOS User Management",
   "description": "Manage users in CasaOS",
-  "longDescription": "Manage users in CasaOS",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg"
+  "longDescription": "<p>Manage users in CasaOS</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/bigbeartechworld/big-bear-casaos-user-management",
+  "supported_architectures": ["amd64", "arm64"]
 }

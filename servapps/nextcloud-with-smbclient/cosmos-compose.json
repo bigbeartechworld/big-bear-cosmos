@@ -1,0 +1,53 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.11",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "POSTGRES_HOST=big-bear-nextcloud-smb-db",
+        "REDIS_HOST=big-bear-nextcloud-smb-redis",
+        "POSTGRES_PASSWORD=casaos",
+        "POSTGRES_USER=casaos",
+        "POSTGRES_DB=nextcloud",
+        "NEXTCLOUD_ADMIN_USER=casaos",
+        "NEXTCLOUD_ADMIN_PASSWORD=casaos",
+        "TRUSTED_PROXIES=",
+        "OVERWRITEPROTOCOL=http",
+        "PHP_MEMORY_LIMIT=1024M",
+        "PHP_UPLOAD_LIMIT=1024M"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/nextcloud-with-smbclient/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/nextcloud-with-smbclient/DATA/AppData/$AppID/html",
+          "target": "/var/www/html",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

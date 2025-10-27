@@ -1,0 +1,9 @@
+{
+  "name": "Tugtainer",
+  "description": "Docker Container Update Automator",
+  "longDescription": "<p>Tugtainer is a self-hosted app for automating updates of your docker containers with a web UI. It's like watchtower but with more control and a user-friendly interface.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/quenary/tugtainer",
+  "supported_architectures": ["amd64", "arm64"]
+}

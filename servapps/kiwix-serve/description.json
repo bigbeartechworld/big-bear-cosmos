@@ -1,15 +1,9 @@
 {
-  "name": "kiwix-serve",
+  "name": "Kiwix Server",
   "description": "Kiwix Server",
-  "longDescription": "Kiwix Server is a web server for hosting .zim files",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kiwix.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kiwix.png"
+  "longDescription": "<p>Kiwix Server is a web server for hosting .zim files</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/kiwix/kiwix-serve",
+  "supported_architectures": ["amd64", "arm64"]
 }

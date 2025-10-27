@@ -1,15 +1,9 @@
 {
-  "name": "code-server",
+  "name": "Code Server",
   "description": "Code Server",
-  "longDescription": "Run VS Code on any machine anywhere and access it in the browser.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code-server.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code-server.png"
+  "longDescription": "<p>Run VS Code on any machine anywhere and access it in the browser.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/linuxserver/code-server",
+  "supported_architectures": ["amd64", "arm64"]
 }

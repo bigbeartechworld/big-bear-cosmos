@@ -1,0 +1,57 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/advplyr/audiobookshelf:2.30.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/audiobookshelf/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/audiobookshelf/DATA/AppData/$AppID/media/data/books/spoken",
+          "target": "/audiobooks",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/audiobookshelf/DATA/AppData/$AppID/media/data/podcasts",
+          "target": "/podcasts",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/audiobookshelf/DATA/AppData/$AppID/data/config",
+          "target": "/config",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/audiobookshelf/DATA/AppData/$AppID/data/metadata",
+          "target": "/metadata",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}
