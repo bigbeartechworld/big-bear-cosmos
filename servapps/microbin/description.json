@@ -1,0 +1,9 @@
+{
+  "name": "Microbin",
+  "description": "Pastebin alternative with encryption",
+  "longDescription": "<p>Self-hosted, encrypted pastebin alternative with configurable features.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/danielszabo99/microbin",
+  "supported_architectures": ["amd64", "arm64"]
+}

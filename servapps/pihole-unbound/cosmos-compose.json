@@ -1,0 +1,50 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "bigbeartechworld/big-bear-pihole-unbound:2025.08.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "TZ=America/Chicago",
+        "FTLCONF_webserver_api_password=your_password",
+        "FTLCONF_dns_upstreams=127.0.0.1#5353"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/pihole-unbound/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/pihole-unbound/DATA/AppData/$AppID/etc",
+          "target": "/etc/pihole/",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/pihole-unbound/DATA/AppData/$AppID/dnsmasq.d",
+          "target": "/etc/dnsmasq.d/",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:53",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

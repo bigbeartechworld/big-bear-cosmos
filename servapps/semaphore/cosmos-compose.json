@@ -1,0 +1,58 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "semaphoreui/semaphore:v2.16.34",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "SEMAPHORE_DB_USER=semaphore",
+        "SEMAPHORE_DB_PASS=semaphore",
+        "SEMAPHORE_DB_HOST=big-bear-semaphore-db",
+        "SEMAPHORE_DB_PORT=3306",
+        "SEMAPHORE_DB_DIALECT=mysql",
+        "SEMAPHORE_DB=semaphore",
+        "SEMAPHORE_ADMIN_PASSWORD=password",
+        "SEMAPHORE_ADMIN_NAME=admin",
+        "SEMAPHORE_ADMIN_EMAIL=admin@example.com",
+        "SEMAPHORE_ADMIN=admin",
+        "TZ=UTC"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/semaphore/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/semaphore/DATA/AppData/$AppID/home",
+          "target": "/etc/semaphore",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/semaphore/DATA/AppData/$AppID/lib",
+          "target": "/var/lib/semaphore",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

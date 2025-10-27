@@ -1,0 +1,49 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghostfolio/ghostfolio:2.210.1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "NODE_ENV=production",
+        "HOST=0.0.0.0",
+        "PORT=3333",
+        "ACCESS_TOKEN_SALT=5a7f9e0d-0e64-4c19-8279-bbe8b4c590f4",
+        "DATABASE_URL=postgresql://ghostfolio:casaospassword@big-bear-ghostfolio-db:5432/ghostfolio?sslmode=prefer",
+        "JWT_SECRET_KEY=534e820d-da30-4dd3-baf9-0511847c478a",
+        "POSTGRES_DB=ghostfolio",
+        "POSTGRES_USER=ghostfolio",
+        "POSTGRES_PASSWORD=casaospassword",
+        "REDIS_HOST=big-bear-ghostfolio-redis",
+        "REDIS_PASSWORD=casaosredispassword",
+        "REDIS_PORT=6379"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/ghostfolio/icon.png"
+      },
+      "volumes": [
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:3333",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

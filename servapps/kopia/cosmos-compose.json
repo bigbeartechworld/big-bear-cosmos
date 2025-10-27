@@ -1,0 +1,75 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/thespad/kopia-server:v0.17.0-spad3",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "PUID=0",
+        "PGID=0",
+        "TZ=UTC",
+        "KOPIA_HTTPS=true",
+        "KOPIA_UI_USERNAME=casaos",
+        "KOPIA_UI_PASSWORD=casaos",
+        "KOPIA_PASSWORD=casaos",
+        "REFRESH_INTERVAL="
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/kopia/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/kopia/DATA/AppData/$AppID/config",
+          "target": "/config",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/kopia/DATA/AppData/$AppID/home:/backups/home",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/kopia/var/lib/docker/volumes:/backups/docker",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/kopia/DATA/AppData/$AppID/repository",
+          "target": "/repository",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/kopia/tmp:/tmp",
+          "target": "shared",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/kopia/var/run/docker.sock:/var/run/docker.sock",
+          "target": "ro",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:51515",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/pterodactyl/wings:v1.11.13",
+      "container_name": "{ServiceName}",
+      "restart": "always",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "TZ=UTC",
+        "WINGS_UID=988",
+        "WINGS_GID=988",
+        "WINGS_USERNAME=pterodactyl"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/pterodactyl-wings/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/pterodactyl-wings/var/run/docker.sock",
+          "target": "/var/run/docker.sock",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/pterodactyl-wings/var/lib/docker/containers/",
+          "target": "/var/lib/docker/containers/",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/pterodactyl-wings/etc/ssl/certs:/etc/ssl/certs",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/pterodactyl-wings/tmp/pterodactyl",
+          "target": "/tmp/pterodactyl/",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/pterodactyl-wings/etc/pterodactyl",
+          "target": "/etc/pterodactyl/",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/pterodactyl-wings/var/log/pterodactyl",
+          "target": "/var/log/pterodactyl/",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/pterodactyl-wings/var/lib/pterodactyl",
+          "target": "/var/lib/pterodactyl/",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}
