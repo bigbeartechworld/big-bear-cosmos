@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "pepperlabs/peppermint:latest",
+      "container_name": "{ServiceName}",
+      "restart": "always",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "API_URL=http://local.host:5003",
+        "DB_HOST=db",
+        "DB_PASSWORD=casaos",
+        "DB_USERNAME=casaos",
+        "SECRET=peppermint4life"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/peppermint/icon.png"
+      },
+      "volumes": [
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

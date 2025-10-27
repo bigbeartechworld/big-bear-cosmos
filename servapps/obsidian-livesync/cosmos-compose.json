@@ -1,0 +1,49 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "couchdb:3.5.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "COUCHDB_USER=casaos",
+        "COUCHDB_PASSWORD=casaos"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/obsidian-livesync/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/obsidian-livesync/DATA/AppData/$AppID/data/couchdb",
+          "target": "/opt/couchdb/data",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/obsidian-livesync/DATA/AppData/$AppID/data/local.ini",
+          "target": "/opt/couchdb/etc/local.ini",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:5984",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

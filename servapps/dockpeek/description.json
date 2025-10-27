@@ -1,0 +1,9 @@
+{
+  "name": "Dockpeek",
+  "description": "Docker Dashboard",
+  "longDescription": "<p>A lightweight, self-hosted Docker dashboard that provides quick access to all running containers and their exposed ports with one-click access to web apps.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/dockpeek/dockpeek",
+  "supported_architectures": ["amd64", "arm64"]
+}

@@ -1,0 +1,57 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/pocket-id/pocket-id:v1.14",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "APP_URL=http://localhost:1411",
+        "TRUST_PROXY=false",
+        "MAXMIND_LICENSE_KEY=",
+        "PUID=1000",
+        "PGID=1000"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/pocketid/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{ServiceName}-type",
+          "target": " bind",
+          "type": "volume"
+        },
+        {
+          "source": "{ServiceName}-source",
+          "target": " /DATA/AppData/$AppID/data",
+          "type": "volume"
+        },
+        {
+          "source": "{ServiceName}-target",
+          "target": " /app/data # Volume for persistent data",
+          "type": "volume"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:1411",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

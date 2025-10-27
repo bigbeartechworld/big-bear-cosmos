@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "piero24/gemdigest:1.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "TELEGRAM_API_KEY=TELEGRAM_API_KEY",
+        "GEMINI_API_KEY=GEMINI_API_KEY",
+        "ADMIN_USER_ID=123;456"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/GemDigest/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/GemDigest/DATA/AppData/$AppID/extra_configs",
+          "target": "/gem_digest_bot/extra_configs",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

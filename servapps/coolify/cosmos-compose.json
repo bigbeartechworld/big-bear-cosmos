@@ -1,0 +1,128 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/coollabsio/coolify:4.0.0-beta.434",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "PHP_MEMORY_LIMIT=\"512M\"",
+        "APP_ID=\"coolify\"",
+        "APP_ENV=\"production\"",
+        "APP_DEBUG=\"false\"",
+        "APP_NAME=\"Coolify\"",
+        "APP_KEY=\"base64:lSStPbXB/yW6cxXIz8fauQ937PbSUktTdIf7R05szQ4=\"",
+        "APP_URL=\"http://[CASAOS_IP]:8000\"",
+        "DB_CONNECTION=\"pgsql\"",
+        "DB_HOST=\"big-bear-coolify-postgres\"",
+        "DB_PORT=\"5432\"",
+        "DB_DATABASE=\"coolify\"",
+        "DB_USERNAME=\"coolify\"",
+        "DB_PASSWORD=\"f1986213-9d72-4c36-bbd4-adca2f414fa1\"",
+        "QUEUE_CONNECTION=\"redis\"",
+        "REDIS_HOST=\"big-bear-coolify-redis\"",
+        "REDIS_PASSWORD=\"9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4\"",
+        "HORIZON_BALANCE=\"100\"",
+        "HORIZON_MAX_PROCESSES=\"10\"",
+        "HORIZON_BALANCE_MAX_SHIFT=\"10\"",
+        "HORIZON_BALANCE_COOLDOWN=\"10\"",
+        "SSL_MODE=\"off\"",
+        "PHP_PM_CONTROL=\"dynamic\"",
+        "PHP_PM_START_SERVERS=\"1\"",
+        "PHP_PM_MIN_SPARE_SERVERS=\"1\"",
+        "PHP_PM_MAX_SPARE_SERVERS=\"10\"",
+        "PUSHER_HOST=\"big-bear-coolify-soketi\"",
+        "PUSHER_BACKEND_HOST=\"big-bear-coolify-soketi\"",
+        "PUSHER_PORT=\"6001\"",
+        "PUSHER_BACKEND_PORT=\"6001\"",
+        "PUSHER_SCHEME=\"http\"",
+        "PUSHER_APP_ID=\"coolify\"",
+        "PUSHER_APP_KEY=",
+        "PUSHER_APP_SECRET=",
+        "AUTOUPDATE=true",
+        "SELF_HOSTED=true",
+        "SSH_MUX_PERSIST_TIME=3600",
+        "FEEDBACK_DISCORD_WEBHOOK=",
+        "WAITLIST=",
+        "SUBSCRIPTION_PROVIDER=",
+        "STRIPE_API_KEY=",
+        "STRIPE_WEBHOOK_SECRET=",
+        "STRIPE_PRICE_ID_BASIC_MONTHLY=",
+        "STRIPE_PRICE_ID_BASIC_YEARLY=",
+        "STRIPE_PRICE_ID_PRO_MONTHLY=",
+        "STRIPE_PRICE_ID_PRO_YEARLY=",
+        "STRIPE_PRICE_ID_ULTIMATE_MONTHLY=",
+        "STRIPE_PRICE_ID_ULTIMATE_YEARLY=",
+        "STRIPE_PRICE_ID_DYNAMIC_MONTHLY=",
+        "STRIPE_PRICE_ID_DYNAMIC_YEARLY=",
+        "STRIPE_PRICE_ID_BASIC_MONTHLY_OLD=",
+        "STRIPE_PRICE_ID_BASIC_YEARLY_OLD=",
+        "STRIPE_PRICE_ID_PRO_MONTHLY_OLD=",
+        "STRIPE_PRICE_ID_PRO_YEARLY_OLD=",
+        "STRIPE_PRICE_ID_ULTIMATE_MONTHLY_OLD=",
+        "STRIPE_PRICE_ID_ULTIMATE_YEARLY_OLD=",
+        "STRIPE_EXCLUDED_PLANS="
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/coolify/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/coolify/DATA/AppData/$AppID/ssh",
+          "target": "/var/www/html/storage/app/ssh",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/coolify/DATA/AppData/$AppID/applications",
+          "target": "/var/www/html/storage/app/applications",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/coolify/DATA/AppData/$AppID/databases",
+          "target": "/var/www/html/storage/app/databases",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/coolify/DATA/AppData/$AppID/services",
+          "target": "/var/www/html/storage/app/services",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/coolify/DATA/AppData/$AppID/backups",
+          "target": "/var/www/html/storage/app/backups",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/coolify/DATA/AppData/$AppID/webhooks-during-maintenance",
+          "target": "/var/www/html/storage/app/webhooks-during-maintenance",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/coolify/DATA/AppData/$AppID/logs",
+          "target": "/var/www/html/storage/logs",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

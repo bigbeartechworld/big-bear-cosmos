@@ -1,15 +1,9 @@
 {
-  "name": "plex",
+  "name": "Plex",
   "description": "Stream Movies & TV Shows",
-  "longDescription": "Stream Movies & TV Shows",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/plex.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/plex.png"
+  "longDescription": "<p>Stream Movies & TV Shows</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/linuxserver/plex",
+  "supported_architectures": ["amd64", "arm64"]
 }

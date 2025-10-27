@@ -1,0 +1,74 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "filebrowser/filebrowser:v2.44.2-s6",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "PUID=0",
+        "PGID=0"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/filebrowser/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/filebrowser/DATA/AppData",
+          "target": "/srv/app-data",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/filebrowser/DATA/Documents",
+          "target": "/srv/documents",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/filebrowser/DATA/Downloads",
+          "target": "/srv/downloads",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/filebrowser/DATA/Gallery",
+          "target": "/srv/gallery",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/filebrowser/DATA/media",
+          "target": "/srv/media",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/filebrowser/DATA/AppData/$AppID/data/db",
+          "target": "/database",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/filebrowser/DATA/AppData/$AppID/data/config",
+          "target": "/config",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

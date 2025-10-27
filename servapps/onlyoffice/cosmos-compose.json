@@ -1,0 +1,67 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "onlyoffice/documentserver:9.1.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/onlyoffice/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/onlyoffice/DATA/AppData/$AppID/onlyoffice/logs",
+          "target": "/var/log/onlyoffice",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/onlyoffice/DATA/AppData/$AppID/onlyoffice/data",
+          "target": "/var/www/onlyoffice/Data",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/onlyoffice/DATA/AppData/$AppID/onlyoffice/lib",
+          "target": "/var/lib/onlyoffice",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/onlyoffice/DATA/AppData/$AppID/onlyoffice/rabbitmq",
+          "target": "/var/lib/rabbitmq",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/onlyoffice/DATA/AppData/$AppID/onlyoffice/redis",
+          "target": "/var/lib/redis",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/onlyoffice/DATA/AppData/$AppID/onlyoffice/db",
+          "target": "/var/lib/postgresql",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}
