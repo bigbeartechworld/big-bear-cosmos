@@ -1,0 +1,53 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "bigbeartechworld/big-bear-genmon:1.19.06",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "TZ=America/Chicago"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/genmon/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/genmon/DATA/AppData/$AppID/git_genmon",
+          "target": "/git/genmon",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/genmon/DATA/AppData/$AppID/etc_genmon",
+          "target": "/etc/genmon",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/genmon/DATA/AppData/$AppID/var_log",
+          "target": "/var/log",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:22",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

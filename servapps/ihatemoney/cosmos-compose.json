@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ihatemoney/ihatemoney:6.1.5",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "SECRET_KEY=1d58bc34-e7ff-4f6d-a1e4-f319262ed9b8",
+        "SQLALCHEMY_DATABASE_URI=mysql+pymysql://bigbear:password@big-bear-ihatemoney-db/ihatemoney",
+        "ACTIVATE_ADMIN_DASHBOARD=True",
+        "ADMIN_PASSWORD=",
+        "SESSION_COOKIE_SECURE=False"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/ihatemoney/icon.png"
+      },
+      "volumes": [
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "bigbeartechworld/big-bear-ncdu:0.0.4",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "NCDU_PATH=/"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/ncdu/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/ncdu/proc",
+          "target": "/proc",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/ncdu/sys",
+          "target": "/sys",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/ncdu/dev",
+          "target": "/dev",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/ncdu/etc/localtime:/etc/localtime",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/ncdu/",
+          "target": "/casaos",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:7681",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

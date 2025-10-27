@@ -1,0 +1,53 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "quenary/tugtainer:v1.3.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "TZ=UTC",
+        "LOG_LEVEL=warning",
+        "JWT_SECRET_KEY=your-secret-key-here",
+        "ACCESS_TOKEN_LIFETIME_MIN=5",
+        "REFRESH_TOKEN_LIFETIME_MIN=43200",
+        "HTTPS=FALSE"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/tugtainer/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/tugtainer/DATA/AppData/$AppID/data",
+          "target": "/tugtainer",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/tugtainer/var/run/docker.sock",
+          "target": "/var/run/docker.sock",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

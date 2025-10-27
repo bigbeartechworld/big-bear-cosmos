@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/codex-team/codex.docs:v2.2",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/codex-docs/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/codex-docs/DATA/AppData/$AppID/uploads",
+          "target": "/usr/src/app/uploads",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/codex-docs/DATA/AppData/$AppID/db",
+          "target": "/usr/src/app/db",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/codex-docs/DATA/AppData/$AppID/codex-docs-config.local.yaml",
+          "target": "/usr/src/app/docs-config.yaml",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

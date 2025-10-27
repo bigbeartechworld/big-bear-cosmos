@@ -1,0 +1,9 @@
+{
+  "name": "Stalwart Mail",
+  "description": "Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) 🛡️",
+  "longDescription": "<p>Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/stalwartlabs/stalwart",
+  "supported_architectures": ["amd64", "arm64"]
+}

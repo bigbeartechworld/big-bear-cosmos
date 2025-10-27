@@ -1,0 +1,55 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "wallabag/wallabag:2.6.14",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "MYSQL_ROOT_PASSWORD=777134a0-4480-49f3-b00c-29db42c6d136",
+        "SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql",
+        "SYMFONY__ENV__DATABASE_HOST=big-bear-wallabag-db",
+        "SYMFONY__ENV__DATABASE_PORT=3306",
+        "SYMFONY__ENV__DATABASE_NAME=wallabag",
+        "SYMFONY__ENV__DATABASE_USER=big_bear_wallabag",
+        "SYMFONY__ENV__DATABASE_PASSWORD=fbe433e9-e3a8-432a-a382-d132596a76fc",
+        "SYMFONY__ENV__DATABASE_CHARSET=utf8mb4",
+        "SYMFONY__ENV__DATABASE_TABLE_PREFIX=\"big_bear_wallabag_\"",
+        "SYMFONY__ENV__MAILER_DSN=smtp://127.0.0.1",
+        "SYMFONY__ENV__FROM_EMAIL=wallabag@example.com",
+        "SYMFONY__ENV__DOMAIN_NAME=http://[IP]:8080",
+        "SYMFONY__ENV__SERVER_NAME=\"Big Bear Wallabag\""
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/wallabag/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/wallabag/DATA/AppData/$AppID/images",
+          "target": "/var/www/wallabag/web/assets/images",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

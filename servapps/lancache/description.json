@@ -1,14 +1,9 @@
 {
-  "name": "lancache",
+  "name": "LAN Cache",
   "description": "LAN Party game caching made easy",
-  "longDescription": "Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/lancache.png",
-  "supported_architectures": [
-    "amd64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/lancache.png"
+  "longDescription": "<p>Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/lancachenet/monolithic",
+  "supported_architectures": ["amd64", "arm64"]
 }

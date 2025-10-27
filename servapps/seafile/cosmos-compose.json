@@ -1,0 +1,49 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "seafileltd/seafile-mc:11.0.13",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "DB_HOST=big-bear-seafile-db",
+        "DB_ROOT_PASSWD=seafilepassword",
+        "TIME_ZONE=Etc/UTC",
+        "SEAFILE_ADMIN_EMAIL=admin@example.com",
+        "SEAFILE_ADMIN_PASSWORD=asecret",
+        "SEAFILE_SERVER_LETSENCRYPT=false",
+        "SEAFILE_SERVER_HOSTNAME=docs.seafile.com"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/seafile/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/seafile/DATA/AppData/$AppID/shared",
+          "target": "/shared",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

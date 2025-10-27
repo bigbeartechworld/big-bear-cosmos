@@ -1,0 +1,67 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "gcr.io/cadvisor/cadvisor:v0.52.1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/cadvisor/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/cadvisor/:/rootfs",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/cadvisor/var/run:/var/run",
+          "target": "rw",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/cadvisor/var/run/docker.sock:/var/run/docker.sock",
+          "target": "rw",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/cadvisor/sys:/sys",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/cadvisor/var/lib/docker/:/var/lib/docker",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/cadvisor/dev/disk/:/dev/disk",
+          "target": "ro",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

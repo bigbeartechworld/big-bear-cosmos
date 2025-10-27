@@ -1,15 +1,9 @@
 {
-  "name": "jellyseerr",
+  "name": "Jellyseerr",
   "description": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!",
-  "longDescription": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://static-00.iconduck.com/assets.00/jellyseerr-icon-512x492-iwuo1nft.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://static-00.iconduck.com/assets.00/jellyseerr-icon-512x492-iwuo1nft.png"
+  "longDescription": "<p>Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/fallenbagel/jellyseerr",
+  "supported_architectures": ["amd64", "arm64"]
 }
