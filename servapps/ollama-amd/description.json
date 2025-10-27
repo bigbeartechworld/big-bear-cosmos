@@ -1,15 +1,9 @@
 {
-  "name": "ollama-amd",
+  "name": "Ollama - AMD",
   "description": "LLMs inference server with OpenAI compatible API",
-  "longDescription": "Get up and running with Llama 3, Mistral, Gemma, and other large language models.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama.png"
+  "longDescription": "<p>Get up and running with Llama 3, Mistral, Gemma, and other large language models.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ollama/ollama",
+  "supported_architectures": ["amd64", "arm64"]
 }

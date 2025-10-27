@@ -1,15 +1,9 @@
 {
-  "name": "jlesage-handbrake",
+  "name": "Jlesage Handbrake",
   "description": "This project implements a Docker container for Handbrake.",
-  "longDescription": "The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/handbrake.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/handbrake.png"
+  "longDescription": "<p>The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/jlesage/handbrake",
+  "supported_architectures": ["amd64", "arm64"]
 }

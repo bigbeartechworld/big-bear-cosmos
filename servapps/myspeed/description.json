@@ -1,15 +1,9 @@
 {
-  "name": "myspeed",
+  "name": "MySpeed",
   "description": "A speed test analysis software that shows your internet speed for up to 30 days",
-  "longDescription": "MySpeed is a speed test analysis software that records your internet speed for up to 30 days.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/myspeed/logo.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/myspeed/logo.png"
+  "longDescription": "<p>MySpeed is a speed test analysis software that records your internet speed for up to 30 days.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/germannewsmaker/myspeed",
+  "supported_architectures": ["amd64", "arm64"]
 }

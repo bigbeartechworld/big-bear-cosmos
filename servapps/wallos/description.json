@@ -1,15 +1,9 @@
 {
-  "name": "wallos",
+  "name": "Wallos",
   "description": "Wallos",
-  "longDescription": "Wallos: Open-Source Personal Subscription Tracker",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wallos.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wallos.png"
+  "longDescription": "<p>Wallos: Open-Source Personal Subscription Tracker</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/bellamy/wallos",
+  "supported_architectures": ["amd64", "arm64"]
 }

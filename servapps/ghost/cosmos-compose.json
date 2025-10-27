@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghost:6.5.1-alpine",
+      "container_name": "{ServiceName}",
+      "restart": "on-failure",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "database__client=mysql",
+        "database__connection__host=db",
+        "database__connection__user=ghost",
+        "database__connection__password=casaos",
+        "database__connection__database=ghost",
+        "url=http://localhost:2368"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/ghost/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/ghost/DATA/AppData/$AppID/content",
+          "target": "/var/lib/ghost/content",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:2368",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

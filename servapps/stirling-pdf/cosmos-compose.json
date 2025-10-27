@@ -1,0 +1,55 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "stirlingtools/stirling-pdf:1.5.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "DOCKER_ENABLE_SECURITY=false",
+        "SECURITY_ENABLE_LOGIN=true",
+        "SECURITY_INITIALLOGIN_USERNAME=bigbear",
+        "SECURITY_INITIALLOGIN_PASSWORD=4500733e-a0f8-4605-a712-fd267404956a",
+        "CSRF_DISABLED=false",
+        "DEFAULT_LOCALE=en-US",
+        "INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false",
+        "LANGS=en_US"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/stirling-pdf/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/stirling-pdf/DATA/AppData/$AppID/tessdata",
+          "target": "/usr/share/tessdata",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/stirling-pdf/DATA/AppData/$AppID/configs",
+          "target": "/configs",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

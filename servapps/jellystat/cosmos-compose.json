@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "cyfershepard/jellystat:1.1.6",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "POSTGRES_USER=postgres",
+        "POSTGRES_PASSWORD=8a23ad09-61cf-4178-a783-6d4586496e3a",
+        "POSTGRES_IP=big-bear-jellystat-db",
+        "POSTGRES_PORT=5432",
+        "JWT_SECRET=\"my-secret-jwt-key\""
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/jellystat/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/jellystat/DATA/AppData/$AppID/backup-data",
+          "target": "/app/backend/backup-data",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

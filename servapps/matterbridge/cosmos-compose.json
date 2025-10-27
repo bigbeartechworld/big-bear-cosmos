@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "luligu/matterbridge:3.3.3",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/matterbridge/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/matterbridge/DATA/AppData/$AppID/Matterbridge",
+          "target": "/root/Matterbridge",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/matterbridge/DATA/AppData/$AppID/.matterbridge",
+          "target": "/root/.matterbridge",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8283",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

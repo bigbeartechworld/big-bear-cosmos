@@ -1,15 +1,9 @@
 {
-  "name": "onedev",
+  "name": "OneDev",
   "description": "Self-hosted Git Server with Kanban and CI/CD",
-  "longDescription": "Self-hosted Git Server with Kanban and CI/CD",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/onedev.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/onedev.png"
+  "longDescription": "<p>Self-hosted Git Server with Kanban and CI/CD</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/1dev/server",
+  "supported_architectures": ["amd64", "arm64"]
 }
