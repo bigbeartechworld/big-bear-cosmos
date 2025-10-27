@@ -1,0 +1,49 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "lukevella/rallly:4.4.1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly",
+        "SECRET_PASSWORD=0f6f292d-c78c-4709-920d-e3b6361eb5b5",
+        "NEXT_PUBLIC_BASE_URL=http://[YOUR_CASAOS_IP]:3000",
+        "NOREPLY_EMAIL=noreply@example.com",
+        "SUPPORT_EMAIL=support@example.com",
+        "SMTP_HOST=[YOUR_CASAOS_IP]",
+        "SMTP_PORT=1025",
+        "SMTP_SECURE=",
+        "SMTP_USER=",
+        "SMTP_PWD=",
+        "SMTP_TLS_ENABLED=",
+        "ALLOWED_EMAILS="
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/rallly/icon.png"
+      },
+      "volumes": [
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

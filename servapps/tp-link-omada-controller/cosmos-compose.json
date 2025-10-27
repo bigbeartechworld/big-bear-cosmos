@@ -1,0 +1,64 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "mbentley/omada-controller:5.15",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "PUID=508",
+        "PGID=508",
+        "MANAGE_HTTP_PORT=8088",
+        "MANAGE_HTTPS_PORT=8043",
+        "PORTAL_HTTP_PORT=8088",
+        "PORTAL_HTTPS_PORT=8843",
+        "PORT_APP_DISCOVERY=27001",
+        "PORT_ADOPT_V1=29812",
+        "PORT_UPGRADE_V1=29813",
+        "PORT_MANAGER_V1=29811",
+        "PORT_MANAGER_V2=29814",
+        "PORT_DISCOVERY=29810",
+        "SHOW_SERVER_LOGS=true",
+        "SHOW_MONGODB_LOGS=false",
+        "SSL_CERT_NAME=tls.crt",
+        "SSL_KEY_NAME=tls.key",
+        "TZ=Etc/UTC"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/tp-link-omada-controller/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/tp-link-omada-controller/DATA/AppData/$AppID/data",
+          "target": "/opt/tplink/EAPController/data",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/tp-link-omada-controller/DATA/AppData/$AppID/logs",
+          "target": "/opt/tplink/EAPController/logs",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8088",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

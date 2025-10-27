@@ -1,0 +1,65 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "bigbeartechworld/big-bear-btop:0.1.5",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "GOTTY_AUTH_USER=bigbear",
+        "GOTTY_AUTH_PASS=password",
+        "GOTTY_AUTH_ENABLED=true"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/btop/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/btop/proc",
+          "target": "/proc",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/btop/sys",
+          "target": "/sys",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/btop/dev",
+          "target": "/dev",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/btop/etc/localtime:/etc/localtime",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/btop/DATA/AppData/$AppID/config",
+          "target": "/root/.config/btop",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:7681",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

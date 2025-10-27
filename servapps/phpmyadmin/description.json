@@ -1,15 +1,9 @@
 {
-  "name": "phpmyadmin",
+  "name": "phpMyAdmin",
   "description": "phpMyAdmin",
-  "longDescription": "phpMyAdmin - A web interface for MySQL and MariaDB.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/phpmyadmin.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/phpmyadmin.png"
+  "longDescription": "<p>phpMyAdmin - A web interface for MySQL and MariaDB.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/phpmyadmin/phpmyadmin",
+  "supported_architectures": ["amd64", "arm64"]
 }

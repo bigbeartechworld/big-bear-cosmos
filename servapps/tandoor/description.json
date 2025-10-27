@@ -1,15 +1,9 @@
 {
-  "name": "tandoor",
+  "name": "Tandoor",
   "description": "Recipe collection manager.",
-  "longDescription": "Drop your collection of links and notes. Get Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tandoor.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tandoor.png"
+  "longDescription": "<p>Drop your collection of links and notes. Get Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/tandoorrecipes/recipes",
+  "supported_architectures": ["amd64", "arm64"]
 }

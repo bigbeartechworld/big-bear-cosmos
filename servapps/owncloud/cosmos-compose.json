@@ -1,0 +1,54 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "owncloud/server:10.16.0",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "OWNCLOUD_DOMAIN=http://[YOUR_CASAOS_IP]:8080",
+        "OWNCLOUD_TRUSTED_DOMAINS=[YOUR_CASAOS_IP]",
+        "OWNCLOUD_DB_TYPE=mysql",
+        "OWNCLOUD_DB_NAME=big_bear_owncloud",
+        "OWNCLOUD_DB_USERNAME=bigbear",
+        "OWNCLOUD_DB_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a",
+        "OWNCLOUD_DB_HOST=big-bear-owncloud-db",
+        "OWNCLOUD_ADMIN_USERNAME=bigbear",
+        "OWNCLOUD_ADMIN_PASSWORD=ed135299-7c80-48d4-a2a0-357a012213e5",
+        "OWNCLOUD_MYSQL_UTF8MB4=true",
+        "OWNCLOUD_REDIS_ENABLED=true",
+        "OWNCLOUD_REDIS_HOST=big-bear-owncloud-redis"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/owncloud/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/owncloud/DATA/AppData/$AppID/data",
+          "target": "/mnt/data",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

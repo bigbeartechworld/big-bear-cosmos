@@ -1,15 +1,9 @@
 {
-  "name": "budibase",
+  "name": "Budibase",
   "description": "Internal tools made easy.",
-  "longDescription": "Low code platform for creating internal tools, workflows, and admin panels in minutes. Supports PostgreSQL, MySQL, MSSQL, MongoDB, Rest API, Docker, K8s, and more 🚀. Budibase, the low code platform you'll enjoy using ⚡",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/budibase.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/budibase.png"
+  "longDescription": "<p>Low code platform for creating internal tools, workflows, and admin panels in minutes. Supports PostgreSQL, MySQL, MSSQL, MongoDB, Rest API, Docker, K8s, and more 🚀. Budibase, the low code platform you'll enjoy using ⚡</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/budibase/budibase",
+  "supported_architectures": ["amd64", "arm64"]
 }

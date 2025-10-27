@@ -1,15 +1,9 @@
 {
-  "name": "syncthing",
+  "name": "Syncthing",
   "description": "Peer-to-peer file synchronization between your devices",
-  "longDescription": "Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers. We strive to fulfill the goals below. The goals are listed in order of importance, the most important one being the first.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/syncthing.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/syncthing.png"
+  "longDescription": "<p>Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers. We strive to fulfill the goals below. The goals are listed in order of importance, the most important one being the first.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/syncthing/syncthing",
+  "supported_architectures": ["amd64", "arm64"]
 }

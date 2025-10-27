@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "koush/scrypted:v0.123.58-jammy-full",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer SET_THIS_TO_SOME_RANDOM_TEXT",
+        "SCRYPTED_WEBHOOK_UPDATE=http://localhost:10444/v1/update"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/scrypted/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/scrypted/DATA/AppData/$AppID/data",
+          "target": "/server/volume",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:10443",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

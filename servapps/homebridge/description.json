@@ -1,15 +1,9 @@
 {
-  "name": "homebridge",
+  "name": "HomeBridge",
   "description": "HomeKit support for the impatient.",
-  "longDescription": "HomeKit support for the impatient.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homebridge.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homebridge.png"
+  "longDescription": "<p>HomeKit support for the impatient.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/homebridge/homebridge",
+  "supported_architectures": ["amd64", "arm64"]
 }
