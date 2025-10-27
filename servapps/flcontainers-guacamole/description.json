@@ -1,15 +1,9 @@
 {
-  "name": "flcontainers-guacamole",
+  "name": "FlContainers Guacamole",
   "description": "Fully packaged Multi-Arch Guacamole.",
-  "longDescription": "A Docker Container for Apache Guacamole, a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png"
+  "longDescription": "<p>A Docker Container for Apache Guacamole, a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/flcontainers/guacamole",
+  "supported_architectures": ["amd64", "arm64"]
 }

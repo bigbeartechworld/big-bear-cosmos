@@ -1,15 +1,9 @@
 {
-  "name": "pingvin-share",
+  "name": "Pingvin Share",
   "description": "Pingvin Share",
-  "longDescription": "Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pingvin.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pingvin.png"
+  "longDescription": "<p>Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/stonith404/pingvin-share",
+  "supported_architectures": ["amd64", "arm64"]
 }

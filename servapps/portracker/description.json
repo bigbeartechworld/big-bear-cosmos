@@ -1,0 +1,9 @@
+{
+  "name": "Portracker",
+  "description": "Real-time Port Monitoring Tool",
+  "longDescription": "<p>A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/mostafawahied/portracker",
+  "supported_architectures": ["amd64", "arm64"]
+}

@@ -1,15 +1,9 @@
 {
-  "name": "penpot",
+  "name": "Penpot",
   "description": "Bring Design Freedom to your Product Team",
-  "longDescription": "Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/penpot/logo.jpg",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/penpot/logo.jpg"
+  "longDescription": "<p>Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/penpotapp/frontend",
+  "supported_architectures": ["amd64", "arm64"]
 }

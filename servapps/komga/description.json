@@ -1,15 +1,9 @@
 {
-  "name": "komga",
+  "name": "Komga",
   "description": "A media server for your comics, mangas, BDs, magazines and eBooks.",
-  "longDescription": "A media server for your comics, mangas, BDs, magazines and eBooks.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/komga.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/komga.png"
+  "longDescription": "<p>A media server for your comics, mangas, BDs, magazines and eBooks.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/gotson/komga",
+  "supported_architectures": ["amd64", "arm64"]
 }

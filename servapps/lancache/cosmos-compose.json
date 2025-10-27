@@ -1,0 +1,56 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "lancachenet/monolithic:latest",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "USE_GENERIC_CACHE=true",
+        "LANCACHE_IP=10.0.39.1",
+        "DNS_BIND_IP=10.0.39.1",
+        "UPSTREAM_DNS=8.8.8.8",
+        "CACHE_ROOT=./lancache",
+        "CACHE_DISK_SIZE=2000g",
+        "CACHE_INDEX_SIZE=500m",
+        "CACHE_MAX_AGE=3650d",
+        "TZ=UTC"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/lancache/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/lancache/DATA/AppData/$AppID/cache",
+          "target": "/data/cache",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/lancache/DATA/AppData/$AppID/logs",
+          "target": "/data/logs",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

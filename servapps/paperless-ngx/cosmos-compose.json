@@ -1,0 +1,69 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/paperless-ngx/paperless-ngx:2.19.2",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "PAPERLESS_REDIS=redis://big-bear-paperless-ngx-broker:6379",
+        "PAPERLESS_DBHOST=big-bear-paperless-ngx-db",
+        "PAPERLESS_DBUSER=bigbear",
+        "PAPERLESS_DBPASS=c6e74adb-3fce-4318-b657-4bdc0858fcac",
+        "PAPERLESS_ADMIN_USER=bigbear",
+        "PAPERLESS_ADMIN_PASSWORD=c22e92a6-2a3d-4edf-a98e-4044834daea6",
+        "PAPERLESS_TIKA_ENABLED=true",
+        "PAPERLESS_TIKA_GOTENBERG_ENDPOINT=http://big-bear-paperless-ngx-gotenberg:3000",
+        "PAPERLESS_TIKA_ENDPOINT=http://big-bear-paperless-ngx-tika:9998",
+        "PAPERLESS_URL=http://[YOUR_IP]:8000",
+        "COMPOSE_PROJECT_NAME=big-bear-paperless-ngx",
+        "PAPERLESS_CSRF_TRUSTED_ORIGINS=http://[YOUR_IP]:8000"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/paperless-ngx/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/paperless-ngx/DATA/AppData/$AppID/paperless_data",
+          "target": "/usr/src/paperless/data",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/paperless-ngx/DATA/AppData/$AppID/paperless_media",
+          "target": "/usr/src/paperless/media",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/paperless-ngx/DATA/AppData/$AppID/paperless_export",
+          "target": "/usr/src/paperless/export",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/paperless-ngx/DATA/AppData/$AppID/paperless_consume",
+          "target": "/usr/src/paperless/consume",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,14 +1,9 @@
 {
-  "name": "openvpn-as",
+  "name": "OpenVPN",
   "description": "OpenVPN is an open-source commercial software that implements virtual private network (VPN).",
-  "longDescription": "OpenVPN is an open-source commercial software that implements virtual private network (VPN) techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png",
-  "supported_architectures": [
-    "amd64"
-  ],
-  "icon": "https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png"
+  "longDescription": "<p>OpenVPN is an open-source commercial software that implements virtual private network (VPN) techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/openvpn/openvpn-as",
+  "supported_architectures": ["amd64", "arm64"]
 }

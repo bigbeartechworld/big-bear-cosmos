@@ -1,0 +1,61 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "gladysassistant/gladys:v4.64.0",
+      "container_name": "{ServiceName}",
+      "restart": "always",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "NODE_ENV=production",
+        "SQLITE_FILE_PATH=/var/lib/gladysassistant/gladys-production.db",
+        "TZ=Europe/Paris",
+        "SERVER_PORT=1080"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/gladys/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/gladys/var/run/docker.sock",
+          "target": "/var/run/docker.sock",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/gladys/DATA/AppData/$AppID/data",
+          "target": "/var/lib/gladysassistant",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/gladys/dev",
+          "target": "/dev",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/gladys/run/udev",
+          "target": "/run/udev",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:1080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

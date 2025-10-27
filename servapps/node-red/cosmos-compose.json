@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "nodered/node-red:4.1.1",
+      "container_name": "{ServiceName}",
+      "restart": "always",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/node-red/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{ServiceName}-type",
+          "target": " bind # Bind type volume",
+          "type": "volume"
+        },
+        {
+          "source": "{ServiceName}-source",
+          "target": " /DATA/AppData/$AppID/data # Source path on the host",
+          "type": "volume"
+        },
+        {
+          "source": "{ServiceName}-target",
+          "target": " /data # Path inside the container",
+          "type": "volume"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:1880",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

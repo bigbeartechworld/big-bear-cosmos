@@ -1,0 +1,9 @@
+{
+  "name": "Send Visee",
+  "description": "A fork of Mozilla's Firefox Send.",
+  "longDescription": "<p>A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/registry.gitlab.com/timvisee/send",
+  "supported_architectures": ["amd64", "arm64"]
+}
