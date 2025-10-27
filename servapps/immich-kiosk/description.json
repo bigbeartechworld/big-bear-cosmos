@@ -1,0 +1,9 @@
+{
+  "name": "Immich Kiosk",
+  "description": "Immich Kiosk",
+  "longDescription": "<p>Immich Kiosk is a lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/damongolding/immich-kiosk",
+  "supported_architectures": ["amd64", "arm64"]
+}

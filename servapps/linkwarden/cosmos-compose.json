@@ -1,0 +1,46 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/linkwarden/linkwarden:v2.13.1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "DATABASE_URL=postgresql://casaos:casaospassword@big-bear-linkwarden-db:5432/big-bear-linkwarden",
+        "NEXTAUTH_SECRET=7e2d8797-dc20-422a-9a68-44b958bd33c0",
+        "NEXTAUTH_URL=http://localhost/api/v1/auth",
+        "NEXT_PUBLIC_DISABLE_REGISTRATION="
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/linkwarden/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/linkwarden/DATA/AppData/$AppID/data/linkwarden",
+          "target": "/data/data",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

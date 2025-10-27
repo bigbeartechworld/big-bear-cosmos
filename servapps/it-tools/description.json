@@ -1,15 +1,9 @@
 {
-  "name": "it-tools",
+  "name": "IT Tools",
   "description": "IT Tools",
-  "longDescription": "Collection of handy online tools for developers, with great UX as a web app.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/it-tools.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/it-tools.png"
+  "longDescription": "<p>Collection of handy online tools for developers, with great UX as a web app.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/corentinth/it-tools",
+  "supported_architectures": ["amd64", "arm64"]
 }

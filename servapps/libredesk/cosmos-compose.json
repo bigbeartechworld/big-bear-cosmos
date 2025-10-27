@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "libredesk/libredesk:v0.7.4-alpha",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "LIBREDESK_SYSTEM_USER_PASSWORD=\"c6b51a4e-ab9d-4f4f-933e-e96ed3570c1A\""
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/libredesk/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/libredesk/DATA/AppData/$AppID/uploads:/libredesk/uploads",
+          "target": "rw",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/libredesk/DATA/AppData/$AppID/config:/libredesk/config",
+          "target": "rw",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:9000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

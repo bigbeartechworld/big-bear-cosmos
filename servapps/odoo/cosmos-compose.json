@@ -1,0 +1,50 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "odoo:19",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "HOST=big-bear-odoo-db",
+        "USER=odoo",
+        "PASSWORD=a8d785b6-bc00-49cc-8675-d404093d1507"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/odoo/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/odoo/DATA/AppData/$AppID/data/etc",
+          "target": "/etc/odoo",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/odoo/DATA/AppData/$AppID/data/addons",
+          "target": "/mnt/extra-addons",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8069",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}
