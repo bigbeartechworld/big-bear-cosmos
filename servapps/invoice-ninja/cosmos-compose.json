@@ -1,0 +1,70 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "invoiceninja/invoiceninja:5.12.28",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "IN_USER_EMAIL=admin@bigbeartechworld.com",
+        "IN_PASSWORD=ad178c4b-302f-44e6-937f-8c7808f23795",
+        "APP_URL=http://big-bear-invoice-ninja-web",
+        "APP_KEY=base64:4doW1cidLuSqm7Z/BhPu/bn5HGnCKyEcSSlbVPTYYRU=",
+        "APP_CIPHER=AES-256-CBC",
+        "DB_HOST=big-bear-invoice-ninja-db",
+        "DB_PORT=3306",
+        "DB_DATABASE=ninja",
+        "DB_USERNAME=ninja",
+        "DB_PASSWORD=ninja",
+        "REQUIRE_HTTPS=false",
+        "QUEUE_CONNECTION=database",
+        "IS_DOCKER=TRUE"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/invoice-ninja/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/invoice-ninja/DATA/AppData/$AppID/data/public:/var/www/app/public",
+          "target": "rw,delegated",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/invoice-ninja/DATA/AppData/$AppID/data/storage:/var/www/app/storage",
+          "target": "rw,delegated",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/invoice-ninja/DATA/AppData/$AppID/data/php/php.ini:/usr/local/etc/php/php.ini",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/invoice-ninja/DATA/AppData/$AppID/data/php/php-cli.ini:/usr/local/etc/php/php-cli.ini",
+          "target": "ro",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

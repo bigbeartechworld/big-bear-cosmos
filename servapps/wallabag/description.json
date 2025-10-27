@@ -1,0 +1,9 @@
+{
+  "name": "Wallabag",
+  "description": "Save and classify articles. Read them later. Freely.",
+  "longDescription": "<p>Wallabag is a self-hosted application for saving web pages. Unlike other services, Wallabag is free and open source.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/wallabag/wallabag",
+  "supported_architectures": ["amd64", "arm64"]
+}

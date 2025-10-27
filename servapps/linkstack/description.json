@@ -1,15 +1,9 @@
 {
-  "name": "linkstack",
+  "name": "LinkStack",
   "description": "Your all-in-one link sharing solution",
-  "longDescription": "LinkStack is a link-in-bio tool that allows you to create a personalized and easily customizable page that houses all the important links you want to share with your audience.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkstack.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkstack.png"
+  "longDescription": "<p>LinkStack is a link-in-bio tool that allows you to create a personalized and easily customizable page that houses all the important links you want to share with your audience.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/linkstackorg/linkstack",
+  "supported_architectures": ["amd64", "arm64"]
 }

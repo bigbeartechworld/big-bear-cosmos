@@ -1,15 +1,9 @@
 {
-  "name": "kavita",
+  "name": "Kavita",
   "description": "Kavita",
-  "longDescription": "Kavita is a fast, feature rich, cross platform reading server",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kavita.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kavita.png"
+  "longDescription": "<p>Kavita is a fast, feature rich, cross platform reading server</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/jvmilazz0/kavita",
+  "supported_architectures": ["amd64", "arm64"]
 }

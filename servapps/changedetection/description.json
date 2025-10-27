@@ -1,15 +1,9 @@
 {
-  "name": "changedetection",
+  "name": "Change Detection",
   "description": "Website change detection.",
-  "longDescription": "The best and simplest free open source website change detection, restock monitor and notification service.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/changedetection-io.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/changedetection-io.png"
+  "longDescription": "<p>The best and simplest free open source website change detection, restock monitor and notification service.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/dgtlmoon/changedetection.io",
+  "supported_architectures": ["amd64", "arm64"]
 }

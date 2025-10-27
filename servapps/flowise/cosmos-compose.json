@@ -1,0 +1,55 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "flowiseai/flowise:3.0.8",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "PORT=8009",
+        "FLOWISE_USERNAME=bigbear",
+        "FLOWISE_PASSWORD=b0f91e4c-9d4b-4375-bc9b-9b57667ce7ab",
+        "FLOWISE_SECRETKEY_OVERWRITE=\"true\"",
+        "LANGCHAIN_ENDPOINT=\"\"",
+        "LANGCHAIN_API_KEY=\"\"",
+        "LANGCHAIN_PROJECT=\"\"",
+        "LANGCHAIN_TRACING_V2=\"\"",
+        "DISABLE_FLOWISE_TELEMETRY=\"true\"",
+        "DATABASE_PATH=/root/.flowise",
+        "APIKEY_PATH=/root/.flowise",
+        "SECRETKEY_PATH=/root/.flowise/logs",
+        "LOG_PATH=/root/.flowise"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/flowise/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/flowise/DATA/AppData/$AppID/data",
+          "target": "/root/.flowise",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8009",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

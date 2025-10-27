@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "linkstackorg/linkstack:V4",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "HTTP_SERVER_NAME=www.example.xyz",
+        "HTTPS_SERVER_NAME=www.example.xyz",
+        "SERVER_ADMIN=admin@example.xyz",
+        "TZ=Europe/Berlin",
+        "PHP_MEMORY_LIMIT=512M",
+        "UPLOAD_MAX_FILESIZE=8M"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/linkstack/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/linkstack/DATA/AppData/$AppID/data",
+          "target": "/data",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

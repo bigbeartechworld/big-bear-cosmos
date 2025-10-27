@@ -1,0 +1,58 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "jlesage/handbrake:v25.10.1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "VNC_PASSWORD=casaos"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/jlesage-handbrake/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/jlesage-handbrake/DATA/AppData/$AppID/config:/config",
+          "target": "rw",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/jlesage-handbrake/DATA/AppData/$AppID/storage:/storage",
+          "target": "ro",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/jlesage-handbrake/DATA/AppData/$AppID/watch:/watch",
+          "target": "rw",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/jlesage-handbrake/DATA/AppData/$AppID/output:/output",
+          "target": "rw",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:5800",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

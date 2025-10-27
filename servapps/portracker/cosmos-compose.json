@@ -1,0 +1,54 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "mostafawahied/portracker:1.1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "PORT=4999",
+        "DATABASE_PATH=/data/portracker.db",
+        "TRUSTED_LOCAL_EMAIL=your@email.com",
+        "CACHE_TIMEOUT_MS=30000",
+        "DISABLE_CACHE=false",
+        "INCLUDE_UDP=false",
+        "DEBUG=false"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/portracker/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/portracker/DATA/AppData/$AppID/data",
+          "target": "/data",
+          "type": "bind"
+        },
+        {
+          "source": "{DefaultDataPath}/portracker/var/run/docker.sock",
+          "target": "/var/run/docker.sock",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:4999",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

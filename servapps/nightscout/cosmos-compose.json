@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "nightscout/cgm-remote-monitor:15.0.3",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "NODE_ENV=production",
+        "TZ=Etc/UTC",
+        "INSECURE_USE_HTTP=true",
+        "MONGO_CONNECTION=mongodb://big-bear-nightscout-mongo:27017/nightscout",
+        "API_SECRET=48f875fa-0e03-416f-b9d6-19c9afc4e194",
+        "ENABLE=careportal rawbg iob",
+        "AUTH_DEFAULT_ROLES=denied"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/nightscout/icon.png"
+      },
+      "volumes": [
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:1337",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}
