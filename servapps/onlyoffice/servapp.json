@@ -1,0 +1,9 @@
+{
+  "name": "OnlyOffice",
+  "description": "Feature-rich web-based office suite with a vast range of collaborative capabilities",
+  "author": "",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/onlyoffice.png",
+  "category": "BigBearCasaOS",
+  "port": 7400,
+  "compose_file": "cosmos-compose.yml"
+}

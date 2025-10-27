@@ -1,0 +1,9 @@
+{
+  "name": "MIND",
+  "description": "A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!",
+  "author": "Casvt",
+  "icon": "https://i.imgur.com/UgjalkK.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

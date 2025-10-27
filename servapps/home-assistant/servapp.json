@@ -1,0 +1,9 @@
+{
+  "name": "Home Assistant",
+  "description": "Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
+  "author": "home-assistant",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/home-assistant.png",
+  "category": "BigBearCasaOS",
+  "port": 8123,
+  "compose_file": "cosmos-compose.yml"
+}

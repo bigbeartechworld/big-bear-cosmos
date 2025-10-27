@@ -1,0 +1,50 @@
+# Configuration for adguard home setup
+
+# Application Name
+name: big-bear-adguard-home
+# Services used in the application
+services:
+  # The `app` service for the adguard home application
+  app:
+    # Name of the container
+    container_name: adguard-home
+    # Docker image to be used
+    image: adguard/adguardhome:v0.107.68
+    # Resources for the service
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    # Volume mappings for the service
+    volumes:
+      - "adguard_home_data_work:/opt/adguardhome/work" # Map data work directory
+      - "adguard_home_data_conf:/opt/adguardhome/conf" # Map configuration directory
+    restart: unless-stopped
+    ports:
+      - 53:53/tcp # Map TCP port 53
+      - 53:53/udp # Map UDP port 53
+      - 8080:80 # Map port 80
+    # Define the networks
+    networks:
+      # Specify the adguard-home-network
+      - adguard-home-network
+# Networks used by the application
+networks:
+  # Define the network for AdGuard Home
+  adguard-home-network:
+    driver: bridge
+volumes:
+  adguard_home_data_work: {}
+  adguard_home_data_conf: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: adguard-home
+    description: AdGuard Home
+    useHost: true
+    target: http://localhost:8080
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

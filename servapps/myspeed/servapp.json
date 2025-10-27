@@ -1,0 +1,9 @@
+{
+  "name": "MySpeed",
+  "description": "MySpeed is a speed test analysis software that records your internet speed for up to 30 days.",
+  "author": "gnmyt",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/myspeed/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 5216,
+  "compose_file": "cosmos-compose.yml"
+}

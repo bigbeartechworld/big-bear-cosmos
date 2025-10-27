@@ -1,0 +1,9 @@
+{
+  "name": "joplin",
+  "description": "Note taking and to-do application with synchronisation",
+  "author": "joplin",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/joplin.png",
+  "category": "BigBearCasaOS",
+  "port": 22300,
+  "compose_file": "cosmos-compose.yml"
+}

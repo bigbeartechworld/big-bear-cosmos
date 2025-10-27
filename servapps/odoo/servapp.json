@@ -1,0 +1,9 @@
+{
+  "name": "Odoo",
+  "description": "Open-source business management software suite designed to streamline various aspects of business operations. With its modular structure, users can choose and integrate specific applications such as accounting, inventory, and sales. Odoo provides a user-friendly interface, scalability for businesses of all sizes, and is available in both community (free) and enterprise editions. Its integrated approach and customization options make it a popular choice for comprehensive ERP (Enterprise Resource Planning) solutions.",
+  "author": "odoo",
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/odoo/logo.jpg",
+  "category": "BigBearCasaOS",
+  "port": 8069,
+  "compose_file": "cosmos-compose.yml"
+}

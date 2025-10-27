@@ -1,0 +1,9 @@
+{
+  "name": "Pocket ID",
+  "description": "Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.",
+  "author": "pocket-id",
+  "icon": "https://pocket-id.org/img/logo.png",
+  "category": "BigBearCasaOS",
+  "port": 1411,
+  "compose_file": "cosmos-compose.yml"
+}

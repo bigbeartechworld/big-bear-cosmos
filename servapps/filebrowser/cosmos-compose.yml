@@ -1,0 +1,56 @@
+# Configuration for filebrowser setup
+
+# Name of the big-bear-filebrowser application
+name: big-bear-filebrowser
+# Service definitions for the big-bear-filebrowser application
+services:
+  # Service name: big-bear-filebrowser
+  # The `big-bear-filebrowser` service definition
+  big-bear-filebrowser:
+    # Name of the container
+    container_name: big-bear-filebrowser
+    # Image to be used for the container
+    image: filebrowser/filebrowser:v2.44.2-s6
+    # Container restart policy
+    restart: unless-stopped
+    # Environment variables
+    environment:
+      # User ID to run the container with
+      - PUID=0
+      # Group ID to run the container with
+      - PGID=0
+    # Volumes to be mounted to the container
+    volumes:
+      # Volume mapping for the app data from CasaOS
+      - /DATA/AppData:/srv/app-data
+      # Volume mapping for the Documents files from CasaOS
+      - /DATA/Documents:/srv/documents
+      # Volume mapping for the Downloads files from CasaOS
+      - /DATA/Downloads:/srv/downloads
+      # Volume mapping for the Gallery files from CasaOS
+      - /DATA/Gallery:/srv/gallery
+      # Volume mapping for the media files from CasaOS
+      - /DATA/media:/srv/media
+      # Volume mapping for the database files for filebrowser
+      - filebrowser_data_db:/database
+      # Volume mapping for the config files for filebrowser
+      - filebrowser_data_config:/config
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:80"
+volumes:
+  filebrowser_data_db: {}
+  filebrowser_data_config: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: filebrowser
+    description: Filebrowser
+    useHost: true
+    target: http://localhost:8080
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

@@ -1,0 +1,37 @@
+# Configuration for budibase setup
+
+# Name of the big-bear-budibase application
+name: big-bear-budibase
+# Service definitions for the big-bear-budibase application
+services:
+  # Service name: big-bear-budibase
+  # The `big-bear-budibase` service definition
+  big-bear-budibase:
+    # Name of the container
+    container_name: big-bear-budibase
+    # Image to be used for the container
+    image: budibase/budibase:3.22.3
+    # Container restart policy
+    restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local directory /DATA/AppData/$AppID/data to /data in the container
+      - budibase_data:/data
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 80 of the container to port 8080 of the host
+      - "8080:80"
+volumes:
+  budibase_data: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: budibase
+    description: Budibase
+    useHost: true
+    target: http://localhost:8080
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

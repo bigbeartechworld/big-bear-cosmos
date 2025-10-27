@@ -1,0 +1,9 @@
+{
+  "name": "Minio",
+  "description": "A distributed object storage server built for cloud applications and devops. Default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables.",
+  "author": "minio",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/minio.png",
+  "category": "BigBearCasaOS",
+  "port": 9011,
+  "compose_file": "cosmos-compose.yml"
+}

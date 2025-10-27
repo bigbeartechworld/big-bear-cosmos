@@ -1,0 +1,9 @@
+{
+  "name": "Dashy",
+  "description": "Dashy helps you organize your self-hosted services by making them accessible from a single place",
+  "author": "Lissy93",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/dashy.png",
+  "category": "BigBearCasaOS",
+  "port": 4000,
+  "compose_file": "cosmos-compose.yml"
+}

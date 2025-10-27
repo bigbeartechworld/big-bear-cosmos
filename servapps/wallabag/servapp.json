@@ -1,0 +1,9 @@
+{
+  "name": "Wallabag",
+  "description": "Wallabag is a self-hosted application for saving web pages. Unlike other services, Wallabag is free and open source.",
+  "author": "wallabag",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallabag.png",
+  "category": "BigBearCasaOS",
+  "port": 8080,
+  "compose_file": "cosmos-compose.yml"
+}

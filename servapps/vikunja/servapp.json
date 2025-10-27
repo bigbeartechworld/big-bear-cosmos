@@ -1,0 +1,9 @@
+{
+  "name": "Vikunja",
+  "description": "The open-source, self-hostable to-do app. Organize everything, on all platforms.",
+  "author": "kolaente",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/vikunja.png",
+  "category": "BigBearCasaOS",
+  "port": 8081,
+  "compose_file": "cosmos-compose.yml"
+}

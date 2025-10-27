@@ -1,0 +1,36 @@
+# Configuration for big-bear-code-server setup
+name: big-bear-code-server
+# Service definitions for the big-bear-code-server application
+services:
+  # Service name: app
+  app:
+    image: linuxserver/code-server:4.105.1 # The Docker image to be used for the service
+    container_name: code-server # Name of the container instance
+    environment:
+      - PUID=1000 # User ID under which code-server will run
+      - PGID=1000 # Group ID under which code-server will run
+      - TZ=UTC # Timezone for the container
+      - PASSWORD=my_password # Password to access code-server
+      - SUDO_PASSWORD=sudo_my_password # Password to access code-server
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - code_server_config:/config #config dir
+      - code_server_projects:/projects #project dir
+    ports:
+      - "8080:8443" # Expose code-server's port 8080 on the host's port 8080
+    restart: always # Policy to restart the container if it stops unexpectedly
+volumes:
+  code_server_config: {}
+  code_server_projects: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: code-server
+    description: Code Server
+    useHost: true
+    target: http://localhost:8080
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

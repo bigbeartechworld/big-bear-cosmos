@@ -1,0 +1,42 @@
+# Configuration for GemDigest bot setup
+
+# Name of the gem-digest-bot application
+name: big-bear-gem-digest-bot
+# Service definitions for the gem-digest-bot application
+services:
+  # Service name: big-bear-gem-digest-bot
+  # The `big-bear-gem-digest-bot` service definition
+  big-bear-gem-digest-bot:
+    # Name of the container
+    container_name: big-bear-gem-digest-bot
+    # Docker image to use
+    image: piero24/gemdigest:1.0
+    # Mount local directory to the container's /home/dev directory
+    volumes:
+      - GemDigest_extra_configs:/gem_digest_bot/extra_configs
+    # Environment variables with default values
+    environment:
+      TELEGRAM_API_KEY: TELEGRAM_API_KEY
+      GEMINI_API_KEY: GEMINI_API_KEY
+      # Add more users separating their id with ";"
+      ADMIN_USER_ID: 123;456
+    # Container restart policy
+    restart: unless-stopped
+    # Ports mapping between host and container
+    ports:
+      # Example: Mapping port 8080 of the host to port 8080 of the container (adjust as needed)
+      - "3333:8080"
+volumes:
+  GemDigest_extra_configs: {}
+
+# Cosmos-specific routes for reverse proxy
+routes:
+  - name: GemDigest
+    description: GemDigest Bot
+    useHost: true
+    target: http://localhost:3333
+    mode: SERVAPP
+    Timeout: 14400000
+    ThrottlePerMinute: 0
+    BlockCommonBots: false
+    BlockAPIAbuse: false

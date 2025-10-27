@@ -1,0 +1,9 @@
+{
+  "name": "Jellystat",
+  "description": "Jellystat is a free and open source Statistics App for Jellyfin! (This project is still in development - expect some weirdness)",
+  "author": "cyfershepard",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellystat.png",
+  "category": "BigBearCasaOS",
+  "port": 3000,
+  "compose_file": "cosmos-compose.yml"
+}

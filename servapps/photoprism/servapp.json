@@ -1,0 +1,9 @@
+{
+  "name": "Photoprism",
+  "description": "PhotoPrism® is an AI-Powered Photos App for the Decentralized Web. It makes use of the latest technologies to tag and find pictures automatically without getting in your way. You can run it at home, on a private server, or in the cloud.",
+  "author": "photoprism.app",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/photoprism.png",
+  "category": "BigBearCasaOS",
+  "port": 2342,
+  "compose_file": "cosmos-compose.yml"
+}

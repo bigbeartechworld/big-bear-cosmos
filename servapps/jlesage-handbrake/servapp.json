@@ -1,0 +1,9 @@
+{
+  "name": "Jlesage Handbrake",
+  "description": "The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.",
+  "author": "jlesage",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/handbrake.png",
+  "category": "BigBearCasaOS",
+  "port": 5800,
+  "compose_file": "cosmos-compose.yml"
+}
