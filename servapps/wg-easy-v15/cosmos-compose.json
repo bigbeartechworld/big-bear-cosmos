@@ -1,0 +1,50 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/wg-easy/wg-easy:15",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "INIT_ENABLED=true",
+        "INIT_USERNAME=bigbear",
+        "INIT_PASSWORD=changeme",
+        "INIT_HOST=[YOUR_PUBLIC_IP]",
+        "INIT_PORT=51820",
+        "INIT_DNS=1.1.1.1,8.8.8.8",
+        "INIT_IPV4_CIDR=10.8.0.0/24",
+        "INIT_IPV6_CIDR=fd42:42:42::/64"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/wg-easy-v15/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/wg-easy-v15/DATA/AppData/$AppID/data",
+          "target": "/etc/wireguard",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:51820",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

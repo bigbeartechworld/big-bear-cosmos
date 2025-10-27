@@ -1,15 +1,9 @@
 {
-  "name": "umami",
+  "name": "Umami",
   "description": "Umami is a simple, fast, privacy-focused alternative to Google Analytics.",
-  "longDescription": "Umami is a simple, fast, privacy-focused alternative to Google Analytics.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/umami.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/umami.png"
+  "longDescription": "<p>Umami is a simple, fast, privacy-focused alternative to Google Analytics.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/umami-software/umami",
+  "supported_architectures": ["amd64", "arm64"]
 }

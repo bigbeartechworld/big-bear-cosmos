@@ -1,15 +1,9 @@
 {
-  "name": "stirling-pdf",
+  "name": "Stirling-PDF",
   "description": "Stirling PDF - Local hosted web based PDF editor",
-  "longDescription": "Stirling PDF - Local hosted web based PDF editor",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/stirling-pdf/logo.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/stirling-pdf/logo.png"
+  "longDescription": "<p>Stirling PDF - Local hosted web based PDF editor</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/stirlingtools/stirling-pdf",
+  "supported_architectures": ["amd64", "arm64"]
 }

@@ -1,0 +1,9 @@
+{
+  "name": "Poste.io",
+  "description": "Free version of full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin",
+  "longDescription": "<p>Full stack mail server solution with SSL TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with easy installation and web administration.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/analogic/poste.io",
+  "supported_architectures": ["amd64", "arm64"]
+}

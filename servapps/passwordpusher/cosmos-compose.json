@@ -1,0 +1,46 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "pglombardo/pwpush:1.62.1",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": [
+        "DATABASE_URL=mysql2://pwpusher:6280144a-56af-486f-9088-ac7301399328@big-bear-pwpush-db:3306/passwordpusher_db",
+        "PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT=1",
+        "PWP__PW__EXPIRE_AFTER_VIEWS_MIN=1",
+        "PWP__PW__RETRIEVAL_STEP_DEFAULT=true"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "https://azukaar.github.io/cosmos-servapps-official/servapps/passwordpusher/icon.png"
+      },
+      "volumes": [
+        {
+          "source": "{DefaultDataPath}/passwordpusher/DATA/AppData/$AppID/storage:/opt/PasswordPusher/storage",
+          "target": "rw",
+          "type": "bind"
+        }
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:5100",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,15 +1,9 @@
 {
-  "name": "npmplus",
+  "name": "NPMPlus",
   "description": "NPMPlus",
-  "longDescription": "Docker container for managing Nginx proxy hosts with a simple, powerful interface",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/npmplus.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/npmplus.png"
+  "longDescription": "<p>Docker container for managing Nginx proxy hosts with a simple, powerful interface</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/zoeyvid/npmplus",
+  "supported_architectures": ["amd64", "arm64"]
 }

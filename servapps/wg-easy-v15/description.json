@@ -1,0 +1,9 @@
+{
+  "name": "WireGuard Easy v15",
+  "description": "WireGuard VPN server v15 (New Version)",
+  "longDescription": "<p>WireGuard Easy v15 - Complete rewrite with new features and improved UI. Access your homeserver from anywhere with this modern VPN solution. NOTE: This is v15 which has breaking changes from v14. If you're currently using v14, please backup your configuration before migrating.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/wg-easy/wg-easy",
+  "supported_architectures": ["amd64", "arm64"]
+}

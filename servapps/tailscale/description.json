@@ -1,15 +1,9 @@
 {
-  "name": "tailscale",
+  "name": "Tailscale",
   "description": "The easiest, most secure way to use WireGuard and 2FA.",
-  "longDescription": "Zero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png"
+  "longDescription": "<p>Zero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/tailscale/tailscale",
+  "supported_architectures": ["amd64", "arm64"]
 }

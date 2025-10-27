@@ -1,15 +1,9 @@
 {
   "name": "bookstack",
   "description": "BookStack",
-  "longDescription": "BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information. Default login admin@admin.com password password",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/bookstack.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/bookstack.png"
+  "longDescription": "<p>BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information. Default login admin@admin.com password password</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/linuxserver/bookstack",
+  "supported_architectures": ["amd64", "arm64"]
 }

@@ -1,15 +1,9 @@
 {
   "name": "btop",
   "description": "A monitor of resources",
-  "longDescription": "A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/aristocratos/btop/Img/icon.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/aristocratos/btop/Img/icon.png"
+  "longDescription": "<p>A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/bigbeartechworld/big-bear-btop",
+  "supported_architectures": ["amd64", "arm64"]
 }

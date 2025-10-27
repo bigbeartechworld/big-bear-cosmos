@@ -1,0 +1,9 @@
+{
+  "name": "Compose Toolbox",
+  "description": "Compose file editor & validator",
+  "longDescription": "<p>Self-hosted tool to edit, validate, and get suggestions for docker-compose.yml files.</p>",
+  "tags": ["self-hosted", "BigBearCasaOS"],
+  "repository": "",
+  "image": "https://hub.docker.com/r/ghcr.io/bluegoosemedia/composetoolbox",
+  "supported_architectures": ["amd64", "arm64"]
+}
