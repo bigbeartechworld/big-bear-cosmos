@@ -1,0 +1,49 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "OneDev",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://onedev:6610",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "onedev": {
+  "container_name": "big-bear-onedev",
+  "image": "1dev/server:13.0.9",
+  "restart": "unless-stopped",
+  "volumes": [
+    "onedev_data:/opt/onedev",
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ],
+  "environment": [
+    "hibernate_dialect=io.onedev.server.persistence.PostgreSQLDialect",
+    "hibernate_connection_driver_class=org.postgresql.Driver",
+    "hibernate_connection_url=jdbc:postgresql://big-bear-onedev-db:5432/onedev",
+    "hibernate_connection_username=bigbear",
+    "hibernate_connection_password=eea2dad6-2203-45eb-8908-e8ba4d1e7f92",
+    "initial_user=bigbear",
+    "initial_password=password",
+    "initial_email=admin@example.com",
+    "initial_server_url=http://localhost:6610"
+  ],
+  "ports": [
+    "6610:6610",
+    "6611:6611"
+  ],
+  "depends_on": [
+    "big-bear-onedev-db"
+  ],
+  "networks": [
+    "big_bear_ondedev_network"
+  ]
+}
+    }
+  }
+}

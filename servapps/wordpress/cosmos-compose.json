@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "WordPress",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://wordpress:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "wordpress": {
+  "image": "wordpress:6.8.3",
+  "ports": [
+    "8080:80"
+  ],
+  "environment": {
+    "WORDPRESS_DB_HOST": "db",
+    "WORDPRESS_DB_USER": "casaos",
+    "WORDPRESS_DB_PASSWORD": "casaos",
+    "WORDPRESS_DB_NAME": "wordpress"
+  },
+  "volumes": [
+    "wordpress_html:/var/www/html"
+  ],
+  "depends_on": [
+    "db"
+  ]
+}
+    }
+  }
+}

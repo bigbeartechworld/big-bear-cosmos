@@ -1,0 +1,35 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Glances",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://glances:61208",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "glances": {
+  "container_name": "big-bear-glances",
+  "image": "nicolargo/glances:4.3.0.8-full",
+  "ports": [
+    "61208:61208"
+  ],
+  "environment": [
+    "TZ=UTC",
+    "GLANCES_OPT=-w"
+  ],
+  "pid": "host",
+  "restart": "unless-stopped",
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock:ro"
+  ]
+}
+    }
+  }
+}
