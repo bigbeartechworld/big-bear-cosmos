@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Beszel",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://beszel:8090",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "beszel": {
+  "container_name": "big-bear-beszel",
+  "image": "henrygd/beszel:0.14.1",
+  "restart": "unless-stopped",
+  "volumes": [
+    "beszel_data:/beszel_data"
+  ],
+  "ports": [
+    "8090:8090"
+  ]
+}
+    }
+  }
+}

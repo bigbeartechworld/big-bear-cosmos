@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Uptime Kuma",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://uptime-kuma:3001",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "uptime-kuma": {
+  "image": "louislam/uptime-kuma:1",
+  "container_name": "uptime-kuma",
+  "volumes": [
+    "uptime-kuma_data:/app/data"
+  ],
+  "ports": [
+    "3001:3001"
+  ],
+  "restart": "always"
+}
+    }
+  }
+}

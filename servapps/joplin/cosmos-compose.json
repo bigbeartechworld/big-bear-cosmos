@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "joplin",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://joplin:22300",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "joplin": {
+  "container_name": "big-bear-joplin",
+  "image": "joplin/server:3.4.3",
+  "restart": "unless-stopped",
+  "environment": [
+    "APP_PORT=22300",
+    "APP_BASE_URL=http://localhost:22300",
+    "DB_CLIENT=pg",
+    "POSTGRES_PASSWORD=27a1d42a-a15d-43dd-903c-2a73538647fe",
+    "POSTGRES_USER=bigbear",
+    "POSTGRES_DATABASE=joplin",
+    "POSTGRES_PORT=5432",
+    "POSTGRES_HOST=big-bear-joplin-db",
+    "MAX_TIME_DRIFT=0"
+  ],
+  "ports": [
+    "22300:22300"
+  ],
+  "networks": [
+    "big_bear_joplin_network"
+  ],
+  "depends_on": [
+    "big-bear-joplin-db"
+  ]
+}
+    }
+  }
+}
