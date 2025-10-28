@@ -1,0 +1,38 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Faster-whisper",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://faster-whisper:7575",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "faster-whisper": {
+  "container_name": "big-bear-faster-whisper",
+  "image": "linuxserver/faster-whisper:2.5.0",
+  "restart": "unless-stopped",
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "TZ=Etc/UTC",
+    "WHISPER_MODEL=tiny-int8",
+    "WHISPER_BEAM=1",
+    "WHISPER_LANG=en"
+  ],
+  "volumes": [
+    "faster-whisper_config:/config"
+  ],
+  "ports": [
+    "10300:10300"
+  ]
+}
+    }
+  }
+}

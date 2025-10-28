@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Dockpeek",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://dockpeek:3420",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "dockpeek": {
+  "container_name": "big-bear-dockpeek",
+  "image": "ghcr.io/dockpeek/dockpeek:v1.7.0",
+  "environment": {
+    "SECRET_KEY": "change_this_secret_key",
+    "USERNAME": "bigbear",
+    "PASSWORD": "casaos",
+    "DOCKER_HOST": "unix:///var/run/docker.sock"
+  },
+  "restart": "unless-stopped",
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ],
+  "ports": [
+    "3420:8000"
+  ]
+}
+    }
+  }
+}

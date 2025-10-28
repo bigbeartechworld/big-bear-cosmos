@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Portracker",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://portracker:4999",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "portracker": {
+  "container_name": "big-bear-portracker",
+  "image": "mostafawahied/portracker:1.1",
+  "restart": "unless-stopped",
+  "environment": [
+    "PORT=4999",
+    "DATABASE_PATH=/data/portracker.db",
+    "TRUSTED_LOCAL_EMAIL=your@email.com",
+    "CACHE_TIMEOUT_MS=30000",
+    "DISABLE_CACHE=false",
+    "INCLUDE_UDP=false",
+    "DEBUG=false"
+  ],
+  "volumes": [
+    "portracker_data:/data",
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ],
+  "ports": [
+    "4999:4999"
+  ]
+}
+    }
+  }
+}
