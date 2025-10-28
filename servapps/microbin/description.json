@@ -1,0 +1,7 @@
+{
+  "name": "Microbin",
+  "description": "Self-hosted, encrypted pastebin alternative with configurable features.",
+  "url": "",
+  "longDescription": "Self-hosted, encrypted pastebin alternative with configurable features.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}
