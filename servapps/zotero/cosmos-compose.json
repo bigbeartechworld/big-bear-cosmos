@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Zotero",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://zotero:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "zotero": {
+  "container_name": "big-bear-zotero",
+  "image": "linuxserver/zotero:7.0.20240809",
+  "restart": "unless-stopped",
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "TZ=Etc/UTC"
+  ],
+  "ports": [
+    "3000:3000",
+    "3001:3001"
+  ],
+  "security_opt": [
+    "seccomp:unconfined"
+  ],
+  "shm_size": "1gb"
+}
+    }
+  }
+}

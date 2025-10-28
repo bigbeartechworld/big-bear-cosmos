@@ -1,15 +1,7 @@
 {
-  "name": "unifi-network-application",
-  "description": "The Unifi-network-application",
+  "name": "Unifi Network Application",
+  "description": "The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
+  "url": "",
   "longDescription": "The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/unifi.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/unifi.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }

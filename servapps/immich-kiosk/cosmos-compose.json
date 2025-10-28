@@ -1,0 +1,35 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Immich Kiosk",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://immich-kiosk:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "immich-kiosk": {
+  "container_name": "big-bear-immich-kiosk",
+  "image": "ghcr.io/damongolding/immich-kiosk:0.26.1",
+  "tty": true,
+  "restart": "unless-stopped",
+  "environment": {
+    "LANG": "en_us",
+    "TZ": "UTC",
+    "KIOSK_IMMICH_API_KEY": "",
+    "KIOSK_IMMICH_URL": "",
+    "KIOSK_IMMICH_EXTERNAL_URL": ""
+  },
+  "ports": [
+    "3000:3000"
+  ]
+}
+    }
+  }
+}

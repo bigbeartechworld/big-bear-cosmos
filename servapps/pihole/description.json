@@ -1,15 +1,7 @@
 {
-  "name": "pihole",
-  "description": "A black hole for Internet advertisements",
+  "name": "Pi-hole",
+  "description": "The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.",
+  "url": "",
   "longDescription": "The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }
