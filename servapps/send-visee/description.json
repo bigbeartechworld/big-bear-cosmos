@@ -1,0 +1,7 @@
+{
+  "name": "Send Visee",
+  "description": "A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.",
+  "url": "",
+  "longDescription": "A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}
