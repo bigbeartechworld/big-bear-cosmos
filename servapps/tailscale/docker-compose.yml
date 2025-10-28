@@ -3,7 +3,7 @@ name: big-bear-tailscale
 services:
   "{ServiceName}":
     container_name: "{ServiceName}"
-    image: tailscale/tailscale:v1.82.5
+    image: tailscale/tailscale:v1.88.4
     restart: unless-stopped
     environment:
       - TS_SERVE_CONFIG=""
