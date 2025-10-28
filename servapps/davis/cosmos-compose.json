@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Davis",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://davis:9000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "davis": {
+  "container_name": "big-bear-davis",
+  "image": "ghcr.io/tchapi/davis-standalone:5.2.0",
+  "restart": "unless-stopped",
+  "environment": [
+    "APP_ENV=prod",
+    "DATABASE_DRIVER=mysql",
+    "DATABASE_URL=mysql://bigbear:0c9d2acc-d4f3-423c-8361-86f35cdd3eb2@big-bear-davis-mysql:3306/davis?serverVersion=10.6.10&charset=utf8mb4",
+    "MAILER_DSN=smtp://:@big-bear-davis-mailpit:1025",
+    "ADMIN_LOGIN=bigbear",
+    "ADMIN_PASSWORD=aa9405b8-426c-41a1-bbc6-2924d8ec7eb3",
+    "AUTH_REALM=",
+    "AUTH_METHOD=",
+    "CALDAV_ENABLED=",
+    "CARDDAV_ENABLED=",
+    "WEBDAV_ENABLED=",
+    "WEBDAV_TMP_DIR=",
+    "WEBDAV_PUBLIC_DIR=",
+    "WEBDAV_HOMES_DIR=",
+    "INVITE_FROM_ADDRESS=",
+    "APP_TIMEZONE=UTC"
+  ],
+  "ports": [
+    "9000:9000"
+  ],
+  "networks": [
+    "big-bear-davis-network"
+  ],
+  "depends_on": [
+    "big-bear-davis-mysql",
+    "big-bear-davis-mailpit"
+  ]
+}
+    }
+  }
+}

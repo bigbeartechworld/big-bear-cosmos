@@ -1,0 +1,32 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "MIND",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://mind:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "mind": {
+  "image": "mrcas/mind:v1.4.1",
+  "container_name": "mind",
+  "environment": [
+    "TZ=UTC"
+  ],
+  "volumes": [
+    "mind_db:/app/db"
+  ],
+  "ports": [
+    "8080:8080"
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ollama - NVIDIA",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ollama-nvidia:11434",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ollama-nvidia": {
+  "container_name": "big-bear-ollama-nvidia",
+  "image": "ollama/ollama:0.12.6",
+  "restart": "unless-stopped",
+  "volumes": [
+    "ollama-nvidia_.ollama:/root/.ollama"
+  ],
+  "ports": [
+    "11434:11434"
+  ],
+  "deploy": {
+    "resources": {
+      "reservations": {
+        "devices": [
+          {
+            "driver": "nvidia",
+            "count": "all",
+            "capabilities": [
+              "gpu"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+    }
+  }
+}
