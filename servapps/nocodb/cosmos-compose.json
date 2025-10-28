@@ -1,0 +1,38 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "NocoDB",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://nocodb:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "nocodb": {
+  "image": "nocodb/nocodb:0.265.1",
+  "container_name": "big-bear-nocodb",
+  "restart": "unless-stopped",
+  "environment": [
+    "DATABASE_URL=postgres://nocodb:nocodb@big-bear-nocodb-db:5432/nocodb",
+    "NC_AUTH_JWT_SECRET=899499fc-36a0-4131-b077-7bb9f051ac9b",
+    "NC_REDIS_URL=redis://default:casaos@big-bear-nocodb-redis:6379"
+  ],
+  "ports": [
+    "8080:8080"
+  ],
+  "volumes": [
+    "nocodb_data:/usr/src/app/data"
+  ],
+  "networks": [
+    "big-bear-nocodb-network"
+  ]
+}
+    }
+  }
+}
