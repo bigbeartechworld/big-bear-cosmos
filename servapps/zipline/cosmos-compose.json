@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "zipline",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://zipline:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "zipline": {
+  "container_name": "big-bear-zipline",
+  "image": "ghcr.io/diced/zipline:3.7.13",
+  "restart": "unless-stopped",
+  "volumes": [
+    "zipline_uploads:/zipline/uploads",
+    "zipline_public:/zipline/public"
+  ],
+  "environment": [
+    "CORE_RETURN_HTTPS=false",
+    "CORE_SECRET=changeme",
+    "CORE_HOST=0.0.0.0",
+    "CORE_PORT=3000",
+    "CORE_DATABASE_URL=postgres://postgres:postgrespassword@zipline-db/zipline",
+    "CORE_LOGGER=true"
+  ],
+  "ports": [
+    "3000:3000"
+  ],
+  "networks": [
+    "zipline_network"
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Piwigo",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://piwigo:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "piwigo": {
+  "container_name": "big-bear-piwigo",
+  "image": "linuxserver/piwigo:15.7.0",
+  "restart": "unless-stopped",
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "TZ=UTC"
+  ],
+  "volumes": [
+    "piwigo_config:/config",
+    "piwigo_gallery:/gallery"
+  ],
+  "ports": [
+    "8080:80"
+  ],
+  "networks": [
+    "big_bear_piwigo_network"
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "LyriOn Music Server",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://lyrionmusicserver:9000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "lyrionmusicserver": {
+  "container_name": "big-bear-lyrionmusicserver",
+  "image": "lmscommunity/lyrionmusicserver:9.1.0",
+  "restart": "unless-stopped",
+  "environment": [
+    "HTTP_PORT=9000"
+  ],
+  "volumes": [
+    "lyrionmusicserver_config:/config:rw",
+    "lyrionmusicserver_music:/music:ro",
+    "lyrionmusicserver_playlists:/playlist:rw",
+    "/etc/localtime:/etc/localtime:ro",
+    "/etc/timezone:/etc/timezone:ro"
+  ],
+  "ports": [
+    "9000:9000/tcp",
+    "9090:9090/tcp",
+    "3483:3483/tcp",
+    "3483:3483/udp"
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Music Assistant",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://music-assistant:8095",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "music-assistant": {
+  "container_name": "big-bear-music-assistant-server",
+  "image": "ghcr.io/music-assistant/server:2.6.0",
+  "restart": "unless-stopped",
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "music-assistant_data",
+      "target": "/data"
+    }
+  ],
+  "network_mode": "host",
+  "security_opt": [
+    "apparmor:unconfined"
+  ],
+  "cap_add": [
+    "SYS_ADMIN",
+    "DAC_READ_SEARCH"
+  ]
+}
+    }
+  }
+}
