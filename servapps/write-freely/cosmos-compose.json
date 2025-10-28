@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Write Freely",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://write-freely:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "write-freely": {
+  "container_name": "big-bear-write-freely",
+  "image": "nephatrine/write-freely:0.16",
+  "restart": "unless-stopped",
+  "environment": {
+    "TZ": "UTC",
+    "PUID": 1000,
+    "PGID": 1000
+  },
+  "volumes": [
+    "write-freely_data_config:/mnt/config"
+  ],
+  "ports": [
+    "70:70/tcp",
+    "8080:8080/tcp"
+  ]
+}
+    }
+  }
+}

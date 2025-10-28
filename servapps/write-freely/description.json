@@ -1,15 +1,7 @@
 {
-  "name": "write-freely",
-  "description": "Markdown-based publishing platform.",
+  "name": "Write Freely",
+  "description": "WriteFreely is a clean, minimalist publishing platform made for writers. Start a blog, share knowledge within your organization, or build a community around the shared act of writing.",
+  "url": "",
   "longDescription": "WriteFreely is a clean, minimalist publishing platform made for writers. Start a blog, share knowledge within your organization, or build a community around the shared act of writing.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/write-freely/logo.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/write-freely/logo.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }
