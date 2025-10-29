@@ -1,15 +1,7 @@
 {
-  "name": "romm",
-  "description": "RomM",
+  "name": "RomM",
+  "description": "ROM manager for organizing, enriching, and playing retro games, with support for 400+ platforms.",
+  "url": "",
   "longDescription": "ROM manager for organizing, enriching, and playing retro games, with support for 400+ platforms.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/romm.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/romm.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }

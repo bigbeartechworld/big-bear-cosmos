@@ -1,0 +1,31 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Playit Docker Web",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://playit-docker-web:8008",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "playit-docker-web": {
+  "container_name": "big-bear-playit-docker-web",
+  "image": "wisdomsky/playit-docker-web:1.1",
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "environment": [
+    "WEBUI_PORT=8008"
+  ],
+  "volumes": [
+    "playit-docker-web_config:/config"
+  ]
+}
+    }
+  }
+}

@@ -1,15 +1,7 @@
 {
-  "name": "baserow",
-  "description": "Baserow",
+  "name": "Baserow",
+  "description": "Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.",
+  "url": "",
   "longDescription": "Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/baserow.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/baserow.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }
