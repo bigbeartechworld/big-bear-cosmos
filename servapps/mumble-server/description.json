@@ -1,14 +1,7 @@
 {
-  "name": "mumble-server",
-  "description": "Mumble Server",
+  "name": "Mumble Server",
+  "description": "Mumble is a free, open source, low latency, high quality voice chat application.",
+  "url": "",
   "longDescription": "Mumble is a free, open source, low latency, high quality voice chat application.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mumble.png",
-  "supported_architectures": [
-    "amd64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mumble.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }

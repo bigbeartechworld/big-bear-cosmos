@@ -1,8 +1,0 @@
-{
-  "id": "immich-aio-alpine",
-  "version": "1.131.3-alpine",
-  "image": "ghcr.io/imagegenius/immich",
-  "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
-}
