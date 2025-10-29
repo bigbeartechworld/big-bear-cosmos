@@ -1,0 +1,35 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Dockge",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://dockge:5001",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "dockge": {
+  "container_name": "big-bear-dockge",
+  "image": "louislam/dockge:1.5.0",
+  "environment": {
+    "DOCKGE_STACKS_DIR": "/DATA/AppData/big-bear-dockge/stacks"
+  },
+  "restart": "unless-stopped",
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "dockge_data:/app/data",
+    "dockge_stacks:/DATA/AppData/big-bear-dockge/stacks"
+  ],
+  "ports": [
+    "5001:5001"
+  ]
+}
+    }
+  }
+}
