@@ -1,0 +1,29 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "AdGuard Home (HOST)",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://adguard-home-host:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "adguard-home-host": {
+  "container_name": "big-bear-adguard-home-host",
+  "image": "adguard/adguardhome:v0.107.68",
+  "volumes": [
+    "adguard-home-host_data_work:/opt/adguardhome/work",
+    "adguard-home-host_data_conf:/opt/adguardhome/conf"
+  ],
+  "restart": "unless-stopped",
+  "network_mode": "host"
+}
+    }
+  }
+}

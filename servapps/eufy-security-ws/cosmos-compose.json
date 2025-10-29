@@ -1,0 +1,34 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Eufy Security WS",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://eufy-security-ws:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "eufy-security-ws": {
+  "container_name": "big-bear-eufy-security-ws",
+  "image": "bropat/eufy-security-ws:1.9.3",
+  "environment": {
+    "USERNAME": "[EUFY_USERNAME]",
+    "PASSWORD": "[EUFY_PASSWORD]",
+    "COUNTRY": "US",
+    "LANGUAGE": "en"
+  },
+  "restart": "unless-stopped",
+  "volumes": [
+    "eufy-security-ws_data:/data"
+  ],
+  "network_mode": "host"
+}
+    }
+  }
+}

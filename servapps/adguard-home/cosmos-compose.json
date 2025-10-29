@@ -1,0 +1,43 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "AdGuard Home",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://adguard-home:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "adguard-home": {
+  "container_name": "adguard-home",
+  "image": "adguard/adguardhome:v0.107.68",
+  "deploy": {
+    "resources": {
+      "reservations": {
+        "memory": "64M"
+      }
+    }
+  },
+  "volumes": [
+    "adguard-home_data_work:/opt/adguardhome/work",
+    "adguard-home_data_conf:/opt/adguardhome/conf"
+  ],
+  "restart": "unless-stopped",
+  "ports": [
+    "53:53/tcp",
+    "53:53/udp",
+    "8080:80"
+  ],
+  "networks": [
+    "adguard-home-network"
+  ]
+}
+    }
+  }
+}
