@@ -1,15 +1,7 @@
 {
-  "name": "home-assistant",
-  "description": "Home Automation",
+  "name": "Home Assistant",
+  "description": "Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
+  "url": "",
   "longDescription": "Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }
