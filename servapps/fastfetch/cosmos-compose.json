@@ -1,0 +1,34 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Fastfetch",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://fastfetch:7681",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "fastfetch": {
+  "container_name": "big-bear-fastfetch",
+  "image": "bigbeartechworld/big-bear-fastfetch:0.0.4",
+  "restart": "unless-stopped",
+  "privileged": true,
+  "volumes": [
+    "/proc:/proc",
+    "/sys:/sys",
+    "/dev:/dev",
+    "/etc/localtime:/etc/localtime:ro"
+  ],
+  "ports": [
+    "7681:7681"
+  ]
+}
+    }
+  }
+}
