@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Pi-hole",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pihole:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pihole": {
+  "container_name": "big-bear-pihole",
+  "image": "pihole/pihole:2025.08.0",
+  "restart": "unless-stopped",
+  "environment": {
+    "TZ": "UTC",
+    "FTLCONF_webserver_api_password": "your_password"
+  },
+  "volumes": [
+    "pihole_etc:/etc/pihole/",
+    "pihole_dnsmasq.d:/etc/dnsmasq.d/"
+  ],
+  "ports": [
+    "53:53/tcp",
+    "53:53/udp",
+    "67:67/udp",
+    "8080:80/tcp",
+    "10443:443/tcp"
+  ],
+  "networks": [
+    "pihole-network"
+  ]
+}
+    }
+  }
+}
