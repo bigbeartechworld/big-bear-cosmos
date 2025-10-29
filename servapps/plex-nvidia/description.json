@@ -1,0 +1,7 @@
+{
+  "name": "Plex with NVIDIA GPU",
+  "description": "Stream Movies & TV Shows with NVIDIA GPU",
+  "url": "",
+  "longDescription": "Stream Movies & TV Shows with NVIDIA GPU",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}

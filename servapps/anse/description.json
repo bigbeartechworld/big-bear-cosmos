@@ -1,15 +1,7 @@
 {
-  "name": "anse",
-  "description": "Fully optimized UI for AI Chats.",
+  "name": "Anse",
+  "description": "Anse is a fully optimized UI for AI Chats. Supercharged experience for multiple models such as ChatGPT, DALL-E and Stable Diffusion.",
+  "url": "",
   "longDescription": "Anse is a fully optimized UI for AI Chats. Supercharged experience for multiple models such as ChatGPT, DALL-E and Stable Diffusion.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/anse/logo.jpg",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/anse/logo.jpg"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }

@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "LAN Cache",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://lancache:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "lancache": {
+  "image": "lancachenet/monolithic:latest",
+  "environment": [
+    "USE_GENERIC_CACHE=true",
+    "LANCACHE_IP=10.0.39.1",
+    "DNS_BIND_IP=10.0.39.1",
+    "UPSTREAM_DNS=8.8.8.8",
+    "CACHE_ROOT=./lancache",
+    "CACHE_DISK_SIZE=2000g",
+    "CACHE_INDEX_SIZE=500m",
+    "CACHE_MAX_AGE=3650d",
+    "TZ=UTC"
+  ],
+  "restart": "unless-stopped",
+  "ports": [
+    "8080:80",
+    "10443:443"
+  ],
+  "volumes": [
+    "lancache_cache:/data/cache",
+    "lancache_logs:/data/logs"
+  ]
+}
+    }
+  }
+}

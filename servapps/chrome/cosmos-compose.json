@@ -1,0 +1,34 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "chrome",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://chrome:6902",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "chrome": {
+  "container_name": "big-bear-chrome",
+  "image": "kasmweb/chrome:1.15.0-rolling",
+  "ports": [
+    "6902:6901"
+  ],
+  "environment": [
+    "VNC_PW=casaos",
+    "LAUNCH_URL=https://community.bigbeartechworld.com/"
+  ],
+  "shm_size": "512m",
+  "volumes": [
+    "chrome_Downloads:/home/kasm-user/Downloads"
+  ]
+}
+    }
+  }
+}
