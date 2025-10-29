@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Pingvin Share",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pingvin-share:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pingvin-share": {
+  "image": "stonith404/pingvin-share:v1.13.0",
+  "restart": "unless-stopped",
+  "ports": [
+    "3000:3000"
+  ],
+  "volumes": [
+    "/DATA/AppData/pingvin-share/data:/opt/app/backend/data",
+    "/DATA/AppData/pingvin-share/images:/opt/app/frontend/public/img"
+  ]
+}
+    }
+  }
+}

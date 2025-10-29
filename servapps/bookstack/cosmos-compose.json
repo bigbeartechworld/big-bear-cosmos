@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "bookstack",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://bookstack:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "bookstack": {
+  "container_name": "big-bear-bookstack",
+  "image": "linuxserver/bookstack:25.07.20250804",
+  "restart": "unless-stopped",
+  "volumes": [
+    "bookstack_config:/config"
+  ],
+  "environment": [
+    "APP_KEY=base64:3w/hRS2HYVFH5tJqD9AFlyurTh8mBByMKeMRyH9kEEQ=",
+    "APP_URL=http://[change to your IP]:8080",
+    "DB_HOST=big-bear-bookstack-db",
+    "DB_USERNAME=bigbear",
+    "DB_PASSWORD=a3e8949f-484c-4877-afdb-391f892f9bb6",
+    "DB_DATABASE=bookstackapp"
+  ],
+  "ports": [
+    "8080:80"
+  ],
+  "depends_on": [
+    "big-bear-bookstack-db"
+  ],
+  "networks": [
+    "big_bear_bookstack_network"
+  ]
+}
+    }
+  }
+}
