@@ -1,0 +1,29 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Dashdot",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://dashdot:3001",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "dashdot": {
+  "image": "mauricenino/dashdot:6.2.0",
+  "ports": [
+    "3001:3001"
+  ],
+  "volumes": [
+    "/DATA/AppData/$AppID:/mnt/host# Mounting the local dashdot directory to /mnt/host inside the container"
+  ],
+  "privileged": true
+}
+    }
+  }
+}

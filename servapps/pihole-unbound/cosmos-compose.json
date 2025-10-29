@@ -1,0 +1,43 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Pi-hole and Unbound",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pihole-unbound:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pihole-unbound": {
+  "container_name": "big-bear-pihole-unbound",
+  "image": "bigbeartechworld/big-bear-pihole-unbound:2025.08.0",
+  "restart": "unless-stopped",
+  "environment": {
+    "TZ": "America/Chicago",
+    "FTLCONF_webserver_api_password": "your_password",
+    "FTLCONF_dns_upstreams": "127.0.0.1#5353"
+  },
+  "volumes": [
+    "pihole-unbound_etc:/etc/pihole/",
+    "pihole-unbound_dnsmasq.d:/etc/dnsmasq.d/"
+  ],
+  "ports": [
+    "53:53/tcp",
+    "53:53/udp",
+    "67:67/udp",
+    "8080:80/tcp",
+    "10443:443/tcp"
+  ],
+  "networks": [
+    "pihole-unbound-network"
+  ]
+}
+    }
+  }
+}

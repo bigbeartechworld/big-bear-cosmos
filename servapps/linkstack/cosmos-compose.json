@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "LinkStack",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://linkstack:10443",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "linkstack": {
+  "image": "linkstackorg/linkstack:V4",
+  "container_name": "big-bear-linkstack",
+  "hostname": "big-bear-linkstack",
+  "environment": [
+    "HTTP_SERVER_NAME=www.example.xyz",
+    "HTTPS_SERVER_NAME=www.example.xyz",
+    "SERVER_ADMIN=admin@example.xyz",
+    "TZ=Europe/Berlin",
+    "PHP_MEMORY_LIMIT=512M",
+    "UPLOAD_MAX_FILESIZE=8M"
+  ],
+  "ports": [
+    "8080:80",
+    "10443:443"
+  ],
+  "restart": "unless-stopped",
+  "volumes": [
+    "linkstack_data:/data"
+  ],
+  "entrypoint": "/bin/sh",
+  "command": [
+    "-c",
+    "cp -n -r /htdocs/database/ /data/database; cp -n /htdocs/.env /data/.env; cp -n -r /htdocs/littlelink/images /data/images; cp -n -r /htdocs/themes /data/themes; cp -n -r /htdocs/img /data/img; chown -R apache:apache /data; rm -rf /htdocs/database/; rm /htdocs/.env; rm -rf /htdocs/littlelink/images; rm -rf /htdocs/themes; rm -rf /htdocs/img; sed -i 's/FORCE_HTTPS=false/FORCE_HTTPS=true/g' /data/.env; ln -s /data/database /htdocs/database; ln -s /data/.env /htdocs/.env; ln -s /data/images /htdocs/littlelink/images; ln -s /data/themes /htdocs/themes; ln -s /data/img/ /htdocs/img; cd /htdocs; php artisan migrate --force; exec /usr/local/bin/docker-entrypoint.sh server"
+  ]
+}
+    }
+  }
+}

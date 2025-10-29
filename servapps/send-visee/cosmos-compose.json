@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Send Visee",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://send-visee:1443",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "send-visee": {
+  "container_name": "big-bear-send-visee",
+  "image": "registry.gitlab.com/timvisee/send:v3.4.27",
+  "restart": "unless-stopped",
+  "environment": [
+    "NODE_ENV=production",
+    "BASE_URL=http://${APP_DOMAIN}",
+    "REDIS_HOST=big-bear-send-visee-redis",
+    "MAX_FILE_SIZE=2147483648",
+    "FILE_DIR=/uploads"
+  ],
+  "volumes": [
+    "send-visee_uploads:/uploads"
+  ],
+  "ports": [
+    "1443:1443"
+  ],
+  "networks": [
+    "big_bear_send_visee_network"
+  ]
+}
+    }
+  }
+}
