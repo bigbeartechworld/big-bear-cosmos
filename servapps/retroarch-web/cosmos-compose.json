@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "RetroArch",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://retroarch-web:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "retroarch-web": {
+  "container_name": "big-bear-retroarch-web",
+  "image": "inglebard/retroarch-web:latest",
+  "restart": "unless-stopped",
+  "environment": [
+    "ROOT_WWW_PATH=\"/var/www/html\""
+  ],
+  "ports": [
+    "8080:80"
+  ]
+}
+    }
+  }
+}

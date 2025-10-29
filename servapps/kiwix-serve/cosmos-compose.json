@@ -1,0 +1,31 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Kiwix Server",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://kiwix-serve:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "kiwix-serve": {
+  "container_name": "big-bear-kiwix-serve",
+  "image": "ghcr.io/kiwix/kiwix-serve:3.7.0-2",
+  "command": "*.zim",
+  "restart": "unless-stopped",
+  "volumes": [
+    "kiwix-serve_zim:/data"
+  ],
+  "ports": [
+    "8080:8080"
+  ]
+}
+    }
+  }
+}
