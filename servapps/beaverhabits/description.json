@@ -1,0 +1,7 @@
+{
+  "name": "Beaver Habit Tracker",
+  "description": "A self-hosted habit tracking app without Goals",
+  "url": "",
+  "longDescription": "A self-hosted habit tracking app without Goals",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}

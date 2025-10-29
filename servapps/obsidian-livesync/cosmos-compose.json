@@ -1,0 +1,35 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Obsidian Livesync",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://obsidian-livesync:5984",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "obsidian-livesync": {
+  "container_name": "obsidian-livesync",
+  "image": "couchdb:3.5.0",
+  "restart": "unless-stopped",
+  "volumes": [
+    "obsidian-livesync_data_couchdb:/opt/couchdb/data",
+    "obsidian-livesync_data_local.ini:/opt/couchdb/etc/local.ini"
+  ],
+  "environment": [
+    "COUCHDB_USER=casaos",
+    "COUCHDB_PASSWORD=casaos"
+  ],
+  "ports": [
+    "5984:5984"
+  ]
+}
+    }
+  }
+}

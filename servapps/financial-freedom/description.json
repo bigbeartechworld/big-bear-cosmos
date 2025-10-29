@@ -1,15 +1,7 @@
 {
-  "name": "financial-freedom",
-  "description": "Financial Freedom",
+  "name": "Financial Freedom",
+  "description": "Keep investors and their buyers out of your financial data. Own 100% of your data and start building financial wealth.",
+  "url": "",
   "longDescription": "Keep investors and their buyers out of your financial data. Own 100% of your data and start building financial wealth.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/financial-freedom/logo.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/financial-freedom/logo.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }
