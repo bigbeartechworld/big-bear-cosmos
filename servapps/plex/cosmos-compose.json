@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Plex",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://plex:32400",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "plex": {
+  "container_name": "big-bear-plex",
+  "image": "linuxserver/plex:1.42.2",
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "TZ=Etc/UTC",
+    "VERSION=docker",
+    "PLEX_CLAIM="
+  ],
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "volumes": [
+    "plex_config:/config",
+    "plex_tv:/tv",
+    "plex_movies:/movies"
+  ]
+}
+    }
+  }
+}
