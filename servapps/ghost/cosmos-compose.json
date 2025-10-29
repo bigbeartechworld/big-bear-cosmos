@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ghost",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ghost:2368",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ghost": {
+  "container_name": "big-bear-ghost",
+  "image": "ghost:6.5.0-alpine",
+  "restart": "on-failure",
+  "networks": [
+    "ghost-network"
+  ],
+  "environment": {
+    "database__client": "mysql",
+    "database__connection__host": "db",
+    "database__connection__user": "ghost",
+    "database__connection__password": "casaos",
+    "database__connection__database": "ghost",
+    "url": "http://localhost:2368"
+  },
+  "volumes": [
+    "ghost_content:/var/lib/ghost/content"
+  ],
+  "ports": [
+    "2368:2368"
+  ],
+  "depends_on": [
+    "db"
+  ]
+}
+    }
+  }
+}

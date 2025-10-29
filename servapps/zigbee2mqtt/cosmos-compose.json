@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Zigbee to MQTT bridge",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://zigbee2mqtt:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "zigbee2mqtt": {
+  "container_name": "big-bear-zigbee2mqtt",
+  "image": "koenkk/zigbee2mqtt:2.6.2",
+  "restart": "unless-stopped",
+  "volumes": [
+    "zigbee2mqtt_data:/app/data",
+    "/run/udev:/run/udev:ro"
+  ],
+  "ports": [
+    "8080:8080"
+  ],
+  "environment": [
+    "TZ=UTC"
+  ],
+  "devices": [
+    "/dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00:/dev/ttyACM0"
+  ]
+}
+    }
+  }
+}
