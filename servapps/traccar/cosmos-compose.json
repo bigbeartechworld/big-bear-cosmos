@@ -1,0 +1,34 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Traccar",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://traccar:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "traccar": {
+  "image": "traccar/traccar:6.10-ubuntu",
+  "container_name": "traccar",
+  "hostname": "traccar",
+  "restart": "unless-stopped",
+  "ports": [
+    "8080:8082",
+    "5000-5150:5000-5150",
+    "5000-5150:5000-5150/udp"
+  ],
+  "volumes": [
+    "traccar_logs:/opt/traccar/logs:rw",
+    "traccar_traccar.xml:/opt/traccar/conf/traccar.xml:ro"
+  ]
+}
+    }
+  }
+}
