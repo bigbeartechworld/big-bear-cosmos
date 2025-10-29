@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Tianji",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://tianji:12345",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "tianji": {
+  "container_name": "big-bear-tianji",
+  "image": "moonrailgun/tianji:1.30.4",
+  "restart": "unless-stopped",
+  "environment": {
+    "DATABASE_URL": "postgresql://tianji-user:227453b7-1286-48cc-b471-1c269495c5fc@big-bear-tianji-db:5432/tianji",
+    "JWT_SECRET": "replace-me-with-a-random-string",
+    "ALLOW_REGISTER": "false",
+    "ALLOW_OPENAPI": "true"
+  },
+  "ports": [
+    "12345:12345"
+  ],
+  "networks": [
+    "big_bear_tianji_network"
+  ],
+  "depends_on": [
+    "big-bear-tianji-db"
+  ]
+}
+    }
+  }
+}

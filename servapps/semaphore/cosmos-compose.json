@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ansible Semaphore",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://semaphore:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "semaphore": {
+  "container_name": "big-bear-semaphore",
+  "image": "semaphoreui/semaphore:v2.16.34",
+  "restart": "unless-stopped",
+  "environment": {
+    "SEMAPHORE_DB_USER": "semaphore",
+    "SEMAPHORE_DB_PASS": "semaphore",
+    "SEMAPHORE_DB_HOST": "big-bear-semaphore-db",
+    "SEMAPHORE_DB_PORT": "3306",
+    "SEMAPHORE_DB_DIALECT": "mysql",
+    "SEMAPHORE_DB": "semaphore",
+    "SEMAPHORE_ADMIN_PASSWORD": "password",
+    "SEMAPHORE_ADMIN_NAME": "admin",
+    "SEMAPHORE_ADMIN_EMAIL": "admin@example.com",
+    "SEMAPHORE_ADMIN": "admin",
+    "TZ": "UTC"
+  },
+  "volumes": [
+    "semaphore_home:/etc/semaphore",
+    "semaphore_lib:/var/lib/semaphore"
+  ],
+  "ports": [
+    "3000:3000"
+  ],
+  "networks": [
+    "big-bear-semaphore-network"
+  ]
+}
+    }
+  }
+}
