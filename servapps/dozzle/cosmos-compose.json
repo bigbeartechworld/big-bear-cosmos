@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Dozzle",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://dozzle:8888",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "dozzle": {
+  "container_name": "big-bear-dozzle",
+  "image": "amir20/dozzle:v8.14.6",
+  "restart": "unless-stopped",
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ],
+  "ports": [
+    "8888:8080"
+  ]
+}
+    }
+  }
+}
