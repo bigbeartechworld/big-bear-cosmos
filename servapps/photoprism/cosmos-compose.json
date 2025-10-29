@@ -1,0 +1,64 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Photoprism",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://photoprism:2342",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "photoprism": {
+  "container_name": "big-bear-photoprism",
+  "image": "photoprism/photoprism:240915",
+  "environment": {
+    "PHOTOPRISM_ADMIN_PASSWORD": "casaos",
+    "PHOTOPRISM_SITE_URL": "http://locahost/",
+    "PHOTOPRISM_ORIGINALS_LIMIT": "5000",
+    "PHOTOPRISM_HTTP_COMPRESSION": "gzip",
+    "PHOTOPRISM_LOG_LEVEL": "info",
+    "PHOTOPRISM_PUBLIC": "false",
+    "PHOTOPRISM_READONLY": "false",
+    "PHOTOPRISM_EXPERIMENTAL": "false",
+    "PHOTOPRISM_DISABLE_CHOWN": "false",
+    "PHOTOPRISM_DISABLE_WEBDAV": "false",
+    "PHOTOPRISM_DISABLE_SETTINGS": "false",
+    "PHOTOPRISM_DISABLE_TENSORFLOW": "false",
+    "PHOTOPRISM_DISABLE_FACES": "false",
+    "PHOTOPRISM_DISABLE_CLASSIFICATION": "false",
+    "PHOTOPRISM_DISABLE_RAW": "false",
+    "PHOTOPRISM_RAW_PRESETS": "false",
+    "PHOTOPRISM_JPEG_QUALITY": "85",
+    "PHOTOPRISM_DETECT_NSFW": "false",
+    "PHOTOPRISM_UPLOAD_NSFW": "true",
+    "PHOTOPRISM_DATABASE_DRIVER": "mysql",
+    "PHOTOPRISM_DATABASE_SERVER": "big-bear-photoprism-db:3306",
+    "PHOTOPRISM_DATABASE_NAME": "photoprism",
+    "PHOTOPRISM_DATABASE_USER": "photoprism",
+    "PHOTOPRISM_DATABASE_PASSWORD": "casaos",
+    "PHOTOPRISM_SITE_CAPTION": "AI-Powered Photos App"
+  },
+  "restart": "unless-stopped",
+  "volumes": [
+    "photoprism_originals:/photoprism/originals",
+    "photoprism_storage:/photoprism/storage"
+  ],
+  "ports": [
+    "2342:2342"
+  ],
+  "networks": [
+    "photoprism-network"
+  ],
+  "depends_on": [
+    "photoprism-db"
+  ]
+}
+    }
+  }
+}
