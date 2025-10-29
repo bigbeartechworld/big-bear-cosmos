@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Wishlist",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://wishlist:3280",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "wishlist": {
+  "container_name": "big-bear-wishlist",
+  "image": "ghcr.io/cmintey/wishlist:v0.51.1",
+  "restart": "unless-stopped",
+  "environment": {
+    "ORIGIN": "",
+    "TOKEN_TIME": "72",
+    "DEFAULT_CURRENCY": "USD",
+    "LOG_LEVEL": "info"
+  },
+  "volumes": [
+    "wishlist_uploads:/usr/src/app/uploads",
+    "wishlist_data:/usr/src/app/data"
+  ],
+  "ports": [
+    "3280:3280"
+  ]
+}
+    }
+  }
+}
