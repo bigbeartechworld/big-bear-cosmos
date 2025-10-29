@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Home Assistant",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://home-assistant:8123",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "home-assistant": {
+  "container_name": "big-bear-home-assistant",
+  "image": "ghcr.io/home-assistant/home-assistant:2025.10.4",
+  "restart": "unless-stopped",
+  "volumes": [
+    "home-assistant_config:/config",
+    "/etc/localtime:/etc/localtime:ro",
+    "/run/dbus:/run/dbus:ro"
+  ],
+  "network_mode": "host"
+}
+    }
+  }
+}

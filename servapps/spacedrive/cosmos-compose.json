@@ -1,0 +1,33 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Spacedrive",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://spacedrive:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "spacedrive": {
+  "container_name": "big-bear-spacedrive",
+  "image": "ghcr.io/spacedriveapp/spacedrive/server:0.4.2",
+  "restart": "unless-stopped",
+  "environment": [
+    "SD_AUTH=bigbear:casaos"
+  ],
+  "volumes": [
+    "spacedrive_data_spacedrive:/var/spacedrive"
+  ],
+  "ports": [
+    "8080:8080"
+  ]
+}
+    }
+  }
+}

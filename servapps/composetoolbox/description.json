@@ -1,0 +1,7 @@
+{
+  "name": "Compose Toolbox",
+  "description": "Self-hosted tool to edit, validate, and get suggestions for docker-compose.yml files.",
+  "url": "",
+  "longDescription": "Self-hosted tool to edit, validate, and get suggestions for docker-compose.yml files.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}

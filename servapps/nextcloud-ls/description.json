@@ -1,15 +1,7 @@
 {
-  "name": "nextcloud-ls",
-  "description": "LinuxServer - The productivity platform that keeps you in control",
+  "name": "Nextcloud LS",
+  "description": "Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.",
+  "url": "",
   "longDescription": "Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }
