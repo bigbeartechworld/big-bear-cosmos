@@ -1,0 +1,57 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "OTEL LGTM",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://otel-lgtm:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "otel-lgtm": {
+  "container_name": "big-bear-otel-lgtm",
+  "image": "grafana/otel-lgtm:0.11.12",
+  "restart": "unless-stopped",
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "otel-lgtm_data",
+      "target": "/data",
+      "bind": {
+        "create_host_path": true
+      }
+    }
+  ],
+  "ports": [
+    {
+      "mode": "ingress",
+      "target": 3000,
+      "published": "3000",
+      "protocol": "tcp"
+    },
+    {
+      "mode": "ingress",
+      "target": 4317,
+      "published": "4317",
+      "protocol": "tcp"
+    },
+    {
+      "mode": "ingress",
+      "target": 4318,
+      "published": "4318",
+      "protocol": "tcp"
+    }
+  ],
+  "networks": [
+    "big-bear-otel-lgtm"
+  ]
+}
+    }
+  }
+}

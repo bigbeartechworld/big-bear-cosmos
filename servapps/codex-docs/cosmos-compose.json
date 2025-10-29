@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "CodeX Docs",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://codex-docs:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "codex-docs": {
+  "image": "ghcr.io/codex-team/codex.docs:v2.2",
+  "ports": [
+    "3000:3000"
+  ],
+  "volumes": [
+    "codex-docs_uploads:/usr/src/app/uploads",
+    "codex-docs_db:/usr/src/app/db",
+    "codex-docs_codex-docs-config.local.yaml:/usr/src/app/docs-config.yaml"
+  ]
+}
+    }
+  }
+}
