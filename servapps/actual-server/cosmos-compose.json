@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Actual Budget",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://actual-server:5006",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "actual-server": {
+  "image": "actualbudget/actual-server:25.10.0",
+  "container_name": "actual-server",
+  "volumes": [
+    "/DATA/AppData/$AppID:/data"
+  ],
+  "ports": [
+    "5006:5006"
+  ],
+  "restart": "unless-stopped"
+}
+    }
+  }
+}

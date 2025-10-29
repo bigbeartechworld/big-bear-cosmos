@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Homepage",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://Homepage:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "Homepage": {
+  "image": "ghcr.io/gethomepage/homepage:v1.5.0",
+  "container_name": "homepage",
+  "ports": [
+    "3000:3000"
+  ],
+  "volumes": [
+    "Homepage_config:/app/config",
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ]
+}
+    }
+  }
+}
