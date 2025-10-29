@@ -1,0 +1,69 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Pocket ID",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pocketid:1411",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pocketid": {
+  "container_name": "big-bear-pocketid",
+  "image": "ghcr.io/pocket-id/pocket-id:v1.14",
+  "restart": "unless-stopped",
+  "cpu_shares": 90,
+  "command": [],
+  "deploy": {
+    "resources": {
+      "limits": {
+        "memory": "2048M"
+      }
+    }
+  },
+  "environment": [
+    "APP_URL=http://localhost:1411",
+    "TRUST_PROXY=false",
+    "MAXMIND_LICENSE_KEY=",
+    "PUID=1000",
+    "PGID=1000"
+  ],
+  "hostname": "big-bear-pocketid",
+  "labels": {
+    "icon": "https://pocket-id.org/img/logo.png"
+  },
+  "ports": [
+    {
+      "target": 1411,
+      "published": "1411",
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "pocketid_data",
+      "target": "/app/data"
+    }
+  ],
+  "devices": [],
+  "cap_add": [],
+  "network_mode": "bridge",
+  "privileged": false,
+  "healthcheck": {
+    "test": "curl -f http://localhost:1411/healthz",
+    "interval": "1m30s",
+    "timeout": "5s",
+    "retries": 2,
+    "start_period": "10s"
+  }
+}
+    }
+  }
+}

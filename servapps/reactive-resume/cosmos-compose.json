@@ -1,0 +1,56 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Reactive Resume",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://reactive-resume:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "reactive-resume": {
+  "container_name": "big-bear-reactive-resume",
+  "image": "amruthpillai/reactive-resume:v4.5.2",
+  "restart": "unless-stopped",
+  "ports": [
+    "3000:3000"
+  ],
+  "depends_on": [
+    "postgres",
+    "minio",
+    "redis",
+    "chrome"
+  ],
+  "networks": [
+    "reactive-resume-network"
+  ],
+  "environment": {
+    "PORT": "3000",
+    "NODE_ENV": "production",
+    "PUBLIC_URL": "http://[CASAOS_IP]:3000",
+    "STORAGE_URL": "http://[CASAOS_IP]:9000/default",
+    "CHROME_TOKEN": "chrome_token",
+    "CHROME_URL": "ws://chrome:3000",
+    "DATABASE_URL": "postgresql://postgres:postgres@postgres:5432/postgres",
+    "ACCESS_TOKEN_SECRET": "access_token_secret",
+    "REFRESH_TOKEN_SECRET": "refresh_token_secret",
+    "MAIL_FROM": "noreply@localhost",
+    "STORAGE_ENDPOINT": "[CASAOS_IP]",
+    "STORAGE_PORT": "9000",
+    "STORAGE_REGION": "us-east-1",
+    "STORAGE_BUCKET": "default",
+    "STORAGE_ACCESS_KEY": "minioadmin",
+    "STORAGE_SECRET_KEY": "minioadmin",
+    "STORAGE_USE_SSL": "false",
+    "REDIS_URL": "redis://default:password@redis:6379"
+  }
+}
+    }
+  }
+}
