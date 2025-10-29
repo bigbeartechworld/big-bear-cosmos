@@ -1,15 +1,7 @@
 {
-  "name": "obsidian-livesync",
+  "name": "Obsidian Livesync",
   "description": "Self-hosted database for synchronizing Obsidian vaults.",
+  "url": "",
   "longDescription": "Self-hosted database for synchronizing Obsidian vaults.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/obsidian.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/obsidian.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }

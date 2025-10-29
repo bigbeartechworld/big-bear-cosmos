@@ -1,0 +1,7 @@
+{
+  "name": "Portracker",
+  "description": "A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.",
+  "url": "",
+  "longDescription": "A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}
