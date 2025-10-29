@@ -1,0 +1,35 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Jlesage Handbrake",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://jlesage-handbrake:5800",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "jlesage-handbrake": {
+  "container_name": "big-bear-jlesage-handbrake",
+  "image": "jlesage/handbrake:v25.10.1",
+  "ports": [
+    "5800:5800"
+  ],
+  "environment": [
+    "VNC_PASSWORD=casaos"
+  ],
+  "volumes": [
+    "jlesage-handbrake_config:/config:rw",
+    "jlesage-handbrake_storage:/storage:ro",
+    "jlesage-handbrake_watch:/watch:rw",
+    "jlesage-handbrake_output:/output:rw"
+  ]
+}
+    }
+  }
+}
