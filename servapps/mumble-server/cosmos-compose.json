@@ -1,0 +1,29 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Mumble Server",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://mumble-server:64738",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "mumble-server": {
+  "image": "mumblevoip/mumble-server:v1.4.230-6",
+  "container_name": "mumble-server",
+  "hostname": "mumble-server",
+  "restart": "on-failure",
+  "ports": [
+    "64738:64738",
+    "64738:64738/udp"
+  ]
+}
+    }
+  }
+}

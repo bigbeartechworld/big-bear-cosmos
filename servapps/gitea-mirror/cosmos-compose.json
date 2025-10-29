@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Gitea Mirror",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://gitea-mirror:4321",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "gitea-mirror": {
+  "container_name": "big-bear-gitea-mirror",
+  "image": "ghcr.io/raylabshq/gitea-mirror:v3.8.10",
+  "restart": "unless-stopped",
+  "ports": [
+    "4321:4321"
+  ],
+  "volumes": [
+    "gitea-mirror_data:/app/data"
+  ],
+  "environment": [
+    "NODE_ENV=production",
+    "DATABASE_URL=file:data/gitea-mirror.db",
+    "HOST=0.0.0.0",
+    "PORT=4321",
+    "BETTER_AUTH_URL=http://0.0.0.0:4321",
+    "BETTER_AUTH_SECRET=your-secret-key-change-this-in-production"
+  ],
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "wget",
+      "--no-verbose",
+      "--tries=3",
+      "--spider",
+      "http://localhost:4321/api/health"
+    ],
+    "interval": "30s",
+    "timeout": "10s",
+    "retries": 5,
+    "start_period": "30s"
+  }
+}
+    }
+  }
+}

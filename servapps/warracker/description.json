@@ -1,0 +1,7 @@
+{
+  "name": "Warracker",
+  "description": "A self-hosted warranty tracker",
+  "url": "",
+  "longDescription": "A self-hosted warranty tracker",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}

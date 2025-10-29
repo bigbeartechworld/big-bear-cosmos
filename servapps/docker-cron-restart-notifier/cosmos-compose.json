@@ -1,0 +1,21 @@
+{
+  "cosmos-installer": {
+    
+    "services": {
+      "docker-cron-restart-notifier": {
+  "container_name": "big-bear-docker-cron-restart-notifier",
+  "image": "deduard/tools:restart-notifier-latest",
+  "restart": "unless-stopped",
+  "environment": {
+    "DISCORD_WEBHOOK_URL": "",
+    "RESTART_CONTAINERS": "app_1,app_2",
+    "RUN_ON_STARTUP": "false",
+    "CRON_SCHEDULE": "0 4 * * FRI"
+  },
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ]
+}
+    }
+  }
+}
