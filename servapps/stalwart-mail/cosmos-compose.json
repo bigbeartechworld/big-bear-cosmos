@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Stalwart Mail",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://stalwart-mail:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "stalwart-mail": {
+  "container_name": "big-bear-stalwart-mail",
+  "image": "stalwartlabs/stalwart:v0.14.0",
+  "restart": "unless-stopped",
+  "volumes": [
+    "stalwart-mail_data:/opt/stalwart"
+  ],
+  "ports": [
+    "8080:8080",
+    "25:25/tcp",
+    "143:143/tcp",
+    "465:465/tcp",
+    "587:587/tcp",
+    "993:993/tcp",
+    "4190:4190/tcp"
+  ]
+}
+    }
+  }
+}

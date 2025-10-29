@@ -1,0 +1,56 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Plant-it",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://plant-it:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "plant-it": {
+  "container_name": "big-bear-plant-it",
+  "image": "msdeluise/plant-it-server:0.10.0",
+  "restart": "unless-stopped",
+  "environment": [
+    "MYSQL_HOST=big-bear-plant-it-db",
+    "MYSQL_PORT=3306",
+    "MYSQL_USERNAME=root",
+    "MYSQL_PSW=9c75c563-b549-40e6-a0d2-360cf9a962ea",
+    "MYSQL_DATABASE=plantit",
+    "MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea",
+    "JWT_SECRET=putTheSecretHere",
+    "JWT_EXP=1",
+    "USERS_LIMIT=-1",
+    "UPLOAD_DIR=/upload-dir",
+    "API_PORT=8080",
+    "TREFLE_KEY=",
+    "LOG_LEVEL=DEBUG",
+    "ALLOWED_ORIGINS=*",
+    "CACHE_TTL=86400",
+    "CACHE_HOST=big-bear-plant-it-cache",
+    "CACHE_PORT=6379",
+    "SSL_ENABLED=false",
+    "CERTIFICATE_PATH=/certificates/"
+  ],
+  "volumes": [
+    "plant-it_upload-dir:/upload-dir",
+    "plant-it_certificates:/certificates"
+  ],
+  "ports": [
+    "8080:8080",
+    "3000:3000"
+  ],
+  "networks": [
+    "big_bear_plant_it_network"
+  ]
+}
+    }
+  }
+}

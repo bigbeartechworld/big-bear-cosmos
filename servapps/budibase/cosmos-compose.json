@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Budibase",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://budibase:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "budibase": {
+  "container_name": "big-bear-budibase",
+  "image": "budibase/budibase:3.22.4",
+  "restart": "unless-stopped",
+  "volumes": [
+    "budibase_data:/data"
+  ],
+  "ports": [
+    "8080:80"
+  ]
+}
+    }
+  }
+}

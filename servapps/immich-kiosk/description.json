@@ -1,0 +1,7 @@
+{
+  "name": "Immich Kiosk",
+  "description": "Immich Kiosk is a lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.",
+  "url": "",
+  "longDescription": "Immich Kiosk is a lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}
