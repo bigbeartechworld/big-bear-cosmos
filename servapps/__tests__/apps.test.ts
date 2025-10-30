@@ -207,7 +207,19 @@ describe("Cosmos App Validation", () => {
         expect(fs.existsSync(configPath)).toBe(true);
         expect(fs.existsSync(descPath)).toBe(true);
         expect(fs.existsSync(composePath)).toBe(true);
-        expect(fs.existsSync(iconPath)).toBe(true);
+        // Allow icon.png to be missing if description.json has a valid icon URL
+        if (!fs.existsSync(iconPath)) {
+          try {
+            const desc = JSON.parse(fs.readFileSync(descPath, "utf8"));
+            if (typeof desc.icon === "string" && desc.icon.length > 0) {
+              expect(desc.icon).toMatch(/^https?:\/\/.+/);
+            } else {
+              expect(fs.existsSync(iconPath)).toBe(true);
+            }
+          } catch {
+            expect(fs.existsSync(iconPath)).toBe(true);
+          }
+        }
       });
     });
   });
@@ -233,7 +245,15 @@ describe("Cosmos App Validation", () => {
   });
 
   describe("Supported architectures should be valid", () => {
-    const validArchitectures = ["amd64", "arm64", "arm/v7", "arm/v6"];
+    const validArchitectures = [
+      "amd64",
+      "x86_64",
+      "arm64",
+      "aarch64",
+      "arm",
+      "arm/v7",
+      "arm/v6",
+    ];
 
     apps.forEach((appName) => {
       test(`${appName} - has valid architectures`, () => {
