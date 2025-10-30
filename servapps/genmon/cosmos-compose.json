@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Genmon",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://genmon:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "genmon": {
+  "container_name": "big-bear-genmon",
+  "image": "bigbeartechworld/big-bear-genmon:1.19.06",
+  "environment": [
+    "TZ=America/Chicago"
+  ],
+  "ports": [
+    "20022:22",
+    "38443:443",
+    "8000:8000"
+  ],
+  "restart": "unless-stopped",
+  "volumes": [
+    "genmon_git_genmon:/git/genmon",
+    "genmon_etc_genmon:/etc/genmon",
+    "genmon_var_log:/var/log"
+  ]
+}
+    }
+  }
+}

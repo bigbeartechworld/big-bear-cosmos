@@ -1,0 +1,41 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "cAdvisor",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://cadvisor:8085",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "cadvisor": {
+  "image": "gcr.io/cadvisor/cadvisor:v0.52.1",
+  "container_name": "monitoring_cadvisor",
+  "restart": "unless-stopped",
+  "devices": [
+    "/dev/kmsg:/dev/kmsg"
+  ],
+  "volumes": [
+    "/:/rootfs:ro",
+    "/var/run:/var/run:rw",
+    "/var/run/docker.sock:/var/run/docker.sock:rw",
+    "/sys:/sys:ro",
+    "/var/lib/docker/:/var/lib/docker:ro",
+    "/dev/disk/:/dev/disk:ro"
+  ],
+  "expose": [
+    8080
+  ],
+  "ports": [
+    "8085:8080"
+  ]
+}
+    }
+  }
+}

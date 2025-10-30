@@ -1,0 +1,33 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Portainer",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://portainer:9443",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "portainer": {
+  "container_name": "big-bear-portainer",
+  "image": "portainer/portainer-ce:2.35.0-alpine",
+  "network_mode": "bridge",
+  "ports": [
+    "8000:8000",
+    "9000:9000",
+    "9443:9443"
+  ],
+  "volumes": [
+    "portainer_data:/data",
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ]
+}
+    }
+  }
+}
