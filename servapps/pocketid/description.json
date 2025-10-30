@@ -1,0 +1,7 @@
+{
+  "name": "Pocket ID",
+  "description": "Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.",
+  "url": "",
+  "longDescription": "Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}

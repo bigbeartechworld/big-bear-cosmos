@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Peppermint",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://peppermint:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "peppermint": {
+  "container_name": "big-bear-peppermint",
+  "image": "pepperlabs/peppermint:latest",
+  "restart": "always",
+  "privileged": false,
+  "networks": [
+    "default"
+  ],
+  "ports": [
+    "3000:3000/tcp",
+    "5003:5003/tcp"
+  ],
+  "environment": [
+    "API_URL=http://local.host:5003",
+    "DB_HOST=db",
+    "DB_PASSWORD=casaos",
+    "DB_USERNAME=casaos",
+    "SECRET=peppermint4life"
+  ],
+  "depends_on": {
+    "db": {
+      "condition": "service_started",
+      "required": true
+    }
+  }
+}
+    }
+  }
+}

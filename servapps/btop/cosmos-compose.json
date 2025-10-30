@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "btop",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://btop:7681",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "btop": {
+  "container_name": "big-bear-btop",
+  "image": "bigbeartechworld/big-bear-btop:0.1.5",
+  "restart": "unless-stopped",
+  "privileged": true,
+  "environment": [
+    "GOTTY_AUTH_USER=bigbear",
+    "GOTTY_AUTH_PASS=password",
+    "GOTTY_AUTH_ENABLED=true"
+  ],
+  "volumes": [
+    "/proc:/proc",
+    "/sys:/sys",
+    "/dev:/dev",
+    "/etc/localtime:/etc/localtime:ro",
+    "btop_config:/root/.config/btop"
+  ],
+  "ports": [
+    "7681:7681"
+  ]
+}
+    }
+  }
+}
