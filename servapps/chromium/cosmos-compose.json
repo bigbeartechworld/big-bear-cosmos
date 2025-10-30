@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "chromium",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://chromium:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "chromium": {
+  "container_name": "big-bear-chromium",
+  "image": "linuxserver/chromium:version-6ae43f81",
+  "ports": [
+    "3000:3000",
+    "3001:3001"
+  ],
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "TZ=Etc/UTC",
+    "CHROME_CLI=https://community.bigbeartechworld.com/"
+  ],
+  "shm_size": "1gb",
+  "volumes": [
+    "chromium_config:/config"
+  ]
+}
+    }
+  }
+}
