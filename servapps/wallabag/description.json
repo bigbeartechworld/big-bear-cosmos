@@ -1,0 +1,7 @@
+{
+  "name": "Wallabag",
+  "description": "Wallabag is a self-hosted application for saving web pages. Unlike other services, Wallabag is free and open source.",
+  "url": "",
+  "longDescription": "Wallabag is a self-hosted application for saving web pages. Unlike other services, Wallabag is free and open source.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}
