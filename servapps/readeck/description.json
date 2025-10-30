@@ -1,0 +1,7 @@
+{
+  "name": "Readeck",
+  "description": "Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. It is a self-hosted alternative to Instapaper and Wallabag with a modern interface and powerful features for managing your bookmarks and reading list.",
+  "url": "",
+  "longDescription": "Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. It is a self-hosted alternative to Instapaper and Wallabag with a modern interface and powerful features for managing your bookmarks and reading list.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
+}

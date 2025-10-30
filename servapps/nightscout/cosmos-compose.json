@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "nightscout",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://nightscout:1337",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "nightscout": {
+  "container_name": "big-bear-nightscout",
+  "image": "nightscout/cgm-remote-monitor:15.0.3",
+  "restart": "unless-stopped",
+  "ports": [
+    "1337:1337"
+  ],
+  "environment": {
+    "NODE_ENV": "production",
+    "TZ": "Etc/UTC",
+    "INSECURE_USE_HTTP": "true",
+    "MONGO_CONNECTION": "mongodb://big-bear-nightscout-mongo:27017/nightscout",
+    "API_SECRET": "48f875fa-0e03-416f-b9d6-19c9afc4e194",
+    "ENABLE": "careportal rawbg iob",
+    "AUTH_DEFAULT_ROLES": "denied"
+  },
+  "depends_on": [
+    "big-bear-nightscout-mongo"
+  ],
+  "networks": [
+    "big-bear-nightscout-network"
+  ]
+}
+    }
+  }
+}
