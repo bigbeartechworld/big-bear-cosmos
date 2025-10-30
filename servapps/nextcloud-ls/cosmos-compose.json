@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Nextcloud LS",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://nextcloud-ls:10443",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "nextcloud-ls": {
+  "container_name": "big-bear-nextcloud-ls",
+  "image": "linuxserver/nextcloud:32.0.1",
+  "restart": "unless-stopped",
+  "ports": [
+    "10443:443"
+  ],
+  "volumes": [
+    "nextcloud-ls_config:/config",
+    "nextcloud-ls_data:/data"
+  ],
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "TZ=Etc/UTC"
+  ]
+}
+    }
+  }
+}

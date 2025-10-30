@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Crafty Controller",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://crafty:8443",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "crafty": {
+  "container_name": "big-bear-crafty",
+  "image": "registry.gitlab.com/crafty-controller/crafty-4:4.5.5",
+  "restart": "unless-stopped",
+  "environment": [
+    "TZ=UTC"
+  ],
+  "ports": [
+    "8443:8443",
+    "8123:8123",
+    "19132:19132/udp",
+    "25500-25600:25500-25600"
+  ],
+  "volumes": [
+    "crafty_data_backups:/crafty/backups",
+    "crafty_data_logs:/crafty/logs",
+    "crafty_data_servers:/crafty/servers",
+    "crafty_data_config:/crafty/app/config",
+    "crafty_data_import:/crafty/import"
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Flame",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://flame:5005",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "flame": {
+  "image": "pawelmalak/flame:multiarch2.3.1",
+  "environment": {
+    "PASSWORD": "casaos"
+  },
+  "restart": "unless-stopped",
+  "ports": [
+    {
+      "target": 5005,
+      "published": "5005",
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "flame_data",
+      "target": "/app/data"
+    },
+    {
+      "type": "bind",
+      "source": "/var/run/docker.sock",
+      "target": "/var/run/docker.sock"
+    }
+  ]
+}
+    }
+  }
+}
