@@ -1,0 +1,33 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Trilium",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://trilium:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "trilium": {
+  "container_name": "big-bear-trilium",
+  "image": "triliumnext/trilium:v0.99.3",
+  "restart": "unless-stopped",
+  "environment": [
+    "TRILIUM_DATA_DIR=/home/node/trilium-data"
+  ],
+  "volumes": [
+    "trilium_data:/home/node/trilium-data"
+  ],
+  "ports": [
+    "8080:8080"
+  ]
+}
+    }
+  }
+}

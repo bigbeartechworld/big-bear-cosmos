@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Guacamole",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://guacamole:8090",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "guacamole": {
+  "image": "guacamole/guacamole:1.6.0",
+  "restart": "always",
+  "links": [
+    "guacd"
+  ],
+  "environment": [
+    "GUACD_HOSTNAME=guacd",
+    "MYSQL_HOSTNAME=mysql",
+    "MYSQL_DATABASE=guacamole_db",
+    "MYSQL_USER=guacamole_user",
+    "MYSQL_PASSWORD=some_password"
+  ],
+  "ports": [
+    "8090:8080"
+  ]
+}
+    }
+  }
+}

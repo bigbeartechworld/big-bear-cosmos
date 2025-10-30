@@ -1,0 +1,50 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Project Management",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://project-management:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "project-management": {
+  "container_name": "big-bear-project-management",
+  "image": "eloufirhatim/helper:1.2.3",
+  "restart": "unless-stopped",
+  "environment": [
+    "DB_CONNECTION=mysql",
+    "DB_HOST=big-bear-project-management-db",
+    "DB_PORT=3306",
+    "DB_DATABASE=project_management",
+    "DB_USERNAME=project_management",
+    "DB_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a",
+    "MAIL_MAILER=smtp",
+    "MAIL_HOST=mailpit",
+    "MAIL_PORT=1025",
+    "MAIL_USERNAME=",
+    "MAIL_PASSWORD=",
+    "MAIL_ENCRYPTION=null"
+  ],
+  "volumes": [
+    "/etc/localtime:/etc/localtime"
+  ],
+  "ports": [
+    "8000:8000"
+  ],
+  "networks": [
+    "big_bear_project_management_network"
+  ],
+  "depends_on": [
+    "big-bear-project-management-db"
+  ]
+}
+    }
+  }
+}
