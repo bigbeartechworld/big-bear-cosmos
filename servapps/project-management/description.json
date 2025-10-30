@@ -1,15 +1,7 @@
 {
-  "name": "project-management",
-  "description": "Project Management",
+  "name": "Project Management",
+  "description": "An open source Project management tool based on Laravel and Filament",
+  "url": "",
   "longDescription": "An open source Project management tool based on Laravel and Filament",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/project-management/logo.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/project-management/logo.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }
