@@ -1,0 +1,245 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bigbeartechworld/big-bear-cosmos/schemas/cosmos-app-schema-v1.json",
+  "title": "Cosmos Server App Schema",
+  "description": "JSON Schema for validating Cosmos Server application structure and metadata",
+  "type": "object",
+  "definitions": {
+    "config": {
+      "type": "object",
+      "description": "Application configuration (config.json)",
+      "required": ["minVersion", "services"],
+      "properties": {
+        "minVersion": {
+          "type": "string",
+          "description": "Minimum Cosmos version required",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+.*$"
+        },
+        "services": {
+          "type": "object",
+          "description": "Service definitions",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "object",
+            "required": ["image", "container_name"],
+            "properties": {
+              "image": {
+                "type": "string",
+                "description": "Docker image with tag"
+              },
+              "container_name": {
+                "type": "string",
+                "description": "Container name"
+              },
+              "restart": {
+                "type": "string",
+                "enum": ["no", "always", "on-failure", "unless-stopped"],
+                "description": "Restart policy"
+              },
+              "ports": {
+                "type": "array",
+                "description": "Port mappings",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "volumes": {
+                "type": "array",
+                "description": "Volume mappings",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "environment": {
+                "type": "array",
+                "description": "Environment variables",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "labels": {
+                "type": "object",
+                "description": "Container labels",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "routes": {
+                "type": "array",
+                "description": "Cosmos routing configuration",
+                "items": {
+                  "type": "object",
+                  "required": ["name", "description", "useHost", "target"],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Route name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Route description"
+                    },
+                    "useHost": {
+                      "type": "boolean",
+                      "description": "Use host networking"
+                    },
+                    "target": {
+                      "type": "string",
+                      "description": "Target URL"
+                    },
+                    "mode": {
+                      "type": "string",
+                      "enum": ["SERVAPP", "PROXY", "STATIC"],
+                      "description": "Routing mode"
+                    },
+                    "routerName": {
+                      "type": "string",
+                      "description": "Router name"
+                    }
+                  }
+                }
+              },
+              "network_mode": {
+                "type": "string",
+                "description": "Network mode"
+              },
+              "hostname": {
+                "type": "string",
+                "description": "Container hostname"
+              }
+            }
+          }
+        },
+        "networks": {
+          "type": "object",
+          "description": "Network definitions",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "volumes": {
+          "type": "object",
+          "description": "Named volume definitions",
+          "additionalProperties": {
+            "type": ["object", "null"]
+          }
+        }
+      }
+    },
+    "description": {
+      "type": "object",
+      "description": "Application description metadata (description.json)",
+      "required": ["name", "longDescription", "description", "icon"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Application display name",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "description": "Short description/tagline",
+          "minLength": 1
+        },
+        "longDescription": {
+          "type": "string",
+          "description": "Detailed description with Markdown support",
+          "minLength": 1
+        },
+        "tags": {
+          "type": "array",
+          "description": "Searchable tags",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "icon": {
+          "type": "string",
+          "description": "Icon URL (https)",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "screenshots": {
+          "type": "array",
+          "description": "Screenshot URLs",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "support": {
+          "type": "string",
+          "description": "Support URL",
+          "format": "uri"
+        },
+        "website": {
+          "type": "string",
+          "description": "Application website URL",
+          "format": "uri"
+        },
+        "repository": {
+          "type": "string",
+          "description": "Source repository URL",
+          "format": "uri"
+        }
+      }
+    },
+    "dockerCompose": {
+      "type": "object",
+      "description": "Docker Compose file (docker-compose.yml) - standard Docker Compose format with version consistency",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Docker Compose version (optional, recommended to omit for modern compose)"
+        },
+        "services": {
+          "type": "object",
+          "description": "Service definitions matching config.json",
+          "minProperties": 1
+        }
+      }
+    },
+    "supportedArchitectures": {
+      "type": "array",
+      "description": "CPU architectures supported by the application",
+      "items": {
+        "type": "string",
+        "enum": ["amd64", "arm64", "arm/v7", "arm/v6", "386", "ppc64le", "s390x"]
+      },
+      "minItems": 1
+    }
+  },
+  "properties": {
+    "appId": {
+      "type": "string",
+      "description": "Application identifier (folder name)",
+      "pattern": "^[a-zA-Z0-9-]+$"
+    },
+    "config": {
+      "$ref": "#/definitions/config"
+    },
+    "description": {
+      "$ref": "#/definitions/description"
+    },
+    "dockerCompose": {
+      "$ref": "#/definitions/dockerCompose"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Path to icon.png file (optional if description.icon URL is present)"
+    },
+    "supportedArchitectures": {
+      "$ref": "#/definitions/supportedArchitectures"
+    }
+  },
+  "notes": [
+    "Each Cosmos app should be in a servapps/{appId}/ folder",
+    "Required files: config.json, description.json, docker-compose.yml",
+    "Optional file: icon.png (can be omitted if description.json contains valid icon URL)",
+    "config.json defines services and Cosmos-specific routing",
+    "description.json contains metadata for the Cosmos UI",
+    "docker-compose.yml should use the same image versions as config.json",
+    "Supported architectures should match the Docker images used"
+  ]
+}

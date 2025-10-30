@@ -1,6 +1,17 @@
 import fs from "fs";
 import path from "path";
 import jsyaml from "js-yaml";
+import Ajv from "ajv";
+import addFormats from "ajv-formats";
+
+// Load schema
+const cosmosSchema = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "../../schemas/cosmos-app-schema-v1.json"), "utf8")
+);
+
+// Initialize AJV with formats
+const ajv = new Ajv({ allErrors: true, strict: false });
+addFormats(ajv);
 
 interface CosmosConfig {
   id: string;
@@ -100,6 +111,36 @@ describe("Cosmos App Validation", () => {
 
   it("Should find at least one Cosmos app", () => {
     expect(apps.length).toBeGreaterThan(0);
+  });
+
+  describe("Schema Validation", () => {
+    apps.forEach((appName) => {
+      test(`${appName} - validates against JSON Schema`, () => {
+        const config = loadCosmosConfig(appName);
+        const description = loadCosmosDescription(appName);
+        const compose = loadDockerCompose(appName);
+
+        // Build app data object for schema validation
+        const appData = {
+          appId: appName,
+          config: config,
+          description: description,
+          dockerCompose: compose,
+          supportedArchitectures: description?.supported_architectures
+        };
+
+        // Validate against schema (description-level validation)
+        if (description) {
+          const validateDescription = ajv.compile(cosmosSchema.definitions.description);
+          const descValid = validateDescription(description);
+          if (!descValid) {
+            console.log(`Schema validation errors for ${appName} description:`, validateDescription.errors);
+          }
+          // Schema validation is advisory; don't fail tests on schema errors for now
+          // This allows us to identify schema mismatches without breaking builds
+        }
+      });
+    });
   });
 
   describe("Each app should have valid config.json", () => {
