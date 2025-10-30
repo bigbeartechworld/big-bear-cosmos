@@ -1,0 +1,33 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Homer",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://homer:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "homer": {
+  "image": "b4bz/homer:v25.10.1",
+  "container_name": "homer",
+  "volumes": [
+    "homer_assets:/www/assets"
+  ],
+  "ports": [
+    "8080:8080"
+  ],
+  "user": "1000:1000",
+  "environment": [
+    "INIT_ASSETS=1"
+  ]
+}
+    }
+  }
+}
