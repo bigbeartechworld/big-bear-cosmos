@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Pi-hole® Updatelists",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pihole-updatelists:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pihole-updatelists": {
+  "container_name": "big-bear-pihole-updatelists",
+  "image": "jacklul/pihole:2025.10.3",
+  "restart": "unless-stopped",
+  "environment": {
+    "TZ": "UTC",
+    "FTLCONF_webserver_api_password": "your_password",
+    "BLOCKLISTS_URL": "https://v.firebog.net/hosts/lists.php?type=tick",
+    "REGEX_BLACKLIST_URL": "https://raw.githubusercontent.com/mmotti/pihole-regex/master/regex.list"
+  },
+  "volumes": [
+    "pihole-updatelists_etc:/etc/pihole/",
+    "pihole-updatelists_etc_pihole-updatelists:/etc/pihole-updatelists/",
+    "pihole-updatelists_dnsmasq.d:/etc/dnsmasq.d/"
+  ],
+  "ports": [
+    "53:53/tcp",
+    "53:53/udp",
+    "67:67/udp",
+    "8080:80/tcp",
+    "10443:443/tcp"
+  ],
+  "networks": [
+    "pihole-network"
+  ],
+  "cap_add": [
+    "NET_ADMIN"
+  ]
+}
+    }
+  }
+}
