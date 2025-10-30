@@ -1,0 +1,27 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Excalidraw",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://excalidraw:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "excalidraw": {
+  "container_name": "big-bear-excalidraw",
+  "image": "excalidraw/excalidraw:latest",
+  "restart": "unless-stopped",
+  "ports": [
+    "8000:80"
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Warracker",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://warracker:8005",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "warracker": {
+  "container_name": "big-bear-warracker",
+  "image": "ghcr.io/sassanix/warracker/main:9.9.3",
+  "restart": "unless-stopped",
+  "privileged": true,
+  "environment": [
+    "DB_HOST=big-bear-warrackerdb",
+    "DB_NAME=big_bear_warracker",
+    "DB_USER=big_bear_warracker_user",
+    "DB_PASSWORD=4892f1bc-f1ea-464f-b528-1d52b2c9bb05",
+    "SMTP_HOST=smtp.email.com",
+    "SMTP_PORT=465",
+    "SMTP_USERNAME=youremail@email.com",
+    "SMTP_PASSWORD=password"
+  ],
+  "volumes": [
+    "warracker_uploads:/data/uploads"
+  ],
+  "ports": [
+    "8005:80"
+  ],
+  "networks": [
+    "big_bear_warracker_network"
+  ],
+  "depends_on": {
+    "big-bear-warrackerdb": {
+      "condition": "service_healthy"
+    }
+  }
+}
+    }
+  }
+}

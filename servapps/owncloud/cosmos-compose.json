@@ -1,0 +1,60 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "ownCloud",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://owncloud:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "owncloud": {
+  "container_name": "big-bear-owncloud",
+  "image": "owncloud/server:10.16.0",
+  "restart": "unless-stopped",
+  "environment": [
+    "OWNCLOUD_DOMAIN=http://[YOUR_CASAOS_IP]:8080",
+    "OWNCLOUD_TRUSTED_DOMAINS=[YOUR_CASAOS_IP]",
+    "OWNCLOUD_DB_TYPE=mysql",
+    "OWNCLOUD_DB_NAME=big_bear_owncloud",
+    "OWNCLOUD_DB_USERNAME=bigbear",
+    "OWNCLOUD_DB_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a",
+    "OWNCLOUD_DB_HOST=big-bear-owncloud-db",
+    "OWNCLOUD_ADMIN_USERNAME=bigbear",
+    "OWNCLOUD_ADMIN_PASSWORD=ed135299-7c80-48d4-a2a0-357a012213e5",
+    "OWNCLOUD_MYSQL_UTF8MB4=true",
+    "OWNCLOUD_REDIS_ENABLED=true",
+    "OWNCLOUD_REDIS_HOST=big-bear-owncloud-redis"
+  ],
+  "volumes": [
+    "owncloud_data:/mnt/data"
+  ],
+  "ports": [
+    "8080:8080"
+  ],
+  "networks": [
+    "big_bear_owncloud_network"
+  ],
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "/usr/bin/healthcheck"
+    ],
+    "interval": "30s",
+    "timeout": "10s",
+    "retries": 5
+  },
+  "depends_on": [
+    "big-bear-owncloud-db",
+    "big-bear-owncloud-redis"
+  ]
+}
+    }
+  }
+}

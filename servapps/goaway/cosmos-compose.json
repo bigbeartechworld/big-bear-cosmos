@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "GoAway",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://goaway:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "goaway": {
+  "container_name": "big-bear-goaway",
+  "image": "pommee/goaway:0.62.11",
+  "restart": "unless-stopped",
+  "ports": [
+    "53:53/udp",
+    "53:53/tcp",
+    "8080:8080"
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    "goaway_config:/app/config"
+  ],
+  "cap_add": [
+    "NET_BIND_SERVICE",
+    "NET_RAW"
+  ]
+}
+    }
+  }
+}
