@@ -207,31 +207,48 @@ describe("Cosmos App Validation", () => {
         const configVersion = config.version;
         const configImage = config.image;
 
+        // Normalize image names by removing registry prefixes
+        // e.g., "lscr.io/linuxserver/bookstack" -> "linuxserver/bookstack"
+        const normalizeImageName = (imageName: string): string => {
+          // Remove common registry prefixes
+          return imageName
+            .replace(/^(lscr\.io|ghcr\.io|gcr\.io|docker\.io|registry\.gitlab\.com|quay\.io)\//i, '')
+            .split(':')[0]; // Also remove any tag
+        };
+
+        const normalizedConfigImage = normalizeImageName(configImage);
+
         // Find the main service (usually the first one or one matching the app name)
         const services = Object.values(compose.services);
         let foundMatch = false;
 
         services.forEach((service) => {
-          if (service.image && service.image.includes(configImage.split(":")[0])) {
-            // Extract version from docker image tag
-            const imageVersion = service.image.split(":")[1];
+          if (service.image) {
+            const normalizedServiceImage = normalizeImageName(service.image);
             
-            if (imageVersion) {
-              // Check if versions match (allowing for minor variations like 'v' prefix)
-              const normalizedConfigVersion = configVersion.replace(/^v/, "");
-              const normalizedImageVersion = imageVersion.replace(/^v/, "");
+            // Check if the image names match (ignoring registry prefixes)
+            if (normalizedServiceImage === normalizedConfigImage) {
+              // Extract version from docker image tag
+              const imageVersion = service.image.split(":")[1];
               
-              if (normalizedImageVersion === normalizedConfigVersion || 
-                  normalizedImageVersion.includes(normalizedConfigVersion)) {
-                foundMatch = true;
+              if (imageVersion) {
+                // Check if versions match (allowing for minor variations like 'v' prefix)
+                const normalizedConfigVersion = configVersion.replace(/^v/, "");
+                const normalizedImageVersion = imageVersion.replace(/^v/, "");
+                
+                if (normalizedImageVersion === normalizedConfigVersion || 
+                    normalizedImageVersion.includes(normalizedConfigVersion)) {
+                  foundMatch = true;
+                }
               }
             }
           }
         });
 
-        // Some apps might use 'latest' or have complex versioning
-        if (!foundMatch && configVersion !== "latest") {
-          console.warn(`${appName}: Version mismatch or couldn't verify - config: ${configVersion}`);
+        // Enforce version consistency for non-'latest' versions
+        // Apps using 'latest' tag are exempt from strict version matching
+        if (configVersion !== "latest") {
+          expect(foundMatch).toBe(true);
         }
       });
     });
