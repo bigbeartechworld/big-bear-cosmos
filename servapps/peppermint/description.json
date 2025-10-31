@@ -1,14 +1,7 @@
 {
-  "name": "peppermint",
-  "description": "peppermint",
+  "name": "Peppermint",
+  "description": "Peppermint is a central hub for your help desk. A powerfully easy system for tracking, prioritising, and solving customer support tickets.",
+  "url": "",
   "longDescription": "Peppermint is a central hub for your help desk. A powerfully easy system for tracking, prioritising, and solving customer support tickets.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/peppermint/logo.png",
-  "supported_architectures": [
-    "amd64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/peppermint/logo.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }

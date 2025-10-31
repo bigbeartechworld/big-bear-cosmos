@@ -1,0 +1,46 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "n8n",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://n8n:5678",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "n8n": {
+  "container_name": "n8n",
+  "image": "n8nio/n8n:1.118.0",
+  "restart": "unless-stopped",
+  "ports": [
+    "5678:5678"
+  ],
+  "links": [
+    "db-n8n"
+  ],
+  "volumes": [
+    "n8n_.n8n:/home/node/.n8n"
+  ],
+  "environment": [
+    "DB_TYPE=postgresdb",
+    "DB_POSTGRESDB_DATABASE=n8n",
+    "DB_POSTGRESDB_HOST=db-n8n",
+    "DB_POSTGRESDB_PORT=5432",
+    "DB_POSTGRESDB_USER=bigbearcasaos",
+    "DB_POSTGRESDB_PASSWORD=bigbearcasaos"
+  ],
+  "depends_on": {
+    "db-n8n": {
+      "condition": "service_healthy"
+    }
+  }
+}
+    }
+  }
+}
