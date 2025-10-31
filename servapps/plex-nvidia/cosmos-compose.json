@@ -1,0 +1,57 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Plex with NVIDIA GPU",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://plex-nvidia:32400",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "plex-nvidia": {
+  "container_name": "big-bear-plex-nvidia",
+  "image": "linuxserver/plex:1.42.2",
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "TZ=Etc/UTC",
+    "VERSION=docker",
+    "PLEX_CLAIM=",
+    "CPU_FALLBACK=true",
+    "NVIDIA_VISIBLE_DEVICES=all"
+  ],
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "volumes": [
+    "big-bear-plex-nvidia_config:/config",
+    "big-bear-plex-nvidia_tv:/tv",
+    "big-bear-plex-nvidia_movies:/movies"
+  ],
+  "devices": [
+    "/dev/dri:/dev/dri",
+    "/dev/dvb:/dev/dvb"
+  ],
+  "deploy": {
+    "resources": {
+      "reservations": {
+        "memory": "256M",
+        "devices": [
+          {
+            "capabilities": [
+              "gpu"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+    }
+  }
+}

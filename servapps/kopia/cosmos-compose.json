@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Kopia",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://kopia:51515",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "kopia": {
+  "container_name": "big-bear-kopia",
+  "image": "ghcr.io/thespad/kopia-server:v0.17.0-spad3",
+  "restart": "unless-stopped",
+  "environment": [
+    "PUID=0",
+    "PGID=0",
+    "TZ=UTC",
+    "KOPIA_HTTPS=true",
+    "KOPIA_UI_USERNAME=casaos",
+    "KOPIA_UI_PASSWORD=casaos",
+    "KOPIA_PASSWORD=casaos",
+    "REFRESH_INTERVAL="
+  ],
+  "volumes": [
+    "big-bear-kopia_config:/config",
+    "big-bear-kopia_home:/backups/home:ro",
+    "/var/lib/docker/volumes:/backups/docker:ro",
+    "big-bear-kopia_repository:/repository",
+    "/tmp:/tmp:shared",
+    "/var/run/docker.sock:/var/run/docker.sock:ro"
+  ],
+  "ports": [
+    "51515:51515"
+  ],
+  "cap_add": [
+    "SYS_ADMIN"
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Nextcloud",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://nextcloud:7580",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "nextcloud": {
+  "container_name": "nextcloud",
+  "image": "bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.11",
+  "restart": "unless-stopped",
+  "ports": [
+    "7580:80"
+  ],
+  "volumes": [
+    "big-bear-nextcloud_html:/var/www/html"
+  ],
+  "environment": [
+    "POSTGRES_HOST=db-nextcloud",
+    "REDIS_HOST=redis-nextcloud",
+    "POSTGRES_PASSWORD=casaos",
+    "POSTGRES_USER=casaos",
+    "POSTGRES_DB=nextcloud",
+    "NEXTCLOUD_ADMIN_USER=casaos",
+    "NEXTCLOUD_ADMIN_PASSWORD=casaos",
+    "TRUSTED_PROXIES=",
+    "OVERWRITEPROTOCOL=http",
+    "PHP_MEMORY_LIMIT=1024M",
+    "PHP_UPLOAD_LIMIT=1024M"
+  ],
+  "depends_on": {
+    "db-nextcloud": {
+      "condition": "service_healthy"
+    },
+    "redis-nextcloud": {
+      "condition": "service_healthy"
+    }
+  },
+  "networks": [
+    "nextcloud_network"
+  ]
+}
+    }
+  }
+}

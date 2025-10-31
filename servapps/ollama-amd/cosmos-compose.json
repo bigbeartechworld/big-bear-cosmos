@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ollama - AMD",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ollama-amd:11434",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ollama-amd": {
+  "container_name": "big-bear-ollama-amd",
+  "image": "ollama/ollama:0.12.6-rocm",
+  "restart": "unless-stopped",
+  "environment": [
+    "PORT=11434"
+  ],
+  "volumes": [
+    "big-bear-ollama-amd_.ollama:/root/.ollama"
+  ],
+  "ports": [
+    "11434:11434"
+  ],
+  "devices": [
+    "/dev/kfd",
+    "/dev/dri"
+  ]
+}
+    }
+  }
+}

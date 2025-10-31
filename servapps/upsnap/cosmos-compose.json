@@ -1,0 +1,28 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Upsnap",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://upsnap:8090",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "upsnap": {
+  "container_name": "big-bear-upsnap",
+  "image": "ghcr.io/seriousm4x/upsnap:5.2.3",
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "volumes": [
+    "big-bear-upsnap_pb_data:/app/pb_data"
+  ]
+}
+    }
+  }
+}

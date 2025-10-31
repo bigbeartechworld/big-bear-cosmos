@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Gladys Assistant",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://gladys:1080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "gladys": {
+  "image": "gladysassistant/gladys:v4.64.0",
+  "restart": "always",
+  "privileged": true,
+  "network_mode": "host",
+  "container_name": "gladys",
+  "cgroup": "host",
+  "environment": {
+    "NODE_ENV": "production",
+    "SQLITE_FILE_PATH": "/var/lib/gladysassistant/gladys-production.db",
+    "TZ": "Europe/Paris",
+    "SERVER_PORT": "1080"
+  },
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "big-bear-gladys_data:/var/lib/gladysassistant",
+    "/dev:/dev",
+    "/run/udev:/run/udev"
+  ]
+}
+    }
+  }
+}

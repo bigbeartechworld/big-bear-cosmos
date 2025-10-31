@@ -1,0 +1,32 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "HomeBridge",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://homebridge:8581",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "homebridge": {
+  "container_name": "big-bear-homebridge",
+  "image": "homebridge/homebridge:2024-05-02",
+  "restart": "unless-stopped",
+  "environment": [
+    "TZ=UTC"
+  ],
+  "privileged": true,
+  "network_mode": "host",
+  "volumes": [
+    "big-bear-homebridge_data:/homebridge"
+  ]
+}
+    }
+  }
+}

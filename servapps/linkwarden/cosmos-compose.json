@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Linkwarden",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://linkwarden:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "linkwarden": {
+  "container_name": "big-bear-linkwarden",
+  "image": "ghcr.io/linkwarden/linkwarden:v2.13.1",
+  "restart": "unless-stopped",
+  "volumes": [
+    "big-bear-linkwarden_data_linkwarden:/data/data"
+  ],
+  "environment": [
+    "DATABASE_URL=postgresql://casaos:casaospassword@big-bear-linkwarden-db:5432/big-bear-linkwarden",
+    "NEXTAUTH_SECRET=7e2d8797-dc20-422a-9a68-44b958bd33c0",
+    "NEXTAUTH_URL=http://localhost/api/v1/auth",
+    "NEXT_PUBLIC_DISABLE_REGISTRATION="
+  ],
+  "ports": [
+    "3000:3000"
+  ],
+  "networks": [
+    "linkwarden_network"
+  ]
+}
+    }
+  }
+}

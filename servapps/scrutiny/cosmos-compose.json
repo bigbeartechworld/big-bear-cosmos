@@ -1,0 +1,53 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Scrutiny",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://scrutiny:38080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "scrutiny": {
+  "container_name": "big-bear-scrutiny",
+  "image": "ghcr.io/analogj/scrutiny:master-omnibus",
+  "restart": "unless-stopped",
+  "volumes": [
+    "big-bear-scrutiny_config:/opt/scrutiny/config",
+    "big-bear-scrutiny_influxdb:/opt/scrutiny/influxdb",
+    "/run/udev:/run/udev:ro"
+  ],
+  "ports": [
+    "38080:8080",
+    "38086:8086"
+  ],
+  "cap_add": [
+    "SYS_RAWIO"
+  ],
+  "devices": [
+    "/dev/sda:/dev/sda",
+    "/dev/nvme0:/dev/nvme0"
+  ],
+  "privileged": true,
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "curl",
+      "-f",
+      "http://localhost:8080/api/health"
+    ],
+    "interval": "1m30s",
+    "timeout": "10s",
+    "retries": 3,
+    "start_period": "40s"
+  }
+}
+    }
+  }
+}

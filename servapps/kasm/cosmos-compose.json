@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Kasm",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://kasm:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "kasm": {
+  "container_name": "big-bear-kasm",
+  "image": "linuxserver/kasm:1.120.20221218",
+  "restart": "unless-stopped",
+  "privileged": true,
+  "network_mode": "bridge",
+  "volumes": [
+    "big-bear-kasm_opt:/opt",
+    "big-bear-kasm_profiles:/profiles",
+    "/dev/input:/dev/input",
+    "/run/udev/data:/run/udev/data"
+  ],
+  "ports": [
+    "3000:3000",
+    "443:443"
+  ],
+  "environment": [
+    "KASM_PORT=443"
+  ]
+}
+    }
+  }
+}

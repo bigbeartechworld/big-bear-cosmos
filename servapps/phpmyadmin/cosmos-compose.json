@@ -1,0 +1,32 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "phpMyAdmin",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://phpmyadmin:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "phpmyadmin": {
+  "image": "phpmyadmin/phpmyadmin:5.2.3",
+  "container_name": "big-bear-phpmyadmin",
+  "environment": {
+    "PMA_HOST": "[YOUR-CASAOS-IP]",
+    "PMA_PORT": "3306",
+    "PMA_USER": "bigbear",
+    "PMA_PASSWORD": "password"
+  },
+  "ports": [
+    "8080:80"
+  ]
+}
+    }
+  }
+}

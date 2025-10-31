@@ -1,0 +1,35 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "GemDigest Bot",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://GemDigest:3333",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "GemDigest": {
+  "container_name": "big-bear-gem-digest-bot",
+  "image": "piero24/gemdigest:1.0",
+  "volumes": [
+    "big-bear-GemDigest_extra_configs:/gem_digest_bot/extra_configs"
+  ],
+  "environment": {
+    "TELEGRAM_API_KEY": "TELEGRAM_API_KEY",
+    "GEMINI_API_KEY": "GEMINI_API_KEY",
+    "ADMIN_USER_ID": "123;456"
+  },
+  "restart": "unless-stopped",
+  "ports": [
+    "3333:8080"
+  ]
+}
+    }
+  }
+}

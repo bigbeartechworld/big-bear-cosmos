@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Filebrowser",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://filebrowser:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "filebrowser": {
+  "container_name": "big-bear-filebrowser",
+  "image": "filebrowser/filebrowser:v2.44.2-s6",
+  "restart": "unless-stopped",
+  "environment": [
+    "PUID=0",
+    "PGID=0"
+  ],
+  "volumes": [
+    "/DATA/AppData:/srv/app-data",
+    "/DATA/Documents:/srv/documents",
+    "/DATA/Downloads:/srv/downloads",
+    "/DATA/Gallery:/srv/gallery",
+    "/DATA/media:/srv/media",
+    "big-bear-filebrowser_data_db:/database",
+    "big-bear-filebrowser_data_config:/config"
+  ],
+  "ports": [
+    "8080:80"
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Viseron",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://viseron:8888",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "viseron": {
+  "container_name": "big-bear-viseron",
+  "image": "roflcoopter/viseron:3.3.1",
+  "restart": "unless-stopped",
+  "shm_size": "1024mb",
+  "volumes": [
+    "big-bear-viseron_segments:/segments",
+    "big-bear-viseron_snapshots:/snapshots",
+    "big-bear-viseron_thumbnails:/thumbnails",
+    "big-bear-viseron_event_clips:/event_clips",
+    "big-bear-viseron_config:/config",
+    "/etc/localtime:/etc/localtime:ro"
+  ],
+  "ports": [
+    "8888:8888"
+  ],
+  "environment": [
+    "PUID=1000",
+    "PGID=1000"
+  ]
+}
+    }
+  }
+}

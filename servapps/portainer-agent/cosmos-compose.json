@@ -1,0 +1,31 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Portainer Agent",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://portainer-agent:9001",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "portainer-agent": {
+  "container_name": "portainer-agent",
+  "image": "portainer/agent:2.35.0",
+  "network_mode": "bridge",
+  "ports": [
+    "9001:9001"
+  ],
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "/var/lib/docker/volumes:/var/lib/docker/volumes"
+  ]
+}
+    }
+  }
+}

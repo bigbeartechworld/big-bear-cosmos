@@ -1,0 +1,34 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "2FAuth",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://2fauth:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "2fauth": {
+  "container_name": "big-bear-2fauth",
+  "image": "2fauth/2fauth:5.6.0",
+  "restart": "unless-stopped",
+  "ports": [
+    "8000:8000"
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    "big-bear-2fauth_data:/2fauth"
+  ],
+  "environment": [
+    "APP_URL=http://[CHANGE_TO_LAN_IP]:8000"
+  ]
+}
+    }
+  }
+}

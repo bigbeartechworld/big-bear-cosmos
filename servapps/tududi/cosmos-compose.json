@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Tududi",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://tududi:9292",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "tududi": {
+  "container_name": "big-bear-tududi",
+  "image": "chrisvel/tududi:0.84",
+  "restart": "unless-stopped",
+  "environment": [
+    "TUDUDI_USER_EMAIL=admin@example.com",
+    "TUDUDI_USER_PASSWORD=2dd25e05-65f4-47d7-a9a6-1a3293c02461",
+    "TUDUDI_SESSION_SECRET=3337c138d17ac7acefa412e5db0d7ef6540905b198cc28c5bf0d11e48807a71bdfe48d82ed0a0a6eb667c937cbdd1db3e1e6073b3148bff37f73cc6398a39671",
+    "TUDUDI_INTERNAL_SSL_ENABLED=false"
+  ],
+  "volumes": [
+    "big-bear-tududi_tududi_db:/usr/src/app/tududi_db"
+  ],
+  "ports": [
+    "9292:9292"
+  ]
+}
+    }
+  }
+}
