@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Monica",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://monica:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "monica": {
+  "container_name": "big-bear-monica",
+  "image": "monica:4.1.2",
+  "restart": "unless-stopped",
+  "environment": [
+    "APP_KEY=80356f7073c4f7834187b25a9d32cd2a",
+    "DB_HOST=big-bear-monica-db",
+    "DB_USERNAME=usermonica",
+    "DB_PASSWORD=passwordmonica"
+  ],
+  "volumes": [
+    "monica_storage:/var/www/html/storage"
+  ],
+  "ports": [
+    "8080:80"
+  ],
+  "networks": [
+    "big_bear_monica_network"
+  ]
+}
+    }
+  }
+}

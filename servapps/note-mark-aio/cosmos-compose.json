@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Note Mark AIO",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://note-mark-aio:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "note-mark-aio": {
+  "container_name": "big-bear-note-mark-aio",
+  "image": "ghcr.io/enchant97/note-mark-aio:0.17.1",
+  "restart": "unless-stopped",
+  "environment": [
+    "JWT_SECRET=\"MGZiMzlkM2EtNmYxNC00NzNlLWI2YjItYTViY2M0Mzg0NjNl\"",
+    "CORS_ORIGINS=\"http://example.com:8000\""
+  ],
+  "volumes": [
+    "note-mark-aio_data:/data"
+  ],
+  "ports": [
+    "8000:8000"
+  ],
+  "networks": [
+    "big_bear_note_mark_aio_network"
+  ]
+}
+    }
+  }
+}
