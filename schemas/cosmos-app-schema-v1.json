@@ -233,6 +233,7 @@
       "$ref": "#/definitions/supportedArchitectures"
     }
   },
+  "required": ["appId", "config", "description", "dockerCompose"],
   "notes": [
     "Each Cosmos app should be in a servapps/{appId}/ folder",
     "Required files: config.json, description.json, docker-compose.yml",
