@@ -1,14 +1,28 @@
 cosmos-installer: null
+# Configuration for focalboard setup
+
+# Application Name
 name: big-bear-focalboard
+# Services used in the application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # The `app` service for the Focalboard application
+  app:
+    # Name of the container
+    container_name: big-bear-focalboard
+    # Docker image to be used
     image: mattermost/focalboard:7.11.4
+    # Restart policy for the service
     restart: unless-stopped
+    # Port mappings for the service
     ports:
-      - 8000:8000
+      - "8000:8000"
+    # Network mode for the service
     network_mode: bridge
+    # Volumes for the service HOST -> CONTAINER
     volumes:
-      - "{ServiceName}-data:/opt/focalboard/data"
-    hostname: "{ServiceName}"
+      - big-bear-focalboard_data:/opt/focalboard/data
+volumes:
+  big-bear-focalboard_data:
+    name: big-bear-focalboard_data
+    driver: local
 minVersion: 0.14.0

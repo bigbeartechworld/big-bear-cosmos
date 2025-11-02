@@ -1,15 +1,11 @@
 {
-  "name": "linkwarden",
-  "description": "Linkwarden",
+  "name": "Linkwarden",
+  "description": "⚡️⚡️⚡️Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.",
+  "url": "https://hub.docker.com/r/linkwarden/linkwarden",
   "longDescription": "⚡️⚡️⚡️Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkwarden.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkwarden.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/linkwarden.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/linkwarden.png"
 }

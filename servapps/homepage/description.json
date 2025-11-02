@@ -1,0 +1,11 @@
+{
+  "name": "Homepage",
+  "description": "A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.",
+  "url": "https://hub.docker.com/r/gethomepage/homepage",
+  "longDescription": "A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homepage.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homepage.png"
+}

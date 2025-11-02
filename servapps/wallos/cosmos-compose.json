@@ -1,0 +1,34 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Wallos",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://wallos:8282",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "wallos": {
+  "container_name": "big-bear-wallos",
+  "image": "bellamy/wallos:4.5.0",
+  "restart": "unless-stopped",
+  "environment": {
+    "TZ": "UTC"
+  },
+  "volumes": [
+    "big-bear-wallos_db:/var/www/html/db",
+    "big-bear-wallos_logos:/var/www/html/images/uploads/logos"
+  ],
+  "ports": [
+    "8282:80"
+  ]
+}
+    }
+  }
+}

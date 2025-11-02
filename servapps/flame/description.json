@@ -1,16 +1,11 @@
 {
-  "name": "flame",
-  "description": "Flame is a self-hosted startpage for your server. Manage your apps and bookmarks effortlessly with built-in editors.",
+  "name": "Flame",
+  "description": "Flame is a self-hosted startpage for your server. Its design is heavily inspired by SUI. Flame is user-friendly and easy to set up. With its built-in editors, users can quickly establish their own application hub without any file editing.",
+  "url": "https://hub.docker.com/r/pawelmalak/flame",
   "longDescription": "Flame is a self-hosted startpage for your server. Its design is heavily inspired by SUI. Flame is user-friendly and easy to set up. With its built-in editors, users can quickly establish their own application hub without any file editing.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png",
-  "supported_architectures": [
-    "amd64",
-    "arm",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/flame.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/flame.png"
 }

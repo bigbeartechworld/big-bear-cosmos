@@ -1,15 +1,11 @@
 {
-  "name": "wg-easy",
-  "description": "VPN server for your homeserver",
+  "name": "Wireguard Easy 14 (Legacy)",
+  "description": "Access your homeserver from anywhere even on your mobile device. Wireguard-easy is a simple tool to configure and manage Wireguard VPN servers. It is written in Go and uses the official Wireguard client. You have to open and redirect port 51820 to your homeserver in order to connect.",
+  "url": "https://hub.docker.com/r/wg-easy/wg-easy",
   "longDescription": "Access your homeserver from anywhere even on your mobile device. Wireguard-easy is a simple tool to configure and manage Wireguard VPN servers. It is written in Go and uses the official Wireguard client. You have to open and redirect port 51820 to your homeserver in order to connect.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wg-easy/logo.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wg-easy/logo.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/wg-easy/logo.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/wg-easy/logo.png"
 }

@@ -1,10 +1,20 @@
 cosmos-installer: null
+# Configuration for davis setup
+
+# Name of the big-bear-davis application
 name: big-bear-davis
+# Service definitions for the big-bear-davis application
 services:
-  "{ServiceName}-big-bear-davis":
-    container_name: "{ServiceName}-big-bear-davis"
-    image: ghcr.io/tchapi/davis-standalone:5.2.0
+  # Service name: big-bear-davis
+  # The `big-bear-davis` service definition
+  big-bear-davis:
+    # Name of the container
+    container_name: big-bear-davis
+    # Image to be used for the container
+    image: ghcr.io/tchapi/davis-standalone:5.3.0
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables to be set in the container
     environment:
       - APP_ENV=prod
       - DATABASE_DRIVER=mysql
@@ -22,30 +32,31 @@ services:
       - WEBDAV_HOMES_DIR=
       - INVITE_FROM_ADDRESS=
       - APP_TIMEZONE=UTC
+    # Ports to be exposed from the container
     ports:
       - 9000:9000
     networks:
       - big-bear-davis-network
     depends_on:
-      - "{ServiceName}-big-bear-davis-mysql"
-      - "{ServiceName}-big-bear-davis-mailpit"
-    hostname: "{ServiceName}-big-bear-davis"
-  "{ServiceName}-big-bear-davis-mailpit":
-    container_name: "{ServiceName}-big-bear-davis-mailpit"
-    image: axllent/mailpit:v1.27
-    restart: unless-stopped
-    volumes:
-      - "{ServiceName}-big-bear-davis-mailpit-data:/data"
-    environment:
+      - big-bear-davis-mysql
+      - big-bear-davis-mailpit
+  # Service name: big-bear-davis-mailpit
+  big-bear-davis-mailpit:
+    container_name: big-bear-davis-mailpit # Container name for the app service
+    image: axllent/mailpit:v1.27 # Image for the app service
+    restart: unless-stopped # Restart policy for the container
+    volumes: # Volumes to mount for the app service
+      - big-bear-davis_mailpit_data:/data
+    environment: # Environment variables for the app service
       - TZ=UTC
-    ports:
-      - 8025:8025
-      - 1025:1025
+    ports: # Ports to expose for the app service
+      - "8025:8025"
+      - "1025:1025"
     networks:
       - big-bear-davis-network
-    hostname: "{ServiceName}-big-bear-davis-mailpit"
-  "{ServiceName}-big-bear-davis-mysql":
-    container_name: "{ServiceName}-big-bear-davis-mysql"
+  # Service name: big-bear-mysql
+  big-bear-davis-mysql:
+    container_name: big-bear-davis-mysql
     image: mariadb:10.6.10
     environment:
       - MYSQL_ROOT_PASSWORD=0c9d2acc-d4f3-423c-8361-86f35cdd3eb2
@@ -53,21 +64,22 @@ services:
       - MYSQL_USER=bigbear
       - MYSQL_PASSWORD=0c9d2acc-d4f3-423c-8361-86f35cdd3eb2
     volumes:
-      - "{ServiceName}-big-bear-davis-mysql-data:/var/lib/mysql"
+      - big-bear-davis_mysql:/var/lib/mysql
     networks:
       - big-bear-davis-network
     healthcheck:
-      test:
-        - CMD
-        - mysqladmin
-        - ping
-        - -h
-        - localhost
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       retries: 5
       timeout: 5s
-    hostname: "{ServiceName}-big-bear-davis-mysql"
 networks:
   big-bear-davis-network:
     driver: bridge
+volumes:
+  big-bear-davis_mailpit_data:
+    name: big-bear-davis_mailpit_data
+    driver: local
+  big-bear-davis_mysql:
+    name: big-bear-davis_mysql
+    driver: local
 minVersion: 0.14.0

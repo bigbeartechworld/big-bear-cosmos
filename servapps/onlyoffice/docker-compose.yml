@@ -1,17 +1,37 @@
 cosmos-installer: null
+# Configuration for big-bear-onlyoffice setup
 name: big-bear-onlyoffice
+# Service definitions for the big-bear-onlyoffice application
 services:
-  "{ServiceName}":
-    image: onlyoffice/documentserver:8.3.3
-    container_name: "{ServiceName}"
+  app:
+    image: onlyoffice/documentserver:9.1.0
+    container_name: documentserver
     ports:
-      - 7400:80
+      - "7400:80"
     volumes:
-      - "{ServiceName}-data:/var/log/onlyoffice"
-      - "{ServiceName}-data-2:/var/www/onlyoffice/Data"
-      - "{ServiceName}-data-3:/var/lib/onlyoffice"
-      - "{ServiceName}-data-4:/var/lib/rabbitmq"
-      - "{ServiceName}-data-5:/var/lib/redis"
-      - "{ServiceName}-data-6:/var/lib/postgresql"
-    hostname: "{ServiceName}"
+      - big-bear-onlyoffice_onlyoffice_logs:/var/log/onlyoffice
+      - big-bear-onlyoffice_onlyoffice_data:/var/www/onlyoffice/Data
+      - big-bear-onlyoffice_onlyoffice_lib:/var/lib/onlyoffice
+      - big-bear-onlyoffice_onlyoffice_rabbitmq:/var/lib/rabbitmq
+      - big-bear-onlyoffice_onlyoffice_redis:/var/lib/redis
+      - big-bear-onlyoffice_onlyoffice_db:/var/lib/postgresql
+volumes:
+  big-bear-onlyoffice_onlyoffice_data:
+    name: big-bear-onlyoffice_onlyoffice_data
+    driver: local
+  big-bear-onlyoffice_onlyoffice_db:
+    name: big-bear-onlyoffice_onlyoffice_db
+    driver: local
+  big-bear-onlyoffice_onlyoffice_lib:
+    name: big-bear-onlyoffice_onlyoffice_lib
+    driver: local
+  big-bear-onlyoffice_onlyoffice_logs:
+    name: big-bear-onlyoffice_onlyoffice_logs
+    driver: local
+  big-bear-onlyoffice_onlyoffice_rabbitmq:
+    name: big-bear-onlyoffice_onlyoffice_rabbitmq
+    driver: local
+  big-bear-onlyoffice_onlyoffice_redis:
+    name: big-bear-onlyoffice_onlyoffice_redis
+    driver: local
 minVersion: 0.14.0

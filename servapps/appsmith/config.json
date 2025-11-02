@@ -1,7 +1,7 @@
 {
   "id": "appsmith",
-  "version": "1.53.1",
-  "image": "appsmith/appsmith-ee",
+  "version": "v1.73.1",
+  "image": "appsmith/appsmith-ce",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""

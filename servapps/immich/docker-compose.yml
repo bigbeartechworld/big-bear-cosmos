@@ -1,14 +1,20 @@
 cosmos-installer: null
+# Configuration for big-bear-immich setup
 name: big-bear-immich
+# Service definitions for the big-bear-immich application
 services:
-  "{ServiceName}-immich-server":
-    container_name: "{ServiceName}-immich-server"
-    image: ghcr.io/immich-app/immich-server:v1.144.1
-    ports:
+  # Main Immich Server service configuration
+  immich-server:
+    container_name: immich-server # Name of the running container
+    image: ghcr.io/immich-app/immich-server:v2.2.1 # Image to be used
+    # extends:
+    #   file: hwaccel.transcoding.yml
+    #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
+    ports: # Mapping ports from the host OS to the container
       - 2283:2283
-    volumes:
-      - "{ServiceName}-immich-server-data:/usr/src/app/upload"
-    environment:
+    volumes: # Mounting directories for persistent data storage
+      - big-bear-immich_upload:/usr/src/app/upload
+    environment: # Setting environment variables
       DB_HOSTNAME: immich-postgres
       DB_USERNAME: casaos
       DB_PASSWORD: casaos
@@ -16,51 +22,66 @@ services:
       DB_PORT: "5432"
       REDIS_HOSTNAME: immich-redis
       IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
-    depends_on:
-      - "{ServiceName}-redis"
-      - "{ServiceName}-database"
-    restart: unless-stopped
+    depends_on: # Dependencies to ensure the order of service startup
+      - redis
+      - database
+    restart: unless-stopped # Policy to restart unless stopped
+    # Networks to be attached to the container
     networks:
       - big_bear_immich_network
-    hostname: "{ServiceName}-immich-server"
-  "{ServiceName}-immich-machine-learning":
-    container_name: "{ServiceName}-immich-machine-learning"
-    image: ghcr.io/immich-app/immich-machine-learning:v1.144.1
-    volumes:
-      - "{ServiceName}-immich-machine-learning-data:/cache"
-    environment:
+  # Configuration for Immich Machine Learning service
+  immich-machine-learning:
+    container_name: immich-machine-learning # Name of the running container
+    image: ghcr.io/immich-app/immich-machine-learning:v2.2.1 # Image to be used
+    volumes: # Mounting directories for persistent data storage
+      - big-bear-immich_model-cache:/cache
+    environment: # Setting environment variables
       DB_HOSTNAME: immich-postgres
       DB_USERNAME: casaos
       DB_PASSWORD: casaos
       DB_DATABASE_NAME: casaos
       DB_PORT: 5432
       REDIS_HOSTNAME: immich-redis
-    restart: unless-stopped
+    restart: unless-stopped # Policy to restart unless stopped
+    # Networks to be attached to the container
     networks:
-      - big_bear_immich_network
-    hostname: "{ServiceName}-immich-machine-learning"
-  "{ServiceName}-redis":
-    container_name: "{ServiceName}-redis"
-    image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3
-    restart: always
+      - big_bear_immich_network # Connects the container to a defined network
+  # Configuration for Redis service
+  redis:
+    container_name: immich-redis # Name of the running container
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f # patched for CVE-2025-49844
+    restart: always # Policy to always restart the container if it stops
     networks:
-      - big_bear_immich_network
-    hostname: "{ServiceName}-redis"
-  "{ServiceName}-database":
-    container_name: "{ServiceName}-database"
-    image: tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:739cdd626151ff1f796dc95a6591b55a714f341c737e27f045019ceabf8e8c52
-    environment:
+      - big_bear_immich_network # Connects the container to a defined network
+  # Configuration for Database service
+  database:
+    container_name: immich-postgres # Name of the running container
+    image: ghcr.io/immich-app/postgres:14-vectorchord0.3.0-pgvectors0.2.0 # Image to be used
+    environment: # Setting environment variables
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos
       POSTGRES_DB: immich
       PG_DATA: /var/lib/postgresql/data
-    volumes:
-      - "{ServiceName}-database-data:/var/lib/postgresql/data"
-    restart: unless-stopped
+      # Uncomment the DB_STORAGE_TYPE: 'HDD' var if your database isn't stored on SSDs
+      # DB_STORAGE_TYPE: 'HDD'
+    volumes: # Mounting directories for persistent data storage
+      - big-bear-immich_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped # Policy to always restart the container if it stops
+    # CasaOS specific configuration for the database service
     networks:
-      - big_bear_immich_network
-    hostname: "{ServiceName}-database"
+      - big_bear_immich_network # Connects the container to a defined network
 networks:
+  # Defines network configurations for the services
   big_bear_immich_network:
-    driver: bridge
+    driver: bridge # Uses bridge network driver
+volumes:
+  big-bear-immich_model-cache:
+    name: big-bear-immich_model-cache
+    driver: local
+  big-bear-immich_pgdata:
+    name: big-bear-immich_pgdata
+    driver: local
+  big-bear-immich_upload:
+    name: big-bear-immich_upload
+    driver: local
 minVersion: 0.14.0

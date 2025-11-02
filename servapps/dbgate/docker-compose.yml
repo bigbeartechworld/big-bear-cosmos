@@ -1,13 +1,29 @@
 cosmos-installer: null
+# Configuration for dbgate setup
+
+# Name of the big-bear-dbgate application
 name: big-bear-dbgate
+# Service definitions for the big-bear-dbgate application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: dbgate/dbgate:6.6.5-alpine
+  # Service name: big-bear-dbgate
+  # The `big-bear-dbgate` service definition
+  big-bear-dbgate:
+    # Name of the container
+    container_name: big-bear-dbgate
+    # Image to be used for the container
+    image: dbgate/dbgate:6.6.7-alpine
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/root/.dbgate"
+      # Mounting the local homarr/configs directory to /app/data/configs inside the container
+      - big-bear-dbgate_config:/root/.dbgate
+    # Ports mapping between host and container
     ports:
-      - 3000:3000
-    hostname: "{ServiceName}"
+      # Mapping port 3000 of the host to port 3000 of the container
+      - "3000:3000"
+volumes:
+  big-bear-dbgate_config:
+    name: big-bear-dbgate_config
+    driver: local
 minVersion: 0.14.0

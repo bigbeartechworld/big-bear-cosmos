@@ -1,41 +1,71 @@
 cosmos-installer: null
+# Configuration for ghost setup
+
+# Application Name
 name: big-bear-ghost
+# Services used in the application
 services:
-  "{ServiceName}-app":
-    container_name: "{ServiceName}-app"
-    image: ghost:5.130.5-alpine
+  # The `app` service for the Ghost application
+  app:
+    # Name of the container
+    container_name: big-bear-ghost
+    # Docker image to be used
+    image: ghost:6.5.3-alpine
+    # Restart policy for the service
     restart: on-failure
+    # Networks used by the service
     networks:
       - ghost-network
     environment:
+      # Database configuration for Ghost (see Ghost documentation for more details)
       database__client: mysql
       database__connection__host: db
       database__connection__user: ghost
       database__connection__password: casaos
       database__connection__database: ghost
-      url: http://localhost:2368
+      # Base URL for the Ghost application
+      url: "http://localhost:2368"
+      # Note on NODE_ENV default value for this image
+      #NODE_ENV: development
+    # Volume mappings for persistent storage
     volumes:
-      - "{ServiceName}-app-data:/var/lib/ghost/content"
+      - big-bear-ghost_content:/var/lib/ghost/content
+    # Port mappings for the service
     ports:
       - 2368:2368
+    # Dependencies for the service
     depends_on:
-      - "{ServiceName}-db"
-    hostname: "{ServiceName}-app"
-  "{ServiceName}-db":
-    container_name: "{ServiceName}-db"
+      - db
+  # The `db` service for database (MySQL in this case)
+  db:
+    # Container name
+    container_name: big-bear-ghost-db
+    # Docker image to be used
     image: mysql:8.0
+    # Restart policy for the service
     restart: on-failure
+    # Volume mappings for persistent storage
     volumes:
-      - "{ServiceName}-db-data:/var/lib/mysql"
+      - big-bear-ghost_mysql:/var/lib/mysql
+    # MySQL environment variables
     environment:
-      MYSQL_USER: ghost
-      MYSQL_DATABASE: ghost
-      MYSQL_PASSWORD: casaos
-      MYSQL_ROOT_PASSWORD: casaos
+      MYSQL_USER: "ghost"
+      MYSQL_DATABASE: "ghost"
+      MYSQL_PASSWORD: "casaos"
+      MYSQL_ROOT_PASSWORD: "casaos"
+    # Networks used by the service
     networks:
       - ghost-network
-    hostname: "{ServiceName}-db"
+# Networks used by the application
 networks:
+  # Define the network for AdGuard Home
   ghost-network:
     driver: bridge
+volumes:
+  big-bear-ghost_content:
+    name: big-bear-ghost_content
+    driver: local
+  big-bear-ghost_mysql:
+    name: big-bear-ghost_mysql
+    driver: local
 minVersion: 0.14.0

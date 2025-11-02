@@ -1,21 +1,40 @@
 cosmos-installer: null
+# Configuration for syncthing setup
+
+# Name of the big-bear-syncthing application
 name: big-bear-syncthing
+# Service definitions for the big-bear-syncthing application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: syncthing/syncthing:1.30
+  # Service name: big-bear-syncthing
+  # The `big-bear-syncthing` service definition
+  big-bear-syncthing:
+    # Name of the container
+    container_name: big-bear-syncthing
+    # Image to be used for the container
+    image: syncthing/syncthing:2.0
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/var/syncthing"
-      - "{ServiceName}-data-2:/media/data/syncthing"
+      - big-bear-syncthing_data:/var/syncthing
+      - big-bear-syncthing_media_data_syncthing:/media/data/syncthing
+    # Ports mapping between host and container
     ports:
-      - 8384:8384
-      - 22000:22000/tcp
-      - 22000:22000/udp
-      - 21027:21027/udp
+      - 8384:8384 # WebUI
+      - 22000:22000/tcp # TCP file transfers
+      - 22000:22000/udp # QUIC file transfers
+      - 21027:21027/udp # Receive local discovery broadcasts
+    # Environment variables for the container
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=1000 # User ID
+      - PGID=1000 # Group ID
+    # Stop the container if it exits
     stop_grace_period: 1m
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-syncthing_data:
+    name: big-bear-syncthing_data
+    driver: local
+  big-bear-syncthing_media_data_syncthing:
+    name: big-bear-syncthing_media_data_syncthing
+    driver: local
 minVersion: 0.14.0

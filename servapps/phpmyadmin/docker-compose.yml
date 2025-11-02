@@ -1,15 +1,27 @@
 cosmos-installer: null
+# Configuration for phpmyadmin setup
+
+# Name of the big-bear-phpmyadmin application
 name: big-bear-phpmyadmin
+# Service definitions for the big-bear-phpmyadmin application
 services:
-  "{ServiceName}":
+  # Service name: phpmyadmin
+  phpmyadmin:
+    # Docker image to be used for this service
     image: phpmyadmin/phpmyadmin:5.2.3
-    container_name: "{ServiceName}"
+    # Name of the container once it's up and running
+    container_name: big-bear-phpmyadmin
+    # Environment variables passed to the service
     environment:
+      # Host of the database server
       PMA_HOST: "[YOUR-CASAOS-IP]"
+      # Port of the database server
       PMA_PORT: "3306"
-      PMA_USER: bigbear
-      PMA_PASSWORD: password
+      # Username to connect to the database
+      PMA_USER: "bigbear"
+      # Password to connect to the database
+      PMA_PASSWORD: "password"
+    # Port mapping: map host's port 8080 to container's port 80
     ports:
-      - 8080:80
-    hostname: "{ServiceName}"
+      - "8080:80"
 minVersion: 0.14.0

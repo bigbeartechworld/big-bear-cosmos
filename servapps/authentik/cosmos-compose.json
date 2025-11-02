@@ -1,0 +1,46 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Authentik",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://authentik:9443",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "authentik": {
+  "container_name": "big-bear-authentik",
+  "image": "ghcr.io/goauthentik/server:2025.10.0",
+  "command": "server",
+  "environment": {
+    "AUTHENTIK_REDIS__HOST": "big-bear-authentik-redis",
+    "AUTHENTIK_POSTGRESQL__HOST": "big-bear-authentik-db",
+    "AUTHENTIK_POSTGRESQL__USER": "authentik",
+    "AUTHENTIK_POSTGRESQL__NAME": "authentik",
+    "AUTHENTIK_POSTGRESQL__PASSWORD": "authentik-password",
+    "AUTHENTIK_SECRET_KEY": "changeme"
+  },
+  "volumes": [
+    "big-bear-authentik_data_authentik-media:/media",
+    "big-bear-authentik_data_authentik-custom-templates:/templates"
+  ],
+  "ports": [
+    "9443:9443"
+  ],
+  "depends_on": [
+    "big-bear-authentik-db",
+    "big-bear-authentik-redis"
+  ],
+  "networks": [
+    "big_bear_authentik_network"
+  ]
+}
+    }
+  }
+}

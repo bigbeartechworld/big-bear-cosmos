@@ -1,15 +1,11 @@
 {
-  "name": "octoprint",
-  "description": "OctoPrint",
+  "name": "OctoPrint",
+  "description": "OctoPrint is the snappy web interface for your 3D printer!",
+  "url": "https://hub.docker.com/r/octoprint/octoprint",
   "longDescription": "OctoPrint is the snappy web interface for your 3D printer!",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/octoprint.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/octoprint.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/octoprint.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/octoprint.png"
 }

@@ -1,15 +1,11 @@
 {
-  "name": "homer",
-  "description": "Homer",
+  "name": "Homer",
+  "description": "A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.",
+  "url": "https://hub.docker.com/r/b4bz/homer",
   "longDescription": "A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homer.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homer.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homer.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homer.png"
 }

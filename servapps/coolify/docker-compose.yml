@@ -1,10 +1,20 @@
 cosmos-installer: null
+# Configuration for coolify setup
+
+# Name of the big-bear-coolify application
 name: big-bear-coolify
+# Service definitions for the big-bear-coolify application
 services:
-  "{ServiceName}-big-bear-coolify":
-    container_name: "{ServiceName}-big-bear-coolify"
-    image: ghcr.io/coollabsio/coolify:4.0.0-beta.380
+  # Service name: big-bear-coolify
+  # The `big-bear-coolify` service definition
+  big-bear-coolify:
+    # Name of the container
+    container_name: big-bear-coolify
+    # Image to be used for the container specifies the fastfetch version and source
+    image: ghcr.io/coollabsio/coolify:4.0.0-beta.434
+    # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
+    # Environment variables for the container
     environment:
       - PHP_MEMORY_LIMIT="512M"
       - APP_ID="coolify"
@@ -14,13 +24,13 @@ services:
       - APP_KEY="base64:lSStPbXB/yW6cxXIz8fauQ937PbSUktTdIf7R05szQ4="
       - APP_URL="http://[CASAOS_IP]:8000"
       - DB_CONNECTION="pgsql"
-      - DB_HOST={ServiceName}-"big-bear-coolify-postgres"
+      - DB_HOST="big-bear-coolify-postgres"
       - DB_PORT="5432"
       - DB_DATABASE="coolify"
       - DB_USERNAME="coolify"
       - DB_PASSWORD="f1986213-9d72-4c36-bbd4-adca2f414fa1"
       - QUEUE_CONNECTION="redis"
-      - REDIS_HOST={ServiceName}-"big-bear-coolify-redis"
+      - REDIS_HOST="big-bear-coolify-redis"
       - REDIS_PASSWORD="9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"
       - HORIZON_BALANCE="100"
       - HORIZON_MAX_PROCESSES="10"
@@ -62,72 +72,59 @@ services:
       - STRIPE_PRICE_ID_ULTIMATE_MONTHLY_OLD=
       - STRIPE_PRICE_ID_ULTIMATE_YEARLY_OLD=
       - STRIPE_EXCLUDED_PLANS=
+    # Mount necessary volumes for accessing system information
     volumes:
-      - "{ServiceName}-big-bear-coolify-data:/var/www/html/storage/app/ssh"
-      - "{ServiceName}-big-bear-coolify-data-2:/var/www/html/storage/app/applic\
-        ations"
-      - "{ServiceName}-big-bear-coolify-data-3:/var/www/html/storage/app/databa\
-        ses"
-      - "{ServiceName}-big-bear-coolify-data-4:/var/www/html/storage/app/servic\
-        es"
-      - "{ServiceName}-big-bear-coolify-data-5:/var/www/html/storage/app/backups"
-      - "{ServiceName}-big-bear-coolify-data-6:/var/www/html/storage/app/webhoo\
-        ks-during-maintenance"
-      - "{ServiceName}-big-bear-coolify-data-7:/var/www/html/storage/logs"
+      # ssh-keygen -f /DATA/AppData/big-bear-coolify/ssh/keys/id.root@host.docker.internal -t ed25519 -N '' -C root@coolify
+      - big-bear-coolify_ssh:/var/www/html/storage/app/ssh
+      - big-bear-coolify_applications:/var/www/html/storage/app/applications
+      - big-bear-coolify_databases:/var/www/html/storage/app/databases
+      - big-bear-coolify_services:/var/www/html/storage/app/services
+      - big-bear-coolify_backups:/var/www/html/storage/app/backups
+      - big-bear-coolify_webhooks-during-maintenance:/var/www/html/storage/app/webhooks-during-maintenance
+      - big-bear-coolify_logs:/var/www/html/storage/logs
+    # Map port 8080 on the host to port 80 on the container
     ports:
-      - 8000:80
+      - "8000:8080"
     healthcheck:
-      test: curl --fail http://127.0.0.1:80/api/health || exit 1
+      test: curl --fail http://127.0.0.1:8080/api/health || exit 1
       interval: 5s
       retries: 10
       timeout: 2s
     depends_on:
-      - "{ServiceName}-big-bear-coolify-postgres"
-      - "{ServiceName}-big-bear-coolify-redis"
+      big-bear-coolify-postgres:
+        condition: service_healthy
+      big-bear-coolify-redis:
+        condition: service_healthy
     networks:
       - big_bear_coolify_network
-    hostname: "{ServiceName}-big-bear-coolify"
-  "{ServiceName}-big-bear-coolify-postgres":
-    container_name: "{ServiceName}-big-bear-coolify-postgres"
+  big-bear-coolify-postgres:
+    container_name: big-bear-coolify-postgres
     image: postgres:15-alpine
     ports:
-      - 5432:5432
+      - "5432:5432"
     volumes:
-      - "{ServiceName}-big-bear-coolify-postgres-data:/var/lib/postgresql/data"
+      - big-bear-coolify_pgdata:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: coolify
-      POSTGRES_PASSWORD: f1986213-9d72-4c36-bbd4-adca2f414fa1
-      POSTGRES_DB: coolify
+      POSTGRES_USER: "coolify"
+      POSTGRES_PASSWORD: "f1986213-9d72-4c36-bbd4-adca2f414fa1"
+      POSTGRES_DB: "coolify"
     healthcheck:
-      test:
-        - CMD-SHELL
-        - pg_isready -U coolify
-        - -d
-        - coolify
+      test: ["CMD-SHELL", "pg_isready -U coolify", "-d", "coolify"]
       interval: 5s
       retries: 10
       timeout: 2s
     networks:
       - big_bear_coolify_network
-    hostname: "{ServiceName}-big-bear-coolify-postgres"
-  "{ServiceName}-big-bear-coolify-redis":
-    container_name: "{ServiceName}-big-bear-coolify-redis"
-    image: redis:alpine
+  big-bear-coolify-redis: # Redis service configuration
+    container_name: big-bear-coolify-redis # Name of the running container
+    image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     ports:
-      - 6379:6379
-    command:
-      - redis-server
-      - --save
-      - "20"
-      - "1"
-      - --loglevel
-      - warning
-      - --requirepass
-      - 9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4
+      - "6379:6379"
+    command: ["redis-server", "--save", "20", "1", "--loglevel", "warning", "--requirepass", "9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"]
     environment:
-      REDIS_PASSWORD: 9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4
+      REDIS_PASSWORD: "9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"
     volumes:
-      - "{ServiceName}-big-bear-coolify-redis-data:/data"
+      - big-bear-coolify_redis:/data
     healthcheck:
       test: redis-cli ping
       interval: 5s
@@ -135,13 +132,12 @@ services:
       timeout: 2s
     networks:
       - big_bear_coolify_network
-    hostname: "{ServiceName}-big-bear-coolify-redis"
-  "{ServiceName}-big-bear-coolify-soketi":
-    container_name: "{ServiceName}-big-bear-coolify-soketi"
+  big-bear-coolify-soketi:
+    container_name: big-bear-coolify-soketi
     image: quay.io/soketi/soketi:1.6-16-alpine
     ports:
-      - 6001:6001
-      - 6002:6002
+      - "6001:6001"
+      - "6002:6002"
     environment:
       SOKETI_DEBUG: "false"
       SOKETI_DEFAULT_APP_ID: ""
@@ -154,11 +150,38 @@ services:
       timeout: 2s
     networks:
       - big_bear_coolify_network
-    hostname: "{ServiceName}-big-bear-coolify-soketi"
 networks:
   big_bear_coolify_network:
     name: big_bear_coolify_network
     driver: bridge
   coolify:
     external: true
+volumes:
+  big-bear-coolify_applications:
+    name: big-bear-coolify_applications
+    driver: local
+  big-bear-coolify_backups:
+    name: big-bear-coolify_backups
+    driver: local
+  big-bear-coolify_databases:
+    name: big-bear-coolify_databases
+    driver: local
+  big-bear-coolify_logs:
+    name: big-bear-coolify_logs
+    driver: local
+  big-bear-coolify_pgdata:
+    name: big-bear-coolify_pgdata
+    driver: local
+  big-bear-coolify_redis:
+    name: big-bear-coolify_redis
+    driver: local
+  big-bear-coolify_services:
+    name: big-bear-coolify_services
+    driver: local
+  big-bear-coolify_ssh:
+    name: big-bear-coolify_ssh
+    driver: local
+  big-bear-coolify_webhooks-during-maintenance:
+    name: big-bear-coolify_webhooks-during-maintenance
+    driver: local
 minVersion: 0.14.0

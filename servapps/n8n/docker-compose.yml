@@ -1,17 +1,21 @@
 cosmos-installer: null
+# Configuration for big-bear-n8n setup
 name: big-bear-n8n
+# Service definitions for the big-bear-n8n application
 services:
-  "{ServiceName}-app":
-    container_name: "{ServiceName}-app"
-    image: n8nio/n8n:1.117.1
-    restart: unless-stopped
+  # Service configuration for the n8n application
+  app:
+    container_name: n8n # Name of the n8n container
+    image: n8nio/n8n:1.118.1 # Docker image and version to use for n8n
+    restart: unless-stopped # Restart policy: Restart unless manually stopped
     ports:
-      - 5678:5678
+      - 5678:5678 # Port mapping between host and container
     links:
-      - db-n8n
+      - db-n8n # Link to the database container
     volumes:
-      - "{ServiceName}-app-data:/home/node/.n8n"
+      - big-bear-n8n_.n8n:/home/node/.n8n # Volume for persistent data
     environment:
+      # Database configuration environment variables
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_DATABASE=n8n
       - DB_POSTGRESDB_HOST=db-n8n
@@ -19,25 +23,35 @@ services:
       - DB_POSTGRESDB_USER=bigbearcasaos
       - DB_POSTGRESDB_PASSWORD=bigbearcasaos
     depends_on:
-      - "{ServiceName}-db-n8n"
-    hostname: "{ServiceName}-app"
-  "{ServiceName}-db-n8n":
-    container_name: "{ServiceName}-db-n8n"
-    image: postgres:14.2
-    restart: on-failure
+      db-n8n:
+        condition: service_healthy # Ensure DB is healthy before starting app
+  # Database service configuration
+  db-n8n:
+    container_name: db-n8n # Name of the database container
+    image: postgres:14.2 # Docker image and version for PostgreSQL
+    restart: on-failure # Restart policy: Restart on failure
     volumes:
-      - "{ServiceName}-db-n8n-data:/var/lib/postgresql/data"
-      - "{ServiceName}-db-n8n-data-2:/docker-entrypoint-initdb.d/init-data.sh"
+      - big-bear-n8n_pgdata:/var/lib/postgresql/data # Persistent DB data
+      - big-bear-n8n_db_init-data.sh:/docker-entrypoint-initdb.d/init-data.sh # DB initialization script
     environment:
+      # PostgreSQL user, password, and database environment variables
       - POSTGRES_PASSWORD=bigbearcasaos
       - POSTGRES_USER=bigbearcasaos
       - POSTGRES_DB=n8n
     healthcheck:
-      test:
-        - CMD-SHELL
-        - pg_isready -h localhost -U bigbearcasaos -d n8n
+      # Health check commands to ensure DB availability
+      test: ["CMD-SHELL", "pg_isready -h localhost -U bigbearcasaos -d n8n"]
       interval: 5s
       timeout: 5s
       retries: 10
-    hostname: "{ServiceName}-db-n8n"
+volumes:
+  big-bear-n8n_.n8n:
+    name: big-bear-n8n_.n8n
+    driver: local
+  big-bear-n8n_db_init-data.sh:
+    name: big-bear-n8n_db_init-data.sh
+    driver: local
+  big-bear-n8n_pgdata:
+    name: big-bear-n8n_pgdata
+    driver: local
 minVersion: 0.14.0

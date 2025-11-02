@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Gluetun",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://gluetun:8888",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "gluetun": {
+  "image": "qmcgaw/gluetun:v3.40.0",
+  "container_name": "gluetun",
+  "cap_add": [
+    "NET_ADMIN"
+  ],
+  "devices": [
+    "/dev/net/tun:/dev/net/tun"
+  ],
+  "ports": [
+    "8888:8888/tcp",
+    "8388:8388/tcp",
+    "8388:8388/udp"
+  ],
+  "volumes": [
+    "big-bear-gluetun_data:/gluetun"
+  ],
+  "environment": [
+    "VPN_SERVICE_PROVIDER=custom",
+    "VPN_TYPE=openvpn",
+    "OPENVPN_USER=",
+    "OPENVPN_PASSWORD=",
+    "TZ=",
+    "UPDATER_PERIOD="
+  ]
+}
+    }
+  }
+}

@@ -1,12 +1,20 @@
 cosmos-installer: null
+# Name of the service
 name: big-bear-mumble-server
+# Service configurations
 services:
-  "{ServiceName}":
+  # Main application service
+  app:
+    # Docker image to use
     image: mumblevoip/mumble-server:v1.4.230-6
-    container_name: "{ServiceName}"
-    hostname: "{ServiceName}"
+    # Name of the container
+    container_name: mumble-server
+    # Hostname for the container
+    hostname: mumble-server
+    # Restart policy
     restart: on-failure
+    # Ports configuration
     ports:
-      - 64738:64738
-      - 64738:64738/udp
+      - 64738:64738 # TCP port mapping
+      - 64738:64738/udp # UDP port mapping
 minVersion: 0.14.0

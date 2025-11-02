@@ -1,11 +1,21 @@
 cosmos-installer: null
+# Configuration for it-tools setup
+
+# Name of the big-bear-it-tools application
 name: big-bear-it-tools
+# Service definitions for the big-bear-it-tools application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-it-tools
+    # Image to be used for the container
     image: corentinth/it-tools:2023.11.2-7d94e11
+    # Container restart policy
     restart: unless-stopped
+    # Ports mapping between host and container
     ports:
-      - 8080:80
-    hostname: "{ServiceName}"
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
 minVersion: 0.14.0

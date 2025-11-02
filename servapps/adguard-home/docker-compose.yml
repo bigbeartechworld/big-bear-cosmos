@@ -1,25 +1,44 @@
 cosmos-installer: null
+# Configuration for adguard home setup
+
+# Application Name
 name: big-bear-adguard-home
+# Services used in the application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: adguard/adguardhome:v0.107.68
+  # The `app` service for the adguard home application
+  app:
+    # Name of the container
+    container_name: adguard-home
+    # Docker image to be used
+    image: adguard/adguardhome:v0.107.69
+    # Resources for the service
     deploy:
       resources:
         reservations:
           memory: 64M
+    # Volume mappings for the service
     volumes:
-      - "{ServiceName}-data:/opt/adguardhome/work"
-      - "{ServiceName}-data-2:/opt/adguardhome/conf"
+      - "adguard-home_data_work:/opt/adguardhome/work" # Map data work directory
+      - "adguard-home_data_conf:/opt/adguardhome/conf" # Map configuration directory
     restart: unless-stopped
     ports:
-      - 53:53/tcp
-      - 53:53/udp
-      - 8080:80
+      - 53:53/tcp # Map TCP port 53
+      - 53:53/udp # Map UDP port 53
+      - 8080:80 # Map port 80
+    # Define the networks
     networks:
+      # Specify the adguard-home-network
       - adguard-home-network
-    hostname: "{ServiceName}"
+# Networks used by the application
 networks:
+  # Define the network for AdGuard Home
   adguard-home-network:
     driver: bridge
+volumes:
+  big-bear-adguard-home_data_conf:
+    name: big-bear-adguard-home_data_conf
+    driver: local
+  big-bear-adguard-home_data_work:
+    name: big-bear-adguard-home_data_work
+    driver: local
 minVersion: 0.14.0

@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Pterodactyl Wings",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pterodactyl-wings:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pterodactyl-wings": {
+  "container_name": "pterodactyl-wings",
+  "image": "ghcr.io/pterodactyl/wings:v1.11.13",
+  "restart": "always",
+  "ports": [
+    "8080:8080",
+    "2022:2022"
+  ],
+  "tty": true,
+  "environment": {
+    "TZ": "UTC",
+    "WINGS_UID": 988,
+    "WINGS_GID": 988,
+    "WINGS_USERNAME": "pterodactyl"
+  },
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "/var/lib/docker/containers/:/var/lib/docker/containers/",
+    "/etc/ssl/certs:/etc/ssl/certs:ro",
+    "/tmp/pterodactyl:/tmp/pterodactyl/",
+    "/etc/pterodactyl:/etc/pterodactyl/",
+    "/var/log/pterodactyl:/var/log/pterodactyl/",
+    "/var/lib/pterodactyl:/var/lib/pterodactyl/"
+  ]
+}
+    }
+  }
+}

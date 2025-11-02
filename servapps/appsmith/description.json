@@ -1,15 +1,11 @@
 {
-  "name": "appsmith",
-  "description": "Appsmith",
+  "name": "Appsmith",
+  "description": "Low code project to build admin panels, internal tools, and dashboards, integrating 15+ databases.",
+  "url": "https://hub.docker.com/r/appsmith/appsmith-ce",
   "longDescription": "Low code project to build admin panels, internal tools, and dashboards, integrating 15+ databases.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
   "image": "https://cdn.jsdelivr.net/gh/appsmithorg/appsmith/static/logo.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
+  "supported_architectures": ["amd64","arm64"],
   "icon": "https://cdn.jsdelivr.net/gh/appsmithorg/appsmith/static/logo.png"
 }

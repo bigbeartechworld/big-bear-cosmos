@@ -1,16 +1,11 @@
 {
-  "name": "whats-up-docker",
-  "description": "What's Up Docker",
+  "name": "What's Up Docker",
+  "description": "Gets you notified when new versions of your Docker containers are available and lets you react the way you want.",
+  "url": "https://hub.docker.com/r/fmartinou/whats-up-docker",
   "longDescription": "Gets you notified when new versions of your Docker containers are available and lets you react the way you want.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/whats-up-docker.png",
-  "supported_architectures": [
-    "amd64",
-    "arm",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/whats-up-docker.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/whats-up-docker.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/whats-up-docker.png"
 }

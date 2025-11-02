@@ -1,14 +1,23 @@
 cosmos-installer: null
+# Configuration for appsmith setup
+
+# Name of the big-bear-appsmith application
 name: big-bear-appsmith
+# Service definitions for the big-bear-appsmith application
 services:
-  "{ServiceName}":
-    image: appsmith/appsmith-ce:v1.73.1
-    container_name: "{ServiceName}"
+  # Service name: app
+  # The `app` service definition
+  app:
+    image: appsmith/appsmith-ce:v1.73.1 # Docker image to use
+    container_name: appsmith # Name of the container
     ports:
-      - 1080:80
-      - 10443:443
+      - "1080:80" # Port mapping host:container for HTTP
+      - "10443:443" # Port mapping host:container for HTTPS
     volumes:
-      - "{ServiceName}-data:/appsmith-stacks"
-    restart: unless-stopped
-    hostname: "{ServiceName}"
+      - big-bear-appsmith_stacks:/appsmith-stacks # Mount volume for app data
+    restart: unless-stopped # Container restart policy
+volumes:
+  big-bear-appsmith_stacks:
+    name: big-bear-appsmith_stacks
+    driver: local
 minVersion: 0.14.0

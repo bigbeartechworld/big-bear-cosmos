@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Readeck",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://readeck:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "readeck": {
+  "container_name": "big-bear-readeck",
+  "image": "codeberg.org/readeck/readeck:0.20.4",
+  "restart": "unless-stopped",
+  "environment": [
+    "READECK_LOG_LEVEL=info",
+    "READECK_SERVER_HOST=0.0.0.0",
+    "READECK_SERVER_PORT=8000",
+    "READECK_LOG_FORMAT=text"
+  ],
+  "volumes": [
+    "big-bear-readeck_data:/readeck"
+  ],
+  "ports": [
+    "8000:8000"
+  ],
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "/bin/readeck",
+      "healthcheck",
+      "-config",
+      "config.toml"
+    ],
+    "interval": "30s",
+    "timeout": "2s",
+    "retries": 3
+  }
+}
+    }
+  }
+}
