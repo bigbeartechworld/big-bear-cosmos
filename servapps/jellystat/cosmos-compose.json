@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Jellystat",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://jellystat:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "jellystat": {
+  "container_name": "big-bear-jellystat",
+  "image": "cyfershepard/jellystat:1.1.6",
+  "restart": "unless-stopped",
+  "environment": [
+    "POSTGRES_USER=postgres",
+    "POSTGRES_PASSWORD=8a23ad09-61cf-4178-a783-6d4586496e3a",
+    "POSTGRES_IP=big-bear-jellystat-db",
+    "POSTGRES_PORT=5432",
+    "JWT_SECRET=\"my-secret-jwt-key\""
+  ],
+  "volumes": [
+    "big-bear-jellystat_backup-data:/app/backend/backup-data"
+  ],
+  "ports": [
+    "3000:3000"
+  ],
+  "networks": [
+    "big-bear-jellystat-network"
+  ]
+}
+    }
+  }
+}

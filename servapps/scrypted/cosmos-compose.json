@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Scrypted",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://scrypted:10444",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "scrypted": {
+  "container_name": "scrypted",
+  "image": "koush/scrypted:v0.142.9-noble-full",
+  "network_mode": "host",
+  "environment": [
+    "SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer SET_THIS_TO_SOME_RANDOM_TEXT",
+    "SCRYPTED_WEBHOOK_UPDATE=http://localhost:10444/v1/update"
+  ],
+  "volumes": [
+    "big-bear-scrypted_data:/server/volume"
+  ],
+  "restart": "unless-stopped",
+  "logging": {
+    "driver": "json-file",
+    "options": {
+      "max-size": "10m",
+      "max-file": "10"
+    }
+  },
+  "labels": [
+    "com.centurylinklabs.watchtower.scope=scrypted"
+  ]
+}
+    }
+  }
+}

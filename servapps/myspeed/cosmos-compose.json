@@ -1,0 +1,29 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "MySpeed",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://myspeed:5216",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "myspeed": {
+  "image": "germannewsmaker/myspeed:1.0.9",
+  "ports": [
+    "5216:5216"
+  ],
+  "volumes": [
+    "big-bear-myspeed_data:/myspeed/data"
+  ],
+  "restart": "unless-stopped"
+}
+    }
+  }
+}

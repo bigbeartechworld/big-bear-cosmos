@@ -1,0 +1,33 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Poste.io",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://poste-io:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "poste-io": {
+  "container_name": "big-bear-poste-io",
+  "image": "analogic/poste.io:2.5.7",
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "environment": [
+    "TZ=UTC"
+  ],
+  "hostname": "mail.example.com",
+  "tty": true,
+  "volumes": [
+    "big-bear-poste-io_data:/data"
+  ]
+}
+    }
+  }
+}

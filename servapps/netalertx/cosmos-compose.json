@@ -1,0 +1,35 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "NetAlertX",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://netalertx:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "netalertx": {
+  "container_name": "big-bear-netalertx",
+  "image": "jokobsk/netalertx:25.10.1",
+  "restart": "unless-stopped",
+  "privileged": true,
+  "volumes": [
+    "big-bear-netalertx_config:/app/config",
+    "big-bear-netalertx_db:/app/db"
+  ],
+  "environment": [
+    "TZ=UTC",
+    "PORT=8080",
+    "ALWAYS_FRESH_INSTALL=false"
+  ],
+  "network_mode": "host"
+}
+    }
+  }
+}

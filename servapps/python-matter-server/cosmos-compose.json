@@ -1,0 +1,32 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Python Matter Server",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://python-matter-server:5080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "python-matter-server": {
+  "image": "ghcr.io/home-assistant-libs/python-matter-server:8.1.0",
+  "container_name": "matter-server",
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "security_opt": [
+    "apparmor:unconfined"
+  ],
+  "volumes": [
+    "big-bear-python-matter-server_data:/data/",
+    "/run/dbus:/run/dbus:ro"
+  ]
+}
+    }
+  }
+}

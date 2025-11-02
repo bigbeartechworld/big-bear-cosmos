@@ -1,0 +1,29 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Matterbridge",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://matterbridge:8283",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "matterbridge": {
+  "container_name": "big-bear-matterbridge",
+  "image": "luligu/matterbridge:3.3.4",
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "volumes": [
+    "big-bear-matterbridge_Matterbridge:/root/Matterbridge",
+    "big-bear-matterbridge_.matterbridge:/root/.matterbridge"
+  ]
+}
+    }
+  }
+}

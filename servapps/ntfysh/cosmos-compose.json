@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ntfy.sh",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ntfysh:7200",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ntfysh": {
+  "image": "binwiederhier/ntfy:v2.14.0",
+  "command": [
+    "serve"
+  ],
+  "environment": [
+    "TZ=UTC"
+  ],
+  "ports": [
+    {
+      "target": 80,
+      "published": "7200",
+      "protocol": "tcp"
+    }
+  ],
+  "restart": "unless-stopped",
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "big-bear-ntfysh_cache",
+      "target": "/var/cache/ntfy"
+    },
+    {
+      "type": "bind",
+      "source": "big-bear-ntfysh_config",
+      "target": "/etc/ntfy"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,15 +1,7 @@
 {
-  "name": "libredesk",
+  "name": "Libredesk",
   "description": "Open source, self-hosted customer support desk. Single binary app.",
+  "url": "",
   "longDescription": "Open source, self-hosted customer support desk. Single binary app.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": ""
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }

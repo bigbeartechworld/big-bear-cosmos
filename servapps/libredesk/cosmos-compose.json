@@ -1,0 +1,46 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Libredesk",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://libredesk:9000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "libredesk": {
+  "container_name": "big-bear-libredesk",
+  "image": "libredesk/libredesk:v0.7.4-alpha",
+  "restart": "unless-stopped",
+  "environment": [
+    "LIBREDESK_SYSTEM_USER_PASSWORD=\"c6b51a4e-ab9d-4f4f-933e-e96ed3570c1A\""
+  ],
+  "volumes": [
+    "big-bear-libredesk_uploads:/libredesk/uploads:rw",
+    "big-bear-libredesk_config:/libredesk/config:rw"
+  ],
+  "ports": [
+    "9000:9000"
+  ],
+  "command": [
+    "sh",
+    "-c",
+    "./libredesk --install --idempotent-install --yes --config /libredesk/config/config.toml && ./libredesk --upgrade --yes --config /libredesk/config/config.toml && ./libredesk --config /libredesk/config/config.toml"
+  ],
+  "depends_on": [
+    "big-bear-libredesk-db",
+    "big-bear-libredesk-redis"
+  ],
+  "networks": [
+    "big-bear-libredesk-network"
+  ]
+}
+    }
+  }
+}

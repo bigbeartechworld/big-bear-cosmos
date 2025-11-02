@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Immich without machine learning",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://immich-without-machine-learning:2283",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "immich-without-machine-learning": {
+  "container_name": "immich-server",
+  "image": "ghcr.io/immich-app/immich-server:v2.2.1",
+  "ports": [
+    "2283:2283"
+  ],
+  "volumes": [
+    "/DATA/AppData/big-bear-immich/upload:/usr/src/app/upload"
+  ],
+  "environment": {
+    "DB_HOSTNAME": "immich-postgres",
+    "DB_USERNAME": "casaos",
+    "DB_PASSWORD": "casaos",
+    "DB_DATABASE_NAME": "immich",
+    "DB_PORT": "5432",
+    "REDIS_HOSTNAME": "immich-redis"
+  },
+  "depends_on": [
+    "redis",
+    "database"
+  ],
+  "restart": "unless-stopped"
+}
+    }
+  }
+}

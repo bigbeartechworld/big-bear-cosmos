@@ -1,0 +1,32 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Umbrel OS",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://umbrel-os:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "umbrel-os": {
+  "container_name": "big-bear-umbrel",
+  "image": "dockurr/umbrel:1.4.0",
+  "restart": "unless-stopped",
+  "ports": [
+    "8080:80"
+  ],
+  "volumes": [
+    "big-bear-umbrel-os_data:/data",
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ],
+  "stop_grace_period": "1m"
+}
+    }
+  }
+}

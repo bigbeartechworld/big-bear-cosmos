@@ -1,15 +1,7 @@
 {
-  "name": "jlesage-firefox",
-  "description": "This project implements a Docker container for Firefox.",
+  "name": "Jlesage Firefox",
+  "description": "The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.",
+  "url": "",
   "longDescription": "The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/firefox.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/firefox.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"]
 }
