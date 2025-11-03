@@ -1,15 +1,11 @@
 {
-  "name": "2fauth",
+  "name": "2FAuth",
   "description": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes",
+  "url": "https://hub.docker.com/r/2fauth/2fauth",
   "longDescription": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
   "image": "https://user-images.githubusercontent.com/1289128/276442834-bdb528d0-78fa-4155-ba15-7165d88b9836.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
+  "supported_architectures": ["amd64","arm64"],
   "icon": "https://user-images.githubusercontent.com/1289128/276442834-bdb528d0-78fa-4155-ba15-7165d88b9836.png"
 }

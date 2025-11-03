@@ -1,0 +1,11 @@
+{
+  "name": "Microbin",
+  "description": "Self-hosted, encrypted pastebin alternative with configurable features.",
+  "url": "https://hub.docker.com/r/danielszabo99/microbin",
+  "longDescription": "Self-hosted, encrypted pastebin alternative with configurable features.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/szabodanika/microbin@v2.0.4/templates/assets/logo-square.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/szabodanika/microbin@v2.0.4/templates/assets/logo-square.png"
+}

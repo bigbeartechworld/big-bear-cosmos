@@ -1,0 +1,64 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Wallabag",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://wallabag:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "wallabag": {
+  "container_name": "big-bear-wallabag",
+  "image": "wallabag/wallabag:2.6.14",
+  "restart": "unless-stopped",
+  "environment": [
+    "MYSQL_ROOT_PASSWORD=777134a0-4480-49f3-b00c-29db42c6d136",
+    "SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql",
+    "SYMFONY__ENV__DATABASE_HOST=big-bear-wallabag-db",
+    "SYMFONY__ENV__DATABASE_PORT=3306",
+    "SYMFONY__ENV__DATABASE_NAME=wallabag",
+    "SYMFONY__ENV__DATABASE_USER=big_bear_wallabag",
+    "SYMFONY__ENV__DATABASE_PASSWORD=fbe433e9-e3a8-432a-a382-d132596a76fc",
+    "SYMFONY__ENV__DATABASE_CHARSET=utf8mb4",
+    "SYMFONY__ENV__DATABASE_TABLE_PREFIX=\"big_bear_wallabag_\"",
+    "SYMFONY__ENV__MAILER_DSN=smtp://127.0.0.1",
+    "SYMFONY__ENV__FROM_EMAIL=wallabag@example.com",
+    "SYMFONY__ENV__DOMAIN_NAME=http://[IP]:8080",
+    "SYMFONY__ENV__SERVER_NAME=\"Big Bear Wallabag\""
+  ],
+  "ports": [
+    "8080:80"
+  ],
+  "volumes": [
+    "big-bear-wallabag_images:/var/www/wallabag/web/assets/images"
+  ],
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "wget",
+      "--no-verbose",
+      "--tries=1",
+      "--spider",
+      "http://localhost/api/info"
+    ],
+    "interval": "1m",
+    "timeout": "3s"
+  },
+  "networks": [
+    "big-bear-wallabag-network"
+  ],
+  "depends_on": [
+    "big-bear-wallabag-db",
+    "big-bear-wallabag-redis"
+  ]
+}
+    }
+  }
+}

@@ -1,14 +1,31 @@
 cosmos-installer: null
+# Configuration for kiwix-serve setup
+
+# Name of the big-bear-kiwix-serve application
 name: big-bear-kiwix-serve
+# Service definitions for the big-bear-kiwix-serve application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-kiwix-serve
+  # The `big-bear-kiwix-serve` service definition
+  big-bear-kiwix-serve:
+    # Name of the container
+    container_name: big-bear-kiwix-serve
+    # Image to be used for the container
     image: ghcr.io/kiwix/kiwix-serve:3.7.0-2
+    # Command to run inside the container
     command: "*.zim"
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/data"
+      # Mounting the local kiwix-serve_zim directory to /data inside the container
+      - big-bear-kiwix-serve_zim:/data
+    # Ports mapping between host and container
     ports:
-      - 8080:8080
-    hostname: "{ServiceName}"
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+volumes:
+  big-bear-kiwix-serve_zim:
+    name: big-bear-kiwix-serve_zim
+    driver: local
 minVersion: 0.14.0

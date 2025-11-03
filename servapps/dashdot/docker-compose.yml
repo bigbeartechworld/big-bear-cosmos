@@ -1,14 +1,15 @@
 cosmos-installer: null
 name: big-bear-dashdot
 services:
-  "{ServiceName}":
+  app:
     image: mauricenino/dashdot:6.2.0
     ports:
-      - 3001:3001
+      - "3001:3001"
     volumes:
-      - "{ServiceName}-data:/mnt/host# Mounting the local dashdot directory to
-        /mnt/host inside the container"
+      - big-bear-dashdot_data:/mnt/host
     privileged: true
-    container_name: "{ServiceName}"
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-dashdot_data:
+    name: big-bear-dashdot_data
+    driver: local
 minVersion: 0.14.0

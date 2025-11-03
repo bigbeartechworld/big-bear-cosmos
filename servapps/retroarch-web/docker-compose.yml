@@ -1,13 +1,24 @@
 cosmos-installer: null
+# Configuration for retroarch-web setup
+
+# Name of the big-bear-retroarch-web application
 name: big-bear-retroarch-web
+# Service definitions for the big-bear-retroarch-web application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-retroarch-web
+  # The `big-bear-retroarch-web` service definition
+  big-bear-retroarch-web:
+    # Name of the container
+    container_name: big-bear-retroarch-web
+    # Image to be used for the container
     image: inglebard/retroarch-web:latest
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
       - ROOT_WWW_PATH="/var/www/html"
+    # Ports mapping between host and container
     ports:
-      - 8080:80
-    hostname: "{ServiceName}"
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
 minVersion: 0.14.0

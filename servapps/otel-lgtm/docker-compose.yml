@@ -1,24 +1,52 @@
 cosmos-installer: null
+# Configuration for big-bear-otel-lgtm setup
+
+# Name of the big-bear-otel-lgtm application
 name: big-bear-otel-lgtm
+# Service definitions for big-bear-otel-lgtm application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-otel-lgtm
+  # The `big-bear-otel-lgtm` service definition
+  big-bear-otel-lgtm:
+    # Name of the container
+    container_name: big-bear-otel-lgtm
+    # Image to be used for the container
     image: grafana/otel-lgtm:0.11.14
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - type: volume
-        source: "{ServiceName}-data"
+      # Mounting the local otel-lgtm_data directory to /data inside the container
+      - type: bind
+        source: big-bear-otel-lgtm_data
         target: /data
         bind:
           create_host_path: true
+    # Ports mapping between host and container
     ports:
-      - 3000:3000/tcp
-      - 4317:4317/tcp
-      - 4318:4318/tcp
+      # Mapping port 3000 of the host to port 3000 of the container
+      - mode: ingress
+        target: 3000
+        published: "3000"
+        protocol: tcp
+      # Mapping port 4317 of the host to port 4317 of the container  
+      - mode: ingress
+        target: 4317
+        published: "4317"
+        protocol: tcp
+      # Mapping port 4318 of the host to port 4318 of the container  
+      - mode: ingress
+        target: 4318
+        published: "4318"
+        protocol: tcp
+    # Networks to be attached to the container
     networks:
       - big-bear-otel-lgtm
-    hostname: "{ServiceName}"
 networks:
   big-bear-otel-lgtm:
     driver: bridge
+volumes:
+  big-bear-otel-lgtm_data:
+    name: big-bear-otel-lgtm_data
+    driver: local
 minVersion: 0.14.0

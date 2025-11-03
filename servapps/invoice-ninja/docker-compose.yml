@@ -1,9 +1,13 @@
 cosmos-installer: null
+# Configuration for invoice-ninja setup
+
+# Name of the big-bear-invoice-ninja application
 name: big-bear-invoice-ninja
+# Service definitions for the big-bear-invoice-ninja application
 services:
-  "{ServiceName}-big-bear-invoice-ninja":
+  big-bear-invoice-ninja:
     image: invoiceninja/invoiceninja:5.12.28
-    container_name: "{ServiceName}-big-bear-invoice-ninja"
+    container_name: big-bear-invoice-ninja
     restart: unless-stopped
     user: 1500:1500
     environment:
@@ -12,7 +16,7 @@ services:
       - APP_URL=http://big-bear-invoice-ninja-web
       - APP_KEY=base64:4doW1cidLuSqm7Z/BhPu/bn5HGnCKyEcSSlbVPTYYRU=
       - APP_CIPHER=AES-256-CBC
-      - DB_HOST={ServiceName}-big-bear-invoice-ninja-db
+      - DB_HOST=big-bear-invoice-ninja-db
       - DB_PORT=3306
       - DB_DATABASE=ninja
       - DB_USERNAME=ninja
@@ -21,32 +25,34 @@ services:
       - QUEUE_CONNECTION=database
       - IS_DOCKER=TRUE
     volumes:
-      - "{ServiceName}-big-bear-invoice-ninja-data:/var/www/app/public"
-      - "{ServiceName}-big-bear-invoice-ninja-data-2:/var/www/app/storage"
-      - "{ServiceName}-big-bear-invoice-ninja-data-3:/usr/local/etc/php/php.ini"
-      - "{ServiceName}-big-bear-invoice-ninja-data-4:/usr/local/etc/php/php-cli\
-        .ini"
+      - big-bear-invoice-ninja_data_public:/var/www/app/public:rw,delegated
+      - big-bear-invoice-ninja_data_storage:/var/www/app/storage:rw,delegated
+      - big-bear-invoice-ninja_data_php_php.ini:/usr/local/etc/php/php.ini:ro
+      - big-bear-invoice-ninja_data_php_php-cli.ini:/usr/local/etc/php/php-cli.ini:ro
     depends_on:
-      - "{ServiceName}-big-bear-invoice-ninja-db"
+      - big-bear-invoice-ninja-db
     networks:
       - big-bear-invoice-ninja-network
-    hostname: "{ServiceName}-big-bear-invoice-ninja"
-  "{ServiceName}-big-bear-invoice-ninja-web":
-    container_name: "{ServiceName}-big-bear-invoice-ninja-web"
+  big-bear-invoice-ninja-web:
+    # Name of the container
+    container_name: big-bear-invoice-ninja-web
+    # Image to be used for the container
     image: nginx:1.29
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-big-bear-invoice-ninja-web-data:/etc/nginx/conf.d/defaul\
-        t.conf"
-      - "{ServiceName}-big-bear-invoice-ninja-web-data-2:/var/www/app/public"
+      - big-bear-invoice-ninja_data_nginx_invoice-ninja.conf:/etc/nginx/conf.d/default.conf:ro
+      - big-bear-invoice-ninja_data_public:/var/www/app/public:ro
+    # Ports mapping between host and container
     ports:
-      - 8080:80
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
     networks:
       - big-bear-invoice-ninja-network
-    hostname: "{ServiceName}-big-bear-invoice-ninja-web"
-  "{ServiceName}-big-bear-invoice-ninja-db":
+  big-bear-invoice-ninja-db:
     image: mariadb:10.4
-    container_name: "{ServiceName}-big-bear-invoice-ninja-db"
+    container_name: big-bear-invoice-ninja-db
     restart: unless-stopped
     environment:
       - MARIADB_ROOT_PASSWORD=ad178c4b-302f-44e6-937f-8c7808f23795
@@ -54,44 +60,50 @@ services:
       - MARIADB_PASSWORD=ninja
       - MARIADB_DATABASE=ninja
     volumes:
-      - "{ServiceName}-big-bear-invoice-ninja-db-data:/var/lib/mysql"
+      - big-bear-invoice-ninja_data_mysql:/var/lib/mysql:rw,delegated
     networks:
       - big-bear-invoice-ninja-network
     depends_on:
-      - "{ServiceName}-big-bear-invoice-ninja-init"
-    command:
-      - mysqld
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
-      - --wait_timeout=28800
-      - --log-warnings=0
-    hostname: "{ServiceName}-big-bear-invoice-ninja-db"
-  "{ServiceName}-big-bear-invoice-ninja-init":
+      - big-bear-invoice-ninja-init
+    # This command is required to set important mariadb defaults
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
+  big-bear-invoice-ninja-init:
     image: bash:5.3.3
-    container_name: "{ServiceName}-big-bear-invoice-ninja-init"
+    container_name: big-bear-invoice-ninja-init
     volumes:
-      - "{ServiceName}-big-bear-invoice-ninja-init-data:/tmp/data"
-    command:
-      - /bin/sh
-      - -c
-      - "if [ ! -f /tmp/data/.init_complete ]; then echo 'Starting
-        initialization process...' && if [ -f /tmp/data/init/init.sh ]; then
-        echo 'Found init.sh, making it executable...' && chmod +x
-        /tmp/data/init/init.sh && echo 'Executing init.sh...' &&
-        /tmp/data/init/init.sh && echo 'init.sh execution completed.' && touch
-        /tmp/data/.init_complete && echo 'Initialization process finished.';
-        else echo 'Error: /tmp/data/init/init.sh not found!' && exit 1; fi; else
-        echo 'Initialization already completed. Exiting.'; fi && exit 0"
+      - big-bear-invoice-ninja_data:/tmp/data
+    command: ["/bin/sh", "-c", "if [ ! -f /tmp/data/.init_complete ]; then echo 'Starting initialization process...' && if [ -f /tmp/data/init/init.sh ]; then echo 'Found init.sh, making it executable...' && chmod +x /tmp/data/init/init.sh && echo 'Executing init.sh...' && /tmp/data/init/init.sh && echo 'init.sh execution completed.' && touch /tmp/data/.init_complete && echo 'Initialization process finished.'; else echo 'Error: /tmp/data/init/init.sh not found!' && exit 1; fi; else echo 'Initialization already completed. Exiting.'; fi && exit 0"]
     networks:
       - big-bear-invoice-ninja-network
-    restart: no
+    restart: "no"
     logging:
-      driver: json-file
+      driver: "json-file"
       options:
-        max-size: 200k
+        max-size: "200k"
         max-file: "10"
-    hostname: "{ServiceName}-big-bear-invoice-ninja-init"
 networks:
   big-bear-invoice-ninja-network:
     driver: bridge
+volumes:
+  big-bear-invoice-ninja_data:
+    name: big-bear-invoice-ninja_data
+    driver: local
+  big-bear-invoice-ninja_data_mysql:
+    name: big-bear-invoice-ninja_data_mysql
+    driver: local
+  big-bear-invoice-ninja_data_nginx_invoice-ninja.conf:
+    name: big-bear-invoice-ninja_data_nginx_invoice-ninja.conf
+    driver: local
+  big-bear-invoice-ninja_data_php_php-cli.ini:
+    name: big-bear-invoice-ninja_data_php_php-cli.ini
+    driver: local
+  big-bear-invoice-ninja_data_php_php.ini:
+    name: big-bear-invoice-ninja_data_php_php.ini
+    driver: local
+  big-bear-invoice-ninja_data_public:
+    name: big-bear-invoice-ninja_data_public
+    driver: local
+  big-bear-invoice-ninja_data_storage:
+    name: big-bear-invoice-ninja_data_storage
+    driver: local
 minVersion: 0.14.0

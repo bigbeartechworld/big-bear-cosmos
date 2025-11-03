@@ -1,37 +1,58 @@
 cosmos-installer: null
+# Configuration for piwigo setup
+
+# Name of the big-bear-piwigo application
 name: big-bear-piwigo
+# Service definitions for the big-bear-piwigo application
 services:
-  "{ServiceName}-big-bear-piwigo":
-    container_name: "{ServiceName}-big-bear-piwigo"
+  # Service name: big-bear-piwigo
+  # The `big-bear-piwigo` service definition
+  big-bear-piwigo:
+    # Name of the container
+    container_name: big-bear-piwigo
+    # Image to be used for the container
     image: linuxserver/piwigo:15.7.0
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
+      - PUID=1000 # User ID for the container
+      - PGID=1000 # Group ID for the container
+      - TZ=UTC # Timezone setting for the container
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-big-bear-piwigo-data:/config"
-      - "{ServiceName}-big-bear-piwigo-data-2:/gallery"
+      - big-bear-piwigo_config:/config # Configuration files
+      - big-bear-piwigo_gallery:/gallery # Gallery files
+    # Ports mapping between host and container
     ports:
-      - 8080:80
+      - "8080:80" # Mapping port 8080 of the host to port 80 of the container
     networks:
       - big_bear_piwigo_network
-    hostname: "{ServiceName}-big-bear-piwigo"
-  "{ServiceName}-big-bear-piwigo-db":
+  big-bear-piwigo-db:
     image: mariadb:10.6
-    container_name: "{ServiceName}-big-bear-piwigo-db"
+    container_name: big-bear-piwigo-db
     environment:
-      - MYSQL_ROOT_PASSWORD=3cf3f2c4-3415-4efe-b478-db7b6f0b9934
-      - MYSQL_DATABASE=piwigo
-      - MYSQL_USER=big_bear_piwigo
-      - MYSQL_PASSWORD=358fac48-4beb-4027-9c11-840464aca400
+      - MYSQL_ROOT_PASSWORD=3cf3f2c4-3415-4efe-b478-db7b6f0b9934 # Root password for MySQL
+      - MYSQL_DATABASE=piwigo # Database name
+      - MYSQL_USER=big_bear_piwigo # Database user
+      - MYSQL_PASSWORD=358fac48-4beb-4027-9c11-840464aca400 # Database user password
     volumes:
-      - "{ServiceName}-big-bear-piwigo-db-data:/var/lib/mysql"
+      - big-bear-piwigo_mysql:/var/lib/mysql # Persist database data
     restart: unless-stopped
     networks:
       - big_bear_piwigo_network
-    hostname: "{ServiceName}-big-bear-piwigo-db"
+# Network definition for the big-bear-piwigo application
 networks:
   big_bear_piwigo_network:
-    driver: bridge
+    driver: bridge # Defines the network driver to be used (bridge)
+volumes:
+  big-bear-piwigo_config:
+    name: big-bear-piwigo_config
+    driver: local
+  big-bear-piwigo_gallery:
+    name: big-bear-piwigo_gallery
+    driver: local
+  big-bear-piwigo_mysql:
+    name: big-bear-piwigo_mysql
+    driver: local
 minVersion: 0.14.0

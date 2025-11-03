@@ -1,0 +1,31 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Node-RED",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://node-red:1880",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "node-red": {
+  "container_name": "node-red",
+  "image": "nodered/node-red:4.1.1",
+  "restart": "unless-stopped",
+  "ports": [
+    "1880:1880"
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    "big-bear-node-red_data:/data"
+  ]
+}
+    }
+  }
+}

@@ -1,73 +1,85 @@
 cosmos-installer: null
+# Configuration for pd3f setup
+
+# Name of the big-bear-pd3f application
 name: big-bear-pd3f
+# Service definitions for the big-bear-pd3f application
 services:
-  "{ServiceName}-web":
-    container_name: "{ServiceName}-web"
+  # Service name: web
+  # The `web` service definition
+  web:
+    # Name of the container
+    container_name: big-bear-pd3f
+    # Image to be used for the container
     image: pd3f/pd3f:latest
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-web-data:/uploads/"
+      # Mounting the local /DATA/AppData/$AppID/uploads directory to /uploads/ inside the container
+      - big-bear-pd3f_uploads:/uploads/
+    # Ports mapping between host and container
     ports:
-      - 1616:5000
-    command:
-      - gunicorn
-      - app:app
-      - --bind=0.0.0.0:5000
+      # Mapping port 1616 of the host to port 5000 of the container
+      - "1616:5000"
+    command: ["gunicorn", "app:app", "--bind=0.0.0.0:5000"]
+    # Other services that this service depends on
     depends_on:
-      - "{ServiceName}-redis"
-      - "{ServiceName}-parsr"
-      - "{ServiceName}-worker"
-      - "{ServiceName}-ocr_worker"
+      - redis
+      - parsr
+      - worker
+      - ocr_worker
     networks:
       - big-bear-pd3f-network
-    hostname: "{ServiceName}-web"
-  "{ServiceName}-parsr":
+  # Service name: parsr
+  parsr:
     image: axarev/parsr:v1.2.2
     networks:
       - big-bear-pd3f-network
     expose:
       - 3001
-    container_name: "{ServiceName}-parsr"
-    hostname: "{ServiceName}-parsr"
-  "{ServiceName}-redis":
-    image: redis:6-alpine
+  # Service name: redis
+  redis:
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f
     networks:
       - big-bear-pd3f-network
     expose:
       - 6379
-    container_name: "{ServiceName}-redis"
-    hostname: "{ServiceName}-redis"
-  "{ServiceName}-worker":
+  # Service name: worker
+  worker:
     image: pd3f/pd3f:latest
     depends_on:
-      - "{ServiceName}-parsr"
-      - "{ServiceName}-redis"
+      - parsr
+      - redis
     networks:
       - big-bear-pd3f-network
     volumes:
-      - "{ServiceName}-worker-data:/root/.cache/"
-      - "{ServiceName}-worker-data-2:/to-ocr/"
-      - "{ServiceName}-worker-data-3:/uploads/"
+      - big-bear-pd3f_cache:/root/.cache/
+      - big-bear-pd3f_to-ocr:/to-ocr/
+      - big-bear-pd3f_uploads:/uploads/
+    # delete results / files after one day
     environment:
       - KEEP_RESULTS_HOURS=24
-    command:
-      - rq
-      - worker
-      - -u
-      - redis://redis:6379
-      - --results-ttl
-      - "86400"
-    container_name: "{ServiceName}-worker"
-    hostname: "{ServiceName}-worker"
-  "{ServiceName}-ocr_worker":
+    command: ["rq", "worker", "-u", "redis://redis:6379", "--results-ttl", "86400"]
+  # Service name: ocr_worker
+  ocr_worker:
     image: pd3f/pd3f-ocr:latest
     networks:
       - big-bear-pd3f-network
     volumes:
-      - "{ServiceName}-ocr_worker-data:/to-ocr/"
-    container_name: "{ServiceName}-ocr_worker"
-    hostname: "{ServiceName}-ocr_worker"
+      - big-bear-pd3f_to-ocr:/to-ocr/
+# Network definitions
 networks:
   big-bear-pd3f-network:
     name: big-bear-pd3f-network
+volumes:
+  big-bear-pd3f_cache:
+    name: big-bear-pd3f_cache
+    driver: local
+  big-bear-pd3f_to-ocr:
+    name: big-bear-pd3f_to-ocr
+    driver: local
+  big-bear-pd3f_uploads:
+    name: big-bear-pd3f_uploads
+    driver: local
 minVersion: 0.14.0

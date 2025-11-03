@@ -1,16 +1,40 @@
 cosmos-installer: null
+# Configuration for audiobookshelf setup
+
+# Name of the big-bear-audiobookshelf application
 name: big-bear-audiobookshelf
+# Service definitions for the big-bear-audiobookshelf application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-audiobookshelf
+  # The `big-bear-audiobookshelf` service definition
+  big-bear-audiobookshelf:
+    # Name of the container
+    container_name: big-bear-audiobookshelf
+    # Image to be used for the container
     image: ghcr.io/advplyr/audiobookshelf:2.30.0
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/audiobooks"
-      - "{ServiceName}-data-2:/podcasts"
-      - "{ServiceName}-data-3:/config"
-      - "{ServiceName}-data-4:/metadata"
+      - big-bear-audiobookshelf_media_data_books_spoken:/audiobooks
+      - big-bear-audiobookshelf_media_data_podcasts:/podcasts
+      - big-bear-audiobookshelf_data_config:/config
+      - big-bear-audiobookshelf_data_metadata:/metadata
+    # Ports mapping between host and container
     ports:
-      - 8080:80
-    hostname: "{ServiceName}"
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+volumes:
+  big-bear-audiobookshelf_data_config:
+    name: big-bear-audiobookshelf_data_config
+    driver: local
+  big-bear-audiobookshelf_data_metadata:
+    name: big-bear-audiobookshelf_data_metadata
+    driver: local
+  big-bear-audiobookshelf_media_data_books_spoken:
+    name: big-bear-audiobookshelf_media_data_books_spoken
+    driver: local
+  big-bear-audiobookshelf_media_data_podcasts:
+    name: big-bear-audiobookshelf_media_data_podcasts
+    driver: local
 minVersion: 0.14.0

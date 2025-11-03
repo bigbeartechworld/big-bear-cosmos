@@ -1,0 +1,31 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Focalboard",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://focalboard:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "focalboard": {
+  "container_name": "big-bear-focalboard",
+  "image": "mattermost/focalboard:7.11.4",
+  "restart": "unless-stopped",
+  "ports": [
+    "8000:8000"
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    "big-bear-focalboard_data:/opt/focalboard/data"
+  ]
+}
+    }
+  }
+}

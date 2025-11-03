@@ -1,16 +1,22 @@
 cosmos-installer: null
+# Configuration for big-bear-mailpit setup
 name: big-bear-mailpit
+# Service definitions for the big-bear-mailpit application
 services:
-  "{ServiceName}":
-    image: axllent/mailpit:v1.27
-    container_name: "{ServiceName}"
-    restart: unless-stopped
-    volumes:
-      - "{ServiceName}-data:/data"
-    environment:
+  # Service name: app
+  app:
+    image: axllent/mailpit:v1.27 # Image for the app service
+    container_name: mailpit # Container name for the app service
+    restart: unless-stopped # Restart policy for the container
+    volumes: # Volumes to mount for the app service
+      - big-bear-mailpit_data:/data
+    environment: # Environment variables for the app service
       - TZ=UTC
-    ports:
-      - 8025:8025
-      - 1025:1025
-    hostname: "{ServiceName}"
+    ports: # Ports to expose for the app service
+      - "8025:8025"
+      - "1025:1025"
+volumes:
+  big-bear-mailpit_data:
+    name: big-bear-mailpit_data
+    driver: local
 minVersion: 0.14.0

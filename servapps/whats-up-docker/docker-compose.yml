@@ -1,12 +1,16 @@
 cosmos-installer: null
+# Configuration for big-bear-wud setup
+
+# Name of the big-bear-wud application
 name: big-bear-wud
+# Service definitions for the big-bear-wud application
 services:
-  "{ServiceName}":
+  # Service definition for the main application
+  app:
     image: fmartinou/whats-up-docker:6.6.1
-    container_name: "{ServiceName}"
+    container_name: wud
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 3000:3000
-    hostname: "{ServiceName}"
 minVersion: 0.14.0

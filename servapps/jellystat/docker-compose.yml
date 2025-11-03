@@ -1,9 +1,18 @@
 cosmos-installer: null
+# Configuration for jellystat setup
+
+# Name of the big-bear-jellystat application
 name: big-bear-jellystat
+# Service definitions for the big-bear-jellystat application
 services:
-  "{ServiceName}-big-bear-jellystat":
-    container_name: "{ServiceName}-big-bear-jellystat"
+  # Service name: big-bear-jellystat
+  # The `big-bear-jellystat` service definition
+  big-bear-jellystat:
+    # Name of the container
+    container_name: big-bear-jellystat
+    # Image to be used for the container
     image: cyfershepard/jellystat:1.1.6
+    # Container restart policy
     restart: unless-stopped
     environment:
       - POSTGRES_USER=postgres
@@ -11,27 +20,35 @@ services:
       - POSTGRES_IP=big-bear-jellystat-db
       - POSTGRES_PORT=5432
       - JWT_SECRET="my-secret-jwt-key"
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-big-bear-jellystat-data:/app/backend/backup-data"
+      - big-bear-jellystat_backup-data:/app/backend/backup-data
+    # Ports mapping between host and container
     ports:
-      - 3000:3000
+      # Mapping port 3000 of the host to port 3000 of the container
+      - "3000:3000"
     networks:
       - big-bear-jellystat-network
-    hostname: "{ServiceName}-big-bear-jellystat"
-  "{ServiceName}-big-bear-jellystat-db":
-    container_name: "{ServiceName}-big-bear-jellystat-db"
+  big-bear-jellystat-db:
+    container_name: big-bear-jellystat-db
     image: postgres:15.2
     environment:
-      POSTGRES_DB: jfstat
+      POSTGRES_DB: "jfstat"
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 8a23ad09-61cf-4178-a783-6d4586496e3a
     volumes:
-      - "{ServiceName}-big-bear-jellystat-db-data:/var/lib/postgresql/data"
+      - big-bear-jellystat_postgres-data:/var/lib/postgresql/data # Mounting the volume
     networks:
       - big-bear-jellystat-network
-    hostname: "{ServiceName}-big-bear-jellystat-db"
 networks:
   big-bear-jellystat-network:
     name: big-bear-jellystat-network
     driver: bridge
+volumes:
+  big-bear-jellystat_backup-data:
+    name: big-bear-jellystat_backup-data
+    driver: local
+  big-bear-jellystat_postgres-data:
+    name: big-bear-jellystat_postgres-data
+    driver: local
 minVersion: 0.14.0

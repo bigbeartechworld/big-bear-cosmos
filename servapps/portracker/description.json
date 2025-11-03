@@ -1,0 +1,11 @@
+{
+  "name": "Portracker",
+  "description": "A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.",
+  "url": "https://hub.docker.com/r/mostafawahied/portracker",
+  "longDescription": "A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/portracker.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/portracker.png"
+}

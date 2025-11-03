@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Tandoor",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://tandoor:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "tandoor": {
+  "container_name": "big-bear-tandoor",
+  "image": "ghcr.io/tandoorrecipes/recipes:2.3.3",
+  "restart": "unless-stopped",
+  "volumes": [
+    "big-bear-tandoor_staticfiles:/opt/recipes/staticfiles",
+    "big-bear-tandoor_mediafiles:/opt/recipes/mediafiles"
+  ],
+  "ports": [
+    "8080:8080"
+  ],
+  "environment": [
+    "SECRET_KEY=6496f725-e4a4-4fa5-9f7b-db0114bc1568",
+    "DB_ENGINE=django.db.backends.postgresql",
+    "POSTGRES_HOST=big-bear-tandoor-db",
+    "POSTGRES_PORT=5432",
+    "POSTGRES_USER=tandoor",
+    "POSTGRES_PASSWORD=100c7d31-9ec5-44ec-9101-e226c8e2420d",
+    "POSTGRES_DB=tandoordb"
+  ],
+  "networks": [
+    "big_bear_tandoor_network"
+  ],
+  "depends_on": {
+    "big-bear-tandoor-db": {
+      "condition": "service_healthy"
+    }
+  }
+}
+    }
+  }
+}

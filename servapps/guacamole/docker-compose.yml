@@ -1,36 +1,46 @@
 cosmos-installer: null
+# Name of the configuration: big-bear-guacamole
 name: big-bear-guacamole
+# Define the services required for the application
 services:
-  "{ServiceName}-guacd":
+  # guacd service configuration
+  guacd:
+    # Docker image to use for this service
     image: guacamole/guacd:1.6.0
+    # Restart policy for the container
     restart: always
-    container_name: "{ServiceName}-guacd"
-    hostname: "{ServiceName}-guacd"
-  "{ServiceName}-app":
+  # app service configuration
+  app:
     image: guacamole/guacamole:1.6.0
     restart: always
+    # Link this service to the guacd service
     links:
       - guacd
+    # Environment variables for the app service
     environment:
       - GUACD_HOSTNAME=guacd
       - MYSQL_HOSTNAME=mysql
       - MYSQL_DATABASE=guacamole_db
       - MYSQL_USER=guacamole_user
       - MYSQL_PASSWORD=some_password
+    # Map port 8090 on the host to port 8080 on the container
     ports:
       - 8090:8080
-    container_name: "{ServiceName}-app"
-    hostname: "{ServiceName}-app"
-  "{ServiceName}-mysql":
+  # mysql service configuration
+  mysql:
     image: mysql:5.7
     restart: always
+    # Environment variables for the MySQL service
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
       - MYSQL_DATABASE=guacamole_db
       - MYSQL_USER=guacamole_user
       - MYSQL_PASSWORD=some_password
+    # Volume mapping for persistent storage
     volumes:
-      - "{ServiceName}-mysql-data:/var/lib/mysql"
-    container_name: "{ServiceName}-mysql"
-    hostname: "{ServiceName}-mysql"
+      - big-bear-guacamole_mysql:/var/lib/mysql
+volumes:
+  big-bear-guacamole_mysql:
+    name: big-bear-guacamole_mysql
+    driver: local
 minVersion: 0.14.0

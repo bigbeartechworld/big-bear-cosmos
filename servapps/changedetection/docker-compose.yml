@@ -1,13 +1,28 @@
 cosmos-installer: null
+# Configuration for changedetection setup
+
+# Name of the big-bear-changedetection application
 name: big-bear-changedetection
+# Service definitions for the big-bear-changedetection application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: ghcr.io/dgtlmoon/changedetection.io:0.50.34
+  # Service name: big-bear-changedetection
+  # The `big-bear-changedetection` service definition
+  big-bear-changedetection:
+    # Name of the container
+    container_name: big-bear-changedetection
+    # Image to be used for the container
+    image: ghcr.io/dgtlmoon/changedetection.io:0.50.38
+    # Container restart policy
     restart: unless-stopped
+    # Ports mapping between host and container
     ports:
-      - 5000:5000
+      # Mapping port 5000 of the host to port 5000 of the container
+      - "5000:5000"
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/datastore"
-    hostname: "{ServiceName}"
+      - big-bear-changedetection_datastore:/datastore
+volumes:
+  big-bear-changedetection_datastore:
+    name: big-bear-changedetection_datastore
+    driver: local
 minVersion: 0.14.0

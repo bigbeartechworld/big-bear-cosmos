@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "LS Adguard Home Sync",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ls-adguardhome-sync:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ls-adguardhome-sync": {
+  "container_name": "big-bear-ls-adguard-home-sync",
+  "image": "linuxserver/adguardhome-sync:0.8.2",
+  "restart": "unless-stopped",
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "TZ=Etc/UTC",
+    "LOG_LEVEL=info",
+    "ORIGIN_URL=https://192.168.1.2:3000",
+    "ORIGIN_USERNAME=bigbear",
+    "ORIGIN_PASSWORD=casaos",
+    "REPLICA_URL=https://192.168.1.3:3000",
+    "REPLICA_USERNAME=bigbear",
+    "REPLICA_PASSWORD=casaos",
+    "CRON=\"0 */2 * * *\"",
+    "RUN_ON_START=true",
+    "API_PORT=8080"
+  ],
+  "volumes": [
+    "big-bear-ls-adguardhome-sync_config:/config"
+  ],
+  "ports": [
+    "8080:8080"
+  ]
+}
+    }
+  }
+}

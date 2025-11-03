@@ -1,13 +1,23 @@
 cosmos-installer: null
+# Configuration for calcom setup
+
+# Name of the big-bear-calcom application
 name: big-bear-calcom
+# Service definitions for the big-bear-calcom application
 services:
-  "{ServiceName}-big-bear-calcom":
-    container_name: "{ServiceName}-big-bear-calcom"
+  # Service name: big-bear-calcom
+  # The `big-bear-calcom` service definition
+  big-bear-calcom:
+    # Name of the container
+    container_name: big-bear-calcom
+    # Image to be used for the container
     image: calcom/cal.com:v5.8.2
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
       - DATABASE_HOST=big-bear-calcom-db
-      - DATABASE_URL=postgresql://bigbear:9e45944b-37bb-41f7-aa6f-b74195fb58ec@{ServiceName}-big-bear-calcom-db/bigbear_calcom
+      - DATABASE_URL=postgresql://bigbear:9e45944b-37bb-41f7-aa6f-b74195fb58ec@big-bear-calcom-db/bigbear_calcom
       - DATABASE_DIRECT_URL=postgresql://bigbear:9e45944b-37bb-41f7-aa6f-b74195fb58ec@big-bear-calcom-db/bigbear_calcom
       - POSTGRES_USER=bigbear
       - POSTGRES_PASSWORD=9e45944b-37bb-41f7-aa6f-b74195fb58ec
@@ -28,28 +38,35 @@ services:
       - EMAIL_SERVER_PASSWORD=
       - EMAIL_SERVER_USER=
       - NODE_ENV=production
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-big-bear-calcom-data:/config"
+      - big-bear-calcom_config:/config
+    # Ports mapping between host and container
     ports:
       - 3000:3000
       - 3001:3001
     networks:
       - big_bear_calcom_network
-    hostname: "{ServiceName}-big-bear-calcom"
-  "{ServiceName}-big-bear-calcom-db":
-    container_name: "{ServiceName}-big-bear-calcom-db"
+  big-bear-calcom-db:
+    container_name: big-bear-calcom-db
     image: postgres:16.1
     restart: on-failure
     volumes:
-      - "{ServiceName}-big-bear-calcom-db-data:/var/lib/postgresql/data"
+      - big-bear-calcom_data_db:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=9e45944b-37bb-41f7-aa6f-b74195fb58ec
       - POSTGRES_USER=bigbear
       - POSTGRES_DB=bigbear_calcom
     networks:
       - big_bear_calcom_network
-    hostname: "{ServiceName}-big-bear-calcom-db"
 networks:
   big_bear_calcom_network:
     driver: bridge
+volumes:
+  big-bear-calcom_config:
+    name: big-bear-calcom_config
+    driver: local
+  big-bear-calcom_data_db:
+    name: big-bear-calcom_data_db
+    driver: local
 minVersion: 0.14.0

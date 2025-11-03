@@ -1,0 +1,11 @@
+{
+  "name": "Maybe Finance",
+  "description": "Maybe is a fully* open-source OS for your personal finances built by a small team alongside an incredible community Discord",
+  "url": "https://hub.docker.com/r/maybe-finance/maybe",
+  "longDescription": "Maybe is a fully* open-source OS for your personal finances built by a small team alongside an incredible community Discord",
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://raw.githubusercontent.com/maybe-finance/maybe/refs/heads/main/app/assets/images/logo-color.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://raw.githubusercontent.com/maybe-finance/maybe/refs/heads/main/app/assets/images/logo-color.png"
+}

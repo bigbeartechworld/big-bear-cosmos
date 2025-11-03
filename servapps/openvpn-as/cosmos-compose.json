@@ -1,0 +1,46 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "OpenVPN",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://openvpn-as:943",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "openvpn-as": {
+  "container_name": "big-bear-openvpn-as",
+  "image": "openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22",
+  "restart": "unless-stopped",
+  "privileged": true,
+  "cap_add": [
+    "NET_ADMIN"
+  ],
+  "environment": [
+    "PGID=1000",
+    "PUID=1000",
+    "TZ=Europe/Rome"
+  ],
+  "hostname": "OpenVPN",
+  "labels": {
+    "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/openvpn.png"
+  },
+  "ports": [
+    "943:943/tcp",
+    "443:443/tcp",
+    "1194:1194/udp"
+  ],
+  "volumes": [
+    "big-bear-openvpn-as_data:/openvpn"
+  ],
+  "network_mode": "bridge"
+}
+    }
+  }
+}

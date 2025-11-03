@@ -1,15 +1,11 @@
 {
-  "name": "gluetun",
-  "description": "Gluetun",
+  "name": "Gluetun",
+  "description": "Lightweight swiss-knife-like VPN client to multiple VPN service providers",
+  "url": "https://hub.docker.com/r/qmcgaw/gluetun",
   "longDescription": "Lightweight swiss-knife-like VPN client to multiple VPN service providers",
-  "tags": [
-    "BigBearCasaOS"
-  ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gluetun.png",
-  "supported_architectures": [
-    "amd64",
-    "arm64"
-  ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gluetun.png"
+  "tags": ["selfhosted","docker","bigbear","bigbearcasaos","container"],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/gluetun.png",
+  "supported_architectures": ["amd64","arm64"],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/gluetun.png"
 }

@@ -1,15 +1,34 @@
 cosmos-installer: null
+# Configuration for homer setup
+
+# Name of the big-bear-homer application
 name: big-bear-homer
+# Service definitions for the big-bear-homer application
 services:
-  "{ServiceName}":
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Specifies the Docker image to be used for the service
     image: b4bz/homer:v25.10.1
-    container_name: "{ServiceName}"
+    # Assigns a name to the container created from this service definition
+    container_name: homer
+    # Binds the container's volumes to host directories or named volumes
+    # In this case, bind-mounts `homer_assets` from the host to `/www/assets` inside the container
     volumes:
-      - "{ServiceName}-data:/www/assets"
+      - big-bear-homer_assets:/www/assets
+    # Maps the container's ports to the host's ports
+    # In this case, it maps port 8080 inside the container to port 8080 on the host
     ports:
       - 8080:8080
-    user: 1000:1000
+    # Specifies the user and group ID under which the container will run
+    # The default is user ID 1000 and group ID 1000
+    user: 1000:1000 # default
+    # Sets environment variables for the container
+    # In this case, the `INIT_ASSETS` variable is set to 1 (which is the default value)
     environment:
-      - INIT_ASSETS=1
-    hostname: "{ServiceName}"
+      - INIT_ASSETS=1 # default
+volumes:
+  big-bear-homer_assets:
+    name: big-bear-homer_assets
+    driver: local
 minVersion: 0.14.0

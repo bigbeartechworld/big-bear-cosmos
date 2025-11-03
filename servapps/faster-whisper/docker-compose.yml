@@ -1,20 +1,37 @@
 cosmos-installer: null
+# Configuration for faster-whisper setup
+
+# Name of the big-bear-faster-whisper application
 name: big-bear-faster-whisper
+# Service definitions for the big-bear-faster-whisper application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-faster-whisper
+  # The `big-bear-faster-whisper` service definition
+  big-bear-faster-whisper:
+    # Name of the container
+    container_name: big-bear-faster-whisper
+    # Image to be used for the container
     image: linuxserver/faster-whisper:2.5.0
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
       - WHISPER_MODEL=tiny-int8
-      - WHISPER_BEAM=1
-      - WHISPER_LANG=en
+      - WHISPER_BEAM=1 #optional
+      - WHISPER_LANG=en #optional
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/config"
+      # Mounting the local faster-whisper_config directory to /config inside the container
+      - big-bear-faster-whisper_config:/config
+    # Ports mapping between host and container
     ports:
-      - 10300:10300
-    hostname: "{ServiceName}"
+      # Mapping port 10300 of the host to port 10300 of the container
+      - "10300:10300"
+volumes:
+  big-bear-faster-whisper_config:
+    name: big-bear-faster-whisper_config
+    driver: local
 minVersion: 0.14.0

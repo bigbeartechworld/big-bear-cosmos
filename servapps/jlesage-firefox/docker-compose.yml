@@ -1,15 +1,18 @@
 cosmos-installer: null
-name: big-bear-jlesage-firefox
+name: big-bear-jlesage-firefox # Name of the CasaOS application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: jlesage/firefox:v25.09.1
+  big-bear-jlesage-firefox:
+    container_name: big-bear-jlesage-firefox # Name of the Docker container
+    image: jlesage/firefox:v25.09.1 # Docker image for the Firefox browser
     ports:
-      - 5800:5800
+      - "5800:5800" # Expose port 5800 for VNC access
     environment:
-      - VNC_PASSWORD=casaos
-      - FF_OPEN_URL=https://community.bigbeartechworld.com/
+      - VNC_PASSWORD=casaos # Set the VNC password to 'casaos'
+      - FF_OPEN_URL=https://community.bigbeartechworld.com/ # Set the default URL to Big Bear Tech World
     volumes:
-      - "{ServiceName}-data:/config"
-    hostname: "{ServiceName}"
+      - big-bear-jlesage-firefox_config:/config:rw # Mount the host directory to the container's Downloads directory
+volumes:
+  big-bear-jlesage-firefox_config:
+    name: big-bear-jlesage-firefox_config
+    driver: local
 minVersion: 0.14.0

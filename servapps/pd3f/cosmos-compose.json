@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "PD3F",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pd3f:1616",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pd3f": {
+  "container_name": "big-bear-pd3f",
+  "image": "pd3f/pd3f:latest",
+  "restart": "unless-stopped",
+  "volumes": [
+    "big-bear-pd3f_uploads:/uploads/"
+  ],
+  "ports": [
+    "1616:5000"
+  ],
+  "command": [
+    "gunicorn",
+    "app:app",
+    "--bind=0.0.0.0:5000"
+  ],
+  "depends_on": [
+    "redis",
+    "parsr",
+    "worker",
+    "ocr_worker"
+  ],
+  "networks": [
+    "big-bear-pd3f-network"
+  ]
+}
+    }
+  }
+}

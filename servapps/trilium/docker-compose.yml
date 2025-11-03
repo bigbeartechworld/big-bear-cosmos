@@ -1,15 +1,32 @@
 cosmos-installer: null
+# Configuration for trilium setup
+
+# Name of the big-bear-trilium application
 name: big-bear-trilium
+# Service definitions for the big-bear-trilium application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: zadam/trilium:0.63.7
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-trilium
+    # Image to be used for the container
+    image: triliumnext/trilium:v0.99.3
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
       - TRILIUM_DATA_DIR=/home/node/trilium-data
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/home/node/trilium-data"
+      # Mounting the local /DATA/AppData/$AppID/data directory to /home/node/trilium-data inside the container
+      - big-bear-trilium_data:/home/node/trilium-data
+    # Ports mapping between host and container
     ports:
-      - 8080:8080
-    hostname: "{ServiceName}"
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+volumes:
+  big-bear-trilium_data:
+    name: big-bear-trilium_data
+    driver: local
 minVersion: 0.14.0

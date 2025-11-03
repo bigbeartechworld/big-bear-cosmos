@@ -1,8 +1,8 @@
 {
   "id": "nocodb",
-  "version": "0.262.5",
+  "version": "0.265.1",
   "image": "nocodb/nocodb",
   "youtube": "https://youtu.be/mO2YzWpBu4o",
-  "docs_link": "https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177",
+  "docs_link": "",
   "big_bear_cosmos_youtube": ""
 }

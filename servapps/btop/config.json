@@ -1,8 +1,8 @@
 {
   "id": "btop",
-  "version": "0.0.9",
+  "version": "0.1.5",
   "image": "bigbeartechworld/big-bear-btop",
   "youtube": "https://youtu.be/mD52bujMt68",
   "docs_link": "",
-  "big_bear_cosmos_youtube": "https://youtu.be/U2kdiK1aH_o"
+  "big_bear_cosmos_youtube": ""
 }
