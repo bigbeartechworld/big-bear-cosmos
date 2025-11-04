@@ -1,17 +1,29 @@
 cosmos-installer: null
-name: big-bear-jlesage-handbrake
+name: big-bear-jlesage-handbrake # Name of the CasaOS application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: jlesage/handbrake:v25.10.1
+  big-bear-jlesage-handbrake:
+    container_name: big-bear-jlesage-handbrake # Name of the Docker container
+    image: jlesage/handbrake:v25.10.1 # Docker image for the Handbrake
     ports:
-      - 5800:5800
+      - "5800:5800" # Expose port 5800 for VNC access
     environment:
-      - VNC_PASSWORD=casaos
+      - VNC_PASSWORD=casaos # Set the VNC password to 'casaos'
     volumes:
-      - "{ServiceName}-data:/config"
-      - "{ServiceName}-data-2:/storage"
-      - "{ServiceName}-data-3:/watch"
-      - "{ServiceName}-data-4:/output"
-    hostname: "{ServiceName}"
+      - big-bear-jlesage-handbrake_config:/config:rw
+      - big-bear-jlesage-handbrake_storage:/storage:ro
+      - big-bear-jlesage-handbrake_watch:/watch:rw
+      - big-bear-jlesage-handbrake_output:/output:rw
+volumes:
+  big-bear-jlesage-handbrake_config:
+    name: big-bear-jlesage-handbrake_config
+    driver: local
+  big-bear-jlesage-handbrake_output:
+    name: big-bear-jlesage-handbrake_output
+    driver: local
+  big-bear-jlesage-handbrake_storage:
+    name: big-bear-jlesage-handbrake_storage
+    driver: local
+  big-bear-jlesage-handbrake_watch:
+    name: big-bear-jlesage-handbrake_watch
+    driver: local
 minVersion: 0.14.0

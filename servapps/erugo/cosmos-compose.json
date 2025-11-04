@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Erugo",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://erugo:9997",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "erugo": {
+  "container_name": "big-bear-erugo",
+  "image": "wardy784/erugo:0.1.1",
+  "restart": "unless-stopped",
+  "volumes": [
+    "big-bear-erugo_storage:/var/www/html/storage"
+  ],
+  "ports": [
+    "9997:80"
+  ]
+}
+    }
+  }
+}

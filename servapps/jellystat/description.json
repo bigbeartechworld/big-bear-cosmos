@@ -1,15 +1,20 @@
 {
-  "name": "jellystat",
-  "description": "Jellystat",
+  "name": "Jellystat",
+  "description": "Jellystat is a free and open source Statistics App for Jellyfin! (This project is still in development - expect some weirdness)",
+  "url": "https://hub.docker.com/r/cyfershepard/jellystat",
   "longDescription": "Jellystat is a free and open source Statistics App for Jellyfin! (This project is still in development - expect some weirdness)",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellystat.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellystat.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellystat.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellystat.png"
 }

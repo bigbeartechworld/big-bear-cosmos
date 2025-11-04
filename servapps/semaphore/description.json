@@ -1,15 +1,20 @@
 {
-  "name": "semaphore",
-  "description": "Ansible Semaphore",
+  "name": "Ansible Semaphore",
+  "description": "Ansible Semaphore is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.",
+  "url": "https://hub.docker.com/r/semaphoreui/semaphore",
   "longDescription": "Ansible Semaphore is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/semaphore.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/semaphore-ui.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/semaphore.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/semaphore-ui.png"
 }

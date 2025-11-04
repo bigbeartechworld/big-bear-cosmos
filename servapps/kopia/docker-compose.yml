@@ -1,29 +1,51 @@
 cosmos-installer: null
+# Configuration for kopia setup
+
+# Name of the big-bear-kopia application
 name: big-bear-kopia
+# Service definitions for the big-bear-kopia application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-kopia
+  # The `big-bear-kopia` service definition
+  big-bear-kopia:
+    # Name of the container
+    container_name: big-bear-kopia
+    # Image to be used for the container
     image: ghcr.io/thespad/kopia-server:v0.17.0-spad3
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables for the container
     environment:
       - PUID=0
       - PGID=0
       - TZ=UTC
-      - KOPIA_HTTPS=true
+      - KOPIA_HTTPS=true # Optional
       - KOPIA_UI_USERNAME=casaos
       - KOPIA_UI_PASSWORD=casaos
-      - KOPIA_PASSWORD=casaos
-      - REFRESH_INTERVAL=
+      - KOPIA_PASSWORD=casaos # Repository password
+      - REFRESH_INTERVAL= # Optional
     volumes:
-      - "{ServiceName}-data:/config"
-      - "{ServiceName}-data-2:/backups/home"
-      - /var/lib/docker/volumes:/backups/docker:ro
-      - "{ServiceName}-data-3:/repository"
-      - /tmp:/tmp:shared
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - big-bear-kopia_config:/config
+      - big-bear-kopia_home:/backups/home:ro # Optional
+      - /var/lib/docker/volumes:/backups/docker:ro # Optional
+      - big-bear-kopia_repository:/repository # Optional
+      - /tmp:/tmp:shared # Optional
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Optional
+    # Ports mapping between host and container
     ports:
-      - 51515:51515
+      # Mapping port 51515 of the host to port 51515 of the container
+      - "51515:51515"
+    # Additional capabilities to be added to the container
     cap_add:
-      - SYS_ADMIN
-    hostname: "{ServiceName}"
+      - SYS_ADMIN # Optional
+volumes:
+  big-bear-kopia_config:
+    name: big-bear-kopia_config
+    driver: local
+  big-bear-kopia_home:
+    name: big-bear-kopia_home
+    driver: local
+  big-bear-kopia_repository:
+    name: big-bear-kopia_repository
+    driver: local
 minVersion: 0.14.0

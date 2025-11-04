@@ -1,0 +1,54 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Nextcloud with SMB (Legacy)",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://nextcloud-with-smbclient:7580",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "nextcloud-with-smbclient": {
+  "container_name": "big-bear-nextcloud-smb",
+  "image": "bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.12",
+  "restart": "unless-stopped",
+  "ports": [
+    "7580:80"
+  ],
+  "volumes": [
+    "big-bear-nextcloud-with-smbclient_html:/var/www/html"
+  ],
+  "environment": [
+    "POSTGRES_HOST=big-bear-nextcloud-smb-db",
+    "REDIS_HOST=big-bear-nextcloud-smb-redis",
+    "POSTGRES_PASSWORD=casaos",
+    "POSTGRES_USER=casaos",
+    "POSTGRES_DB=nextcloud",
+    "NEXTCLOUD_ADMIN_USER=casaos",
+    "NEXTCLOUD_ADMIN_PASSWORD=casaos",
+    "TRUSTED_PROXIES=",
+    "OVERWRITEPROTOCOL=http",
+    "PHP_MEMORY_LIMIT=1024M",
+    "PHP_UPLOAD_LIMIT=1024M"
+  ],
+  "depends_on": {
+    "big-bear-nextcloud-smb-db": {
+      "condition": "service_healthy"
+    },
+    "big-bear-nextcloud-smb-redis": {
+      "condition": "service_healthy"
+    }
+  },
+  "networks": [
+    "big_bear_nextcloud_network"
+  ]
+}
+    }
+  }
+}

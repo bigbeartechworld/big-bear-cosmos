@@ -1,16 +1,32 @@
 cosmos-installer: null
+# Configuration for open-webui setup
+
+# Name of the big-bear-open-webui application
 name: big-bear-open-webui
+# Service definitions for the big-bear-open-webui application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-open-webui
+  # The `big-bear-open-webui` service definition
+  big-bear-open-webui:
+    # Name of the container
+    container_name: big-bear-open-webui
+    # Image to be used for the container
     image: ghcr.io/open-webui/open-webui:git-33e54a9
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/app/backend/data"
+      - big-bear-open-webui_data:/app/backend/data
+    # Environment variables
     environment:
       - OLLAMA_BASE_URL=
       - OPENAI_API_KEY=
+    # Ports mapping between host and container
     ports:
-      - 8080:8080
-    hostname: "{ServiceName}"
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+volumes:
+  big-bear-open-webui_data:
+    name: big-bear-open-webui_data
+    driver: local
 minVersion: 0.14.0

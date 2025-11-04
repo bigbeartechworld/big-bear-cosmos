@@ -1,15 +1,20 @@
 {
-  "name": "healthchecks",
-  "description": "Healthchecks",
+  "name": "Healthchecks",
+  "description": "Healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.",
+  "url": "https://hub.docker.com/r/linuxserver/healthchecks",
   "longDescription": "Healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/healthchecks.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/healthchecks.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/healthchecks.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/healthchecks.png"
 }

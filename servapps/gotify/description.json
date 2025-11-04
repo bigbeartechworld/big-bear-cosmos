@@ -1,14 +1,19 @@
 {
-  "name": "gotify",
-  "description": "Gotify",
+  "name": "Gotify",
+  "description": "a simple server for sending and receiving messages",
+  "url": "https://hub.docker.com/r/gotify/server",
   "longDescription": "a simple server for sending and receiving messages",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gotify.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/gotify.png",
   "supported_architectures": [
     "amd64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gotify.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/gotify.png"
 }

@@ -1,13 +1,28 @@
 cosmos-installer: null
+# Configuration for beszel setup
+
+# Name of the big-bear-beszel application
 name: big-bear-beszel
+# Service definitions for the big-bear-beszel application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: henrygd/beszel:0.14.1
+  # Service name: big-bear-beszel
+  # The `big-bear-beszel` service definition
+  big-bear-beszel:
+    # Name of the container
+    container_name: big-bear-beszel
+    # Image to be used for the container
+    image: henrygd/beszel:0.15.2
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/beszel_data"
+      - big-bear-beszel_data:/beszel_data
+    # Ports mapping between host and container
     ports:
-      - 8090:8090
-    hostname: "{ServiceName}"
+      # Mapping port 8090 of the host to port 8090 of the container
+      - "8090:8090"
+volumes:
+  big-bear-beszel_data:
+    name: big-bear-beszel_data
+    driver: local
 minVersion: 0.14.0

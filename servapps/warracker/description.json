@@ -1,0 +1,20 @@
+{
+  "name": "Warracker",
+  "description": "A self-hosted warranty tracker",
+  "url": "https://hub.docker.com/r/sassanix/warracker/main",
+  "longDescription": "A self-hosted warranty tracker",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
+  ],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/warracker.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/warracker.png"
+}

@@ -1,16 +1,19 @@
 cosmos-installer: null
-name: big-bear-chrome
+name: big-bear-chrome # Name of the CasaOS application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: kasmweb/chrome:1.15.0-rolling
+  chrome:
+    container_name: big-bear-chrome # Name of the Docker container
+    image: kasmweb/chrome:1.15.0-rolling # Docker image for the chrome browser
     ports:
-      - 6902:6901
+      - "6902:6901" # Expose port 6901 for VNC access
     environment:
-      - VNC_PW=casaos
-      - LAUNCH_URL=https://community.bigbeartechworld.com/
-    shm_size: 512m
+      - VNC_PW=casaos # Set the VNC password to 'casaos'
+      - LAUNCH_URL=https://community.bigbeartechworld.com/ # Set the default URL to Big Bear Tech World
+    shm_size: 512m # Allocate 512 MB of shared memory
     volumes:
-      - "{ServiceName}-data:/home/kasm-user/Downloads"
-    hostname: "{ServiceName}"
+      - big-bear-chrome_Downloads:/home/kasm-user/Downloads # Mount the host directory to the container's Downloads directory
+volumes:
+  big-bear-chrome_Downloads:
+    name: big-bear-chrome_Downloads
+    driver: local
 minVersion: 0.14.0

@@ -1,14 +1,19 @@
 {
-  "name": "guacamole",
-  "description": "Guacamole",
+  "name": "Guacamole",
+  "description": "Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation.",
+  "url": "https://hub.docker.com/r/guacamole/guacamole",
   "longDescription": "Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/guacamole.png",
   "supported_architectures": [
     "amd64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/guacamole.png"
 }

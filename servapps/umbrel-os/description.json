@@ -1,15 +1,20 @@
 {
-  "name": "umbrel-os",
-  "description": "Umbrel OS",
+  "name": "Umbrel OS",
+  "description": "Umbrel is a personal server OS that makes self-hosting accessible to everyone.",
+  "url": "https://hub.docker.com/r/dockurr/umbrel",
   "longDescription": "Umbrel is a personal server OS that makes self-hosting accessible to everyone.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/umbrel.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/umbrelos.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/umbrel.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/umbrelos.png"
 }

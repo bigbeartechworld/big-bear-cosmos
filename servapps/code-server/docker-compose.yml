@@ -1,21 +1,30 @@
 cosmos-installer: null
+# Configuration for big-bear-code-server setup
 name: big-bear-code-server
+# Service definitions for the big-bear-code-server application
 services:
-  "{ServiceName}":
-    image: linuxserver/code-server:4.105.1
-    container_name: "{ServiceName}"
+  # Service name: app
+  app:
+    image: linuxserver/code-server:4.105.1 # The Docker image to be used for the service
+    container_name: code-server # Name of the container instance
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
-      - PASSWORD=my_password
-      - SUDO_PASSWORD=sudo_my_password
+      - PUID=1000 # User ID under which code-server will run
+      - PGID=1000 # Group ID under which code-server will run
+      - TZ=UTC # Timezone for the container
+      - PASSWORD=my_password # Password to access code-server
+      - SUDO_PASSWORD=sudo_my_password # Password to access code-server
       - DEFAULT_WORKSPACE=/config/workspace
     volumes:
-      - "{ServiceName}-data:/config"
-      - "{ServiceName}-data-2:/projects"
+      - big-bear-code-server_config:/config #config dir
+      - big-bear-code-server_projects:/projects #project dir
     ports:
-      - 8080:8443
-    restart: always
-    hostname: "{ServiceName}"
+      - "8080:8443" # Expose code-server's port 8080 on the host's port 8080
+    restart: always # Policy to restart the container if it stops unexpectedly
+volumes:
+  big-bear-code-server_config:
+    name: big-bear-code-server_config
+    driver: local
+  big-bear-code-server_projects:
+    name: big-bear-code-server_projects
+    driver: local
 minVersion: 0.14.0

@@ -1,17 +1,19 @@
 cosmos-installer: null
-name: big-bear-jellyseerr
+name: big-bear-jellyseerr # Name of the compose project
 services:
-  "{ServiceName}":
-    image: fallenbagel/jellyseerr:2.7.3
+  app:
+    image: fallenbagel/jellyseerr:2.7.3 # Image to use for the jellyseerr service
     ports:
-      - 5055:5055
+      - "5055:5055" # Maps port 5055 on the host to port 5055 on the container
     volumes:
-      - "{ServiceName}-data:/app/config"
+      - big-bear-jellyseerr_config:/app/config # Binds a volume from host to container for configuration
     environment:
-      - LOG_LEVEL=debug
-      - TZ=auto
-    restart: unless-stopped
-    network_mode: bridge
-    container_name: "{ServiceName}"
-    hostname: "{ServiceName}"
+      - LOG_LEVEL=debug # Sets the log level to debug
+      - TZ=$TZ # Sets the timezone, using host's timezone variable
+    restart: unless-stopped # Service will restart unless it is explicitly stopped
+    network_mode: bridge # Uses bridge network mode
+volumes:
+  big-bear-jellyseerr_config:
+    name: big-bear-jellyseerr_config
+    driver: local
 minVersion: 0.14.0

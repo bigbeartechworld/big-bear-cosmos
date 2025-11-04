@@ -1,0 +1,20 @@
+{
+  "name": "Wallabag",
+  "description": "Wallabag is a self-hosted application for saving web pages. Unlike other services, Wallabag is free and open source.",
+  "url": "https://hub.docker.com/r/wallabag/wallabag",
+  "longDescription": "Wallabag is a self-hosted application for saving web pages. Unlike other services, Wallabag is free and open source.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
+  ],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallabag.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallabag.png"
+}

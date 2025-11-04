@@ -1,8 +1,8 @@
 {
   "id": "actual-server",
-  "version": "25.4.0",
+  "version": "25.10.0",
   "image": "actualbudget/actual-server",
   "youtube": "https://youtu.be/fa8j7ZfkYaM",
   "docs_link": "",
-  "big_bear_cosmos_youtube": "https://youtu.be/-un-frxNATQ"
+  "big_bear_cosmos_youtube": ""
 }

@@ -1,15 +1,20 @@
 {
-  "name": "viseron",
-  "description": "Viseron",
+  "name": "Viseron",
+  "description": "Viseron is a self-hosted, local only NVR and AI Computer Vision software",
+  "url": "https://hub.docker.com/r/roflcoopter/viseron",
   "longDescription": "Viseron is a self-hosted, local only NVR and AI Computer Vision software",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/viseron/logo.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/viseron/logo.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/viseron/logo.png"
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/viseron/logo.png"
 }

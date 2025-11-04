@@ -1,15 +1,20 @@
 {
-  "name": "filebrowser",
-  "description": "Access your homeserver files from your browser",
+  "name": "Filebrowser",
+  "description": "Reliable and Performant File Management Desktop Sync and File Sharing Tool.",
+  "url": "https://hub.docker.com/r/filebrowser/filebrowser",
   "longDescription": "Reliable and Performant File Management Desktop Sync and File Sharing Tool.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/filebrowser-quantum.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/filebrowser-quantum.png"
 }

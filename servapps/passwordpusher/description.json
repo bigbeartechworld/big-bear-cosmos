@@ -1,15 +1,20 @@
 {
-  "name": "passwordpusher",
-  "description": "Give your users the tools to be secure by default.",
+  "name": "Password Pusher",
+  "description": "Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.",
+  "url": "https://hub.docker.com/r/pglombardo/pwpush",
   "longDescription": "Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/passwordpusher.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/password-pusher.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/passwordpusher.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/password-pusher.png"
 }

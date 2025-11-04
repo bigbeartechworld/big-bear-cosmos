@@ -1,13 +1,24 @@
 cosmos-installer: null
+# Configuration for zipline setup
+
+# Name of the big-bear-zipline application
 name: big-bear-zipline
+# Service definitions for the big-bear-zipline application
 services:
-  "{ServiceName}-zipline":
-    container_name: "{ServiceName}-zipline"
-    image: ghcr.io/diced/zipline:4.3.2
+  # Service name: zipline
+  # The `zipline` service definition
+  zipline:
+    # Name of the container
+    container_name: big-bear-zipline
+    # Image to be used for the container
+    image: ghcr.io/diced/zipline:3.7.13
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-zipline-data:/zipline/uploads"
-      - "{ServiceName}-zipline-data-2:/zipline/public"
+      - "zipline_uploads:/zipline/uploads"
+      - "zipline_public:/zipline/public"
+    # Environment variables
     environment:
       - CORE_RETURN_HTTPS=false
       - CORE_SECRET=changeme
@@ -15,25 +26,46 @@ services:
       - CORE_PORT=3000
       - CORE_DATABASE_URL=postgres://postgres:postgrespassword@zipline-db/zipline
       - CORE_LOGGER=true
+    # Ports mapping between host and container
     ports:
-      - 3000:3000
+      # Mapping port 3000 of the host to port 3000 of the container
+      - "3000:3000"
+    # Networks to be attached to the container
     networks:
       - zipline_network
-    hostname: "{ServiceName}-zipline"
-  "{ServiceName}-zipline-db":
-    container_name: "{ServiceName}-zipline-db"
+  # Postgres database
+  zipline-db:
+    # Name of the container
+    container_name: big-bear-zipline-db
+    # Image to be used
     image: postgres:15
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgrespassword
       - POSTGRES_DATABASE=zipline
+    # Volumes to be mounted
     volumes:
-      - "{ServiceName}-zipline-db-data:/var/lib/postgresql/data"
+      - big-bear-zipline_postgres:/var/lib/postgresql/data
+    # Networks to be attached
     networks:
       - zipline_network
-    hostname: "{ServiceName}-zipline-db"
+# Networks to be created
 networks:
+  # Network name
   zipline_network:
+    # Set the driver to bridge
     driver: bridge
+volumes:
+  big-bear-zipline_postgres:
+    name: big-bear-zipline_postgres
+    driver: local
+  big-bear-zipline_public:
+    name: big-bear-zipline_public
+    driver: local
+  big-bear-zipline_uploads:
+    name: big-bear-zipline_uploads
+    driver: local
 minVersion: 0.14.0

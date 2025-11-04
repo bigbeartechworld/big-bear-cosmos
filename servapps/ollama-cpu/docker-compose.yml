@@ -1,18 +1,35 @@
 cosmos-installer: null
+# Configuration for ollama-cpu setup
+
+# Name of the big-bear-ollama-cpu application
 name: big-bear-ollama-cpu
+# Service definitions for the big-bear-ollama-cpu application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: ollama/ollama:0.12.6
+  # Service name: big-bear-ollama-cpu
+  # The `big-bear-ollama-cpu` service definition
+  big-bear-ollama-cpu:
+    # Name of the container
+    container_name: big-bear-ollama-cpu
+    # Image to be used for the container
+    image: ollama/ollama:0.12.9
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
       - PORT=11434
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/root/.ollama"
+      - big-bear-ollama-cpu_.ollama:/root/.ollama
+    # Ports mapping between host and container
     ports:
-      - 11434:11434
+      # Mapping port 11434 of the host to port 11434 of the container
+      - "11434:11434"
     devices:
+      # Attach GPU
       - /dev/kfd
       - /dev/dri
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-ollama-cpu_.ollama:
+    name: big-bear-ollama-cpu_.ollama
+    driver: local
 minVersion: 0.14.0

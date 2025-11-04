@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Odoo",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://odoo:8069",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "odoo": {
+  "container_name": "big-bear-odoo",
+  "image": "odoo:19",
+  "restart": "unless-stopped",
+  "user": "root",
+  "volumes": [
+    "big-bear-odoo_data_etc:/etc/odoo",
+    "big-bear-odoo_data_addons:/mnt/extra-addons"
+  ],
+  "ports": [
+    "8069:8069"
+  ],
+  "environment": [
+    "HOST=big-bear-odoo-db",
+    "USER=odoo",
+    "PASSWORD=a8d785b6-bc00-49cc-8675-d404093d1507"
+  ],
+  "networks": [
+    "big_bear_odoo_network"
+  ]
+}
+    }
+  }
+}

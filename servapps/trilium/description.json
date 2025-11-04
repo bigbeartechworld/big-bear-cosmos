@@ -1,15 +1,20 @@
 {
-  "name": "trilium",
+  "name": "Trilium",
   "description": "Build your personal knowledge base with Trilium Notes",
+  "url": "https://hub.docker.com/r/triliumnext/trilium",
   "longDescription": "Build your personal knowledge base with Trilium Notes",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trilium.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/trilium-notes.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trilium.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/trilium-notes.png"
 }

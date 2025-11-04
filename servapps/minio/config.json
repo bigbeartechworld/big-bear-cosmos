@@ -1,7 +1,7 @@
 {
   "id": "minio",
-  "version": "RELEASE.2024-02-24T17-11-14Z",
-  "image": "minio/minio",
+  "version": "RELEASE.2025-10-15T17-29-55Z",
+  "image": "bigbeartechworld/big-bear-minio",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""

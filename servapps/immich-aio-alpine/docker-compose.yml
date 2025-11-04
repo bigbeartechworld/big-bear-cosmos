@@ -1,15 +1,19 @@
 cosmos-installer: null
+# Configuration for big-bear-immich-aio-alpine setup
 name: big-bear-immich-aio-alpine
+# Service definitions for the big-bear-immich-aio-alpine application
 services:
-  "{ServiceName}-big-bear-immich-aio-alpine":
-    container_name: "{ServiceName}-big-bear-immich-aio-alpine"
-    image: ghcr.io/imagegenius/immich:1.131.3-alpine
-    ports:
+  # Main Immich Server service configuration
+  big-bear-immich-aio-alpine:
+    container_name: big-bear-immich-aio-alpine # Name of the running container
+    image: ghcr.io/imagegenius/immich:2.0.0-alpine # Image to be used
+    ports: # Mapping ports from the host OS to the container
       - 2283:8080
-    volumes:
-      - "{ServiceName}-big-bear-immich-aio-alpine-data:/config"
-      - "{ServiceName}-big-bear-immich-aio-alpine-data-2:/usr/src/app/photos"
-    environment:
+    volumes: # Mounting directories for persistent data storage
+      - big-bear-immich-aio-alpine_config:/config
+      - big-bear-immich-aio-alpine_photos:/usr/src/app/photos
+      # - path_to_imports:/import:ro #optional
+    environment: # Setting environment variables
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
@@ -18,41 +22,52 @@ services:
       - DB_PASSWORD=casaos
       - DB_DATABASE_NAME=immich
       - REDIS_HOSTNAME=big-bear-immich-redis
-      - DB_PORT=5432
-      - REDIS_PORT=6379
-      - REDIS_PASSWORD=
-      - MACHINE_LEARNING_GPU_ACCELERATION=
-      - MACHINE_LEARNING_WORKERS=1
-      - MACHINE_LEARNING_WORKER_TIMEOUT=120
-    depends_on:
-      - "{ServiceName}-big-bear-immich-redis"
-      - "{ServiceName}-big-bear-immich-db"
-    restart: unless-stopped
+      - DB_PORT=5432 #optional
+      - REDIS_PORT=6379 #optional
+      - REDIS_PASSWORD= #optional
+      - MACHINE_LEARNING_GPU_ACCELERATION= #optional
+      - MACHINE_LEARNING_WORKERS=1 #optional
+      - MACHINE_LEARNING_WORKER_TIMEOUT=120 #optional
+    depends_on: # Dependencies to ensure the order of service startup
+      - big-bear-immich-redis
+      - big-bear-immich-db
+    restart: unless-stopped # Policy to restart unless stopped
+    # Networks to be attached to the container
     networks:
       - big_bear_immich_network
-    hostname: "{ServiceName}-big-bear-immich-aio-alpine"
-  "{ServiceName}-big-bear-immich-redis":
-    container_name: "{ServiceName}-big-bear-immich-redis"
-    image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3
-    restart: always
+  # Configuration for Redis service
+  big-bear-immich-redis:
+    container_name: big-bear-immich-redis # Name of the running container
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f # patched for CVE-2025-49844
+    restart: always # Policy to always restart the container if it stops
     networks:
-      - big_bear_immich_network
-    hostname: "{ServiceName}-big-bear-immich-redis"
-  "{ServiceName}-big-bear-immich-db":
-    container_name: "{ServiceName}-big-bear-immich-db"
-    image: tensorchord/pgvecto-rs:pg14-v0.2.0
-    environment:
+      - big_bear_immich_network # Connects the container to a defined network
+  # Configuration for Database service
+  big-bear-immich-db:
+    container_name: big-bear-immich-db # Name of the running container
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0 # Image to be used
+    environment: # Setting environment variables
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos
       POSTGRES_DB: immich
       PG_DATA: /var/lib/postgresql/data
-    volumes:
-      - "{ServiceName}-big-bear-immich-db-data:/var/lib/postgresql/data"
-    restart: unless-stopped
+    volumes: # Mounting directories for persistent data storage
+      - big-bear-immich-aio-alpine_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped # Policy to always restart the container if it stops
+    # CasaOS specific configuration for the database service
     networks:
-      - big_bear_immich_network
-    hostname: "{ServiceName}-big-bear-immich-db"
-networks:
+      - big_bear_immich_network # Connects the container to a defined network
+networks: # Defines network configurations for the services
   big_bear_immich_network:
-    driver: bridge
+    driver: bridge # Uses bridge network driver
+volumes:
+  big-bear-immich-aio-alpine_config:
+    name: big-bear-immich-aio-alpine_config
+    driver: local
+  big-bear-immich-aio-alpine_pgdata:
+    name: big-bear-immich-aio-alpine_pgdata
+    driver: local
+  big-bear-immich-aio-alpine_photos:
+    name: big-bear-immich-aio-alpine_photos
+    driver: local
 minVersion: 0.14.0

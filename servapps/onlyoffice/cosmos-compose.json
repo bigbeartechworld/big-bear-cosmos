@@ -1,0 +1,34 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "OnlyOffice",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://onlyoffice:7400",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "onlyoffice": {
+  "image": "onlyoffice/documentserver:9.1.0",
+  "container_name": "documentserver",
+  "ports": [
+    "7400:80"
+  ],
+  "volumes": [
+    "big-bear-onlyoffice_onlyoffice_logs:/var/log/onlyoffice",
+    "big-bear-onlyoffice_onlyoffice_data:/var/www/onlyoffice/Data",
+    "big-bear-onlyoffice_onlyoffice_lib:/var/lib/onlyoffice",
+    "big-bear-onlyoffice_onlyoffice_rabbitmq:/var/lib/rabbitmq",
+    "big-bear-onlyoffice_onlyoffice_redis:/var/lib/redis",
+    "big-bear-onlyoffice_onlyoffice_db:/var/lib/postgresql"
+  ]
+}
+    }
+  }
+}

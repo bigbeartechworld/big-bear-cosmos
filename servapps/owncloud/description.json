@@ -1,15 +1,20 @@
 {
-  "name": "owncloud",
-  "description": "ownCloud",
+  "name": "ownCloud",
+  "description": "ownCloud offers file sharing and collaboration trusted by 200+ million users worldwide regardless of device or location.",
+  "url": "https://hub.docker.com/r/owncloud/server",
   "longDescription": "ownCloud offers file sharing and collaboration trusted by 200+ million users worldwide regardless of device or location.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/owncloud.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/owncloud.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/owncloud.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/owncloud.png"
 }

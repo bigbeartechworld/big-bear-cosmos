@@ -1,0 +1,20 @@
+{
+  "name": "Pocket ID",
+  "description": "Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.",
+  "url": "https://hub.docker.com/r/pocket-id/pocket-id",
+  "longDescription": "Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
+  ],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://pocket-id.org/img/logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://pocket-id.org/img/logo.png"
+}

@@ -1,13 +1,29 @@
 cosmos-installer: null
+# Configuration for mealie setup
+
+# Name of the big-bear-mealie application
 name: big-bear-mealie
+# Service definitions for the big-bear-mealie application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: hkotel/mealie:v2.8.0
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-mealie
+    # Image to be used for the container
+    image: hkotel/mealie:v3.4.0
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/app/data"
+      # Mounting the local mealie_data directory to /app/data inside the container
+      - big-bear-mealie_data:/app/data
+    # Ports mapping between host and container
     ports:
-      - 9925:9000
-    hostname: "{ServiceName}"
+      # Mapping port 7575 of the host to port 9000 of the container
+      - "9925:9000"
+volumes:
+  big-bear-mealie_data:
+    name: big-bear-mealie_data
+    driver: local
 minVersion: 0.14.0

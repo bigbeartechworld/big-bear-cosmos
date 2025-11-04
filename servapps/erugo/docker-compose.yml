@@ -1,13 +1,29 @@
 cosmos-installer: null
+# Configuration for erugo setup
+
+# Name of the big-bear-erugo application
 name: big-bear-erugo
+# Service definitions for the big-bear-erugo application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-erugo
+  # The `big-bear-erugo` service definition
+  big-bear-erugo:
+    # Name of the container
+    container_name: big-bear-erugo
+    # Image to be used for the container
     image: wardy784/erugo:0.1.1
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/var/www/html/storage"
+      # Mounting storage directory to allow erugo to save data
+      - big-bear-erugo_storage:/var/www/html/storage
+    # Ports mapping between host and container
     ports:
-      - 9997:80
-    hostname: "{ServiceName}"
+      # Mapping port 9997 of the host to port 80 of the container
+      - "9997:80"
+volumes:
+  big-bear-erugo_storage:
+    name: big-bear-erugo_storage
+    driver: local
 minVersion: 0.14.0

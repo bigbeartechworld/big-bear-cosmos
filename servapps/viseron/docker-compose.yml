@@ -1,22 +1,51 @@
 cosmos-installer: null
+# Configuration for viseron setup
+
+# Name of the big-bear-viseron application
 name: big-bear-viseron
+# Service definitions for the big-bear-viseron application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-viseron
+  # The `big-bear-viseron` service definition
+  big-bear-viseron:
+    # Name of the container
+    container_name: big-bear-viseron
+    # Image to be used for the container
     image: roflcoopter/viseron:3.3.1
+    # Container restart policy
     restart: unless-stopped
-    shm_size: 1024mb
+    # Shared memory size
+    shm_size: "1024mb"
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/segments"
-      - "{ServiceName}-data-2:/snapshots"
-      - "{ServiceName}-data-3:/thumbnails"
-      - "{ServiceName}-data-4:/event_clips"
-      - "{ServiceName}-data-5:/config"
+      - big-bear-viseron_segments:/segments
+      - big-bear-viseron_snapshots:/snapshots
+      - big-bear-viseron_thumbnails:/thumbnails
+      - big-bear-viseron_event_clips:/event_clips
+      - big-bear-viseron_config:/config
       - /etc/localtime:/etc/localtime:ro
+    # Ports mapping between host and container
     ports:
-      - 8888:8888
+      # Mapping port 8888 of the host to port 8888 of the container
+      - "8888:8888"
+    # Environment variables
     environment:
       - PUID=1000
       - PGID=1000
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-viseron_config:
+    name: big-bear-viseron_config
+    driver: local
+  big-bear-viseron_event_clips:
+    name: big-bear-viseron_event_clips
+    driver: local
+  big-bear-viseron_segments:
+    name: big-bear-viseron_segments
+    driver: local
+  big-bear-viseron_snapshots:
+    name: big-bear-viseron_snapshots
+    driver: local
+  big-bear-viseron_thumbnails:
+    name: big-bear-viseron_thumbnails
+    driver: local
 minVersion: 0.14.0

@@ -1,15 +1,20 @@
 {
-  "name": "piwigo",
-  "description": "Piwigo",
+  "name": "Piwigo",
+  "description": "Piwigo is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.",
+  "url": "https://hub.docker.com/r/linuxserver/piwigo",
   "longDescription": "Piwigo is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/piwigo.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/piwigo.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/piwigo.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/piwigo.png"
 }

@@ -1,18 +1,37 @@
 cosmos-installer: null
+# Docker Compose configuration for BigBearCasaOS Write Freely Service
+# This service provides a web interface for managing Write Freely
+# Version: 0.15
+
+# Name of the big-bear-write-freely application
 name: big-bear-write-freely
+# Service definitions for the big-bear-write-freely application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Main service configuration for the Write Freely application
+  # This service provides a web interface running on port 8080
+  big-bear-write-freely:
+    # Name of the container
+    container_name: big-bear-write-freely
+    # Image to be used for the container specifies the write-freely version and source
     image: nephatrine/write-freely:0.16
+    # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
+    # Environment variables for service configuration
+    # These settings control the Write Freely application behavior
     environment:
-      TZ: UTC
+      TZ: "UTC"
       PUID: 1000
       PGID: 1000
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
     volumes:
-      - "{ServiceName}-data:/mnt/config"
+      - big-bear-write-freely_data_config:/mnt/config
+    # Map port 8080 on the host to port 8080 on the container
     ports:
       - 70:70/tcp
       - 8080:8080/tcp
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-write-freely_data_config:
+    name: big-bear-write-freely_data_config
+    driver: local
 minVersion: 0.14.0

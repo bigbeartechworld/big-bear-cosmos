@@ -1,15 +1,20 @@
 {
-  "name": "pihole-unbound",
-  "description": "Pi-hole and Unbound",
+  "name": "Pi-hole and Unbound",
+  "description": "This is a custom pihole and unbound setup.",
+  "url": "https://hub.docker.com/r/bigbeartechworld/big-bear-pihole-unbound",
   "longDescription": "This is a custom pihole and unbound setup.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole-unbound.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/pi-hole-unbound.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole-unbound.png"
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/pi-hole-unbound.png"
 }

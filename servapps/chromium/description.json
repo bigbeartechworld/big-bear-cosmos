@@ -1,15 +1,20 @@
 {
   "name": "chromium",
-  "description": "chromium",
+  "description": "This Image contains a browser-accessible version of chromium.",
+  "url": "https://hub.docker.com/r/linuxserver/chromium",
   "longDescription": "This Image contains a browser-accessible version of chromium.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/chromium.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/chromium.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/chromium.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/chromium.png"
 }

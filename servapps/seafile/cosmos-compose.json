@@ -1,0 +1,50 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "seafile",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://seafile:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "seafile": {
+  "container_name": "big-bear-seafile",
+  "image": "seafileltd/seafile-mc:11.0.13",
+  "restart": "unless-stopped",
+  "depends_on": {
+    "big-bear-seafile-db": {
+      "condition": "service_healthy"
+    },
+    "big-bear-seafile-memcached": {
+      "condition": "service_started"
+    }
+  },
+  "volumes": [
+    "big-bear-seafile_shared:/shared"
+  ],
+  "ports": [
+    "8080:80"
+  ],
+  "environment": [
+    "DB_HOST=big-bear-seafile-db",
+    "DB_ROOT_PASSWD=seafilepassword",
+    "TIME_ZONE=Etc/UTC",
+    "SEAFILE_ADMIN_EMAIL=admin@example.com",
+    "SEAFILE_ADMIN_PASSWORD=asecret",
+    "SEAFILE_SERVER_LETSENCRYPT=false",
+    "SEAFILE_SERVER_HOSTNAME=docs.seafile.com"
+  ],
+  "networks": [
+    "big_bear_seafile_network"
+  ]
+}
+    }
+  }
+}

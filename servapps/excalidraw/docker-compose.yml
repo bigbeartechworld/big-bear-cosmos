@@ -1,11 +1,19 @@
 cosmos-installer: null
+# Configuration for excalidraw setup
+
+# Application Name
 name: big-bear-excalidraw
+# Services used in the application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # The `app` service for the excalidraw application
+  app:
+    # Name of the container
+    container_name: big-bear-excalidraw
+    # Docker image to be used
     image: excalidraw/excalidraw:latest
+    # Restart policy for the service
     restart: unless-stopped
+    # Port mappings for the service
     ports:
-      - 8000:80
-    hostname: "{ServiceName}"
+      - "8000:80"
 minVersion: 0.14.0

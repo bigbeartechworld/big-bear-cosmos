@@ -1,16 +1,30 @@
 cosmos-installer: null
-name: big-bear-node-red
+# Configuration for node-red setup
+
+# Application Name
+name: node-red
+
+# Services used in the application
 services:
-  "{ServiceName}":
+  # The `app` service for the node-red application
+  app:
+    # Name of the container
+    container_name: node-red
+    # Docker image to be used
     image: nodered/node-red:4.1.1
-    network_mode: host
+    # Restart policy for the service
+    restart: unless-stopped
+    # Port mappings for the service
     ports:
-      - 1880:1880/tcp
-    restart: always
+      - "1880:1880"
+    # Network mode for the service
+    network_mode: bridge
+    # Volumes for the service HOST -> CONTAINER
     volumes:
-      - type: volume
-        source: "{ServiceName}-data"
-        target: /data
-    container_name: "{ServiceName}"
-    hostname: "{ServiceName}"
+      - big-bear-node-red_data:/data
+
+volumes:
+  big-bear-node-red_data:
+    name: big-bear-node-red_data
+    driver: local
 minVersion: 0.14.0

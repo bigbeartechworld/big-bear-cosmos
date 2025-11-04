@@ -1,15 +1,20 @@
 {
-  "name": "firefox",
-  "description": "Firefox",
+  "name": "Firefox",
+  "description": "This Image contains a browser-accessible version of Firefox.",
+  "url": "https://hub.docker.com/r/linuxserver/firefox",
   "longDescription": "This Image contains a browser-accessible version of Firefox.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/firefox.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/firefox.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/firefox.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/firefox.png"
 }

@@ -1,10 +1,20 @@
 cosmos-installer: null
+# Configuration for semaphore setup
+
+# Name of the big-bear-semaphore application
 name: big-bear-semaphore
+# Service definitions for the big-bear-semaphore application
 services:
-  "{ServiceName}-big-bear-semaphore":
-    container_name: "{ServiceName}-big-bear-semaphore"
-    image: semaphoreui/semaphore:v2.16.34
+  # Service name: big-bear-semaphore
+  # The `big-bear-semaphore` service definition
+  big-bear-semaphore:
+    # Name of the container
+    container_name: big-bear-semaphore
+    # Image to be used for the container
+    image: semaphoreui/semaphore:v2.16.37
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables for configuration
     environment:
       SEMAPHORE_DB_USER: semaphore
       SEMAPHORE_DB_PASS: semaphore
@@ -17,29 +27,40 @@ services:
       SEMAPHORE_ADMIN_EMAIL: admin@example.com
       SEMAPHORE_ADMIN: admin
       TZ: UTC
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-big-bear-semaphore-data:/etc/semaphore"
-      - "{ServiceName}-big-bear-semaphore-data-2:/var/lib/semaphore"
+      - big-bear-semaphore_home:/etc/semaphore # Configuration files for Semaphore
+      - big-bear-semaphore_lib:/var/lib/semaphore # Local storage for Semaphore data (not needed if using an external database)
+    # Ports mapping between host and container
     ports:
-      - 3000:3000
+      - "3000:3000" # Expose port 3000 for web access
     networks:
       - big-bear-semaphore-network
-    hostname: "{ServiceName}-big-bear-semaphore"
-  "{ServiceName}-big-bear-semaphore-db":
-    container_name: "{ServiceName}-big-bear-semaphore-db"
+  # MySQL database service for semaphore
+  big-bear-semaphore-db:
+    container_name: big-bear-semaphore-db
     image: mysql:8.0
     restart: unless-stopped
     volumes:
-      - "{ServiceName}-big-bear-semaphore-db-data:/var/lib/mysql"
+      - big-bear-semaphore_mysql:/var/lib/mysql # Data directory for MySQL
     environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: yes
-      MYSQL_DATABASE: semaphore
-      MYSQL_USER: semaphore
-      MYSQL_PASSWORD: semaphore
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes" # Generate a random root password
+      MYSQL_DATABASE: "semaphore" # Database name to create
+      MYSQL_USER: "semaphore" # Database user
+      MYSQL_PASSWORD: "semaphore" # Database password
     networks:
       - big-bear-semaphore-network
-    hostname: "{ServiceName}-big-bear-semaphore-db"
 networks:
   big-bear-semaphore-network:
-    driver: bridge
+    driver: bridge # Specifies network driver type
+volumes:
+  big-bear-semaphore_home:
+    name: big-bear-semaphore_home
+    driver: local
+  big-bear-semaphore_lib:
+    name: big-bear-semaphore_lib
+    driver: local
+  big-bear-semaphore_mysql:
+    name: big-bear-semaphore_mysql
+    driver: local
 minVersion: 0.14.0
