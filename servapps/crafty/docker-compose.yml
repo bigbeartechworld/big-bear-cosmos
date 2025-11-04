@@ -1,22 +1,49 @@
 cosmos-installer: null
+# Configuration for crafty setup
+
+# Name of the big-bear-crafty application
 name: big-bear-crafty
+# Service definitions for the big-bear-crafty application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-crafty
+  # The `big-bear-crafty` service definition
+  big-bear-crafty:
+    # Name of the container
+    container_name: big-bear-crafty
+    # Image to be used for the container
     image: registry.gitlab.com/crafty-controller/crafty-4:4.5.5
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
       - TZ=UTC
+    # Ports mapping between host and container HOST:CONTAINER
     ports:
-      - 8443:8443
+      - 8443:8443 # Web UI
       - 8123:8123
       - 19132:19132/udp
       - 25500-25600:25500-25600
+    # Volumes mapping between host and container
     volumes:
-      - "{ServiceName}-data:/crafty/backups"
-      - "{ServiceName}-data-2:/crafty/logs"
-      - "{ServiceName}-data-3:/crafty/servers"
-      - "{ServiceName}-data-4:/crafty/app/config"
-      - "{ServiceName}-data-5:/crafty/import"
-    hostname: "{ServiceName}"
+      - big-bear-crafty_data_backups:/crafty/backups
+      - big-bear-crafty_data_logs:/crafty/logs
+      - big-bear-crafty_data_servers:/crafty/servers
+      - big-bear-crafty_data_config:/crafty/app/config
+      - big-bear-crafty_data_import:/crafty/import
+volumes:
+  big-bear-crafty_data_backups:
+    name: big-bear-crafty_data_backups
+    driver: local
+  big-bear-crafty_data_config:
+    name: big-bear-crafty_data_config
+    driver: local
+  big-bear-crafty_data_import:
+    name: big-bear-crafty_data_import
+    driver: local
+  big-bear-crafty_data_logs:
+    name: big-bear-crafty_data_logs
+    driver: local
+  big-bear-crafty_data_servers:
+    name: big-bear-crafty_data_servers
+    driver: local
 minVersion: 0.14.0

@@ -1,14 +1,24 @@
 cosmos-installer: null
+# Configuration for big-bear-codex-docs setup
 name: big-bear-codex-docs
+# Service definitions for the big-bear-codex-docs application
 services:
-  "{ServiceName}":
+  app:
     image: ghcr.io/codex-team/codex.docs:v2.2
     ports:
-      - 3000:3000
+      - "3000:3000"
     volumes:
-      - "{ServiceName}-data:/usr/src/app/uploads"
-      - "{ServiceName}-data-2:/usr/src/app/db"
-      - "{ServiceName}-data-3:/usr/src/app/docs-config.yaml"
-    container_name: "{ServiceName}"
-    hostname: "{ServiceName}"
+      - big-bear-codex-docs_uploads:/usr/src/app/uploads
+      - big-bear-codex-docs_db:/usr/src/app/db
+      - big-bear-codex-docs_codex-docs-config.local.yaml:/usr/src/app/docs-config.yaml
+volumes:
+  big-bear-codex-docs_codex-docs-config.local.yaml:
+    name: big-bear-codex-docs_codex-docs-config.local.yaml
+    driver: local
+  big-bear-codex-docs_db:
+    name: big-bear-codex-docs_db
+    driver: local
+  big-bear-codex-docs_uploads:
+    name: big-bear-codex-docs_uploads
+    driver: local
 minVersion: 0.14.0

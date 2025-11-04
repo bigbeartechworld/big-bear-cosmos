@@ -1,0 +1,20 @@
+{
+  "name": "jfa-go",
+  "description": "jfa-go is a user management app for Jellyfin (and Emby as 2nd class) that provides invite-based account creation as well as other features that make one's instance much easier to manage.",
+  "url": "https://hub.docker.com/r/hrfee/jfa-go",
+  "longDescription": "jfa-go is a user management app for Jellyfin (and Emby as 2nd class) that provides invite-based account creation as well as other features that make one's instance much easier to manage.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
+  ],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png"
+}

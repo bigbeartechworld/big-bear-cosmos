@@ -1,15 +1,20 @@
 {
-  "name": "zotero",
-  "description": "Zotero",
+  "name": "Zotero",
+  "description": "Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.",
+  "url": "https://hub.docker.com/r/linuxserver/zotero",
   "longDescription": "Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/zotero/logo.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/zotero/logo.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/zotero/logo.png"
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/zotero/logo.png"
 }

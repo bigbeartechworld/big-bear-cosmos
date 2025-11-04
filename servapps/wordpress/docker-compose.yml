@@ -1,30 +1,47 @@
 cosmos-installer: null
+# Configuration for big-bear-wordpress setup
+
+# Name of the big-bear-wordpress application
 name: big-bear-wordpress
+# Service definitions for the wordpress application
 services:
-  "{ServiceName}-app":
+  # Service definition for the main application
+  app:
+    # Docker image to use for the application
     image: wordpress:6.8.3
+    # Port mapping for the application
     ports:
       - 8080:80
+    # Environment variables for the application
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: casaos
       WORDPRESS_DB_PASSWORD: casaos
       WORDPRESS_DB_NAME: wordpress
+    # Volume mapping for the application
     volumes:
-      - "{ServiceName}-app-data:/var/www/html"
+      - big-bear-wordpress_html:/var/www/html
+    # Service dependencies for the application
     depends_on:
-      - "{ServiceName}-db"
-    container_name: "{ServiceName}-app"
-    hostname: "{ServiceName}-app"
-  "{ServiceName}-db":
+      - db
+  # Service definition for the database
+  db:
+    # Docker image to use for the database
     image: mysql:5.7
+    # Environment variables for the database
     environment:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: casaos
       MYSQL_PASSWORD: casaos
       MYSQL_ROOT_PASSWORD: casaos
+    # Volume mapping for the database
     volumes:
-      - "{ServiceName}-db-data:/var/lib/mysql"
-    container_name: "{ServiceName}-db"
-    hostname: "{ServiceName}-db"
+      - big-bear-wordpress_mysql:/var/lib/mysql
+volumes:
+  big-bear-wordpress_html:
+    name: big-bear-wordpress_html
+    driver: local
+  big-bear-wordpress_mysql:
+    name: big-bear-wordpress_mysql
+    driver: local
 minVersion: 0.14.0

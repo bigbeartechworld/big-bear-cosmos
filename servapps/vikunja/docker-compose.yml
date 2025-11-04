@@ -1,15 +1,22 @@
 cosmos-installer: null
+# Configuration for big-bear-vikunja setup
+
+# Name of the big-bear-vikunja application
 name: big-bear-vikunja
+# Service definitions for the big-bear-vikunja application
 services:
-  "{ServiceName}-vikunja":
+  vikunja:
     image: vikunja/vikunja:0.24.6
-    container_name: "{ServiceName}-vikunja"
+    container_name: big-bear-vikunja
     ports:
       - 8081:3456
     volumes:
-      - "{ServiceName}-vikunja-data:/app/vikunja/files"
+      # Map container path to host path for files
+      - big-bear-vikunja_files:/app/vikunja/files
     environment:
+      # Set the Vikunja frontend URL, replace <your public frontend url with slash> with the actual URL
       VIKUNJA_SERVICE_PUBLICURL: http://<your public frontend url with slash>/
+      # Vikunja API environment variables
       VIKUNJA_DATABASE_HOST: vikunja-db
       VIKUNJA_DATABASE_PASSWORD: secret
       VIKUNJA_DATABASE_TYPE: mysql
@@ -18,28 +25,35 @@ services:
       VIKUNJA_SERVICE_JWTSECRET: 4c2ad520-f177-425f-ab7f-64c5e2b1c2c8
     restart: unless-stopped
     depends_on:
-      - "{ServiceName}-vikunja-db"
+      - vikunja-db
     networks:
       - vikunja-network
-    hostname: "{ServiceName}-vikunja"
-  "{ServiceName}-vikunja-db":
+  vikunja-db:
     image: mariadb:10
-    container_name: "{ServiceName}-vikunja-db"
+    container_name: vikunja-db
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
     environment:
+      # MariaDB environment variables
       MYSQL_ROOT_PASSWORD: supersecret
       MYSQL_USER: vikunja
       MYSQL_PASSWORD: secret
       MYSQL_DATABASE: vikunja
     volumes:
-      - "{ServiceName}-vikunja-db-data:/var/lib/mysql"
+      # Map container path to host path for MariaDB data
+      - big-bear-vikunja_mysql:/var/lib/mysql
     restart: unless-stopped
     networks:
       - vikunja-network
-    hostname: "{ServiceName}-vikunja-db"
 networks:
   vikunja-network:
     driver: bridge
+volumes:
+  big-bear-vikunja_files:
+    name: big-bear-vikunja_files
+    driver: local
+  big-bear-vikunja_mysql:
+    name: big-bear-vikunja_mysql
+    driver: local
 minVersion: 0.14.0

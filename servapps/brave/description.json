@@ -1,15 +1,20 @@
 {
-  "name": "brave",
-  "description": "Brave",
+  "name": "Brave",
+  "description": "This Image contains a browser-accessible version of Brave.",
+  "url": "https://hub.docker.com/r/kasmweb/brave",
   "longDescription": "This Image contains a browser-accessible version of Brave.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/brave.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/brave.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/brave.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/brave.png"
 }

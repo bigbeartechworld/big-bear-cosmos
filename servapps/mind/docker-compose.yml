@@ -1,14 +1,19 @@
 cosmos-installer: null
+# Configuration for big-bear-mind setup
 name: big-bear-mind
+# Service definitions for the big-bear-mind application
 services:
-  "{ServiceName}":
-    image: mrcas/mind:v1.4.1
-    container_name: "{ServiceName}"
+  app:
+    image: "mrcas/mind:v1.4.1"
+    container_name: mind
     environment:
       - TZ=UTC
     volumes:
-      - "{ServiceName}-data:/app/db"
+      - "mind_db:/app/db"
     ports:
-      - 8080:8080
-    hostname: "{ServiceName}"
+      - "8080:8080"
+volumes:
+  big-bear-mind_db:
+    name: big-bear-mind_db
+    driver: local
 minVersion: 0.14.0

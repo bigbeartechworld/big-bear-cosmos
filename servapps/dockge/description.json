@@ -1,15 +1,20 @@
 {
-  "name": "dockge",
-  "description": "Dockge",
+  "name": "Dockge",
+  "description": "A fancy, easy-to-use and reactive docker `compose.yaml` stack-oriented manager",
+  "url": "https://hub.docker.com/r/louislam/dockge",
   "longDescription": "A fancy, easy-to-use and reactive docker `compose.yaml` stack-oriented manager",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dockge.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/dockge.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dockge.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/dockge.png"
 }

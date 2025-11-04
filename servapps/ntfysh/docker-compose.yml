@@ -1,22 +1,38 @@
 cosmos-installer: null
+# big-bear-ntfy application configuration
 name: big-bear-ntfy
+# Services associated with the big-bear-ntfy application
 services:
-  "{ServiceName}":
+  # Main application service configuration
+  app:
+    # Docker image to be used for the service
     image: binwiederhier/ntfy:v2.14.0
+    # Command to run inside the container
     command:
       - serve
+    # Environment variables for the service
     environment:
       - TZ=UTC
+    # Port configurations for the service
     ports:
-      - 7200:80/tcp
+      - target: 80 # Container port
+        published: "7200" # Host port
+        protocol: tcp # Protocol type
+    # Restart policy for the service
     restart: unless-stopped
+    # Volumes to be mounted inside the container
     volumes:
-      - type: volume
-        source: "{ServiceName}-data"
+      - type: bind
+        source: big-bear-ntfysh_cache
         target: /var/cache/ntfy
-      - type: volume
-        source: "{ServiceName}-data-2"
+      - type: bind
+        source: big-bear-ntfysh_config
         target: /etc/ntfy
-    container_name: "{ServiceName}"
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-ntfysh_cache:
+    name: big-bear-ntfysh_cache
+    driver: local
+  big-bear-ntfysh_config:
+    name: big-bear-ntfysh_config
+    driver: local
 minVersion: 0.14.0

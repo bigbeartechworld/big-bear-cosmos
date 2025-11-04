@@ -1,0 +1,8 @@
+{
+  "id": "gitea-mirror",
+  "version": "v3.8.11",
+  "image": "ghcr.io/raylabshq/gitea-mirror",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}

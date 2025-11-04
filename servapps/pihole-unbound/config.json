@@ -1,8 +1,8 @@
 {
   "id": "pihole-unbound",
-  "version": "2025.04.0",
+  "version": "2025.08.0",
   "image": "bigbeartechworld/big-bear-pihole-unbound",
   "youtube": "https://youtu.be/ByFSgnnUuBI",
-  "docs_link": "https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191",
+  "docs_link": "",
   "big_bear_cosmos_youtube": ""
 }

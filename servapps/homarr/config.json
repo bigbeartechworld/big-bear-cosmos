@@ -1,8 +1,8 @@
 {
   "id": "homarr",
-  "version": "0.15.10",
+  "version": "0.16.0",
   "image": "ghcr.io/ajnart/homarr",
   "youtube": "https://youtu.be/H4rzZNO47Uk",
   "docs_link": "",
-  "big_bear_cosmos_youtube": "https://youtu.be/YK3QXYVOAvg"
+  "big_bear_cosmos_youtube": ""
 }

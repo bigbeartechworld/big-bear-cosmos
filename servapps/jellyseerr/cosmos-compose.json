@@ -1,0 +1,34 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Jellyseerr",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://jellyseerr:5055",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "jellyseerr": {
+  "image": "fallenbagel/jellyseerr:2.7.3",
+  "ports": [
+    "5055:5055"
+  ],
+  "volumes": [
+    "big-bear-jellyseerr_config:/app/config"
+  ],
+  "environment": [
+    "LOG_LEVEL=debug",
+    "TZ=$TZ"
+  ],
+  "restart": "unless-stopped",
+  "network_mode": "bridge"
+}
+    }
+  }
+}

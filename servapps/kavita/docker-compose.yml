@@ -1,16 +1,40 @@
 cosmos-installer: null
+# Configuration for kavita setup
+
+# Name of the big-bear-kavita application
 name: big-bear-kavita
+# Service definitions for the big-bear-kavita application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-kavita
+  # The `big-bear-kavita` service definition
+  big-bear-kavita:
+    # Name of the container
+    container_name: big-bear-kavita
+    # Image to be used for the container
     image: jvmilazz0/kavita:0.8.8
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/kavita/config"
-      - "{ServiceName}-data-2:/books"
-      - "{ServiceName}-data-3:/comics"
-      - "{ServiceName}-data-4:/manga"
+      - big-bear-kavita_data_kavita-config:/kavita/config
+      - big-bear-kavita_media_data_books:/books
+      - big-bear-kavita_media_data_comics:/comics
+      - big-bear-kavita_media_data_manga:/manga
+    # Ports mapping between host and container
     ports:
-      - 5000:5000
-    hostname: "{ServiceName}"
+      # Mapping port 5000 of the host to port 5000 of the container
+      - "5000:5000"
+volumes:
+  big-bear-kavita_data_kavita-config:
+    name: big-bear-kavita_data_kavita-config
+    driver: local
+  big-bear-kavita_media_data_books:
+    name: big-bear-kavita_media_data_books
+    driver: local
+  big-bear-kavita_media_data_comics:
+    name: big-bear-kavita_media_data_comics
+    driver: local
+  big-bear-kavita_media_data_manga:
+    name: big-bear-kavita_media_data_manga
+    driver: local
 minVersion: 0.14.0

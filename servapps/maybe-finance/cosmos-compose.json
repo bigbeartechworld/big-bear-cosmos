@@ -1,0 +1,54 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Maybe Finance",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://maybe-finance:4000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "maybe-finance": {
+  "container_name": "big-bear-maybe-finance",
+  "image": "ghcr.io/maybe-finance/maybe:sha-347c0a790693031fdd3b32792b5b6792693d1805",
+  "restart": "unless-stopped",
+  "privileged": false,
+  "networks": [
+    "big_bear_maybe_finance_network"
+  ],
+  "volumes": [
+    "big-bear-MaybeFinance_app-storage:/rails/storage"
+  ],
+  "ports": [
+    "4000:3000"
+  ],
+  "environment": {
+    "SELF_HOSTED": "true",
+    "RAILS_FORCE_SSL": "false",
+    "RAILS_ASSUME_SSL": "false",
+    "GOOD_JOB_EXECUTION_MODE": "async",
+    "SECRET_KEY_BASE": "SECRET_KEY_BASE",
+    "DB_HOST": "big-bear-maybe-finance-postgres",
+    "POSTGRES_DB": "maybe_production",
+    "POSTGRES_USER": "maybe_user",
+    "POSTGRES_PASSWORD": "casaos",
+    "REDIS_URL": "redis://big-bear-maybe-finance-redis:6379/1"
+  },
+  "depends_on": {
+    "big-bear-maybe-finance-postgres": {
+      "condition": "service_healthy"
+    },
+    "big-bear-maybe-finance-redis": {
+      "condition": "service_healthy"
+    }
+  }
+}
+    }
+  }
+}

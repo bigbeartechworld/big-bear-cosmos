@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Beaver Habit Tracker",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://beaverhabits:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "beaverhabits": {
+  "container_name": "big-bear-beaverhabits",
+  "image": "daya0576/beaverhabits:0.7.3",
+  "restart": "unless-stopped",
+  "user": "1000:1000",
+  "environment": [
+    "HABITS_STORAGE=USER_DISK",
+    "TRUSTED_LOCAL_EMAIL=your@email.com",
+    "INDEX_HABIT_DATE_COLUMNS=5",
+    "ENABLE_IOS_STANDALONE=true"
+  ],
+  "volumes": [
+    "big-bear-beaverhabits_.user:/app/.user/"
+  ],
+  "ports": [
+    "8080:8080"
+  ]
+}
+    }
+  }
+}

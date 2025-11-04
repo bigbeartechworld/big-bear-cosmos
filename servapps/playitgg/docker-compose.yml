@@ -1,11 +1,25 @@
 cosmos-installer: null
+# Configuration for playitgg setup
+
+# Name of the big-bear-playitgg application
 name: big-bear-playitgg
+# Service definitions for the big-bear-playitgg application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: playitgg
+    # Image to be used for the container
     image: dysta/playitgg:1.1.0
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/secrets"
-    hostname: "{ServiceName}"
+      # Mounting the local playitgg directory to /secrets inside the container
+      - big-bear-playitgg_secrets:/secrets
+volumes:
+  big-bear-playitgg_secrets:
+    name: big-bear-playitgg_secrets
+    driver: local
 minVersion: 0.14.0

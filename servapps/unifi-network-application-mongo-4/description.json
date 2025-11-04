@@ -1,15 +1,20 @@
 {
-  "name": "unifi-network-application-mongo-4",
-  "description": "The Unifi-network-application MongoDB 4",
+  "name": "Unifi Network Application",
+  "description": "Supports Zimaboards and PI's. The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
+  "url": "https://hub.docker.com/r/linuxserver/unifi-network-application",
   "longDescription": "Supports Zimaboards and PI's. The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/unifi.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ubiquiti-unifi.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/unifi.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ubiquiti-unifi.png"
 }

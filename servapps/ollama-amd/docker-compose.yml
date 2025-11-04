@@ -1,18 +1,35 @@
 cosmos-installer: null
+# Configuration for ollama-amd setup
+
+# Name of the big-bear-ollama-amd application
 name: big-bear-ollama-amd
+# Service definitions for the big-bear-ollama-amd application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: ollama/ollama:0.12.6-rocm
+  # Service name: big-bear-ollama-amd
+  # The `big-bear-ollama-amd` service definition
+  big-bear-ollama-amd:
+    # Name of the container
+    container_name: big-bear-ollama-amd
+    # Image to be used for the container
+    image: ollama/ollama:0.12.9-rocm
+    # Container restart policy
     restart: unless-stopped
+    # Environment variables
     environment:
       - PORT=11434
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/root/.ollama"
+      - big-bear-ollama-amd_.ollama:/root/.ollama
+    # Ports mapping between host and container
     ports:
-      - 11434:11434
+      # Mapping port 11434 of the host to port 11434 of the container
+      - "11434:11434"
     devices:
+      # Attach GPU
       - /dev/kfd
       - /dev/dri
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-ollama-amd_.ollama:
+    name: big-bear-ollama-amd_.ollama
+    driver: local
 minVersion: 0.14.0

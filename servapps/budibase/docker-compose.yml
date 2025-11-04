@@ -1,13 +1,29 @@
 cosmos-installer: null
+# Configuration for budibase setup
+
+# Name of the big-bear-budibase application
 name: big-bear-budibase
+# Service definitions for the big-bear-budibase application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: budibase/budibase:3.22.4
+  # Service name: big-bear-budibase
+  # The `big-bear-budibase` service definition
+  big-bear-budibase:
+    # Name of the container
+    container_name: big-bear-budibase
+    # Image to be used for the container
+    image: budibase/budibase:3.23.0
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/data"
+      # Mounting the local directory /DATA/AppData/$AppID/data to /data in the container
+      - big-bear-budibase_data:/data
+    # Ports mapping between host and container
     ports:
-      - 8080:80
-    hostname: "{ServiceName}"
+      # Mapping port 80 of the container to port 8080 of the host
+      - "8080:80"
+volumes:
+  big-bear-budibase_data:
+    name: big-bear-budibase_data
+    driver: local
 minVersion: 0.14.0

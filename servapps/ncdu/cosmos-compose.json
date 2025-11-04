@@ -1,0 +1,38 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ncdu",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ncdu:7681",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ncdu": {
+  "container_name": "big-bear-ncdu",
+  "image": "bigbeartechworld/big-bear-ncdu:0.0.4",
+  "restart": "unless-stopped",
+  "privileged": true,
+  "volumes": [
+    "/proc:/proc",
+    "/sys:/sys",
+    "/dev:/dev",
+    "/etc/localtime:/etc/localtime:ro",
+    "/:/casaos"
+  ],
+  "ports": [
+    "7681:7681"
+  ],
+  "environment": [
+    "NCDU_PATH=/"
+  ]
+}
+    }
+  }
+}

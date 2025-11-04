@@ -1,21 +1,41 @@
 cosmos-installer: null
+# Configuration for ollama-nvidia setup
+
+# Name of the big-bear-ollama-nvidia application
 name: big-bear-ollama-nvidia
+# Service definitions for the big-bear-ollama-nvidia application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: ollama/ollama:0.12.6
+  # Service name: big-bear-ollama-nvidia
+  # The `big-bear-ollama-nvidia` service definition
+  big-bear-ollama-nvidia:
+    # Name of the container
+    container_name: big-bear-ollama-nvidia
+    # Image to be used for the container
+    image: ollama/ollama:0.12.9
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/root/.ollama"
+      - big-bear-ollama-nvidia_.ollama:/root/.ollama
+    # Ports mapping between host and container
     ports:
-      - 11434:11434
+      # Mapping port 11434 of the host to port 11434 of the container
+      - "11434:11434"
+    # Define the deployment settings
     deploy:
+      # Specify resource reservations
       resources:
         reservations:
           devices:
+            # Specify the device driver as NVIDIA
             - driver: nvidia
+              # Allocate all available GPUs
               count: all
               capabilities:
+                # Define the required capabilities (gpu for GPU resources)
                 - gpu
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-ollama-nvidia_.ollama:
+    name: big-bear-ollama-nvidia_.ollama
+    driver: local
 minVersion: 0.14.0

@@ -1,16 +1,34 @@
 cosmos-installer: null
+# Configuration for ejbca-ce setup
+
+# Name of the big-bear-ejbca-ce application
 name: big-bear-ejbca-ce
+# Service definitions for the big-bear-ejbca-ce application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: app
+  # The `app` service definition
+  big-bear-ejbca-ce:
+    # Name of the container
+    container_name: big-bear-ejbca-ce
+    # Image to be used for the container
     image: keyfactor/ejbca-ce:9.1.1
+    # Container restart policy
     restart: unless-stopped
+    # Volumes to be mounted to the container
     volumes:
-      - "{ServiceName}-data:/mnt/persistent"
+      # Mounting the local ejbca-ce/persistent directory to /mnt/persistent inside the container
+      - big-bear-ejbca-ce_persistent:/mnt/persistent
+    # Ports mapping between host and container
     ports:
-      - 8080:8080
-      - 8443:8443
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+      # Mapping port 8443 of the host to port 8443 of the container
+      - "8443:8443"
+    # Environment variables
     environment:
       - TLS_SETUP_ENABLED=simple
-    hostname: "{ServiceName}"
+volumes:
+  big-bear-ejbca-ce_persistent:
+    name: big-bear-ejbca-ce_persistent
+    driver: local
 minVersion: 0.14.0

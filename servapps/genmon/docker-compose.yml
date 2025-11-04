@@ -1,19 +1,40 @@
 cosmos-installer: null
+# Configuration for genmon setup
+
+# Name of the big-bear-genmon application
 name: big-bear-genmon
+# Service definitions for the big-bear-genmon application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
-    image: bigbeartechworld/big-bear-genmon:0.0.6
+  # Service name: big-bear-genmon
+  # The `big-bear-genmon` service definition
+  big-bear-genmon:
+    # Name of the container
+    container_name: big-bear-genmon
+    # Image to be used for the container
+    image: bigbeartechworld/big-bear-genmon:1.19.06
+    # Environment variables to set inside the container
     environment:
-      - TZ=America/Chicago
+      - TZ=America/Chicago # Set the timezone to 'America/Chicago'
+    # Ports to expose, mapping the host port to the container port
     ports:
-      - 20022:22
-      - 38443:443
-      - 8000:8000
-    restart: unless-stopped
+      - "20022:22" # Map TCP port 22 in the container to port 20022 on the host
+      - "38443:443" # Map TCP port 443 in the container to port 38443 on the host
+      - "8000:8000" # Map TCP port 8000 in the container to port 8000 on the host
+    # Define the restart policy for the service container
+    restart: unless-stopped # Restart the container unless it is explicitly stopped
+    # Mount host paths or named volumes into the container
     volumes:
-      - "{ServiceName}-data:/git/genmon"
-      - "{ServiceName}-data-2:/etc/genmon"
-      - "{ServiceName}-data-3:/var/log"
-    hostname: "{ServiceName}"
+      - big-bear-genmon_git_genmon:/git/genmon # Mount a named volume 'big_bear_genmon_data' to store data persistently at /git/genmon in the container (this is the default location)
+      - big-bear-genmon_etc_genmon:/etc/genmon # Mount a named volume 'big_bear_genmon_config' to store configuration files persistently at /etc/genmon in the container
+      - big-bear-genmon_var_log:/var/log # Mount a named volume 'big_bear_genmon_logs' to store logs persistently at /var/log in the container
+volumes:
+  big-bear-genmon_etc_genmon:
+    name: big-bear-genmon_etc_genmon
+    driver: local
+  big-bear-genmon_git_genmon:
+    name: big-bear-genmon_git_genmon
+    driver: local
+  big-bear-genmon_var_log:
+    name: big-bear-genmon_var_log
+    driver: local
 minVersion: 0.14.0

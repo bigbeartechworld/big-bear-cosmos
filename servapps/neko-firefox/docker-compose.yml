@@ -1,24 +1,36 @@
 cosmos-installer: null
+# Configuration for neko-firefox setup
+
+# Name of the big-bear-neko-firefox application
 name: big-bear-neko-firefox
+# Service definitions for the big-bear-neko-firefox application
 services:
-  "{ServiceName}":
-    container_name: "{ServiceName}"
+  # Service name: big-bear-neko-firefox
+  # The `big-bear-neko-firefox` service definition
+  big-bear-neko-firefox:
+    # Name of the container
+    container_name: neko-firefox
+    # Image to be used for the container
     image: m1k1o/neko:firefox
+    # Container restart policy
     restart: unless-stopped
-    shm_size: 2gb
+    # Shared memory size
+    shm_size: "2gb"
+    # Port mapping HOST:CONTAINER
     ports:
-      - 8080:8080
-      - 52000:52000/udp
-      - 52001:52001/udp
-      - 52002:52002/udp
-      - 52003:52003/udp
-      - 52004:52004/udp
-      - 52005:52005/udp
-      - 52006:52006/udp
-      - 52007:52007/udp
-      - 52008:52008/udp
-      - 52009:52009/udp
-      - 52010:52010/udp
+      - "8080:8080"
+      - "52000:52000/udp"
+      - "52001:52001/udp"
+      - "52002:52002/udp"
+      - "52003:52003/udp"
+      - "52004:52004/udp"
+      - "52005:52005/udp"
+      - "52006:52006/udp"
+      - "52007:52007/udp"
+      - "52008:52008/udp"
+      - "52009:52009/udp"
+      - "52010:52010/udp"
+    # Environment variables
     environment:
       NEKO_SCREEN: 1920x1080@30
       NEKO_PASSWORD: neko
@@ -26,6 +38,5 @@ services:
       NEKO_EPR: 52000-52010
       NEKO_ICELITE: "1"
       NEKO_DEBUG: "1"
-      NEKO_NAT1TO1: "[CASAOS_IP]"
-    hostname: "{ServiceName}"
+      NEKO_NAT1TO1: "[CASAOS_IP]" # Replace with your own IP address
 minVersion: 0.14.0

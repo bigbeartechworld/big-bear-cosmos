@@ -1,15 +1,20 @@
 {
-  "name": "vikunja",
-  "description": "Vikunja",
+  "name": "Vikunja",
+  "description": "The open-source, self-hostable to-do app. Organize everything, on all platforms.",
+  "url": "https://hub.docker.com/r/vikunja/vikunja",
   "longDescription": "The open-source, self-hostable to-do app. Organize everything, on all platforms.",
   "tags": [
-    "BigBearCasaOS"
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
   ],
-  "repository": "https://github.com/bigbeartechworld/big-bear-casaos",
-  "image": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vikunja.png",
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/vikunja.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vikunja.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/vikunja.png"
 }

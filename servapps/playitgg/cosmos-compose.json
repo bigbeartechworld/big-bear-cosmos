@@ -1,0 +1,15 @@
+{
+  "cosmos-installer": {
+    
+    "services": {
+      "playitgg": {
+  "container_name": "playitgg",
+  "image": "dysta/playitgg:1.1.0",
+  "restart": "unless-stopped",
+  "volumes": [
+    "big-bear-playitgg_secrets:/secrets"
+  ]
+}
+    }
+  }
+}

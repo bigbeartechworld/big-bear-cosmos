@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Password Pusher",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://passwordpusher:5100",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "passwordpusher": {
+  "container_name": "big-bear-pwpush",
+  "image": "pglombardo/pwpush:1.62.1",
+  "restart": "unless-stopped",
+  "environment": {
+    "DATABASE_URL": "mysql2://pwpusher:6280144a-56af-486f-9088-ac7301399328@big-bear-pwpush-db:3306/passwordpusher_db",
+    "PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT": "1",
+    "PWP__PW__EXPIRE_AFTER_VIEWS_MIN": "1",
+    "PWP__PW__RETRIEVAL_STEP_DEFAULT": "true"
+  },
+  "volumes": [
+    "big-bear-passwordpusher_storage:/opt/PasswordPusher/storage:rw"
+  ],
+  "ports": [
+    "5100:5100"
+  ],
+  "networks": [
+    "big_bear_pwpush_network"
+  ]
+}
+    }
+  }
+}

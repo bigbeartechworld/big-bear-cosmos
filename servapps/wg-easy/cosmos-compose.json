@@ -1,0 +1,45 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Wireguard Easy 14 (Legacy)",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://wg-easy:51820",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "wg-easy": {
+  "container_name": "big-bear-wg-easy",
+  "image": "ghcr.io/wg-easy/wg-easy:15",
+  "restart": "unless-stopped",
+  "environment": {
+    "WG_HOST": "[YOUR_PUBLIC_IP]",
+    "PASSWORD_HASH": "$2b$12$coPqCsPtcFO.Ab99xylBNOW4.Iu7OOA2/ZIboHN6/oyxca3MWo7fW",
+    "WG_DEFAULT_DNS": "1.1.1.1",
+    "WG_ALLOWED_IPS": "0.0.0.0/0, ::/0"
+  },
+  "cap_add": [
+    "NET_ADMIN",
+    "SYS_MODULE"
+  ],
+  "sysctls": [
+    "net.ipv4.conf.all.src_valid_mark=1",
+    "net.ipv4.ip_forward=1"
+  ],
+  "volumes": [
+    "big-bear-wg-easy_data:/etc/wireguard"
+  ],
+  "ports": [
+    "51820:51820/udp",
+    "51821:51821/tcp"
+  ]
+}
+    }
+  }
+}
