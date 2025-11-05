@@ -16,7 +16,7 @@
     "services": {
       "faster-whisper": {
   "container_name": "big-bear-faster-whisper",
-  "image": "linuxserver/faster-whisper:2.5.0",
+  "image": "linuxserver/faster-whisper:3.0.1",
   "restart": "unless-stopped",
   "environment": [
     "PUID=1000",
