@@ -16,7 +16,7 @@
     "services": {
       "dockpeek": {
   "container_name": "big-bear-dockpeek",
-  "image": "ghcr.io/dockpeek/dockpeek:v1.7.1",
+  "image": "ghcr.io/dockpeek/dockpeek:v1.7.2",
   "environment": {
     "SECRET_KEY": "change_this_secret_key",
     "USERNAME": "bigbear",

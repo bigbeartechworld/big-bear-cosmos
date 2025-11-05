@@ -16,7 +16,7 @@
     "services": {
       "lobe-chat": {
   "container_name": "big-bear-lobe-chat",
-  "image": "lobehub/lobe-chat:1.142.8",
+  "image": "lobehub/lobe-chat:1.142.9",
   "restart": "unless-stopped",
   "environment": [
     "OPENAI_API_KEY=\"\"",
