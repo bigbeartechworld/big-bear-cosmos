@@ -45,7 +45,7 @@ services:
       - big-bear-paperless-ngx-network
   big-bear-paperless-ngx-broker:
     container_name: big-bear-paperless-ngx-broker
-    image: docker.io/library/redis:8.2.2
+    image: docker.io/library/redis:8.2.3
     restart: unless-stopped
     volumes:
       - big-bear-paperless-ngx_redis:/data
