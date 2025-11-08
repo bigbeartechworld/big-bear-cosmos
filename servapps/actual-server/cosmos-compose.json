@@ -15,7 +15,7 @@
       ],
     "services": {
       "actual-server": {
-  "image": "actualbudget/actual-server:25.10.0",
+  "image": "actualbudget/actual-server:25.11.0",
   "container_name": "actual-server",
   "volumes": [
     "big-bear-actual-server_data:/data"
