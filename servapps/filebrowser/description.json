@@ -11,10 +11,10 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/filebrowser-quantum.png",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/file-browser.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/filebrowser-quantum.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/file-browser.png"
 }
