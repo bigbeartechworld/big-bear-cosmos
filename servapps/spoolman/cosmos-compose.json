@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Spoolman",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://spoolman:7912",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "spoolman": {
+  "image": "ghcr.io/donkie/spoolman:0.22.1",
+  "ports": [
+    "7912:8000"
+  ],
+  "volumes": [
+    "big-bear-spoolman_data:/home/app/.local/share/spoolman"
+  ],
+  "environment": [
+    "TZ=$TZ",
+    "SPOOLMAN_DB_TYPE=sqlite",
+    "SPOOLMAN_LOGGING_LEVEL=INFO",
+    "SPOOLMAN_AUTOMATIC_BACKUP=TRUE"
+  ],
+  "restart": "unless-stopped",
+  "network_mode": "bridge"
+}
+    }
+  }
+}

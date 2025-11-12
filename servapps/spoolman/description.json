@@ -1,0 +1,23 @@
+{
+  "name": "Spoolman",
+  "description": "Keep track of your inventory of 3D-printer filament spools. Spoolman is a self-hosted web service designed to help you efficiently manage your 3D printer filament spools and monitor their usage.",
+  "url": "https://github.com/Donkie/Spoolman",
+  "longDescription": "Keep track of your inventory of 3D-printer filament spools. Spoolman is a self-hosted web service designed to help you efficiently manage your 3D printer filament spools and monitor their usage.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "3d-printing",
+    "filament",
+    "inventory",
+    "klipper",
+    "octoprint"
+  ],
+  "repository": "https://github.com/Donkie/Spoolman",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/spoolman.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/spoolman.png"
+}
