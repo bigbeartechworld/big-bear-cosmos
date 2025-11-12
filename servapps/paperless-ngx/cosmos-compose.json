@@ -36,7 +36,8 @@
     "big-bear-paperless-ngx_paperless_data:/usr/src/paperless/data",
     "big-bear-paperless-ngx_paperless_media:/usr/src/paperless/media",
     "big-bear-paperless-ngx_paperless_export:/usr/src/paperless/export",
-    "big-bear-paperless-ngx_paperless_consume:/usr/src/paperless/consume"
+    "big-bear-paperless-ngx_paperless_consume:/usr/src/paperless/consume",
+    "big-bear-paperless-ngx_paperless_tmp:/tmp"
   ],
   "ports": [
     "8000:8000"
