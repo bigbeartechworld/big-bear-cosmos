@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for coolify setup
 
 # Name of the big-bear-coolify application
-name: big-bear-coolify
 # Service definitions for the big-bear-coolify application
 services:
   # Service name: big-bear-coolify

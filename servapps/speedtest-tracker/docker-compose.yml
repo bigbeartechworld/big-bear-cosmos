@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for speedtest-tracker setup
 
 # Name of the big-bear-speedtest-tracker application
-name: big-bear-speedtest-tracker
 # Service definitions for the big-bear-speedtest-tracker application
 services:
   # Service name: app

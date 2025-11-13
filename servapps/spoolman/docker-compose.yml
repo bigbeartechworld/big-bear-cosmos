@@ -1,5 +1,4 @@
 cosmos-installer: null
-name: big-bear-spoolman # Name of the compose project
 services:
   app:
     image: ghcr.io/donkie/spoolman:0.22.1 # Image to use for the spoolman service

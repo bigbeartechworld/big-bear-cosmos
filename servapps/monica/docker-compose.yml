@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for monica setup
 
 # Name of the big-bear-monica application
-name: big-bear-monica
 # Service definitions for the big-bear-monica application
 services:
   # Service name: big-bear-monica

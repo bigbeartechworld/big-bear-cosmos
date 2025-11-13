@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for ejbca-ce setup
 
 # Name of the big-bear-ejbca-ce application
-name: big-bear-ejbca-ce
 # Service definitions for the big-bear-ejbca-ce application
 services:
   # Service name: app

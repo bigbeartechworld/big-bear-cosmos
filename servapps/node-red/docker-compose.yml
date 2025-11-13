@@ -2,8 +2,6 @@ cosmos-installer: null
 # Configuration for node-red setup
 
 # Application Name
-name: node-red
-
 # Services used in the application
 services:
   # The `app` service for the node-red application
@@ -22,7 +20,6 @@ services:
     # Volumes for the service HOST -> CONTAINER
     volumes:
       - big-bear-node-red_data:/data
-
 volumes:
   big-bear-node-red_data:
     name: big-bear-node-red_data

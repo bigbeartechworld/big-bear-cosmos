@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for pd3f setup
 
 # Name of the big-bear-pd3f application
-name: big-bear-pd3f
 # Service definitions for the big-bear-pd3f application
 services:
   # Service name: web

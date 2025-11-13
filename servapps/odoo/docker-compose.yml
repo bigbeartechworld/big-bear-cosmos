@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for odoo setup
 
 # Name of the big-bear-odoo application
-name: big-bear-odoo
 # Service definitions for the big-bear-odoo application
 services:
   # Service name: big-bear-odoo

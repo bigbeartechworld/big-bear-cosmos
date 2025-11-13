@@ -1,5 +1,4 @@
 cosmos-installer: null
-name: big-bear-dashdot
 services:
   app:
     image: mauricenino/dashdot:6.2.0

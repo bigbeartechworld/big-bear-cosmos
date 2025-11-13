@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for peppermint setup
 
 # Name of the big-bear-peppermint application
-name: big-bear-peppermint
 # Service definitions for the big-bear-peppermint application
 services:
   # Service name: app

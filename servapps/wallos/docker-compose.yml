@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for wallos setup
 
 # Name of the big-bear-wallos application
-name: big-bear-wallos
 # Service definitions for the big-bear-wallos application
 services:
   # Service name: big-bear-wallos

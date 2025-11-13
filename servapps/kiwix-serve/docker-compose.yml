@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for kiwix-serve setup
 
 # Name of the big-bear-kiwix-serve application
-name: big-bear-kiwix-serve
 # Service definitions for the big-bear-kiwix-serve application
 services:
   # Service name: big-bear-kiwix-serve

@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for the big-bear-rally setup
 
 # Name of the big-bear-rallly application
-name: big-bear-rallly
 # Definition of services required for the big-bear-rallly application
 services:
   # Main application service definition

@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for healthchecks setup
 
 # Name of the big-bear-healthchecks application
-name: big-bear-healthchecks
 # Service definitions for the big-bear-healthchecks application
 services:
   # Service name: big-bear-healthchecks

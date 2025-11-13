@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for unifi-network-application setup
 
 # Name of the big-bear-unifi-network-application application
-name: big-bear-unifi-network-application
 # Service definitions for the big-bear-homarr application
 services:
   # Main application service

@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for playitgg setup
 
 # Name of the big-bear-playitgg application
-name: big-bear-playitgg
 # Service definitions for the big-bear-playitgg application
 services:
   # Service name: app

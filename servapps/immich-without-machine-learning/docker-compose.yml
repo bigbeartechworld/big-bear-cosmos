@@ -1,6 +1,5 @@
 cosmos-installer: null
 # Configuration for big-bear-immich-without-machine-learning setup
-name: big-bear-immich-without-machine-learning
 # Service definitions for the big-bear-immich-without-machine-learning application
 services:
   # Main Immich Server service configuration

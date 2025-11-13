@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for peppermint setup
 
 # Name of the big-bear-maybe-finance application
-name: big-bear-maybe-finance
 # Service definitions for the big-bear-maybe-finance application
 services:
   # Service name: app

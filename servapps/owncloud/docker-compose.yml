@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for owncloud setup
 
 # Name of the big-bear-owncloud application
-name: big-bear-owncloud
 # Service definitions for the big-bear-owncloud application
 services:
   # Service name: big-bear-owncloud

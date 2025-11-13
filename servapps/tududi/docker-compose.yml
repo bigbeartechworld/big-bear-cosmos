@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for tudu di setup
 
 # Name of the big-bear-tududi application
-name: big-bear-tududi
 # Service definitions for the big-bear-tududi application
 services:
   # Service name: big-bear-tududi

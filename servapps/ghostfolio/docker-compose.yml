@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for Ghostfolio setup using Docker Compose
 
 # Name of the Ghostfolio application stack
-name: big-bear-ghostfolio
 # Definitions of services within the Ghostfolio application stack
 services:
   # Service definition for the Ghostfolio application

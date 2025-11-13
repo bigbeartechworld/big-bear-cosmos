@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for lobe-chat setup
 
 # Name of the big-bear-lobe-chat application
-name: big-bear-lobe-chat
 # Service definitions for the big-bear-lobe-chat application
 services:
   # Service name: big-bear-lobe-chat

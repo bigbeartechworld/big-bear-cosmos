@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for retroarch-web setup
 
 # Name of the big-bear-retroarch-web application
-name: big-bear-retroarch-web
 # Service definitions for the big-bear-retroarch-web application
 services:
   # Service name: big-bear-retroarch-web

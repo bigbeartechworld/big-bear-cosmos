@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for traccar setup
 
 # Name of the big-bear-traccar application
-name: big-bear-traccar
 # Service definitions for the big-bear-traccar application
 services:
   # Service name: app

@@ -1,6 +1,5 @@
 cosmos-installer: null
 # Configuration for big-bear-baserow setup
-name: big-bear-baserow
 # Service definitions for the big-bear-baserow application
 services:
   # Service name: app
