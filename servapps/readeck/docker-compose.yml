@@ -3,7 +3,6 @@ cosmos-installer: null
 # Readeck is a self-hosted bookmark manager and read-it-later application
 
 # Name of the big-bear-readeck application
-name: big-bear-readeck
 # Service definitions for the big-bear-readeck application
 services:
   # Service name: big-bear-readeck

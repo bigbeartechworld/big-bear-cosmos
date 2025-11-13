@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for trilium setup
 
 # Name of the big-bear-trilium application
-name: big-bear-trilium
 # Service definitions for the big-bear-trilium application
 services:
   # Service name: app

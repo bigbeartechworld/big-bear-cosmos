@@ -1,5 +1,4 @@
 cosmos-installer: null
-name: big-bear-firefox # Name of the CasaOS application
 services:
   firefox:
     container_name: big-bear-firefox # Name of the Docker container

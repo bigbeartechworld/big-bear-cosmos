@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for phpmyadmin setup
 
 # Name of the big-bear-phpmyadmin application
-name: big-bear-phpmyadmin
 # Service definitions for the big-bear-phpmyadmin application
 services:
   # Service name: phpmyadmin

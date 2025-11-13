@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for excalidraw setup
 
 # Application Name
-name: big-bear-excalidraw
 # Services used in the application
 services:
   # The `app` service for the excalidraw application

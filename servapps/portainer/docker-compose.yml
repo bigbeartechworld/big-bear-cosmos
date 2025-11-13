@@ -1,6 +1,5 @@
 cosmos-installer: null
 # Configuration for big-bear-portainer setup
-name: big-bear-portainer
 # Service definitions for the big-bear-portainer application
 services:
   # Main Portainer service configuration

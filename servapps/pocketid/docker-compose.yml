@@ -1,6 +1,5 @@
 cosmos-installer: null
 # Configuration for pocket-id setup
-name: big-bear-pocketid
 # Service definitions for the pocket-id application
 services:
   # Service configuration for the pocket-id application

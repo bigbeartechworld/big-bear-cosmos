@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for dockpeek setup
 
 # Name of the big-bear-dockpeek application
-name: big-bear-dockpeek
 # Service definitions for the big-bear-dockpeek application
 services:
   # Service name: big-bear-dockpeek

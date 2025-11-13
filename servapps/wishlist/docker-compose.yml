@@ -4,7 +4,6 @@ cosmos-installer: null
 # Version: v0.42.5
 
 # Name of the big-bear-wishlist application
-name: big-bear-wishlist
 # Service definitions for the big-bear-wishlist application
 services:
   # Main service configuration for the BigBearWishlist application

@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for genmon setup
 
 # Name of the big-bear-genmon application
-name: big-bear-genmon
 # Service definitions for the big-bear-genmon application
 services:
   # Service name: big-bear-genmon

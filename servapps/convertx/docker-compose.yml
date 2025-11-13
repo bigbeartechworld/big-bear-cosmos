@@ -1,6 +1,5 @@
 cosmos-installer: null
 # Name of the convertx application
-name: big-bear-convertx
 # Service definitions for the convertx application
 services:
   # Main service configuration for the convertx application

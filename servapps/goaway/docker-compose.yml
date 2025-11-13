@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for goaway setup
 
 # Application Name
-name: big-bear-goaway
 # Services used in the application
 services:
   # The `big-bear-goaway` service for the goaway application

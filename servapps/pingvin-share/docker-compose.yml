@@ -1,5 +1,4 @@
 cosmos-installer: null
-name: big-bear-pingvin-share
 services:
   # Defines a set of services to be run together
   app:

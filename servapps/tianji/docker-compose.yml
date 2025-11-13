@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for tianji setup
 
 # Name of the big-bear-tianji application
-name: big-bear-tianji
 # Service definitions for the big-bear-tianji application
 services:
   # Service name: big-bear-tianji

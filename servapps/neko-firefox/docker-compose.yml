@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for neko-firefox setup
 
 # Name of the big-bear-neko-firefox application
-name: big-bear-neko-firefox
 # Service definitions for the big-bear-neko-firefox application
 services:
   # Service name: big-bear-neko-firefox

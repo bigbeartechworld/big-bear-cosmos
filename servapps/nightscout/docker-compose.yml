@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for nightscout setup
 
 # Name of the big-bear-nightscout application
-name: big-bear-nightscout
 # Service definitions for the big-bear-nightscout application
 services:
   big-bear-nightscout:

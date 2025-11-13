@@ -1,6 +1,5 @@
 cosmos-installer: null
 # Configuration for big-bear-codex-docs setup
-name: big-bear-codex-docs
 # Service definitions for the big-bear-codex-docs application
 services:
   app:

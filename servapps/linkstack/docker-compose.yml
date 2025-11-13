@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for LinkStack setup with CasaOS specifics
 
 # Name of the LinkStack application
-name: big-bear-linkstack
 # Service definitions for the LinkStack application
 services:
   # Service name: big-bear-linkstack

@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for flowise setup
 
 # Name of the big-bear-flowise application
-name: big-bear-flowise
 # Service definitions for the big-bear-flowise application
 services:
   # Service name: big-bear-flowise

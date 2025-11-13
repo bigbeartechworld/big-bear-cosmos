@@ -1,5 +1,4 @@
 cosmos-installer: null
-name: big-bear-jlesage-firefox # Name of the CasaOS application
 services:
   big-bear-jlesage-firefox:
     container_name: big-bear-jlesage-firefox # Name of the Docker container

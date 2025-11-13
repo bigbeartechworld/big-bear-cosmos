@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for zipline setup
 
 # Name of the big-bear-zipline application
-name: big-bear-zipline
 # Service definitions for the big-bear-zipline application
 services:
   # Service name: zipline

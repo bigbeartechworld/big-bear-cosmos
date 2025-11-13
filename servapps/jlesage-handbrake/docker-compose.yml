@@ -1,5 +1,4 @@
 cosmos-installer: null
-name: big-bear-jlesage-handbrake # Name of the CasaOS application
 services:
   big-bear-jlesage-handbrake:
     container_name: big-bear-jlesage-handbrake # Name of the Docker container

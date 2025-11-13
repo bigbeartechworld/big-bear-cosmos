@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for komga setup
 
 # Name of the big-bear-komga application
-name: big-bear-komga
 # Service definitions for the big-bear-komga application
 services:
   # Service name: big-bear-komga

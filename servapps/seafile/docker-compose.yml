@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for seafile setup
 
 # Name of the big-bear-seafile application
-name: big-bear-seafile
 # Service definitions for the big-bear-seafile application
 services:
   # Service name: big-bear-seafile

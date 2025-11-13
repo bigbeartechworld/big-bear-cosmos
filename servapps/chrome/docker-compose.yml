@@ -1,5 +1,4 @@
 cosmos-installer: null
-name: big-bear-chrome # Name of the CasaOS application
 services:
   chrome:
     container_name: big-bear-chrome # Name of the Docker container

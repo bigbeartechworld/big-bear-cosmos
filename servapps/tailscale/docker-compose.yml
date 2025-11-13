@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for tailscale setup
 
 # Name of the big-bear-tailscale application
-name: big-bear-tailscale
 # Service definitions for the big-bear-tailscale application
 services:
   # Service name: big-bear-tailscale

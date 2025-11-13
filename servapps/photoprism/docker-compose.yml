@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for photoprism setup
 
 # Name of the big-bear-photoprism application
-name: big-bear-photoprism
 # Service definitions for the big-bear-photoprism application
 services:
   # Service name: app

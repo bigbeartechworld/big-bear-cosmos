@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for pwpush setup
 
 # Name of the big-bear-pwpush application
-name: big-bear-pwpush
 # Service definitions for the big-bear-pwpush application
 services:
   # Service name: big-bear-pwpush

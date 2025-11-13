@@ -4,7 +4,6 @@ cosmos-installer: null
 # Initial Version: v0.11.7
 
 # Name of the big-bear-stalwart-mail application
-name: big-bear-stalwart-mail
 # Service definitions for the big-bear-stalwart-mail application
 services:
   # Main service configuration for the Stalwart Mail application

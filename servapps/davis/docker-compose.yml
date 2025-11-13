@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for davis setup
 
 # Name of the big-bear-davis application
-name: big-bear-davis
 # Service definitions for the big-bear-davis application
 services:
   # Service name: big-bear-davis

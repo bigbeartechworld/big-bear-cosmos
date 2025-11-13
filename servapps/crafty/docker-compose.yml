@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for crafty setup
 
 # Name of the big-bear-crafty application
-name: big-bear-crafty
 # Service definitions for the big-bear-crafty application
 services:
   # Service name: big-bear-crafty

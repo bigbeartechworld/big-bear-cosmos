@@ -2,7 +2,6 @@ cosmos-installer: null
 # Configuration for adguard home setup
 
 # Application Name
-name: big-bear-adguard-home
 # Services used in the application
 services:
   # The `app` service for the adguard home application
