@@ -15,7 +15,7 @@
       ],
     "services": {
       "gluetun": {
-  "image": "qmcgaw/gluetun:v3.40.0",
+  "image": "qmcgaw/gluetun:v3.40.1",
   "container_name": "gluetun",
   "cap_add": [
     "NET_ADMIN"
