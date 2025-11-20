@@ -16,7 +16,7 @@
     "services": {
       "filebrowser": {
   "container_name": "big-bear-filebrowser",
-  "image": "filebrowser/filebrowser:v2.47.0-s6",
+  "image": "filebrowser/filebrowser:v2.48.1-s6",
   "restart": "unless-stopped",
   "environment": [
     "PUID=0",
