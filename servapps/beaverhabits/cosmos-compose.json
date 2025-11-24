@@ -16,7 +16,7 @@
     "services": {
       "beaverhabits": {
   "container_name": "big-bear-beaverhabits",
-  "image": "daya0576/beaverhabits:0.7.3",
+  "image": "daya0576/beaverhabits:0.7.4",
   "restart": "unless-stopped",
   "user": "1000:1000",
   "environment": [
