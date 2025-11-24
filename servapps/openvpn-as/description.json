@@ -11,9 +11,9 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/openvpn.png",
   "supported_architectures": [
     "amd64"
   ],
-  "icon": "https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/openvpn.png"
 }

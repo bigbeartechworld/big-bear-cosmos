@@ -16,7 +16,7 @@
     "services": {
       "firefox": {
   "container_name": "big-bear-firefox",
-  "image": "linuxserver/firefox:1144.0.2",
+  "image": "linuxserver/firefox:1145.0.1",
   "ports": [
     "3000:3000",
     "3001:3001"
