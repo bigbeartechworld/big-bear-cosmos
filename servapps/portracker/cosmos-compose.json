@@ -16,7 +16,7 @@
     "services": {
       "portracker": {
   "container_name": "big-bear-portracker",
-  "image": "mostafawahied/portracker:1.1",
+  "image": "mostafawahied/portracker:1.2",
   "restart": "unless-stopped",
   "environment": [
     "PORT=4999",
