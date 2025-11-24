@@ -16,7 +16,7 @@
     "services": {
       "wishlist": {
   "container_name": "big-bear-wishlist",
-  "image": "ghcr.io/cmintey/wishlist:v0.53.2",
+  "image": "ghcr.io/cmintey/wishlist:v0.54.2",
   "restart": "unless-stopped",
   "environment": {
     "ORIGIN": "",
