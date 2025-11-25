@@ -60,10 +60,10 @@ services:
       - "plant-it_certificates:/certificates"
     # Ports mapping between host and container
     ports:
-      # Mapping port 8080 of the host to port 8080 of the container
-      - "8080:8080"
       # Mapping port 3000 of the host to port 3000 of the container
       - "3000:3000"
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
     networks:
       # Network definition
       - big_bear_plant_it_network
