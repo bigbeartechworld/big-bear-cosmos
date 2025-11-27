@@ -1,0 +1,20 @@
+cosmos-installer: null
+# Configuration for vert setup
+
+# Name of the big-bear-vert application
+# Service definitions for the big-bear-vert application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-vert
+    # Image to be used for the container
+    image: ghcr.io/vert-sh/vert:sha-a1b0b15
+    # Container restart policy
+    restart: unless-stopped
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 3030 of the host to port 80 of the container
+      - "3030:80"
+minVersion: 0.14.0

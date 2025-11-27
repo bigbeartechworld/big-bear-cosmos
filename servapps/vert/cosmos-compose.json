@@ -1,0 +1,27 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "VERT",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://vert:3030",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "vert": {
+  "container_name": "big-bear-vert",
+  "image": "ghcr.io/vert-sh/vert:sha-a1b0b15",
+  "restart": "unless-stopped",
+  "ports": [
+    "3030:80"
+  ]
+}
+    }
+  }
+}
