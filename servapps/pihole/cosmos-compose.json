@@ -16,7 +16,7 @@
     "services": {
       "pihole": {
   "container_name": "big-bear-pihole",
-  "image": "pihole/pihole:2025.11.0",
+  "image": "pihole/pihole:2025.11.1",
   "restart": "unless-stopped",
   "environment": {
     "TZ": "UTC",

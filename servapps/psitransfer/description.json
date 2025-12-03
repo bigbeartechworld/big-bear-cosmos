@@ -1,0 +1,23 @@
+{
+  "name": "PsiTransfer",
+  "description": "PsiTransfer is a simple open source self-hosted file sharing solution. It's an alternative to paid services like Dropbox and WeTransfer. Features include no accounts or logins required, mobile friendly responsive interface, support for many and very big files with resumable uploads and downloads, expiring upload buckets, one-time downloads, password protected downloads, and admin dashboard.",
+  "url": "https://github.com/psi-4ward/psitransfer",
+  "longDescription": "PsiTransfer is a simple open source self-hosted file sharing solution. It's an alternative to paid services like Dropbox and WeTransfer. Features include no accounts or logins required, mobile friendly responsive interface, support for many and very big files with resumable uploads and downloads, expiring upload buckets, one-time downloads, password protected downloads, and admin dashboard.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container",
+    "file-sharing",
+    "file-transfer",
+    "wetransfer-alternative"
+  ],
+  "repository": "https://github.com/psi-4ward/psitransfer",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/psitransfer.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/psitransfer.png"
+}

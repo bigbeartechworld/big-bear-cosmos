@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "PsiTransfer",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://psitransfer:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "psitransfer": {
+  "image": "psitrax/psitransfer:v2.3.0",
+  "container_name": "big-bear-psitransfer",
+  "user": "1000:1000",
+  "environment": {
+    "PSITRANSFER_ADMIN_PASS": "",
+    "PSITRANSFER_UPLOAD_PASS": "",
+    "PSITRANSFER_REQUIRE_BUCKET_PASSWORD": "false",
+    "PSITRANSFER_MAX_FILE_SIZE": "",
+    "PSITRANSFER_MAX_BUCKET_SIZE": "",
+    "PSITRANSFER_DEFAULT_RETENTION": "604800",
+    "PSITRANSFER_MAX_AGE": "6480000"
+  },
+  "ports": [
+    "3000:3000"
+  ],
+  "volumes": [
+    "big-bear-psitransfer_data:/data"
+  ],
+  "restart": "unless-stopped"
+}
+    }
+  }
+}
