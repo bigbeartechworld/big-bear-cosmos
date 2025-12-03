@@ -1,0 +1,44 @@
+cosmos-installer: null
+# Configuration for PsiTransfer setup
+
+# Name of the big-bear-psitransfer application
+# Service definitions for the big-bear-psitransfer application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Image to be used for the container
+    image: psitrax/psitransfer:v2.3.0
+    # Name of the container
+    container_name: big-bear-psitransfer
+    # Run as UID 1000 (node user) to match the image's default user
+    user: "1000:1000"
+    # Environment variables
+    environment:
+      # Admin password for /admin page (leave empty to disable)
+      PSITRANSFER_ADMIN_PASS: ""
+      # Upload password (leave empty to allow public uploads)
+      PSITRANSFER_UPLOAD_PASS: ""
+      # Make bucket password mandatory
+      PSITRANSFER_REQUIRE_BUCKET_PASSWORD: "false"
+      # Maximum file size in bytes (empty = no limit)
+      PSITRANSFER_MAX_FILE_SIZE: ""
+      # Maximum bucket size in bytes (empty = no limit)
+      PSITRANSFER_MAX_BUCKET_SIZE: ""
+      # Default retention time in seconds (604800 = 1 week)
+      PSITRANSFER_DEFAULT_RETENTION: "604800"
+      # Maximum age for files in seconds (6480000 = 75 days)
+      PSITRANSFER_MAX_AGE: "6480000"
+    # Ports mapping between host and container
+    ports:
+      - "3000:3000"
+    # Volumes to be mounted to the container
+    volumes:
+      - big-bear-psitransfer_data:/data
+    # Container restart policy
+    restart: unless-stopped
+volumes:
+  big-bear-psitransfer_data:
+    name: big-bear-psitransfer_data
+    driver: local
+minVersion: 0.14.0

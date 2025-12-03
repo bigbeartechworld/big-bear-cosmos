@@ -16,7 +16,7 @@
     "services": {
       "pihole-updatelists": {
   "container_name": "big-bear-pihole-updatelists",
-  "image": "jacklul/pihole:2025.11.0",
+  "image": "jacklul/pihole:2025.11.1",
   "restart": "unless-stopped",
   "environment": {
     "TZ": "UTC",
