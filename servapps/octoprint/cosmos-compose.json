@@ -16,7 +16,7 @@
     "services": {
       "octoprint": {
   "container_name": "octoprint",
-  "image": "octoprint/octoprint:1.11.4",
+  "image": "octoprint/octoprint:1.11.5",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-octoprint_octoprint:/octoprint"
