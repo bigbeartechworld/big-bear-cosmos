@@ -1,0 +1,25 @@
+{
+  "name": "RustFS",
+  "description": "RustFS is a high-performance, distributed object storage system built in Rust. It combines the simplicity of MinIO with the memory safety and raw performance of Rust. It offers full S3 compatibility, is completely open-source under Apache 2.0 license, and is optimized for data lakes, AI, and big data workloads.",
+  "url": "https://rustfs.com/",
+  "longDescription": "RustFS is a high-performance, distributed object storage system built in Rust. It combines the simplicity of MinIO with the memory safety and raw performance of Rust. It offers full S3 compatibility, is completely open-source under Apache 2.0 license, and is optimized for data lakes, AI, and big data workloads.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "storage",
+    "object-storage",
+    "s3",
+    "rust",
+    "minio-alternative",
+    "distributed",
+    "cloud-native"
+  ],
+  "repository": "https://github.com/rustfs/rustfs",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/rustfs.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/rustfs.png"
+}
