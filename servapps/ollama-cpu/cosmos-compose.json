@@ -16,7 +16,7 @@
     "services": {
       "ollama-cpu": {
   "container_name": "big-bear-ollama-cpu",
-  "image": "ollama/ollama:0.13.0",
+  "image": "ollama/ollama:0.13.1",
   "restart": "unless-stopped",
   "environment": [
     "PORT=11434"
