@@ -16,7 +16,7 @@
     "services": {
       "tududi": {
   "container_name": "big-bear-tududi",
-  "image": "chrisvel/tududi:0.86",
+  "image": "chrisvel/tududi:0.87",
   "restart": "unless-stopped",
   "environment": [
     "TUDUDI_USER_EMAIL=admin@example.com",
