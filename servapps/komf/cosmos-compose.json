@@ -16,7 +16,7 @@
     "services": {
       "komf": {
   "container_name": "big-bear-komf",
-  "image": "sndxr/komf:1.7.0",
+  "image": "sndxr/komf:1.7.1",
   "restart": "unless-stopped",
   "environment": [
     "KOMF_KOMGA_BASE_URI=http://komga:25600",
