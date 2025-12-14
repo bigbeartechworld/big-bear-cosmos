@@ -16,7 +16,7 @@
     "services": {
       "adguard-home": {
   "container_name": "adguard-home",
-  "image": "adguard/adguardhome:v0.107.70",
+  "image": "adguard/adguardhome:v0.107.71",
   "deploy": {
     "resources": {
       "reservations": {
