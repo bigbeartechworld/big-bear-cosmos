@@ -16,7 +16,7 @@
     "services": {
       "viseron": {
   "container_name": "big-bear-viseron",
-  "image": "roflcoopter/viseron:3.3.1",
+  "image": "roflcoopter/viseron:3.4.0",
   "restart": "unless-stopped",
   "shm_size": "1024mb",
   "volumes": [
