@@ -15,7 +15,7 @@
       ],
     "services": {
       "unifi-network-application-mongo-4": {
-  "image": "linuxserver/unifi-network-application:9.5.21",
+  "image": "linuxserver/unifi-network-application:10.0.162",
   "container_name": "big-bear-unifi-network-application",
   "environment": [
     "PUID=1000",
