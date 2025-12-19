@@ -16,7 +16,7 @@
     "services": {
       "tugtainer": {
   "container_name": "big-bear-tugtainer",
-  "image": "quenary/tugtainer:v1.14.4",
+  "image": "quenary/tugtainer:v1.15.0",
   "restart": "unless-stopped",
   "ports": [
     "9412:80"
