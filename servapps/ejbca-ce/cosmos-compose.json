@@ -16,7 +16,7 @@
     "services": {
       "ejbca-ce": {
   "container_name": "big-bear-ejbca-ce",
-  "image": "keyfactor/ejbca-ce:9.1.1",
+  "image": "keyfactor/ejbca-ce:9.3.7",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-ejbca-ce_persistent:/mnt/persistent"
