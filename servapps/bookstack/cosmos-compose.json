@@ -16,7 +16,7 @@
     "services": {
       "bookstack": {
   "container_name": "big-bear-bookstack",
-  "image": "linuxserver/bookstack:25.11.20251109",
+  "image": "linuxserver/bookstack:25.12.20251224",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-bookstack_config:/config"

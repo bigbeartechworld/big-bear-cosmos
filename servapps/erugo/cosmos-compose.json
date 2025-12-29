@@ -16,7 +16,7 @@
     "services": {
       "erugo": {
   "container_name": "big-bear-erugo",
-  "image": "wardy784/erugo:0.1.1",
+  "image": "wardy784/erugo:0.2.2",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-erugo_storage:/var/www/html/storage"

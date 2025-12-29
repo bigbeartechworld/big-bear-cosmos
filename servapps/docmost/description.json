@@ -11,10 +11,10 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/docmost/logo.png",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/docmost.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/docmost/logo.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/docmost.png"
 }
