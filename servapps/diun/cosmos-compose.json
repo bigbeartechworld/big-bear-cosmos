@@ -4,7 +4,7 @@
     "services": {
       "diun": {
   "container_name": "big-bear-diun",
-  "image": "crazymax/diun:4.30.0",
+  "image": "crazymax/diun:4.31.0",
   "command": [
     "serve"
   ],
