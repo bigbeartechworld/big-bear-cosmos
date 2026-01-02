@@ -16,7 +16,7 @@
     "services": {
       "piwigo": {
   "container_name": "big-bear-piwigo",
-  "image": "linuxserver/piwigo:16.1.0",
+  "image": "linuxserver/piwigo:16.2.0",
   "restart": "unless-stopped",
   "environment": [
     "PUID=1000",

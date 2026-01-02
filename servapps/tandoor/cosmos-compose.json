@@ -16,7 +16,7 @@
     "services": {
       "tandoor": {
   "container_name": "big-bear-tandoor",
-  "image": "ghcr.io/tandoorrecipes/recipes:2.3.5",
+  "image": "ghcr.io/tandoorrecipes/recipes:2.3.6",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-tandoor_staticfiles:/opt/recipes/staticfiles",

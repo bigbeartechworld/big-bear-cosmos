@@ -16,7 +16,7 @@
     "services": {
       "crafty": {
   "container_name": "big-bear-crafty",
-  "image": "registry.gitlab.com/crafty-controller/crafty-4:4.6.1",
+  "image": "registry.gitlab.com/crafty-controller/crafty-4:4.7.0",
   "restart": "unless-stopped",
   "environment": [
     "TZ=UTC"

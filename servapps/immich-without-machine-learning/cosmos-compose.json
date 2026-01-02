@@ -16,7 +16,7 @@
     "services": {
       "immich-without-machine-learning": {
   "container_name": "immich-server",
-  "image": "ghcr.io/immich-app/immich-server:v2.3.1",
+  "image": "ghcr.io/immich-app/immich-server:v2.4.1",
   "ports": [
     "2283:2283"
   ],

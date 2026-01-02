@@ -16,7 +16,7 @@
     "services": {
       "homarr-v1": {
   "container_name": "big-bear-homarr-v1",
-  "image": "ghcr.io/homarr-labs/homarr:v1.44.0",
+  "image": "ghcr.io/homarr-labs/homarr:v1.48.0",
   "restart": "unless-stopped",
   "volumes": [
     "/var/run/docker.sock:/var/run/docker.sock",

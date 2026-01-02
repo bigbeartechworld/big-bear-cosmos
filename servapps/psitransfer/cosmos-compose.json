@@ -15,7 +15,7 @@
       ],
     "services": {
       "psitransfer": {
-  "image": "psitrax/psitransfer:v2.3.0",
+  "image": "psitrax/psitransfer:v2.3.1",
   "container_name": "big-bear-psitransfer",
   "user": "1000:1000",
   "environment": {

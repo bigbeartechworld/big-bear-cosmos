@@ -16,7 +16,7 @@
     "services": {
       "stalwart-mail": {
   "container_name": "big-bear-stalwart-mail",
-  "image": "stalwartlabs/stalwart:v0.15.2",
+  "image": "stalwartlabs/stalwart:v0.15.3",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-stalwart-mail_data:/opt/stalwart"

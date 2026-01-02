@@ -16,7 +16,7 @@
     "services": {
       "audiobookshelf": {
   "container_name": "big-bear-audiobookshelf",
-  "image": "ghcr.io/advplyr/audiobookshelf:2.30.0",
+  "image": "ghcr.io/advplyr/audiobookshelf:2.32.1",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-audiobookshelf_media_data_books_spoken:/audiobooks",
