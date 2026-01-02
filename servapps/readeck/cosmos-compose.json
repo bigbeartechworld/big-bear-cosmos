@@ -16,7 +16,7 @@
     "services": {
       "readeck": {
   "container_name": "big-bear-readeck",
-  "image": "codeberg.org/readeck/readeck:0.21.2",
+  "image": "codeberg.org/readeck/readeck:0.21.5",
   "restart": "unless-stopped",
   "environment": [
     "READECK_LOG_LEVEL=info",
