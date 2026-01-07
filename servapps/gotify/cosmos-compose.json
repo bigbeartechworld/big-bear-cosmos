@@ -15,7 +15,7 @@
       ],
     "services": {
       "gotify": {
-  "image": "gotify/server:2.7.3",
+  "image": "gotify/server:2.8.0",
   "ports": [
     "8091:80"
   ],
