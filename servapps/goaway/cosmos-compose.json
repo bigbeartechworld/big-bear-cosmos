@@ -16,7 +16,7 @@
     "services": {
       "goaway": {
   "container_name": "big-bear-goaway",
-  "image": "pommee/goaway:0.63.3",
+  "image": "pommee/goaway:0.63.4",
   "restart": "unless-stopped",
   "ports": [
     "53:53/udp",
