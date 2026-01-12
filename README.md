@@ -43,7 +43,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | authentik | ghcr.io/goauthentik/server | 2025.10.3 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 2.0.6 |  |  |
-| beaverhabits | daya0576/beaverhabits | 0.8.0 |  |  |
+| beaverhabits | daya0576/beaverhabits | 0.8.1 |  |  |
 | beszel | henrygd/beszel | 0.17.0 |  |  |
 | bookstack | lscr.io/linuxserver/bookstack | 25.12.20251224 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling |  |  |
@@ -73,12 +73,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docmost | docmost/docmost | 0.24.1 |  |  |
 | dozzle | amir20/dozzle | v8.14.12 |  |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.3.7 |  |  |
-| erugo | wardy784/erugo | 0.2.11 |  |  |
+| erugo | wardy784/erugo | 0.2.13 |  |  |
 | excalidraw | excalidraw/excalidraw | latest |  |  |
 | farmos | farmos/farmos | 3.4.6 |  |  |
 | faster-whisper | linuxserver/faster-whisper | 3.0.2 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.4 |  |  |
-| filebrowser | filebrowser/filebrowser | v2.53.0-s6 |  |  |
+| filebrowser | filebrowser/filebrowser | v2.53.1-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | lscr.io/linuxserver/firefox | 1146.0.1 |  |  |
 | flame | pawelmalak/flame | multiarch2.3.1 |  |  |
@@ -88,12 +88,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.06 |  |  |
 | ghost | ghost | 6.10.3-alpine |  |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.224.2 |  |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.228.0 |  |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.9.2 |  |  |
 | glances | nicolargo/glances | 4.3.0.8-full |  |  |
 | gluetun | qmcgaw/gluetun | v3.41.0 |  |  |
-| goaway | pommee/goaway | 0.63.3 |  |  |
-| gotify | gotify/server | 2.7.3 |  |  |
+| goaway | pommee/goaway | 0.63.4 |  |  |
+| gotify | gotify/server | 2.8.0 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 |  |  |
 | healthchecks | linuxserver/healthchecks | 3.13.20251222 |  |  |
 | homarr-v1 | ghcr.io/homarr-labs/homarr | v1.48.0 |  |  |
@@ -105,7 +105,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.29.1 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.4.1 |  |  |
 | immich | ghcr.io/immich-app/immich-server | v2.4.1 |  |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.12.41 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.12.44 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 |  |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.7 |  |  |
@@ -129,7 +129,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | v1.28 |  |  |
 | maybe-finance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
-| mealie | hkotel/mealie | v3.9.1 |  |  |
+| mealie | hkotel/mealie | v3.9.2 |  |  |
 | microbin | danielszabo99/microbin | 2.0.4 |  |  |
 | mind | mrcas/mind | v1.4.1 |  |  |
 | minio | bigbeartechworld/big-bear-minio | RELEASE.2025-10-15T17-29-55Z |  |  |
@@ -137,13 +137,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | morphos | ghcr.io/danvergara/morphos-server | 0.6.0 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 |  |  |
-| n8n | n8nio/n8n | 2.2.1 |  |  |
+| n8n | n8nio/n8n | 2.2.2 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 32.0.3 |  |  |
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 32.0.3 |  |  |
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 32.0.3 |  |  |
-| nexterm | germannewsmaker/nexterm | 1.0.8-OPEN-PREVIEW |  |  |
+| nexterm | germannewsmaker/nexterm | 1.0.9-OPEN-PREVIEW |  |  |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.3 |  |  |
 | nocodb | nocodb/nocodb | 0.265.1 |  |  |
 | node-red | nodered/node-red | 4.1.2 |  |  |
@@ -185,7 +185,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | psitransfer | psitrax/psitransfer | v2.3.1 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.11.11 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.11.13 |  |  |
-| rallly | lukevella/rallly | 4.5.13 |  |  |
+| rallly | lukevella/rallly | 4.5.14 |  |  |
 | reactive-resume | amruthpillai/reactive-resume | v4.5.5 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.21.5 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
@@ -228,7 +228,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | wishlist | ghcr.io/cmintey/wishlist | v0.58.0 |  |  |
 | wordpress | wordpress | 6.9.0 |  |  |
 | write-freely | nephatrine/write-freely | 0.16 |  |  |
-| zigbee2mqtt | koenkk/zigbee2mqtt | 2.7.1 |  |  |
+| zigbee2mqtt | koenkk/zigbee2mqtt | 2.7.2 |  |  |
 | zipline | ghcr.io/diced/zipline | 3.7.13 |  |  |
 | zotero | linuxserver/zotero | 7.0.20240809 |  |  |
 
