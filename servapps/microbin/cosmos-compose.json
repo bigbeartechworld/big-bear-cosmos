@@ -57,7 +57,7 @@
     "MICROBIN_DISABLE_TELEMETRY": "false",
     "MICROBIN_LIST_SERVER": "false"
   },
-  "image": "danielszabo99/microbin:2.0.4",
+  "image": "danielszabo99/microbin:2.1.0",
   "ports": [
     "8888:8080"
   ],

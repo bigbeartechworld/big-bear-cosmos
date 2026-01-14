@@ -16,7 +16,7 @@
     "services": {
       "trilium": {
   "container_name": "big-bear-trilium",
-  "image": "triliumnext/trilium:v0.101.1",
+  "image": "triliumnext/trilium:v0.101.3",
   "restart": "unless-stopped",
   "environment": [
     "TRILIUM_DATA_DIR=/home/node/trilium-data"

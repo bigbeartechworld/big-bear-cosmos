@@ -16,7 +16,7 @@
     "services": {
       "jlesage-handbrake": {
   "container_name": "big-bear-jlesage-handbrake",
-  "image": "jlesage/handbrake:v25.12.4",
+  "image": "jlesage/handbrake:v26.01.1",
   "ports": [
     "5800:5800"
   ],
