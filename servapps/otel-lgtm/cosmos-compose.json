@@ -16,7 +16,7 @@
     "services": {
       "otel-lgtm": {
   "container_name": "big-bear-otel-lgtm",
-  "image": "grafana/otel-lgtm:0.13.0",
+  "image": "grafana/otel-lgtm:0.14.0",
   "restart": "unless-stopped",
   "volumes": [
     {
