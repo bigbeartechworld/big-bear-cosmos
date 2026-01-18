@@ -16,7 +16,7 @@
     "services": {
       "kavita": {
   "container_name": "big-bear-kavita",
-  "image": "jvmilazz0/kavita:0.8.8",
+  "image": "jvmilazz0/kavita:0.8.9",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-kavita_data_kavita-config:/kavita/config",
