@@ -15,7 +15,7 @@
       ],
     "services": {
       "ntfysh": {
-  "image": "binwiederhier/ntfy:v2.15.0",
+  "image": "binwiederhier/ntfy:v2.16.0",
   "command": [
     "serve"
   ],
