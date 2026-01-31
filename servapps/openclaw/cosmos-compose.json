@@ -1,0 +1,51 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "OpenClaw",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://openclaw:18789",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "openclaw": {
+  "image": "ghcr.io/openclaw/openclaw:2026.1.29",
+  "container_name": "big-bear-openclaw",
+  "environment": [
+    "HOME=/home/node",
+    "TERM=xterm-256color",
+    "OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:?Gateway token required. Generate with: openssl rand -hex 32}",
+    "CLAUDE_AI_SESSION_KEY=${CLAUDE_AI_SESSION_KEY:-}",
+    "CLAUDE_WEB_SESSION_KEY=${CLAUDE_WEB_SESSION_KEY:-}",
+    "CLAUDE_WEB_COOKIE=${CLAUDE_WEB_COOKIE:-}"
+  ],
+  "volumes": [
+    "big-bear-openclaw_config:/home/node/.openclaw",
+    "big-bear-openclaw_workspace:/home/node/.openclaw/workspace"
+  ],
+  "ports": [
+    "18789:18789",
+    "18790:18790"
+  ],
+  "init": true,
+  "restart": "unless-stopped",
+  "network_mode": "bridge",
+  "command": [
+    "node",
+    "dist/index.js",
+    "gateway",
+    "--bind",
+    "lan",
+    "--port",
+    "18789"
+  ]
+}
+    }
+  }
+}

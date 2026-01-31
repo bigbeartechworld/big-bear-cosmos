@@ -1,0 +1,23 @@
+{
+  "name": "OpenClaw",
+  "description": "OpenClaw is a self-hosted AI agent platform that provides Claude AI integration through a local gateway. It enables running AI assistants with local tool execution, file access, and workspace management. Features include WebSocket gateway, browser automation, and extensible command framework.",
+  "url": "https://github.com/openclaw/openclaw",
+  "longDescription": "OpenClaw is a self-hosted AI agent platform that provides Claude AI integration through a local gateway. It enables running AI assistants with local tool execution, file access, and workspace management. Features include WebSocket gateway, browser automation, and extensible command framework.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "ai",
+    "claude",
+    "agent",
+    "automation",
+    "bigbearcasaos"
+  ],
+  "repository": "https://github.com/openclaw/openclaw",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/_example/logo.jpg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/_example/logo.jpg"
+}
