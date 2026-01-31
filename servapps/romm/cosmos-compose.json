@@ -15,7 +15,7 @@
       ],
     "services": {
       "romm": {
-  "image": "rommapp/romm:4.5.0",
+  "image": "rommapp/romm:4.6.1",
   "container_name": "big-bear-romm",
   "environment": [
     "DB_HOST=big-bear-rommdb",
