@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: registry.gitlab.com/storyteller-platform/storyteller:web-v2.6.0-experimental.14
+    container_name: big-bear-storyteller
+    ports:
+      - "8015:8001"
+    volumes:
+      - big-bear-storyteller_data:/data
+    environment:
+      - STORYTELLER_SECRET_KEY=${STORYTELLER_SECRET_KEY}
+      - STORYTELLER_LOG_LEVEL=${STORYTELLER_LOG_LEVEL:-info}
+      - STORYTELLER_DATA_DIR=${STORYTELLER_DATA_DIR:-/data}
+      - TZ=${TZ:-UTC}
+    restart: unless-stopped
+    network_mode: bridge
+volumes:
+  big-bear-storyteller_data:
+    name: big-bear-storyteller_data
+    driver: local
+minVersion: 0.14.0
