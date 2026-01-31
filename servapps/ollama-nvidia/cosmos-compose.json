@@ -16,7 +16,7 @@
     "services": {
       "ollama-nvidia": {
   "container_name": "big-bear-ollama-nvidia",
-  "image": "ollama/ollama:0.15.0",
+  "image": "ollama/ollama:0.15.2",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-ollama-nvidia_.ollama:/root/.ollama"
