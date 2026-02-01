@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Rocket.Chat v8",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://rocket-chat-v8:3100",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "rocket-chat-v8": {
+  "container_name": "big-bear-rocket-chat-v8",
+  "image": "rocket.chat:8.0.1",
+  "restart": "unless-stopped",
+  "environment": {
+    "MONGO_OPLOG_URL": "mongodb://db:27017/local",
+    "ROOT_URL": "http://localhost:3100"
+  },
+  "ports": [
+    "3100:3000"
+  ],
+  "depends_on": {
+    "db": {
+      "condition": "service_healthy"
+    }
+  },
+  "networks": [
+    "rocketchat-v8-net"
+  ]
+}
+    }
+  }
+}
