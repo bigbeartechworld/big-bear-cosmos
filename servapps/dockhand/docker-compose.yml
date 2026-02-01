@@ -5,7 +5,7 @@ cosmos-installer: null
 # Service definitions for the big-bear-dockhand application
 services:
   # Service name: app
-  # The `app` service definition
+  # The main Dockhand application service
   app:
     # Name of the container
     container_name: big-bear-dockhand
@@ -15,8 +15,8 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - big-bear-dockhand_data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock # Docker socket access
+      - big-bear-dockhand_data:/app/data # Application data
     # Ports mapping between host and container
     ports:
       - "3003:3000"
