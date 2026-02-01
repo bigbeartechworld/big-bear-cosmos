@@ -16,7 +16,7 @@
     "services": {
       "portainer-agent": {
   "container_name": "portainer-agent",
-  "image": "portainer/agent:2.37.0",
+  "image": "portainer/agent:2.38.0",
   "network_mode": "bridge",
   "ports": [
     "9001:9001"
