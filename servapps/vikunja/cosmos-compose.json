@@ -15,7 +15,7 @@
       ],
     "services": {
       "vikunja": {
-  "image": "vikunja/vikunja:0.24.6",
+  "image": "vikunja/vikunja:1.0.0",
   "container_name": "big-bear-vikunja",
   "ports": [
     "8081:3456"
