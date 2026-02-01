@@ -16,7 +16,7 @@
     "services": {
       "farmos": {
   "container_name": "big-bear-farmos",
-  "image": "farmos/farmos:3.5.0",
+  "image": "farmos/farmos:3.5.1",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-farmos_sites:/opt/drupal/web/sites"
