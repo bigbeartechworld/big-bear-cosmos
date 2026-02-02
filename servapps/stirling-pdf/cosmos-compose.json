@@ -16,7 +16,7 @@
     "services": {
       "stirling-pdf": {
   "container_name": "big-bear-stirling-pdf",
-  "image": "stirlingtools/stirling-pdf:2.4.1",
+  "image": "stirlingtools/stirling-pdf:2.4.2",
   "restart": "unless-stopped",
   "environment": [
     "DOCKER_ENABLE_SECURITY=false",
