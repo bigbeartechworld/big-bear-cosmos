@@ -16,7 +16,7 @@
     "services": {
       "healthchecks": {
   "container_name": "big-bear-healthchecks",
-  "image": "linuxserver/healthchecks:4.0.20260126",
+  "image": "linuxserver/healthchecks:4.0.20260202",
   "restart": "unless-stopped",
   "environment": [
     "PUID=1000",
