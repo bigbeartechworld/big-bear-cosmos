@@ -16,7 +16,7 @@
     "services": {
       "ghost": {
   "container_name": "big-bear-ghost",
-  "image": "ghost:6.14.0-alpine",
+  "image": "ghost:6.16.1-alpine",
   "restart": "on-failure",
   "networks": [
     "ghost-network"
