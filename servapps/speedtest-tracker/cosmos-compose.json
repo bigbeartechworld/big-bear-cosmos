@@ -36,7 +36,7 @@
     "speedtest-tracker_config:/config",
     "speedtest-tracker_web:/etc/ssl/web"
   ],
-  "image": "linuxserver/speedtest-tracker:1.13.6",
+  "image": "linuxserver/speedtest-tracker:1.13.7",
   "restart": "unless-stopped",
   "depends_on": [
     "big-bear-speedtest-tracker-db"

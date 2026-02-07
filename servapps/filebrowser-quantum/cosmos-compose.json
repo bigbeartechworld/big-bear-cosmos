@@ -1,0 +1,37 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "FileBrowser Quantum",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://filebrowser-quantum:8700",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "filebrowser-quantum": {
+  "container_name": "big-bear-filebrowser-quantum",
+  "image": "gtstef/filebrowser:1.1.2-stable",
+  "restart": "unless-stopped",
+  "environment": [
+    "TZ=UTC"
+  ],
+  "volumes": [
+    "big-bear-filebrowser-quantum_data:/home/filebrowser/data",
+    "big-bear-filebrowser-quantum_srv:/srv"
+  ],
+  "ports": [
+    "8700:80"
+  ],
+  "networks": [
+    "big-bear-filebrowser-quantum-network"
+  ]
+}
+    }
+  }
+}
