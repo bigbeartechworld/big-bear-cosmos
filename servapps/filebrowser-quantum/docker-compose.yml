@@ -1,0 +1,41 @@
+cosmos-installer: null
+# Configuration for filebrowser-quantum setup
+
+# Name of the big-bear-filebrowser-quantum application
+# Service definitions for the big-bear-filebrowser-quantum application
+services:
+  # Service name: app
+  # The main FileBrowser Quantum application service
+  app:
+    # Name of the container
+    container_name: big-bear-filebrowser-quantum
+    # Image to be used for the container
+    image: gtstef/filebrowser:1.1.2-stable
+    # Container restart policy
+    restart: unless-stopped
+    # Environment variables
+    environment:
+      - TZ=UTC
+    # Volumes to be mounted to the container
+    volumes:
+      - big-bear-filebrowser-quantum_data:/home/filebrowser/data # Database and config
+      - big-bear-filebrowser-quantum_srv:/srv # Served files
+    # Ports mapping between host and container
+    ports:
+      - "8700:80"
+    # Networks for the big-bear-filebrowser-quantum application
+    networks:
+      - big-bear-filebrowser-quantum-network
+# Networks definition for the big-bear-filebrowser-quantum application
+networks:
+  big-bear-filebrowser-quantum-network:
+    driver: bridge
+# Volumes definition for the big-bear-filebrowser-quantum application
+volumes:
+  big-bear-filebrowser-quantum_data:
+    name: big-bear-filebrowser-quantum_data
+    driver: local
+  big-bear-filebrowser-quantum_srv:
+    name: big-bear-filebrowser-quantum_srv
+    driver: local
+minVersion: 0.14.0

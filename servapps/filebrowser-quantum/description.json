@@ -1,0 +1,21 @@
+{
+  "name": "FileBrowser Quantum",
+  "description": "A self-hosted web file manager forked from FileBrowser with advanced features including OIDC authentication, indexed search, office document previews, and multi-source support.",
+  "url": "https://hub.docker.com/r/gtstef/filebrowser",
+  "longDescription": "A self-hosted web file manager forked from FileBrowser with advanced features including OIDC authentication, indexed search, office document previews, and multi-source support.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "storage",
+    "file-manager",
+    "filebrowser"
+  ],
+  "repository": "https://github.com/gtsteffaniak/filebrowser",
+  "image": "https://cdn.jsdelivr.net/gh/gtsteffaniak/filebrowser@main/frontend/public/img/logo.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/gtsteffaniak/filebrowser@main/frontend/public/img/logo.svg"
+}
