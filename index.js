@@ -11,7 +11,12 @@ const servapps = fs
 let servappsJSON = [];
 
 for (const file of servapps) {
-  const servapp = require(`./servapps/${file}/description.json`);
+  const descriptionPath = `./servapps/${file}/description.json`;
+  if (!fs.existsSync(descriptionPath)) {
+    console.warn(`Skipping ${file}: description.json not found`);
+    continue;
+  }
+  const servapp = require(descriptionPath);
   servapp.id = file;
   servapp.screenshots = [];
   servapp.artefacts = {};
