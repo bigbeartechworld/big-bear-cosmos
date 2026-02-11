@@ -16,7 +16,7 @@
     "services": {
       "pterodactyl-panel": {
   "container_name": "pterodactyl-panel",
-  "image": "ghcr.io/pterodactyl/panel:v1.11.11",
+  "image": "ghcr.io/pterodactyl/panel:v1.12.0",
   "restart": "always",
   "ports": [
     "1180:80",

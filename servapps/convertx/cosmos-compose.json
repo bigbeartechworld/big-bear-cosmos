@@ -16,7 +16,7 @@
     "services": {
       "convertx": {
   "container_name": "big-bear-convertx",
-  "image": "ghcr.io/c4illin/convertx:v0.16.1",
+  "image": "ghcr.io/c4illin/convertx:v0.17.0",
   "restart": "unless-stopped",
   "ports": [
     "3000:3000"
