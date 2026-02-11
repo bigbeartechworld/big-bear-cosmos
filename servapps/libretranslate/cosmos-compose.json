@@ -16,7 +16,7 @@
     "services": {
       "libretranslate": {
   "container_name": "big-bear-libretranslate",
-  "image": "libretranslate/libretranslate:v1.8.4",
+  "image": "libretranslate/libretranslate:v1.9.0",
   "restart": "unless-stopped",
   "environment": [
     "LT_API_KEYS=true",
