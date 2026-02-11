@@ -16,7 +16,7 @@
     "services": {
       "pterodactyl-wings": {
   "container_name": "pterodactyl-wings",
-  "image": "ghcr.io/pterodactyl/wings:v1.11.13",
+  "image": "ghcr.io/pterodactyl/wings:v1.12.1",
   "restart": "always",
   "ports": [
     "8080:8080",

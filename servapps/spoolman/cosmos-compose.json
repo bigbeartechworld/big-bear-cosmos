@@ -15,7 +15,7 @@
       ],
     "services": {
       "spoolman": {
-  "image": "ghcr.io/donkie/spoolman:0.22.1",
+  "image": "ghcr.io/donkie/spoolman:0.23.1",
   "ports": [
     "7912:8000"
   ],
