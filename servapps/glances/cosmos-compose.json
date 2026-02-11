@@ -16,7 +16,7 @@
     "services": {
       "glances": {
   "container_name": "big-bear-glances",
-  "image": "nicolargo/glances:4.3.0.8-full",
+  "image": "nicolargo/glances:4.5.0.1-full",
   "ports": [
     "61208:61208"
   ],
