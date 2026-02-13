@@ -16,7 +16,7 @@
     "services": {
       "cyberchef": {
   "container_name": "big-bear-cyberchef",
-  "image": "ghcr.io/gchq/cyberchef:10.22.0",
+  "image": "ghcr.io/gchq/cyberchef:10.22.1",
   "restart": "unless-stopped",
   "ports": [
     "8080:80"
