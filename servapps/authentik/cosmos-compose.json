@@ -16,7 +16,7 @@
     "services": {
       "authentik": {
   "container_name": "big-bear-authentik",
-  "image": "ghcr.io/goauthentik/server:2025.12.3",
+  "image": "ghcr.io/goauthentik/server:2025.12.4",
   "command": "server",
   "environment": {
     "AUTHENTIK_REDIS__HOST": "big-bear-authentik-redis",
