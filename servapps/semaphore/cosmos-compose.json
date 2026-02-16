@@ -16,7 +16,7 @@
     "services": {
       "semaphore": {
   "container_name": "big-bear-semaphore",
-  "image": "semaphoreui/semaphore:v2.16.51",
+  "image": "semaphoreui/semaphore:v2.17.2",
   "restart": "unless-stopped",
   "environment": {
     "SEMAPHORE_DB_USER": "semaphore",
