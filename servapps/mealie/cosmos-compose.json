@@ -16,7 +16,7 @@
     "services": {
       "mealie": {
   "container_name": "big-bear-mealie",
-  "image": "hkotel/mealie:v3.10.2",
+  "image": "hkotel/mealie:v3.11.0",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-mealie_data:/app/data"
