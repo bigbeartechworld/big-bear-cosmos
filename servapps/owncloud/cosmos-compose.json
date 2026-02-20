@@ -16,7 +16,7 @@
     "services": {
       "owncloud": {
   "container_name": "big-bear-owncloud",
-  "image": "owncloud/server:10.16.0",
+  "image": "owncloud/server:10.16.1",
   "restart": "unless-stopped",
   "environment": [
     "OWNCLOUD_DOMAIN=http://[YOUR_CASAOS_IP]:8080",
