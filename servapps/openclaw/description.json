@@ -14,10 +14,10 @@
     "bigbearcasaos"
   ],
   "repository": "https://github.com/openclaw/openclaw",
-  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/_example/logo.jpg",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/openclaw.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/_example/logo.jpg"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/openclaw.png"
 }
