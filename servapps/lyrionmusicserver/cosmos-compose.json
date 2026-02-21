@@ -16,7 +16,7 @@
     "services": {
       "lyrionmusicserver": {
   "container_name": "big-bear-lyrionmusicserver",
-  "image": "lmscommunity/lyrionmusicserver:9.1.0",
+  "image": "lmscommunity/lyrionmusicserver:9.2.0",
   "restart": "unless-stopped",
   "environment": [
     "HTTP_PORT=9000"
