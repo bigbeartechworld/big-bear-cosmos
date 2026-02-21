@@ -12,10 +12,10 @@
     "filebrowser"
   ],
   "repository": "https://github.com/gtsteffaniak/filebrowser",
-  "image": "https://cdn.jsdelivr.net/gh/gtsteffaniak/filebrowser@main/frontend/public/img/logo.svg",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/filebrowser-quantum.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/gtsteffaniak/filebrowser@main/frontend/public/img/logo.svg"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/filebrowser-quantum.png"
 }
