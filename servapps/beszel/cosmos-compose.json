@@ -16,7 +16,7 @@
     "services": {
       "beszel": {
   "container_name": "big-bear-beszel",
-  "image": "henrygd/beszel:0.18.3",
+  "image": "henrygd/beszel:0.18.4",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-beszel_data:/beszel_data"
