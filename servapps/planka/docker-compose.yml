@@ -1,6 +1,17 @@
 cosmos-installer: null
 # Configuration for planka setup
 
+# NOTE: Planka v1 is in maintenance mode. For new features and security updates,
+# consider deploying the separate 'planka-v2' app.
+#
+# Planka v2 includes:
+# - Enhanced security (SSRF protection)
+# - New features (user mentions, task linking)
+# - UI-based webhooks and SMTP configuration
+# - Unified data directory architecture
+#
+# Migration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924
+
 # Name of the big-bear-planka application
 # Service definitions for the big-bear-planka application
 services:

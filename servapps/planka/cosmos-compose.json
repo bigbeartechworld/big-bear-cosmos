@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Planka",
+          "name": "Planka (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://planka:3000",
