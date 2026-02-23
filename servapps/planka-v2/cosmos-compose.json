@@ -1,0 +1,51 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Planka v2",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://planka-v2:3001",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "planka-v2": {
+  "container_name": "big-bear-planka-v2",
+  "image": "ghcr.io/plankanban/planka:2.0.1",
+  "restart": "unless-stopped",
+  "volumes": [
+    "big-bear-planka-v2_data:/app/data",
+    "big-bear-planka-v2_background-images:/app/public/background-images",
+    "big-bear-planka-v2_user-avatars:/app/public/user-avatars",
+    "big-bear-planka-v2_project-background-images:/app/public/project-background-images",
+    "big-bear-planka-v2_attachments:/app/private/attachments"
+  ],
+  "ports": [
+    "3001:1337"
+  ],
+  "environment": [
+    "BASE_URL=http://[YOUR_CASAOS_LAN_IP]:3001",
+    "DATABASE_URL=postgresql://postgres@big-bear-planka-v2-postgres/planka",
+    "SECRET_KEY=notsecretkey",
+    "DEFAULT_ADMIN_EMAIL=demo@demo.demo",
+    "DEFAULT_ADMIN_PASSWORD=demo",
+    "DEFAULT_ADMIN_NAME=Demo Demo",
+    "DEFAULT_ADMIN_USERNAME=demo"
+  ],
+  "networks": [
+    "big-bear-planka-v2-network"
+  ],
+  "depends_on": {
+    "big-bear-planka-v2-postgres": {
+      "condition": "service_healthy"
+    }
+  }
+}
+    }
+  }
+}
