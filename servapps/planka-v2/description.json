@@ -1,5 +1,5 @@
 {
-  "name": "Planka (Legacy)",
+  "name": "Planka v2",
   "description": "The realtime kanban board for workgroups built with React and Redux.",
   "url": "https://hub.docker.com/r/plankanban/planka",
   "longDescription": "The realtime kanban board for workgroups built with React and Redux.",
