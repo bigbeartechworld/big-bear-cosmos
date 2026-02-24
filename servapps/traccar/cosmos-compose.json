@@ -15,7 +15,7 @@
       ],
     "services": {
       "traccar": {
-  "image": "traccar/traccar:6.11-ubuntu",
+  "image": "traccar/traccar:6.12-ubuntu",
   "container_name": "traccar",
   "hostname": "traccar",
   "restart": "unless-stopped",
