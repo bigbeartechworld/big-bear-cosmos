@@ -6,17 +6,13 @@ const configFile = require("./config.json");
 
 const servapps = fs
   .readdirSync("./servapps")
-  .filter((file) => fs.lstatSync(`./servapps/${file}`).isDirectory());
+  .filter((file) => fs.lstatSync(`./servapps/${file}`).isDirectory())
+  .filter((file) => !file.startsWith("__") && !file.startsWith("."));
 
 let servappsJSON = [];
 
 for (const file of servapps) {
-  const descriptionPath = `./servapps/${file}/description.json`;
-  if (!fs.existsSync(descriptionPath)) {
-    console.warn(`Skipping ${file}: description.json not found`);
-    continue;
-  }
-  const servapp = require(descriptionPath);
+  const servapp = require(`./servapps/${file}/description.json`);
   servapp.id = file;
   servapp.screenshots = [];
   servapp.artefacts = {};
