@@ -6,7 +6,8 @@ const configFile = require("./config.json");
 
 const servapps = fs
   .readdirSync("./servapps")
-  .filter((file) => fs.lstatSync(`./servapps/${file}`).isDirectory());
+  .filter((file) => fs.lstatSync(`./servapps/${file}`).isDirectory())
+  .filter((file) => !file.startsWith("__") && !file.startsWith("."));
 
 let servappsJSON = [];
 
