@@ -16,7 +16,7 @@
     "services": {
       "homarr": {
   "container_name": "homarr",
-  "image": "ghcr.io/ajnart/homarr:0.16.0",
+  "image": "ghcr.io/ajnart/homarr:0.16.1",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-homarr_configs:/app/data/configs",

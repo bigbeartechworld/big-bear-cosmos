@@ -16,7 +16,7 @@
     "services": {
       "portainer": {
   "container_name": "big-bear-portainer",
-  "image": "portainer/portainer-ce:2.38.1-alpine",
+  "image": "portainer/portainer-ce:2.39.0-alpine",
   "network_mode": "bridge",
   "ports": [
     "8000:8000",

@@ -16,7 +16,7 @@
     "services": {
       "pihole-unbound": {
   "container_name": "big-bear-pihole-unbound",
-  "image": "bigbeartechworld/big-bear-pihole-unbound:2025.11.1",
+  "image": "bigbeartechworld/big-bear-pihole-unbound:2026.02.0",
   "restart": "unless-stopped",
   "environment": {
     "TZ": "America/Chicago",
