@@ -16,7 +16,7 @@
     "services": {
       "gitea-mirror": {
   "container_name": "big-bear-gitea-mirror",
-  "image": "ghcr.io/raylabshq/gitea-mirror:v3.9.4",
+  "image": "ghcr.io/raylabshq/gitea-mirror:v3.9.5",
   "restart": "unless-stopped",
   "ports": [
     "4321:4321"
