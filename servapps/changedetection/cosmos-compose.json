@@ -16,7 +16,7 @@
     "services": {
       "changedetection": {
   "container_name": "big-bear-changedetection",
-  "image": "ghcr.io/dgtlmoon/changedetection.io:0.54.1",
+  "image": "ghcr.io/dgtlmoon/changedetection.io:0.54.2",
   "restart": "unless-stopped",
   "ports": [
     "5000:5000"
