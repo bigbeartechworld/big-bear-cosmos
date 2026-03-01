@@ -16,7 +16,7 @@
     "services": {
       "immich-kiosk": {
   "container_name": "big-bear-immich-kiosk",
-  "image": "ghcr.io/damongolding/immich-kiosk:0.33.1",
+  "image": "ghcr.io/damongolding/immich-kiosk:0.33.2",
   "tty": true,
   "restart": "unless-stopped",
   "environment": {

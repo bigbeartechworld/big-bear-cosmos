@@ -16,7 +16,7 @@
     "services": {
       "filebrowser-quantum": {
   "container_name": "big-bear-filebrowser-quantum",
-  "image": "gtstef/filebrowser:1.2.0-stable",
+  "image": "gtstef/filebrowser:1.2.1-stable",
   "restart": "unless-stopped",
   "environment": [
     "TZ=UTC"
