@@ -1,7 +1,7 @@
 cosmos-installer: null
 services:
   app:
-    image: mauricenino/dashdot:6.3.0
+    image: mauricenino/dashdot:6.3.2
     ports:
       - "3001:3001"
     volumes:
