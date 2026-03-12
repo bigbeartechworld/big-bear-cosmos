@@ -15,7 +15,7 @@
       ],
     "services": {
       "wordpress": {
-  "image": "wordpress:6.9.1",
+  "image": "wordpress:6.9.2",
   "ports": [
     "8080:80"
   ],
