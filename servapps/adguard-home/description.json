@@ -10,7 +10,7 @@
     "bigbearcasaos",
     "container"
   ],
-  "repository": "https://github.com/bigbeartechworld",
+  "repository": "https://github.com/AdguardTeam/AdGuardHome",
   "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/adguard-home.png",
   "supported_architectures": [
     "amd64",
