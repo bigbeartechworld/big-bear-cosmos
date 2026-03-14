@@ -15,7 +15,7 @@
       ],
     "services": {
       "openclaw": {
-  "image": "ghcr.io/openclaw/openclaw:2026.3.11",
+  "image": "ghcr.io/openclaw/openclaw:2026.3.12",
   "container_name": "big-bear-openclaw",
   "environment": [
     "HOME=/home/node",

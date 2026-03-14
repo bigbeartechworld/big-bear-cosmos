@@ -16,7 +16,7 @@
     "services": {
       "2fauth": {
   "container_name": "big-bear-2fauth",
-  "image": "2fauth/2fauth:6.1.0",
+  "image": "2fauth/2fauth:6.1.1",
   "restart": "unless-stopped",
   "ports": [
     "8000:8000"
