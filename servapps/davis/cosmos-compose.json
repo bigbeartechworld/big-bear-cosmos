@@ -16,7 +16,7 @@
     "services": {
       "davis": {
   "container_name": "big-bear-davis",
-  "image": "ghcr.io/tchapi/davis-standalone:5.4.0",
+  "image": "ghcr.io/tchapi/davis-standalone:5.4.1",
   "restart": "unless-stopped",
   "environment": [
     "APP_ENV=prod",
