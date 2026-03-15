@@ -15,7 +15,7 @@
       ],
     "services": {
       "dashy": {
-  "image": "lissy93/dashy:3.1.9",
+  "image": "lissy93/dashy:3.1.11",
   "container_name": "big-bear-dashy",
   "volumes": [
     "big-bear-dashy_public:/app/public"
