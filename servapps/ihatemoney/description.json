@@ -11,10 +11,10 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ihatemoney.png",
+  "image": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ihatemoney.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ihatemoney.png"
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ihatemoney.png"
 }
