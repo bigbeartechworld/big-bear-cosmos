@@ -15,7 +15,7 @@
       ],
     "services": {
       "nocodb": {
-  "image": "nocodb/nocodb:0.301.4",
+  "image": "nocodb/nocodb:0.301.5",
   "container_name": "big-bear-nocodb",
   "restart": "unless-stopped",
   "environment": [
