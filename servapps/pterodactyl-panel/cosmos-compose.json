@@ -51,7 +51,8 @@
     "REDIS_HOST": "cache",
     "DB_HOST": "database",
     "DB_PASSWORD": "casaos",
-    "DB_PORT": "3306"
+    "DB_PORT": "3306",
+    "DB_CONNECTION": "mariadb"
   }
 }
     }
