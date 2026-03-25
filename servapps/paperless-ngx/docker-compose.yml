@@ -45,7 +45,7 @@ services:
       - big-bear-paperless-ngx-network
   big-bear-paperless-ngx-broker:
     container_name: big-bear-paperless-ngx-broker
-    image: docker.io/library/redis:8.6.1
+    image: docker.io/library/redis:8.6.2
     restart: unless-stopped
     volumes:
       - big-bear-paperless-ngx_redis:/data
@@ -94,7 +94,7 @@ services:
   # Apache Tika project and is configured to use the minimal image.
   big-bear-paperless-ngx-tika:
     container_name: big-bear-paperless-ngx-tika
-    image: apache/tika:3.2.3.0
+    image: apache/tika:3.3.0.0
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
