@@ -1,6 +1,6 @@
 {
   "id": "gitea-mirror",
-  "version": "v3.14.1",
+  "version": "v3.14.2",
   "image": "ghcr.io/raylabshq/gitea-mirror",
   "youtube": "",
   "docs_link": "",
