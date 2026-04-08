@@ -16,7 +16,7 @@
     "services": {
       "genmon": {
   "container_name": "big-bear-genmon",
-  "image": "bigbeartechworld/big-bear-genmon:1.19.08",
+  "image": "bigbeartechworld/big-bear-genmon:1.20.00",
   "environment": [
     "TZ=America/Chicago"
   ],
