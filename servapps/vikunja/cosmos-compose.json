@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Vikunja",
+          "name": "Vikunja (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://vikunja:8081",

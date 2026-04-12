@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Rocket.Chat",
+          "name": "Rocket.Chat (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://rocket-chat:3000",

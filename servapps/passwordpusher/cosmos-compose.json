@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Password Pusher",
+          "name": "Password Pusher (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://passwordpusher:5100",

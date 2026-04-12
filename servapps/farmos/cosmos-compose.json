@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "FarmOS",
+          "name": "FarmOS (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://farmos:8080",
