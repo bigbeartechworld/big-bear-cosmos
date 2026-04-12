@@ -1,5 +1,5 @@
 {
-  "name": "Password Pusher",
+  "name": "Password Pusher (Legacy)",
   "description": "Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.",
   "url": "https://hub.docker.com/r/pglombardo/pwpush",
   "longDescription": "Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.",

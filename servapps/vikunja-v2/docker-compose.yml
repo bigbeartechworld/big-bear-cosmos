@@ -1,0 +1,76 @@
+cosmos-installer: null
+# Configuration for Vikunja v2 setup
+
+# VIKUNJA V2 - NEW DEPLOYMENT
+# ============================
+# This is a SEPARATE app from 'vikunja' (v1.x Legacy). They can coexist.
+#
+# Vikunja v2 is a major rewrite with:
+# - Rebuilt session-based authentication (replaces JWT-based auth)
+# - Typesense search removed (no longer supported)
+# - Changed API routes (/projects/:project/tasks)
+# - Restructured CLI commands under 'repair' parent
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new Vikunja instances
+#
+# FOR MIGRATION FROM V1:
+# - Do NOT uninstall your existing 'vikunja' v1 app
+# - Deploy this as a NEW app alongside v1
+# - Migration is ONE-WAY - create backups before migrating
+# - See: https://vikunja.io/docs/api-login-session-migration/
+
+# Name of the big-bear-vikunja-v2 application
+# Service definitions for the big-bear-vikunja-v2 application
+services:
+  vikunja-v2:
+    image: vikunja/vikunja:2.3.0
+    container_name: big-bear-vikunja-v2
+    ports:
+      - 8082:3456
+    volumes:
+      # Map container path to host path for files
+      - big-bear-vikunja-v2_files:/app/vikunja/files
+    environment:
+      # Set the Vikunja frontend URL, replace <your public frontend url with slash> with the actual URL
+      VIKUNJA_SERVICE_PUBLICURL: http://<your public frontend url with slash>/
+      # Vikunja API environment variables
+      VIKUNJA_DATABASE_HOST: vikunja-v2-db
+      VIKUNJA_DATABASE_PASSWORD: secret
+      VIKUNJA_DATABASE_TYPE: mysql
+      VIKUNJA_DATABASE_USER: vikunja
+      VIKUNJA_DATABASE_DATABASE: vikunja
+    restart: unless-stopped
+    depends_on:
+      - vikunja-v2-db
+    networks:
+      - vikunja-v2-network
+  vikunja-v2-db:
+    image: mariadb:11
+    container_name: vikunja-v2-db
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      # MariaDB environment variables
+      MYSQL_ROOT_PASSWORD: supersecret
+      MYSQL_USER: vikunja
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: vikunja
+    volumes:
+      # Map container path to host path for MariaDB data
+      - big-bear-vikunja-v2_mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+      - vikunja-v2-network
+networks:
+  vikunja-v2-network:
+    driver: bridge
+volumes:
+  big-bear-vikunja-v2_files:
+    name: big-bear-vikunja-v2_files
+    driver: local
+  big-bear-vikunja-v2_mysql:
+    name: big-bear-vikunja-v2_mysql
+    driver: local
+minVersion: 0.14.0

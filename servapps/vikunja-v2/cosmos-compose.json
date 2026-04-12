@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Vikunja v2",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://vikunja-v2:8082",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "vikunja-v2": {
+  "image": "vikunja/vikunja:2.3.0",
+  "container_name": "big-bear-vikunja-v2",
+  "ports": [
+    "8082:3456"
+  ],
+  "volumes": [
+    "big-bear-vikunja-v2_files:/app/vikunja/files"
+  ],
+  "environment": {
+    "VIKUNJA_SERVICE_PUBLICURL": "http://<your public frontend url with slash>/",
+    "VIKUNJA_DATABASE_HOST": "vikunja-v2-db",
+    "VIKUNJA_DATABASE_PASSWORD": "secret",
+    "VIKUNJA_DATABASE_TYPE": "mysql",
+    "VIKUNJA_DATABASE_USER": "vikunja",
+    "VIKUNJA_DATABASE_DATABASE": "vikunja"
+  },
+  "restart": "unless-stopped",
+  "depends_on": [
+    "vikunja-v2-db"
+  ],
+  "networks": [
+    "vikunja-v2-network"
+  ]
+}
+    }
+  }
+}
