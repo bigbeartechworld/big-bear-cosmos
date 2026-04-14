@@ -1,7 +1,7 @@
 {
   "id": "seerr",
-  "version": "3.1.0",
-  "image": "ghcr.io/seerr-team/seerr",
+  "version": "3.1.1",
+  "image": "seerr/seerr",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""
