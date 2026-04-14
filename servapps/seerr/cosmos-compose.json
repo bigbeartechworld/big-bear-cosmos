@@ -2,10 +2,10 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Jellyseerr (Legacy)",
+          "name": "Seerr",
           "description": "Web UI",
           "useHost": true,
-          "target": "http://jellyseerr:5055",
+          "target": "http://seerr:5056",
           "mode": "SERVAPP",
           "Timeout": 14400000,
           "ThrottlePerMinute": 12000,
@@ -14,18 +14,27 @@
         }
       ],
     "services": {
-      "jellyseerr": {
-  "image": "fallenbagel/jellyseerr:2.7.3",
+      "seerr": {
+  "image": "ghcr.io/seerr-team/seerr:3.1.0",
+  "init": true,
+  "container_name": "big-bear-seerr",
   "ports": [
-    "5055:5055"
+    "5056:5055"
   ],
   "volumes": [
-    "big-bear-jellyseerr_config:/app/config"
+    "big-bear-seerr_config:/app/config"
   ],
   "environment": [
     "LOG_LEVEL=debug",
     "TZ=$TZ"
   ],
+  "healthcheck": {
+    "test": "wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public || exit 1",
+    "interval": "30s",
+    "timeout": "10s",
+    "retries": 3,
+    "start_period": "20s"
+  },
   "restart": "unless-stopped",
   "network_mode": "bridge"
 }
