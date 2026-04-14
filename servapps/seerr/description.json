@@ -1,0 +1,22 @@
+{
+  "name": "Seerr",
+  "description": "Seerr is a free and open source software application for managing requests for your media library. It is the successor to Overseerr and Jellyseerr, bringing support for Jellyfin, Plex, and Emby media servers.",
+  "url": "https://github.com/seerr-team/seerr",
+  "longDescription": "Seerr is a free and open source software application for managing requests for your media library. It is the successor to Overseerr and Jellyseerr, bringing support for Jellyfin, Plex, and Emby media servers.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container",
+    "media",
+    "requests"
+  ],
+  "repository": "https://github.com/seerr-team/seerr",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/seerr.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/seerr.png"
+}

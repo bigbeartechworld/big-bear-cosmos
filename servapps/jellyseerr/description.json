@@ -1,8 +1,8 @@
 {
-  "name": "Jellyseerr",
-  "description": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!",
+  "name": "Jellyseerr (Legacy)",
+  "description": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers! Note: Jellyseerr is no longer actively maintained. New users should use Seerr instead.",
   "url": "https://hub.docker.com/r/fallenbagel/jellyseerr",
-  "longDescription": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!",
+  "longDescription": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers! Note: Jellyseerr is no longer actively maintained. New users should use Seerr instead.",
   "tags": [
     "selfhosted",
     "docker",

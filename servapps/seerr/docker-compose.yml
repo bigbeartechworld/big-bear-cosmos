@@ -1,0 +1,26 @@
+cosmos-installer: null
+services:
+  app:
+    image: ghcr.io/seerr-team/seerr:3.1.0 # Image to use for the seerr service
+    init: true # Enable init process
+    container_name: big-bear-seerr
+    ports:
+      - "5056:5055" # Maps port 5056 on the host to port 5055 on the container
+    volumes:
+      - big-bear-seerr_config:/app/config # Binds a volume from host to container for configuration
+    environment:
+      - LOG_LEVEL=debug # Sets the log level to debug
+      - TZ=$TZ # Sets the timezone, using host's timezone variable
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped # Service will restart unless it is explicitly stopped
+    network_mode: bridge # Uses bridge network mode
+volumes:
+  big-bear-seerr_config:
+    name: big-bear-seerr_config
+    driver: local
+minVersion: 0.14.0
