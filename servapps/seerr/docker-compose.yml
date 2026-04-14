@@ -1,7 +1,7 @@
 cosmos-installer: null
 services:
   app:
-    image: ghcr.io/seerr-team/seerr:3.1.0 # Image to use for the seerr service
+    image: ghcr.io/seerr-team/seerr:3.1.1 # Image to use for the seerr service
     init: true # Enable init process
     container_name: big-bear-seerr
     ports:
