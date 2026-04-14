@@ -15,7 +15,7 @@
       ],
     "services": {
       "seerr": {
-  "image": "ghcr.io/seerr-team/seerr:3.1.0",
+  "image": "seerr/seerr:v3.1.1",
   "init": true,
   "container_name": "big-bear-seerr",
   "ports": [
