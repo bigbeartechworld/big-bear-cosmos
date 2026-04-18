@@ -16,7 +16,7 @@
     "services": {
       "zotero": {
   "container_name": "big-bear-zotero",
-  "image": "linuxserver/zotero:9.0.20260410",
+  "image": "linuxserver/zotero:9.0.20260417",
   "restart": "unless-stopped",
   "environment": [
     "PUID=1000",
