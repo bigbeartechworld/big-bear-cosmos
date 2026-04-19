@@ -15,7 +15,7 @@
       ],
     "services": {
       "homer": {
-  "image": "b4bz/homer:v26.4.1",
+  "image": "b4bz/homer:v26.4.2",
   "container_name": "homer",
   "volumes": [
     "big-bear-homer_assets:/www/assets"
