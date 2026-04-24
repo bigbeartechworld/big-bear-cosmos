@@ -16,7 +16,7 @@
     "services": {
       "linkwarden": {
   "container_name": "big-bear-linkwarden",
-  "image": "ghcr.io/linkwarden/linkwarden:v2.14.0",
+  "image": "ghcr.io/linkwarden/linkwarden:v2.14.1",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-linkwarden_data_linkwarden:/data/data"
