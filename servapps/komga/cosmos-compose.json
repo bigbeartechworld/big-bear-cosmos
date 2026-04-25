@@ -16,7 +16,7 @@
     "services": {
       "komga": {
   "container_name": "big-bear-komga",
-  "image": "ghcr.io/gotson/komga:1.24.3",
+  "image": "ghcr.io/gotson/komga:1.24.4",
   "restart": "unless-stopped",
   "environment": [
     "TZ=UTC"
