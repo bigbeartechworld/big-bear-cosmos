@@ -16,7 +16,7 @@
     "services": {
       "umbrel-os": {
   "container_name": "big-bear-umbrel",
-  "image": "dockurr/umbrel:1.4.0",
+  "image": "dockurr/umbrel:1.5.0",
   "restart": "unless-stopped",
   "ports": [
     "8080:80"
