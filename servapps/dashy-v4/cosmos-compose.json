@@ -2,10 +2,10 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Dashy (Legacy)",
+          "name": "Dashy v4",
           "description": "Web UI",
           "useHost": true,
-          "target": "http://dashy:4000",
+          "target": "http://dashy-v4:4001",
           "mode": "SERVAPP",
           "Timeout": 14400000,
           "ThrottlePerMinute": 12000,
@@ -14,14 +14,14 @@
         }
       ],
     "services": {
-      "dashy": {
-  "image": "lissy93/dashy:3.3.1",
-  "container_name": "big-bear-dashy",
+      "dashy-v4": {
+  "image": "lissy93/dashy:4.0.8",
+  "container_name": "big-bear-dashy-v4",
   "volumes": [
-    "big-bear-dashy_public:/app/public"
+    "big-bear-dashy-v4_user-data:/app/user-data"
   ],
   "ports": [
-    "4000:8080"
+    "4001:8080"
   ],
   "environment": [
     "NODE_ENV=production"
@@ -31,7 +31,7 @@
     "test": [
       "CMD",
       "node",
-      "/app/services/healthcheck"
+      "/app/services/healthcheck.js"
     ],
     "interval": "1m30s",
     "timeout": "10s",
