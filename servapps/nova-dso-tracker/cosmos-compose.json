@@ -1,0 +1,31 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Nova DSO Tracker",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://nova-dso-tracker:5001",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "nova-dso-tracker": {
+  "image": "mrantonsg/nova-dso-tracker:5.9.0",
+  "container_name": "big-bear-nova-dso-tracker",
+  "ports": [
+    "5001:5001"
+  ],
+  "volumes": [
+    "big-bear-nova-dso-tracker_data:/app/instance"
+  ],
+  "restart": "unless-stopped",
+  "network_mode": "bridge"
+}
+    }
+  }
+}

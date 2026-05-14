@@ -1,0 +1,16 @@
+cosmos-installer: null
+services:
+  nova:
+    image: mrantonsg/nova-dso-tracker:5.9.0
+    container_name: big-bear-nova-dso-tracker
+    ports:
+      - "5001:5001"
+    volumes:
+      - big-bear-nova-dso-tracker_data:/app/instance
+    restart: unless-stopped
+    network_mode: bridge
+volumes:
+  big-bear-nova-dso-tracker_data:
+    name: big-bear-nova-dso-tracker_data
+    driver: local
+minVersion: 0.14.0
