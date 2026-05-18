@@ -15,7 +15,7 @@
       ],
     "services": {
       "mailpit": {
-  "image": "axllent/mailpit:v1.29",
+  "image": "axllent/mailpit:v1.30",
   "container_name": "mailpit",
   "restart": "unless-stopped",
   "volumes": [
