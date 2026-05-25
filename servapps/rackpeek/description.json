@@ -1,0 +1,20 @@
+{
+  "name": "RackPeek",
+  "description": "A webui and CLI tool to discover, manage, and document your home lab and small-scale IT infrastructure. Track hardware, services, networks, and their relationships using open, non-proprietary YAML.",
+  "url": "https://timmoth.github.io/RackPeek/",
+  "longDescription": "A webui and CLI tool to discover, manage, and document your home lab and small-scale IT infrastructure. Track hardware, services, networks, and their relationships using open, non-proprietary YAML.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
+  ],
+  "repository": "https://github.com/timmoth/RackPeek",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/rackpeek/logo.jpg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/rackpeek/logo.jpg"
+}
