@@ -1,0 +1,63 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Odysseus",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://odysseus:7000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "odysseus": {
+  "container_name": "big-bear-odysseus",
+  "image": "bigbeartechworld/big-bear-odysseus:2026.06.02",
+  "restart": "unless-stopped",
+  "ports": [
+    "7000:7000"
+  ],
+  "environment": [
+    "PUID=1000",
+    "PGID=1000",
+    "AUTH_ENABLED=${AUTH_ENABLED:-true}",
+    "ODYSSEUS_ADMIN_PASSWORD=${ODYSSEUS_ADMIN_PASSWORD:-changeme}",
+    "SEARXNG_INSTANCE=http://searxng:8080",
+    "CHROMADB_HOST=chromadb",
+    "CHROMADB_PORT=8000"
+  ],
+  "volumes": [
+    "big-bear-odysseus_data:/app/data",
+    "big-bear-odysseus_logs:/app/logs"
+  ],
+  "depends_on": {
+    "searxng": {
+      "condition": "service_healthy"
+    },
+    "chromadb": {
+      "condition": "service_started"
+    }
+  },
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "curl",
+      "-f",
+      "http://localhost:7000/api/health"
+    ],
+    "interval": "30s",
+    "timeout": "10s",
+    "retries": 3,
+    "start_period": "40s"
+  },
+  "networks": [
+    "big_bear_odysseus_network"
+  ]
+}
+    }
+  }
+}

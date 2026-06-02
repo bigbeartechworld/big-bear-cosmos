@@ -15,7 +15,7 @@
       ],
     "services": {
       "code-server": {
-  "image": "linuxserver/code-server:4.121.0",
+  "image": "linuxserver/code-server:4.122.0",
   "container_name": "code-server",
   "environment": [
     "PUID=1000",
