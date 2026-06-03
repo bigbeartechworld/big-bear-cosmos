@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "DiscoPanel",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://discopanel:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "discopanel": {
+  "container_name": "big-bear-discopanel",
+  "image": "nickheyer/discopanel:v2.0.12",
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "environment": [
+    "DISCOPANEL_DATA_DIR=/app/data",
+    "DISCOPANEL_HOST_DATA_PATH=/DATA/AppData/discopanel/data",
+    "TZ=UTC"
+  ],
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "/DATA/AppData/discopanel/data:/app/data",
+    "/DATA/AppData/discopanel/backups:/app/backups",
+    "/DATA/AppData/discopanel/tmp:/app/tmp"
+  ]
+}
+    }
+  }
+}

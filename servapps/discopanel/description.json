@@ -1,0 +1,23 @@
+{
+  "name": "DiscoPanel",
+  "description": "DiscoPanel is a game server panel for Minecraft. It provides a clean interface for creating and managing Minecraft servers, installing modpacks, and running each server as its own Docker container. Features include modpack browsing and installation, per-server configuration, backups, and real-time server management.",
+  "url": "https://discopanel.app",
+  "longDescription": "DiscoPanel is a game server panel for Minecraft. It provides a clean interface for creating and managing Minecraft servers, installing modpacks, and running each server as its own Docker container. Features include modpack browsing and installation, per-server configuration, backups, and real-time server management.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "minecraft",
+    "game-server",
+    "gaming",
+    "modpacks"
+  ],
+  "repository": "https://github.com/nickheyer/DiscoPanel",
+  "image": "https://discopanel.app/g1_256x256.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://discopanel.app/g1_256x256.png"
+}
