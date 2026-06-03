@@ -16,7 +16,7 @@
     "services": {
       "ncdu": {
   "container_name": "big-bear-ncdu",
-  "image": "bigbeartechworld/big-bear-ncdu:0.0.6",
+  "image": "bigbeartechworld/big-bear-ncdu:0.0.7",
   "restart": "unless-stopped",
   "privileged": true,
   "volumes": [

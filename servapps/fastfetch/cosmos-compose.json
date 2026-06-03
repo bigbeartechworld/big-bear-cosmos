@@ -16,7 +16,7 @@
     "services": {
       "fastfetch": {
   "container_name": "big-bear-fastfetch",
-  "image": "bigbeartechworld/big-bear-fastfetch:0.0.4",
+  "image": "bigbeartechworld/big-bear-fastfetch:0.0.5",
   "restart": "unless-stopped",
   "privileged": true,
   "volumes": [
