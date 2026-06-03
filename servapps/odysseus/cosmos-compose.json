@@ -24,8 +24,8 @@
   "environment": [
     "PUID=1000",
     "PGID=1000",
-    "AUTH_ENABLED=${AUTH_ENABLED:-true}",
-    "ODYSSEUS_ADMIN_PASSWORD=${ODYSSEUS_ADMIN_PASSWORD:-changeme}",
+    "AUTH_ENABLED=true",
+    "ODYSSEUS_ADMIN_PASSWORD=61713bbc-7b62-4148-b5ea-5c83048c4818",
     "SEARXNG_INSTANCE=http://searxng:8080",
     "CHROMADB_HOST=chromadb",
     "CHROMADB_PORT=8000"
