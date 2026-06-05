@@ -1,0 +1,67 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Celestory & Voltask",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://celestory:1500",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "celestory": {
+  "image": "celestory/gateway:1.1.2",
+  "container_name": "celestory-gateway",
+  "ports": [
+    "1500:80"
+  ],
+  "environment": {
+    "SERVER_NAME": "localhost",
+    "FRONTEND_HOST": "frontend",
+    "FRONTEND_PORT": 80,
+    "VOLTASK_HOST": "voltask",
+    "VOLTASK_PORT": 1401,
+    "HUB_HOST": "hub",
+    "HUB_PORT": 1402
+  },
+  "depends_on": {
+    "frontend": {
+      "condition": "service_healthy"
+    },
+    "voltask": {
+      "condition": "service_healthy"
+    },
+    "hub": {
+      "condition": "service_healthy"
+    },
+    "api": {
+      "condition": "service_healthy"
+    },
+    "auth": {
+      "condition": "service_healthy"
+    },
+    "generator": {
+      "condition": "service_healthy"
+    }
+  },
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "curl",
+      "-f",
+      "http://localhost:80/"
+    ],
+    "interval": "10s",
+    "timeout": "5s",
+    "retries": 5
+  },
+  "restart": "unless-stopped"
+}
+    }
+  }
+}
