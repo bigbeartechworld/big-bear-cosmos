@@ -16,7 +16,7 @@
     "services": {
       "btop": {
   "container_name": "big-bear-btop",
-  "image": "bigbeartechworld/big-bear-btop:0.1.8",
+  "image": "bigbeartechworld/big-bear-btop:0.1.9",
   "restart": "unless-stopped",
   "privileged": true,
   "environment": [
