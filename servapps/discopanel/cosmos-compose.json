@@ -16,7 +16,7 @@
     "services": {
       "discopanel": {
   "container_name": "big-bear-discopanel",
-  "image": "nickheyer/discopanel:v2.0.12",
+  "image": "nickheyer/discopanel:v2.0.13",
   "restart": "unless-stopped",
   "network_mode": "host",
   "environment": [
