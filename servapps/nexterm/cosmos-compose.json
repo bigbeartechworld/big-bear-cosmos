@@ -16,8 +16,11 @@
     "services": {
       "nexterm": {
   "container_name": "big-bear-nexterm",
-  "image": "germannewsmaker/nexterm:1.0.9-OPEN-PREVIEW",
+  "image": "nexterm/aio:1.2.1-BETA",
   "restart": "unless-stopped",
+  "environment": [
+    "ENCRYPTION_KEY="
+  ],
   "volumes": [
     "big-bear-nexterm_data:/app/data"
   ],
