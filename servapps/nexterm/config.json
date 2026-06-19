@@ -1,7 +1,7 @@
 {
   "id": "nexterm",
-  "version": "1.0.9-OPEN-PREVIEW",
-  "image": "germannewsmaker/nexterm",
+  "version": "1.2.1-BETA",
+  "image": "nexterm/aio",
   "youtube": "https://youtu.be/RQPz4892npo",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""
