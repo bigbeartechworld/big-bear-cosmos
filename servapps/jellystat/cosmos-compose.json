@@ -16,7 +16,7 @@
     "services": {
       "jellystat": {
   "container_name": "big-bear-jellystat",
-  "image": "cyfershepard/jellystat:1.1.10",
+  "image": "cyfershepard/jellystat:1.1.11",
   "restart": "unless-stopped",
   "environment": [
     "POSTGRES_USER=postgres",
