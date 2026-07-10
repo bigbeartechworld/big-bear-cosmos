@@ -1,0 +1,53 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "SnapOtter",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://snapotter:1349",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "snapotter": {
+  "container_name": "snapotter",
+  "image": "snapotter/snapotter:2.0.0",
+  "restart": "unless-stopped",
+  "ports": [
+    "1349:1349"
+  ],
+  "environment": [
+    "AUTH_ENABLED=true",
+    "DEFAULT_USERNAME=admin",
+    "DEFAULT_PASSWORD=admin",
+    "MAX_UPLOAD_SIZE_MB=0",
+    "MAX_BATCH_SIZE=0",
+    "CONCURRENT_JOBS=0",
+    "REDIS_MAXMEMORY=512mb",
+    "TRUST_PROXY=true"
+  ],
+  "volumes": [
+    "big-bear-snapotter_data:/data",
+    "big-bear-snapotter_workspace:/tmp/workspace"
+  ],
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "curl",
+      "-fsS",
+      "http://localhost:1349/api/v1/health"
+    ],
+    "interval": "30s",
+    "timeout": "10s",
+    "retries": 10,
+    "start_period": "90s"
+  }
+}
+    }
+  }
+}
