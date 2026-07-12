@@ -15,7 +15,7 @@
       ],
     "services": {
       "nova-dso-tracker": {
-  "image": "mrantonsg/nova-dso-tracker:5.9.0",
+  "image": "mrantonsg/nova-dso-tracker:6.2.0",
   "container_name": "big-bear-nova-dso-tracker",
   "ports": [
     "5001:5001"
