@@ -16,7 +16,7 @@
     "services": {
       "node-red": {
   "container_name": "node-red",
-  "image": "nodered/node-red:4.1.11",
+  "image": "nodered/node-red:5.0.1",
   "restart": "unless-stopped",
   "ports": [
     "1880:1880"
