@@ -2,10 +2,10 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "WordPress (Legacy)",
+          "name": "WordPress v7",
           "description": "Web UI",
           "useHost": true,
-          "target": "http://wordpress:8080",
+          "target": "http://wordpress-v7:8084",
           "mode": "SERVAPP",
           "Timeout": 14400000,
           "ThrottlePerMinute": 12000,
@@ -14,10 +14,10 @@
         }
       ],
     "services": {
-      "wordpress": {
-  "image": "wordpress:6.9.4",
+      "wordpress-v7": {
+  "image": "wordpress:7.0.1",
   "ports": [
-    "8080:80"
+    "8084:80"
   ],
   "environment": {
     "WORDPRESS_DB_HOST": "db",
@@ -26,7 +26,7 @@
     "WORDPRESS_DB_NAME": "wordpress"
   },
   "volumes": [
-    "big-bear-wordpress_html:/var/www/html"
+    "big-bear-wordpress-v7_html:/var/www/html"
   ],
   "depends_on": [
     "db"
