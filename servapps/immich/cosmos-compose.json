@@ -16,7 +16,7 @@
     "services": {
       "immich": {
   "container_name": "immich-server",
-  "image": "ghcr.io/immich-app/immich-server:v3.0.0",
+  "image": "ghcr.io/immich-app/immich-server:v3.0.0@sha256:685ba5c93337058ff8a189d3ed89f0ba470ef966b1c94d2eace1a3d991f9816e",
   "ports": [
     "2283:2283"
   ],

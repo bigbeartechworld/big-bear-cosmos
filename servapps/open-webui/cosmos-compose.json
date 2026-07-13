@@ -16,7 +16,7 @@
     "services": {
       "open-webui": {
   "container_name": "big-bear-open-webui",
-  "image": "ghcr.io/open-webui/open-webui:git-33e54a9",
+  "image": "ghcr.io/open-webui/open-webui:git-33e54a9@sha256:b1f3fdcbe97af8b282cecbc550339e55e032d37f6c5aeb1635457a209ec5d42f",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-open-webui_data:/app/backend/data"

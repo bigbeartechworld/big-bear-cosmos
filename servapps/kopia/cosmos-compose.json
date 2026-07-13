@@ -16,7 +16,7 @@
     "services": {
       "kopia": {
   "container_name": "big-bear-kopia",
-  "image": "ghcr.io/thespad/kopia-server:v0.17.0-spad3",
+  "image": "ghcr.io/thespad/kopia-server:v0.17.0-spad3@sha256:e9e9256e0037030932b78a16bdef09894b6f9c6f89e8367e05d9777813e67f62",
   "restart": "unless-stopped",
   "environment": [
     "PUID=0",

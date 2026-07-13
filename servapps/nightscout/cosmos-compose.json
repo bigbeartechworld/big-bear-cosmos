@@ -16,7 +16,7 @@
     "services": {
       "nightscout": {
   "container_name": "big-bear-nightscout",
-  "image": "nightscout/cgm-remote-monitor:15.0.7",
+  "image": "nightscout/cgm-remote-monitor:15.0.7@sha256:4399411fad4014352832865266207eb1ba4e3ec4129e4776ae3142a4e9abe913",
   "restart": "unless-stopped",
   "ports": [
     "1337:1337"

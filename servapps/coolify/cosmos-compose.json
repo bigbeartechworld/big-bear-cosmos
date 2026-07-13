@@ -16,7 +16,7 @@
     "services": {
       "coolify": {
   "container_name": "big-bear-coolify",
-  "image": "ghcr.io/coollabsio/coolify:4.0.0-beta.434",
+  "image": "ghcr.io/coollabsio/coolify:4.0.0-beta.434@sha256:39db8373628c340747cf6199f5873322d5d0a9b6617bad0ce5cf6895369a3a83",
   "restart": "unless-stopped",
   "environment": [
     "PHP_MEMORY_LIMIT=\"512M\"",

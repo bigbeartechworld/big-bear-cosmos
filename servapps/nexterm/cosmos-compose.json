@@ -16,7 +16,7 @@
     "services": {
       "nexterm": {
   "container_name": "big-bear-nexterm",
-  "image": "nexterm/aio:1.2.1-BETA",
+  "image": "nexterm/aio:1.2.1-BETA@sha256:9760eaa844e679e595e1ca53ef667fa5e478e1bb2cc9a7b862aa446dc692385e",
   "restart": "unless-stopped",
   "environment": [
     "ENCRYPTION_KEY="

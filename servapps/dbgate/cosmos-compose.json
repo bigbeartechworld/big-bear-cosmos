@@ -16,7 +16,7 @@
     "services": {
       "dbgate": {
   "container_name": "big-bear-dbgate",
-  "image": "dbgate/dbgate:7.2.1-alpine",
+  "image": "dbgate/dbgate:7.2.1-alpine@sha256:91ddb068053c8b8cc46f7b5b7e56e5864ac53bcf2a21339fbed6d83e2f97205b",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-dbgate_config:/root/.dbgate"

@@ -16,7 +16,7 @@
     "services": {
       "joplin": {
   "container_name": "big-bear-joplin",
-  "image": "joplin/server:3.7.1",
+  "image": "joplin/server:3.7.1@sha256:0877bfba41a943017c42c58e90db9d8d548bfe699b5e410248b5b879371734f9",
   "restart": "unless-stopped",
   "environment": [
     "APP_PORT=22300",

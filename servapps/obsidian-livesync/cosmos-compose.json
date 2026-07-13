@@ -16,7 +16,7 @@
     "services": {
       "obsidian-livesync": {
   "container_name": "obsidian-livesync",
-  "image": "couchdb:3.5.0",
+  "image": "couchdb:3.5.0@sha256:1c0a30a54535377bc9ae23f42efb1ca4e92abe796f78ec98b768ac1d5874cc1b",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-obsidian-livesync_data_couchdb:/opt/couchdb/data",

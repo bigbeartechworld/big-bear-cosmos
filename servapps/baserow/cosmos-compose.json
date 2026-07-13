@@ -16,7 +16,7 @@
     "services": {
       "baserow": {
   "container_name": "baserow",
-  "image": "baserow/baserow:2.2.2",
+  "image": "baserow/baserow:2.2.2@sha256:73886bcda89632664dc7aaa9ae15414ffb32b00e571d413ccee3c5b5d66b9883",
   "environment": {
     "BASEROW_PUBLIC_URL": "http://[YOUR_CASAOS_IP]:7350"
   },

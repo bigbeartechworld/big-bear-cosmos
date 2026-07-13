@@ -16,7 +16,7 @@
     "services": {
       "planka-v2": {
   "container_name": "big-bear-planka-v2",
-  "image": "ghcr.io/plankanban/planka:2.1.1",
+  "image": "ghcr.io/plankanban/planka:2.1.1@sha256:19b507ae3ab5cb1855c3f6984249e4a4881ed0b912febdfd492139c29bf10f39",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-planka-v2_data:/app/data",

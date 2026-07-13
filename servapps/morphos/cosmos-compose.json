@@ -16,7 +16,7 @@
     "services": {
       "morphos": {
   "container_name": "big-bear-morphos",
-  "image": "ghcr.io/danvergara/morphos-server:0.6.0",
+  "image": "ghcr.io/danvergara/morphos-server:0.6.0@sha256:3d6f64ef386cbb6a7c5d55526e1a69da2d3661a1996d757897e92bf4369088f5",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-morphos_tmp:/tmp"

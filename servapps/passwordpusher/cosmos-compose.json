@@ -16,7 +16,7 @@
     "services": {
       "passwordpusher": {
   "container_name": "big-bear-pwpush",
-  "image": "pglombardo/pwpush:1.69.3",
+  "image": "pglombardo/pwpush:1.69.3@sha256:7bf7f919b87d818a9cafa2a5c53e2565a577a7b90983b3cd55de90d6de71cf07",
   "restart": "unless-stopped",
   "environment": {
     "DATABASE_URL": "mysql2://pwpusher:6280144a-56af-486f-9088-ac7301399328@big-bear-pwpush-db:3306/passwordpusher_db",

@@ -16,7 +16,7 @@
     "services": {
       "pd3f": {
   "container_name": "big-bear-pd3f",
-  "image": "pd3f/pd3f:latest",
+  "image": "pd3f/pd3f:latest@sha256:30a5c6c4c108c05799718d296630fb2d52d7053b2fba75cb0d89ff43b0eaa823",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-pd3f_uploads:/uploads/"

@@ -16,7 +16,7 @@
     "services": {
       "bookstack": {
   "container_name": "big-bear-bookstack",
-  "image": "linuxserver/bookstack:26.05.20260608",
+  "image": "linuxserver/bookstack:26.05.20260608@sha256:e3c387ac44a20fa29abcae8426e3e0d8c88b4ccf95d3c091fd9d96c8d0edcd8e",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-bookstack_config:/config"

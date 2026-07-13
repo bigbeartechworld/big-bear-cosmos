@@ -16,7 +16,7 @@
     "services": {
       "syncthing": {
   "container_name": "big-bear-syncthing",
-  "image": "syncthing/syncthing:2.1",
+  "image": "syncthing/syncthing:2.1@sha256:4464f4161dd0251e20d46bb3aec83363db75d80cef1abdd5d5fd4054b04a004d",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-syncthing_data:/var/syncthing",

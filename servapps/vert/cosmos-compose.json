@@ -16,7 +16,7 @@
     "services": {
       "vert": {
   "container_name": "big-bear-vert",
-  "image": "ghcr.io/vert-sh/vert:sha-a1b0b15",
+  "image": "ghcr.io/vert-sh/vert:sha-a1b0b15@sha256:9f69e1f0a61be4882f8b1e9ba35647e8df4a91669fb4c3cdf30aeb88c247c600",
   "restart": "unless-stopped",
   "ports": [
     "3030:80"

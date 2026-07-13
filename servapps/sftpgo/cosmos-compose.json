@@ -16,7 +16,7 @@
     "services": {
       "sftpgo": {
   "container_name": "big-bear-sftpgo",
-  "image": "drakkan/sftpgo:v2.7",
+  "image": "drakkan/sftpgo:v2.7@sha256:6cb60f08fede46c5dc49a0c1d2994287ca440a63a3bd75b7f37ab2c0b24bbd06",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-sftpgo_srv:/srv/sftpgo",

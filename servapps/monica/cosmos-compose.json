@@ -16,7 +16,7 @@
     "services": {
       "monica": {
   "container_name": "big-bear-monica",
-  "image": "monica:4.1.2",
+  "image": "monica:4.1.2@sha256:f4e948060cf2ba9f304ed62de5c1e47035df91f0cb92f8cdbec924760f6735ae",
   "restart": "unless-stopped",
   "environment": [
     "APP_KEY=80356f7073c4f7834187b25a9d32cd2a",

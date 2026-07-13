@@ -15,7 +15,7 @@
       ],
     "services": {
       "lancache": {
-  "image": "lancachenet/monolithic:latest",
+  "image": "lancachenet/monolithic:latest@sha256:a5f93cef3a4c48c63e9f09883ac7a3961621db56974427110d9aeb4f36af9360",
   "environment": [
     "USE_GENERIC_CACHE=true",
     "LANCACHE_IP=10.0.39.1",

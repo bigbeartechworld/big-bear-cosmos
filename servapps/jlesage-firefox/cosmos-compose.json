@@ -16,7 +16,7 @@
     "services": {
       "jlesage-firefox": {
   "container_name": "big-bear-jlesage-firefox",
-  "image": "jlesage/firefox:v26.03.1",
+  "image": "jlesage/firefox:v26.03.1@sha256:a68749c6696c857d992c5b750c234ab86f184bcac92d6c080bab7679c759f845",
   "ports": [
     "5800:5800"
   ],
