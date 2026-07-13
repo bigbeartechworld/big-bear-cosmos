@@ -15,7 +15,7 @@
       ],
     "services": {
       "flame": {
-  "image": "pawelmalak/flame:multiarch2.3.1",
+  "image": "pawelmalak/flame:multiarch2.3.1@sha256:9f88b17692a0e7393bfceec774dd556a8331032bfb737d7db282a2eedc6b74d1",
   "environment": {
     "PASSWORD": "casaos"
   },

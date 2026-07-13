@@ -16,7 +16,7 @@
     "services": {
       "odoo": {
   "container_name": "big-bear-odoo",
-  "image": "odoo:19",
+  "image": "odoo:19@sha256:f54272f31d5f77e4146b887efb3761c98480317daf687e4b4b5e76ed8bcc08c5",
   "restart": "unless-stopped",
   "user": "root",
   "volumes": [

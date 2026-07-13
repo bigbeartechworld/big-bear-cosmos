@@ -16,7 +16,7 @@
     "services": {
       "rackpeek": {
   "container_name": "big-bear-rackpeek",
-  "image": "aptacode/rackpeek:v2.0.0",
+  "image": "aptacode/rackpeek:v2.0.0@sha256:ebe9b5a7585b07ecdff5978b9464815138d340f720cc88f53a262fb230b6e717",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-rackpeek_config:/app/config"

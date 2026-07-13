@@ -16,7 +16,7 @@
     "services": {
       "retroarch-web": {
   "container_name": "big-bear-retroarch-web",
-  "image": "inglebard/retroarch-web:latest",
+  "image": "inglebard/retroarch-web:latest@sha256:bf03014db81776a715b6289f017be2fc988688f9302590413cd6dcb615f07393",
   "restart": "unless-stopped",
   "environment": [
     "ROOT_WWW_PATH=\"/var/www/html\""

@@ -16,7 +16,7 @@
     "services": {
       "pocketid": {
   "container_name": "big-bear-pocketid",
-  "image": "ghcr.io/pocket-id/pocket-id:v2.7",
+  "image": "ghcr.io/pocket-id/pocket-id:v2.7@sha256:45bdeaf3fcd6d07cf8721e98785d93324bb8e65b586498874c05a3d489c8094e",
   "restart": "unless-stopped",
   "cpu_shares": 90,
   "command": [],

@@ -15,7 +15,7 @@
       ],
     "services": {
       "seerr": {
-  "image": "seerr/seerr:v3.3.0",
+  "image": "seerr/seerr:v3.3.0@sha256:c92d2dc117f62185e7bcb88cd56efd374ea79210eaf433275449e8d5988eb5a8",
   "init": true,
   "container_name": "big-bear-seerr",
   "ports": [

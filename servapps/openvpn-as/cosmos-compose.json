@@ -16,7 +16,7 @@
     "services": {
       "openvpn-as": {
   "container_name": "big-bear-openvpn-as",
-  "image": "openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22",
+  "image": "openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22@sha256:609aa2238acef1cb3b277c1e7f293e21da1033fb2eb1b52f51e8b22d6ee7227c",
   "restart": "unless-stopped",
   "privileged": true,
   "cap_add": [

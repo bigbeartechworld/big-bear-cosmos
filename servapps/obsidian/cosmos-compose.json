@@ -16,7 +16,7 @@
     "services": {
       "obsidian": {
   "container_name": "big-bear-obsidian",
-  "image": "linuxserver/obsidian:1.12.7",
+  "image": "linuxserver/obsidian:1.12.7@sha256:6d7d462c8cd3e4b3b5aabee2c5a69d026c9fe41913adec115ae3ecbc8096dec0",
   "restart": "unless-stopped",
   "environment": [
     "PUID=1000",

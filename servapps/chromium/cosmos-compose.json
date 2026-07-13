@@ -16,7 +16,7 @@
     "services": {
       "chromium": {
   "container_name": "big-bear-chromium",
-  "image": "linuxserver/chromium:version-6ae43f81",
+  "image": "linuxserver/chromium:version-6ae43f81@sha256:da269d40b655eb25ca0cd17c87f2e8e34b5b21f3e3eb14143746e40c62cb6951",
   "ports": [
     "3000:3000",
     "3001:3001"

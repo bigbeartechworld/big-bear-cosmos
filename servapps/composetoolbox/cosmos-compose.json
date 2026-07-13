@@ -18,7 +18,7 @@
   "environment": {
     "NODE_ENV": "production"
   },
-  "image": "ghcr.io/bluegoosemedia/composetoolbox:latest",
+  "image": "ghcr.io/bluegoosemedia/composetoolbox:latest@sha256:61e8a6f0a00583f145e83018ce0954089f5bd89157dc39ef7459043643ca17f6",
   "pull_policy": "always",
   "ports": [
     "3002:3000"

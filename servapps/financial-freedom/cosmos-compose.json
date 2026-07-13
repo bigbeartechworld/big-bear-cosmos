@@ -16,7 +16,7 @@
     "services": {
       "financial-freedom": {
   "container_name": "big-bear-financial-freedom",
-  "image": "serversideup/financial-freedom:v0.2.0-alpha1",
+  "image": "serversideup/financial-freedom:v0.2.0-alpha1@sha256:e36fc6e42b8fd41f9f715b2a26461f1c2365355ff139b8d5d2cfdc60593ccdf2",
   "restart": "unless-stopped",
   "networks": [
     "financial-freedom-network"

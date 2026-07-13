@@ -16,7 +16,7 @@
     "services": {
       "uisp": {
   "container_name": "big-bear-uisp",
-  "image": "nico640/docker-unms:2.4.155.1",
+  "image": "nico640/docker-unms:2.4.155.1@sha256:f7f3f7820cb3e86bfbe0691585410482b5079f9708b400c810fbdc4cc9fd6590",
   "restart": "unless-stopped",
   "environment": [
     "TZ=UTC"

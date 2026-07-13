@@ -16,7 +16,7 @@
     "services": {
       "reactive-resume": {
   "container_name": "big-bear-reactive-resume",
-  "image": "amruthpillai/reactive-resume:v5.1.9",
+  "image": "amruthpillai/reactive-resume:v5.2.3@sha256:bfacee69faad04a8b785854d02cb078fb223824e8b07a07ff21fa39ebfa9fe8c",
   "restart": "unless-stopped",
   "ports": [
     "3000:3000"

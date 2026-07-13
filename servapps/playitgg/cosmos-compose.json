@@ -4,7 +4,7 @@
     "services": {
       "playitgg": {
   "container_name": "playitgg",
-  "image": "dysta/playitgg:1.2.0",
+  "image": "dysta/playitgg:1.2.0@sha256:d26d21c5fca76253dbc45715f1556cdc29945648a11e0f63b01fb6a1c9b4a96a",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-playitgg_secrets:/secrets"

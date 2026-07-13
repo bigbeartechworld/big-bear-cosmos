@@ -16,7 +16,7 @@
     "services": {
       "zigbee2mqtt": {
   "container_name": "big-bear-zigbee2mqtt",
-  "image": "koenkk/zigbee2mqtt:2.12.1",
+  "image": "koenkk/zigbee2mqtt:2.12.1@sha256:80f7f04f72a99e4c4ef51ef7e98ee736edba6db0ecbb7abc626d0c4b0f1871f1",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-zigbee2mqtt_data:/app/data",

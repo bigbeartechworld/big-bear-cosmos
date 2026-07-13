@@ -15,7 +15,7 @@
       ],
     "services": {
       "linkstack": {
-  "image": "linkstackorg/linkstack:V4",
+  "image": "linkstackorg/linkstack:V4@sha256:5cc5b4806f57c153e924fbd0c49d4255dee4c66cd6621f0e457fd43e43e5c000",
   "container_name": "big-bear-linkstack",
   "hostname": "big-bear-linkstack",
   "environment": [

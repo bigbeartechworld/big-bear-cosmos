@@ -16,7 +16,7 @@
     "services": {
       "jfa-go": {
   "container_name": "big-bear-jfa-go",
-  "image": "hrfee/jfa-go:latest",
+  "image": "hrfee/jfa-go:latest@sha256:701cfca823f9278b65f4cf7706b0c7f89b3be33e17ca077f11d89dc119e9f307",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-jfa-go_.config_jfa-go:/data",

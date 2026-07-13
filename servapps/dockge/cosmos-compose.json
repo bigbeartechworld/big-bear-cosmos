@@ -16,7 +16,7 @@
     "services": {
       "dockge": {
   "container_name": "big-bear-dockge",
-  "image": "louislam/dockge:1.5.0",
+  "image": "louislam/dockge:1.5.0@sha256:335c6368b880ecc203236ed89e6e5232e0d6578e8ef5920e4a502390451502bf",
   "environment": {
     "DOCKGE_STACKS_DIR": "/DATA/AppData/big-bear-dockge/stacks"
   },

@@ -16,7 +16,7 @@
     "services": {
       "invoice-ninja": {
   "container_name": "big-bear-invoice-ninja-web",
-  "image": "nginx:1.29",
+  "image": "nginx:1.29@sha256:1881968aff6f7cdcc4b888c00a11f4ce241ad7ec957e0cb4a9e19e93a3ff87ea",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-invoice-ninja_data_nginx_invoice-ninja.conf:/etc/nginx/conf.d/default.conf:ro",

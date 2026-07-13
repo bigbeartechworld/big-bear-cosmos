@@ -16,7 +16,7 @@
     "services": {
       "brave": {
   "container_name": "big-bear-brave",
-  "image": "kasmweb/brave:1.15.0-rolling",
+  "image": "kasmweb/brave:1.15.0-rolling@sha256:679eefbde9b44b6de2a73a5b266790393cea11e5756a8ab884798944cfef6ea7",
   "ports": [
     "6901:6901"
   ],
