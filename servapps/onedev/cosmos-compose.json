@@ -16,7 +16,7 @@
     "services": {
       "onedev": {
   "container_name": "big-bear-onedev",
-  "image": "1dev/server:16.2.2@sha256:28d140a617fdffecb9a9e79ef92e19b27df48e1485b1c502deec5ac7d37805bf",
+  "image": "1dev/server:16.2.3@sha256:38e560bd9488c1dabf093c9f18c95f66ca3ed1b3f32bca9504881b2053024c25",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-onedev_data:/opt/onedev",
