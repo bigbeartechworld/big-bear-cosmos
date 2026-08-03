@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "PodFetch",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://podfetch:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "podfetch": {
+  "image": "samuel19982/podfetch:v5.2.2@sha256:b6473cc2fef5a3f1cbebab18ba56e198ee95fe8b3524e57c54d1d1e012c4045f",
+  "container_name": "podfetch",
+  "ports": [
+    "8000:8000"
+  ],
+  "volumes": [
+    "big-bear-podfetch_podcasts:/app/podcasts",
+    "big-bear-podfetch_db:/app/db"
+  ],
+  "environment": [
+    "DATABASE_URL=sqlite:///app/db/podcast.db",
+    "POLLING_INTERVAL=300",
+    "BASIC_AUTH=false",
+    "USERNAME=bigbear",
+    "PASSWORD=15c40698-3cd9-40ce-8039-e8d80fc1a030",
+    "GPODDER_INTEGRATION_ENABLED=false"
+  ],
+  "restart": "unless-stopped",
+  "networks": [
+    "podfetch-network"
+  ]
+}
+    }
+  }
+}
