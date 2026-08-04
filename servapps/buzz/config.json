@@ -1,7 +1,7 @@
 {
-  "id": "n8n",
-  "version": "2.33.3",
-  "image": "n8nio/n8n",
+  "id": "buzz",
+  "version": "latest",
+  "image": "ghcr.io/block/buzz",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""
