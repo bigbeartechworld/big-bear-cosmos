@@ -15,7 +15,7 @@
       ],
     "services": {
       "buzz": {
-  "image": "ghcr.io/block/buzz:main@sha256:ac050947da4e474dda3b10850eb249cb1ee735ceb4544213c2017650c0226c49",
+  "image": "ghcr.io/block/buzz:main@sha256:b58c0b1a7f65d00a087ddecfce7a754405db947484936a3c6b90b822a8c592d0",
   "container_name": "buzz-relay",
   "ports": [
     "3000:3000"
