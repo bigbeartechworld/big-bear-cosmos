@@ -1,0 +1,22 @@
+{
+  "name": "Glance",
+  "description": "Glance is a self-hosted dashboard that puts all your feeds in one place.",
+  "url": "https://github.com/glanceapp/glance",
+  "longDescription": "Glance is a self-hosted dashboard that puts all your feeds in one place.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "dashboard",
+    "rss",
+    "feeds"
+  ],
+  "repository": "https://github.com/glanceapp/glance",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/glance/logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/glance/logo.png"
+}
