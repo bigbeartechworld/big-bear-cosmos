@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/jenkins-builder:version-4f81ddbe@sha256:dd7cfe3b09302fafc36be18dd4e3030c6318a1f750324e420b16319d4d67d579
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/jenkins-builder/config
+        target: /config
+minVersion: 0.14.0

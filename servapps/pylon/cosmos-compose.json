@@ -1,0 +1,50 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Pylon",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pylon:3131",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pylon": {
+  "image": "linuxserver/pylon:2.10.0@sha256:5552a0c4b42f1e09a1146d2265c790fb2833128ec3ea9ebf1b0c634d40784e01",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "GITURL": "",
+    "PYUSER": "",
+    "PYPASS": ""
+  },
+  "ports": [
+    {
+      "target": 3131,
+      "published": 3131,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/pylon/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/pylon/code",
+      "target": "/code"
+    }
+  ]
+}
+    }
+  }
+}

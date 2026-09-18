@@ -5,7 +5,7 @@ cosmos-installer: null
 # Service definitions for the big-bear-invoice-ninja application
 services:
   big-bear-invoice-ninja:
-    image: invoiceninja/invoiceninja:5.13.31@sha256:c0526fc0242f4bd145d0d225bb40e174841f67597a57215723f20f2c00c0698f
+    image: invoiceninja/invoiceninja:5.13.40@sha256:043ccaafd3e7970c2ffc45a89b4e032566e4a7b50f264c24f49cabfae18598fa
     container_name: big-bear-invoice-ninja
     restart: unless-stopped
     user: 1500:1500
@@ -65,13 +65,12 @@ services:
     depends_on:
       - big-bear-invoice-ninja-init
     # This command is required to set important mariadb defaults
-    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --wait_timeout=28800 --log-warnings=0
   big-bear-invoice-ninja-init:
     image: bash:5.3.15@sha256:a19c811ee9e97fa8a080001d82b8e0ded303f0795cffdb1cbd162731bc8ce208
     container_name: big-bear-invoice-ninja-init
     volumes:
       - big-bear-invoice-ninja_data:/tmp/data
-    command: ["/bin/sh", "-c", "if [ ! -f /tmp/data/.init_complete ]; then echo 'Starting initialization process...' && if [ -f /tmp/data/init/init.sh ]; then echo 'Found init.sh, making it executable...' && chmod +x /tmp/data/init/init.sh && echo 'Executing init.sh...' && /tmp/data/init/init.sh && echo 'init.sh execution completed.' && touch /tmp/data/.init_complete && echo 'Initialization process finished.'; else echo 'Error: /tmp/data/init/init.sh not found!' && exit 1; fi; else echo 'Initialization already completed. Exiting.'; fi && exit 0"]
     networks:
       - big-bear-invoice-ninja-network
     restart: "no"
@@ -80,6 +79,16 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
+    entrypoint: /bin/sh -c until(cat</tmp/data/.cosmos-run)2>/dev/null;do(IFS=,;s=$1;$s);done;IFS=,;z=$2;$z dummy sleep,1 exec,/tmp/data/.cosmos-run
+    post_install:
+      - |-
+        mkdir -p /tmp/data
+        cat > /tmp/data/.cosmos-run.tmp <<'BB_COSMOS_RUN'
+        #!/bin/sh
+        if [ ! -f /tmp/data/.init_complete ]; then echo 'Starting initialization process...' && if [ -f /tmp/data/init/init.sh ]; then echo 'Found init.sh, making it executable...' && chmod +x /tmp/data/init/init.sh && echo 'Executing init.sh...' && /tmp/data/init/init.sh && echo 'init.sh execution completed.' && touch /tmp/data/.init_complete && echo 'Initialization process finished.'; else echo 'Error: /tmp/data/init/init.sh not found!' && exit 1; fi; else echo 'Initialization already completed. Exiting.'; fi && exit 0
+        BB_COSMOS_RUN
+        chmod +x /tmp/data/.cosmos-run.tmp
+        mv /tmp/data/.cosmos-run.tmp /tmp/data/.cosmos-run
 networks:
   big-bear-invoice-ninja-network:
     driver: bridge

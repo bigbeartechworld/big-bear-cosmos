@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Raneto",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://raneto:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "raneto": {
+  "image": "linuxserver/raneto:0.18.1@sha256:b42adb6267d22bde31295995ed151ba23f6ca01c6da2d5d2562ca46cce859bec",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/raneto/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

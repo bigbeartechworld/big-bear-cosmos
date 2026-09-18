@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Nightlio",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://nightlio:5173",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "nightlio": {
+  "container_name": "big-bear-nightlio-frontend",
+  "image": "ghcr.io/shirsakm/nightlio-frontend:0.1.7@sha256:0a2bd8ec3eefe6adfa79f4809bc57c9ef2d3094dcece13f7d3c5309bacfcc117",
+  "restart": "unless-stopped",
+  "environment": [
+    "API_URL=http://big-bear-nightlio-api:5000"
+  ],
+  "ports": [
+    "5173:80"
+  ],
+  "depends_on": [
+    "big-bear-nightlio-api"
+  ],
+  "networks": [
+    "big_bear_nightlio_network"
+  ]
+}
+    }
+  }
+}

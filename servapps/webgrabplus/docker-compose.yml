@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/webgrabplus:5.6.1@sha256:ddf2b93738df3cad8b927f686c8d60db389d1326679a3987739f394f4d6ce2fb
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/webgrabplus/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/webgrabplus/data
+        target: /data
+minVersion: 0.14.0

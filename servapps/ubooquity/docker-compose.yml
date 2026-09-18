@@ -1,0 +1,31 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/ubooquity:3.1.0@sha256:90d10883d503bcd53bcdaa790f91772c856e0a0c42d9efaa2ab8546b6c6b1e45
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      MAXMEM: ''
+    ports:
+      - target: 2202
+        published: 2202
+        protocol: tcp
+      - target: 2203
+        published: 2203
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/ubooquity/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/ubooquity/books
+        target: /books
+      - type: bind
+        source: /DATA/AppData/ubooquity/comics
+        target: /comics
+      - type: bind
+        source: /DATA/AppData/ubooquity/files
+        target: /files
+minVersion: 0.14.0

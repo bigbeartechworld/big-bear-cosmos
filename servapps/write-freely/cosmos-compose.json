@@ -16,7 +16,7 @@
     "services": {
       "write-freely": {
   "container_name": "big-bear-write-freely",
-  "image": "nephatrine/write-freely:0.16@sha256:b4212c6a479dfe47dd807f195e2f3100f735405021f75ef97b950f1b730033a5",
+  "image": "nephatrine/write-freely:0.16@sha256:6f7635f267e03b7cfc27313befaac6428c18158dc447eee8fa9d626c398067a3",
   "restart": "unless-stopped",
   "environment": {
     "TZ": "UTC",

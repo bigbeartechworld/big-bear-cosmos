@@ -1,0 +1,19 @@
+{
+  "name": "Helium",
+  "description": "Helium is a Chromium-based web browser made for people, with love. Privacy-first with unbiased ad-blocking.",
+  "url": "https://hub.docker.com/r/linuxserver/helium",
+  "longDescription": "Helium is a Chromium-based web browser made for people, with love. Privacy-first with unbiased ad-blocking.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-helium",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/helium-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/helium-logo.png"
+}

@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Mediaelch",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://mediaelch:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "mediaelch": {
+  "image": "linuxserver/mediaelch:2.12.0@sha256:34f164fb5422b96e4c8f2f6759f8b10872f160d5342c19fc9f11b53cc561ecf2",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/mediaelch/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

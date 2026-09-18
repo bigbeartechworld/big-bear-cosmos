@@ -1,0 +1,19 @@
+{
+  "name": "Synclounge",
+  "description": "Synclounge is a third party tool that allows you to watch Plex in sync with your friends/family, wherever you are.",
+  "url": "https://hub.docker.com/r/linuxserver/synclounge",
+  "longDescription": "Synclounge is a third party tool that allows you to watch Plex in sync with your friends/family, wherever you are.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-synclounge",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/synclounge-banner.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/synclounge-banner.png"
+}

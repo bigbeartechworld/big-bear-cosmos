@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Build-agent",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://build-agent:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "build-agent": {
+  "image": "linuxserver/build-agent:version-0296acb5@sha256:63e38c87cfb1d73beff12975706ffee41c7bb42db41c305648871df98cc24ec0",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/build-agent/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

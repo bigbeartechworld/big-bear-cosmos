@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Daapd",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://daapd:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "daapd": {
+  "image": "linuxserver/daapd:28.10.20250118@sha256:c26717699965381d1ca009b60b4f6bb280c4b812b7693d2b4cd99686c2e1e02e",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/daapd/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/daapd/music",
+      "target": "/music"
+    }
+  ]
+}
+    }
+  }
+}

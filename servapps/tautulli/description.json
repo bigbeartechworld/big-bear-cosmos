@@ -1,0 +1,19 @@
+{
+  "name": "Tautulli",
+  "description": "Tautulli is a python based web application for monitoring, analytics and notifications for Plex Media Server.",
+  "url": "https://hub.docker.com/r/linuxserver/tautulli",
+  "longDescription": "Tautulli is a python based web application for monitoring, analytics and notifications for Plex Media Server.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-tautulli",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/tautulli-icon.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/tautulli-icon.png"
+}

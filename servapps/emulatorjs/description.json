@@ -1,0 +1,19 @@
+{
+  "name": "Emulatorjs",
+  "description": "Emulatorjs - In browser web based emulation portable to nearly any device for many retro consoles. A mix of emulators is used between Libretro and EmulatorJS.",
+  "url": "https://hub.docker.com/r/linuxserver/emulatorjs",
+  "longDescription": "Emulatorjs - In browser web based emulation portable to nearly any device for many retro consoles. A mix of emulators is used between Libretro and EmulatorJS.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-emulatorjs",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/emulatorjs-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/emulatorjs-logo.png"
+}

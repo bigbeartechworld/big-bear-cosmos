@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Libreoffice",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://libreoffice:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "libreoffice": {
+  "image": "linuxserver/libreoffice:25.8.7@sha256:fb3d8001632fc26a3dd9d0ee9b6a8bde0f2d8156f5e633014d5e93a8c103c3e6",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/libreoffice/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

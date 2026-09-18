@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Endlessh",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://endlessh:22",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "endlessh": {
+  "image": "linuxserver/endlessh:version-dfe44eb2@sha256:1ba907783c782f2900347a42d730d97ccc88ab50e9c3403657211ca711d02ecc",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "MSDELAY": "",
+    "MAXLINES": "",
+    "MAXCLIENTS": "",
+    "LOGFILE": "",
+    "BINDFAMILY": ""
+  },
+  "ports": [
+    {
+      "target": 22,
+      "published": 2222,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/endlessh/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/endlessh/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

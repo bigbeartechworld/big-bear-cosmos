@@ -1,0 +1,19 @@
+{
+  "name": "Gimp",
+  "description": "GIMP is a free and open-source raster graphics editor used for image manipulation (retouching) and image editing, free-form drawing, transcoding between different image file formats, and more specialized tasks. It is extensible by means of plugins, and scriptable.",
+  "url": "https://hub.docker.com/r/linuxserver/gimp",
+  "longDescription": "GIMP is a free and open-source raster graphics editor used for image manipulation (retouching) and image editing, free-form drawing, transcoding between different image file formats, and more specialized tasks. It is extensible by means of plugins, and scriptable.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-gimp",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/gimp-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/gimp-logo.png"
+}

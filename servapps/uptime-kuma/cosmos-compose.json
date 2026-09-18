@@ -15,7 +15,7 @@
       ],
     "services": {
       "uptime-kuma": {
-  "image": "louislam/uptime-kuma:2@sha256:a8610b3b4c38077922ba51b036691e06887d7cefd91fe620fd3d6d23d03dc240",
+  "image": "louislam/uptime-kuma:2@sha256:c74379ac4509ce2d2c2633f509e67003ee2e45b6e995c5e43fc101f45a0e1fbe",
   "container_name": "uptime-kuma",
   "volumes": [
     "big-bear-uptime-kuma_data:/app/data"

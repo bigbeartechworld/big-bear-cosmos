@@ -1,6 +1,6 @@
 {
   "id": "glance",
-  "version": "v0.8.5",
+  "version": "v0.8.6",
   "image": "glanceapp/glance",
   "youtube": "",
   "docs_link": "",

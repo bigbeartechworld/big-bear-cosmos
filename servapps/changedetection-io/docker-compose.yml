@@ -1,0 +1,20 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/changedetection.io:0.60.6@sha256:7deab325d9046bc1155c1598d5d65202950d96c7e4b337fc1fdf89eaca0be039
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      BASE_URL: ''
+      PLAYWRIGHT_DRIVER_URL: ''
+    ports:
+      - target: 5000
+        published: 5000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/changedetection.io/config
+        target: /config
+minVersion: 0.14.0

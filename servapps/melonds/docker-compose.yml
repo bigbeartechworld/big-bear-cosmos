@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/melonds:1.1.20261229@sha256:1b5a28a03910688f5a44236f1c5afe49ad29ff497ba55614e08e5e6d7a5a1e49
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/melonds/config
+        target: /config
+minVersion: 0.14.0

@@ -1,0 +1,61 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Steamos",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://steamos:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "steamos": {
+  "image": "linuxserver/steamos:version-2024-12-20@sha256:04adf2c7af1c97c7cf9d8949aebeeaa8ccfc672e24e6bbebe72a95b06013f5af",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "DRINODE": "",
+    "HOST_IP": "",
+    "STARTUP": "",
+    "RESOLUTION": ""
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/steamos/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/dev/input",
+      "target": "/dev/input"
+    },
+    {
+      "type": "bind",
+      "source": "/run/udev/data",
+      "target": "/run/udev/data"
+    }
+  ]
+}
+    }
+  }
+}

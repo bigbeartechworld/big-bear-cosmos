@@ -1,0 +1,21 @@
+{
+  "name": "Domain Locker",
+  "description": "🌐 The all-in-one tool, for keeping track of your domain name portfolio. Got domain names? Get Domain Locker!",
+  "url": "https://hub.docker.com/r/lissy93/domain-locker",
+  "longDescription": "🌐 The all-in-one tool, for keeping track of your domain name portfolio. Got domain names? Get Domain Locker!",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container",
+    "domain"
+  ],
+  "repository": "https://github.com/Lissy93/domain-locker",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/domain-locker.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/domain-locker.png"
+}

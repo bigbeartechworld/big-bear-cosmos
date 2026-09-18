@@ -1,0 +1,19 @@
+{
+  "name": "Fleet",
+  "description": "Fleet provides an online web interface which displays a set of maintained images from one or more owned repositories.",
+  "url": "https://hub.docker.com/r/linuxserver/fleet",
+  "longDescription": "Fleet provides an online web interface which displays a set of maintained images from one or more owned repositories.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-fleet",
+  "image": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg"
+}

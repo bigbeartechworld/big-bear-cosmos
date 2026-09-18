@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Grocy",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://grocy:9283",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "grocy": {
+  "image": "linuxserver/grocy:4.7.1@sha256:71226f43e18b15836833075c15c9d5d51d81a2a4fc38d56bb1dc05f34970cc80",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 9283,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/grocy/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Arma 3 Server",
+  "description": "Arma 3 Dedicated Server. Updates to the latest version every time it is restarted. Supports mission configs mods and headless clients.",
+  "url": "https://github.com/BrettMayson/Arma3Server",
+  "longDescription": "Arma 3 Dedicated Server. Updates to the latest version every time it is restarted. Supports mission configs mods and headless clients.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
+  ],
+  "repository": "https://github.com/BrettMayson/Arma3Server",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/steam.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/steam.png"
+}

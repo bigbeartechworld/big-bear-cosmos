@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/modmanager:version-7dc8618e@sha256:742583b32a779fbcbe7d0a8915bd4c6d4a9d7170e802cc576364b1cd3b971d1f
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/modmanager/config
+        target: /config
+minVersion: 0.14.0

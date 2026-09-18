@@ -1,0 +1,18 @@
+{
+  "name": "Ci",
+  "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ci for details.",
+  "url": "https://hub.docker.com/r/linuxserver/ci",
+  "longDescription": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ci for details.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-ci",
+  "image": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg"
+}

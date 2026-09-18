@@ -1,0 +1,18 @@
+{
+  "name": "Dosbox-staging",
+  "description": "DOSBox Staging is a modern continuation of DOSBox a free and open-source emulator that enables the execution of MS-DOS software, especially video games.",
+  "url": "https://hub.docker.com/r/linuxserver/dosbox-staging",
+  "longDescription": "DOSBox Staging is a modern continuation of DOSBox a free and open-source emulator that enables the execution of MS-DOS software, especially video games.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-dosbox-staging",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/dosbox-logo.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/dosbox-logo.png"
+}

@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/krita:5.3.4@sha256:834c12be2944134c040d4c781cdb3135b1f761ebe6450a7c97c4780534ec10a6
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/krita/config
+        target: /config
+minVersion: 0.14.0

@@ -1,0 +1,8 @@
+{
+  "id": "wireguard",
+  "version": "1.0.20260223",
+  "image": "linuxserver/wireguard",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}

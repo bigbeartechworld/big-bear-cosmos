@@ -1,0 +1,19 @@
+{
+  "name": "Webgrabplus",
+  "description": "Webgrabplus is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.",
+  "url": "https://hub.docker.com/r/linuxserver/webgrabplus",
+  "longDescription": "Webgrabplus is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-webgrabplus",
+  "image": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.webgrabplus.com%2Fsites%2Fdefault%2Fthemes%2FWgTheme%2Fimages%2Fslideshows%2FEPG_fading.jpg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.webgrabplus.com%2Fsites%2Fdefault%2Fthemes%2FWgTheme%2Fimages%2Fslideshows%2FEPG_fading.jpg"
+}

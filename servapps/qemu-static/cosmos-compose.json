@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Qemu-static",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://qemu-static:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "qemu-static": {
+  "image": "linuxserver/qemu-static:10.0.2@sha256:3b35e71b380a231f8b649d5c14c00aa598bd87a99e2f5addc8388b8102532b34",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/qemu-static/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

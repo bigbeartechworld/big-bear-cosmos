@@ -1,0 +1,18 @@
+{
+  "name": "Webstation",
+  "description": "Webstation is a web native emulation focused LXQt desktop based on Ubuntu.",
+  "url": "https://hub.docker.com/r/linuxserver/webstation",
+  "longDescription": "Webstation is a web native emulation focused LXQt desktop based on Ubuntu.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-webstation",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/webstation-logo.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/webstation-logo.png"
+}

@@ -15,7 +15,7 @@
       ],
     "services": {
       "umami": {
-  "image": "ghcr.io/umami-software/umami:postgresql-latest@sha256:87312d334d009ee67ee0d2fba8fed01435547cc468e452243aef5133a9984d48",
+  "image": "ghcr.io/umami-software/umami:postgresql-latest@sha256:85909afc45bdcda1917394594a087421fdbb05610fded0fa9f6fb861abb2f367",
   "ports": [
     "3000:3000"
   ],

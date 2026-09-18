@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Webtop",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://webtop:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "webtop": {
+  "image": "linuxserver/webtop:arch-kde-version-2025-07-12@sha256:ed197a60c161b5d45a0d0137a5c47ecd136964c57791bf3151d01ad41ac6b988",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/webtop/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

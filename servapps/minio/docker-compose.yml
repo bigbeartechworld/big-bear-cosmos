@@ -12,11 +12,7 @@ services:
       MINIO_ROOT_PASSWORD: minioadmin
       MINIO_ROOT_USER: minioadmin
     restart: unless-stopped
-    command:
-      - server
-      - "--console-address"
-      - ":9001"
-      - /data
+    command: server --console-address :9001 /data
 volumes:
   big-bear-minio_data:
     name: big-bear-minio_data

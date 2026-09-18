@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/unrar:7.2.7@sha256:48c0ce2609bb3c35764956bbd9395e95b177421e3c74b3628c3676029f24f2e0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/unrar/config
+        target: /config
+minVersion: 0.14.0

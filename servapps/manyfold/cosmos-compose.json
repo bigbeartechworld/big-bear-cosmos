@@ -1,0 +1,50 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Manyfold",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://manyfold:3214",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "manyfold": {
+  "image": "linuxserver/manyfold:0.149.0@sha256:1e3260d3bba74790dc00c57ae8a8ddb8f7aa5cf0f97000d265f8d30dc931f792",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "DATABASE_URL": "",
+    "REDIS_URL": "",
+    "SECRET_KEY_BASE": ""
+  },
+  "ports": [
+    {
+      "target": 3214,
+      "published": 3214,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/manyfold/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/manyfold/libraries",
+      "target": "/libraries"
+    }
+  ]
+}
+    }
+  }
+}

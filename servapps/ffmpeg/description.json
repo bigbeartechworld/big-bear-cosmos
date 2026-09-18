@@ -1,0 +1,19 @@
+{
+  "name": "Ffmpeg",
+  "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ffmpeg for details.",
+  "url": "https://hub.docker.com/r/linuxserver/ffmpeg",
+  "longDescription": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ffmpeg for details.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-ffmpeg",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ffmpeg.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ffmpeg.png"
+}

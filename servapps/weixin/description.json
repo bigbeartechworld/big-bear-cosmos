@@ -1,0 +1,19 @@
+{
+  "name": "Weixin",
+  "description": "Weixin (WeChat) is an instant messaging, social media, and mobile payment app developed by Tencent.",
+  "url": "https://hub.docker.com/r/linuxserver/weixin",
+  "longDescription": "Weixin (WeChat) is an instant messaging, social media, and mobile payment app developed by Tencent.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-weixin",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/weixin-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/weixin-logo.png"
+}

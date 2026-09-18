@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/dokuwiki:version-2026-07-14c@sha256:23ff93932dac6e6cad553795b50883d7f9ba906a0a58d77d26bbd85306371939
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/dokuwiki/config
+        target: /config
+minVersion: 0.14.0

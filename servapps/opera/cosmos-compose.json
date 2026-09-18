@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Opera",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://opera:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "opera": {
+  "image": "linuxserver/opera:136.0.6008@sha256:68dc250c357534f6cc18627eb4577d8f14fbdda9fb44aa4acf342c4bcea00c94",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "OPERA_CLI": ""
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/opera/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

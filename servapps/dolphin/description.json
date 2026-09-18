@@ -1,0 +1,18 @@
+{
+  "name": "Dolphin",
+  "description": "Dolphin Emulator lets you play GameCube and Wii games with various graphical enhancements and other features are available to improve your game experience.",
+  "url": "https://hub.docker.com/r/linuxserver/dolphin",
+  "longDescription": "Dolphin Emulator lets you play GameCube and Wii games with various graphical enhancements and other features are available to improve your game experience.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-dolphin",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/dolphin-logo.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/dolphin-logo.png"
+}

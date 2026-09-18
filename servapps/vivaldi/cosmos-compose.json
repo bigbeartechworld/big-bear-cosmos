@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Vivaldi",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://vivaldi:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "vivaldi": {
+  "image": "linuxserver/vivaldi:8.2.4133@sha256:a73b59cc021e2d6425d0a884a4d1f440808125bdb6c2c191723eef332b980bf6",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "VIVALDI_CLI": ""
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/vivaldi/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

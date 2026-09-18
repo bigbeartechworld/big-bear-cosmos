@@ -1,0 +1,19 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/pwndrop:1.0.1@sha256:c81021c92464579cdfc9fa686ffa44f81a132b679fc8f3b6fbe3cfbeec423582
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SECRET_PATH: ''
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/pwndrop/config
+        target: /config
+minVersion: 0.14.0

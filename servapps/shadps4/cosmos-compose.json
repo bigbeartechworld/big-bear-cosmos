@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Shadps4",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://shadps4:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "shadps4": {
+  "image": "linuxserver/shadps4:version-shadPS4QtLauncher-2026-09-12-864dc30bc5372d7ad95ef609188942ecd77bf6f4@sha256:c15058c8d9ce5b5a0e1cd0b570296b3696f85d5e92274e9a0ef1e4da369b0560",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/shadps4/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

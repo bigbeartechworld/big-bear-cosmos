@@ -1,0 +1,19 @@
+{
+  "name": "Budge",
+  "description": "Budge is an open source 'budgeting with envelopes' personal finance app.",
+  "url": "https://hub.docker.com/r/linuxserver/budge",
+  "longDescription": "Budge is an open source 'budgeting with envelopes' personal finance app.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-budge",
+  "image": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg"
+}

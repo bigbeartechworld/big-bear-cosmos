@@ -1,0 +1,19 @@
+{
+  "name": "Raneto",
+  "description": "Raneto - is an open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase.",
+  "url": "https://hub.docker.com/r/linuxserver/raneto",
+  "longDescription": "Raneto - is an open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-raneto",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/raneto-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/raneto-logo.png"
+}

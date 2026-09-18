@@ -1,0 +1,19 @@
+{
+  "name": "Altus",
+  "description": "Altus is an Electron-based WhatsApp client with themes and multiple account support.",
+  "url": "https://hub.docker.com/r/linuxserver/altus",
+  "longDescription": "Altus is an Electron-based WhatsApp client with themes and multiple account support.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-altus",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/altus-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/altus-logo.png"
+}

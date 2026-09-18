@@ -1,0 +1,19 @@
+{
+  "name": "Luanti",
+  "description": "Luanti (formerly Minetest) is an open source voxel game-creation platform with easy modding and game creation",
+  "url": "https://hub.docker.com/r/linuxserver/luanti",
+  "longDescription": "Luanti (formerly Minetest) is an open source voxel game-creation platform with easy modding and game creation",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-luanti",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/minetest-icon.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/minetest-icon.png"
+}

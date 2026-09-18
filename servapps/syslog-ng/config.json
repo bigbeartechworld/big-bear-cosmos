@@ -1,0 +1,8 @@
+{
+  "id": "syslog-ng",
+  "version": "4.11.0",
+  "image": "linuxserver/syslog-ng",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}

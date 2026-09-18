@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Xbackbone",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://xbackbone:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "xbackbone": {
+  "image": "linuxserver/xbackbone:3.8.2@sha256:265465d3fe217d8c34bc61ababedaa1127c325032618641cf09827ffeb3436bb",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    },
+    {
+      "target": 443,
+      "published": 443,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/xbackbone/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

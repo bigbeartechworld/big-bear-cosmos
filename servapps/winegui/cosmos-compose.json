@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Winegui",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://winegui:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "winegui": {
+  "image": "linuxserver/winegui:4.4.0@sha256:33ca76d0ef972567372fac1b0238fe037092e6e30a9a4d925ad9d4b9ae6cea66",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/winegui/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

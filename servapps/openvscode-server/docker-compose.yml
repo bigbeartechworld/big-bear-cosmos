@@ -1,0 +1,25 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/openvscode-server:1.109.5@sha256:3a8bef142c1bd8e6b937ca56b3eb145f22632bd01d4ca0021f37e2e79eb15bb1
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      CONNECTION_TOKEN: ''
+      CONNECTION_SECRET: ''
+      SUDO_PASSWORD: ''
+      SUDO_PASSWORD_HASH: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/openvscode-server/config
+        target: /config
+      - type: bind
+        source: /
+        target: /casaos
+minVersion: 0.14.0

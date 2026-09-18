@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Inkscape",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://inkscape:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "inkscape": {
+  "image": "linuxserver/inkscape:1.4.2@sha256:aa5c7ea9077cded71525ee4db9d5a5c9452600c945e51362151a8e151e19091d",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/inkscape/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

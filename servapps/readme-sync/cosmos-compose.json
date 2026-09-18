@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Readme-sync",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://readme-sync:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "readme-sync": {
+  "image": "linuxserver/readme-sync:84f2d0c3-ls27@sha256:195a6acb0288d92d0c485d99099b93c5f88c0753c560b169ad0e9c758ad48d5f",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/readme-sync/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

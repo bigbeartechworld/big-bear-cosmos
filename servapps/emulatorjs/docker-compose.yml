@@ -1,0 +1,28 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/emulatorjs:1.9.2@sha256:b7003f7d4f383dd32d210ba08f24c840276fdf92c211bd18a798d47647311290
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SUBFOLDER: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 4001
+        published: 4001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/emulatorjs/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/emulatorjs/data
+        target: /data
+minVersion: 0.14.0

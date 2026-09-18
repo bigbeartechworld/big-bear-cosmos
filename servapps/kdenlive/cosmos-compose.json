@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Kdenlive",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://kdenlive:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "kdenlive": {
+  "image": "linuxserver/kdenlive:423.08.5@sha256:4c908a8d2e43d788e37f7f1193014f5303b81f452942f26c46cb2a99d7db2d3b",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/kdenlive/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

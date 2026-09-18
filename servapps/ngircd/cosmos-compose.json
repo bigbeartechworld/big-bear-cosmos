@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ngircd",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ngircd:6667",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ngircd": {
+  "image": "linuxserver/ngircd:version-27-r1@sha256:25a924851122b34d933404e4a942e68835e4a1dc182f12d28461c4490476e265",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 6667,
+      "published": 6667,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/ngircd/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

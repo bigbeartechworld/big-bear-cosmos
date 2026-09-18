@@ -1,0 +1,19 @@
+{
+  "name": "Changedetection.io",
+  "description": "Changedetection.io provides free, open-source web page monitoring, notification and change detection.",
+  "url": "https://hub.docker.com/r/linuxserver/changedetection.io",
+  "longDescription": "Changedetection.io provides free, open-source web page monitoring, notification and change detection.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-changedetection.io",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/changedetection-icon.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/changedetection-icon.png"
+}

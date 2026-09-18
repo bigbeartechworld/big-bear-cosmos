@@ -1,0 +1,19 @@
+{
+  "name": "D2-builder",
+  "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/d2-builder for details.",
+  "url": "https://hub.docker.com/r/linuxserver/d2-builder",
+  "longDescription": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/d2-builder for details.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-d2-builder",
+  "image": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg"
+}

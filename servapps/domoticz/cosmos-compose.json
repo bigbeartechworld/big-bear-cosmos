@@ -1,0 +1,54 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Domoticz",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://domoticz:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "domoticz": {
+  "image": "linuxserver/domoticz:2023.2.20231129@sha256:db5939da7ee7979a2a29ac455f5bee6646d59ef32f3ea20a3be0d77667ef8428",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "WEBROOT": "",
+    "DBASE": ""
+  },
+  "ports": [
+    {
+      "target": 8080,
+      "published": 8080,
+      "protocol": "tcp"
+    },
+    {
+      "target": 6144,
+      "published": 6144,
+      "protocol": "tcp"
+    },
+    {
+      "target": 1443,
+      "published": 1443,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/domoticz/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

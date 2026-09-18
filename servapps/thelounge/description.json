@@ -1,0 +1,19 @@
+{
+  "name": "Thelounge",
+  "description": "Thelounge (a fork of shoutIRC) is a web IRC client that you host on your own server.",
+  "url": "https://hub.docker.com/r/linuxserver/thelounge",
+  "longDescription": "Thelounge (a fork of shoutIRC) is a web IRC client that you host on your own server.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-thelounge",
+  "image": "https://cdn.jsdelivr.net/gh/thelounge/thelounge@master/client/public/img/logo-vertical-transparent-bg.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/thelounge/thelounge@master/client/public/img/logo-vertical-transparent-bg.svg"
+}

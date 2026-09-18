@@ -11,10 +11,10 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://raw.githubusercontent.com/maybe-finance/maybe/refs/heads/main/app/assets/images/logo-color.png",
+  "image": "https://cdn.jsdelivr.net/gh/maybe-finance/maybe@refs/heads/main/app/assets/images/logo-color.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://raw.githubusercontent.com/maybe-finance/maybe/refs/heads/main/app/assets/images/logo-color.png"
+  "icon": "https://cdn.jsdelivr.net/gh/maybe-finance/maybe@refs/heads/main/app/assets/images/logo-color.png"
 }

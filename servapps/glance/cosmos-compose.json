@@ -16,13 +16,9 @@
     "services": {
       "glance": {
   "container_name": "big-bear-glance",
-  "image": "glanceapp/glance:v0.8.5@sha256:32ab73d80f2b8b5fb0735b0431deb36b93fbb6b2fb43592449b0178c8b83e350",
+  "image": "glanceapp/glance:v0.8.6@sha256:9dfb09470b207dcb67ac715994bdb1929374ba3f9c0d7df7462c24adf10fd073",
   "restart": "unless-stopped",
-  "entrypoint": [
-    "/bin/sh",
-    "-c",
-    "set -eu\nif [ ! -s /app/config/glance.yml ]; then\n  mkdir -p /app/config\n  cat > /app/config/glance.yml <<EOF\npages:\n  - name: Home\n    columns:\n      - size: small\n        widgets:\n          - type: calendar\n            first-day-of-week: monday\n\n          - type: rss\n            limit: 10\n            collapse-after: 3\n            cache: 12h\n            feeds:\n              - url: https://selfh.st/rss/\n                title: selfh.st\n                limit: 4\n              - url: https://ciechanow.ski/atom.xml\n              - url: https://samwho.dev/rss.xml\n\n      - size: full\n        widgets:\n          - type: group\n            widgets:\n              - type: hacker-news\n              - type: lobsters\n\n          - type: docker-containers\n            hide-by-default: false\n\n      - size: small\n        widgets:\n          - type: weather\n            location: New York, United States\n            units: imperial\n            hour-format: 12h\n\n          - type: releases\n            cache: 1d\n            repositories:\n              - glanceapp/glance\nEOF\nfi\nexec /app/glance --config /app/config/glance.yml\n"
-  ],
+  "entrypoint": "/bin/sh -c until(cat</app/config/.cosmos-run)2>/dev/null;do(IFS=,;s=$1;$s);done;IFS=,;z=$2;$z dummy sleep,1 exec,/app/config/.cosmos-run",
   "ports": [
     "8280:8080"
   ],
@@ -32,6 +28,9 @@
   ],
   "networks": [
     "big_bear_glance_network"
+  ],
+  "post_install": [
+    "mkdir -p /app/config\ncat > /app/config/.cosmos-run.tmp <<'BB_COSMOS_RUN'\n#!/bin/sh\nset -eu\nif [ ! -s /app/config/glance.yml ]; then\n  mkdir -p /app/config\n  cat > /app/config/glance.yml <<EOF\npages:\n  - name: Home\n    columns:\n      - size: small\n        widgets:\n          - type: calendar\n            first-day-of-week: monday\n\n          - type: rss\n            limit: 10\n            collapse-after: 3\n            cache: 12h\n            feeds:\n              - url: https://selfh.st/rss/\n                title: selfh.st\n                limit: 4\n              - url: https://ciechanow.ski/atom.xml\n              - url: https://samwho.dev/rss.xml\n\n      - size: full\n        widgets:\n          - type: group\n            widgets:\n              - type: hacker-news\n              - type: lobsters\n\n          - type: docker-containers\n            hide-by-default: false\n\n      - size: small\n        widgets:\n          - type: weather\n            location: New York, United States\n            units: imperial\n            hour-format: 12h\n\n          - type: releases\n            cache: 1d\n            repositories:\n              - glanceapp/glance\nEOF\nfi\nexec /app/glance --config /app/config/glance.yml\nBB_COSMOS_RUN\nchmod +x /app/config/.cosmos-run.tmp\nmv /app/config/.cosmos-run.tmp /app/config/.cosmos-run"
   ]
 }
     }

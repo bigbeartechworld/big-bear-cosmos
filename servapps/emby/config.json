@@ -1,0 +1,8 @@
+{
+  "id": "emby",
+  "version": "4.10.0",
+  "image": "linuxserver/emby",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}

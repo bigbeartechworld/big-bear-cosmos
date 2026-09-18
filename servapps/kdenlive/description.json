@@ -1,0 +1,19 @@
+{
+  "name": "Kdenlive",
+  "description": "Kdenlive is a powerful free and open source cross-platform video editing program made by the KDE community. Feature rich and production ready.",
+  "url": "https://hub.docker.com/r/linuxserver/kdenlive",
+  "longDescription": "Kdenlive is a powerful free and open source cross-platform video editing program made by the KDE community. Feature rich and production ready.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-kdenlive",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kdenlive-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kdenlive-logo.png"
+}

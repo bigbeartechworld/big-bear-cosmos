@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Fleet",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://fleet:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "fleet": {
+  "image": "linuxserver/fleet:2.3.3@sha256:6a0c946a9339b848a5f31d06ff45876dd94fee8cc19b1f8b6a8b0b60e3bbff24",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "fleet_admin_authentication_type": "",
+    "fleet_database_url": "",
+    "fleet_database_username": "",
+    "fleet_database_password": "",
+    "fleet_admin_secret": ""
+  },
+  "ports": [
+    {
+      "target": 8080,
+      "published": 8080,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/fleet/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

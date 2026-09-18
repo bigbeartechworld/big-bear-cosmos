@@ -1,0 +1,19 @@
+{
+  "name": "Mastodon",
+  "description": "Mastodon is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones..",
+  "url": "https://hub.docker.com/r/linuxserver/mastodon",
+  "longDescription": "Mastodon is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones..",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-mastodon",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mastodon-banner.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mastodon-banner.png"
+}

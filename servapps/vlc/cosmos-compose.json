@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Vlc",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://vlc:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "vlc": {
+  "image": "linuxserver/vlc:3.0.23@sha256:52fee84f890b64bb7b8bfc0bb6536c31cfaf371ba7709b5cfa708a8fe64f7b68",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "VLC_CLI": ""
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/vlc/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

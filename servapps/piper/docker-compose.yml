@@ -1,0 +1,25 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/piper:2.5.2@sha256:82ea64e64668fdde85073f40719d0a9e13ff0ecfb7b89202f661b32d46c1a644
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      PIPER_VOICE: ''
+      LOCAL_ONLY: ''
+      PIPER_LENGTH: ''
+      PIPER_NOISE: ''
+      PIPER_NOISEW: ''
+      PIPER_SPEAKER: ''
+      NO_STREAMING: ''
+    ports:
+      - target: 10200
+        published: 10200
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/piper/config
+        target: /config
+minVersion: 0.14.0

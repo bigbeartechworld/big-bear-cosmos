@@ -1,0 +1,27 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/duplicati:2.4.0@sha256:5c65d960f4885579096979cb791cb379835872b1b125768deaf342ea1ff2f247
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SETTINGS_ENCRYPTION_KEY: ''
+      CLI_ARGS: ''
+      DUPLICATI__WEBSERVICE_PASSWORD: ''
+    ports:
+      - target: 8200
+        published: 8200
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/duplicati/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/duplicati/backups
+        target: /backups
+      - type: bind
+        source: /DATA/AppData/duplicati/source
+        target: /source
+minVersion: 0.14.0

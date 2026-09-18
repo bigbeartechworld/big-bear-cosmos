@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/kali-linux:version-45f3494e@sha256:3a082bb348852e97567153ffdd79a532924ff53fccc04fd56bbc2d971139d0d6
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/kali-linux/config
+        target: /config
+minVersion: 0.14.0

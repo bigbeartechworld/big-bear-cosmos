@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Rsnapshot",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://rsnapshot:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "rsnapshot": {
+  "image": "linuxserver/rsnapshot:1.4.5@sha256:db8b82bf8cdb8020b0c6b65abc94001c622d8c5aadc56e46edd2c5589a565730",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/rsnapshot/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/rsnapshot/.snapshots",
+      "target": "/.snapshots"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/rsnapshot/data",
+      "target": "/data"
+    }
+  ]
+}
+    }
+  }
+}

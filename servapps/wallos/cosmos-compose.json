@@ -16,7 +16,7 @@
     "services": {
       "wallos": {
   "container_name": "big-bear-wallos",
-  "image": "bellamy/wallos:5.4.2@sha256:316f26e13265958e7946ef98ff600516fddc51d698ee98bd1ae1577e5e00789f",
+  "image": "bellamy/wallos:5.7.1@sha256:8defb438c52f5c1b2555f86d4abae6a428ff4968f0959ee82b4fa387844ee273",
   "restart": "unless-stopped",
   "environment": {
     "TZ": "UTC"

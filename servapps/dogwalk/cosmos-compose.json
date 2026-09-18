@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Dogwalk",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://dogwalk:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "dogwalk": {
+  "image": "linuxserver/dogwalk:version-b93769c4@sha256:bda9bb4effc4f9cb23845f52c277e3956e80a5e10e8319295dd81b104d17916c",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/dogwalk/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

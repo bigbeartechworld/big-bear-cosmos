@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Python",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://python:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "python": {
+  "image": "linuxserver/python:3.14.7@sha256:a8c71ea50391142aad8e20e6b9bdb764b808ddb55b4fbe2abeb8a9ac150ee4d7",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/python/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

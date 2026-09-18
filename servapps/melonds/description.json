@@ -1,0 +1,19 @@
+{
+  "name": "Melonds",
+  "description": "melonDS aims at providing fast and accurate Nintendo DS emulation.",
+  "url": "https://hub.docker.com/r/linuxserver/melonds",
+  "longDescription": "melonDS aims at providing fast and accurate Nintendo DS emulation.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-melonds",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/melonds-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/melonds-logo.png"
+}

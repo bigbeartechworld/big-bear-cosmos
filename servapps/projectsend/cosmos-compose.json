@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Projectsend",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://projectsend:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "projectsend": {
+  "image": "linuxserver/projectsend:version-r2098@sha256:f9a3ef120901e5322c8c0e1261f7b8f10723eaa8a5036510d37e776cefda2e2a",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/projectsend/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/projectsend/data",
+      "target": "/data"
+    }
+  ]
+}
+    }
+  }
+}

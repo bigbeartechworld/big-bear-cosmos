@@ -1,0 +1,51 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Duckdns",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://duckdns:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "duckdns": {
+  "image": "linuxserver/duckdns:version-73f1bc7d@sha256:7edcc8555ecbca2ea6e441290a09d172bc531debce7c6771c14551838a3f67f2",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "SUBDOMAINS": "",
+    "TOKEN": "",
+    "UPDATE_IP": "",
+    "LOG_FILE": ""
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/duckdns/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/duckdns/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

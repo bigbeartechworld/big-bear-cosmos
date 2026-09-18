@@ -1,0 +1,23 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/nginx:1.30.4@sha256:34e67960f3f818f3d87fdd773e328b53b24c91c64b4c1e4f6d7b22bc175ee174
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      NGINX_AUTORELOAD: ''
+      NGINX_AUTORELOAD_WATCHLIST: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/nginx/config
+        target: /config
+minVersion: 0.14.0

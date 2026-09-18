@@ -1,0 +1,19 @@
+{
+  "name": "Feed2toot",
+  "description": "Feed2toot automatically parses rss feeds, identifies new posts and posts them on the Mastodon social network.",
+  "url": "https://hub.docker.com/r/linuxserver/feed2toot",
+  "longDescription": "Feed2toot automatically parses rss feeds, identifies new posts and posts them on the Mastodon social network.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-feed2toot",
+  "image": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg"
+}

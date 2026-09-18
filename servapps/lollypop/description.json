@@ -1,0 +1,19 @@
+{
+  "name": "Lollypop",
+  "description": "Lollypop is a lightweight modern music player designed to work excellently on the GNOME desktop environment.",
+  "url": "https://hub.docker.com/r/linuxserver/lollypop",
+  "longDescription": "Lollypop is a lightweight modern music player designed to work excellently on the GNOME desktop environment.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-lollypop",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/lollypop-icon.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/lollypop-icon.png"
+}

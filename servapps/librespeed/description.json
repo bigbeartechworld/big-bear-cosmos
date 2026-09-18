@@ -1,0 +1,19 @@
+{
+  "name": "Librespeed",
+  "description": "Librespeed is a very lightweight Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers. No Flash, No Java, No Websocket, No Bullshit.",
+  "url": "https://hub.docker.com/r/linuxserver/librespeed",
+  "longDescription": "Librespeed is a very lightweight Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers. No Flash, No Java, No Websocket, No Bullshit.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-librespeed",
+  "image": "https://cdn.jsdelivr.net/gh/librespeed/speedtest@master/.logo/logo3.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/librespeed/speedtest@master/.logo/logo3.png"
+}

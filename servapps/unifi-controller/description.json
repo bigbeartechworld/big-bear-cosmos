@@ -1,0 +1,19 @@
+{
+  "name": "Unifi-controller",
+  "description": "Visit homepage: https://hub.docker.com/r/linuxserver/unifi-controller/",
+  "url": "https://hub.docker.com/r/linuxserver/unifi-controller",
+  "longDescription": "Visit homepage: https://hub.docker.com/r/linuxserver/unifi-controller/",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-unifi-controller",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/unifi-controller-icon.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/unifi-controller-icon.png"
+}

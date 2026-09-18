@@ -1,0 +1,19 @@
+{
+  "name": "Pwndrop",
+  "description": "Pwndrop is a self-deployable file hosting service for sending out red teaming payloads or securely sharing your private files over HTTP and WebDAV.",
+  "url": "https://hub.docker.com/r/linuxserver/pwndrop",
+  "longDescription": "Pwndrop is a self-deployable file hosting service for sending out red teaming payloads or securely sharing your private files over HTTP and WebDAV.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-pwndrop",
+  "image": "https://cdn.jsdelivr.net/gh/kgretzky/pwndrop@master/media/pwndrop-logo-512.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/kgretzky/pwndrop@master/media/pwndrop-logo-512.png"
+}

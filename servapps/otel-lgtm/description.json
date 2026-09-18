@@ -11,10 +11,10 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://www.gravatar.com/avatar/31cea69afa424609b2d83621b4d47f1d?s=120&r=g&d=404",
+  "image": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.gravatar.com%2Favatar%2F31cea69afa424609b2d83621b4d47f1d%3Fs%3D120%26r%3Dg%26d%3D404",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://www.gravatar.com/avatar/31cea69afa424609b2d83621b4d47f1d?s=120&r=g&d=404"
+  "icon": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.gravatar.com%2Favatar%2F31cea69afa424609b2d83621b4d47f1d%3Fs%3D120%26r%3Dg%26d%3D404"
 }

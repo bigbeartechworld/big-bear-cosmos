@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "D2-builder",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://d2-builder:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "d2-builder": {
+  "image": "linuxserver/d2-builder:0.9.0@sha256:7f1a533650c6edb3a135fc54abda14384c0d4475b4e67e17a29d532d6620f03b",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/d2-builder/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

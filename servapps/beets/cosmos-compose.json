@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Beets",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://beets:8337",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "beets": {
+  "image": "linuxserver/beets:2.14.0@sha256:748b6fcdece5f3142cb555a4219b52ad9b9352763db02329ebe4dc3e21bce74d",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 8337,
+      "published": 8337,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/beets/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/beets/music",
+      "target": "/music"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/beets/downloads",
+      "target": "/downloads"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Domain Locker",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://domainlocker:8180",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "domainlocker": {
+  "container_name": "domain-locker-app",
+  "image": "ghcr.io/lissy93/domain-locker:0.2.4@sha256:883716e301b7353327cc82d6bd8e4c5f5d2a93d7f8175e0c10e1d0855f5c4094",
+  "restart": "unless-stopped",
+  "environment": {
+    "DL_ENV_TYPE": "selfHosted",
+    "DL_PG_HOST": "postgres",
+    "DL_PG_PORT": 5432,
+    "DL_PG_USER": "postgres",
+    "DL_PG_PASSWORD": "changeme2420",
+    "DL_PG_NAME": "domain_locker"
+  },
+  "ports": [
+    "8180:3000"
+  ],
+  "depends_on": {
+    "postgres": {
+      "condition": "service_healthy"
+    }
+  },
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "wget",
+      "--spider",
+      "-q",
+      "http://localhost:3000/api/health"
+    ],
+    "interval": "15s",
+    "timeout": "3s",
+    "retries": 3,
+    "start_period": "30s"
+  },
+  "networks": [
+    "big_bear_domainlocker_network"
+  ]
+}
+    }
+  }
+}

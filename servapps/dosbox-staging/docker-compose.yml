@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/dosbox-staging:0.83.0@sha256:9b47af7cb6c5e51faaef40460816a0e1ffd24fad4beaac67418236085646b183
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/dosbox-staging/config
+        target: /config
+minVersion: 0.14.0

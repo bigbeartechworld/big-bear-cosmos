@@ -1,0 +1,11 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/nano-wallet:1.3.2@sha256:ad03cd3bcd43db7fd18bf15283c2c77550affc2650acd9c27d529e81bb6b703f
+    restart: unless-stopped
+    environment: {}
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+minVersion: 0.14.0

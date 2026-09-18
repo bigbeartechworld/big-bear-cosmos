@@ -1,0 +1,56 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Lychee",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://lychee:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "lychee": {
+  "image": "linuxserver/lychee:7.8.3@sha256:97438577ac51fa79382ec4cfaac3c43f890c2cc219b655b980702c6af2921c66",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "DB_CONNECTION": "$DB_CONNECTION",
+    "DB_HOST": "$DB_HOST",
+    "DB_PORT": "$DB_PORT",
+    "DB_USERNAME": "$DB_USERNAME",
+    "DB_PASSWORD": "$DB_PASSWORD",
+    "DB_DATABASE": "$DB_DATABASE",
+    "APP_NAME": "$APP_NAME",
+    "APP_URL": "$APP_URL",
+    "TRUSTED_PROXIES": "$TRUSTED_PROXIES"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/lychee/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/lychee/pictures",
+      "target": "/pictures"
+    }
+  ]
+}
+    }
+  }
+}

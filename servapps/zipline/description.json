@@ -11,10 +11,10 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://github.com/bigbeartechworld/big-bear-casaos/assets/1289128/3b655316-f72c-4b89-8138-0abee624e9b8",
+  "image": "https://images.weserv.nl/?url=https%3A%2F%2Fgithub.com%2Fbigbeartechworld%2Fbig-bear-casaos%2Fassets%2F1289128%2F3b655316-f72c-4b89-8138-0abee624e9b8",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://github.com/bigbeartechworld/big-bear-casaos/assets/1289128/3b655316-f72c-4b89-8138-0abee624e9b8"
+  "icon": "https://images.weserv.nl/?url=https%3A%2F%2Fgithub.com%2Fbigbeartechworld%2Fbig-bear-casaos%2Fassets%2F1289128%2F3b655316-f72c-4b89-8138-0abee624e9b8"
 }

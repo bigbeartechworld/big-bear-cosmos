@@ -1,0 +1,19 @@
+{
+  "name": "Wikijs",
+  "description": "Wikijs A modern, lightweight and powerful wiki app built on NodeJS.",
+  "url": "https://hub.docker.com/r/linuxserver/wikijs",
+  "longDescription": "Wikijs A modern, lightweight and powerful wiki app built on NodeJS.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-wikijs",
+  "image": "https://images.weserv.nl/?url=https%3A%2F%2Fstatic.requarks.io%2Flogo%2Fwikijs-full.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://images.weserv.nl/?url=https%3A%2F%2Fstatic.requarks.io%2Flogo%2Fwikijs-full.svg"
+}

@@ -14,10 +14,10 @@
     "modpacks"
   ],
   "repository": "https://github.com/nickheyer/DiscoPanel",
-  "image": "https://discopanel.app/g1_256x256.png",
+  "image": "https://images.weserv.nl/?url=https%3A%2F%2Fdiscopanel.app%2Fg1_256x256.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://discopanel.app/g1_256x256.png"
+  "icon": "https://images.weserv.nl/?url=https%3A%2F%2Fdiscopanel.app%2Fg1_256x256.png"
 }

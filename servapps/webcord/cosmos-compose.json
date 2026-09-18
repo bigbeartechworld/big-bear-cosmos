@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Webcord",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://webcord:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "webcord": {
+  "image": "linuxserver/webcord:4.14.0@sha256:33f4850371fdc2a01bee9afa7ef2399d8f4c6acbab131a1ccc506fa5eea2d115",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/webcord/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

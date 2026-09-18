@@ -1,0 +1,19 @@
+{
+  "name": "Ungoogled-chromium",
+  "description": "Ungoogled Chromium is Google Chromium, sans dependency on Google web services.",
+  "url": "https://hub.docker.com/r/linuxserver/ungoogled-chromium",
+  "longDescription": "Ungoogled Chromium is Google Chromium, sans dependency on Google web services.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-ungoogled-chromium",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ungoogled-chromium-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ungoogled-chromium-logo.png"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Embystat",
+  "description": "Visit homepage: https://hub.docker.com/r/linuxserver/embystat/",
+  "url": "https://hub.docker.com/r/linuxserver/embystat",
+  "longDescription": "Visit homepage: https://hub.docker.com/r/linuxserver/embystat/",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-embystat",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/embystat-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/embystat-logo.png"
+}

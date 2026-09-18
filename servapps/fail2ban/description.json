@@ -1,0 +1,19 @@
+{
+  "name": "Fail2ban",
+  "description": "Fail2ban is a daemon to ban hosts that cause multiple authentication errors.",
+  "url": "https://hub.docker.com/r/linuxserver/fail2ban",
+  "longDescription": "Fail2ban is a daemon to ban hosts that cause multiple authentication errors.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-fail2ban",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/fail2ban-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/fail2ban-logo.png"
+}

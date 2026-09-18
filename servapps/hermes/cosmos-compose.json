@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Hermes Agent",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://hermes:9119",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "hermes": {
+  "image": "nousresearch/hermes-agent:v2026.9.14@sha256:99641e57ec762c59e54cb44aa6746b7fc68c18b3c5ddb088af54234c613d9294",
+  "container_name": "hermes",
+  "restart": "unless-stopped",
+  "command": "gateway run",
+  "ports": [
+    "9119:9119",
+    "8642:8642"
+  ],
+  "volumes": [
+    "big-bear-hermes_data:/opt/data"
+  ],
+  "environment": {
+    "HERMES_DASHBOARD": "1",
+    "HERMES_DASHBOARD_BASIC_AUTH_USERNAME": "zimaos",
+    "HERMES_DASHBOARD_BASIC_AUTH_PASSWORD": ""
+  },
+  "deploy": {
+    "resources": {
+      "reservations": {
+        "memory": "1G"
+      }
+    }
+  }
+}
+    }
+  }
+}

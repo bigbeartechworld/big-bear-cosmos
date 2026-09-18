@@ -24,7 +24,7 @@ cosmos-installer: null
 # Service definitions for the big-bear-vikunja-v2 application
 services:
   vikunja-v2:
-    image: vikunja/vikunja:2.5.0@sha256:22df4c1bc8843c28d383bc5f52b59e7b601bf5f6560b36b29c0a500833c77fa3
+    image: vikunja/vikunja:2.6.0@sha256:417ada6f94e81f0267aa2f007d0a811fc82d38dd2aa58351e3ea520ca01c2ea5
     container_name: big-bear-vikunja-v2
     ports:
       - 8082:3456
@@ -48,9 +48,7 @@ services:
   vikunja-v2-db:
     image: mariadb:11@sha256:efb4959ef2c835cd735dbc388eb9ad6aab0c78dd64febcd51bc17481111890c4
     container_name: vikunja-v2-db
-    command:
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     environment:
       # MariaDB environment variables
       MYSQL_ROOT_PASSWORD: supersecret
