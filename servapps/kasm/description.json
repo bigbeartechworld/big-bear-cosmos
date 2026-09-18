@@ -11,10 +11,10 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://avatars.githubusercontent.com/u/44181855?s=280&v=4",
+  "image": "https://images.weserv.nl/?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F44181855%3Fs%3D280%26v%3D4",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://avatars.githubusercontent.com/u/44181855?s=280&v=4"
+  "icon": "https://images.weserv.nl/?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F44181855%3Fs%3D280%26v%3D4"
 }

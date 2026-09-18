@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Msedge",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://msedge:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "msedge": {
+  "image": "linuxserver/msedge:153.0.4234@sha256:71a209e720aef2dfa5601dc3004c9c3ba4bbfb7e143e8289919735f776cafa9a",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "EDGE_CLI": ""
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/msedge/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

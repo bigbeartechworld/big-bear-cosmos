@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-owncloud
     # Image to be used for the container
-    image: owncloud/server:10.16.4@sha256:efb57ba71ec3321c83661fd4e9976d120e80a0e1ead53ea5b7821d036e7af2b6
+    image: owncloud/server:10.16.4@sha256:c6f873e3ee659823b0fb284b463aa5dea802025b3896212aa663c0cae7e53d11
     # Container restart policy
     restart: unless-stopped
     # Environment variables
@@ -57,7 +57,7 @@ services:
       - MYSQL_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a
       - MYSQL_DATABASE=big_bear_owncloud
       - MARIADB_AUTO_UPGRADE=1
-    command: ["--max-allowed-packet=128M", "--innodb-log-file-size=64M"]
+    command: --max-allowed-packet=128M --innodb-log-file-size=64M
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-u", "bigbear", "--password=f01914eb-2be3-4164-a57c-08e6518f313a"]
       interval: 10s
@@ -71,7 +71,7 @@ services:
     container_name: big-bear-owncloud-redis
     image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
     restart: unless-stopped
-    command: ["--databases", "1"]
+    command: --databases 1
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s

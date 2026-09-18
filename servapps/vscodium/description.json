@@ -1,0 +1,19 @@
+{
+  "name": "Vscodium",
+  "description": "VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.",
+  "url": "https://hub.docker.com/r/linuxserver/vscodium",
+  "longDescription": "VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-vscodium",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/vscodium-icon.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/vscodium-icon.png"
+}

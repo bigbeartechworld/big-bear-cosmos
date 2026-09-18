@@ -1,0 +1,53 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Hedgedoc",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://hedgedoc:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "hedgedoc": {
+  "image": "linuxserver/hedgedoc:1.12.0@sha256:8f0e4c57941a9cff0387d5b3c9f1f40facce1e948ca28261e42c5251eca21a19",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "DB_HOST": "$DB_HOST",
+    "DB_PORT": "$DB_PORT",
+    "DB_USER": "$DB_USER",
+    "DB_PASS": "$DB_PASS",
+    "DB_NAME": "$DB_NAME",
+    "CMD_DOMAIN": "$CMD_DOMAIN",
+    "CMD_URL_ADDPORT": "$CMD_URL_ADDPORT",
+    "CMD_PROTOCOL_USESSL": "$CMD_PROTOCOL_USESSL",
+    "CMD_PORT": "$CMD_PORT",
+    "CMD_ALLOW_ORIGIN": "$CMD_ALLOW_ORIGIN",
+    "CMD_DB_DIALECT": "$CMD_DB_DIALECT"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/hedgedoc/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

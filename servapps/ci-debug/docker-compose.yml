@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/ci-debug:933e2702-ls1@sha256:ad48184795f11c6e231a845bf844eda0f00dc071f98eab3ba445643d17e53357
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/ci-debug/config
+        target: /config
+minVersion: 0.14.0

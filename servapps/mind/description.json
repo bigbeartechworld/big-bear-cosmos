@@ -11,10 +11,10 @@
     "container"
   ],
   "repository": "https://github.com/bigbeartechworld",
-  "image": "https://i.imgur.com/UgjalkK.png",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/docker.png",
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
-  "icon": "https://i.imgur.com/UgjalkK.png"
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/docker.png"
 }

@@ -29,12 +29,7 @@
     "MINIO_ROOT_USER": "minioadmin"
   },
   "restart": "unless-stopped",
-  "command": [
-    "server",
-    "--console-address",
-    ":9001",
-    "/data"
-  ]
+  "command": "server --console-address :9001 /data"
 }
     }
   }

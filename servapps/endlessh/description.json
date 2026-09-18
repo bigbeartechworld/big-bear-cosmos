@@ -1,0 +1,19 @@
+{
+  "name": "Endlessh",
+  "description": "Visit homepage: https://github.com/orgs/linuxserver/packages/container/package/endlessh",
+  "url": "https://hub.docker.com/r/linuxserver/endlessh",
+  "longDescription": "Visit homepage: https://github.com/orgs/linuxserver/packages/container/package/endlessh",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-endlessh",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/openssh-server-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/openssh-server-logo.png"
+}

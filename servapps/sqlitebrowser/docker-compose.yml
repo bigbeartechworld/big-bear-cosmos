@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/sqlitebrowser:18.04.1@sha256:03f747bdf1f035d0752693cb0ff415a508badaf0de28bfe7a1765009c51ed6ed
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/sqlitebrowser/config
+        target: /config
+minVersion: 0.14.0

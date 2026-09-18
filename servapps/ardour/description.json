@@ -1,0 +1,19 @@
+{
+  "name": "Ardour",
+  "description": "Ardour is an open source, collaborative effort of a worldwide team including musicians, programmers, and professional recording engineers.",
+  "url": "https://hub.docker.com/r/linuxserver/ardour",
+  "longDescription": "Ardour is an open source, collaborative effort of a worldwide team including musicians, programmers, and professional recording engineers.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-ardour",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ardour-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ardour-logo.png"
+}

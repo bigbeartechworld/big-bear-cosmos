@@ -1,0 +1,16 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/synclounge:5.2.35@sha256:e2121f13cd6514394bdc82a4a3df8c66b169d3a2cfae960a2f3bf9b15594e20c
+    restart: unless-stopped
+    environment:
+      AUTH_LIST: ''
+    ports:
+      - target: 8088
+        published: 8088
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/synclounge/config
+        target: /config
+minVersion: 0.14.0

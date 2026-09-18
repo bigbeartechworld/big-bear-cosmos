@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/mediaelch:2.12.0@sha256:34f164fb5422b96e4c8f2f6759f8b10872f160d5342c19fc9f11b53cc561ecf2
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/mediaelch/config
+        target: /config
+minVersion: 0.14.0

@@ -1,0 +1,19 @@
+{
+  "name": "Modmanager",
+  "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/modmanager for details.",
+  "url": "https://hub.docker.com/r/linuxserver/modmanager",
+  "longDescription": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/modmanager for details.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-modmanager",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/linuxserver-ls-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/linuxserver-ls-logo.png"
+}

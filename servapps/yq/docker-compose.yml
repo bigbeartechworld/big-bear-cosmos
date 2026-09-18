@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/yq:3.4.3@sha256:adf84aa50f4c1bf87a000797ab6cf39dfe23395cd2b9a22544425fce8d0c2160
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/yq/config
+        target: /config
+minVersion: 0.14.0

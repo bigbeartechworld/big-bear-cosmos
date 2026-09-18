@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/python:3.14.7@sha256:a8c71ea50391142aad8e20e6b9bdb764b808ddb55b4fbe2abeb8a9ac150ee4d7
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/python/config
+        target: /config
+minVersion: 0.14.0

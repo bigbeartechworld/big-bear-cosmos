@@ -19,7 +19,7 @@ services:
     init: true
     restart: unless-stopped
     network_mode: bridge
-    command: ["node", "dist/index.js", "gateway", "--bind", "lan", "--port", "18789"]
+    command: node dist/index.js gateway --bind lan --port 18789
   big-bear-openclaw-cli:
     image: ghcr.io/openclaw/openclaw:2026.5.3-1@sha256:142f70fa2751bdedf03648ae427372fff3f92ac0e96ab91abb3824b088c38b7b
     container_name: big-bear-openclaw-cli
@@ -38,7 +38,7 @@ services:
     stdin_open: true
     tty: true
     network_mode: bridge
-    entrypoint: ["node", "dist/index.js"]
+    entrypoint: node dist/index.js
     profiles:
       - tools
 volumes:

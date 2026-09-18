@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Lsio-api",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://lsio-api:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "lsio-api": {
+  "image": "linuxserver/lsio-api:version-9eda67ec@sha256:374295622f0cc2e951b2f2b7b431fa1718102d2145335cee84b8c24ce72f46fb",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/lsio-api/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

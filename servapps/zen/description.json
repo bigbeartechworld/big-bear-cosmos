@@ -1,0 +1,19 @@
+{
+  "name": "Zen",
+  "description": "Zen Browser is a free and open-source fork of Mozilla Firefox with a focus on privacy, customizability and design.",
+  "url": "https://hub.docker.com/r/linuxserver/zen",
+  "longDescription": "Zen Browser is a free and open-source fork of Mozilla Firefox with a focus on privacy, customizability and design.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-zen",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/zen-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/zen-logo.png"
+}

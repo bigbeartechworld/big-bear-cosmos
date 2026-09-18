@@ -1,0 +1,8 @@
+{
+  "id": "unifi-controller",
+  "version": "8.0.24",
+  "image": "linuxserver/unifi-controller",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}

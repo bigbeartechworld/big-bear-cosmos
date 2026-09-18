@@ -1,0 +1,68 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Jellyfin",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://jellyfin:8096",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "jellyfin": {
+  "image": "linuxserver/jellyfin:12.1ubu2604-ls50@sha256:51252e7a416e703cdc3cd91e8a54673a2430cc80409be8a38abe511411577b95",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "JELLYFIN_PublishedServerUrl": ""
+  },
+  "ports": [
+    {
+      "target": 8096,
+      "published": 8096,
+      "protocol": "tcp"
+    },
+    {
+      "target": 8920,
+      "published": 8920,
+      "protocol": "tcp"
+    },
+    {
+      "target": 7359,
+      "published": 7359,
+      "protocol": "udp"
+    },
+    {
+      "target": 1900,
+      "published": 1900,
+      "protocol": "udp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/jellyfin/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/jellyfin/data/tvshows",
+      "target": "/data/tvshows"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/jellyfin/data/movies",
+      "target": "/data/movies"
+    }
+  ]
+}
+    }
+  }
+}

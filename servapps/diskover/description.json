@@ -1,0 +1,19 @@
+{
+  "name": "Diskover",
+  "description": "Diskover is an open source file system indexer that uses Elasticsearch to index and manage data across heterogeneous storage systems.",
+  "url": "https://hub.docker.com/r/linuxserver/diskover",
+  "longDescription": "Diskover is an open source file system indexer that uses Elasticsearch to index and manage data across heterogeneous storage systems.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-diskover",
+  "image": "https://cdn.jsdelivr.net/gh/diskoverdata/diskover-community@master/diskover-web/public/images/diskover.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/diskoverdata/diskover-community@master/diskover-web/public/images/diskover.png"
+}

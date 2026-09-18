@@ -1,0 +1,19 @@
+{
+  "name": "Github-desktop",
+  "description": "Github Desktop is an open source Electron-based GitHub app. It is written in TypeScript and uses React.",
+  "url": "https://hub.docker.com/r/linuxserver/github-desktop",
+  "longDescription": "Github Desktop is an open source Electron-based GitHub app. It is written in TypeScript and uses React.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-github-desktop",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/github-desktop-icon.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/github-desktop-icon.png"
+}

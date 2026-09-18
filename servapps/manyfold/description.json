@@ -1,0 +1,19 @@
+{
+  "name": "Manyfold",
+  "description": "Manyfold is an open source, self-hosted web application for managing a collection of 3D models, particularly focused on 3D printing.",
+  "url": "https://hub.docker.com/r/linuxserver/manyfold",
+  "longDescription": "Manyfold is an open source, self-hosted web application for managing a collection of 3D models, particularly focused on 3D printing.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-manyfold",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/manyfold.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/manyfold.png"
+}

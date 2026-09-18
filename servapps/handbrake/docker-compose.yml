@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/handbrake:1.11.2@sha256:3529715c666cc7775ae7642eb07baeca9acbbe285bb35d0bcebbbbc18ce17263
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/handbrake/config
+        target: /config
+minVersion: 0.14.0

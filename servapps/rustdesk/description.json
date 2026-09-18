@@ -1,0 +1,19 @@
+{
+  "name": "Rustdesk",
+  "description": "RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.",
+  "url": "https://hub.docker.com/r/linuxserver/rustdesk",
+  "longDescription": "RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-rustdesk",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rustdesk-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rustdesk-logo.png"
+}

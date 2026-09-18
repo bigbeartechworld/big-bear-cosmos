@@ -1,0 +1,19 @@
+{
+  "name": "Socket-proxy",
+  "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.",
+  "url": "https://hub.docker.com/r/linuxserver/socket-proxy",
+  "longDescription": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-socket-proxy",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/docker-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/docker-logo.png"
+}

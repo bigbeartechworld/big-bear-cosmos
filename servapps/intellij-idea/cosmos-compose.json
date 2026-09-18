@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Intellij-idea",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://intellij-idea:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "intellij-idea": {
+  "image": "linuxserver/intellij-idea:42026.2.2@sha256:0bcb707fd86f9238abed6a531ba88d6776dbf8ccdc75bdaa38c571e71bce876e",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/intellij-idea/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

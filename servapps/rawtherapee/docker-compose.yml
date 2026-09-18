@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/rawtherapee:5.13.20260913@sha256:7844c0ba8a6cf27ba045a1c80fdfb5b06425709f009602024e50d348b77bbc17
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/rawtherapee/config
+        target: /config
+minVersion: 0.14.0

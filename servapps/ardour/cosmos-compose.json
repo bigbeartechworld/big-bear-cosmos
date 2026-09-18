@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ardour",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ardour:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ardour": {
+  "image": "linuxserver/ardour:version-2026-06-19@sha256:720a44efc9e158e56fd1f12e00f190746f73bcf1fa20aa508c8e9c59f27dc423",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/ardour/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

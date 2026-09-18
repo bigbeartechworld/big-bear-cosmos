@@ -1,0 +1,19 @@
+{
+  "name": "Booksonic-air",
+  "description": "Visit homepage: https://hub.docker.com/r/linuxserver/booksonic-air/",
+  "url": "https://hub.docker.com/r/linuxserver/booksonic-air",
+  "longDescription": "Visit homepage: https://hub.docker.com/r/linuxserver/booksonic-air/",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-booksonic-air",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/booksonic-air.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/booksonic-air.png"
+}

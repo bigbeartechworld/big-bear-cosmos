@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Lm-studio",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://lm-studio:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "lm-studio": {
+  "image": "linuxserver/lm-studio:version-2026-09-12@sha256:29d2149a8046d54be16a9a3ae60568f63e6e886bed453d5884f8cfa93a3ac389",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/lm-studio/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

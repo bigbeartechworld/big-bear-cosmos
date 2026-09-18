@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Filezilla",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://filezilla:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "filezilla": {
+  "image": "linuxserver/filezilla:3.69.6@sha256:0115048da2837b65e16de32d2d786bac27ceea15ca7dcc5cd3108fc5c9c74085",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/filezilla/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

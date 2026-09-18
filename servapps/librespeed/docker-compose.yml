@@ -1,0 +1,27 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/librespeed:6.3.0@sha256:5e7ba354832be35ed2638f58ff035e101c6494d7282a2cf88aa180545d7fd58c
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      PASSWORD: ''
+      CUSTOM_RESULTS: ''
+      DB_TYPE: ''
+      DB_NAME: ''
+      DB_HOSTNAME: ''
+      DB_USERNAME: ''
+      DB_PASSWORD: ''
+      DB_PORT: ''
+      IPINFO_APIKEY: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/librespeed/config
+        target: /config
+minVersion: 0.14.0

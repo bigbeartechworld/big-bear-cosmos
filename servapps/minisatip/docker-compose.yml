@@ -1,0 +1,25 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/minisatip:2.0.103@sha256:3ff7892f3cdf3fa3dd0f90f526fb345837febf86b8f11d8f680ec09612fbc6f2
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      RUN_OPTS: ''
+    ports:
+      - target: 8875
+        published: 8875
+        protocol: tcp
+      - target: 554
+        published: 554
+        protocol: tcp
+      - target: 1900
+        published: 1900
+        protocol: udp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/minisatip/config
+        target: /config
+minVersion: 0.14.0

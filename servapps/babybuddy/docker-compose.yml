@@ -1,0 +1,19 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/babybuddy:2.10.1@sha256:985a2adc74c431271d0273db9d14196cd28a50aadc943fe3b36af3c45f7030a0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      CSRF_TRUSTED_ORIGINS: ''
+    ports:
+      - target: 8000
+        published: 8000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/babybuddy/config
+        target: /config
+minVersion: 0.14.0

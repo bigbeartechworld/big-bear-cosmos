@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Pelorus",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://pelorus:3001",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "pelorus": {
+  "image": "linuxserver/pelorus:0.2.3@sha256:d91ea4e4479e43200ae796000f1999bf9aa6fd8b92eb4bd38a4c96f0e8557d84",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/pelorus/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Socket-proxy",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://socket-proxy:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "socket-proxy": {
+  "image": "linuxserver/socket-proxy:3.4.4@sha256:ba211325155c463a1a6e6a038c928f21447a8e60ce02ecf41302047974097e84",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/socket-proxy/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

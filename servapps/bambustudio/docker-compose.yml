@@ -1,0 +1,22 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/bambustudio:02.08.02@sha256:7f31ec3fecb07338eb391674f4a4436fed4c5ceab238e5bbc31c330cbf4196ff
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DARK_MODE: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/bambustudio/config
+        target: /config
+minVersion: 0.14.0

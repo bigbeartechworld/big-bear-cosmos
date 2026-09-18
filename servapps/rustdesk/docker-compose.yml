@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/rustdesk:1.4.9@sha256:5637ecd8ff5b1fcaa8efbe63a272219ba2c5281bc28d22bc4fd24b9755cecbad
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/rustdesk/config
+        target: /config
+minVersion: 0.14.0

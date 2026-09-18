@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/qemu-static:10.0.2@sha256:3b35e71b380a231f8b649d5c14c00aa598bd87a99e2f5addc8388b8102532b34
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/qemu-static/config
+        target: /config
+minVersion: 0.14.0

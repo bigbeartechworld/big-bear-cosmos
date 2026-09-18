@@ -1,0 +1,24 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/cops:4.5.2@sha256:56ea339f9f9f885dd1105396e69705e84d6334c2e187bd6be98b212453d3a7cc
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/cops/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/cops/books
+        target: /books
+minVersion: 0.14.0

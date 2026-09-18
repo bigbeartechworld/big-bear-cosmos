@@ -7,7 +7,7 @@ services:
   # Main application
   app:
     container_name: big-bear-reactive-resume
-    image: amruthpillai/reactive-resume:v5.2.6@sha256:0a5014349218304f32ed4899ed097390fd755ba0afb512ca888f8366a56814ac
+    image: amruthpillai/reactive-resume:v5.3.0@sha256:7c7b7824785d1386fa6e0e6132c1abe43e3c281f90dbf3b1474b60bffb64d89e
     restart: unless-stopped
     ports:
       - 3000:3000
@@ -89,7 +89,7 @@ services:
   minio:
     container_name: big-bear-reactive-resume-minio
     image: minio/minio:RELEASE.2024-09-13T20-26-02Z-cpuv1@sha256:a34ac7cbc53154bef4804b1f9d83a555f944d8c26e6466cef7e782fdb5ec40c4
-    command: ["server", "/data"]
+    command: server /data
     restart: unless-stopped
     ports:
       - 9000:9000
@@ -116,7 +116,7 @@ services:
     container_name: big-bear-reactive-resume-redis
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     restart: unless-stopped
-    command: ["redis-server", "--requirepass", "password"]
+    command: redis-server --requirepass password
     networks:
       - reactive-resume-network
 # Networks used by the application

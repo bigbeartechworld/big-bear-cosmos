@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ddclient",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ddclient:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ddclient": {
+  "image": "linuxserver/ddclient:4.0.0@sha256:7fbf1f5ab2b3511b18a21ce5fd49fb48f37ca5c91dad83c25bfbaf8b63b19e06",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/ddclient/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

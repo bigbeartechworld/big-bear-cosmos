@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Quassel-core",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://quassel-core:4242",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "quassel-core": {
+  "image": "linuxserver/quassel-core:0.14.0@sha256:cefb9aa752d4db099d98be5966432e9dcd298695571c8eedc84ffc298f3258e0",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "RUN_OPTS": ""
+  },
+  "ports": [
+    {
+      "target": 4242,
+      "published": 4242,
+      "protocol": "tcp"
+    },
+    {
+      "target": 113,
+      "published": 10113,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/quassel-core/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

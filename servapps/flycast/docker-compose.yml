@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/flycast:2.7.20260913@sha256:74a090d9b743d09d95dfc546064980ea9ded0d1e701de89b11672ce2d1431202
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/flycast/config
+        target: /config
+minVersion: 0.14.0

@@ -1,0 +1,12 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/tester:version-66f677b0@sha256:976ed6115060a646cf9e427b003d048d1a5aecfa4ded89b9bb7a2d5a5db9e839
+    restart: unless-stopped
+    environment:
+      URL: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+minVersion: 0.14.0

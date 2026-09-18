@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Modrinth",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://modrinth:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "modrinth": {
+  "image": "linuxserver/modrinth:0.21.4@sha256:74cb8da4da2dbcdc1f0a9d12b30d53426213e89fa4b0824fe122e6d12dcfae84",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/modrinth/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

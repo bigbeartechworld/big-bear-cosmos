@@ -1,0 +1,19 @@
+{
+  "name": "Mariadb",
+  "description": "Mariadb is one of the most popular database servers. Made by the original developers of MySQL.",
+  "url": "https://hub.docker.com/r/linuxserver/mariadb",
+  "longDescription": "Mariadb is one of the most popular database servers. Made by the original developers of MySQL.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-mariadb",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mariadb-git.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mariadb-git.png"
+}

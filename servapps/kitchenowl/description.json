@@ -1,0 +1,22 @@
+{
+  "name": "KitchenOwl",
+  "description": "KitchenOwl is a self-hosted grocery list and recipe manager. Track what you need to buy, add recipes, plan meals, and sync your household shopping lists across all your devices in real time.",
+  "url": "https://kitchenowl.org",
+  "longDescription": "KitchenOwl is a self-hosted grocery list and recipe manager. Track what you need to buy, add recipes, plan meals, and sync your household shopping lists across all your devices in real time.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "recipes",
+    "grocery-list",
+    "meal-planner"
+  ],
+  "repository": "https://github.com/TomBursch/kitchenowl",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/kitchenowl.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/kitchenowl.png"
+}

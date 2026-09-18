@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Rdesktop",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://rdesktop:3389",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "rdesktop": {
+  "image": "linuxserver/rdesktop:arch-kde-version-arch-2025-01-10@sha256:c779495feea3bbfbac0fcd239c5be5981a8744df97646236c685357f90fb5565",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3389,
+      "published": 3389,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/rdesktop/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/var/run/docker.sock",
+      "target": "/var/run/docker.sock"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/rdesktop/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

@@ -16,7 +16,7 @@
     "services": {
       "warracker": {
   "container_name": "big-bear-warracker",
-  "image": "ghcr.io/sassanix/warracker/main:9.9.3",
+  "image": "ghcr.io/sassanix/warracker/main:1.0.2@sha256:9a0aa0e57a4635e0955cea4d13abe89fd65d10625ee95836ec14ae0789884f22",
   "restart": "unless-stopped",
   "privileged": true,
   "environment": [

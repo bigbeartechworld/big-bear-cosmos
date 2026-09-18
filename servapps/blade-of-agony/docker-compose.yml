@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/blade-of-agony:3.1.20260910@sha256:94847e367511092748d764e6a83a72e9d7f7bfa3fc9da5ac7172c46eed5b28f6
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/blade-of-agony/config
+        target: /config
+minVersion: 0.14.0

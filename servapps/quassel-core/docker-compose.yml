@@ -1,0 +1,22 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/quassel-core:0.14.0@sha256:cefb9aa752d4db099d98be5966432e9dcd298695571c8eedc84ffc298f3258e0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      RUN_OPTS: ''
+    ports:
+      - target: 4242
+        published: 4242
+        protocol: tcp
+      - target: 113
+        published: 10113
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/quassel-core/config
+        target: /config
+minVersion: 0.14.0

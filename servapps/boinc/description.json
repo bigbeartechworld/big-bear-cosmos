@@ -1,0 +1,19 @@
+{
+  "name": "Boinc",
+  "description": "BOINC is a platform for high-throughput computing on a large scale (thousands or millions of computers). It can be used for volunteer computing (using consumer devices) or grid computing (using organizational resources). It supports virtualized, parallel, and GPU-based applications.",
+  "url": "https://hub.docker.com/r/linuxserver/boinc",
+  "longDescription": "BOINC is a platform for high-throughput computing on a large scale (thousands or millions of computers). It can be used for volunteer computing (using consumer devices) or grid computing (using organizational resources). It supports virtualized, parallel, and GPU-based applications.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-boinc",
+  "image": "https://cdn.jsdelivr.net/gh/BOINC/boinc@master/doc/logo/boinc_logo_black.jpg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/BOINC/boinc@master/doc/logo/boinc_logo_black.jpg"
+}

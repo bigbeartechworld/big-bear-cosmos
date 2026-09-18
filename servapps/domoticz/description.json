@@ -1,0 +1,19 @@
+{
+  "name": "Domoticz",
+  "description": "Visit homepage: https://hub.docker.com/r/linuxserver/domoticz/",
+  "url": "https://hub.docker.com/r/linuxserver/domoticz",
+  "longDescription": "Visit homepage: https://hub.docker.com/r/linuxserver/domoticz/",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-domoticz",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/domoticz-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/domoticz-logo.png"
+}

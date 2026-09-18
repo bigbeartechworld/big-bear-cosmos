@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Ppsspp",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://ppsspp:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "ppsspp": {
+  "image": "linuxserver/ppsspp:1.20.4@sha256:606f11c4694ef0c85e5d33d3f77e8101c071d8c2fc2506838ba8f68362986a8d",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/ppsspp/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Rawtherapee",
+  "description": "RawTherapee is a free, cross-platform raw image processing program!",
+  "url": "https://hub.docker.com/r/linuxserver/rawtherapee",
+  "longDescription": "RawTherapee is a free, cross-platform raw image processing program!",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-rawtherapee",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rawtherapee-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rawtherapee-logo.png"
+}

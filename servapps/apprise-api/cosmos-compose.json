@@ -1,0 +1,48 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Apprise-api",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://apprise-api:8000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "apprise-api": {
+  "image": "linuxserver/apprise-api:1.5.4@sha256:499e551ec5f7711356df5f9ffb5a262eab4a926fee38fb944fd01a0cf5d70e52",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ",
+    "APPRISE_ATTACH_SIZE": ""
+  },
+  "ports": [
+    {
+      "target": 8000,
+      "published": 8000,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/apprise-api/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/apprise-api/attachments",
+      "target": "/attachments"
+    }
+  ]
+}
+    }
+  }
+}

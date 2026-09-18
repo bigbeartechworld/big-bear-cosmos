@@ -1,0 +1,19 @@
+{
+  "name": "Duckstation",
+  "description": "DuckStation is a PS1 Emulator aiming for the best accuracy and game support.",
+  "url": "https://hub.docker.com/r/linuxserver/duckstation",
+  "longDescription": "DuckStation is a PS1 Emulator aiming for the best accuracy and game support.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-duckstation",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/duckstation-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/duckstation-logo.png"
+}

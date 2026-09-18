@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Steam",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://steam:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "steam": {
+  "image": "linuxserver/steam:version-0779c5e2@sha256:ed97628a6943b103e3f2ff617c6ceb9062db16cebab6cf71e42a1ceb5ea0cff5",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/steam/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Freshrss",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://freshrss:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "freshrss": {
+  "image": "linuxserver/freshrss:1.30.0@sha256:5358f396069b36f1399b16a4a368869ed8c1ccca16d15778bbc7782b76fba57e",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/freshrss/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

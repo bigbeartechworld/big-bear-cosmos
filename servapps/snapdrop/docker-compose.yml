@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/snapdrop:version-f88d46ed@sha256:3a1423028607899c0bdb62fb3c7a02d43862bb24098cb13a78d91a795a7340d5
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/snapdrop/config
+        target: /config
+minVersion: 0.14.0

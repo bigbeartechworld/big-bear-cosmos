@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Gitqlient",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://gitqlient:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "gitqlient": {
+  "image": "linuxserver/gitqlient:1.6.3@sha256:4e1835de2a8c259e25a281f3b563cea2318578ecd85917a88e8c199f3d39ccd6",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/gitqlient/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

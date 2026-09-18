@@ -24,11 +24,7 @@
   "ports": [
     "1616:5000"
   ],
-  "command": [
-    "gunicorn",
-    "app:app",
-    "--bind=0.0.0.0:5000"
-  ],
+  "command": "gunicorn app:app --bind=0.0.0.0:5000",
   "depends_on": [
     "redis",
     "parsr",

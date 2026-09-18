@@ -1,7 +1,7 @@
 cosmos-installer: null
 services:
   relay:
-    image: ghcr.io/block/buzz:main@sha256:1f71496679c40bedd0e691115bc61b4994484253c2f19f5bf33fd0d82b1c7e0b
+    image: ghcr.io/block/buzz:main@sha256:473942a6bc6725e95643460a9bc67e3f6ec8142c2618cf8ece9b1df92dabc38b
     container_name: buzz-relay
     ports:
       - "3000:3000"
@@ -67,7 +67,7 @@ services:
   redis:
     image: redis:7-alpine@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2
     container_name: buzz-redis
-    command: ["redis-server", "--appendonly", "yes", "--requirepass", "change-me-redis-3Fn8pL5wZ6yB"]
+    command: redis-server --appendonly yes --requirepass change-me-redis-3Fn8pL5wZ6yB
     environment:
       REDIS_PASSWORD: change-me-redis-3Fn8pL5wZ6yB
     volumes:
@@ -111,6 +111,7 @@ services:
       BUZZ_S3_BUCKET: buzz-media
     entrypoint: >
       /bin/sh -euc '
+
 
         mc alias set local http://minio:9000 "$${BUZZ_S3_ACCESS_KEY}" "$${BUZZ_S3_SECRET_KEY}"
         mc mb --ignore-existing "local/$${BUZZ_S3_BUCKET}"

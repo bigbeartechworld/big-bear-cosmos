@@ -21,7 +21,7 @@ services:
     ports:
       # Mapping port 1616 of the host to port 5000 of the container
       - "1616:5000"
-    command: ["gunicorn", "app:app", "--bind=0.0.0.0:5000"]
+    command: gunicorn app:app --bind=0.0.0.0:5000
     # Other services that this service depends on
     depends_on:
       - redis
@@ -59,7 +59,7 @@ services:
     # delete results / files after one day
     environment:
       - KEEP_RESULTS_HOURS=24
-    command: ["rq", "worker", "-u", "redis://redis:6379", "--results-ttl", "86400"]
+    command: rq worker -u redis://redis:6379 --results-ttl 86400
   # Service name: ocr_worker
   ocr_worker:
     image: pd3f/pd3f-ocr:latest@sha256:7bd3d4c8ba1816932e1f631d207056eb1f421f53f205b305372af8340db16a1b

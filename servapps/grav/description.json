@@ -1,0 +1,19 @@
+{
+  "name": "Grav",
+  "description": "Grav is a Fast, Simple, and Flexible, file-based Web-platform.",
+  "url": "https://hub.docker.com/r/linuxserver/grav",
+  "longDescription": "Grav is a Fast, Simple, and Flexible, file-based Web-platform.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-grav",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/grav-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/grav-logo.png"
+}

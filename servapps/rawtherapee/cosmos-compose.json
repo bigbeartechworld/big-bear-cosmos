@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Rawtherapee",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://rawtherapee:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "rawtherapee": {
+  "image": "linuxserver/rawtherapee:5.13.20260913@sha256:7844c0ba8a6cf27ba045a1c80fdfb5b06425709f009602024e50d348b77bbc17",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/rawtherapee/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

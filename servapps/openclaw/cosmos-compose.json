@@ -36,15 +36,7 @@
   "init": true,
   "restart": "unless-stopped",
   "network_mode": "bridge",
-  "command": [
-    "node",
-    "dist/index.js",
-    "gateway",
-    "--bind",
-    "lan",
-    "--port",
-    "18789"
-  ]
+  "command": "node dist/index.js gateway --bind lan --port 18789"
 }
     }
   }

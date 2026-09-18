@@ -1,0 +1,8 @@
+{
+  "id": "boinc",
+  "version": "18.04.1",
+  "image": "linuxserver/boinc",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}

@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/audacity:4.0.0@sha256:a33f2a0d30b3aea62eb5402df1c4d7721c3af21ae4d92643dfa1badfaa7f9591
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/audacity/config
+        target: /config
+minVersion: 0.14.0

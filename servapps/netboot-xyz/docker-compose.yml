@@ -1,0 +1,25 @@
+cosmos-installer: null
+services:
+  app:
+    image: ghcr.io/netbootxyz/netbootxyz:0.7.6-nbxyz24@sha256:7bd0964fd3648cd3323772ad6ad8b0a507afe797385e4c0f587a8c23972ee4e3
+    container_name: netboot-xyz
+    ports:
+      - "3000:3000"
+      - "69:69/udp"
+      - "8080:80"
+    volumes:
+      - big-bear-netboot-xyz_config:/config
+      - big-bear-netboot-xyz_assets:/assets
+    environment:
+      - NGINX_PORT=80
+      - WEB_APP_PORT=3000
+      - TZ=UTC
+    restart: unless-stopped
+volumes:
+  big-bear-netboot-xyz_config:
+    name: big-bear-netboot-xyz_config
+    driver: local
+  big-bear-netboot-xyz_assets:
+    name: big-bear-netboot-xyz_assets
+    driver: local
+minVersion: 0.14.0

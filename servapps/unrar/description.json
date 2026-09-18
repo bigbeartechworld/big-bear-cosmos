@@ -1,0 +1,19 @@
+{
+  "name": "Unrar",
+  "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/unrar for details.",
+  "url": "https://hub.docker.com/r/linuxserver/unrar",
+  "longDescription": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/unrar for details.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-unrar",
+  "image": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg"
+}

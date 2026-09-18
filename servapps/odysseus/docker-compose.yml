@@ -81,27 +81,7 @@ services:
     # Container restart policy
     restart: unless-stopped
     # Inline entrypoint seeds settings.yml (secret + html/json formats) into the volume
-    entrypoint:
-      - /bin/sh
-      - -c
-      - |
-        set -eu
-        if [ ! -s /etc/searxng/settings.yml ]; then
-          secret="$${SEARXNG_SECRET:-}"
-          if [ -z "$$secret" ]; then
-            secret="$$(python -c 'import secrets; print(secrets.token_urlsafe(48))')"
-          fi
-          cat > /etc/searxng/settings.yml <<EOF
-        use_default_settings: true
-        server:
-          secret_key: "$$secret"
-        search:
-          formats:
-            - html
-            - json
-        EOF
-        fi
-        exec /usr/local/searxng/entrypoint.sh
+    entrypoint: /bin/sh -c until(cat</etc/searxng/.cosmos-run)2>/dev/null;do(IFS=,;s=$1;$s);done;IFS=,;z=$2;$z dummy sleep,1 exec,/etc/searxng/.cosmos-run
     environment:
       # Base URL for SearXNG
       - SEARXNG_BASE_URL=http://localhost:8080/
@@ -127,13 +107,38 @@ services:
       start_period: 10s
     networks:
       - big_bear_odysseus_network
+    post_install:
+      - |-
+        mkdir -p /etc/searxng
+        cat > /etc/searxng/.cosmos-run.tmp <<'BB_COSMOS_RUN'
+        #!/bin/sh
+        set -eu
+        if [ ! -s /etc/searxng/settings.yml ]; then
+          secret="${SEARXNG_SECRET:-}"
+          if [ -z "$secret" ]; then
+            secret="$(python -c 'import secrets; print(secrets.token_urlsafe(48))')"
+          fi
+          cat > /etc/searxng/settings.yml <<EOF
+        use_default_settings: true
+        server:
+          secret_key: "$secret"
+        search:
+          formats:
+            - html
+            - json
+        EOF
+        fi
+        exec /usr/local/searxng/entrypoint.sh
+        BB_COSMOS_RUN
+        chmod +x /etc/searxng/.cosmos-run.tmp
+        mv /etc/searxng/.cosmos-run.tmp /etc/searxng/.cosmos-run
   # Service name: ntfy
   # Optional notification service
   ntfy:
     # Name of the container
     container_name: big-bear-odysseus-ntfy
     # Image to be used for the container
-    image: binwiederhier/ntfy:v2.27.0@sha256:f2419f405127afa868f10985c1a41449e673477cee1eb19994339a5ae8b592e7
+    image: binwiederhier/ntfy:v2.28.0@sha256:6ef4b819f722fccdc036af611c4774cfdc2de821ab74fdd48bbf4c9d6f8973da
     # Container restart policy
     restart: unless-stopped
     # Run the ntfy server

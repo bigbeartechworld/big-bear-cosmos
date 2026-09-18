@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Gzdoom",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://gzdoom:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "gzdoom": {
+  "image": "linuxserver/gzdoom:4.14.2@sha256:46e43bf526c458995e4d0d95232415ca8426a3c6737ebc4f10517448cef92142",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/gzdoom/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

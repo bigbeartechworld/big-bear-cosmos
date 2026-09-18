@@ -1,0 +1,22 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/heimdall:2.8.3@sha256:f9b43b696fcbf52f3b20a0121efd3e895543dd085ed13edb54593d614e65eb7a
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      ALLOW_INTERNAL_REQUESTS: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/heimdall/config
+        target: /config
+minVersion: 0.14.0

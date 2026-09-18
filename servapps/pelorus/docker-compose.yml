@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/pelorus:0.2.3@sha256:d91ea4e4479e43200ae796000f1999bf9aa6fd8b92eb4bd38a4c96f0e8557d84
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/pelorus/config
+        target: /config
+minVersion: 0.14.0

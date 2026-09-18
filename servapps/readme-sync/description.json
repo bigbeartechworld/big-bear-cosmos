@@ -1,0 +1,19 @@
+{
+  "name": "Readme-sync",
+  "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/readme-sync for details.",
+  "url": "https://hub.docker.com/r/linuxserver/readme-sync",
+  "longDescription": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/readme-sync for details.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-readme-sync",
+  "image": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg"
+}

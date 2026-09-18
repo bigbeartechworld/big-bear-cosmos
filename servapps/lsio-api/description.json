@@ -1,0 +1,18 @@
+{
+  "name": "Lsio-api",
+  "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/lsio-api for details.",
+  "url": "https://hub.docker.com/r/linuxserver/lsio-api",
+  "longDescription": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/lsio-api for details.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-lsio-api",
+  "image": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg"
+}

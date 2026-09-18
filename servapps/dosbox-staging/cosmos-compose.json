@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Dosbox-staging",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://dosbox-staging:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "dosbox-staging": {
+  "image": "linuxserver/dosbox-staging:0.83.0@sha256:9b47af7cb6c5e51faaef40460816a0e1ffd24fad4beaac67418236085646b183",
+  "restart": "unless-stopped",
+  "environment": {
+    "PUID": "$PUID",
+    "PGID": "$PGID",
+    "TZ": "$TZ"
+  },
+  "ports": [
+    {
+      "target": 3000,
+      "published": 3000,
+      "protocol": "tcp"
+    },
+    {
+      "target": 3001,
+      "published": 3001,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/dosbox-staging/config",
+      "target": "/config"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Telegram",
+  "description": "Telegram is a cloud-based mobile and desktop messaging app.",
+  "url": "https://hub.docker.com/r/linuxserver/telegram",
+  "longDescription": "Telegram is a cloud-based mobile and desktop messaging app.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "linuxserver",
+    "linuxserver-appstore"
+  ],
+  "repository": "https://github.com/linuxserver/docker-telegram",
+  "image": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/telegram-logo.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/telegram-logo.png"
+}

@@ -1,0 +1,28 @@
+cosmos-installer: null
+services:
+  app:
+    image: linuxserver/syslog-ng:4.11.0@sha256:52a7114037bd85cf8acc757a89c331f34a50c18999dfd562dae4a9ab9a402031
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      LOG_TO_STDOUT: ''
+    ports:
+      - target: 514
+        published: 5514
+        protocol: udp
+      - target: 601
+        published: 6601
+        protocol: tcp
+      - target: 6514
+        published: 6514
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/syslog-ng/config
+        target: /config
+      - type: bind
+        source: /var/log
+        target: /var/log
+minVersion: 0.14.0
