@@ -1,0 +1,19 @@
+{
+  "name": "Draw.io",
+  "description": "Draw.io is a structured diagram editor for creating flowcharts, network diagrams, and other visual documentation.",
+  "url": "https://www.drawio.com/",
+  "longDescription": "Draw.io is a structured diagram editor for creating flowcharts, network diagrams, and other visual documentation.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "diagrams",
+    "productivity"
+  ],
+  "repository": "https://github.com/jgraph/drawio",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/drawio.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/drawio.png"
+}

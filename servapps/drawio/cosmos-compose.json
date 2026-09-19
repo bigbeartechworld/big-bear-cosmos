@@ -1,0 +1,27 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Draw.io",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://drawio:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "drawio": {
+  "image": "jgraph/drawio:31.4.6@sha256:4bd19d4bc36b65cabf1ae9c5d234597e564416b6c67f7d4db296c2df758fcb52",
+  "container_name": "drawio",
+  "ports": [
+    "8080:8080"
+  ],
+  "restart": "unless-stopped"
+}
+    }
+  }
+}

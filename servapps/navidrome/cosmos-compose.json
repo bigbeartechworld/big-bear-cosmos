@@ -1,0 +1,31 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Navidrome",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://navidrome:4533",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "navidrome": {
+  "image": "deluan/navidrome:0.61.2@sha256:9fa40b3d8dec43ceb2213d1fa551da3dcfef6ac6d19c2e534efb92527c2bafd2",
+  "container_name": "navidrome",
+  "ports": [
+    "4533:4533"
+  ],
+  "volumes": [
+    "./data:/data",
+    "big-bear-navidrome_music:/music:ro"
+  ],
+  "restart": "unless-stopped"
+}
+    }
+  }
+}
