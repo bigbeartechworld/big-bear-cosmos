@@ -1,0 +1,20 @@
+{
+  "name": "Navidrome",
+  "description": "Modern web-based music server and streamer for your personal music collection.",
+  "url": "https://www.navidrome.org/",
+  "longDescription": "Modern web-based music server and streamer for your personal music collection.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "media",
+    "music",
+    "streaming"
+  ],
+  "repository": "https://github.com/navidrome/navidrome",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/navidrome.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/navidrome.png"
+}
