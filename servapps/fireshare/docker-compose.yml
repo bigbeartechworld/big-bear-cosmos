@@ -1,0 +1,45 @@
+cosmos-installer: null
+services:
+  fireshare:
+    image: shaneisrael/fireshare:1.7.1
+    container_name: fireshare
+    ports:
+      - "8585:80"
+    volumes:
+      - big-bear-fireshare_data:/data
+      - big-bear-fireshare_processed:/processed
+      - big-bear-fireshare_videos:/videos
+      - big-bear-fireshare_images:/images
+    environment:
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=admin
+      # SECRET_KEY intentionally omitted: Fireshare auto-generates a secure
+      # random key (Python secrets.token_hex) when unset, so it is unique per
+      # deployment. Set it explicitly only to persist sessions across restarts.
+      - MINUTES_BETWEEN_VIDEO_SCANS=5
+      - THUMBNAIL_VIDEO_LOCATION=10
+      - DOMAIN=
+      - PUID=1000
+      - PGID=1000
+      - ENABLE_TRANSCODING=false
+      - TRANSCODE_GPU=false
+    restart: unless-stopped
+    networks:
+      - fireshare-network
+networks:
+  fireshare-network:
+    driver: bridge
+volumes:
+  big-bear-fireshare_data:
+    name: big-bear-fireshare_data
+    driver: local
+  big-bear-fireshare_processed:
+    name: big-bear-fireshare_processed
+    driver: local
+  big-bear-fireshare_videos:
+    name: big-bear-fireshare_videos
+    driver: local
+  big-bear-fireshare_images:
+    name: big-bear-fireshare_images
+    driver: local
+minVersion: 0.14.0

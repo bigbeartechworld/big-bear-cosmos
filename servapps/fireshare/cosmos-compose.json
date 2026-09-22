@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Fireshare",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://fireshare:8585",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "fireshare": {
+  "image": "shaneisrael/fireshare:1.7.1",
+  "container_name": "fireshare",
+  "ports": [
+    "8585:80"
+  ],
+  "volumes": [
+    "big-bear-fireshare_data:/data",
+    "big-bear-fireshare_processed:/processed",
+    "big-bear-fireshare_videos:/videos",
+    "big-bear-fireshare_images:/images"
+  ],
+  "environment": [
+    "ADMIN_USERNAME=admin",
+    "ADMIN_PASSWORD=admin",
+    "MINUTES_BETWEEN_VIDEO_SCANS=5",
+    "THUMBNAIL_VIDEO_LOCATION=10",
+    "DOMAIN=",
+    "PUID=1000",
+    "PGID=1000",
+    "ENABLE_TRANSCODING=false",
+    "TRANSCODE_GPU=false"
+  ],
+  "restart": "unless-stopped",
+  "networks": [
+    "fireshare-network"
+  ]
+}
+    }
+  }
+}
