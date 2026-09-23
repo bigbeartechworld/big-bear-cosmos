@@ -5,7 +5,7 @@
           "name": "Domain Locker",
           "description": "Web UI",
           "useHost": true,
-          "target": "http://domainlocker:8180",
+          "target": "http://domainlocker:3000",
           "mode": "SERVAPP",
           "Timeout": 14400000,
           "ThrottlePerMinute": 12000,
