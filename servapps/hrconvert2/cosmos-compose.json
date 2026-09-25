@@ -1,0 +1,30 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "HRConvert2",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://hrconvert2:48113",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "hrconvert2": {
+  "image": "dwaaan/hrconvert2-docker:latest",
+  "ports": [
+    {
+      "target": 80,
+      "published": 48113,
+      "protocol": "tcp"
+    }
+  ],
+  "restart": "unless-stopped"
+}
+    }
+  }
+}

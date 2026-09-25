@@ -1,0 +1,13 @@
+{
+  "name": "Web Sync (RSync)",
+  "description": "Websync is intended to be an rsync task manager, where rsync tasks can be added, scheduled and maintained in a sane manner.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/websync",
+  "longDescription": "Websync is intended to be an rsync task manager, where rsync tasks can be added, scheduled and maintained in a sane manner.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn0.iconfinder.com/data/icons/octicons/1024/sync-1024.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn0.iconfinder.com/data/icons/octicons/1024/sync-1024.png"
+}

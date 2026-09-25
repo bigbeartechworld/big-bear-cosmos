@@ -1,0 +1,15 @@
+{
+  "name": "Traefik",
+  "description": "Cloud-Native Networking Stack That Just Works.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/traefik",
+  "longDescription": "Cloud-Native Networking Stack That Just Works.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/traefik.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/traefik.png"
+}

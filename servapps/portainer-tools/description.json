@@ -1,0 +1,13 @@
+{
+  "name": "Portainer Tools",
+  "description": "Portainer Tools allows you to add your own Portainer App Template definitions, merge them with existing ones and host them on your own server. You can set the Portainer App Templates URL from within the application to easily switch App Template definitions. Detailed information about installing and using the application and more can be found on https://www.technorabilia.com/portainer-tools-merge-and-host-app-template-definitions.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/portainer-tools",
+  "longDescription": "Portainer Tools allows you to add your own Portainer App Template definitions, merge them with existing ones and host them on your own server. You can set the Portainer App Templates URL from within the application to easily switch App Template definitions. Detailed information about installing and using the application and more can be found on https://www.technorabilia.com/portainer-tools-merge-and-host-app-template-definitions.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/icon.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/icon.png"
+}

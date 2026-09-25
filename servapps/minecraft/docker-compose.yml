@@ -1,0 +1,15 @@
+cosmos-installer: null
+services:
+  app:
+    image: itzg/minecraft-server:2026.9.1
+    environment:
+      EULA: true
+    ports:
+      - target: 25565
+        published: 25565
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+minVersion: 0.14.0

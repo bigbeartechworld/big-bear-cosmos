@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "WebDAV",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://webdav:48108",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "webdav": {
+  "image": "bytemark/webdav:latest",
+  "restart": "unless-stopped",
+  "environment": {
+    "AUTH_TYPE": "Digest",
+    "USERNAME": "bigbear",
+    "PASSWORD": "437830b0-693e-47c3-863c-465522d720db"
+  },
+  "ports": [
+    {
+      "target": 80,
+      "published": 48108,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/Documents",
+      "target": "/var/lib/dav"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Rustdesk Server",
+  "description": "RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration. You have full control of your data, with no concerns about security.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/rustdesk-server",
+  "longDescription": "RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration. You have full control of your data, with no concerns about security.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Rustdesk.svg/48px-Rustdesk.svg.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Rustdesk.svg/48px-Rustdesk.svg.png"
+}

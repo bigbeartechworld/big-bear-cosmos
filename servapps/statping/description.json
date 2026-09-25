@@ -1,0 +1,15 @@
+{
+  "name": "Statping",
+  "description": "An easy to use Status Page for your websites and applications. Statping will automatically fetch the application and render a beautiful status page with tons of features for you to build an even better status page.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/statping",
+  "longDescription": "An easy to use Status Page for your websites and applications. Statping will automatically fetch the application and render a beautiful status page with tons of features for you to build an even better status page.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/statping.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/statping.png"
+}

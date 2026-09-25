@@ -1,0 +1,21 @@
+cosmos-installer: null
+services:
+  app:
+    image: technorabilia/portainer-tools
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      PORTAINER_USERNAME: ''
+      PORTAINER_PASSWORD: ''
+      PORTAINER_URL: 0.0.0.0:9000
+      SERVER_URL: http://0.0.0.0:9999
+    ports:
+      - target: 9999
+        published: 9999
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/portainer-tools/config
+        target: /config
+minVersion: 0.14.0

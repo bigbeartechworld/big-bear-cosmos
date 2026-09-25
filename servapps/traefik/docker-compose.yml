@@ -1,0 +1,39 @@
+cosmos-installer: null
+services:
+  app:
+    image: traefik:v3.7.13
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      TRAEFIK_API: false
+      TRAEFIK_API_DASHBOARD: true
+      TRAEFIK_API_INSECURE: false
+    ports:
+      - target: 80
+        published: 48102
+        protocol: tcp
+      - target: 443
+        published: 48103
+        protocol: tcp
+      - target: 8080
+        published: 48104
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/traefik.toml
+        target: /etc/traefik/traefik.toml
+      - type: bind
+        source: /DATA/AppData/$AppID/traefik.yml
+        target: /etc/traefik/traefik.yml
+      - type: bind
+        source: /DATA/AppData/$AppID/config.yml
+        target: /etc/traefik/config.yml
+      - type: bind
+        source: /DATA/AppData/$AppID/acme.json
+        target: /etc/traefik/acme.json
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+minVersion: 0.14.0

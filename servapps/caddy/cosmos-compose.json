@@ -1,0 +1,57 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Caddy",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://caddy:48100",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "caddy": {
+  "image": "caddy:2.11.4",
+  "restart": "unless-stopped",
+  "ports": [
+    {
+      "target": 80,
+      "published": 48100,
+      "protocol": "tcp"
+    },
+    {
+      "target": 443,
+      "published": 48101,
+      "protocol": "tcp"
+    },
+    {
+      "target": 2019,
+      "published": 2019,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/caddy/data",
+      "target": "/data"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/caddy/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/caddy/caddyfile",
+      "target": "/etc/caddy/caddyfile"
+    }
+  ]
+}
+    }
+  }
+}

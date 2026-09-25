@@ -1,0 +1,17 @@
+cosmos-installer: null
+services:
+  app:
+    image: redis:8.8.3
+    restart: unless-stopped
+    ports:
+      - target: 6379
+        published: '48110'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/redis/data
+        target: /data
+      - type: bind
+        source: /DATA/AppData/redis/config
+        target: /usr/local/etc/redis
+minVersion: 0.14.0

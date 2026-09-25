@@ -1,0 +1,19 @@
+cosmos-installer: null
+services:
+  hbbs:
+    image: rustdesk/rustdesk-server:1
+    command: hbbs
+    volumes:
+      - /DATA/AppData/rustdesk/data:/root
+    network_mode: host
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+  hbbr:
+    image: rustdesk/rustdesk-server:1
+    command: hbbr
+    volumes:
+      - /DATA/AppData/rustdesk/data:/root
+    network_mode: host
+    restart: unless-stopped
+minVersion: 0.14.0

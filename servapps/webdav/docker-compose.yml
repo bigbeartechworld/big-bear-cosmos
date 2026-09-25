@@ -1,0 +1,18 @@
+cosmos-installer: null
+services:
+  app:
+    image: bytemark/webdav:latest
+    restart: unless-stopped
+    environment:
+      AUTH_TYPE: Digest
+      USERNAME: bigbear
+      PASSWORD: 437830b0-693e-47c3-863c-465522d720db
+    ports:
+      - target: 80
+        published: 48108
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/Documents
+        target: /var/lib/dav
+minVersion: 0.14.0

@@ -1,0 +1,15 @@
+{
+  "name": "CasaOS Toolbox",
+  "description": "CasaOS Toolbox is an extension application that provides additional features to CasaOS.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/casaos-toolbox",
+  "longDescription": "CasaOS Toolbox is an extension application that provides additional features to CasaOS.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/casaos-toolbox/logo.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/casaos-toolbox/logo.png"
+}

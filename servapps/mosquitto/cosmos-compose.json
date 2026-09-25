@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Eclipse Mosquitto",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://mosquitto:1883",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "mosquitto": {
+  "image": "eclipse-mosquitto:2",
+  "restart": "unless-stopped",
+  "ports": [
+    {
+      "target": 1883,
+      "published": 1883,
+      "protocol": "tcp"
+    },
+    {
+      "target": 9001,
+      "published": 48114,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/$AppID/config",
+      "target": "/mosquitto/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/$AppID/data",
+      "target": "/mosquitto/data"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/$AppID/log",
+      "target": "/mosquitto/log"
+    }
+  ]
+}
+    }
+  }
+}

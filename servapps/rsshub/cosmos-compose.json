@@ -1,0 +1,40 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "RSShub",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://rsshub:1200",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "rsshub": {
+  "image": "diygod/rsshub:2026-09-24",
+  "restart": "unless-stopped",
+  "environment": {
+    "NODE_ENV": "production",
+    "CACHE_TYPE": "redis",
+    "REDIS_URL": "redis://redis:6379/",
+    "PUPPETEER_WS_ENDPOINT": "ws://browserless:3000"
+  },
+  "ports": [
+    {
+      "target": 1200,
+      "published": 1200,
+      "protocol": "tcp"
+    }
+  ],
+  "depends_on": [
+    "redis",
+    "browserless"
+  ]
+}
+    }
+  }
+}
