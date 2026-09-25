@@ -16,7 +16,7 @@
     "services": {
       "immich-aio-alpine": {
   "container_name": "big-bear-immich-aio-alpine",
-  "image": "ghcr.io/imagegenius/immich:3.2.2@sha256:d2c1955b74a543b6ebf73448db3fb730b1973cc8b9056cfefe04abe8c4c68a04",
+  "image": "ghcr.io/imagegenius/immich:3.2.2@sha256:cc08fbdcc1eef6e5fd5286667f70be63b8ab027cfac8710901f0b7a0f4c913de",
   "ports": [
     "2283:8080"
   ],

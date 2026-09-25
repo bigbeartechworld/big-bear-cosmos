@@ -1,0 +1,41 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Air Video HD",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://airvideohd:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "airvideohd": {
+  "image": "dmaxwell/airvideohd:latest",
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/airvideohd/config",
+      "target": "/config"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/airvideohd/conversionPath",
+      "target": "/conversionPath"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/Media/Movies",
+      "target": "/videos"
+    }
+  ]
+}
+    }
+  }
+}

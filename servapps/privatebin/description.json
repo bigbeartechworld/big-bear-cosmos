@@ -1,0 +1,15 @@
+{
+  "name": "Privatebin",
+  "description": "PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data!",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/privatebin",
+  "longDescription": "PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data!",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/privatebin.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/privatebin.png"
+}

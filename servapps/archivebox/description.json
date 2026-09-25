@@ -1,0 +1,15 @@
+{
+  "name": "Archivebox",
+  "description": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view sites you want to preserve offline.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/archivebox",
+  "longDescription": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view sites you want to preserve offline.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/archivebox.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/archivebox.png"
+}

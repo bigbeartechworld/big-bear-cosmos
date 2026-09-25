@@ -1,0 +1,15 @@
+{
+  "name": "Caddy",
+  "description": "Caddy - The Ultimate Server with Automatic HTTPS.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/caddy",
+  "longDescription": "Caddy - The Ultimate Server with Automatic HTTPS.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/caddy.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/caddy.png"
+}

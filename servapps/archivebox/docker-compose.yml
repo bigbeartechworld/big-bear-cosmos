@@ -1,0 +1,20 @@
+cosmos-installer: null
+services:
+  app:
+    image: archivebox/archivebox:0.9.51
+    restart: unless-stopped
+    environment:
+      ALLOWED_HOSTS: '*'
+      MEDIA_MAX_SIZE: 500m
+      PUBLIC_INDEX: true
+      PUBLIC_SNAPSHOTS: true
+      PUBLIC_ADD_VIEW: true
+    ports:
+      - target: 8000
+        published: 8002
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+minVersion: 0.14.0

@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Minecraft Server",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://minecraft:25565",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "minecraft": {
+  "image": "itzg/minecraft-server:2026.9.1",
+  "environment": {
+    "EULA": true
+  },
+  "ports": [
+    {
+      "target": 25565,
+      "published": 25565,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/$AppID/data",
+      "target": "/data"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Web Sync (RSync)",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://websync:48109",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "websync": {
+  "image": "furier/websync:latest",
+  "restart": "unless-stopped",
+  "working_dir": "/src",
+  "command": "node server.js",
+  "ports": [
+    {
+      "target": 3000,
+      "published": 48109,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/websync/data",
+      "target": "/data"
+    }
+  ]
+}
+    }
+  }
+}

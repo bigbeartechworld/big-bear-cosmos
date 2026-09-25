@@ -1,0 +1,42 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Redis",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://redis:48110",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "redis": {
+  "image": "redis:8.8.3",
+  "restart": "unless-stopped",
+  "ports": [
+    {
+      "target": 6379,
+      "published": "48110",
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/redis/data",
+      "target": "/data"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/redis/config",
+      "target": "/usr/local/etc/redis"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,20 @@
+cosmos-installer: null
+services:
+  app:
+    image: privatebin/nginx-fpm-alpine:2.0.6
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+    ports:
+      - target: 8080
+        published: 48106
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /srv/data
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /srv/cfg
+minVersion: 0.14.0

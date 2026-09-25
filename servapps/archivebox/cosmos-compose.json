@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Archivebox",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://archivebox:8002",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "archivebox": {
+  "image": "archivebox/archivebox:0.9.51",
+  "restart": "unless-stopped",
+  "environment": {
+    "ALLOWED_HOSTS": "*",
+    "MEDIA_MAX_SIZE": "500m",
+    "PUBLIC_INDEX": true,
+    "PUBLIC_SNAPSHOTS": true,
+    "PUBLIC_ADD_VIEW": true
+  },
+  "ports": [
+    {
+      "target": 8000,
+      "published": 8002,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/$AppID/data",
+      "target": "/data"
+    }
+  ]
+}
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "HRConvert2",
+  "description": "HRConvert2 is a self-hosted drag-and-drop file conversion server & file sharing tool that supports 86 file formats with 4 color schemes & 13 end-user selctable languages.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/hrconvert2",
+  "longDescription": "HRConvert2 is a self-hosted drag-and-drop file conversion server & file sharing tool that supports 86 file formats with 4 color schemes & 13 end-user selctable languages.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/hrconvert2/logo.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/hrconvert2/logo.png"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Joomla",
+  "description": "Another free and open-source CMS",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/joomla",
+  "longDescription": "Another free and open-source CMS",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/joomla.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/joomla.png"
+}

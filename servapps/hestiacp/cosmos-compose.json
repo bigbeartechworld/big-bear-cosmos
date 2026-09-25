@@ -1,0 +1,61 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Hestia CP",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://hestiacp:48112",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "hestiacp": {
+  "image": "artsemkniazeu/hestiacp",
+  "restart": "unless-stopped",
+  "environment": {
+    "TZ": "$TZ"
+  },
+  "networks": {
+    "docnet": {
+      "ipv4_address": "10.1.1.0"
+    }
+  },
+  "ports": [
+    {
+      "target": 8083,
+      "published": 48112,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/$AppID/config",
+      "target": "/hestia"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/$AppID/home",
+      "target": "/home"
+    },
+    {
+      "type": "bind",
+      "source": "/DATA/AppData/$AppID/backup",
+      "target": "/backup"
+    }
+  ],
+  "cap_add": [
+    "NET_ADMIN",
+    "NET_RAW",
+    "SYS_NICE",
+    "DAC_READ_SEARCH"
+  ]
+}
+    }
+  }
+}

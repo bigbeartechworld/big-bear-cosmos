@@ -1,0 +1,10 @@
+cosmos-installer: null
+services:
+  app:
+    image: dwaaan/hrconvert2-docker:latest
+    ports:
+      - target: 80
+        published: 48113
+        protocol: tcp
+    restart: unless-stopped
+minVersion: 0.14.0

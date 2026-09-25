@@ -1,0 +1,39 @@
+cosmos-installer: null
+services:
+  app:
+    image: artsemkniazeu/hestiacp
+    restart: unless-stopped
+    environment:
+      TZ: $TZ
+    networks:
+      docnet:
+        ipv4_address: 10.1.1.0
+    ports:
+      - target: 8083
+        published: 48112
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /hestia
+      - type: bind
+        source: /DATA/AppData/$AppID/home
+        target: /home
+      - type: bind
+        source: /DATA/AppData/$AppID/backup
+        target: /backup
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_NICE
+      - DAC_READ_SEARCH
+networks:
+  docnet:
+    name: docnet
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.1.0.0/16
+          ip_range: 10.1.1.0/24
+          gateway: 10.1.0.1
+minVersion: 0.14.0

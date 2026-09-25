@@ -1,0 +1,24 @@
+cosmos-installer: null
+services:
+  app:
+    image: jokobsk/pi.alert:25
+    restart: always
+    network_mode: host
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      HOST_USER_ID: $PUID
+      HOST_USER_GID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 20211
+        published: 20211
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /home/pi/pialert/config
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /home/pi/pialert/db
+minVersion: 0.14.0

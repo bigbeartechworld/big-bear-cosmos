@@ -1,0 +1,15 @@
+{
+  "name": "Minecraft Server",
+  "description": "This docker image provides a Minecraft Server that will automatically download the latest stable version at startup. You can also run/upgrade to any specific version or the latest snapshot. See the Versions section below for more information.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/minecraft",
+  "longDescription": "This docker image provides a Minecraft Server that will automatically download the latest stable version at startup. You can also run/upgrade to any specific version or the latest snapshot. See the Versions section below for more information.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/minecraft.png",
+  "supported_architectures": [
+    "amd64",
+    "armv7",
+    "arm64"
+  ],
+  "icon": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/minecraft.png"
+}

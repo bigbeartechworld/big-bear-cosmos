@@ -1,0 +1,13 @@
+{
+  "name": "Air Video HD",
+  "description": "Watch videos streamed instantly from your computer on your iPhone, iPad, iPod touch or Apple TV.",
+  "url": "https://github.com/WisdomSky/CasaOS-Coolstore/tree/main/Apps/airvideohd",
+  "longDescription": "Watch videos streamed instantly from your computer on your iPhone, iPad, iPod touch or Apple TV.",
+  "tags": [],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://airvideo.app/images/icon.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://airvideo.app/images/icon.png"
+}

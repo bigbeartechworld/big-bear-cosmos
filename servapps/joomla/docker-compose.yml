@@ -1,0 +1,27 @@
+cosmos-installer: null
+services:
+  app:
+    image: joomla:6.1.3-apache
+    environment:
+      JOOMLA_DB_HOST: joomladb
+      JOOMLA_DB_PASSWORD: 15311349-803b-40a2-9153-5b13f8d4022e
+    depends_on:
+      - joomladb
+    ports:
+      - target: 80
+        published: 48105
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/www
+        target: /var/www/html
+  joomladb:
+    image: mysql:9.7.2
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 15311349-803b-40a2-9153-5b13f8d4022e
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/mysql
+        target: /var/lib/mysql
+minVersion: 0.14.0

@@ -1,0 +1,39 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "CasaOS Toolbox",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://casaos-toolbox:8088",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "casaos-toolbox": {
+  "image": "wisdomsky/casaos-toolbox:0.2",
+  "restart": "unless-stopped",
+  "network_mode": "host",
+  "environment": {
+    "FORCE_HTTPS": false,
+    "WEBUI_PORT": 8088,
+    "DB_HOST": "0.0.0.0",
+    "DB_PORT": 33066,
+    "DB_DATABASE": "casaos",
+    "DB_USERNAME": "bigbear",
+    "DB_PASSWORD": "fe8a627d-d00f-4486-9bb4-20d58b8b6d3e"
+  },
+  "volumes": [
+    "/usr/bin/casaos-cli:/usr/bin/casaos-cli",
+    "/etc/casaos/gateway.ini:/casaos/gateway.ini",
+    "/var/lib/casaos/apps:/casaos/apps",
+    "/var/lib/casaos/www:/casaos/www"
+  ]
+}
+    }
+  }
+}
