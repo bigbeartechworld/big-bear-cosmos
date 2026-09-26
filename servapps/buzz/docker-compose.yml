@@ -1,7 +1,7 @@
 cosmos-installer: null
 services:
   relay:
-    image: ghcr.io/block/buzz:main@sha256:c0b4985b1ad05fe7bec04a94d2af96ad1d9160f407774ee6ff953b32ddb0a3de
+    image: ghcr.io/block/buzz:main@sha256:b7a305335ee8d29134ba95d3c1111807750b0a298d06096e2ff4de27bea93ed9
     container_name: buzz-relay
     ports:
       - "3000:3000"
