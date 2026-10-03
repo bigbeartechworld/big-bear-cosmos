@@ -16,7 +16,7 @@
     "services": {
       "nextcloud-with-smbclient": {
   "container_name": "big-bear-nextcloud-smb",
-  "image": "bigbeartechworld/big-bear-nextcloud-with-smbclient:35.0.1@sha256:ddaca2031622188e1cf789ea785a5f9ee7caedb9cdc01518d554089a498d2a12",
+  "image": "bigbeartechworld/big-bear-nextcloud-with-smbclient:34.0.3@sha256:f63ad45456667eebd02892033be4c4a5c836a809db30b9b06dab8bbf6994b50a",
   "restart": "unless-stopped",
   "ports": [
     "7580:80"
