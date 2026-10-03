@@ -1,0 +1,28 @@
+{
+  "name": "Cantinarr",
+  "description": "Cantinarr brings media requests and server management into one app. Household members browse and request movies, shows, books, and music, follow downloads, and get notified when content is ready. Admins manage Radarr, Sonarr, Chaptarr, Lidarr, and download clients, review approvals, and investigate stuck downloads from a phone or browser. Connect the services you use after setup. AI is optional: an assistant can help with library questions and requests, while the repair agent investigates persistent download problems and proposes actions for an administrator to review. Cantinarr also offers MCP tools for authorized clients. Service credentials stay server-side and are encrypted at rest.",
+  "url": "https://cantinarr.com",
+  "longDescription": "Cantinarr brings media requests and server management into one app. Household members browse and request movies, shows, books, and music, follow downloads, and get notified when content is ready. Admins manage Radarr, Sonarr, Chaptarr, Lidarr, and download clients, review approvals, and investigate stuck downloads from a phone or browser. Connect the services you use after setup. AI is optional: an assistant can help with library questions and requests, while the repair agent investigates persistent download problems and proposes actions for an administrator to review. Cantinarr also offers MCP tools for authorized clients. Service credentials stay server-side and are encrypted at rest.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "media",
+    "requests",
+    "radarr",
+    "sonarr",
+    "chaptarr",
+    "lidarr",
+    "music",
+    "plex",
+    "mcp",
+    "ai"
+  ],
+  "repository": "https://github.com/windoze95/cantinarr",
+  "image": "https://raw.githubusercontent.com/windoze95/cantinarr/main/app/web/icons/Icon-512.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://raw.githubusercontent.com/windoze95/cantinarr/main/app/web/icons/Icon-512.png"
+}

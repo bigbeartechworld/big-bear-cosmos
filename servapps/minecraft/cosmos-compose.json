@@ -15,7 +15,7 @@
       ],
     "services": {
       "minecraft": {
-  "image": "itzg/minecraft-server:2026.9.1",
+  "image": "itzg/minecraft-server:2026.9.2",
   "environment": {
     "EULA": true
   },

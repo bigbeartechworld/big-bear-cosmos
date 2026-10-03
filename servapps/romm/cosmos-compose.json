@@ -15,7 +15,7 @@
       ],
     "services": {
       "romm": {
-  "image": "rommapp/romm:5.3.0@sha256:dc586cb3a2c7316fcffb3dc273171b1964523f0f409e989295d26d2199df1d4e",
+  "image": "rommapp/romm:5.3.1@sha256:0d66b4ea152a237c7f24b95e87459f46d3c596a7c0b35a82f26bc971487278b3",
   "container_name": "big-bear-romm",
   "environment": [
     "DB_HOST=big-bear-rommdb",

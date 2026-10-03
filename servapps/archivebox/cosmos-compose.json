@@ -15,7 +15,7 @@
       ],
     "services": {
       "archivebox": {
-  "image": "archivebox/archivebox:0.9.51",
+  "image": "archivebox/archivebox:0.9.71",
   "restart": "unless-stopped",
   "environment": {
     "ALLOWED_HOSTS": "*",
