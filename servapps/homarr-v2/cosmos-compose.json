@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Homarr v2",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://homarr-v2:7575",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "homarr-v2": {
+  "container_name": "big-bear-homarr-v2",
+  "image": "ghcr.io/homarr-labs/homarr:v2.0.0@sha256:3eeef80bfc58f6588844e9405da47550f681006d3019005a34f9388b5c00eb73",
+  "restart": "unless-stopped",
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "big-bear-homarr-v2_appdata:/appdata"
+  ],
+  "environment": [
+    "SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY}",
+    "DB_DIALECT=${DB_DIALECT:-sqlite}",
+    "DB_URL=${DB_URL:-/appdata/db/db.sqlite}"
+  ],
+  "ports": [
+    "7576:7575"
+  ]
+}
+    }
+  }
+}
