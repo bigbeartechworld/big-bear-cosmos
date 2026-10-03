@@ -15,7 +15,7 @@
       ],
     "services": {
       "appsmith": {
-  "image": "appsmith/appsmith-ce:v2.4.1@sha256:a27b379893ec569b5a2dcced813016ed29d84209e5f8a35be257067b657f32fe",
+  "image": "appsmith/appsmith-ce:v2.4.3@sha256:c50d5b159482981f12e6f8733c3e936376e75d0a518a3cef61b9f4f8a1967696",
   "container_name": "appsmith",
   "ports": [
     "1080:80",

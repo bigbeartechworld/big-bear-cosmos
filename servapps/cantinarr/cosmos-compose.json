@@ -1,0 +1,51 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Cantinarr",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://cantinarr:8585",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "cantinarr": {
+  "image": "ghcr.io/windoze95/cantinarr:0.16.0@sha256:92e0c7099303616a833c1a75fdf4904645be4008e981151e24540553b5c4249c",
+  "container_name": "big-bear-cantinarr",
+  "restart": "unless-stopped",
+  "ports": [
+    "8585:8585"
+  ],
+  "environment": {
+    "CANTINARR_PUSH_GATEWAY_URL": "https://push.cantinarr.com",
+    "CANTINARR_ARR_CALLBACK_URL": ""
+  },
+  "volumes": [
+    "big-bear-cantinarr_config:/config"
+  ],
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "wget",
+      "--no-verbose",
+      "--tries=1",
+      "--spider",
+      "http://127.0.0.1:8585/api/health"
+    ],
+    "interval": "30s",
+    "timeout": "5s",
+    "retries": 5,
+    "start_period": "15s"
+  },
+  "networks": [
+    "big_bear_cantinarr_network"
+  ]
+}
+    }
+  }
+}
