@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Odoo",
+          "name": "Odoo (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://odoo:8069",
