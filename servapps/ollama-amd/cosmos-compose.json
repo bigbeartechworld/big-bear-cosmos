@@ -16,7 +16,7 @@
     "services": {
       "ollama-amd": {
   "container_name": "big-bear-ollama-amd",
-  "image": "ollama/ollama:0.35.0-rocm@sha256:d227320873bb8fce246bc8c09f2ae51f9099fe18838c906d5f4b0c2d2c1cb3b5",
+  "image": "ollama/ollama:0.35.1-rocm@sha256:c716013d3bbf1753ad82cfa0ccdb8bd3252afc6cc16ec37330e49d829560dd4f",
   "restart": "unless-stopped",
   "environment": [
     "PORT=11434"
