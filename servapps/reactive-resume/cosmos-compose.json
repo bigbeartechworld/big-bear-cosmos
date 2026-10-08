@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Reactive Resume",
+          "name": "Reactive Resume (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://reactive-resume:3000",
