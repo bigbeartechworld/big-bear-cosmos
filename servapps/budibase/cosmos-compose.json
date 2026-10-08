@@ -16,7 +16,7 @@
     "services": {
       "budibase": {
   "container_name": "big-bear-budibase",
-  "image": "budibase/budibase:v3.47.0@sha256:77a6ed96f5e32b997e33409564bd3239438fc276e536d0f5ef3084e65c0f45ce",
+  "image": "budibase/budibase:v3.48.0@sha256:cdfce7720308d12d39070a1901503b1ea88ccff78e47c5465bdbad847714df62",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-budibase_data:/data"
