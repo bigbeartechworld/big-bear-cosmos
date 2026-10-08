@@ -1,0 +1,27 @@
+cosmos-installer: null
+services:
+  app:
+    image: ghcr.io/fclairamb/solidping:0.37.0@sha256:b7905f7747e217c259f7442b14fcdb49b145b06dbe6791f9fc8dd4dde5e95428
+    container_name: big-bear-solidping
+    restart: unless-stopped
+    # The image runs as nonroot (uid 65532) and has no shell. Running as root
+    # lets it write to host bind mounts created by the platform as root.
+    user: "0:0"
+    # Needed for ICMP ping checks.
+    cap_add:
+      - NET_RAW
+    ports:
+      - "4000:4000"
+    volumes:
+      - big-bear-solidping_data:/data
+    healthcheck:
+      test: ["CMD", "/app/solidping", "healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+volumes:
+  big-bear-solidping_data:
+    name: big-bear-solidping_data
+    driver: local
+minVersion: 0.14.0

@@ -1,0 +1,22 @@
+{
+  "name": "SolidPing",
+  "description": "SolidPing monitors HTTP(S) endpoints, TCP/UDP ports, DNS records, SSL certificates, ICMP ping, and databases, plus scriptable browser and JavaScript checks for anything those don't cover. Alerts go out over email, Slack, Discord, Telegram, WhatsApp and generic webhooks, with escalation policies and maintenance windows. Public status pages, a multi-region distributed worker system, and multi-user organizations with role-based access are included. Existing Uptime Kuma users can import their monitors directly. Single Go binary, SQLite by default.",
+  "url": "https://www.solidping.io",
+  "longDescription": "SolidPing monitors HTTP(S) endpoints, TCP/UDP ports, DNS records, SSL certificates, ICMP ping, and databases, plus scriptable browser and JavaScript checks for anything those don't cover. Alerts go out over email, Slack, Discord, Telegram, WhatsApp and generic webhooks, with escalation policies and maintenance windows. Public status pages, a multi-region distributed worker system, and multi-user organizations with role-based access are included. Existing Uptime Kuma users can import their monitors directly. Single Go binary, SQLite by default.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "monitoring",
+    "uptime",
+    "status-page",
+    "alerting"
+  ],
+  "repository": "https://github.com/fclairamb/solidping",
+  "image": "https://cdn.jsdelivr.net/gh/fclairamb/solidping@main/res/favicons/favicon-512.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/fclairamb/solidping@main/res/favicons/favicon-512.png"
+}
