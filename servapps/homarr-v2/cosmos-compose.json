@@ -23,9 +23,9 @@
     "big-bear-homarr-v2_appdata:/appdata"
   ],
   "environment": [
-    "SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY}",
-    "DB_DIALECT=${DB_DIALECT:-sqlite}",
-    "DB_URL=${DB_URL:-/appdata/db/db.sqlite}"
+    "SECRET_ENCRYPTION_KEY=",
+    "DB_DIALECT=sqlite",
+    "DB_URL=/appdata/db/db.sqlite"
   ],
   "ports": [
     "7576:7575"
