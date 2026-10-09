@@ -16,7 +16,7 @@
     "services": {
       "rallly": {
   "container_name": "big-bear-rallly",
-  "image": "lukevella/rallly:4.15.3@sha256:8cd979aefe8d06e1822bc67054eb2d31088cdb831aa3f7b5615b3768f35431d9",
+  "image": "lukevella/rallly:4.15.4@sha256:8f29eccdc2fbb856001ea3c97d1c1d85556095274ad21a8de0c0125f29303938",
   "restart": "unless-stopped",
   "environment": [
     "DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly",

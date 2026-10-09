@@ -16,7 +16,7 @@
     "services": {
       "penpot": {
   "container_name": "big-bear-penpot-frontend",
-  "image": "penpotapp/frontend:2.18.2@sha256:3619f48cbdd0c9197ad23bd3db1c9b4391d7c9c3137e22e806cd7f9c945c1c8e",
+  "image": "penpotapp/frontend:2.18.3@sha256:bb8abe27d53de84c95597f2c02c0e702b2779971fb0703e543f9ecf183e999f6",
   "restart": "unless-stopped",
   "volumes": [
     "big-bear-penpot_assets:/opt/data/assets"
