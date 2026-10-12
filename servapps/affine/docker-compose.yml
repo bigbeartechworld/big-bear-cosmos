@@ -1,0 +1,83 @@
+cosmos-installer: null
+services:
+  affine:
+    image: ghcr.io/toeverything/affine:0.27.4@sha256:b649f5ce2384ffdf13c23bccf81d759e15973d59d0b0058af65d895a84373099
+    container_name: affine
+    restart: unless-stopped
+    ports:
+      - "3010:3010"
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      affine_migration:
+        condition: service_completed_successfully
+    volumes:
+      - big-bear-affine_storage:/root/.affine/storage
+      - big-bear-affine_config:/root/.affine/config
+    environment:
+      REDIS_SERVER_HOST: redis
+      DATABASE_URL: postgresql://affine@postgres:5432/affine
+      AFFINE_INDEXER_ENABLED: "false"
+  affine_migration:
+    image: ghcr.io/toeverything/affine:0.27.4@sha256:b649f5ce2384ffdf13c23bccf81d759e15973d59d0b0058af65d895a84373099
+    container_name: affine_migration
+    volumes:
+      - big-bear-affine_storage:/root/.affine/storage
+      - big-bear-affine_config:/root/.affine/config
+    environment:
+      REDIS_SERVER_HOST: redis
+      DATABASE_URL: postgresql://affine@postgres:5432/affine
+      AFFINE_INDEXER_ENABLED: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    entrypoint: /bin/sh -c until(cat</root/.affine/storage/.cosmos-run)2>/dev/null;do(IFS=,;s=$1;$s);done;IFS=,;z=$2;$z dummy sleep,1 exec,/root/.affine/storage/.cosmos-run
+    post_install:
+      - |-
+        mkdir -p /root/.affine/storage
+        cat > /root/.affine/storage/.cosmos-run.tmp <<'BB_COSMOS_RUN'
+        #!/bin/sh
+        node ./scripts/self-host-predeploy.js
+        BB_COSMOS_RUN
+        chmod +x /root/.affine/storage/.cosmos-run.tmp
+        mv /root/.affine/storage/.cosmos-run.tmp /root/.affine/storage/.cosmos-run
+  redis:
+    image: redis:8.10.2@sha256:6f81e8915c60b065a524e6967e0ad1c639ba6efa84d669f823683ea04d9150ee
+    container_name: affine-redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  postgres:
+    image: pgvector/pgvector:pg16@sha256:7b822b0aac60967beb1ea5e576b8602c94c300a157d187f385ae3e0da199b90a
+    container_name: affine-postgres
+    restart: unless-stopped
+    volumes:
+      - big-bear-affine_postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: affine
+      POSTGRES_DB: affine
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+      POSTGRES_HOST_AUTH_METHOD: trust
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "affine", "-d", "affine"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  big-bear-affine_storage:
+    name: big-bear-affine_storage
+    driver: local
+  big-bear-affine_config:
+    name: big-bear-affine_config
+    driver: local
+  big-bear-affine_postgres:
+    name: big-bear-affine_postgres
+    driver: local
+minVersion: 0.14.0

@@ -1,0 +1,22 @@
+{
+  "name": "Homedex",
+  "description": "Homedex 0.2.5 is a read-only homelab inventory of services, ports, routes, and certificate expiry.",
+  "url": "https://github.com/HarshShah0203/homedex",
+  "longDescription": "Homedex 0.2.5 is a read-only homelab inventory of services, ports, routes, and certificate expiry.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "inventory",
+    "homelab"
+  ],
+  "repository": "https://github.com/HarshShah0203/homedex",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/homedex.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64",
+    "armv7"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/homedex.png"
+}

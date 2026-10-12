@@ -1,0 +1,47 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "AFFiNE",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://affine:3010",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "affine": {
+  "image": "ghcr.io/toeverything/affine:0.27.4@sha256:b649f5ce2384ffdf13c23bccf81d759e15973d59d0b0058af65d895a84373099",
+  "container_name": "affine",
+  "restart": "unless-stopped",
+  "ports": [
+    "3010:3010"
+  ],
+  "depends_on": {
+    "redis": {
+      "condition": "service_healthy"
+    },
+    "postgres": {
+      "condition": "service_healthy"
+    },
+    "affine_migration": {
+      "condition": "service_completed_successfully"
+    }
+  },
+  "volumes": [
+    "big-bear-affine_storage:/root/.affine/storage",
+    "big-bear-affine_config:/root/.affine/config"
+  ],
+  "environment": {
+    "REDIS_SERVER_HOST": "redis",
+    "DATABASE_URL": "postgresql://affine@postgres:5432/affine",
+    "AFFINE_INDEXER_ENABLED": "false"
+  }
+}
+    }
+  }
+}

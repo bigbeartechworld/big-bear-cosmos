@@ -1,0 +1,21 @@
+{
+  "name": "Trackie",
+  "description": "Trackie is a New Zealand Actual Budget server image. Sign-in is OpenID Connect, and optional per-user Akahu bank tokens are encrypted at rest.",
+  "url": "https://trackie.nz/",
+  "longDescription": "Trackie is a New Zealand Actual Budget server image. Sign-in is OpenID Connect, and optional per-user Akahu bank tokens are encrypted at rest.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "finance",
+    "budget",
+    "new-zealand"
+  ],
+  "repository": "https://github.com/trackie-nz/trackie",
+  "image": "https://trackie.nz/apple-touch-icon.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://trackie.nz/apple-touch-icon.png"
+}

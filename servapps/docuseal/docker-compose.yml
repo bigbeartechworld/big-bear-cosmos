@@ -1,0 +1,15 @@
+cosmos-installer: null
+services:
+  docuseal:
+    image: docuseal/docuseal:3.3.1@sha256:e171808ce8dabb08491a49a6d8c477670a65ddce5e3de4764904b63a4487940f
+    container_name: docuseal
+    restart: unless-stopped
+    ports:
+      - "20031:3000"
+    volumes:
+      - big-bear-docuseal_data:/data
+volumes:
+  big-bear-docuseal_data:
+    name: big-bear-docuseal_data
+    driver: local
+minVersion: 0.14.0

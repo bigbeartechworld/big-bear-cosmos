@@ -1,0 +1,41 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "GameVault",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://gamevault:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "gamevault": {
+  "image": "phalcode/gamevault-backend:17.0.1@sha256:f3c599d4fc7498eb2028cfd611dc27b3f707c83a7ce9a86ec3ec8256a42409ba",
+  "container_name": "gamevault",
+  "restart": "unless-stopped",
+  "depends_on": {
+    "gamevault-db": {
+      "condition": "service_healthy"
+    }
+  },
+  "ports": [
+    "20032:8080"
+  ],
+  "environment": {
+    "DB_HOST": "gamevault-db",
+    "DB_USERNAME": "gamevault",
+    "DB_PASSWORD": "02386af9-382f-49ad-841b-060735fd14d7"
+  },
+  "volumes": [
+    "big-bear-gamevault_files:/files",
+    "big-bear-gamevault_media:/media"
+  ]
+}
+    }
+  }
+}

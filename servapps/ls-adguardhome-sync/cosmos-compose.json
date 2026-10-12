@@ -16,7 +16,7 @@
     "services": {
       "ls-adguardhome-sync": {
   "container_name": "big-bear-ls-adguard-home-sync",
-  "image": "linuxserver/adguardhome-sync:0.9.3@sha256:a33045d29ac62693a09cacbc8ccc5c8e922b8f615abe8dcb6cca3da21b12d7f4",
+  "image": "linuxserver/adguardhome-sync:0.9.4@sha256:290cb744c10d37b926ee3d065b29c03c128ad561c63053c5a4154a14671ffd91",
   "restart": "unless-stopped",
   "environment": [
     "PUID=1000",

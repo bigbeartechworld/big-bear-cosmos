@@ -1,0 +1,21 @@
+{
+  "name": "Cloudreve",
+  "description": "Cloudreve 4.19.1 is a self-hosted file manager with multi-cloud storage, backed by Postgres and Redis.",
+  "url": "https://cloudreve.org",
+  "longDescription": "Cloudreve 4.19.1 is a self-hosted file manager with multi-cloud storage, backed by Postgres and Redis.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "files",
+    "storage"
+  ],
+  "repository": "https://github.com/cloudreve/Cloudreve",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/cloudreve.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/cloudreve.png"
+}

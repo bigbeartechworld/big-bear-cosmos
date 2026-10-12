@@ -1,0 +1,21 @@
+{
+  "name": "Cloudreve Fork",
+  "description": "Cloudreve Fork v4.23.0 is the Dvorinka open-source Cloudreve server. It uses the same Postgres and Redis layout as upstream and is not the official paid Pro image.",
+  "url": "https://github.com/Dvorinka/cloudreve",
+  "longDescription": "Cloudreve Fork v4.23.0 is the Dvorinka open-source Cloudreve server. It uses the same Postgres and Redis layout as upstream and is not the official paid Pro image.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "files",
+    "storage"
+  ],
+  "repository": "https://github.com/Dvorinka/cloudreve",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/cloudreve.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/cloudreve.png"
+}

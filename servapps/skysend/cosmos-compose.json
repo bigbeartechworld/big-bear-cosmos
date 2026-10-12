@@ -1,0 +1,36 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "SkySend",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://skysend:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "skysend": {
+  "image": "skyfay/skysend:v2.12.2@sha256:64fcc07d2dfedb15efa72badc538c452c9e889125bdd9f1e35347f14de108cc0",
+  "container_name": "skysend",
+  "restart": "unless-stopped",
+  "ports": [
+    "23001:3000"
+  ],
+  "volumes": [
+    "big-bear-skysend_data:/data",
+    "big-bear-skysend_uploads:/uploads"
+  ],
+  "environment": {
+    "BASE_URL": "http://localhost:23001",
+    "DATA_DIR": "/data",
+    "UPLOADS_DIR": "/uploads"
+  }
+}
+    }
+  }
+}

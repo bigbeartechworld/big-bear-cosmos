@@ -1,0 +1,20 @@
+{
+  "name": "Stoat",
+  "description": "Stoat is a self-hosted chat server, formerly Revolt. This stack runs the API, web app, file server, proxy, and voice ingress behind Caddy.",
+  "url": "https://stoat.chat/",
+  "longDescription": "Stoat is a self-hosted chat server, formerly Revolt. This stack runs the API, web app, file server, proxy, and voice ingress behind Caddy.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "chat",
+    "social"
+  ],
+  "repository": "https://github.com/stoatchat/stoatchat",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/stoat.png",
+  "supported_architectures": [
+    "amd64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/stoat.png"
+}

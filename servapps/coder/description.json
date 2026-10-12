@@ -1,0 +1,23 @@
+{
+  "name": "Coder",
+  "description": "Coder v2.36.7 is a self-hosted development-platform control plane with Postgres and a Docker socket for workspace templates.",
+  "url": "https://coder.com",
+  "longDescription": "Coder v2.36.7 is a self-hosted development-platform control plane with Postgres and a Docker socket for workspace templates.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "developer",
+    "ide",
+    "workspaces"
+  ],
+  "repository": "https://github.com/coder/coder",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/coder.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64",
+    "armv7"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/coder.png"
+}

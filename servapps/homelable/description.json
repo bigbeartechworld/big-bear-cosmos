@@ -1,0 +1,21 @@
+{
+  "name": "Homelable",
+  "description": "Homelable 3.5.1 is a self-hosted homelab diagram with live status monitoring.",
+  "url": "https://homelable.net",
+  "longDescription": "Homelable 3.5.1 is a self-hosted homelab diagram with live status monitoring.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "homelab",
+    "diagram"
+  ],
+  "repository": "https://github.com/Pouzor/homelable",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/homelable.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/homelable.png"
+}

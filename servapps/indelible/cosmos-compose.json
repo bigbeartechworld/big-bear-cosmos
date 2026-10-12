@@ -1,0 +1,63 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Indelible",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://indelible:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "indelible": {
+  "image": "ghcr.io/useindelible/ind-api:0.1.1@sha256:04604c1bd64148b1bbb4edac8d4cc395b8332de97da6e9ffedeb60faffb526ab",
+  "container_name": "indelible",
+  "restart": "unless-stopped",
+  "environment": {
+    "IND_ENV": "development",
+    "DATABASE_URL": "postgres://indelible:1c200d72-b081-4f40-a3c3-cb98d604ad76@postgres:5432/indelible",
+    "S3_ENDPOINT": "http://silo:9000",
+    "S3_REGION": "us-east-1",
+    "S3_BUCKET": "indelible",
+    "S3_ACCESS_KEY": "indelible",
+    "S3_SECRET_KEY": "2f32d346-ff03-48cb-bfed-2ead51511aa8",
+    "S3_FORCE_PATH_STYLE": "true",
+    "AUTH_CREDENTIAL_KEY": "PFy8QhmU0ZU6H1RFu/ZiIYaEZxVBFPMs4JqHWJ840ZI=",
+    "EGRESS_ALLOW_PRIVATE_TARGETS": "false",
+    "IND_HOST": "0.0.0.0",
+    "IND_PORT": "8080",
+    "IND_BASE_URL": "http://localhost:38473",
+    "FRONTEND_URL": "http://localhost:38473",
+    "EXTENSION_REDIRECT_URIS": "https://jidilhjojlgndbpeooeeceohmkedooef.chromiumapp.org/indelible,https://38bd18db5de5caccb6ab6c1271fec03ec1662d5c.extensions.allizom.org/indelible",
+    "CORS_ORIGINS": "http://localhost:38473",
+    "JWT_SECRET": "GuLcGAJ92GTP4Xg-iUJCs44iB6bf7vebfRVEofYB0OM",
+    "CSRF_SECRET": "F3uBgXCtF4d79aPkxskk5aBEjTP4nhiMXe-FN2A15Co",
+    "ASSET_COOKIE_SECRET": "32e43181ad36e8465cb37f846b0d4117ef56402764aa5f9757055b3fac419e98",
+    "OIDC_ENABLED": "false"
+  },
+  "extra_hosts": [
+    "host.docker.internal:host-gateway"
+  ],
+  "ports": [
+    "38473:8080"
+  ],
+  "depends_on": {
+    "postgres": {
+      "condition": "service_healthy"
+    },
+    "silo": {
+      "condition": "service_healthy"
+    },
+    "indelible-silo-init": {
+      "condition": "service_completed_successfully"
+    }
+  }
+}
+    }
+  }
+}

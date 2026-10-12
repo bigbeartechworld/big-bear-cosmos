@@ -1,0 +1,56 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "OmniRoute",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://omniroute:20128",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "omniroute": {
+  "image": "diegosouzapw/omniroute:3.8.51@sha256:8bd462c9f60d8eda79329cfbb6ea7ea723505fe7721beb944f3d43835409e218",
+  "container_name": "omniroute",
+  "restart": "unless-stopped",
+  "stop_grace_period": "40s",
+  "environment": {
+    "DATA_DIR": "/app/data",
+    "REDIS_URL": "redis://redis:6379",
+    "REQUIRE_API_KEY": "true",
+    "INITIAL_PASSWORD": "0efefa3c-54ae-4848-b7bc-295f91483fe7",
+    "OMNIROUTE_MEMORY_MB": "2048"
+  },
+  "ports": [
+    "20128:20128",
+    "20129:20129",
+    "20132:20132"
+  ],
+  "volumes": [
+    "big-bear-omniroute_data:/app/data"
+  ],
+  "depends_on": {
+    "redis": {
+      "condition": "service_healthy"
+    }
+  },
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "node",
+      "healthcheck.mjs"
+    ],
+    "interval": "30s",
+    "timeout": "5s",
+    "retries": 3,
+    "start_period": "20s"
+  }
+}
+    }
+  }
+}

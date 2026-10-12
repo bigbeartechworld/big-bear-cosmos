@@ -1,0 +1,38 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Continuwuity",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://continuwuity:8008",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "continuwuity": {
+  "image": "forgejo.ellis.link/continuwuation/continuwuity:v26.7.2@sha256:b5f5d7454a3e8dda041fc82084088409f2c34905ff51274955d52050203a87af",
+  "container_name": "continuwuity",
+  "restart": "unless-stopped",
+  "command": "/sbin/conduwuit",
+  "ports": [
+    "20006:8008"
+  ],
+  "volumes": [
+    "big-bear-continuwuity_data:/var/lib/continuwuity"
+  ],
+  "environment": {
+    "CONTINUWUITY_SERVER_NAME": "matrix.localhost",
+    "CONTINUWUITY_DATABASE_PATH": "/var/lib/continuwuity",
+    "CONTINUWUITY_ADDRESS": "0.0.0.0",
+    "CONTINUWUITY_PORT": "8008",
+    "CONTINUWUITY_ALLOW_FEDERATION": "false"
+  }
+}
+    }
+  }
+}

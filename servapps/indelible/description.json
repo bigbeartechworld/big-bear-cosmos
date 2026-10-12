@@ -1,0 +1,22 @@
+{
+  "name": "Indelible",
+  "description": "Indelible is a self-hosted read-it-later and knowledge library. It stores articles, newsletters, PDFs, and EPUBs in PostgreSQL and an S3-compatible object store, and the API serves the web app on the same port.",
+  "url": "https://useindelible.com/",
+  "longDescription": "Indelible is a self-hosted read-it-later and knowledge library. It stores articles, newsletters, PDFs, and EPUBs in PostgreSQL and an S3-compatible object store, and the API serves the web app on the same port.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "read-it-later",
+    "knowledge",
+    "reading"
+  ],
+  "repository": "https://github.com/useindelible/indelible",
+  "image": "https://cdn.jsdelivr.net/gh/useindelible/indelible@v0.1.1/web/static/favicon.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/useindelible/indelible@v0.1.1/web/static/favicon.png"
+}

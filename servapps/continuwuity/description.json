@@ -1,0 +1,21 @@
+{
+  "name": "Continuwuity",
+  "description": "Continuwuity v26.7.2 is a community-driven Matrix homeserver and the continuation of conduwuit.",
+  "url": "https://continuwuity.org",
+  "longDescription": "Continuwuity v26.7.2 is a community-driven Matrix homeserver and the continuation of conduwuit.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "matrix",
+    "chat"
+  ],
+  "repository": "https://github.com/continuwuity/continuwuity",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/continuwuity.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/continuwuity.png"
+}
