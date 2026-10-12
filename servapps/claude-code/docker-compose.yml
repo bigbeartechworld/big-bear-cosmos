@@ -1,0 +1,75 @@
+cosmos-installer: null
+services:
+  claude:
+    image: ghcr.io/worph/claude-code-container:1.0.28@sha256:a73863d23af0222037a0d51cef0c350bfd86825f693cc9bbf889a6484aad2f94
+    container_name: claude-code-app
+    restart: unless-stopped
+    ports:
+      - "20041:9090"
+    environment:
+      ANTHROPIC_API_KEY: ""
+      AUTH_PASSWORD: "9c93e0aa-ebe4-4737-b222-d6445c64da29"
+      MCP_ENABLED: "true"
+      CLAUDE_SESSION_TTL: "1800"
+    entrypoint: /bin/sh -c until(cat</home/claude/workspace/.cosmos-run)2>/dev/null;do(IFS=,;s=$1;$s);done;IFS=,;z=$2;$z dummy sleep,1 exec,/home/claude/workspace/.cosmos-run
+    volumes:
+      - big-bear-claude_code_workspace:/home/claude/workspace
+      - big-bear-claude_code_config:/home/claude/.claude
+      - /var/run/docker.sock:/var/run/docker.sock
+    post_install:
+      - |-
+        mkdir -p /home/claude/workspace
+        cat > /home/claude/workspace/.cosmos-run.tmp <<'BB_COSMOS_RUN'
+        #!/bin/sh
+        if [ -z "$AUTH_PASSWORD" ] || [ "$AUTH_PASSWORD" = "9c93e0aa-ebe4-4737-b222-d6445c64da29" ]; then
+          echo "Replace AUTH_PASSWORD before start. An empty value opens the API, and the catalog value is public. This container mounts the Docker socket." >&2
+          exit 1
+        fi
+        exec /init
+        BB_COSMOS_RUN
+        chmod +x /home/claude/workspace/.cosmos-run.tmp
+        mv /home/claude/workspace/.cosmos-run.tmp /home/claude/workspace/.cosmos-run
+  caddy:
+    image: caddy:2.11.6@sha256:3422ce6de165df66534f9b9ba50efaf457114ec961763cc52f5dbdaac2972d73
+    container_name: claude-code-caddy
+    restart: unless-stopped
+    depends_on:
+      - claude
+    ports:
+      - "20040:8080"
+    networks:
+      default:
+        aliases:
+          - claude-code
+    configs:
+      - source: caddyfile
+        target: /etc/caddy/Caddyfile
+configs:
+  caddyfile:
+    content: |
+      :8080 {
+        handle /login* {
+          reverse_proxy claude:9090
+        }
+        handle /logout {
+          reverse_proxy claude:9090
+        }
+        handle {
+          forward_auth claude:9090 {
+            uri /auth
+            @unauthorized status 401
+            handle_response @unauthorized {
+              redir * /login
+            }
+          }
+          reverse_proxy claude:8080
+        }
+      }
+volumes:
+  big-bear-claude_code_workspace:
+    name: big-bear-claude_code_workspace
+    driver: local
+  big-bear-claude_code_config:
+    name: big-bear-claude_code_config
+    driver: local
+minVersion: 0.14.0

@@ -1,0 +1,46 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Cloudreve",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://cloudreve:5212",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "cloudreve": {
+  "image": "cloudreve/cloudreve:4.19.1@sha256:5c6c5baf7fa5bc6e1bb9a7509c09dde00e80b618d180244eb1d5f7e36b358ea2",
+  "container_name": "cloudreve",
+  "restart": "unless-stopped",
+  "depends_on": {
+    "postgresql": {
+      "condition": "service_started"
+    },
+    "redis": {
+      "condition": "service_started"
+    }
+  },
+  "ports": [
+    "5212:5212"
+  ],
+  "environment": {
+    "CR_CONF_Database.Type": "postgres",
+    "CR_CONF_Database.Host": "postgresql",
+    "CR_CONF_Database.User": "cloudreve",
+    "CR_CONF_Database.Name": "cloudreve",
+    "CR_CONF_Database.Port": "5432",
+    "CR_CONF_Redis.Server": "redis:6379"
+  },
+  "volumes": [
+    "big-bear-cloudreve_data:/cloudreve/data"
+  ]
+}
+    }
+  }
+}

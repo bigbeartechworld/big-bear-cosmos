@@ -1,0 +1,22 @@
+{
+  "name": "SkySend",
+  "description": "SkySend is a self-hosted file and note sharing service. Files and notes are encrypted in the browser before they are stored, and the server keeps only encrypted blobs.",
+  "url": "https://github.com/skyfay/skysend",
+  "longDescription": "SkySend is a self-hosted file and note sharing service. Files and notes are encrypted in the browser before they are stored, and the server keeps only encrypted blobs.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "files",
+    "encryption",
+    "sharing"
+  ],
+  "repository": "https://github.com/skyfay/skysend",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/skysend.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/skysend.png"
+}

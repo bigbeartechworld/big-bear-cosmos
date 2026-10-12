@@ -1,0 +1,33 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Homelable",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://homelable:80",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "homelable": {
+  "image": "ghcr.io/pouzor/homelable-frontend:3.5.1@sha256:d307875b5afe484f5f082170af829b10259b07676e29e142c0de07ebc5cbba04",
+  "container_name": "homelable",
+  "restart": "unless-stopped",
+  "depends_on": [
+    "backend"
+  ],
+  "ports": [
+    "20033:80"
+  ],
+  "environment": {
+    "BACKEND_UPSTREAM": "backend:8000"
+  }
+}
+    }
+  }
+}

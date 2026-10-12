@@ -1,0 +1,44 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Trackie",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://trackie:5006",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "trackie": {
+  "image": "ghcr.io/trackie-nz/trackie:26.9.0@sha256:7c13fedacc7232f10ed3ebc59374c1b2fbe42f89d04575d2838992fb9587540d",
+  "container_name": "trackie",
+  "restart": "unless-stopped",
+  "ports": [
+    "20005:5006"
+  ],
+  "volumes": [
+    "big-bear-trackie_data:/data"
+  ],
+  "environment": {
+    "NODE_ENV": "production",
+    "ACTUAL_LOGIN_METHOD": "openid",
+    "ACTUAL_OPENID_ENFORCE": "true",
+    "ACTUAL_USER_CREATION_MODE": "login",
+    "ACTUAL_OPENID_DISCOVERY_URL": "",
+    "ACTUAL_OPENID_CLIENT_ID": "",
+    "ACTUAL_OPENID_CLIENT_SECRET": "",
+    "ACTUAL_OPENID_SERVER_HOSTNAME": "http://localhost:20005",
+    "ACTUAL_TOKEN_EXPIRATION": "7776000",
+    "ACTUAL_IDENTITY_SECRET": "v3smK3KDuHTlcUVTDXPLGCilbm3y3-0OGF6PYX-iIQ0",
+    "ACTUAL_AKAHU_TOKEN_SECRET": "jQBA8ydLKvkPN8tc1duO2vQRY-yhpXI0fq6Xxc1sNhQ",
+    "TZ": "Pacific/Auckland"
+  }
+}
+    }
+  }
+}

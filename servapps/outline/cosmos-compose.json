@@ -1,0 +1,52 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Outline",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://outline:3000",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "outline": {
+  "image": "docker.getoutline.com/outlinewiki/outline:1.10.1@sha256:832051f039b446c87aa23929cf92c00980c66aaa2d744d118c48c016ec816ad8",
+  "container_name": "outline",
+  "restart": "unless-stopped",
+  "environment": {
+    "NODE_ENV": "production",
+    "URL": "http://localhost:23000",
+    "PORT": "3000",
+    "SECRET_KEY": "6f3cbf7b3415ec195adc0cc98a3fc7f5953de9e8b77bff78e34584867ecb60f4",
+    "UTILS_SECRET": "X8p5_gwAyZJW_MION_hihkRrU77tZHpu_4oJvLgWY4E",
+    "DATABASE_URL": "postgres://outline:82d982a5-0329-46f7-a098-4e4cce10f3c2@postgres:5432/outline",
+    "PGSSLMODE": "disable",
+    "REDIS_URL": "redis://redis:6379",
+    "FILE_STORAGE": "local",
+    "FILE_STORAGE_LOCAL_ROOT_DIR": "/var/lib/outline/data",
+    "FILE_STORAGE_UPLOAD_MAX_SIZE": "262144000",
+    "FORCE_HTTPS": "false"
+  },
+  "ports": [
+    "23000:3000"
+  ],
+  "volumes": [
+    "big-bear-outline_storage:/var/lib/outline/data"
+  ],
+  "depends_on": {
+    "postgres": {
+      "condition": "service_healthy"
+    },
+    "redis": {
+      "condition": "service_healthy"
+    }
+  }
+}
+    }
+  }
+}

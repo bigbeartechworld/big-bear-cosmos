@@ -16,7 +16,7 @@
     "services": {
       "n8n": {
   "container_name": "n8n",
-  "image": "n8nio/n8n:2.43.2@sha256:7ac2b8fbc369681c0ae15d2722ecea5c416827c0d9ed5fb6b952512b8bc7614c",
+  "image": "n8nio/n8n:2.43.3@sha256:d4eca183959b30fb1ba5ecda7e58363c5be49a7bcf8c0227a6384a47ce2f7a65",
   "restart": "unless-stopped",
   "ports": [
     "5678:5678"

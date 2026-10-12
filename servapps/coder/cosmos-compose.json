@@ -1,0 +1,41 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Coder",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://coder:7080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "coder": {
+  "image": "ghcr.io/coder/coder:v2.36.7@sha256:e8b2743529aea6a1e77bba764c8ec4a04dec65d27ca9caa0ec0b2dbcd3db0565",
+  "container_name": "coder",
+  "restart": "unless-stopped",
+  "ports": [
+    "7080:7080"
+  ],
+  "environment": {
+    "CODER_PG_CONNECTION_URL": "postgresql://coder:918063d1-fb62-438f-8cbf-49e01f7364ff@database/coder?sslmode=disable",
+    "CODER_HTTP_ADDRESS": "0.0.0.0:7080",
+    "CODER_ACCESS_URL": "http://localhost:7080"
+  },
+  "volumes": [
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "big-bear-coder_home:/home/coder"
+  ],
+  "depends_on": {
+    "database": {
+      "condition": "service_healthy"
+    }
+  }
+}
+    }
+  }
+}

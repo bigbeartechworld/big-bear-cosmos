@@ -1,0 +1,21 @@
+{
+  "name": "DocuSeal",
+  "description": "DocuSeal 3.3.1 is an open-source platform to create, fill, and sign PDF documents.",
+  "url": "https://www.docuseal.com",
+  "longDescription": "DocuSeal 3.3.1 is an open-source platform to create, fill, and sign PDF documents.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "documents",
+    "signing"
+  ],
+  "repository": "https://github.com/docusealco/docuseal",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/docuseal.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/docuseal.png"
+}

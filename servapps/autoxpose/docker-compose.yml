@@ -1,0 +1,19 @@
+cosmos-installer: null
+services:
+  autoxpose:
+    image: mostafawahied/autoxpose:0.5.2@sha256:5e29bc48b7b164127f1ade8f3d9be9dba06e665ed2cdeeb569173fa343eca5d3
+    container_name: autoxpose
+    restart: unless-stopped
+    ports:
+      - "4949:3000"
+    environment:
+      SERVER_IP: ""
+      LAN_IP: ""
+    volumes:
+      - big-bear-autoxpose_data:/app/packages/backend/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+volumes:
+  big-bear-autoxpose_data:
+    name: big-bear-autoxpose_data
+    driver: local
+minVersion: 0.14.0

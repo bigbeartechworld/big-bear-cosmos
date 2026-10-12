@@ -1,0 +1,23 @@
+{
+  "name": "AFFiNE",
+  "description": "AFFiNE 0.27.4 is a self-hosted workspace for docs, whiteboards, and knowledge bases, with Postgres and Redis.",
+  "url": "https://affine.pro",
+  "longDescription": "AFFiNE 0.27.4 is a self-hosted workspace for docs, whiteboards, and knowledge bases, with Postgres and Redis.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "notes",
+    "wiki",
+    "whiteboard",
+    "productivity"
+  ],
+  "repository": "https://github.com/toeverything/AFFiNE",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/affine.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/affine.png"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Claude Code Container",
+  "description": "Claude Code Container 1.0.28 runs Anthropic Claude Code in a browser terminal and an MCP API.",
+  "url": "https://github.com/worph/claude-code-container",
+  "longDescription": "Claude Code Container 1.0.28 runs Anthropic Claude Code in a browser terminal and an MCP API.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "ai",
+    "claude",
+    "developer"
+  ],
+  "repository": "https://github.com/worph/claude-code-container",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/claude.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/claude.png"
+}

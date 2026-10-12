@@ -1,0 +1,22 @@
+{
+  "name": "openGym",
+  "description": "openGym is a self-hosted gym and body-weight tracker. It plans workouts, logs sets, and signs you in with passkeys. The web container proxies the API and serves exercise media.",
+  "url": "https://github.com/DuarteSantos8/openGym",
+  "longDescription": "openGym is a self-hosted gym and body-weight tracker. It plans workouts, logs sets, and signs you in with passkeys. The web container proxies the API and serves exercise media.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "fitness",
+    "health",
+    "workout"
+  ],
+  "repository": "https://github.com/DuarteSantos8/openGym",
+  "image": "https://cdn.jsdelivr.net/gh/DuarteSantos8/openGym@main/frontend/public/icon-512.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/DuarteSantos8/openGym@main/frontend/public/icon-512.png"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Yuvomi",
+  "description": "Yuvomi is a self-hosted family planner for tasks, calendar, meals, shopping, budget, and documents. It stores data in one SQLite database on your server.",
+  "url": "https://yuvomi.cloud/",
+  "longDescription": "Yuvomi is a self-hosted family planner for tasks, calendar, meals, shopping, budget, and documents. It stores data in one SQLite database on your server.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "family",
+    "calendar",
+    "household"
+  ],
+  "repository": "https://github.com/ulsklyc/yuvomi",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/yuvomi.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/yuvomi.png"
+}

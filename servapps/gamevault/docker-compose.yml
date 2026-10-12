@@ -1,0 +1,44 @@
+cosmos-installer: null
+services:
+  gamevault:
+    image: phalcode/gamevault-backend:17.0.1@sha256:f3c599d4fc7498eb2028cfd611dc27b3f707c83a7ce9a86ec3ec8256a42409ba
+    container_name: gamevault
+    restart: unless-stopped
+    depends_on:
+      gamevault-db:
+        condition: service_healthy
+    ports:
+      - "20032:8080"
+    environment:
+      DB_HOST: gamevault-db
+      DB_USERNAME: gamevault
+      DB_PASSWORD: 02386af9-382f-49ad-841b-060735fd14d7
+    volumes:
+      - big-bear-gamevault_files:/files
+      - big-bear-gamevault_media:/media
+  gamevault-db:
+    image: postgres:18.6@sha256:5a5a84b19854a9ffaa54082c166ff4ec27473a361e496e5ea167f298f2da9722
+    container_name: gamevault-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gamevault
+      POSTGRES_PASSWORD: 02386af9-382f-49ad-841b-060735fd14d7
+      POSTGRES_DB: gamevault
+    volumes:
+      - big-bear-gamevault_database:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gamevault -d gamevault"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  big-bear-gamevault_files:
+    name: big-bear-gamevault_files
+    driver: local
+  big-bear-gamevault_media:
+    name: big-bear-gamevault_media
+    driver: local
+  big-bear-gamevault_database:
+    name: big-bear-gamevault_database
+    driver: local
+minVersion: 0.14.0

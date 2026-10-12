@@ -1,0 +1,49 @@
+cosmos-installer: null
+services:
+  zimabrain:
+    image: gelbuilding/zimabrain-ce:1.6.0-beta@sha256:930c689a0f4389b767d726dbc41766590ca5d58cd030f840099ec0ddf382cca5
+    container_name: zimabrain
+    restart: unless-stopped
+    privileged: true
+    pid: host
+    ports:
+      - "8601:8601"
+    environment:
+      ZIMABRAIN_PASSWORD: 79526452-173c-49bc-873f-956f5a9838cb
+      ZIMABRAIN_SECRET_KEY: qC57Chx7nDu_juH55MXIma7EsHMKLSwBN9CgWFESkqU
+      ZIMABRAIN_MONITOR_ENABLED: "true"
+      ZIMABRAIN_MONITOR_INTERVAL_SECONDS: "60"
+      ZIMABRAIN_MONITOR_RETENTION_DAYS: "7"
+    volumes:
+      - big-bear-zimabrain_data:/data
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/hostname:/host/etc/hostname:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    entrypoint: /bin/sh -c until(cat</data/.cosmos-run)2>/dev/null;do(IFS=,;s=$1;$s);done;IFS=,;z=$2;$z dummy sleep,1 exec,/data/.cosmos-run
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8601/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    post_install:
+      - |-
+        mkdir -p /data
+        cat > /data/.cosmos-run.tmp <<'BB_COSMOS_RUN'
+        #!/bin/sh
+        if [ -z "$ZIMABRAIN_PASSWORD" ] || [ "$ZIMABRAIN_PASSWORD" = "79526452-173c-49bc-873f-956f5a9838cb" ]; then
+          echo "Set ZIMABRAIN_PASSWORD to your own value before start. The catalog value is public, and an empty value opens first-run setup on port 8601." >&2
+          exit 1
+        fi
+        exec python /app/flask_app.py
+        BB_COSMOS_RUN
+        chmod +x /data/.cosmos-run.tmp
+        mv /data/.cosmos-run.tmp /data/.cosmos-run
+volumes:
+  big-bear-zimabrain_data:
+    name: big-bear-zimabrain_data
+    driver: local
+minVersion: 0.14.0

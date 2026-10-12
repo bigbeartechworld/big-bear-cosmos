@@ -1,0 +1,20 @@
+{
+  "name": "GameVault",
+  "description": "GameVault 17.0.1 is a self-hosted library for DRM-free games, with a web UI and PostgreSQL.",
+  "url": "https://gamevau.lt",
+  "longDescription": "GameVault 17.0.1 is a self-hosted library for DRM-free games, with a web UI and PostgreSQL.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "games"
+  ],
+  "repository": "https://github.com/Phalcode/gamevault-backend",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/gamevault.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/gamevault.png"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Outline",
+  "description": "Outline is a self-hosted team wiki and knowledge base. This stack runs the Outline server with PostgreSQL 18 and Redis, and stores uploads on a local volume.",
+  "url": "https://www.getoutline.com/",
+  "longDescription": "Outline is a self-hosted team wiki and knowledge base. This stack runs the Outline server with PostgreSQL 18 and Redis, and stores uploads on a local volume.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "wiki",
+    "knowledge",
+    "productivity"
+  ],
+  "repository": "https://github.com/outline/outline",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/outline.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/outline.png"
+}

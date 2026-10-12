@@ -1,0 +1,21 @@
+{
+  "name": "Web-Check",
+  "description": "Web-Check is an on-demand OSINT tool for analysing any website: server, security headers, technologies, DNS, and related public signals.",
+  "url": "https://web-check.xyz",
+  "longDescription": "Web-Check is an on-demand OSINT tool for analysing any website: server, security headers, technologies, DNS, and related public signals.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "osint",
+    "networking"
+  ],
+  "repository": "https://github.com/lissy93/web-check",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/web-check.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/web-check.png"
+}
