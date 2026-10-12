@@ -1,0 +1,38 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "FileBrowser Quantum v2",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://filebrowser-quantum-v2:8701",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "filebrowser-quantum-v2": {
+  "container_name": "big-bear-filebrowser-quantum-v2",
+  "image": "gtstef/filebrowser:2.0.0-stable@sha256:9d42f635e32913d7daf05259428b6c70061cfdca3affc9602b4c31717e0a4bae",
+  "restart": "unless-stopped",
+  "environment": [
+    "TZ=UTC",
+    "FILEBROWSER_DATABASE_PATH=/home/filebrowser/data/database.sqlite"
+  ],
+  "volumes": [
+    "big-bear-filebrowser-quantum-v2_data:/home/filebrowser/data",
+    "big-bear-filebrowser-quantum-v2_srv:/srv"
+  ],
+  "ports": [
+    "8701:80"
+  ],
+  "networks": [
+    "big-bear-filebrowser-quantum-v2-network"
+  ]
+}
+    }
+  }
+}
