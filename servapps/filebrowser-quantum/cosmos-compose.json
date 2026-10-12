@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "FileBrowser Quantum",
+          "name": "FileBrowser Quantum (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://filebrowser-quantum:8700",
