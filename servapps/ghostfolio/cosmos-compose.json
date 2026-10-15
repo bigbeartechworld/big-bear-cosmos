@@ -16,7 +16,7 @@
     "services": {
       "ghostfolio": {
   "container_name": "big-bear-ghostfolio",
-  "image": "ghostfolio/ghostfolio:3.83.0@sha256:8f22c08366cf8692ae83a144b938ed870f04fcad5ccf1d0f67b9bff671f2460b",
+  "image": "ghostfolio/ghostfolio:3.84.2@sha256:8dd6b9bd5cad3aa886e87300b89edc0fe2dd583e622b4e45669c139bc734bd36",
   "restart": "unless-stopped",
   "environment": {
     "NODE_ENV": "production",
