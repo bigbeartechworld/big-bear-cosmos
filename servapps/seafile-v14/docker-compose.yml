@@ -1,0 +1,122 @@
+cosmos-installer: null
+# SEAFILE V14 - NEW DEPLOYMENT
+# ============================
+# This is a SEPARATE app from 'seafile' (11.0.13, Legacy). They can coexist.
+#
+# WHY A NEW APP:
+# - Seafile 12 and 13 replaced the 11.x setup scripts and DB_HOST / DB_ROOT_PASSWD / SEAFILE_ADMIN_* variables
+#   with SEAFILE_MYSQL_DB_*, INIT_SEAFILE_* and JWT_PRIVATE_KEY
+# - JWT_PRIVATE_KEY is mandatory (32+ characters)
+# - Redis is now the default cache. Memcached is optional
+# - Nginx inside the image no longer reads config from the mapped volume
+# - The database is migrated in place on first start and cannot be downgraded
+# - Major versions must be upgraded one at a time (11 -> 12 -> 13 -> 14). An image tag change is not an upgrade
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for a new Seafile 14 instance
+# - Web UI is on host port 8146 on CasaOS, Portainer, Dockge and Cosmos (8080 stays with the 11.0.13 app)
+# - Set SEAFILE_SERVER_HOSTNAME to the IP or domain plus port that clients use (for example 192.168.1.10:8146)
+# - On Portainer, edit it in the stack editor after deploying and update the stack. If the editor is read-only, detach the stack from Git first
+# - The value must contain a dot, so localhost is rejected. Seafile builds every download and upload link from it
+# - Change the committed passwords and JWT_PRIVATE_KEY before exposing the app. REDIS_PASSWORD and the root password appear on two services, change both
+#
+# FOR MIGRATION FROM 11.0.13:
+# - Do NOT uninstall the existing 'seafile' app
+# - Do NOT attach this app to the seafile_mysql or seafile_shared volumes
+# - Back up both volumes, then follow the official step-by-step upgrade notes
+# - Migration: https://manual.seafile.com/latest/upgrade/upgrade_docker/
+
+services:
+  big-bear-seafile-v14:
+    container_name: big-bear-seafile-v14
+    image: seafileltd/seafile-mc:14.0.9@sha256:75d8b88e8bfaa54099082aec0e99ff1a962bd364bfc21da34125fa66998f0861
+    restart: unless-stopped
+    depends_on:
+      big-bear-seafile-v14-db:
+        condition: service_healthy
+      big-bear-seafile-v14-redis:
+        condition: service_started
+    volumes:
+      - big-bear-seafile-v14_shared:/shared
+    ports:
+      - "8146:80"
+    environment:
+      - SEAFILE_MYSQL_DB_HOST=big-bear-seafile-v14-db
+      - SEAFILE_MYSQL_DB_PORT=3306
+      - SEAFILE_MYSQL_DB_USER=seafile
+      - SEAFILE_MYSQL_DB_PASSWORD=7201efed-a8a4-4b77-9e04-08a33d01c2ad
+      - INIT_SEAFILE_MYSQL_ROOT_PASSWORD=175fa483-c07b-4172-b065-5076bb526f45
+      - SEAFILE_MYSQL_DB_CCNET_DB_NAME=ccnet_db
+      - SEAFILE_MYSQL_DB_SEAFILE_DB_NAME=seafile_db
+      - SEAFILE_MYSQL_DB_SEAHUB_DB_NAME=seahub_db
+      - TIME_ZONE=Etc/UTC
+      - INIT_SEAFILE_ADMIN_EMAIL=admin@example.com
+      - INIT_SEAFILE_ADMIN_PASSWORD=e1c68646-4097-4781-bb87-7e92e7f851cb
+      - SEAFILE_SERVER_HOSTNAME=127.0.0.1:8146
+      - SEAFILE_SERVER_PROTOCOL=http
+      - JWT_PRIVATE_KEY=667dc128-2d73-4d3b-a02a-2f1ac1ce78df
+      - ENABLE_SEADOC=false
+      - CACHE_PROVIDER=redis
+      - REDIS_HOST=big-bear-seafile-v14-redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=82587955-1f5f-40bd-9e5f-aba55571a8ae
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - big-bear-seafile-v14-network
+  big-bear-seafile-v14-db:
+    container_name: big-bear-seafile-v14-db
+    image: mariadb:10.11@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=175fa483-c07b-4172-b065-5076bb526f45
+      - MYSQL_LOG_CONSOLE=true
+      - MARIADB_AUTO_UPGRADE=1
+    volumes:
+      - big-bear-seafile-v14_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--mariadbupgrade", "--innodb_initialized"]
+      start_period: 1m
+      start_interval: 10s
+      interval: 1m
+      timeout: 5s
+      retries: 3
+    networks:
+      - big-bear-seafile-v14-network
+  big-bear-seafile-v14-redis:
+    container_name: big-bear-seafile-v14-redis
+    image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
+    restart: unless-stopped
+    environment:
+      - REDIS_PASSWORD=82587955-1f5f-40bd-9e5f-aba55571a8ae
+    networks:
+      - big-bear-seafile-v14-network
+    volumes:
+      - cosmos-run-seafile-v14-big-bear-seafile-v14-redis:/var/lib/cosmos-run
+    entrypoint: /bin/sh -c until(cat</var/lib/cosmos-run/.cosmos-run)2>/dev/null;do(IFS=,;s=$1;$s);done;IFS=,;z=$2;$z dummy sleep,1 exec,/var/lib/cosmos-run/.cosmos-run
+    post_install:
+      - |-
+        mkdir -p /var/lib/cosmos-run
+        cat > /var/lib/cosmos-run/.cosmos-run.tmp <<'BB_COSMOS_RUN'
+        #!/bin/sh
+        exec docker-entrypoint.sh redis-server --requirepass "$REDIS_PASSWORD" --save "" --appendonly no
+        BB_COSMOS_RUN
+        chmod +x /var/lib/cosmos-run/.cosmos-run.tmp
+        mv /var/lib/cosmos-run/.cosmos-run.tmp /var/lib/cosmos-run/.cosmos-run
+networks:
+  big-bear-seafile-v14-network:
+    driver: bridge
+volumes:
+  big-bear-seafile-v14_mysql:
+    name: big-bear-seafile-v14_mysql
+    driver: local
+  big-bear-seafile-v14_shared:
+    name: big-bear-seafile-v14_shared
+    driver: local
+  cosmos-run-seafile-v14-big-bear-seafile-v14-redis:
+    driver: local
+minVersion: 0.14.0

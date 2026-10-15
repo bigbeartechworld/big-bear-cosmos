@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "seafile",
+          "name": "Seafile (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://seafile:8080",
