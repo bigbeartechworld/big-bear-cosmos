@@ -1,0 +1,20 @@
+{
+  "name": "Seafile v14",
+  "description": "Seafile is an open source file sync and share platform, focusing on reliability and performance.",
+  "url": "https://hub.docker.com/r/seafileltd/seafile-mc",
+  "longDescription": "Seafile is an open source file sync and share platform, focusing on reliability and performance.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "bigbearcasaos",
+    "container"
+  ],
+  "repository": "https://github.com/bigbeartechworld",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/seafile.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/seafile.png"
+}

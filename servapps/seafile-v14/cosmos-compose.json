@@ -1,0 +1,72 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "Seafile v14",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://seafile-v14:8146",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "seafile-v14": {
+  "container_name": "big-bear-seafile-v14",
+  "image": "seafileltd/seafile-mc:14.0.9@sha256:75d8b88e8bfaa54099082aec0e99ff1a962bd364bfc21da34125fa66998f0861",
+  "restart": "unless-stopped",
+  "depends_on": {
+    "big-bear-seafile-v14-db": {
+      "condition": "service_healthy"
+    },
+    "big-bear-seafile-v14-redis": {
+      "condition": "service_started"
+    }
+  },
+  "volumes": [
+    "big-bear-seafile-v14_shared:/shared"
+  ],
+  "ports": [
+    "8146:80"
+  ],
+  "environment": [
+    "SEAFILE_MYSQL_DB_HOST=big-bear-seafile-v14-db",
+    "SEAFILE_MYSQL_DB_PORT=3306",
+    "SEAFILE_MYSQL_DB_USER=seafile",
+    "SEAFILE_MYSQL_DB_PASSWORD=7201efed-a8a4-4b77-9e04-08a33d01c2ad",
+    "INIT_SEAFILE_MYSQL_ROOT_PASSWORD=175fa483-c07b-4172-b065-5076bb526f45",
+    "SEAFILE_MYSQL_DB_CCNET_DB_NAME=ccnet_db",
+    "SEAFILE_MYSQL_DB_SEAFILE_DB_NAME=seafile_db",
+    "SEAFILE_MYSQL_DB_SEAHUB_DB_NAME=seahub_db",
+    "TIME_ZONE=Etc/UTC",
+    "INIT_SEAFILE_ADMIN_EMAIL=admin@example.com",
+    "INIT_SEAFILE_ADMIN_PASSWORD=e1c68646-4097-4781-bb87-7e92e7f851cb",
+    "SEAFILE_SERVER_HOSTNAME=127.0.0.1:8146",
+    "SEAFILE_SERVER_PROTOCOL=http",
+    "JWT_PRIVATE_KEY=667dc128-2d73-4d3b-a02a-2f1ac1ce78df",
+    "ENABLE_SEADOC=false",
+    "CACHE_PROVIDER=redis",
+    "REDIS_HOST=big-bear-seafile-v14-redis",
+    "REDIS_PORT=6379",
+    "REDIS_PASSWORD=82587955-1f5f-40bd-9e5f-aba55571a8ae"
+  ],
+  "healthcheck": {
+    "test": [
+      "CMD-SHELL",
+      "curl -f http://localhost:80 || exit 1"
+    ],
+    "interval": "30s",
+    "timeout": "10s",
+    "retries": 3,
+    "start_period": "60s"
+  },
+  "networks": [
+    "big-bear-seafile-v14-network"
+  ]
+}
+    }
+  }
+}
