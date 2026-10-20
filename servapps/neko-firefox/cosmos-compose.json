@@ -16,7 +16,7 @@
     "services": {
       "neko-firefox": {
   "container_name": "neko-firefox",
-  "image": "m1k1o/neko:firefox@sha256:bfe0c24640c8391b88bfb9e270048b5156d000a2c32f2c5ec023bd8d46b382d2",
+  "image": "m1k1o/neko:firefox@sha256:2a40cb2737fd411d6807b9c7fce5fa2273639e5b2836f64de5ee2ac16ed21c2a",
   "restart": "unless-stopped",
   "shm_size": "2gb",
   "ports": [
