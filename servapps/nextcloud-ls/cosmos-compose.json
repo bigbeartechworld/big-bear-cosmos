@@ -16,7 +16,7 @@
     "services": {
       "nextcloud-ls": {
   "container_name": "big-bear-nextcloud-ls",
-  "image": "linuxserver/nextcloud:35.0.1@sha256:1810a0c142be52be5129573d7a44beed90696d740bc8b91fdef738dc3fc50b82",
+  "image": "linuxserver/nextcloud:35.0.2@sha256:84205b9623211afb0d8d4493204236258606ff58e767ac017b1750e4eb715e3b",
   "restart": "unless-stopped",
   "ports": [
     "10443:443"
