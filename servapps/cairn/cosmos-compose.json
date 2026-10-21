@@ -1,0 +1,49 @@
+{
+  "cosmos-installer": {
+    "routes": [
+        {
+          "name": "cairn",
+          "description": "Web UI",
+          "useHost": true,
+          "target": "http://cairn:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "BlockAPIAbuse": true
+        }
+      ],
+    "services": {
+      "cairn": {
+  "image": "morgankryze/cairn:1.25.0@sha256:aa62518775284c228d4f7f20b05aef75426a3017ed1ecc74f157308e26b04c33",
+  "container_name": "cairn",
+  "ports": [
+    "8080:8080"
+  ],
+  "volumes": [
+    "big-bear-cairn_config:/config:ro"
+  ],
+  "read_only": true,
+  "cap_drop": [
+    "ALL"
+  ],
+  "security_opt": [
+    "no-new-privileges:true"
+  ],
+  "healthcheck": {
+    "test": [
+      "CMD",
+      "/cairn",
+      "-healthcheck"
+    ],
+    "interval": "30s",
+    "start_period": "5s"
+  },
+  "restart": "unless-stopped",
+  "networks": [
+    "cairn-network"
+  ]
+}
+    }
+  }
+}

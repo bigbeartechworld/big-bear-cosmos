@@ -1,0 +1,23 @@
+{
+  "name": "cairn",
+  "description": "cairn is the page you hand to the people you host services for: family, a club, whoever ends up using your server. One YAML file in, a static multilingual directory out, with no account to create, no database and no outbound requests. It shows your services and nothing else: no widgets, no Docker socket, no metrics. Each service can show a live status pill pulled from Gatus or Uptime Kuma, so visitors see what is up before they click, and cairn serves its own legal and privacy pages. It ships as a single static Go binary in a FROM scratch image, around 4 MB to pull, and it writes nothing at runtime, so it runs read-only with every Linux capability dropped.",
+  "url": "https://cairn.libresoftware.cloud",
+  "longDescription": "cairn is the page you hand to the people you host services for: family, a club, whoever ends up using your server. One YAML file in, a static multilingual directory out, with no account to create, no database and no outbound requests. It shows your services and nothing else: no widgets, no Docker socket, no metrics. Each service can show a live status pill pulled from Gatus or Uptime Kuma, so visitors see what is up before they click, and cairn serves its own legal and privacy pages. It ships as a single static Go binary in a FROM scratch image, around 4 MB to pull, and it writes nothing at runtime, so it runs read-only with every Linux capability dropped.",
+  "tags": [
+    "selfhosted",
+    "docker",
+    "bigbear",
+    "dashboard",
+    "homepage",
+    "startpage",
+    "directory",
+    "multilingual"
+  ],
+  "repository": "https://github.com/MorganKryze/cairn",
+  "image": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/cairn.png",
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/cairn.png"
+}
