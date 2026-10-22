@@ -16,7 +16,7 @@
     "services": {
       "odysseus": {
   "container_name": "big-bear-odysseus",
-  "image": "bigbeartechworld/big-bear-odysseus:2026.10.12@sha256:bbefbd095094007f6bd662b794099349f44e5a047c4590a88eb9c7c96651ab9c",
+  "image": "bigbeartechworld/big-bear-odysseus:2026.10.19@sha256:e5c849c09838d48e6adcfb80bc23e011516c07f68f83bb3fe081e5caf74b08e9",
   "restart": "unless-stopped",
   "ports": [
     "7000:7000"
