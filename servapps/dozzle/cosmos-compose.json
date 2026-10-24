@@ -16,7 +16,7 @@
     "services": {
       "dozzle": {
   "container_name": "big-bear-dozzle",
-  "image": "amir20/dozzle:v11.3.3@sha256:6d9e194587c20660f73967ee8567ce8e2e9e2e17046b0c95586a37a970b1d5ed",
+  "image": "amir20/dozzle:v11.3.4@sha256:8796ae7e1ecbe011482319cb7040e69aae91a0632b87bbe24b3f643e7455d94b",
   "restart": "unless-stopped",
   "volumes": [
     "/var/run/docker.sock:/var/run/docker.sock"
