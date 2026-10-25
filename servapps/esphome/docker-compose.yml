@@ -1,7 +1,7 @@
 cosmos-installer: null
 services:
   app:
-    image: esphome/esphome:2026.9
+    image: esphome/esphome:2026.10
     restart: unless-stopped
     network_mode: host
     privileged: true
