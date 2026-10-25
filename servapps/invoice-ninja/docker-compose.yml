@@ -67,7 +67,7 @@ services:
     # This command is required to set important mariadb defaults
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --wait_timeout=28800 --log-warnings=0
   big-bear-invoice-ninja-init:
-    image: bash:5.3.20@sha256:c058ddf59fee36dad43d3df8ed80fcbc2166bcdfe50069ee546a9e4c7125d466
+    image: bash:5.3.20@sha256:ab2ada570d744f42f517986fdd3c81ef60fe2054ed0c5295a7922e3b0ccd1b02
     container_name: big-bear-invoice-ninja-init
     volumes:
       - big-bear-invoice-ninja_data:/tmp/data
