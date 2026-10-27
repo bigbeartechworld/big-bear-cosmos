@@ -15,7 +15,7 @@
       ],
     "services": {
       "unifi-network-application": {
-  "image": "linuxserver/unifi-network-application:10.6.106@sha256:392031f6300b5b98631c2ee6871e0dae67aca31e9debb298c8efca0d92eb9fa7",
+  "image": "linuxserver/unifi-network-application:10.6.109@sha256:8389f585c6443af7051b4696a09e4bb5408636da7f99c5a0e5a883595c1d434c",
   "container_name": "big-bear-unifi-network-application",
   "environment": [
     "PUID=1000",
