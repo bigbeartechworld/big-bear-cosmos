@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "n8n",
+          "name": "n8n (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://n8n:5678",

@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Stalwart Mail",
+          "name": "Stalwart Mail (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://stalwart-mail:8080",

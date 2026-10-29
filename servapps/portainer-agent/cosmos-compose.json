@@ -2,7 +2,7 @@
   "cosmos-installer": {
     "routes": [
         {
-          "name": "Portainer Agent",
+          "name": "Portainer Agent (Legacy)",
           "description": "Web UI",
           "useHost": true,
           "target": "http://portainer-agent:9001",
