@@ -16,7 +16,7 @@
     "services": {
       "docmost": {
   "container_name": "big-bear-docmost",
-  "image": "docmost/docmost:0.96.0@sha256:b56947fcfd08aab8fae12a377e1792784786adbf8b96e4281f14ef4fc072685a",
+  "image": "docmost/docmost:0.97.0@sha256:40c454d74ffdd9ecb15833e4d96f3a630d59aad862a1869381ae6ee086454419",
   "restart": "unless-stopped",
   "environment": [
     "APP_URL=http://localhost:3000",
