@@ -1,5 +1,5 @@
 {
-  "name": "n8n",
+  "name": "n8n (Legacy)",
   "description": "Free and open fair-code licensed node based Workflow Automation Tool.",
   "url": "https://hub.docker.com/r/n8nio/n8n",
   "longDescription": "Free and open fair-code licensed node based Workflow Automation Tool.",
