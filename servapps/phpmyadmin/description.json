@@ -1,7 +1,7 @@
 {
   "name": "phpMyAdmin",
   "description": "phpMyAdmin - A web interface for MySQL and MariaDB.",
-  "url": "https://hub.docker.com/r/phpmyadmin/phpmyadmin",
+  "url": "https://hub.docker.com/_/phpmyadmin",
   "longDescription": "phpMyAdmin - A web interface for MySQL and MariaDB.",
   "tags": [
     "selfhosted",
